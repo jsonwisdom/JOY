@@ -1,6 +1,6 @@
 {
   "artifact": "JOY_BADGE_MANIFEST_V0_2",
-  "status": "RECOVERY_DRAFT_PENDING_ASSET_RESTORATION",
+  "status": "RECOVERY_RECONCILED",
   "authority": false,
   "purpose": "Track JOY V0.2 badge assets after V0.1 closeout.",
   "family_priority": true,
@@ -12,7 +12,10 @@
       "badge_id": "harmony_weaver",
       "asset_version": "v0.2",
       "sha256_claimed": "35a991da99be8926a33e4675dd34c4f8f1351955e17ab8f7667e0600272a5ea7",
-      "status": "PENDING_SVG_RESTORATION"
+      "status": "RESTORED_VERIFIED",
+      "asset_path": "assets/badges/harmony_weaver.svg",
+      "receipt_path": "receipts/harmony_weaver_v0_2_receipt.json",
+      "sha256_restored": "3c9bbe5a4f1715538d70638442f7ae00889d29c47cf3f5b5414b685df90fa4aa"
     },
     {
       "sequence": 2,
