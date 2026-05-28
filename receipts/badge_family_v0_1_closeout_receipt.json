@@ -1,0 +1,13 @@
+{
+  "artifact": "JOY_BADGE_FAMILY_V0_1_CLOSEOUT",
+  "status": "CLOSED_PENDING_ASSET_RESTORATION",
+  "authority": false,
+  "assets": {
+    "joy_bringer": "71fdf99c84af62335d962960fbebe8c6d88cdc501f679b70609ab421861c192d",
+    "kindness_keeper": "287e19f3cc4e5e7bdf054114d48a1a2904fee2a4186cd837c512a38e209f4b1e",
+    "growth_guardian": "1c1a7cee6ee76d07900f68b3ecc67693ef9d0bf13a436f34aaed2dacaa4ef6cc"
+  },
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true
+}
