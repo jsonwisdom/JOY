@@ -11,6 +11,6 @@
   "economy_subordinate": true,
   "meme_court_safe": true,
   "badge_meaning": "Binding family bonds through gentle strength and shared resilience.",
-  "sha256_claimed": "504546e4e250328b514abbfdbc3428345fb4602f2ed5914fc59ff537a1cffb01",
-  "status": "PENDING_SVG_RESTORATION"
+  "sha256_restored": "4f5a9f74d08102f43f4847c8343ef05f7774beb5763b078df02d05e7f54e29e6",
+  "status": "RESTORED_VERIFIED"
 }
