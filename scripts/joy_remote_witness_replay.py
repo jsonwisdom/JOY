@@ -19,9 +19,18 @@ def main():
 
     receipt = json.loads(receipt_path.read_text())
 
-    asset_path = pathlib.Path(receipt.get("asset_path", ""))
+    asset_path_value = receipt.get("asset_path")
+    if not asset_path_value:
+        asset_id_for_path = receipt.get("asset_id") or receipt.get("badge_id")
+        if not asset_id_for_path:
+            fail("asset_path_missing")
+        asset_path_value = f"assets/badges/{asset_id_for_path}.svg"
+
+    asset_path = pathlib.Path(asset_path_value)
     if not asset_path.exists():
         fail("asset_missing")
+    if asset_path.is_dir():
+        fail("asset_path_is_directory")
 
     actual = hashlib.sha256(asset_path.read_bytes()).hexdigest()
     expected = receipt.get("sha256_restored") or receipt.get("asset_sha256")
