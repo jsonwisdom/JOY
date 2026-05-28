@@ -1,6 +1,6 @@
 {
   "artifact": "JOY_BADGE_MANIFEST_V0_2",
-  "status": "RECOVERY_RECONCILED",
+  "status": "BUILD_MODE_ACTIVE",
   "authority": false,
   "purpose": "Track JOY V0.2 badge assets after V0.1 closeout.",
   "family_priority": true,
@@ -36,6 +36,17 @@
       "asset_path": "assets/badges/wisdom_anchor.svg",
       "receipt_path": "receipts/wisdom_anchor_v0_2_receipt.json",
       "sha256_restored": "2f57543f3eb605660db570b72181c8b508b4cc4be63080cb61a926bde58f98a1"
+    },
+    {
+      "sequence": 4,
+      "badge_id": "unsealed_loom",
+      "asset_version": "v0.2",
+      "status": "RESTORED_VERIFIED",
+      "asset_path": "assets/badges/unsealed_loom.svg",
+      "receipt_path": "receipts/unsealed_loom_v0_2_receipt.json",
+      "sha256_restored": "567930e0ab3ddc432c20457d5eef4df0415c1d9f1e3c51bb93c10032d569b1c4",
+      "post_recovery_artifact": true,
+      "meaning": "Build mode reopened after verified recovery."
     }
   ]
 }
