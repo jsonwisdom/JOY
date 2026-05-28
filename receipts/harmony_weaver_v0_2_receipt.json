@@ -12,5 +12,6 @@
   "meme_court_safe": true,
   "badge_meaning": "Weaving individual growth into family harmony.",
   "sha256_claimed": "35a991da99be8926a33e4675dd34c4f8f1351955e17ab8f7667e0600272a5ea7",
-  "status": "PENDING_SVG_RESTORATION"
+  "status": "RESTORED_VERIFIED_AFTER_REPLAY",
+  "sha256_restored": "3c9bbe5a4f1715538d70638442f7ae00889d29c47cf3f5b5414b685df90fa4aa"
 }
