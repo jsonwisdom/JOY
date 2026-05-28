@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Harmony Weaver Badge</title>
+  <desc id="desc">JOY badge: Harmony Weaver v0.2. Family-safe creative asset. Family priority true, economy subordinate true, authority false.</desc>
+  <metadata>
+  {
+    "asset_id": "harmony_weaver",
+    "asset_version": "v0.2",
+    "manifest_version": "JOY_BADGE_MANIFEST_V0_2",
+    "creator": "Heidee Joy Wisdom",
+    "project": "JOY",
+    "integrity_class": "FAMILY_SAFE_CREATIVE_ASSET",
+    "authority": false,
+    "family_priority": true,
+    "economy_subordinate": true,
+    "meme_court_safe": true
+  }
+  </metadata>
+  <circle cx="256" cy="256" r="232" fill="#ffe6f7" stroke="#9b7cff" stroke-width="8"/>
+  <path d="M156 276 C196 206, 256 196, 256 256 C256 196, 316 206, 356 276 C316 346, 196 346, 156 276Z" fill="#fff7c2" stroke="#ff9acb" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M142 318 C202 258, 310 258, 370 318" fill="none" stroke="#7bdff2" stroke-width="18" stroke-linecap="round"/>
+  <path d="M142 348 C202 288, 310 288, 370 348" fill="none" stroke="#f6bd60" stroke-width="18" stroke-linecap="round"/>
+  <path d="M142 378 C202 318, 310 318, 370 378" fill="none" stroke="#84dcc6" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#5b4b8a">Harmony Weaver</text>
+</svg>
