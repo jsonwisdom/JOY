@@ -1,0 +1,17 @@
+{
+  "artifact": "unsealed_loom.svg",
+  "asset_id": "unsealed_loom",
+  "asset_version": "v0.2",
+  "manifest_version": "JOY_BADGE_MANIFEST_V0_2",
+  "creator": "Heidee Joy Wisdom",
+  "project": "JOY",
+  "integrity_class": "FAMILY_SAFE_CREATIVE_ASSET",
+  "authority": false,
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true,
+  "badge_meaning": "Build mode reopened after verified recovery.",
+  "post_recovery_artifact": true,
+  "sha256_restored": "567930e0ab3ddc432c20457d5eef4df0415c1d9f1e3c51bb93c10032d569b1c4",
+  "status": "RESTORED_VERIFIED"
+}

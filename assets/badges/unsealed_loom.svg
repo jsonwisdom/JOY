@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="loomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDE68A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A78BFA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="108" fill="#111827" stroke="url(#loomGrad)" stroke-width="4"/>
+  <rect x="58" y="58" width="124" height="124" rx="18" fill="none" stroke="#FDE68A" stroke-width="5"/>
+  <path d="M78 82 L78 170" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M104 82 L104 170" stroke="#34D399" stroke-width="4" stroke-linecap="round"/>
+  <path d="M130 82 L130 170" stroke="#60A5FA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M156 82 L156 170" stroke="#F472B6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M68 96 Q120 78 172 96" fill="none" stroke="#FDE68A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M68 122 Q120 104 172 122" fill="none" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M68 148 Q120 130 172 148" fill="none" stroke="#34D399" stroke-width="4" stroke-linecap="round"/>
+  <path d="M68 174 Q120 156 172 174" fill="none" stroke="#F472B6" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="78" cy="82" r="5" fill="#A78BFA"/>
+  <circle cx="104" cy="82" r="5" fill="#34D399"/>
+  <circle cx="130" cy="82" r="5" fill="#60A5FA"/>
+  <circle cx="156" cy="82" r="6" fill="#F472B6"/>
+  <path d="M92 202 Q120 188 148 202" fill="none" stroke="#FDE68A" stroke-width="4" stroke-linecap="round"/>
+</svg>
