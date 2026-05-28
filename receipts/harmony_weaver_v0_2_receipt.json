@@ -1,0 +1,16 @@
+{
+  "artifact": "harmony_weaver.svg",
+  "asset_id": "harmony_weaver",
+  "asset_version": "v0.2",
+  "manifest_version": "JOY_BADGE_MANIFEST_V0_2",
+  "creator": "Heidee Joy Wisdom",
+  "project": "JOY",
+  "integrity_class": "FAMILY_SAFE_CREATIVE_ASSET",
+  "authority": false,
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true,
+  "badge_meaning": "Weaving individual growth into family harmony.",
+  "sha256_claimed": "35a991da99be8926a33e4675dd34c4f8f1351955e17ab8f7667e0600272a5ea7",
+  "status": "PENDING_SVG_RESTORATION"
+}
