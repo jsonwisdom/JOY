@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="anchorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDE68A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="#0F172A" stroke="url(#anchorGrad)" stroke-width="3"/>
+  <circle cx="100" cy="48" r="14" fill="none" stroke="#FDE68A" stroke-width="5"/>
+  <path d="M100 62 L100 130" stroke="#60A5FA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M75 82 H125" stroke="#60A5FA" stroke-width="7" stroke-linecap="round"/>
+  <path d="M65 126 Q100 165 135 126" fill="none" stroke="#34D399" stroke-width="8" stroke-linecap="round"/>
+  <path d="M65 126 L55 112" stroke="#34D399" stroke-width="6" stroke-linecap="round"/>
+  <path d="M135 126 L145 112" stroke="#34D399" stroke-width="6" stroke-linecap="round"/>
+  <path d="M63 150 Q82 137 100 150 Q118 137 137 150" fill="none" stroke="#FDE68A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M74 151 Q87 143 100 151 Q113 143 126 151" fill="none" stroke="#FDE68A" stroke-width="2"/>
+</svg>
