@@ -1,0 +1,14 @@
+{
+  "oracle_id": "JOY_CLEAN_ERA_ORACLE_V0_1",
+  "head": "efab2fb962d5e2017da0cfea1f4bb4605bd71266",
+  "verified_assets": {
+    "harmony_weaver": "3c9bbe5a4f1715538d70638442f7ae00889d29c47cf3f5b5414b685df90fa4aa",
+    "resilience_thread": "4f5a9f74d08102f43f4847c8343ef05f7774beb5763b078df02d05e7f54e29e6",
+    "wisdom_anchor": "2f57543f3eb605660db570b72181c8b508b4cc4be63080cb61a926bde58f98a1",
+    "unsealed_loom": "567930e0ab3ddc432c20457d5eef4df0415c1d9f1e3c51bb93c10032d569b1c4"
+  },
+  "status": "KNOWN_GOOD_BASELINE",
+  "created_at_epoch": "POST_RECOVERY_CLEAN_ERA",
+  "witness_head_parity": true,
+  "harness_version": "V0.1"
+}
