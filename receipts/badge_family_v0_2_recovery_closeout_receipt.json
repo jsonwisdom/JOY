@@ -1,0 +1,30 @@
+{
+  "artifact": "JOY_BADGE_FAMILY_V0_2_RECOVERY_CLOSEOUT",
+  "status": "RECOVERY_CLOSED",
+  "authority": false,
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true,
+  "remote_head_before_closeout": "e29bf10",
+  "assets": {
+    "harmony_weaver": {
+      "asset_path": "assets/badges/harmony_weaver.svg",
+      "receipt_path": "receipts/harmony_weaver_v0_2_receipt.json",
+      "sha256_restored": "3c9bbe5a4f1715538d70638442f7ae00889d29c47cf3f5b5414b685df90fa4aa",
+      "status": "RESTORED_VERIFIED"
+    },
+    "resilience_thread": {
+      "asset_path": "assets/badges/resilience_thread.svg",
+      "receipt_path": "receipts/resilience_thread_v0_2_receipt.json",
+      "sha256_restored": "4f5a9f74d08102f43f4847c8343ef05f7774beb5763b078df02d05e7f54e29e6",
+      "status": "RESTORED_VERIFIED"
+    },
+    "wisdom_anchor": {
+      "asset_path": "assets/badges/wisdom_anchor.svg",
+      "receipt_path": "receipts/wisdom_anchor_v0_2_receipt.json",
+      "sha256_restored": "2f57543f3eb605660db570b72181c8b508b4cc4be63080cb61a926bde58f98a1",
+      "status": "RESTORED_VERIFIED"
+    }
+  },
+  "next_allowed_mode": "BUILD_MODE_AFTER_FINAL_AUDIT"
+}
