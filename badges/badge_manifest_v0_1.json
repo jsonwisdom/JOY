@@ -1,0 +1,47 @@
+{
+  "artifact": "JOY_BADGE_MANIFEST_V0_1",
+  "status": "CANONICAL_DRAFT",
+  "authority": false,
+  "purpose": "Map JoySpace badge assets to safe learning milestones.",
+  "visual_contract": {
+    "shape": "circular_field",
+    "border": "8px_stroke",
+    "gradient": "radial_depth",
+    "palette": "pastel_high_contrast",
+    "sparkles": ["upper_left", "lower_right"],
+    "asset_format": "deterministic_svg"
+  },
+  "badges": [
+    {
+      "sequence": 1,
+      "badge_id": "joy_bringer",
+      "title": "Joy Bringer",
+      "emoji": "🌈",
+      "meaning": "Emotional radiance and inclusive joy.",
+      "quest_anchor": "Quest 001 — First Commit",
+      "proof_anchor": "A safe first commit exists in Git history.",
+      "verification": "git_commit_exists"
+    },
+    {
+      "sequence": 2,
+      "badge_id": "kindness_keeper",
+      "title": "Kindness Keeper",
+      "emoji": "💛",
+      "meaning": "Warmth, safety, and protection.",
+      "quest_anchor": "Quest 003 — Future Protector",
+      "proof_anchor": "Private details were reviewed before publishing.",
+      "verification": "safety_check_completed",
+      "safety_gate": true
+    },
+    {
+      "sequence": 3,
+      "badge_id": "growth_guardian",
+      "title": "Growth Guardian",
+      "emoji": "🌱",
+      "meaning": "Nurturing potential and visible progress.",
+      "quest_anchor": "Quest 002 — Digital Garden Seed",
+      "proof_anchor": "A Digital Garden README exists.",
+      "verification": "readme_exists"
+    }
+  ]
+}
