@@ -1,0 +1,16 @@
+{
+  "oracle_id": "ORACLE_RITUAL_V0_1",
+  "epoch": "POST_CONSTITUTIONAL_BASELINE",
+  "head_commit": "cfe0aace9ce58330a4d33be2f9d93c7905a41fe2",
+  "replay_status": "VERIFIED",
+  "working_tree": "CLEAN",
+  "manifest_path": "badges/badge_manifest_v0_2.json",
+  "manifest_sha256": "f55c368fb34e16325e41255dd04fad526f520b79d322390950fbb323008ad102",
+  "ontology_v0_1": "CANONICAL",
+  "witness_protocol_v0_1": "CANONICAL",
+  "ritual_spec_v0_1": "CANONICAL",
+  "authority": false,
+  "family_priority": true,
+  "economy_subordinate": true,
+  "status": "BASELINE_FROZEN"
+}
