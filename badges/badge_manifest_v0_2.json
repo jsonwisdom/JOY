@@ -1,0 +1,32 @@
+{
+  "artifact": "JOY_BADGE_MANIFEST_V0_2",
+  "status": "RECOVERY_DRAFT_PENDING_ASSET_RESTORATION",
+  "authority": false,
+  "purpose": "Track JOY V0.2 badge assets after V0.1 closeout.",
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true,
+  "badges": [
+    {
+      "sequence": 1,
+      "badge_id": "harmony_weaver",
+      "asset_version": "v0.2",
+      "sha256_claimed": "35a991da99be8926a33e4675dd34c4f8f1351955e17ab8f7667e0600272a5ea7",
+      "status": "PENDING_SVG_RESTORATION"
+    },
+    {
+      "sequence": 2,
+      "badge_id": "resilience_thread",
+      "asset_version": "v0.2",
+      "sha256_claimed": "504546e4e250328b514abbfdbc3428345fb4602f2ed5914fc59ff537a1cffb01",
+      "status": "PENDING_SVG_RESTORATION"
+    },
+    {
+      "sequence": 3,
+      "badge_id": "wisdom_anchor",
+      "asset_version": "v0.2",
+      "sha256_claimed": "6906082e28b3c666774900ac2cbc153159ed769075ed6747bc61006b5668f4ec",
+      "status": "PENDING_SVG_RESTORATION"
+    }
+  ]
+}
