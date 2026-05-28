@@ -12,25 +12,25 @@ It is descriptive, not authoritative.
 
 ## Seven Steps
 
-1. **WITNESS_THE_SVG**  
+1. **WITNESS_THE_SVG**
    Confirm the SVG asset exists.
 
-2. **WEIGH_THE_THREAD_SHA256**  
+2. **WEIGH_THE_THREAD_SHA256**
    Compute the local SHA-256 hash.
 
-3. **BIND_THE_RECEIPT**  
+3. **BIND_THE_RECEIPT**
    Create a receipt containing the asset hash.
 
-4. **ENTER_THE_MANIFEST**  
+4. **ENTER_THE_MANIFEST**
    Add or update the manifest entry.
 
-5. **MARK_THE_LEDGER**  
+5. **MARK_THE_LEDGER**
    Record the asset in the project ledger when needed.
 
-6. **COMMIT_TO_THE_LOOM**  
+6. **COMMIT_TO_THE_LOOM**
    Commit and push to GitHub.
 
-7. **VERIFY_THE_REMOTE_WITNESS**  
+7. **VERIFY_THE_REMOTE_WITNESS**
    Confirm local HEAD matches remote main.
 
 ## Meme Court Gate
