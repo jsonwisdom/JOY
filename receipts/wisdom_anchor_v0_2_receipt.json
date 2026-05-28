@@ -1,0 +1,16 @@
+{
+  "artifact": "wisdom_anchor.svg",
+  "asset_id": "wisdom_anchor",
+  "asset_version": "v0.2",
+  "manifest_version": "JOY_BADGE_MANIFEST_V0_2",
+  "creator": "Heidee Joy Wisdom",
+  "project": "JOY",
+  "integrity_class": "FAMILY_SAFE_CREATIVE_ASSET",
+  "authority": false,
+  "family_priority": true,
+  "economy_subordinate": true,
+  "meme_court_safe": true,
+  "badge_meaning": "Grounding family harmony and resilience with deep-rooted wisdom and gentle guidance.",
+  "sha256_claimed": "6906082e28b3c666774900ac2cbc153159ed769075ed6747bc61006b5668f4ec",
+  "status": "PENDING_SVG_RESTORATION"
+}
