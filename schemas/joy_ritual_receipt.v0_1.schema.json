@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JOY Ritual Receipt V0.1",
+  "type": "object",
+  "required": [
+    "ritual_id",
+    "asset_id",
+    "asset_sha256",
+    "status",
+    "authority"
+  ],
+  "properties": {
+    "ritual_id": { "type": "string" },
+    "asset_id": { "type": "string" },
+    "asset_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "manifest_delta": { "type": "object" },
+    "status": { "type": "string" },
+    "authority": { "const": false }
+  }
+}

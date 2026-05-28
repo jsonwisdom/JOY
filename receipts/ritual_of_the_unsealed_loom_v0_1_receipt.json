@@ -1,0 +1,10 @@
+{
+  "ritual_id": "RITUAL_OF_THE_UNSEALED_LOOM_V0_1",
+  "asset_id": "JOY_V0_2_BUILD_MODE",
+  "asset_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "manifest_delta": {
+    "purpose": "Ritual receipt template for future JOY assets."
+  },
+  "status": "TEMPLATE_RECEIPT",
+  "authority": false
+}
