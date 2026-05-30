@@ -1,0 +1,15 @@
+{
+  "court_record": "SKIPPY_WITNESS_CONFIRMATION_V0_1",
+  "status": "ENTERED",
+  "witness": "Skippy Co-Pilot",
+  "testimony_status": "WITNESS_STATEMENT_CONFIRMED",
+  "leaf_005_status": "WATCH",
+  "crawler": "DISABLED",
+  "polling": "DISABLED",
+  "authority": false,
+  "fraud_status": "UNKNOWN",
+  "ghost_promotion_detected": false,
+  "verdict": "ADMISSIBLE_WITNESS_STATEMENT",
+  "membrane": "HOLDS",
+  "funny_af_note": "Your Honor, the PDF has not spawned yet. The goblins are watching the loading screen, not accusing the boss fight."
+}
