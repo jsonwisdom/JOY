@@ -12,7 +12,7 @@
   <h1>JoySpace Function Status 🧾</h1>
   <p class="small">JOYSPACE_FUNCTION_AUDIT_V0_1 · authority:false</p>
   <div class="card">
-    <p><strong>Plain truth:</strong> the website is live and the Criteria Layer now resolves 5/5. JoySpace is still not a full badge application until schemas, feeds, assets, and end-to-end execution are proven.</p>
+    <p><strong>Plain truth:</strong> the website is live, the Criteria Layer resolves 5/5, and the SVG asset layer resolves 5/5. JoySpace is still not a full badge application until schemas, feeds, and end-to-end execution are proven.</p>
   </div>
   <table>
     <tr><th>Check</th><th>Status</th><th>Evidence</th></tr>
@@ -28,19 +28,20 @@
     <tr><td>Award record model exists</td><td class="pass">PROVED</td><td><a href="badges/proof/award_record_v0_1.md">award_record_v0_1.md</a></td></tr>
     <tr><td>Service catalog exists</td><td class="pass">PROVED</td><td><a href="badges/service_catalog_v0_1.md">service_catalog_v0_1.md</a></td></tr>
     <tr><td>Criteria files exist</td><td class="pass">PROVED</td><td>Criteria snapshot: present and verified 5/5. <a href="badges/criteria/criteria_index_v0_1.md">criteria_index</a>, <a href="badges/criteria/seed_planter_v0_1.md">seed</a>, <a href="badges/criteria/future_protector_v0_1.md">future</a>, <a href="badges/criteria/growth_guardian_v0_1.md">growth</a>, <a href="badges/criteria/joy_bringer_v0_1.md">joy</a>, <a href="badges/criteria/kindness_keeper_v0_1.md">kindness</a>.</td></tr>
-    <tr><td>Badge image SVG files</td><td class="pending">PENDING</td><td>Manifest references <code>badges/images/*.svg</code>; image existence not yet audited.</td></tr>
+    <tr><td>Badge image SVG files</td><td class="pass">PROVED</td><td>SVG snapshot: present and verified 5/5. <a href="badges/images/seed_planter.svg">seed</a>, <a href="badges/images/future_protector.svg">future</a>, <a href="badges/images/growth_guardian.svg">growth</a>, <a href="badges/images/joy_bringer.svg">joy</a>, <a href="badges/images/kindness_keeper.svg">kindness</a>.</td></tr>
     <tr><td>Schemas validate</td><td class="pending">PENDING</td><td>No schema validation runner or JSON schema proved yet.</td></tr>
     <tr><td>Feeds exist</td><td class="pending">PENDING</td><td>No RSS/JSON feed proved yet.</td></tr>
-    <tr><td>End-to-end badge function</td><td class="partial">PARTIAL</td><td>Docs exist for criteria/proof/witness/award, but no working submission/validation flow exists yet.</td></tr>
+    <tr><td>Manifest verification</td><td class="pending">PENDING</td><td>Manifest exists, but full internal consistency audit has not yet been recorded as a separate proof layer.</td></tr>
+    <tr><td>End-to-end badge function</td><td class="partial">PARTIAL</td><td>Docs, criteria, and assets exist, but no working submission/validation/award flow has executed yet.</td></tr>
   </table>
   <div class="card">
     <h2>Current Honest Verdict</h2>
     <p><strong>Function:</strong> <span class="partial">PARTIAL</span></p>
-    <p>JoySpace is a live site with a real document stack and a complete Criteria Layer. It is not yet a functioning badge application because assets, schemas, feeds, and end-to-end badge execution remain unproved.</p>
+    <p>JoySpace is a live site with a real document stack, complete Criteria Layer, and verified SVG asset layer. It is not yet a functioning badge application because schemas, feeds, manifest audit, and end-to-end badge execution remain unproved.</p>
   </div>
   <div class="card">
     <h2>Next Proof Layer</h2>
-    <p>Audit <code>badges/images/*.svg</code>, then add schemas or a sample proof flow. Do not mark function complete until a badge lifecycle is executed.</p>
+    <p>Run <code>JOYSPACE_MANIFEST_AUDIT_V0_1</code> against <code>badges/badge_manifest.json</code>. Do not mark schema validation or end-to-end execution complete until those layers exist and run.</p>
   </div>
 </main>
 </body>
