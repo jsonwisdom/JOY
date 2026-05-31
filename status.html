@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JoySpace Function Status</title>
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0;background:#fffaf7;color:#2f243a;line-height:1.55}main{max-width:980px;margin:0 auto;padding:28px 18px 56px}h1{font-size:clamp(2rem,7vw,4rem);margin:0 0 8px}.card{background:#fff;border:2px solid #d9c7ea;border-radius:20px;padding:16px;margin:14px 0}.pass{color:#137333;font-weight:800}.fail{color:#b3261e;font-weight:800}.pending{color:#8a5a00;font-weight:800}.partial{color:#5f3dc4;font-weight:800}code{background:rgba(0,0,0,.06);padding:2px 5px;border-radius:6px}table{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden}td,th{border:1px solid #d9c7ea;padding:10px;text-align:left;vertical-align:top}th{background:#f4e9ff}a{color:#5f3dc4;font-weight:700}.small{font-size:.95rem;opacity:.85}</style>
+</head>
+<body>
+<main>
+  <h1>JoySpace Function Status 🧾</h1>
+  <p class="small">JOYSPACE_FUNCTION_AUDIT_V0_1 · authority:false</p>
+  <div class="card">
+    <p><strong>Plain truth:</strong> the website is live, but function is only partial. This page separates proved surfaces from missing or pending layers.</p>
+  </div>
+  <table>
+    <tr><th>Check</th><th>Status</th><th>Evidence</th></tr>
+    <tr><td>Website hosting</td><td class="pass">PROVED</td><td><code>index.html</code> is served by GitHub Pages.</td></tr>
+    <tr><td>Homepage links point to repo files</td><td class="pass">PROVED</td><td>Homepage links target <code>badges/README.md</code>, onboarding, picker, and privacy guide.</td></tr>
+    <tr><td>Badge gallery exists</td><td class="pass">PROVED</td><td><a href="badges/README.md">badges/README.md</a></td></tr>
+    <tr><td>Badge manifest loads from repo</td><td class="pass">PROVED</td><td><a href="badges/badge_manifest.json">badges/badge_manifest.json</a></td></tr>
+    <tr><td>Onboarding guide exists</td><td class="pass">PROVED</td><td><a href="badges/guides/guide_onboarding_v0_1.md">guide_onboarding_v0_1.md</a></td></tr>
+    <tr><td>Badge picker exists</td><td class="pass">PROVED</td><td><a href="badges/guides/badge_picker_v0_1.md">badge_picker_v0_1.md</a></td></tr>
+    <tr><td>Privacy guide exists</td><td class="pass">PROVED</td><td><a href="badges/guides/guide_privacy_v0_1.md">guide_privacy_v0_1.md</a></td></tr>
+    <tr><td>Proof model exists</td><td class="pass">PROVED</td><td><a href="badges/proof/proof_model_v0_1.md">proof_model_v0_1.md</a></td></tr>
+    <tr><td>Witness model exists</td><td class="pass">PROVED</td><td><a href="badges/proof/witness_model_v0_1.md">witness_model_v0_1.md</a></td></tr>
+    <tr><td>Award record model exists</td><td class="pass">PROVED</td><td><a href="badges/proof/award_record_v0_1.md">award_record_v0_1.md</a></td></tr>
+    <tr><td>Service catalog exists</td><td class="pass">PROVED</td><td><a href="badges/service_catalog_v0_1.md">service_catalog_v0_1.md</a></td></tr>
+    <tr><td>Criteria layer files</td><td class="fail">FAILED</td><td><code>badges/criteria/criteria_index_v0_1.md</code> was referenced but not found during audit.</td></tr>
+    <tr><td>Badge image SVG files</td><td class="pending">PENDING</td><td>Manifest references <code>badges/images/*.svg</code>; image existence not yet audited.</td></tr>
+    <tr><td>Schemas validate</td><td class="pending">PENDING</td><td>No schema validation runner or JSON schema proved yet.</td></tr>
+    <tr><td>Feeds exist</td><td class="pending">PENDING</td><td>No RSS/JSON feed proved yet.</td></tr>
+    <tr><td>End-to-end badge function</td><td class="partial">PARTIAL</td><td>Docs exist for proof/witness/award, but no working submission/validation flow exists yet.</td></tr>
+  </table>
+  <div class="card">
+    <h2>Current Honest Verdict</h2>
+    <p><strong>Function:</strong> <span class="partial">PARTIAL</span></p>
+    <p>JoySpace is more than a blank template now because several linked artifacts exist, but it is not yet a working badge application. Criteria files, schemas, feeds, and validation scripts still need proof.</p>
+  </div>
+  <div class="card">
+    <h2>Next Repair</h2>
+    <p>Create <code>badges/criteria/criteria_index_v0_1.md</code> and the five individual criteria files, then rerun this audit.</p>
+  </div>
+</main>
+</body>
+</html>
