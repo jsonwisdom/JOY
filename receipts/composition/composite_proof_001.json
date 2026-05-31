@@ -1,0 +1,21 @@
+{
+  "artifact": "composite_proof_001",
+  "source_issue": "jsonwisdom/JOY#15",
+  "parent_issue": "jsonwisdom/JOY#14",
+  "parent_commit_sha": "423cc1608887ecdce3d13cb4ff7f77d3b5c6fcea",
+  "parent_canonical_json_sha256": "sha256:f902f287125a81d64c32ef61eb3e41a2710c4c9b5da74b8e7a7fdaeda0fcea0e",
+  "parent_known_good_output_hash": "sha256:609f279c1b56f9da205d382ff49c1d734614257f77bce2ff252808c2bb31e08e",
+  "canonical_json_sha256": "sha256:3a9f683aaac459ddfebdfdc56ff5c449414d5c1de4abede46795db3ebb7be42b",
+  "file_sha256sum_composite_proof_001_json": "sha256:76b52dffdaba0b49296fbdbd711f3783d2e1f3d2f5b8547745cef5d1378ff651",
+  "proof_levels": {
+    "L1_canonicalization": "PROVED",
+    "L2_determinism": "PROVED",
+    "L3_composition": "PROVED",
+    "L5_replay": "PROVED"
+  },
+  "dual_environment_match": true,
+  "replay_proven": true,
+  "evidence_dictates_state": true,
+  "identity_dictates_state": false,
+  "authority": false
+}
