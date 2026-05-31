@@ -1,13 +1,97 @@
-# JOY 🌈🧾
+# JOY 🌈🧾🎮
 
-**JOY** is a family-safe witness and continuity layer for Wisdom Replay Systems.
+**JOY** is a family-safe witness, game layer, and continuity layer for Wisdom Replay Systems.
 
 It began as a 2026 Gen Z JoySpace page and now opens as a family-business memory surface for the full Wisdom Family.
 
 **Role:** Witness Layer  
 **Family Business:** Wisdom Replay Systems  
-**Layer:** JOY / Living Ledger / Family Continuity  
+**Layer:** JOY / Living Ledger / Family Continuity / Game Night  
 **Motto:** The future should feel exciting, not frightening.
+
+---
+
+## JOY JOY JOY Stick Controls 🎮
+
+The JOYstick is the simple control surface for the repo.
+
+It helps the family choose the next safe action without turning the system into command-and-control.
+
+```text
+UP       -> Grow
+DOWN     -> Rest
+LEFT     -> Reflect
+RIGHT    -> Share only if safe
+A        -> Commit a receipt
+B        -> Keep private
+START    -> Begin Game Night
+SELECT   -> Run Privacy Check
+PAUSE    -> Cozy Shield
+REPLAY   -> Read the Living Ledger
+```
+
+Core rule:
+
+```text
+The JOYstick guides choices.
+It does not control people.
+Authority remains false.
+```
+
+---
+
+## Three Sisters Gaming Algorithms 🌳🎲
+
+The Three Sisters Gaming Algorithms make the repo playable while keeping the family barrier intact.
+
+```text
+Sister One  -> Protect the memory
+Sister Two  -> Keep the joy moving
+Sister Three -> Choose the next safe action
+```
+
+They inherit the Three Daughters Algorithm:
+
+```text
+Protect the daughters first.
+Preserve continuity second.
+Expand systems third.
+```
+
+Game rule:
+
+```text
+If the game weakens the family barrier, the game stops.
+If the game protects the family and creates joy, the game continues.
+```
+
+---
+
+## Quick Start: Play the Repo
+
+```text
+1. Open Game Night.
+2. Draw a Mini-Deck card.
+3. Use Chaos Tokens if the room gets wild.
+4. Use Mrs Wisdom Shield Moves if the stack gets heavy.
+5. Let Dad use one harmless buff.
+6. Save one sentence in the Living Ledger.
+7. Keep private unless the family chooses otherwise.
+```
+
+Game stack:
+
+```text
+WISDOM/wisdom_family_game_night_v0_1.md
+WISDOM/game_night_replay_script_v0_1.md
+WISDOM/wisdom_mini_decks_v0_1.md
+WISDOM/chaos_tokens_v0_1.md
+WISDOM/mrs_wisdom_shield_moves_v0_1.md
+WISDOM/dad_role_buffs_v0_1.md
+WISDOM/family_lore_cards_v0_1.md
+WISDOM/family_combo_moves_v0_1.md
+JOY/joy_living_ledger_v0_1.md
+```
 
 ---
 
@@ -31,7 +115,7 @@ No family member is reduced to a repo role.
 
 No family member is used as proof.
 
-No family member may be silently dropped.
+No family memory may be silently dropped.
 
 ---
 
@@ -94,6 +178,8 @@ JOY explains.
 
 JOY remembers.
 
+JOY plays.
+
 JOY protects the future without stealing the voice of the person living it.
 
 ```text
@@ -122,6 +208,7 @@ It may record:
 - decisions and reasons
 - safe creative work
 - replayable evidence
+- game night memories
 
 Every entry should preserve context.
 
@@ -140,6 +227,8 @@ No entry should silently rewrite another person's memory.
   "algorithm_05": "Meaning before complexity",
   "algorithm_06": "No silent rewrites",
   "algorithm_07": "No family member may be silently dropped",
+  "algorithm_08": "Make continuity playable",
+  "algorithm_09": "Cozy beats completion",
   "authority": false
 }
 ```
@@ -273,6 +362,8 @@ It protects the space where family voice can grow.
     "Personal Website",
     "Joy Journal"
   ],
+  "joystick_controls": "ACTIVE",
+  "three_sisters_gaming_algorithms": "ACTIVE",
   "three_daughters_algorithm": "ACTIVE",
   "family_barrier": "FULL_INTEGRITY_REQUIRED",
   "living_ledger": "ACTIVE",
