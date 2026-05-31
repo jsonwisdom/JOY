@@ -1,0 +1,49 @@
+{
+  "artifact": "LIVE_VERIFICATION_PREFLIGHT_CHECKLIST_V0_1",
+  "status": "DRAFT_READY",
+  "purpose": "Define mandatory state checks prior to unlocking the live stream in read-only observation mode.",
+  "authority": false,
+  "live_stream": {
+    "current_state": "LOCKED",
+    "initial_allowed_state_after_preflight": "READ_ONLY_OBSERVATION",
+    "active_live_verification_allowed": false
+  },
+  "preflight_gates": {
+    "security_constraints": {
+      "read_only_live_mode": "MANDATORY",
+      "kill_switch_wired": "VERIFIED_TESTED",
+      "external_mutation_disabled": "HARD_LOCKED",
+      "no_write_back_to_source": "HARD_LOCKED"
+    },
+    "operator_requirements": {
+      "operator_unlock_receipt": "REQUIRED_FOR_UNLOCK",
+      "rollback_plan_confirmed": "SNAPSHOT_VERIFIED"
+    },
+    "system_readiness": {
+      "delta_2_closure_receipt_validated": "faf1e214645f67edbfcbfde6ed14802f42901ec3",
+      "sensitivity_profile_active": "SURGE_TEST_CONFIRMED",
+      "backpressure_threshold_active": "SATURATION_PAUSE_WIRED"
+    }
+  },
+  "read_only_observation_allowed_actions": [
+    "observe_external_signals",
+    "compute_event_envelopes",
+    "emit_receipts",
+    "apply_backpressure",
+    "halt_on_boundary_conflict"
+  ],
+  "forbidden_actions": [
+    "write_to_external_sources",
+    "mutate_source_repositories",
+    "auto_resolve_conflicts",
+    "merge_identities",
+    "declare_global_truth"
+  ],
+  "transition_gate": {
+    "dry_halt_required": true,
+    "operator_unlock_receipt_required": true,
+    "rollback_snapshot_required": true,
+    "any_fail_halts_transition": true,
+    "authority": false
+  }
+}
