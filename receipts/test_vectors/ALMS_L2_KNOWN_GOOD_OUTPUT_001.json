@@ -1,0 +1,10 @@
+{
+  "artifact": "ALMS_L2_KNOWN_GOOD_OUTPUT_001",
+  "status": "TEMPLATE_ONLY",
+  "canonical_json_sha256": null,
+  "index_entry_hash": null,
+  "known_good_output_hash": null,
+  "replay_proven": false,
+  "authority": false,
+  "note": "Populate only after real dual-environment replay execution."
+}
