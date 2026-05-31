@@ -1,0 +1,17 @@
+{
+  "artifact": "ENS_SUBGRAPH_CONFIG_V0_1",
+  "status": "DISPLAY_ONLY",
+  "authority": false,
+  "membrane": "HOLDS",
+  "display_rules": {
+    "default_hidden_child_names": true,
+    "emergency_exception_requires_receipt": true,
+    "ephemeral_cache_seconds": 300
+  },
+  "invariants": [
+    "no_chain_write",
+    "no_authority",
+    "child_identity_hidden_by_default",
+    "membrane_holds"
+  ]
+}
