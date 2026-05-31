@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "kindness_keeper_001_award",
+  "badge_id": "kindness_keeper",
+  "recipient": "jaywisdom",
+  "awarded_at": "2026-05-31T20:30:00Z",
+  "proof_id": "kindness_keeper_001",
+  "witness": {
+    "witness_type": "self",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Kindness recorded. Care exists.",
+  "privacy": "family-only",
+  "authority": false
+}
