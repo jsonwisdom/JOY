@@ -1,0 +1,73 @@
+{
+  "artifact": "JOYSPACE_BADGE_MANIFEST_V0_1",
+  "status": "ACTIVE",
+  "authority": false,
+  "family_barrier": "INTACT",
+  "badges": {
+    "seed_planter": {
+      "title": "Seed Planter",
+      "emoji": "🪴",
+      "meaning": "You planted your first Digital Garden: your personal README.",
+      "svg_path": "badges/images/seed_planter.svg",
+      "palette": {
+        "base": "#B9F3D0",
+        "border": "#4BAF7A",
+        "accent": "#5CCB8A"
+      },
+      "category": "core_quest"
+    },
+    "future_protector": {
+      "title": "Future Protector",
+      "emoji": "🛡️",
+      "meaning": "You learned and applied strong online safety practices.",
+      "svg_path": "badges/images/future_protector.svg",
+      "palette": {
+        "base": "#C9E6FF",
+        "border": "#3C7FD9",
+        "accent": "#4F7FE8"
+      },
+      "category": "core_quest"
+    },
+    "joy_bringer": {
+      "title": "Joy Bringer",
+      "emoji": "🌈",
+      "meaning": "You brought delight, creativity, or encouragement to someone's day.",
+      "svg_path": "badges/images/joy_bringer.svg",
+      "palette": {
+        "base": "#E4D4FF",
+        "border": "#9B7CE3",
+        "accent": "rainbow"
+      },
+      "category": "community_character"
+    },
+    "kindness_keeper": {
+      "title": "Kindness Keeper",
+      "emoji": "💛",
+      "meaning": "You practiced empathy, care, or support within the community.",
+      "svg_path": "badges/images/kindness_keeper.svg",
+      "palette": {
+        "base": "#FFE9A8",
+        "border": "#E2B84C",
+        "accent": "#FF8FA8"
+      },
+      "category": "community_character"
+    },
+    "growth_guardian": {
+      "title": "Growth Guardian",
+      "emoji": "🌱✨",
+      "meaning": "You demonstrated ongoing self-development and reflection.",
+      "svg_path": "badges/images/growth_guardian.svg",
+      "palette": {
+        "base": "#C8F4EE",
+        "border": "#4FB7A8",
+        "accent": "#6ED9A8"
+      },
+      "category": "community_character"
+    }
+  },
+  "boundary": {
+    "badges_invite": true,
+    "badges_judge_human_worth": false,
+    "authority": false
+  }
+}
