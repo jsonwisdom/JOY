@@ -1,0 +1,64 @@
+{
+  "artifact": "OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1",
+  "status": "DRAFT_READY",
+  "purpose": "Define the structure for the bounded operator receipt required before initiating READ_ONLY_OBSERVATION.",
+  "authority": false,
+  "live_stream": {
+    "current_state": "LOCKED",
+    "unlock_target": "READ_ONLY_OBSERVATION",
+    "active_live_verification_allowed": false
+  },
+  "required_fields": {
+    "operator_id": {
+      "required": true,
+      "expected_value": "jaywisdom.base.eth"
+    },
+    "preflight_checkpoint_ref": {
+      "required": true,
+      "expected_value": "39f6b0bc56873e6616e494c1aec2e2f35982e3ec"
+    },
+    "closure_receipt_ref": {
+      "required": true,
+      "expected_value": "faf1e214645f67edbfcbfde6ed14802f42901ec3"
+    },
+    "dry_halt_test_result": {
+      "required": true,
+      "allowed_values": ["SUCCESS"]
+    },
+    "rollback_snapshot_ref": {
+      "required": true
+    },
+    "mode_intent": {
+      "required": true,
+      "allowed_values": ["READ_ONLY_OBSERVATION"]
+    },
+    "external_mutation_disabled": {
+      "required": true,
+      "expected_value": true
+    },
+    "no_write_back_to_source": {
+      "required": true,
+      "expected_value": true
+    },
+    "operator_signature": {
+      "required": true,
+      "description": "Hash binding to current preflight state, closure receipt, dry-halt receipt, and rollback snapshot."
+    }
+  },
+  "forbidden_unlock_conditions": [
+    "dry_halt_test_missing",
+    "rollback_snapshot_missing",
+    "mode_intent_not_read_only",
+    "external_mutation_enabled",
+    "write_back_to_source_enabled",
+    "operator_signature_missing",
+    "authority_claim_present"
+  ],
+  "execution_rule": {
+    "schema_only": true,
+    "operator_unlock_receipt_emitted": false,
+    "dry_halt_test_required_before_unlock": true,
+    "rollback_snapshot_required_before_unlock": true,
+    "authority": false
+  }
+}
