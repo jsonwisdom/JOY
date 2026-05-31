@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/schemas/badge_manifest.schema.json",
+  "title": "JOYSPACE Badge Manifest Schema V0.1",
+  "type": "object",
+  "required": ["artifact", "status", "authority", "family_barrier", "badges", "lineage", "boundary"],
+  "additionalProperties": false,
+  "properties": {
+    "artifact": { "const": "JOYSPACE_BADGE_MANIFEST_V0_1" },
+    "status": { "type": "string" },
+    "authority": { "const": false },
+    "family_barrier": { "type": "string" },
+    "badges": {
+      "type": "object",
+      "required": ["seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"],
+      "additionalProperties": false,
+      "properties": {
+        "seed_planter": { "$ref": "#/$defs/badge" },
+        "future_protector": { "$ref": "#/$defs/badge" },
+        "growth_guardian": { "$ref": "#/$defs/badge" },
+        "joy_bringer": { "$ref": "#/$defs/badge" },
+        "kindness_keeper": { "$ref": "#/$defs/badge" }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "required": ["type", "principle", "arcs", "cross_arc_relationship", "guards", "authority"],
+      "properties": {
+        "type": { "const": "relational_map_not_ranking" },
+        "principle": { "type": "string" },
+        "arcs": {
+          "type": "object",
+          "required": ["self_creation_path", "safety_care_path"],
+          "properties": {
+            "self_creation_path": { "type": "array", "items": { "enum": ["seed_planter", "growth_guardian", "joy_bringer"] } },
+            "safety_care_path": { "type": "array", "items": { "enum": ["future_protector", "kindness_keeper"] } }
+          }
+        },
+        "cross_arc_relationship": { "type": "string" },
+        "guards": { "type": "array", "items": { "type": "string" } },
+        "authority": { "const": false }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["badges_invite", "badges_judge_human_worth", "badges_are_levels", "authority"],
+      "properties": {
+        "badges_invite": { "const": true },
+        "badges_judge_human_worth": { "const": false },
+        "badges_are_levels": { "const": false },
+        "authority": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "badge": {
+      "type": "object",
+      "required": ["title", "emoji", "meaning", "svg_path", "palette", "category", "arc", "position", "lineage_role"],
+      "properties": {
+        "title": { "type": "string" },
+        "emoji": { "type": "string" },
+        "meaning": { "type": "string" },
+        "svg_path": { "type": "string", "pattern": "^badges/images/.+\\.svg$" },
+        "palette": { "type": "object", "required": ["base", "border", "accent"] },
+        "category": { "type": "string" },
+        "arc": { "enum": ["self_creation_path", "safety_care_path"] },
+        "position": { "type": "integer", "minimum": 1 },
+        "lineage_role": { "type": "string" }
+      }
+    }
+  }
+}
