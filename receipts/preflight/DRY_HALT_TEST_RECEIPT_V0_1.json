@@ -1,0 +1,34 @@
+{
+  "artifact": "DRY_HALT_TEST_RECEIPT_V0_1",
+  "status": "SIMULATED_RECEIPT",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "claim_boundary": "Simulated halt receipt proves workflow behavior only; real runtime kill-switch readiness is not claimed.",
+  "snapshot_manifest_ref": "04417af28e541d321ca0d5600dac1ddada26aedc",
+  "dry_halt_spec_ref": "71cc13771802ae56323523bee293dc1b3dc89ea4",
+  "simulation_load": "PEAK_SURGE_TEST_LEVEL",
+  "halt_signal_trigger": "SIGTERM_SIMULATED",
+  "measured_latency_ms": 12,
+  "latency_threshold_ms": 50,
+  "process_termination_confirmed": true,
+  "no_partial_write_confirmed": true,
+  "state_recovery_log_generated": true,
+  "post_revert_sanity_check": {
+    "VALIDATOR_READS_RESTORED_STATE": true,
+    "NO_PARTIAL_WRITE_BUFFER_REMAINS": true,
+    "EXPECTED_COMMIT_REFS_MATCH": true,
+    "LIVE_STREAM_REMAINS_LOCKED": true,
+    "AUTHORITY_FALSE_CONFIRMED": true
+  },
+  "required_receipt_lines": [
+    "DRY_HALT_TEST_START",
+    "DRY_HALT_PEAK_SURGE_LOAD_APPLIED",
+    "DRY_HALT_SIGNAL_EMITTED",
+    "DRY_HALT_PROCESS_TERMINATION_CONFIRMED",
+    "DRY_HALT_NO_PARTIAL_WRITE_CONFIRMED",
+    "DRY_HALT_STATE_RECOVERY_LOG_GENERATED",
+    "DRY_HALT_TEST_COMPLETE"
+  ],
+  "operator_unlock_allowed": false,
+  "real_kill_switch_verified": false
+}
