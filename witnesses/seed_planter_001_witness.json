@@ -1,0 +1,10 @@
+{
+  "witness_id": "seed_planter_001_witness",
+  "witness_type": "self",
+  "confirmed": true,
+  "statement": "Observed existence of the Seed Planter proof artifact.",
+  "quality_scored": false,
+  "ranked": false,
+  "graded": false,
+  "authority": false
+}
