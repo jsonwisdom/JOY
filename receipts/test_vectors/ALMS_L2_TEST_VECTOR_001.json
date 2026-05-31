@@ -1,0 +1,33 @@
+{
+  "artifact": "ALMS_L2_TEST_VECTOR_001",
+  "state_schema_version": "v0.1",
+  "transition": {
+    "from": "OBSERVED",
+    "to": "RECEIPT_BACKED",
+    "allowed": true,
+    "requires": [
+      "source_artifact_hash",
+      "receipt_id",
+      "observed_at",
+      "operator_signature_or_commit",
+      "authority_false"
+    ]
+  },
+  "receipt_entry": {
+    "receipt_id": "ALMS-L2-TV-001",
+    "source_artifact_hash": "sha256:930c3052489f8fb4204fa6429045f588a09d9b60",
+    "observed_at": "2026-05-31T23:59:00Z",
+    "operator_signature_or_commit": "930c3052489f8fb4204fa6429045f588a09d9b60",
+    "authority_false": true,
+    "authority": false
+  },
+  "forbidden_transition": {
+    "from": "CLAIM",
+    "to": "VERIFIED_RECEIPT",
+    "allowed": false,
+    "required_intermediate": "RECEIPT_BACKED"
+  },
+  "canonicalization": "RFC8785_JSON",
+  "index_sort": "receipt_id_ASC",
+  "authority": false
+}
