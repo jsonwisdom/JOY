@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-JOYSPACE schema validation runner v0.3
+JOYSPACE schema validation runner v0.4
 
 Validates JOYSPACE JSON artifacts against local schemas.
-Prints explicit counts so sample-scale and production-scale receipts can be distinguished.
+Prints explicit counts so sample-scale, production-scale, and multi-user receipts can be distinguished.
 Authority remains false.
 """
 
@@ -29,6 +29,7 @@ INSTANCES_PER_FAMILY_REQUIRED = 10
 PROOFS_REQUIRED = 50
 WITNESSES_REQUIRED = 50
 AWARDS_REQUIRED = 50
+MULTI_USER_RECIPIENTS_REQUIRED = 5
 
 SCHEMA_FILES = {
     "badge_manifest": ROOT / "schemas" / "badge_manifest.schema.json",
@@ -186,7 +187,22 @@ def count_instances_by_family(proofs: list[dict], witnesses: list[dict], awards:
     return instances
 
 
-def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) -> bool:
+def count_distinct_recipients(proofs: list[dict], awards: list[dict]) -> set[str]:
+    recipients = set()
+    for proof in proofs:
+        submitted_by = proof.get("submitted_by")
+        proof_id = proof.get("proof_id", "")
+        if isinstance(submitted_by, str) and submitted_by and proof_id.startswith("v27_"):
+            recipients.add(submitted_by)
+    for award in awards:
+        recipient = award.get("recipient")
+        award_id = award.get("award_id", "")
+        if isinstance(recipient, str) and recipient and award_id.startswith("v27_"):
+            recipients.add(recipient)
+    return recipients
+
+
+def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) -> tuple[bool, bool]:
     instances_by_family = count_instances_by_family(proofs, witnesses, awards)
     instance_counts = [len(instances_by_family.get(family, set())) for family in sorted(KNOWN_FAMILIES)]
 
@@ -206,6 +222,10 @@ def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) 
         and awards_count >= AWARDS_REQUIRED
     )
 
+    distinct_recipients = count_distinct_recipients(proofs, awards)
+    distinct_recipients_count = len(distinct_recipients)
+    multi_user_proved = distinct_recipients_count >= MULTI_USER_RECIPIENTS_REQUIRED
+
     print(f"families_count: {families_count}")
     print(f"instances_per_family_min: {instances_min}")
     print(f"instances_per_family_max: {instances_max}")
@@ -222,11 +242,14 @@ def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) 
         f"awards>={AWARDS_REQUIRED}"
     )
     print(f"production_scale_result: {'PROVED' if production_scale_proved else 'UNPROVED'}")
-    return production_scale_proved
+    print(f"distinct_recipients_count: {distinct_recipients_count}")
+    print(f"multi_user_threshold: distinct_recipients>={MULTI_USER_RECIPIENTS_REQUIRED}")
+    print(f"multi_user_result: {'PROVED' if multi_user_proved else 'UNPROVED'}")
+    return production_scale_proved, multi_user_proved
 
 
 def main() -> int:
-    print("JOYSPACE_SCHEMA_AUDIT_V0_3")
+    print("JOYSPACE_SCHEMA_AUDIT_V0_4")
     print("authority:false")
 
     ok = check_required_files()
@@ -238,7 +261,16 @@ def main() -> int:
     ok = proofs_ok and witnesses_ok and awards_ok and ok
     ok = check_cross_reference(proofs, witnesses, awards) and ok
 
-    production_scale_proved = print_counts(proofs, witnesses, awards)
+    production_scale_proved, multi_user_proved = print_counts(proofs, witnesses, awards)
+
+    if ok and multi_user_proved:
+        print("RESULT: PASS_MULTI_USER_DRY_RUN")
+        print("schema_layer: PROVED_FOR_EXISTING_JSON_ARTIFACTS")
+        print("proof_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("witness_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("award_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("feeds: NOT_CLAIMED")
+        return 0
 
     if ok and production_scale_proved:
         print("RESULT: PASS_PRODUCTION_SCALE")
