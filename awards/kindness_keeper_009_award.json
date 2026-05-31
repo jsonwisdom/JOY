@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "kindness_keeper_009_award",
+  "badge_id": "kindness_keeper",
+  "recipient": "jaywisdom",
+  "awarded_at": "2026-06-01T14:09:00Z",
+  "proof_id": "kindness_keeper_009",
+  "witness": {
+    "witness_type": "friend",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Validation #26 kindness_keeper batch instance 009 recorded.",
+  "privacy": "shareable",
+  "authority": false
+}

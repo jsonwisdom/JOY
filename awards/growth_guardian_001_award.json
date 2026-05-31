@@ -3,7 +3,7 @@
   "award_id": "growth_guardian_001_award",
   "badge_id": "growth_guardian",
   "recipient": "jaywisdom",
-  "awarded_at": "2026-05-31T20:10:00Z",
+  "awarded_at": "2026-06-01T13:21:00Z",
   "proof_id": "growth_guardian_001",
   "witness": {
     "witness_type": "self",
@@ -12,7 +12,7 @@
     "ranked": false,
     "authority": false
   },
-  "celebration_note": "Growth recorded. JoySpace improved through honest iteration.",
-  "privacy": "family-only",
+  "celebration_note": "Validation #26 growth_guardian batch instance 001 recorded.",
+  "privacy": "shareable",
   "authority": false
 }

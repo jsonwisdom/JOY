@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "future_protector_007_award",
+  "badge_id": "future_protector",
+  "recipient": "jaywisdom",
+  "awarded_at": "2026-06-01T13:07:00Z",
+  "proof_id": "future_protector_007",
+  "witness": {
+    "witness_type": "community",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Validation #26 future_protector batch instance 007 recorded.",
+  "privacy": "shareable",
+  "authority": false
+}

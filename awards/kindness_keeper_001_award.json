@@ -3,7 +3,7 @@
   "award_id": "kindness_keeper_001_award",
   "badge_id": "kindness_keeper",
   "recipient": "jaywisdom",
-  "awarded_at": "2026-05-31T20:30:00Z",
+  "awarded_at": "2026-06-01T14:01:00Z",
   "proof_id": "kindness_keeper_001",
   "witness": {
     "witness_type": "self",
@@ -12,7 +12,7 @@
     "ranked": false,
     "authority": false
   },
-  "celebration_note": "Kindness recorded. Care exists.",
-  "privacy": "family-only",
+  "celebration_note": "Validation #26 kindness_keeper batch instance 001 recorded.",
+  "privacy": "shareable",
   "authority": false
 }

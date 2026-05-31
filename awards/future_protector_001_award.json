@@ -3,7 +3,7 @@
   "award_id": "future_protector_001_award",
   "badge_id": "future_protector",
   "recipient": "jaywisdom",
-  "awarded_at": "2026-05-31T20:00:00Z",
+  "awarded_at": "2026-06-01T13:01:00Z",
   "proof_id": "future_protector_001",
   "witness": {
     "witness_type": "self",
@@ -12,7 +12,7 @@
     "ranked": false,
     "authority": false
   },
-  "celebration_note": "Safety gate planted. Future protection exists without ranking or authority.",
-  "privacy": "family-only",
+  "celebration_note": "Validation #26 future_protector batch instance 001 recorded.",
+  "privacy": "shareable",
   "authority": false
 }

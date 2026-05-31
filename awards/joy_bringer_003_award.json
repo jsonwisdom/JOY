@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "joy_bringer_003_award",
+  "badge_id": "joy_bringer",
+  "recipient": "jaywisdom",
+  "awarded_at": "2026-06-01T13:43:00Z",
+  "proof_id": "joy_bringer_003",
+  "witness": {
+    "witness_type": "mentor",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Validation #26 joy_bringer batch instance 003 recorded.",
+  "privacy": "shareable",
+  "authority": false
+}
