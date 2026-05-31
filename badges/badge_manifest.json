@@ -14,7 +14,10 @@
         "border": "#4BAF7A",
         "accent": "#5CCB8A"
       },
-      "category": "core_quest"
+      "category": "core_quest",
+      "arc": "self_creation_path",
+      "position": 1,
+      "lineage_role": "identity_begins"
     },
     "future_protector": {
       "title": "Future Protector",
@@ -26,7 +29,10 @@
         "border": "#3C7FD9",
         "accent": "#4F7FE8"
       },
-      "category": "core_quest"
+      "category": "core_quest",
+      "arc": "safety_care_path",
+      "position": 1,
+      "lineage_role": "safety_is_sovereignty"
     },
     "joy_bringer": {
       "title": "Joy Bringer",
@@ -38,7 +44,10 @@
         "border": "#9B7CE3",
         "accent": "rainbow"
       },
-      "category": "community_character"
+      "category": "community_character",
+      "arc": "self_creation_path",
+      "position": 3,
+      "lineage_role": "identity_radiates"
     },
     "kindness_keeper": {
       "title": "Kindness Keeper",
@@ -50,7 +59,10 @@
         "border": "#E2B84C",
         "accent": "#FF8FA8"
       },
-      "category": "community_character"
+      "category": "community_character",
+      "arc": "safety_care_path",
+      "position": 2,
+      "lineage_role": "safety_becomes_care"
     },
     "growth_guardian": {
       "title": "Growth Guardian",
@@ -62,12 +74,39 @@
         "border": "#4FB7A8",
         "accent": "#6ED9A8"
       },
-      "category": "community_character"
+      "category": "community_character",
+      "arc": "self_creation_path",
+      "position": 2,
+      "lineage_role": "identity_deepens"
     }
+  },
+  "lineage": {
+    "type": "relational_map_not_ranking",
+    "principle": "Badges invite. Badges encourage. Badges celebrate. Authority remains false.",
+    "arcs": {
+      "self_creation_path": [
+        "seed_planter",
+        "growth_guardian",
+        "joy_bringer"
+      ],
+      "safety_care_path": [
+        "future_protector",
+        "kindness_keeper"
+      ]
+    },
+    "cross_arc_relationship": "A safe self can safely shine.",
+    "guards": [
+      "Without Future Protector, Joy Bringer becomes risky.",
+      "Without Growth Guardian, Kindness Keeper can become self-erasing.",
+      "Without Seed Planter, none of it has a root.",
+      "Without Kindness Keeper, the system lacks warmth."
+    ],
+    "authority": false
   },
   "boundary": {
     "badges_invite": true,
     "badges_judge_human_worth": false,
+    "badges_are_levels": false,
     "authority": false
   }
 }
