@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "v27_joy_user_alpha_seed_planter_001_award",
+  "badge_id": "seed_planter",
+  "recipient": "joy_user_alpha",
+  "awarded_at": "2026-05-31T23:41:00Z",
+  "proof_id": "v27_joy_user_alpha_seed_planter_001",
+  "witness": {
+    "witness_type": "self",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Validation #27 multi-user dry-run award for joy_user_alpha in seed_planter.",
+  "privacy": "private",
+  "authority": false
+}

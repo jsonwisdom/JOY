@@ -1,0 +1,18 @@
+{
+  "artifact": "JOYSPACE_BADGE_AWARD_RECORD_V0_1",
+  "award_id": "v27_joy_user_delta_joy_bringer_004_award",
+  "badge_id": "joy_bringer",
+  "recipient": "joy_user_delta",
+  "awarded_at": "2026-05-31T23:44:00Z",
+  "proof_id": "v27_joy_user_delta_joy_bringer_004",
+  "witness": {
+    "witness_type": "family",
+    "confirmed": true,
+    "quality_scored": false,
+    "ranked": false,
+    "authority": false
+  },
+  "celebration_note": "Validation #27 multi-user dry-run award for joy_user_delta in joy_bringer.",
+  "privacy": "shareable",
+  "authority": false
+}
