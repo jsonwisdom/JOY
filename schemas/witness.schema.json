@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/schemas/witness.schema.json",
+  "title": "JOYSPACE Witness Schema V0.1",
+  "type": "object",
+  "required": ["witness_type", "confirmed", "statement", "quality_scored", "ranked", "authority"],
+  "additionalProperties": false,
+  "properties": {
+    "witness_id": { "type": "string" },
+    "witness_type": { "enum": ["self", "friend", "mentor", "family", "teacher", "guide", "community"] },
+    "confirmed": { "const": true },
+    "statement": { "type": "string", "minLength": 1 },
+    "quality_scored": { "const": false },
+    "ranked": { "const": false },
+    "graded": { "const": false },
+    "authority": { "const": false }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["score"] },
+      { "required": ["rank"] },
+      { "required": ["grade"] },
+      { "required": ["quality_score"] }
+    ]
+  }
+}
