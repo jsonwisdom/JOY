@@ -1,0 +1,58 @@
+{
+  "artifact": "DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT_V0_1",
+  "status": "DRAFT_READY",
+  "scenario": "CROSS_LANE_PULSE_ATTACK",
+  "authority": false,
+  "live_stream_allowed": false,
+  "pass_claim_allowed": false,
+  "required_receipts": [
+    {
+      "id": "SENSITIVITY_PROFILE_LOADED",
+      "line": "DELTA_2_SENSITIVITY_PROFILE_LOADED",
+      "required_state": "Loaded",
+      "verification_logic": "Hash match against DRY_RUN_SENSITIVITY_PROFILE_V0_1"
+    },
+    {
+      "id": "NORMAL_WINDOW_APPLIED",
+      "line": "DELTA_2_NORMAL_WINDOW_APPLIED",
+      "required_state": "Active",
+      "verification_logic": "Correlation window equals 5m"
+    },
+    {
+      "id": "ELEVATED_WINDOW_APPLIED",
+      "line": "DELTA_2_ELEVATED_WINDOW_APPLIED",
+      "required_state": "Active",
+      "verification_logic": "Correlation window equals 15m"
+    },
+    {
+      "id": "SURGE_WINDOW_APPLIED",
+      "line": "DELTA_2_SURGE_WINDOW_APPLIED",
+      "required_state": "Active",
+      "verification_logic": "Correlation window equals 60m"
+    },
+    {
+      "id": "SATURATION_BACKPRESSURE_APPLIED",
+      "line": "DELTA_2_SATURATION_BACKPRESSURE_APPLIED",
+      "required_state": "Active",
+      "verification_logic": "Validator pause confirmed at n >= 25 cross-lane events"
+    },
+    {
+      "id": "IDENTITY_BOUNDARIES_PRESERVED",
+      "line": "DELTA_2_IDENTITY_BOUNDARIES_PRESERVED",
+      "required_state": "Persistent",
+      "verification_logic": "Zero cross-lane or cross-repository identity merge signatures"
+    },
+    {
+      "id": "CONTROLLED_DRY_RUN_COMPLETE",
+      "line": "DELTA_2_CONTROLLED_DRY_RUN_COMPLETE",
+      "required_state": "Terminated",
+      "verification_logic": "All clusters evaluated against cluster-close criteria"
+    }
+  ],
+  "audit_rule": {
+    "workflow_receipt_required": true,
+    "all_required_receipts_required": true,
+    "order_sensitive": true,
+    "authority": false
+  }
+}
