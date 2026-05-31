@@ -1,0 +1,62 @@
+{
+  "artifact": "SNAPSHOT_MANIFEST_SPEC_V0_1",
+  "version": "1.0",
+  "status": "DRAFT_READY",
+  "purpose": "Define state capture and integrity validation criteria for post-halt recovery before READ_ONLY_OBSERVATION.",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "storage_policy": {
+    "target_buffer": "COLD_STORAGE_IMMUTABLE_ROOT",
+    "access_pattern": "APPEND_ONLY",
+    "isolation_protocol": "AIR_GAPPED_FROM_LIVE_BRANCHES",
+    "write_to_source_repositories_during_snapshot": false,
+    "external_mutation_allowed": false
+  },
+  "manifest_structure": {
+    "header": [
+      "timestamp",
+      "snapshot_id",
+      "preflight_commit_ref"
+    ],
+    "payload": [
+      "state_vector",
+      "hash_tree_root"
+    ],
+    "footer": [
+      "operator_signature_hash"
+    ]
+  },
+  "required_snapshot_fields": [
+    "repo_full_name",
+    "branch",
+    "commit_sha",
+    "tree_sha_or_manifest_hash",
+    "captured_at",
+    "validator_version",
+    "preflight_checkpoint_ref",
+    "delta_2_closure_receipt_ref",
+    "operator_id",
+    "read_only_mode_confirmed"
+  ],
+  "recovery_sequence": [
+    "VERIFY_MANIFEST_HASH",
+    "PURGE_ACTIVE_UNCOMMITTED_BUFFER",
+    "REVERT_TO_HASH_TREE_STATE",
+    "POST_REVERT_SANITY_CHECK",
+    "EMIT_RECOVERY_RECEIPT"
+  ],
+  "post_revert_sanity_checks": [
+    "VALIDATOR_READS_RESTORED_STATE",
+    "NO_PARTIAL_WRITE_BUFFER_REMAINS",
+    "EXPECTED_COMMIT_REFS_MATCH",
+    "LIVE_STREAM_REMAINS_LOCKED",
+    "AUTHORITY_FALSE_CONFIRMED"
+  ],
+  "rule": "Rollback is not complete until the restored state is readable, hash-matched, and authority:false remains intact.",
+  "execution_rule": {
+    "snapshot_manifest_required_before_unlock": true,
+    "post_revert_sanity_check_required": true,
+    "operator_unlock_allowed_before_snapshot": false,
+    "authority": false
+  }
+}
