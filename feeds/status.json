@@ -1,0 +1,33 @@
+{
+  "artifact": "JOYSPACE_STATUS_FEED_V0_1",
+  "updated_at": "2026-05-31T19:45:00Z",
+  "source": "status.html",
+  "authority": false,
+  "status": {
+    "website_hosting": "PROVED",
+    "criteria_layer": "PROVED",
+    "svg_layer": "PROVED",
+    "manifest_layer": "PROVED",
+    "schema_layer": "PROVED",
+    "proof_execution": "PROVED_FOR_SAMPLE_INSTANCE",
+    "witness_execution": "PROVED_FOR_SAMPLE_INSTANCE",
+    "award_execution": "PROVED_FOR_SAMPLE_INSTANCE",
+    "end_to_end_badge_execution": "PROVED_FOR_SAMPLE_SEED_PLANTER_FLOW",
+    "feeds": "EXISTS_PENDING_PAGES_PROOF",
+    "production_scale": "UNPROVED",
+    "multi_user_operation": "UNPROVED"
+  },
+  "evidence": {
+    "validation_workflow": "JoySpace Validation #6",
+    "validation_commit": "045ccdbd02100adaa48b7cca0a2ef4ecfbbbc773",
+    "sample_proof": "proofs/seed_planter_001.json",
+    "sample_witness": "witnesses/seed_planter_001_witness.json",
+    "sample_award": "awards/seed_planter_001_award.json"
+  },
+  "doctrine": {
+    "badges_invite": true,
+    "badges_judge_human_worth": false,
+    "badges_are_levels": false,
+    "authority": false
+  }
+}
