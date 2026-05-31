@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>JoySpace Status Feed</title>
+    <link>https://jsonwisdom.github.io/JOY/status.html</link>
+    <description>Read-only JoySpace audit status feed. Authority remains false.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 May 2026 19:50:00 GMT</lastBuildDate>
+    <item>
+      <title>Seed Planter sample badge flow proved</title>
+      <link>https://jsonwisdom.github.io/JOY/status.html</link>
+      <guid>joyspace-seed-planter-sample-flow-v0-1</guid>
+      <pubDate>Sun, 31 May 2026 19:50:00 GMT</pubDate>
+      <description>JoySpace Validation #6 passed for the sample Seed Planter proof, witness, and award chain. Feeds are newly added and pending Pages proof. Authority remains false.</description>
+    </item>
+    <item>
+      <title>JoySpace documented stack proved through schema validation</title>
+      <link>https://jsonwisdom.github.io/JOY/status.html</link>
+      <guid>joyspace-schema-validation-v0-1</guid>
+      <pubDate>Sun, 31 May 2026 19:45:00 GMT</pubDate>
+      <description>Website, criteria, SVG assets, manifest, and schemas are proved for the current repo state. Production-scale operation remains unproved. Authority remains false.</description>
+    </item>
+  </channel>
+</rss>
