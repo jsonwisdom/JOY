@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/schemas/proof.schema.json",
+  "title": "JOYSPACE Proof Schema V0.1",
+  "type": "object",
+  "required": ["proof_id", "badge_id", "type", "submitted_by", "timestamp", "content", "authority"],
+  "additionalProperties": false,
+  "properties": {
+    "proof_id": { "type": "string", "minLength": 1 },
+    "badge_id": { "enum": ["seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"] },
+    "type": { "enum": ["reflection", "screenshot", "drawing", "commit", "trusted_witness", "photo", "journal_entry"] },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "content": { "type": "string", "minLength": 1 },
+    "privacy": { "enum": ["private", "family-only", "shareable"] },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "statement": { "type": "string" },
+        "confirmed": { "type": "boolean" },
+        "quality_scored": { "const": false },
+        "ranked": { "const": false },
+        "authority": { "const": false }
+      }
+    },
+    "authority": { "const": false }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["score"] },
+      { "required": ["rank"] },
+      { "required": ["grade"] },
+      { "required": ["quality_score"] }
+    ]
+  }
+}
