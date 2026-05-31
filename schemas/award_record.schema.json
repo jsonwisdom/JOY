@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/schemas/award_record.schema.json",
+  "title": "JOYSPACE Award Record Schema V0.1",
+  "type": "object",
+  "required": ["award_id", "badge_id", "proof_id", "awarded_at", "authority"],
+  "additionalProperties": false,
+  "properties": {
+    "award_id": { "type": "string" },
+    "badge_id": { "enum": ["seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"] },
+    "proof_id": { "type": "string" },
+    "witness_id": { "type": "string" },
+    "awarded_at": { "type": "string", "format": "date-time" },
+    "celebration": { "type": "string" },
+    "authority": { "const": false }
+  }
+}
