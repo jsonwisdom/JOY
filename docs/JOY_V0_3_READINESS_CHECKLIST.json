@@ -1,0 +1,64 @@
+{
+  "artifact": "JOY_V0_3_READINESS_CHECKLIST_V0_1",
+  "status": "DRAFT_READY",
+  "authority": false,
+  "feeds": "NOT_CLAIMED",
+  "existing_receipts": "PRESERVED",
+  "no_silent_promotion": true,
+  "prior_locked_validations": {
+    "validation_26": "PASS_PRODUCTION_SCALE",
+    "validation_27": "PASS_MULTI_USER_DRY_RUN"
+  },
+  "required_sections": [
+    {
+      "id": "constitutional_delta_review",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "validator_extension_surface",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "artifact_schema_evolution",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "backward_compatibility_existing_166_json",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "v0_2_regression_test_matrix",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "v0_3_greenfield_test_matrix",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "migration_plan",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "v0_3_lock_criteria",
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "explicit_non_claims",
+      "required": true,
+      "status": "OPEN"
+    }
+  ],
+  "v0_3_proved_requires": {
+    "all_required_sections_closed": true,
+    "workflow_receipt_required": true,
+    "authority": false
+  }
+}
