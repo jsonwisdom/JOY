@@ -1,40 +1,20 @@
-name: Deploy JoySpace to GitHub Pages
+name: JoySpace Pages Notice
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  notice:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Explain Pages setup
+        run: |
+          echo "JoySpace index.html exists at repo root."
+          echo "To publish the website, enable GitHub Pages manually once:"
+          echo "Repo Settings -> Pages -> Build and deployment -> Source: Deploy from a branch"
+          echo "Branch: main / root -> Save"
+          echo "Then open https://jsonwisdom.github.io/JOY/"
+          echo "Authority remains false."
