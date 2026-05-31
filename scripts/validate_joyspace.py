@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-JOYSPACE schema validation runner v0.2
+JOYSPACE schema validation runner v0.3
 
 Validates JOYSPACE JSON artifacts against local schemas.
-This proves structure and sample proof/witness/award linkage only.
-It does not prove feeds or a production badge application.
+Prints explicit counts so sample-scale and production-scale receipts can be distinguished.
 Authority remains false.
 """
 
 from __future__ import annotations
 
 import json
+import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 try:
@@ -22,6 +23,12 @@ except ImportError as exc:
     raise SystemExit(2) from exc
 
 ROOT = Path(__file__).resolve().parents[1]
+
+FAMILIES_REQUIRED = 5
+INSTANCES_PER_FAMILY_REQUIRED = 10
+PROOFS_REQUIRED = 50
+WITNESSES_REQUIRED = 50
+AWARDS_REQUIRED = 50
 
 SCHEMA_FILES = {
     "badge_manifest": ROOT / "schemas" / "badge_manifest.schema.json",
@@ -48,6 +55,8 @@ REQUIRED_FILES = [
     ROOT / "badges" / "images" / "joy_bringer.svg",
     ROOT / "badges" / "images" / "kindness_keeper.svg",
 ]
+
+KNOWN_FAMILIES = {"seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"}
 
 
 def load_json(path: Path) -> dict:
@@ -122,7 +131,6 @@ def check_cross_reference(proofs: list[dict], witnesses: list[dict], awards: lis
             print(f"FAIL cross-reference: award {award.get('award_id')} witness authority is not false")
             ok = False
 
-    # Witness files are currently standalone confirmations; at least one must exist.
     if not witness_ids:
         print("FAIL cross-reference: no witness records found")
         ok = False
@@ -132,8 +140,93 @@ def check_cross_reference(proofs: list[dict], witnesses: list[dict], awards: lis
     return ok
 
 
+def family_from_record(record: dict) -> str | None:
+    badge_id = record.get("badge_id")
+    if badge_id in KNOWN_FAMILIES:
+        return badge_id
+
+    for key in ("proof_id", "witness_id", "award_id"):
+        value = record.get(key)
+        if not isinstance(value, str):
+            continue
+        for family in KNOWN_FAMILIES:
+            if value.startswith(f"{family}_"):
+                return family
+    return None
+
+
+def instance_key_from_id(value: str | None) -> str | None:
+    if not value:
+        return None
+    cleaned = re.sub(r"_witness$|_award$", "", value)
+    return cleaned
+
+
+def count_instances_by_family(proofs: list[dict], witnesses: list[dict], awards: list[dict]) -> dict[str, set[str]]:
+    instances: dict[str, set[str]] = defaultdict(set)
+
+    for proof in proofs:
+        family = family_from_record(proof)
+        key = instance_key_from_id(proof.get("proof_id"))
+        if family and key:
+            instances[family].add(key)
+
+    for witness in witnesses:
+        family = family_from_record(witness)
+        key = instance_key_from_id(witness.get("witness_id"))
+        if family and key:
+            instances[family].add(key)
+
+    for award in awards:
+        family = family_from_record(award)
+        key = instance_key_from_id(award.get("award_id"))
+        if family and key:
+            instances[family].add(key)
+
+    return instances
+
+
+def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) -> bool:
+    instances_by_family = count_instances_by_family(proofs, witnesses, awards)
+    instance_counts = [len(instances_by_family.get(family, set())) for family in sorted(KNOWN_FAMILIES)]
+
+    families_count = sum(1 for count in instance_counts if count > 0)
+    instances_min = min(instance_counts) if instance_counts else 0
+    instances_max = max(instance_counts) if instance_counts else 0
+    proofs_count = len(proofs)
+    witnesses_count = len(witnesses)
+    awards_count = len(awards)
+    total_json_artifacts = len(ARTIFACTS) + proofs_count + witnesses_count + awards_count
+
+    production_scale_proved = (
+        families_count >= FAMILIES_REQUIRED
+        and instances_min >= INSTANCES_PER_FAMILY_REQUIRED
+        and proofs_count >= PROOFS_REQUIRED
+        and witnesses_count >= WITNESSES_REQUIRED
+        and awards_count >= AWARDS_REQUIRED
+    )
+
+    print(f"families_count: {families_count}")
+    print(f"instances_per_family_min: {instances_min}")
+    print(f"instances_per_family_max: {instances_max}")
+    print(f"proofs_count: {proofs_count}")
+    print(f"witnesses_count: {witnesses_count}")
+    print(f"awards_count: {awards_count}")
+    print(f"total_json_artifacts: {total_json_artifacts}")
+    print(
+        "production_scale_threshold: "
+        f"families>={FAMILIES_REQUIRED}; "
+        f"instances_per_family>={INSTANCES_PER_FAMILY_REQUIRED}; "
+        f"proofs>={PROOFS_REQUIRED}; "
+        f"witnesses>={WITNESSES_REQUIRED}; "
+        f"awards>={AWARDS_REQUIRED}"
+    )
+    print(f"production_scale_result: {'PROVED' if production_scale_proved else 'UNPROVED'}")
+    return production_scale_proved
+
+
 def main() -> int:
-    print("JOYSPACE_SCHEMA_AUDIT_V0_1")
+    print("JOYSPACE_SCHEMA_AUDIT_V0_3")
     print("authority:false")
 
     ok = check_required_files()
@@ -145,18 +238,29 @@ def main() -> int:
     ok = proofs_ok and witnesses_ok and awards_ok and ok
     ok = check_cross_reference(proofs, witnesses, awards) and ok
 
-    if ok:
-        print("RESULT: PASS")
+    production_scale_proved = print_counts(proofs, witnesses, awards)
+
+    if ok and production_scale_proved:
+        print("RESULT: PASS_PRODUCTION_SCALE")
         print("schema_layer: PROVED_FOR_EXISTING_JSON_ARTIFACTS")
-        print("proof_execution: PROVED_FOR_SAMPLE_INSTANCE")
-        print("witness_execution: PROVED_FOR_SAMPLE_INSTANCE")
-        print("award_execution: PROVED_FOR_SAMPLE_INSTANCE")
-        print("end_to_end_badge_execution: PROVED_FOR_SAMPLE_SEED_PLANTER_FLOW")
-        print("feeds: PENDING")
+        print("proof_execution: PROVED_FOR_BATCH_INSTANCES")
+        print("witness_execution: PROVED_FOR_BATCH_INSTANCES")
+        print("award_execution: PROVED_FOR_BATCH_INSTANCES")
+        print("feeds: NOT_CLAIMED")
+        return 0
+
+    if ok:
+        print("RESULT: PASS_SAMPLE_SCALE")
+        print("schema_layer: PROVED_FOR_EXISTING_JSON_ARTIFACTS")
+        print("proof_execution: PROVED_FOR_EXISTING_INSTANCES")
+        print("witness_execution: PROVED_FOR_EXISTING_INSTANCES")
+        print("award_execution: PROVED_FOR_EXISTING_INSTANCES")
+        print("feeds: NOT_CLAIMED")
         return 0
 
     print("RESULT: FAIL")
     print("schema_layer: PARTIAL")
+    print("feeds: NOT_CLAIMED")
     return 1
 
 
