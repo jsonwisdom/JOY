@@ -1,0 +1,73 @@
+{
+  "artifact": "JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT_V0_1",
+  "delta": "DUAL_READ_VERSION_MIGRATION",
+  "status": "DRAFT_READY",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "existing_receipts": "PRESERVED",
+    "schema_mutation_allowed": false,
+    "no_silent_promotion": true
+  },
+  "workflow": {
+    "name": "JoySpace Validation",
+    "branch": "main",
+    "repo": "jsonwisdom/JOY"
+  },
+  "expected_receipt_lines": [
+    "DELTA_1_DUAL_READ_VALIDATION_START",
+    "DELTA_1_V0_2_FIXTURE_PASSED",
+    "DELTA_1_V0_3_FIXTURE_PASSED",
+    "DELTA_1_MIXED_BATCH_FIXTURE_PASSED",
+    "DELTA_1_DUAL_READ_VALIDATION_COMPLETE"
+  ],
+  "emission_contract": {
+    "DELTA_1_DUAL_READ_VALIDATION_START": {
+      "emitted_after": [],
+      "requires_fixtures": [],
+      "authority": false
+    },
+    "DELTA_1_V0_2_FIXTURE_PASSED": {
+      "emitted_after": ["DELTA_1_DUAL_READ_VALIDATION_START"],
+      "requires_fixtures": ["v0_2_acceptance_fixture"],
+      "authority": false
+    },
+    "DELTA_1_V0_3_FIXTURE_PASSED": {
+      "emitted_after": [
+        "DELTA_1_DUAL_READ_VALIDATION_START",
+        "DELTA_1_V0_2_FIXTURE_PASSED"
+      ],
+      "requires_fixtures": ["v0_3_acceptance_fixture"],
+      "authority": false
+    },
+    "DELTA_1_MIXED_BATCH_FIXTURE_PASSED": {
+      "emitted_after": [
+        "DELTA_1_DUAL_READ_VALIDATION_START",
+        "DELTA_1_V0_2_FIXTURE_PASSED",
+        "DELTA_1_V0_3_FIXTURE_PASSED"
+      ],
+      "requires_fixtures": ["mixed_version_batch_fixture"],
+      "authority": false
+    },
+    "DELTA_1_DUAL_READ_VALIDATION_COMPLETE": {
+      "emitted_after": [
+        "DELTA_1_V0_2_FIXTURE_PASSED",
+        "DELTA_1_V0_3_FIXTURE_PASSED",
+        "DELTA_1_MIXED_BATCH_FIXTURE_PASSED"
+      ],
+      "requires_fixtures": [
+        "v0_2_acceptance_fixture",
+        "v0_3_acceptance_fixture",
+        "mixed_version_batch_fixture"
+      ],
+      "authority": false
+    }
+  },
+  "v0_3_delta_1_proved_requires": {
+    "all_expected_receipt_lines_emitted": true,
+    "order_respected": true,
+    "validator_extension_active": true,
+    "fixtures_executed": true,
+    "authority": false
+  }
+}
