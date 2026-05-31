@@ -1,0 +1,60 @@
+{
+  "artifact": "REAL_RUNTIME_HALT_LOG_V0_1",
+  "status": "PASSED",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "operator_unlock": "LOCKED",
+  "workflow": {
+    "name": "Real Runtime Halt Verification",
+    "file": ".github/workflows/real-runtime-halt.yml",
+    "trigger": "workflow_dispatch",
+    "commit": "7689154e04745b0196ee7bfee3a09e11e837c0ff",
+    "run_id": "26727030489",
+    "run_attempt": 1,
+    "runner_version": "2.334.0",
+    "runner_image": "ubuntu-24.04",
+    "runner_image_version": "20260525.161.1",
+    "azure_region": "westus"
+  },
+  "runtime_telemetry": {
+    "runtime_environment_id": "github-actions:ubuntu-24.04:26727030489:1",
+    "process_id_or_job_id": "2073",
+    "halt_signal": "SIGTERM",
+    "halt_signal_timestamp_ns": "1780268552736675103",
+    "termination_timestamp_ns": "1780268552748136729",
+    "measured_latency_ms": 11,
+    "latency_threshold_ms": 50
+  },
+  "receipt_lines_observed": [
+    "REAL_RUNTIME_HALT_TEST_START",
+    "REAL_RUNTIME_HALT_SIGNAL_EMITTED",
+    "REAL_RUNTIME_HALT_TERMINATION_CONFIRMED",
+    "REAL_RUNTIME_HALT_LATENCY_RECORDED",
+    "REAL_RUNTIME_NO_PARTIAL_WRITE_CONFIRMED",
+    "REAL_RUNTIME_POST_REVERT_SANITY_CHECK_PASSED",
+    "REAL_RUNTIME_HALT_TEST_COMPLETE",
+    "REAL_RUNTIME_HALT_LOG_V0_1"
+  ],
+  "integrity_checks": {
+    "measured_latency_ms_lte_50": true,
+    "process_termination_confirmed": true,
+    "partial_write_scan_result": "CONTROLLED_BUFFER_ONLY",
+    "partial_write_detected": false,
+    "state_recovery_verified": true,
+    "post_revert_sanity_check_passed": true,
+    "live_stream_remains_locked": true,
+    "authority_false_confirmed": true
+  },
+  "source_log_excerpt": {
+    "process_id_or_job_id": "2073",
+    "runtime_environment_id": "github-actions:ubuntu-24.04:26727030489:1",
+    "measured_latency_ms": 11,
+    "latency_threshold_ms": 50,
+    "partial_write_scan_result": "CONTROLLED_BUFFER_ONLY",
+    "state_recovery_verified": true,
+    "live_stream": "LOCKED",
+    "authority": false
+  },
+  "claim_boundary": "This receipt proves controlled runtime halt behavior in the GitHub Actions ubuntu-24.04 workflow environment. It does not open the live stream and does not by itself emit an operator unlock receipt.",
+  "pass_condition": "measured_latency_ms <= 50 AND partial_write_detected == false AND state_recovery_verified == true AND live_stream == LOCKED AND authority == false"
+}
