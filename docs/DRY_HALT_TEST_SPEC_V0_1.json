@@ -1,0 +1,52 @@
+{
+  "artifact": "DRY_HALT_TEST_SPEC_V0_1",
+  "status": "DRAFT_READY",
+  "purpose": "Define parameters and success criteria for verifying the kill-switch mechanism before any live stream transition.",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "claim_status": "DESIGN_READY_NOT_PROVED",
+  "stress_parameters": {
+    "simulation_load": "PEAK_SURGE_TEST_LEVEL",
+    "minimum_events": 25,
+    "repositories_min": 2,
+    "asset_classes_min": 3,
+    "same_payload_hash_required": true,
+    "pressure_mode": "SATURATION",
+    "halt_signal_trigger": "SIGTERM_SIMULATED",
+    "maximum_latency_threshold": "50ms",
+    "write_guard": "NO_PARTIAL_WRITE_OR_STATE_LEAK",
+    "receipt_guard": "HALT_TIMESTAMP_REQUIRED"
+  },
+  "success_criteria": [
+    "PROCESS_TERMINATION_CONFIRMED",
+    "NO_PENDING_COMMIT_LEAKAGE",
+    "STATE_RECOVERY_LOG_GENERATED",
+    "RECEIPT_STREAM_HALT_TIMESTAMP_BOUNDED",
+    "NO_PARTIAL_WRITE_OR_STATE_LEAK",
+    "LIVE_STREAM_REMAINS_LOCKED"
+  ],
+  "failure_conditions": [
+    "HALT_LATENCY_EXCEEDS_50MS",
+    "PARTIAL_WRITE_DETECTED",
+    "STATE_LEAK_DETECTED",
+    "MISSING_HALT_TIMESTAMP",
+    "PROCESS_CONTINUES_AFTER_HALT_SIGNAL",
+    "LIVE_STREAM_UNLOCKED_DURING_TEST"
+  ],
+  "required_receipt_lines": [
+    "DRY_HALT_TEST_START",
+    "DRY_HALT_PEAK_SURGE_LOAD_APPLIED",
+    "DRY_HALT_SIGNAL_EMITTED",
+    "DRY_HALT_PROCESS_TERMINATION_CONFIRMED",
+    "DRY_HALT_NO_PARTIAL_WRITE_CONFIRMED",
+    "DRY_HALT_STATE_RECOVERY_LOG_GENERATED",
+    "DRY_HALT_TEST_COMPLETE"
+  ],
+  "execution_rule": {
+    "workflow_receipt_required": true,
+    "measured_latency_required": true,
+    "kill_switch_claim_allowed_before_receipt": false,
+    "operator_unlock_allowed_before_success": false,
+    "authority": false
+  }
+}
