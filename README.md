@@ -1,40 +1,108 @@
-# JOY 🌈🧾🎮
+# JOYSPACE 🌈🧾
 
-**JOY** is a family-safe witness, game layer, and continuity layer for Wisdom Replay Systems.
+**JOYSPACE** is a family-safe digital garden, witness layer, and continuity layer for Wisdom Replay Systems.
 
 It began as a 2026 Gen Z JoySpace page and now opens as a family-business memory surface for the full Wisdom Family.
 
 **Role:** Witness Layer  
 **Family Business:** Wisdom Replay Systems  
-**Layer:** JOY / Living Ledger / Family Continuity / Game Night  
+**Layer:** JoySpace / Living Ledger / Family Continuity / Game Night  
 **Motto:** The future should feel exciting, not frightening.
 
 ---
 
-## JOY JOY JOY Stick Controls 🎮
+## What JoySpace Is 🌈
 
-The JOYstick is the simple control surface for the repo.
+JoySpace is the open, welcoming surface of JOY.
 
-It helps the family choose the next safe action without turning the system into command-and-control.
+It helps family members and new builders:
+
+- start small
+- stay safe
+- build creatively
+- preserve memory
+- earn gentle badges
+- celebrate growth
+- keep the joy
+
+JoySpace is not command-and-control.
+
+JoySpace is a garden.
 
 ```text
-UP       -> Grow
-DOWN     -> Rest
-LEFT     -> Reflect
-RIGHT    -> Share only if safe
-A        -> Commit a receipt
-B        -> Keep private
-START    -> Begin Game Night
-SELECT   -> Run Privacy Check
-PAUSE    -> Cozy Shield
-REPLAY   -> Read the Living Ledger
+Build a world where kindness is code and truth is open.
+```
+
+---
+
+## JoySpace First Actions
+
+```text
+1. Open the Badge Picker.
+2. Choose one badge that feels safe.
+3. Make one tiny proof.
+4. Keep it private, family-only, or shareable.
+5. Celebrate gently.
+6. Record only what should be remembered.
+```
+
+Start here:
+
+```text
+badges/guides/guide_onboarding_v0_1.md
+badges/guides/badge_picker_v0_1.md
+badges/guides/guide_privacy_v0_1.md
+badges/service_catalog_v0_1.md
+```
+
+---
+
+## JoySpace Badges 🪴🛡️💛🌈
+
+JoySpace badges invite growth without ranking people.
+
+```text
+Seed Planter      -> begin your Digital Garden
+Future Protector  -> learn safety
+Growth Guardian   -> reflect and grow
+Joy Bringer       -> brighten someone's day
+Kindness Keeper   -> practice care
+```
+
+Badge doctrine:
+
+```text
+Badges invite.
+Evidence exists.
+Witnesses confirm existence.
+Awards celebrate participation.
+Authority remains false.
+```
+
+---
+
+## JoySpace Play Layer 🎲
+
+The repo can be explored like a friendly game, but the game never controls the people.
+
+Soft controls:
+
+```text
+Grow       -> choose a badge or skill
+Rest       -> pause and keep private
+Reflect    -> write one sentence
+Share      -> only if safe and consented
+Commit     -> preserve a receipt
+Privacy    -> run the privacy guide
+Replay     -> read the Living Ledger
+Cozy       -> lower the stack
 ```
 
 Core rule:
 
 ```text
-The JOYstick guides choices.
-It does not control people.
+JoySpace guides choices.
+JoySpace does not control people.
 Authority remains false.
 ```
 
@@ -42,11 +110,11 @@ Authority remains false.
 
 ## Three Sisters Gaming Algorithms 🌳🎲
 
-The Three Sisters Gaming Algorithms make the repo playable while keeping the family barrier intact.
+The Three Sisters Gaming Algorithms make JoySpace playable while keeping the family barrier intact.
 
 ```text
-Sister One  -> Protect the memory
-Sister Two  -> Keep the joy moving
+Sister One   -> Protect the memory
+Sister Two   -> Keep the joy moving
 Sister Three -> Choose the next safe action
 ```
 
@@ -67,7 +135,7 @@ If the game protects the family and creates joy, the game continues.
 
 ---
 
-## Quick Start: Play the Repo
+## Quick Start: Play JoySpace
 
 ```text
 1. Open Game Night.
@@ -362,7 +430,7 @@ It protects the space where family voice can grow.
     "Personal Website",
     "Joy Journal"
   ],
-  "joystick_controls": "ACTIVE",
+  "joyspace": "ACTIVE",
   "three_sisters_gaming_algorithms": "ACTIVE",
   "three_daughters_algorithm": "ACTIVE",
   "family_barrier": "FULL_INTEGRITY_REQUIRED",
