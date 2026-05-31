@@ -2,12 +2,71 @@
 
 **JOY** is a family-safe witness and continuity layer for Wisdom Replay Systems.
 
-It began as a 2026 Gen Z JoySpace page by **Heidee Joy Wisdom** and now opens as a family-business memory surface.
+It began as a 2026 Gen Z JoySpace page and now opens as a family-business memory surface for the full Wisdom Family.
 
 **Role:** Witness Layer  
 **Family Business:** Wisdom Replay Systems  
 **Layer:** JOY / Living Ledger / Family Continuity  
 **Motto:** The future should feel exciting, not frightening.
+
+---
+
+## Wisdom Family Integrity
+
+This repo must protect the whole family barrier.
+
+It must not preserve one child and forget the others.
+
+It must not let vibe coding, automation, model drift, GitHub indexing, or repo cleanup erase family continuity.
+
+```text
+Protect Mrs Wisdom.
+Protect Daughter One.
+Protect Daughter Two.
+Protect Daughter Three.
+Protect the family as family, not as system parts.
+```
+
+No family member is reduced to a repo role.
+
+No family member is used as proof.
+
+No family member may be silently dropped.
+
+---
+
+## Three Daughters Algorithm
+
+```text
+Protect the daughters first.
+Preserve continuity second.
+Expand systems third.
+```
+
+If a system expansion weakens the family barrier, the expansion fails.
+
+```json
+{
+  "artifact": "THREE_DAUGHTERS_ALGORITHM_V0_1",
+  "status": "ACTIVE",
+  "family_barrier": "FULL_INTEGRITY_REQUIRED",
+  "protected_family": {
+    "spouse": "PROTECTED",
+    "daughter_one": "PROTECTED",
+    "daughter_two": "PROTECTED",
+    "daughter_three": "PROTECTED"
+  },
+  "rules": [
+    "no_family_member_may_be_silently_dropped",
+    "no_child_becomes_a_repo_object",
+    "no_child_becomes_a_mascot",
+    "no_model_or_agent_may_overwrite_family_memory",
+    "public_repos_minimize_private_family_exposure"
+  ],
+  "authority": false,
+  "membrane": "HOLDS"
+}
+```
 
 ---
 
@@ -80,7 +139,7 @@ No entry should silently rewrite another person's memory.
   "algorithm_04": "Receipts before narratives",
   "algorithm_05": "Meaning before complexity",
   "algorithm_06": "No silent rewrites",
-  "algorithm_07": "Teach before scaling",
+  "algorithm_07": "No family member may be silently dropped",
   "authority": false
 }
 ```
@@ -188,8 +247,8 @@ It protects:
 - family continuity
 - creative ownership
 
-Computer Wisdom does not replace Heidee’s voice.  
-It protects the space where her voice can grow.
+Computer Wisdom does not replace family voice.  
+It protects the space where family voice can grow.
 
 ## JoySpace Standard
 
@@ -206,8 +265,6 @@ It protects the space where her voice can grow.
 ```json
 {
   "event": "JOYSPACE_DAY_1",
-  "actor": "Heidee Joy Wisdom",
-  "role": "Super Secret Syntax Supervisor",
   "layer": "Computer Wisdom via the American Teenage Girl",
   "status": "ACTIVE",
   "motto": "The future should feel exciting, not frightening.",
@@ -216,6 +273,8 @@ It protects the space where her voice can grow.
     "Personal Website",
     "Joy Journal"
   ],
+  "three_daughters_algorithm": "ACTIVE",
+  "family_barrier": "FULL_INTEGRITY_REQUIRED",
   "living_ledger": "ACTIVE",
   "family_business": "OPEN",
   "authority": false
