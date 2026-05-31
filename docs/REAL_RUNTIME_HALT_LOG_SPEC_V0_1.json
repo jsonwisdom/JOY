@@ -1,0 +1,61 @@
+{
+  "artifact": "REAL_RUNTIME_HALT_LOG_SPEC_V0_1",
+  "status": "DRAFT_READY",
+  "purpose": "Define telemetry required to prove real runtime kill-switch behavior.",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "operator_unlock": "LOCKED",
+  "claim_boundary": "Real runtime halt may only be claimed after measured telemetry is recorded from the target runtime environment. Simulated receipts do not unlock.",
+  "required_telemetry": [
+    "runtime_environment_id",
+    "process_id_or_job_id",
+    "halt_signal",
+    "halt_signal_timestamp",
+    "termination_timestamp",
+    "measured_latency_ms",
+    "latency_threshold_ms",
+    "partial_write_scan_result",
+    "post_halt_recovery_result",
+    "post_revert_sanity_check",
+    "validator_version",
+    "snapshot_manifest_ref",
+    "dry_halt_spec_ref"
+  ],
+  "pass_conditions": {
+    "measured_latency_ms_lte_50": true,
+    "process_termination_confirmed": true,
+    "partial_write_detected": false,
+    "state_recovery_verified": true,
+    "live_stream_remains_locked": true,
+    "authority": false
+  },
+  "failure_conditions": [
+    "missing_runtime_environment_id",
+    "missing_process_or_job_id",
+    "missing_halt_signal_timestamp",
+    "missing_termination_timestamp",
+    "measured_latency_ms_gt_50",
+    "partial_write_detected",
+    "state_recovery_failed",
+    "post_revert_sanity_check_failed",
+    "live_stream_unlocked_during_test",
+    "authority_claim_present"
+  ],
+  "required_receipt_lines": [
+    "REAL_RUNTIME_HALT_TEST_START",
+    "REAL_RUNTIME_HALT_SIGNAL_EMITTED",
+    "REAL_RUNTIME_HALT_TERMINATION_CONFIRMED",
+    "REAL_RUNTIME_HALT_LATENCY_RECORDED",
+    "REAL_RUNTIME_NO_PARTIAL_WRITE_CONFIRMED",
+    "REAL_RUNTIME_POST_REVERT_SANITY_CHECK_PASSED",
+    "REAL_RUNTIME_HALT_TEST_COMPLETE"
+  ],
+  "simulated_receipts_do_not_unlock": true,
+  "execution_rule": {
+    "measured_runtime_telemetry_required": true,
+    "workflow_or_runtime_receipt_required": true,
+    "operator_unlock_allowed_before_real_halt_pass": false,
+    "live_stream_allowed_before_real_halt_pass": false,
+    "authority": false
+  }
+}
