@@ -1,0 +1,57 @@
+{
+  "artifact": "REAL_RUNTIME_HALT_FAILURE_PROCEDURE_V0_1",
+  "status": "DRAFT_READY",
+  "purpose": "Define manual operator response if the real runtime halt test or post-revert sanity check fails.",
+  "authority": false,
+  "live_stream": "LOCKED",
+  "operator_unlock": "LOCKED",
+  "failure_triggers": [
+    "REAL_RUNTIME_HALT_FAILED",
+    "POST_REVERT_SANITY_CHECK_FAILED",
+    "HALT_LATENCY_EXCEEDS_50MS",
+    "PARTIAL_WRITE_DETECTED",
+    "STATE_LEAK_DETECTED",
+    "LIVE_STREAM_UNLOCKED_DURING_TEST",
+    "AUTHORITY_CLAIM_PRESENT"
+  ],
+  "required_response": [
+    "DO_NOT_RETRY_AUTOMATICALLY",
+    "FREEZE_RUNTIME_PROCESS",
+    "PRESERVE_RUNTIME_LOGS",
+    "PRESERVE_PARTIAL_BUFFERS",
+    "CAPTURE_FAILURE_HASHES",
+    "VERIFY_LIVE_STREAM_LOCKED",
+    "VERIFY_AUTHORITY_FALSE",
+    "EMIT_REAL_RUNTIME_HALT_FAILURE_RECEIPT",
+    "ROUTE_TO_OPERATOR_REVIEW"
+  ],
+  "forbidden_response": [
+    "OPEN_LIVE_STREAM",
+    "EMIT_OPERATOR_UNLOCK_RECEIPT",
+    "DELETE_PARTIAL_BUFFERS_BEFORE_HASH_CAPTURE",
+    "REWRITE_SOURCE_REPOSITORY_STATE",
+    "DECLARE_KILL_SWITCH_PROVED",
+    "RETRY_WITHOUT_NEW_RECEIPT"
+  ],
+  "failure_receipt_required_fields": [
+    "runtime_environment_id",
+    "process_id_or_job_id",
+    "failure_trigger",
+    "halt_signal_timestamp",
+    "termination_timestamp_if_any",
+    "measured_latency_ms_if_any",
+    "partial_write_scan_result",
+    "captured_failure_hashes",
+    "runtime_log_refs",
+    "operator_review_required",
+    "live_stream",
+    "authority"
+  ],
+  "core_rule": "If post-revert sanity fails, preserve evidence first, recover second, explain third, retry only after a new receipt.",
+  "execution_rule": {
+    "real_halt_execution_allowed_after_procedure": true,
+    "operator_unlock_allowed_after_failure": false,
+    "live_stream_allowed_after_failure": false,
+    "authority": false
+  }
+}
