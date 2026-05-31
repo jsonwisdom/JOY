@@ -12,7 +12,8 @@
   <h1>JoySpace Function Status 🧾</h1>
   <p class="small">JOYSPACE_FUNCTION_AUDIT_V0_1 · authority:false</p>
   <div class="card">
-    <p><strong>Plain truth:</strong> the website is live, criteria resolve 5/5, SVG assets resolve 5/5, the manifest is internally consistent, schemas validate, and one Seed Planter proof → witness → award lifecycle passed in GitHub Actions. Feeds and production-scale badge operation remain unproved.</p>
+    <p><strong>Plain truth:</strong> the website is live, criteria resolve 5/5, SVG assets resolve 5/5, the manifest is internally consistent, schemas validate, and one Seed Planter proof → witness → award lifecycle passed in GitHub Actions. Feeds exist as static files and still need Pages/browser proof.</p>
+    <p><strong>Subscribe:</strong> <a href="feeds/status.json">JSON Feed</a> · <a href="feeds/status.xml">RSS Feed</a></p>
   </div>
   <table>
     <tr><th>Check</th><th>Status</th><th>Evidence</th></tr>
@@ -35,16 +36,16 @@
     <tr><td>Witness execution</td><td class="pass">PROVED_FOR_SAMPLE_INSTANCE</td><td><a href="witnesses/seed_planter_001_witness.json">seed_planter_001 witness</a> validates through the JoySpace Validation workflow.</td></tr>
     <tr><td>Award execution</td><td class="pass">PROVED_FOR_SAMPLE_INSTANCE</td><td><a href="awards/seed_planter_001_award.json">seed_planter_001 award</a> validates through the JoySpace Validation workflow.</td></tr>
     <tr><td>End-to-end badge function</td><td class="pass">PROVED_FOR_SAMPLE_SEED_PLANTER_FLOW</td><td>Sample proof → witness → award cross-reference passed in GitHub Actions. This proves one sample flow, not production-scale operation.</td></tr>
-    <tr><td>Feeds exist</td><td class="pending">PENDING</td><td>No RSS/JSON feed proved yet.</td></tr>
+    <tr><td>Feeds exist</td><td class="partial">PARTIAL</td><td>Static feed files exist: <a href="feeds/status.json">status.json</a> and <a href="feeds/status.xml">status.xml</a>. Browser/Pages serving proof still required.</td></tr>
   </table>
   <div class="card">
     <h2>Current Honest Verdict</h2>
     <p><strong>Function:</strong> <span class="pass">SAMPLE-EXECUTED</span></p>
-    <p>JoySpace is no longer only documentation. One Seed Planter badge lifecycle has been represented, validated, and cross-referenced. This does not prove production scale, all badges, feeds, multi-user operation, or authority.</p>
+    <p>JoySpace is no longer only documentation. One Seed Planter badge lifecycle has been represented, validated, and cross-referenced. Feeds exist as static artifacts but are not yet marked fully proved until browser links load.</p>
   </div>
   <div class="card">
     <h2>Next Proof Layer</h2>
-    <p>Create a feed, or repeat the proof → witness → award lifecycle for the remaining four badges. Keep authority false.</p>
+    <p>Open <code>https://jsonwisdom.github.io/JOY/feeds/status.json</code> and <code>https://jsonwisdom.github.io/JOY/feeds/status.xml</code>. If both load, mark feeds proved. Keep authority false.</p>
   </div>
 </main>
 </body>
