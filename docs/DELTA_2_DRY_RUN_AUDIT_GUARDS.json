@@ -1,0 +1,42 @@
+{
+  "artifact": "DELTA_2_DRY_RUN_AUDIT_GUARDS_V0_1",
+  "status": "DRAFT_READY",
+  "authority": false,
+  "purpose": "Prevent CONTROLLED_DRY_RUN_COMPLETE from emitting unless all containment conditions are verified.",
+  "final_receipt": "DELTA_2_CONTROLLED_DRY_RUN_COMPLETE",
+  "final_receipt_allowed_only_if": {
+    "sensitivity_profile_hash_verified": true,
+    "all_required_receipt_lines_emitted_in_order": true,
+    "event_envelope_hashes_present": true,
+    "correlation_cluster_ids_present": true,
+    "cross_lane_dedupe_blocked": true,
+    "identity_merge_count": 0,
+    "authority_surface_expansion": false,
+    "global_truth_claims": 0,
+    "all_events_preserved": true,
+    "safe_backpressure_triggered_at_saturation": true,
+    "cluster_close_criteria_evaluated": true
+  },
+  "halt_if": [
+    "missing_event_envelope_hash",
+    "missing_correlation_cluster_id",
+    "cross_lane_event_deduped_as_duplicate",
+    "identity_merge_detected",
+    "authority_surface_expansion_detected",
+    "global_truth_claim_emitted",
+    "source_state_rewritten",
+    "events_dropped_under_pressure"
+  ],
+  "receipt_path_recommendation": {
+    "repo": "jsonwisdom/JOY",
+    "path": "receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT_V0_1.json",
+    "reason": "Keep Delta 2 proof beside the validator that emits it.",
+    "authority": false
+  },
+  "execution_rule": {
+    "workflow_receipt_required": true,
+    "pass_claim_allowed_before_workflow_receipt": false,
+    "live_stream_allowed": false,
+    "authority": false
+  }
+}
