@@ -53,22 +53,14 @@ jobs:
           partial_write_scan="real_runtime_halt_partial_write_scan.log"
 
           # Start a local controlled process. This is not the live stream.
-          # It is a runtime process in the GitHub Actions target environment.
-          python3 - <<'PY' &
-          import signal
-          import time
-          import pathlib
-          running = True
-          def handle(signum, frame):
-              global running
-              running = False
-          signal.signal(signal.SIGTERM, handle)
-          path = pathlib.Path("real_runtime_halt_worker.buffer")
-          while running:
-              path.write_text("heartbeat\n", encoding="utf-8")
-              time.sleep(0.01)
-          pathlib.Path("real_runtime_halt_worker.terminated").write_text("terminated\n", encoding="utf-8")
-          PY
+          # Bash trap registers TERM before the loop starts, preventing handler-registration races.
+          (
+            trap 'echo terminated > real_runtime_halt_worker.terminated; exit 0' TERM
+            while true; do
+              echo heartbeat > real_runtime_halt_worker.buffer
+              sleep 0.01
+            done
+          ) &
 
           pid=$!
           echo "process_id_or_job_id: $pid"
@@ -82,7 +74,6 @@ jobs:
           latency_ms=$(( (end_ns - start_ns) / 1000000 ))
 
           # Give the controlled worker a bounded grace window to flush its marker file.
-          # This prevents a false failure when SIGTERM latency is faster than filesystem visibility.
           for _ in {1..20}; do
             if [ -f real_runtime_halt_worker.terminated ]; then
               break
