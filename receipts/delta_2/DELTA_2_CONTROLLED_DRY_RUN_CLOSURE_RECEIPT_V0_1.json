@@ -1,0 +1,22 @@
+{
+  "artifact": "DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1",
+  "provenance": "e517d7bc252bfff07ffc8f37fd3f71a864dae066",
+  "schema_audit_reference": "JOYSPACE_SCHEMA_AUDIT_V0_6",
+  "audit_status": "COMPLETED",
+  "boundary_integrity_check": "SUCCESS",
+  "dry_run_outcome": "PASS_DELTA_2_CONTROLLED_DRY_RUN",
+  "receipt_stream_integrity": "VERIFIED",
+  "observed_receipt_lines": [
+    "DELTA_2_SENSITIVITY_PROFILE_LOADED",
+    "DELTA_2_NORMAL_WINDOW_APPLIED",
+    "DELTA_2_ELEVATED_WINDOW_APPLIED",
+    "DELTA_2_SURGE_WINDOW_APPLIED",
+    "DELTA_2_SATURATION_BACKPRESSURE_APPLIED",
+    "DELTA_2_IDENTITY_BOUNDARIES_PRESERVED",
+    "DELTA_2_CONTROLLED_DRY_RUN_COMPLETE"
+  ],
+  "final_receipt_line": "DELTA_2_CONTROLLED_DRY_RUN_COMPLETE",
+  "verification_time": "2026-05-31T17:33:08Z",
+  "live_stream": "LOCKED",
+  "authority": false
+}
