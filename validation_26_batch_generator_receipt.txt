@@ -1,0 +1,13 @@
+Validation #26 batch artifact generation receipt
+
+This marker confirms the production-scale batch was generated from schema-compliant per-file paths under proofs/, witnesses/, and awards/.
+
+Expected target after commit:
+- proofs_count: 50
+- witnesses_count: 50
+- awards_count: 50
+- families_count: 5
+- instances_per_family_min: 10
+- authority: false
+
+This receipt does not prove production scale. Production scale is proved only by workflow log output.
