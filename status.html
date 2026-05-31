@@ -12,7 +12,7 @@
   <h1>JoySpace Function Status 🧾</h1>
   <p class="small">JOYSPACE_FUNCTION_AUDIT_V0_1 · authority:false</p>
   <div class="card">
-    <p><strong>Plain truth:</strong> the website is live, criteria resolve 5/5, SVG assets resolve 5/5, the manifest is internally consistent, and schema validation passed in GitHub Actions. JoySpace is still not a full badge application until feeds and end-to-end badge execution are proven.</p>
+    <p><strong>Plain truth:</strong> the website is live, criteria resolve 5/5, SVG assets resolve 5/5, the manifest is internally consistent, schemas validate, and one Seed Planter proof → witness → award lifecycle passed in GitHub Actions. Feeds and production-scale badge operation remain unproved.</p>
   </div>
   <table>
     <tr><th>Check</th><th>Status</th><th>Evidence</th></tr>
@@ -30,18 +30,21 @@
     <tr><td>Criteria files exist</td><td class="pass">PROVED</td><td>Criteria snapshot: present and verified 5/5. <a href="badges/criteria/criteria_index_v0_1.md">criteria_index</a>, <a href="badges/criteria/seed_planter_v0_1.md">seed</a>, <a href="badges/criteria/future_protector_v0_1.md">future</a>, <a href="badges/criteria/growth_guardian_v0_1.md">growth</a>, <a href="badges/criteria/joy_bringer_v0_1.md">joy</a>, <a href="badges/criteria/kindness_keeper_v0_1.md">kindness</a>.</td></tr>
     <tr><td>Badge image SVG files</td><td class="pass">PROVED</td><td>SVG snapshot: present and verified 5/5. <a href="badges/images/seed_planter.svg">seed</a>, <a href="badges/images/future_protector.svg">future</a>, <a href="badges/images/growth_guardian.svg">growth</a>, <a href="badges/images/joy_bringer.svg">joy</a>, <a href="badges/images/kindness_keeper.svg">kindness</a>.</td></tr>
     <tr><td>Manifest verification</td><td class="pass">PROVED</td><td>Manifest snapshot: internally consistent with five badge IDs, required fields, valid lineage IDs, boundary doctrine, criteria files, and SVG files.</td></tr>
-    <tr><td>Schemas validate</td><td class="pass">PROVED</td><td>Schema snapshot: GitHub Actions workflow <code>JoySpace Validation #1</code> passed on commit <code>4d9b79c408e2a61a25567a84b42648a18e546f66</code>.</td></tr>
+    <tr><td>Schemas validate</td><td class="pass">PROVED</td><td>Schema snapshot: GitHub Actions workflow <code>JoySpace Validation #6</code> passed on commit <code>045ccdbd02100adaa48b7cca0a2ef4ecfbbbc773</code>.</td></tr>
+    <tr><td>Proof execution</td><td class="pass">PROVED_FOR_SAMPLE_INSTANCE</td><td><a href="proofs/seed_planter_001.json">seed_planter_001 proof</a> validates through the JoySpace Validation workflow.</td></tr>
+    <tr><td>Witness execution</td><td class="pass">PROVED_FOR_SAMPLE_INSTANCE</td><td><a href="witnesses/seed_planter_001_witness.json">seed_planter_001 witness</a> validates through the JoySpace Validation workflow.</td></tr>
+    <tr><td>Award execution</td><td class="pass">PROVED_FOR_SAMPLE_INSTANCE</td><td><a href="awards/seed_planter_001_award.json">seed_planter_001 award</a> validates through the JoySpace Validation workflow.</td></tr>
+    <tr><td>End-to-end badge function</td><td class="pass">PROVED_FOR_SAMPLE_SEED_PLANTER_FLOW</td><td>Sample proof → witness → award cross-reference passed in GitHub Actions. This proves one sample flow, not production-scale operation.</td></tr>
     <tr><td>Feeds exist</td><td class="pending">PENDING</td><td>No RSS/JSON feed proved yet.</td></tr>
-    <tr><td>End-to-end badge function</td><td class="partial">PARTIAL</td><td>Docs, criteria, assets, manifest, and schema validation are coherent, but no working proof → witness → award flow has executed yet.</td></tr>
   </table>
   <div class="card">
     <h2>Current Honest Verdict</h2>
-    <p><strong>Function:</strong> <span class="partial">PARTIAL</span></p>
-    <p>JoySpace is a live site with a verified document stack, complete Criteria Layer, verified SVG assets, internally consistent manifest, and passing schema validation. It is not yet a functioning badge application because proof execution, witness execution, award execution, feeds, and end-to-end badge execution remain unproved.</p>
+    <p><strong>Function:</strong> <span class="pass">SAMPLE-EXECUTED</span></p>
+    <p>JoySpace is no longer only documentation. One Seed Planter badge lifecycle has been represented, validated, and cross-referenced. This does not prove production scale, all badges, feeds, multi-user operation, or authority.</p>
   </div>
   <div class="card">
     <h2>Next Proof Layer</h2>
-    <p>Create and validate one real sample proof, witness, and award record for Seed Planter. Do not mark badge function complete until that lifecycle runs.</p>
+    <p>Create a feed, or repeat the proof → witness → award lifecycle for the remaining four badges. Keep authority false.</p>
   </div>
 </main>
 </body>
