@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Growth Guardian Badge</title>
+  <desc id="desc">A circular JOYSPACE badge for Growth Guardian using the manifest palette: aqua base, teal border, and soft green leaves.</desc>
+  <circle cx="256" cy="256" r="230" fill="#C8F4EE" stroke="#4FB7A8" stroke-width="18"/>
+  <circle cx="256" cy="256" r="176" fill="#ffffff" opacity="0.55"/>
+  <path d="M256 350V184" stroke="#4FB7A8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M256 230c-50-10-82-40-96-90 58 4 92 36 96 90z" fill="#6ED9A8" stroke="#4FB7A8" stroke-width="10"/>
+  <path d="M256 276c52-6 88-36 106-86-60 0-96 30-106 86z" fill="#6ED9A8" stroke="#4FB7A8" stroke-width="10"/>
+  <path d="M186 362c40 28 100 28 140 0" fill="none" stroke="#4FB7A8" stroke-width="16" stroke-linecap="round"/>
+  <text x="256" y="430" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#2b786d">Growth Guardian</text>
+</svg>
