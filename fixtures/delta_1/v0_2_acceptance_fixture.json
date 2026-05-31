@@ -1,0 +1,22 @@
+{
+  "fixture": "JOY_V0_3_DELTA_1_V0_2_ACCEPTANCE_FIXTURE_V0_1",
+  "version_under_test": "V0_2",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "schema_mutation": false,
+    "existing_receipts": "PRESERVED"
+  },
+  "invariants": ["H1", "H2", "I1", "I3", "B2"],
+  "inputs": {
+    "artifact_set": "USE_EXISTING_V0_2_ARTIFACTS",
+    "artifact_count_expected": 166,
+    "receipt_source": "VALIDATION_26_AND_27"
+  },
+  "expected_behavior": {
+    "hash_stability": "ALL_HASHES_MATCH_ORIGINAL",
+    "identity_preservation": "UNCHANGED",
+    "no_silent_promotion": true,
+    "version_boundary": "V0_2_ONLY"
+  }
+}
