@@ -1,0 +1,46 @@
+{
+  "artifact": "JOY_V0_3_DELTA_1_FIXTURE_MANIFEST_V0_1",
+  "status": "DRAFT_READY",
+  "delta": "DUAL_READ_VERSION_MIGRATION",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "existing_receipts": "PRESERVED",
+    "schema_mutation_allowed": false,
+    "no_silent_promotion": true
+  },
+  "fixtures": [
+    {
+      "id": "v0_2_acceptance_fixture",
+      "path": "fixtures/delta_1/v0_2_acceptance_fixture.json",
+      "purpose": "Prove existing V0.2 artifacts remain accepted without mutation.",
+      "must_satisfy": ["H1", "H2", "I1", "I3", "B2"],
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "v0_3_acceptance_fixture",
+      "path": "fixtures/delta_1/v0_3_acceptance_fixture.json",
+      "purpose": "Introduce explicit V0.3 fixture without authority escalation.",
+      "must_satisfy": ["H2", "H3", "I2", "I3", "I4", "B1"],
+      "required": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "mixed_version_batch_fixture",
+      "path": "fixtures/delta_1/mixed_version_batch_fixture.json",
+      "purpose": "Validate V0.2 and V0.3 together without version collapse.",
+      "must_satisfy": ["H1", "H2", "H3", "I1", "I2", "I3", "I4", "B1", "B2"],
+      "required": true,
+      "status": "OPEN"
+    }
+  ],
+  "execution_rule": {
+    "all_fixtures_required": true,
+    "all_invariants_required": true,
+    "workflow_receipt_required": true,
+    "schema_mutation_allowed": false,
+    "authority": false,
+    "feeds": "NOT_CLAIMED"
+  }
+}
