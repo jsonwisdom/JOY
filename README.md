@@ -1,10 +1,91 @@
 # JOY 🌈🧾
 
-**JOY** is a 2026 Gen Z JoySpace page by **Heidee Joy Wisdom**.
+**JOY** is a family-safe witness and continuity layer for Wisdom Replay Systems.
 
-**Role:** Super Secret Syntax Supervisor  
-**Layer:** Computer Wisdom via the American Teenage Girl  
+It began as a 2026 Gen Z JoySpace page by **Heidee Joy Wisdom** and now opens as a family-business memory surface.
+
+**Role:** Witness Layer  
+**Family Business:** Wisdom Replay Systems  
+**Layer:** JOY / Living Ledger / Family Continuity  
 **Motto:** The future should feel exciting, not frightening.
+
+---
+
+## Family Business — Open
+
+Wisdom Replay Systems exists to preserve meaning, memory, proof, learning, and continuity across generations.
+
+The rule is simple:
+
+```text
+If a family cannot understand the system, an institution should not trust it.
+```
+
+JOY is where the system becomes understandable to family.
+
+---
+
+## Repeat JOY
+
+JOY witnesses.
+
+JOY preserves.
+
+JOY explains.
+
+JOY remembers.
+
+JOY protects the future without stealing the voice of the person living it.
+
+```text
+COMPUTERWISDOM builds.
+AL records.
+JOY remembers.
+JSONWISDOM narrates.
+Living Ledgers continue.
+```
+
+---
+
+## Living Ledger
+
+The Living Ledger is not a bank ledger.
+
+It is a continuity ledger.
+
+It may record:
+
+- family milestones
+- project milestones
+- lessons learned
+- receipts and source paths
+- stories worth preserving
+- decisions and reasons
+- safe creative work
+- replayable evidence
+
+Every entry should preserve context.
+
+No entry should silently rewrite another person's memory.
+
+---
+
+## Activated Algorithms
+
+```json
+{
+  "algorithm_01": "Protect family first",
+  "algorithm_02": "Preserve continuity second",
+  "algorithm_03": "Expand systems third",
+  "algorithm_04": "Receipts before narratives",
+  "algorithm_05": "Meaning before complexity",
+  "algorithm_06": "No silent rewrites",
+  "algorithm_07": "Teach before scaling",
+  "authority": false
+}
+```
+
+---
 
 ## JOYSPACE DAY-1 — Let’s Build ✨
 
@@ -134,7 +215,10 @@ It protects the space where her voice can grow.
     "My Digital Garden",
     "Personal Website",
     "Joy Journal"
-  ]
+  ],
+  "living_ledger": "ACTIVE",
+  "family_business": "OPEN",
+  "authority": false
 }
 ```
 
