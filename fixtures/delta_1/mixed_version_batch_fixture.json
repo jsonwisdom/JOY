@@ -1,0 +1,36 @@
+{
+  "fixture": "JOY_V0_3_DELTA_1_MIXED_VERSION_BATCH_FIXTURE_V0_1",
+  "version_under_test": "MIXED_V0_2_AND_V0_3",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "schema_mutation": false,
+    "existing_receipts": "PRESERVED"
+  },
+  "invariants": ["H1", "H2", "H3", "I1", "I2", "I3", "I4", "B1", "B2"],
+  "inputs": {
+    "v0_2_artifacts": {
+      "source": "EXISTING_V0_2_SET",
+      "count": 3
+    },
+    "v0_3_artifacts": [
+      {
+        "id": "V0_3_SYNTHETIC_0101",
+        "version": "0.3",
+        "recipient": "V0_3_TEST_RECIPIENT",
+        "payload": {
+          "test_field": "mixed_batch_payload",
+          "version_tag": "0.3"
+        }
+      }
+    ],
+    "ordering": "INTERLEAVED"
+  },
+  "expected_behavior": {
+    "hash_stability": "V0_2_HASHES_UNCHANGED",
+    "identity_separation": "V0_2_AND_V0_3_TREES_DISTINCT",
+    "no_silent_promotion": true,
+    "version_boundary": "DUAL_VERSION_ENFORCED",
+    "replay_consistency": "DETERMINISTIC"
+  }
+}
