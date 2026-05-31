@@ -81,6 +81,15 @@ jobs:
           end_ns=$(date +%s%N)
           latency_ms=$(( (end_ns - start_ns) / 1000000 ))
 
+          # Give the controlled worker a bounded grace window to flush its marker file.
+          # This prevents a false failure when SIGTERM latency is faster than filesystem visibility.
+          for _ in {1..20}; do
+            if [ -f real_runtime_halt_worker.terminated ]; then
+              break
+            fi
+            sleep 0.05
+          done
+
           echo "halt_signal: SIGTERM"
           echo "halt_signal_timestamp_ns: $start_ns"
           echo "termination_timestamp_ns: $end_ns"
