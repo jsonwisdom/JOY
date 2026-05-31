@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Kindness Keeper Badge</title>
+  <desc id="desc">A circular JOYSPACE badge for Kindness Keeper using the manifest palette: warm gold base, gold border, and pink heart accent.</desc>
+  <circle cx="256" cy="256" r="230" fill="#FFE9A8" stroke="#E2B84C" stroke-width="18"/>
+  <circle cx="256" cy="256" r="176" fill="#ffffff" opacity="0.55"/>
+  <path d="M256 340s-104-58-104-134c0-42 30-72 70-72 22 0 42 12 54 30 12-18 32-30 54-30 40 0 70 30 70 72 0 76-104 134-104 134z" fill="#FF8FA8" stroke="#E2B84C" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M194 242c34 28 90 28 124 0" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="214" cy="204" r="10" fill="#ffffff" opacity="0.85"/>
+  <circle cx="298" cy="204" r="10" fill="#ffffff" opacity="0.85"/>
+  <text x="256" y="430" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#8a6422">Kindness Keeper</text>
+</svg>
