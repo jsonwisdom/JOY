@@ -1,0 +1,33 @@
+{
+  "artifact": "JOY_V0_3_DELTA_1_HASH_AND_IDENTITY_INVARIANTS_V0_1",
+  "status": "DRAFT_READY",
+  "delta": "DUAL_READ_VERSION_MIGRATION",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "existing_receipts": "PRESERVED",
+    "schema_mutation_allowed": false,
+    "no_silent_promotion": true
+  },
+  "hash_invariants": {
+    "H1": "All V0.2 artifacts must retain their original hash values under V0.3 validation.",
+    "H2": "Unified canonicalization must produce identical hash results for identical content across versions.",
+    "H3": "Version boundaries must remain hash-distinct; V0.2 and V0.3 artifacts cannot converge to the same digest."
+  },
+  "identity_invariants": {
+    "I1": "V0.2 identity trees must remain unchanged under V0.3 validation.",
+    "I2": "V0.3 identity trees must be explicitly version-tagged and cannot inherit V0.2 identity roots.",
+    "I3": "Cross-version identity collapse is forbidden; V0.2 and V0.3 artifacts must remain distinguishable.",
+    "I4": "V0.3 artifacts must declare version identity explicitly in their metadata."
+  },
+  "boundary_invariants": {
+    "B1": "V0.3 artifacts cannot be silently promoted to authority surfaces.",
+    "B2": "V0.2 artifacts cannot be silently promoted to V0.3 authority surfaces."
+  },
+  "execution_rule": {
+    "workflow_receipt_required": true,
+    "all_invariants_required": true,
+    "authority": false,
+    "feeds": "NOT_CLAIMED"
+  }
+}
