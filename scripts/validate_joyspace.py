@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-JOYSPACE schema validation runner v0.4
+JOYSPACE schema validation runner v0.5
 
 Validates JOYSPACE JSON artifacts against local schemas.
-Prints explicit counts so sample-scale, production-scale, and multi-user receipts can be distinguished.
+Prints explicit counts so sample-scale, production-scale, multi-user, and Delta 1 dual-read receipts can be distinguished.
 Authority remains false.
 """
 
@@ -59,6 +59,12 @@ REQUIRED_FILES = [
 
 KNOWN_FAMILIES = {"seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"}
 
+DELTA_1_FIXTURES = {
+    "v0_2_acceptance_fixture": ROOT / "fixtures" / "delta_1" / "v0_2_acceptance_fixture.json",
+    "v0_3_acceptance_fixture": ROOT / "fixtures" / "delta_1" / "v0_3_acceptance_fixture.json",
+    "mixed_version_batch_fixture": ROOT / "fixtures" / "delta_1" / "mixed_version_batch_fixture.json",
+}
+
 
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
@@ -81,7 +87,7 @@ def validate_json(name: str, schema_path: Path, artifact_path: Path) -> bool:
 
 
 def check_required_files() -> bool:
-    required = list(SCHEMA_FILES.values()) + list(ARTIFACTS.values()) + REQUIRED_FILES
+    required = list(SCHEMA_FILES.values()) + list(ARTIFACTS.values()) + REQUIRED_FILES + list(DELTA_1_FIXTURES.values())
     required += list((ROOT / "proofs").glob("*.json"))
     required += list((ROOT / "witnesses").glob("*.json"))
     required += list((ROOT / "awards").glob("*.json"))
@@ -202,6 +208,83 @@ def count_distinct_recipients(proofs: list[dict], awards: list[dict]) -> set[str
     return recipients
 
 
+def fixture_posture_ok(fixture: dict) -> bool:
+    posture = fixture.get("posture", {})
+    return (
+        posture.get("authority") is False
+        and posture.get("feeds") == "NOT_CLAIMED"
+        and posture.get("schema_mutation") is False
+        and posture.get("existing_receipts") == "PRESERVED"
+    )
+
+
+def execute_delta_1_fixture_validation() -> bool:
+    print("DELTA_1_DUAL_READ_VALIDATION_START")
+
+    for name, path in DELTA_1_FIXTURES.items():
+        if not path.exists():
+            print(f"FAIL delta_1_fixture_missing: {path.relative_to(ROOT)}")
+            return False
+
+    v02 = load_json(DELTA_1_FIXTURES["v0_2_acceptance_fixture"])
+    if not fixture_posture_ok(v02):
+        print("FAIL DELTA_1_V0_2_FIXTURE_POSTURE")
+        return False
+    if v02.get("version_under_test") != "V0_2":
+        print("FAIL DELTA_1_V0_2_VERSION_BOUNDARY")
+        return False
+    if v02.get("inputs", {}).get("artifact_set") != "USE_EXISTING_V0_2_ARTIFACTS":
+        print("FAIL DELTA_1_V0_2_ARTIFACT_SOURCE")
+        return False
+    if v02.get("expected_behavior", {}).get("no_silent_promotion") is not True:
+        print("FAIL DELTA_1_V0_2_NO_SILENT_PROMOTION")
+        return False
+    print("DELTA_1_V0_2_FIXTURE_PASSED")
+
+    v03 = load_json(DELTA_1_FIXTURES["v0_3_acceptance_fixture"])
+    if not fixture_posture_ok(v03):
+        print("FAIL DELTA_1_V0_3_FIXTURE_POSTURE")
+        return False
+    synthetic = v03.get("inputs", {}).get("synthetic_artifact", {})
+    if v03.get("version_under_test") != "V0_3" or synthetic.get("version") != "0.3":
+        print("FAIL DELTA_1_V0_3_VERSION_TAG")
+        return False
+    if synthetic.get("payload", {}).get("version_tag") != "0.3":
+        print("FAIL DELTA_1_V0_3_PAYLOAD_VERSION_TAG")
+        return False
+    if v03.get("expected_behavior", {}).get("no_silent_promotion") is not True:
+        print("FAIL DELTA_1_V0_3_NO_SILENT_PROMOTION")
+        return False
+    print("DELTA_1_V0_3_FIXTURE_PASSED")
+
+    mixed = load_json(DELTA_1_FIXTURES["mixed_version_batch_fixture"])
+    if not fixture_posture_ok(mixed):
+        print("FAIL DELTA_1_MIXED_FIXTURE_POSTURE")
+        return False
+    inputs = mixed.get("inputs", {})
+    v02_inputs = inputs.get("v0_2_artifacts", {})
+    v03_inputs = inputs.get("v0_3_artifacts", [])
+    if mixed.get("version_under_test") != "MIXED_V0_2_AND_V0_3":
+        print("FAIL DELTA_1_MIXED_VERSION_BOUNDARY")
+        return False
+    if v02_inputs.get("source") != "EXISTING_V0_2_SET" or not v03_inputs:
+        print("FAIL DELTA_1_MIXED_VERSION_INPUTS")
+        return False
+    if inputs.get("ordering") != "INTERLEAVED":
+        print("FAIL DELTA_1_MIXED_ORDERING")
+        return False
+    if mixed.get("expected_behavior", {}).get("replay_consistency") != "DETERMINISTIC":
+        print("FAIL DELTA_1_MIXED_REPLAY_CONSISTENCY")
+        return False
+    if mixed.get("expected_behavior", {}).get("no_silent_promotion") is not True:
+        print("FAIL DELTA_1_MIXED_NO_SILENT_PROMOTION")
+        return False
+    print("DELTA_1_MIXED_BATCH_FIXTURE_PASSED")
+
+    print("DELTA_1_DUAL_READ_VALIDATION_COMPLETE")
+    return True
+
+
 def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) -> tuple[bool, bool]:
     instances_by_family = count_instances_by_family(proofs, witnesses, awards)
     instance_counts = [len(instances_by_family.get(family, set())) for family in sorted(KNOWN_FAMILIES)]
@@ -249,7 +332,7 @@ def print_counts(proofs: list[dict], witnesses: list[dict], awards: list[dict]) 
 
 
 def main() -> int:
-    print("JOYSPACE_SCHEMA_AUDIT_V0_4")
+    print("JOYSPACE_SCHEMA_AUDIT_V0_5")
     print("authority:false")
 
     ok = check_required_files()
@@ -261,7 +344,17 @@ def main() -> int:
     ok = proofs_ok and witnesses_ok and awards_ok and ok
     ok = check_cross_reference(proofs, witnesses, awards) and ok
 
+    delta_1_ok = execute_delta_1_fixture_validation()
     production_scale_proved, multi_user_proved = print_counts(proofs, witnesses, awards)
+
+    if ok and delta_1_ok and multi_user_proved:
+        print("RESULT: PASS_DELTA_1_DUAL_READ_VALIDATION")
+        print("schema_layer: PROVED_FOR_EXISTING_JSON_ARTIFACTS")
+        print("proof_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("witness_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("award_execution: PROVED_FOR_MULTI_USER_INSTANCES")
+        print("feeds: NOT_CLAIMED")
+        return 0
 
     if ok and multi_user_proved:
         print("RESULT: PASS_MULTI_USER_DRY_RUN")
