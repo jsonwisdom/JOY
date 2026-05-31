@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/schemas/criteria.schema.json",
+  "title": "JOYSPACE Criteria Schema V0.1",
+  "type": "object",
+  "required": ["badge_id", "status", "authority"],
+  "additionalProperties": true,
+  "properties": {
+    "badge_id": { "enum": ["seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"] },
+    "status": { "const": "ACTIVE" },
+    "authority": { "const": false },
+    "privacy": { "enum": ["private", "family-only", "shareable"] }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["score"] },
+      { "required": ["rank"] },
+      { "required": ["grade"] }
+    ]
+  }
+}
