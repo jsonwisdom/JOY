@@ -3,15 +3,39 @@
   "$id": "https://jsonwisdom.github.io/JOY/schemas/award_record.schema.json",
   "title": "JOYSPACE Award Record Schema V0.1",
   "type": "object",
-  "required": ["award_id", "badge_id", "proof_id", "awarded_at", "authority"],
+  "required": ["artifact", "award_id", "badge_id", "recipient", "awarded_at", "proof_id", "witness", "celebration_note", "privacy", "authority"],
   "additionalProperties": false,
   "properties": {
-    "award_id": { "type": "string" },
+    "artifact": { "const": "JOYSPACE_BADGE_AWARD_RECORD_V0_1" },
+    "award_id": { "type": "string", "minLength": 1 },
     "badge_id": { "enum": ["seed_planter", "future_protector", "growth_guardian", "joy_bringer", "kindness_keeper"] },
-    "proof_id": { "type": "string" },
-    "witness_id": { "type": "string" },
+    "recipient": { "type": "string", "minLength": 1 },
     "awarded_at": { "type": "string", "format": "date-time" },
-    "celebration": { "type": "string" },
+    "proof_id": { "type": "string", "minLength": 1 },
+    "witness": {
+      "type": "object",
+      "required": ["witness_type", "confirmed", "quality_scored", "ranked", "authority"],
+      "properties": {
+        "witness_type": { "enum": ["self", "friend", "mentor", "family", "teacher", "guide", "community"] },
+        "confirmed": { "type": "boolean" },
+        "statement": { "type": "string" },
+        "quality_scored": { "const": false },
+        "ranked": { "const": false },
+        "graded": { "const": false },
+        "authority": { "const": false }
+      }
+    },
+    "celebration_note": { "type": "string", "minLength": 1 },
+    "privacy": { "enum": ["private", "family-only", "shareable"] },
     "authority": { "const": false }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["score"] },
+      { "required": ["rank"] },
+      { "required": ["grade"] },
+      { "required": ["quality_score"] },
+      { "required": ["status_power"] }
+    ]
   }
 }
