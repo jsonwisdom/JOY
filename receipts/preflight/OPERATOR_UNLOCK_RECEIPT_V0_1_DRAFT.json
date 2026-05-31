@@ -1,0 +1,31 @@
+{
+  "artifact": "OPERATOR_UNLOCK_RECEIPT_V0_1",
+  "version": "1.0",
+  "status": "DRAFT_READY_FOR_SIGNATURE",
+  "authority": false,
+  "mode_intent": "READ_ONLY_OBSERVATION",
+  "references": {
+    "runtime_halt_log": "2144b8fd9c27424a073ec457dc56d7968a16e937",
+    "preflight_checklist": "39f6b0bc",
+    "unlock_schema": "13253a02"
+  },
+  "authorization": {
+    "operator_identity": "PENDING_SIGNATURE",
+    "operator_signature": "PENDING_AUTHORIZATION_HASH",
+    "timestamp": "2026-05-31T18:05:55Z"
+  },
+  "constraints": {
+    "live_stream_access": "READ_ONLY",
+    "mutation_capability": "DISABLED",
+    "external_mutation_disabled": true,
+    "no_write_back_to_source": true,
+    "audit_persistence": "ENABLED"
+  },
+  "post_signature_state": {
+    "operator_unlock": "ACTIVE_READ_ONLY",
+    "live_stream": "LOCKED_UNTIL_SIGNED",
+    "mutation_capability": "DISABLED"
+  },
+  "claim_boundary": "This is a draft receipt only. It does not unlock READ_ONLY_OBSERVATION until the authorized operator signature is supplied and accepted in a separate signed receipt.",
+  "live_stream": "LOCKED_UNTIL_SIGNED"
+}
