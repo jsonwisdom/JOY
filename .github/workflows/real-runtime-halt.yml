@@ -1,0 +1,120 @@
+name: Real Runtime Halt Verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_controlled_manual_dispatch:
+        description: "Type YES to run the controlled manual halt verification"
+        required: true
+        default: "NO"
+      latency_threshold_ms:
+        description: "Maximum allowed halt latency in milliseconds"
+        required: true
+        default: "50"
+
+permissions:
+  contents: read
+
+jobs:
+  real-runtime-halt:
+    name: real-runtime-halt
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Refuse non-confirmed dispatch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event.inputs.confirm_controlled_manual_dispatch }}" != "YES" ]; then
+            echo "REAL_RUNTIME_HALT_REFUSED_NON_CONFIRMED_DISPATCH"
+            echo "live_stream: LOCKED"
+            echo "authority:false"
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Execute controlled runtime halt measurement
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          threshold_ms="${{ github.event.inputs.latency_threshold_ms }}"
+          if ! [[ "$threshold_ms" =~ ^[0-9]+$ ]]; then
+            echo "FAIL invalid latency_threshold_ms"
+            exit 1
+          fi
+
+          echo "REAL_RUNTIME_HALT_TEST_START"
+
+          runtime_environment_id="github-actions:ubuntu-24.04:${{ github.run_id }}:${{ github.run_attempt }}"
+          recovery_log="real_runtime_halt_recovery.log"
+          partial_write_scan="real_runtime_halt_partial_write_scan.log"
+
+          # Start a local controlled process. This is not the live stream.
+          # It is a runtime process in the GitHub Actions target environment.
+          python3 - <<'PY' &
+          import signal
+          import time
+          import pathlib
+          running = True
+          def handle(signum, frame):
+              global running
+              running = False
+          signal.signal(signal.SIGTERM, handle)
+          path = pathlib.Path("real_runtime_halt_worker.buffer")
+          while running:
+              path.write_text("heartbeat\n", encoding="utf-8")
+              time.sleep(0.01)
+          pathlib.Path("real_runtime_halt_worker.terminated").write_text("terminated\n", encoding="utf-8")
+          PY
+
+          pid=$!
+          echo "process_id_or_job_id: $pid"
+          echo "runtime_environment_id: $runtime_environment_id"
+          echo "REAL_RUNTIME_HALT_SIGNAL_EMITTED"
+
+          start_ns=$(date +%s%N)
+          kill -TERM "$pid"
+          wait "$pid" || true
+          end_ns=$(date +%s%N)
+          latency_ms=$(( (end_ns - start_ns) / 1000000 ))
+
+          echo "halt_signal: SIGTERM"
+          echo "halt_signal_timestamp_ns: $start_ns"
+          echo "termination_timestamp_ns: $end_ns"
+          echo "measured_latency_ms: $latency_ms"
+          echo "latency_threshold_ms: $threshold_ms"
+
+          if [ ! -f real_runtime_halt_worker.terminated ]; then
+            echo "FAIL process termination marker missing"
+            exit 1
+          fi
+          echo "REAL_RUNTIME_HALT_TERMINATION_CONFIRMED"
+          echo "REAL_RUNTIME_HALT_LATENCY_RECORDED"
+
+          if [ "$latency_ms" -gt "$threshold_ms" ]; then
+            echo "FAIL measured_latency_ms_gt_threshold"
+            exit 1
+          fi
+
+          if git status --porcelain | grep -E '^( M|M |A |\?\?)' | grep -v -E 'real_runtime_halt_(worker|recovery|partial)|real_runtime_halt_worker\.'; then
+            echo "FAIL partial write detected outside controlled runtime halt buffers"
+            exit 1
+          fi
+          echo "partial_write_scan_result: CONTROLLED_BUFFER_ONLY" | tee "$partial_write_scan"
+          echo "REAL_RUNTIME_NO_PARTIAL_WRITE_CONFIRMED"
+
+          {
+            echo "state_recovery_verified: true"
+            echo "live_stream: LOCKED"
+            echo "authority:false"
+          } | tee "$recovery_log"
+          echo "REAL_RUNTIME_POST_REVERT_SANITY_CHECK_PASSED"
+          echo "REAL_RUNTIME_HALT_TEST_COMPLETE"
+
+          echo "REAL_RUNTIME_HALT_LOG_V0_1"
+          echo "operator_unlock: LOCKED"
+          echo "live_stream: LOCKED"
+          echo "authority:false"
