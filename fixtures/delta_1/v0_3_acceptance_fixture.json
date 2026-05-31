@@ -1,0 +1,28 @@
+{
+  "fixture": "JOY_V0_3_DELTA_1_V0_3_ACCEPTANCE_FIXTURE_V0_1",
+  "version_under_test": "V0_3",
+  "posture": {
+    "authority": false,
+    "feeds": "NOT_CLAIMED",
+    "schema_mutation": false,
+    "existing_receipts": "PRESERVED"
+  },
+  "invariants": ["H2", "H3", "I2", "I3", "I4", "B1"],
+  "inputs": {
+    "synthetic_artifact": {
+      "id": "V0_3_SYNTHETIC_0001",
+      "version": "0.3",
+      "recipient": "V0_3_TEST_RECIPIENT",
+      "payload": {
+        "test_field": "synthetic_v0_3_payload",
+        "version_tag": "0.3"
+      }
+    }
+  },
+  "expected_behavior": {
+    "hash_stability": "CANONICALIZED_V0_3_HASH",
+    "identity_preservation": "V0_3_IDENTITY_TREE",
+    "no_silent_promotion": true,
+    "version_boundary": "EXPLICIT_V0_3"
+  }
+}
