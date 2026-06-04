@@ -1,0 +1,48 @@
+{
+  "schema": "BRAELEE_SISTER_PRIVILEGES_V0_1",
+  "project": "JOY",
+  "status": "OPERATOR_DECLARED_NOT_INDEPENDENTLY_VERIFIED",
+  "authority": false,
+  "promotion": false,
+  "relationship": {
+    "sister_repo": "jsonwisdom/BRAELEE",
+    "joy_repo": "jsonwisdom/JOY",
+    "role": "sister_witness_surface_with_special_privileges",
+    "authority": false
+  },
+  "special_privileges": {
+    "status": "DECLARED_NOT_LEGAL_OR_ADMINISTRATIVE_AUTHORITY",
+    "allowed_contexts": [
+      "family continuity",
+      "joy witness layer",
+      "purpose driven schooling support",
+      "memory preservation",
+      "badge and game surface",
+      "gentle replay support"
+    ],
+    "not_allowed_to_claim": [
+      "legal authority",
+      "custody or guardianship authority",
+      "financial authority",
+      "repository ownership transfer",
+      "central authority",
+      "promotion status"
+    ],
+    "authority": false
+  },
+  "braelee_context": {
+    "beta_layer": "BETA_BRAE_ALABAMA_EDITION_V0_1",
+    "purpose": "Purpose Driven Schooling",
+    "status": "BETA_ACTIVATED_PENDING_COMMIT_COMPLETION",
+    "authority": false
+  },
+  "verification_flags": {
+    "legal_relationship_verified": false,
+    "custody_or_guardianship_verified": false,
+    "financial_authority_verified": false,
+    "repo_admin_authority_verified": false,
+    "promotion_status": false,
+    "central_authority": false,
+    "independently_verified_by_assistant": false
+  }
+}
