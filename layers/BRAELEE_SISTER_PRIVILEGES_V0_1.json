@@ -1,41 +1,63 @@
 {
-  "schema": "BRAELEE_SISTER_PRIVILEGES_V0_1",
+  "schema": "JOY_SISTER_NETWORK_V0_1",
   "project": "JOY",
   "status": "OPERATOR_DECLARED_NOT_INDEPENDENTLY_VERIFIED",
   "authority": false,
   "promotion": false,
-  "relationship": {
-    "sister_repo": "jsonwisdom/BRAELEE",
-    "joy_repo": "jsonwisdom/JOY",
-    "role": "sister_witness_surface_with_special_privileges",
+  "principle": "JOY updates her sisters as a witness and continuity hub, not as a command authority.",
+  "joy_role": {
+    "repo": "jsonwisdom/JOY",
+    "role": "family_witness_layer_and_sister_update_hub",
+    "source_readme_doctrine": "JoySpace guides choices. JoySpace does not control people. Authority remains false.",
     "authority": false
   },
-  "special_privileges": {
-    "status": "DECLARED_NOT_LEGAL_OR_ADMINISTRATIVE_AUTHORITY",
-    "allowed_contexts": [
-      "family continuity",
-      "joy witness layer",
-      "purpose driven schooling support",
-      "memory preservation",
-      "badge and game surface",
-      "gentle replay support"
+  "sister_surfaces": [
+    {
+      "name": "BRAELEE",
+      "repo": "jsonwisdom/BRAELEE",
+      "role": "sister_witness_surface_with_special_privileges",
+      "context": "Beta Brae Alabama Edition / Purpose Driven Schooling",
+      "status": "ACTIVE_IN_JOY_CONTEXT_OPERATOR_DECLARED",
+      "authority": false
+    },
+    {
+      "name": "JAYCEE",
+      "repo": "jsonwisdom/JAYCEE",
+      "role": "sister_witness_surface",
+      "context": "Wisdom Family sibling continuity surface",
+      "status": "ACTIVE_IN_JOY_CONTEXT_OPERATOR_DECLARED",
+      "authority": false
+    }
+  ],
+  "three_sisters_algorithm": {
+    "status": "ACTIVE_FROM_JOY_README_CONTEXT",
+    "steps": [
+      "Protect the memory",
+      "Keep the joy moving",
+      "Choose the next safe action"
     ],
-    "not_allowed_to_claim": [
-      "legal authority",
-      "custody or guardianship authority",
-      "financial authority",
-      "repository ownership transfer",
-      "central authority",
-      "promotion status"
-    ],
+    "inherits_three_daughters_algorithm": true,
+    "family_barrier_rule": "If the game weakens the family barrier, the game stops. If the game protects the family and creates joy, the game continues.",
     "authority": false
   },
-  "braelee_context": {
-    "beta_layer": "BETA_BRAE_ALABAMA_EDITION_V0_1",
-    "purpose": "Purpose Driven Schooling",
-    "status": "BETA_ACTIVATED_PENDING_COMMIT_COMPLETION",
-    "authority": false
-  },
+  "allowed_contexts": [
+    "family continuity",
+    "joy witness layer",
+    "purpose driven schooling support",
+    "memory preservation",
+    "badge and game surface",
+    "gentle replay support",
+    "sister updates through JOY"
+  ],
+  "not_allowed_to_claim": [
+    "legal authority",
+    "custody or guardianship authority",
+    "financial authority",
+    "repository ownership transfer",
+    "central authority",
+    "promotion status",
+    "command-and-control over people"
+  ],
   "verification_flags": {
     "legal_relationship_verified": false,
     "custody_or_guardianship_verified": false,
@@ -43,6 +65,7 @@
     "repo_admin_authority_verified": false,
     "promotion_status": false,
     "central_authority": false,
+    "command_authority_verified": false,
     "independently_verified_by_assistant": false
   }
 }
