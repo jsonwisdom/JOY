@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">JOY_REPO Doorway Map</title>
+  <desc id="desc">A simple doorway map showing Joy welcomes, HQ explains, Registry records, Replay proves, and Wisdom grows.</desc>
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="90" y="70" width="1020" height="535" rx="38" fill="#111827" stroke="#facc15" stroke-width="4"/>
+  <path d="M310 555 V250 C310 145 390 95 600 95 C810 95 890 145 890 250 V555" fill="none" stroke="#f8fafc" stroke-width="10"/>
+  <text x="600" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#f8fafc">JOY_REPO</text>
+  <text x="600" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#fde68a">The Front Door to Badger Camp</text>
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <rect x="425" y="245" width="350" height="52" rx="16" fill="#1d4ed8"/>
+    <text x="600" y="280" fill="#ffffff">Joy welcomes</text>
+    <text x="600" y="325" fill="#facc15">↓</text>
+    <rect x="425" y="340" width="350" height="52" rx="16" fill="#047857"/>
+    <text x="600" y="375" fill="#ffffff">HQ explains</text>
+    <text x="600" y="420" fill="#facc15">↓</text>
+    <rect x="425" y="435" width="350" height="52" rx="16" fill="#7c3aed"/>
+    <text x="600" y="470" fill="#ffffff">Registry records</text>
+    <text x="600" y="515" fill="#facc15">↓</text>
+    <rect x="425" y="530" width="350" height="52" rx="16" fill="#b45309"/>
+    <text x="600" y="565" fill="#ffffff">Replay proves</text>
+  </g>
+  <text x="600" y="630" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#f8fafc">If the newcomer gets stuck, the doorway failed. Patch the doorway. Replay the journey. On Wisconsin.</text>
+  <text x="1010" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#fde68a">🦡</text>
+</svg>
