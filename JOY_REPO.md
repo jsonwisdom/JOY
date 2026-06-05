@@ -1,4 +1,4 @@
-# JOY_REPO.md v1.2
+# JOY_REPO.md v1.3
 
 Status: CULTURAL_FRONT_DOOR_REBOOTED
 
@@ -21,13 +21,14 @@ The JOY REPO helps people enter Badger Camp with warmth, clarity, art, humor, an
 ```json
 {
   "repo": "jsonwisdom/JOY",
-  "version": "1.2",
-  "status": "REBOOTED",
+  "version": "1.3",
+  "status": "REBOOTED_WITH_REPUTATION_LAYER",
   "front_door": true,
   "truth_layer": false,
   "evidence_layer": false,
+  "reputation_layer": true,
   "purpose": "welcome first, verify next",
-  "rule": "joy welcomes; receipts decide"
+  "rule": "joy welcomes; receipts decide; reputation follows replay"
 }
 ```
 
@@ -47,6 +48,7 @@ The JOY REPO contains the human layer of Badger Camp:
 - community language
 - game loops
 - gentle onboarding quests
+- reputation earned from verified participation
 
 It is where the system remembers who we were while the receipts were being made.
 
@@ -73,6 +75,7 @@ Joy welcomes.
 HQ explains.
 Registry records.
 Replay proves.
+Reputation follows.
 ```
 
 ---
@@ -87,42 +90,48 @@ Replay proves.
       "emoji": "📚",
       "role": "first_citizen_verifier",
       "power": "finds public evidence",
-      "quest": "Genesis Replay 001"
+      "quest": "Genesis Replay 001",
+      "reputation_badge": "First Finder"
     },
     {
       "name": "Artist",
       "emoji": "🎨",
       "role": "culture_maker",
       "power": "turns receipts into memory",
-      "quest": "make verification feel human"
+      "quest": "make verification feel human",
+      "reputation_badge": "Memory Maker"
     },
     {
       "name": "Scientist",
       "emoji": "🔬",
       "role": "method_checker",
       "power": "tests claims against repeatable process",
-      "quest": "separate observation from conclusion"
+      "quest": "separate observation from conclusion",
+      "reputation_badge": "Method Keeper"
     },
     {
       "name": "Builder",
       "emoji": "⚙️",
       "role": "tool_maker",
       "power": "turns doctrine into usable surfaces",
-      "quest": "make the path easier without weakening it"
+      "quest": "make the path easier without weakening it",
+      "reputation_badge": "Doorway Fixer"
     },
     {
       "name": "Journalist",
       "emoji": "🗞️",
       "role": "public_narrator",
       "power": "explains what the receipts show",
-      "quest": "report without overclaiming"
+      "quest": "report without overclaiming",
+      "reputation_badge": "Clean Narrator"
     },
     {
       "name": "Student",
       "emoji": "🎓",
       "role": "learner",
       "power": "asks the obvious question",
-      "quest": "prove a stranger can learn the system"
+      "quest": "prove a stranger can learn the system",
+      "reputation_badge": "Question Spark"
     }
   ]
 }
@@ -130,10 +139,46 @@ Replay proves.
 
 ---
 
+## Reputation Layer
+
+Reputation is earned by completing public, reproducible actions.
+
+Reputation is not authority.
+Reputation is not truth.
+Reputation is not permission to bypass verification.
+
+Reputation means:
+
+```text
+This participant helped the camp learn something,
+and the contribution is linked to a public receipt.
+```
+
+### Reputation States
+
+```text
+NEWCOMER       arrived through JOY
+FINDER         located public evidence
+VERIFIER       completed a replay task
+TEACHER        helped someone else replay
+FIXER          improved the doorway after a failure
+KEEPER         maintained a public record without overclaiming
+```
+
+### Reputation Rule
+
+```text
+No receipt, no reputation.
+No replay, no verifier status.
+No authority ever.
+```
+
+---
+
 ## Super Secret Sister Syntax
 
 ```text
-::sister_joy::<Girl>/<Event>/<Status>
+::sister_joy::<Girl>/<Event>/<Status>/<Reputation>
 ```
 
 Use this syntax only after the linked receipt reaches `VERIFIED` or `REPLAYED`.
@@ -141,23 +186,25 @@ Use this syntax only after the linked receipt reaches `VERIFIED` or `REPLAYED`.
 Examples:
 
 ```text
-::sister_joy::Librarian/Genesis Replay 001/REPLAYED
+::sister_joy::Librarian/Genesis Replay 001/REPLAYED/First Finder
 Public evidence located.
 Independent verification completed.
 Wisconsin learns.
+Reputation earned: VERIFIER.
 ```
 
 ```text
-::sister_joy::Artist/Badger Camp HQ Artwork/VERIFIED
+::sister_joy::Artist/Badger Camp HQ Artwork/VERIFIED/Memory Maker
 The front door is visible.
 The receipt is linked.
 Joy enters without replacing proof.
+Reputation earned: FINDER.
 ```
 
 Forbidden syntax:
 
 ```text
-::sister_joy::Librarian/Genesis Replay 001/CLAIMED
+::sister_joy::Librarian/Genesis Replay 001/CLAIMED/First Finder
 ```
 
 Reason:
@@ -166,6 +213,7 @@ Reason:
 CLAIMED is not VERIFIED.
 CLAIMED is not REPLAYED.
 Celebration waits for receipts.
+Reputation waits for replay.
 ```
 
 ---
@@ -216,6 +264,8 @@ How did I verify it?
 +25 Community: explained the artwork
 +50 Verification: checked the receipt path
 +100 Badger Wisdom: completed TX_001 without asking Jay
++1 Reputation: First Finder
++1 Status: VERIFIER after replay is recorded
 ```
 
 ### Failure Rule
@@ -231,9 +281,9 @@ Fix the doorway and replay.
 ## The Badger Wisdom Equation
 
 ```text
-History + Verification + Community + Art + Joy
-----------------------------------------------
-                     Karen
+History + Verification + Community + Art + Joy + Reputation
+-----------------------------------------------------------
+                          Karen
 
 = BADGER WISDOM
 ```
@@ -246,9 +296,13 @@ The Hall of Receipts records what happened.
 
 The JOY REPO records how it felt.
 
+The Reputation Layer records who helped, without making them an authority.
+
 The Hall may exist without JOY.
 
 JOY may never substitute for the Hall.
+
+Reputation may never substitute for replay.
 
 ---
 
@@ -257,3 +311,5 @@ JOY may never substitute for the Hall.
 Celebrate receipts.
 
 Do not substitute celebration for verification.
+
+Do not substitute reputation for authority.
