@@ -2,15 +2,19 @@
 
 **JOYSPACE** is a family-safe digital garden, witness layer, and continuity layer for Wisdom Replay Systems.
 
-## 🚪 Start Here — JOY_REPO (Front Door)
+## 🚪 Start Here — Badger Camp Front Porch
+
+**Immediate path for any stranger:**
+
+- **[JOY_REPO.md](JOY_REPO.md)** — The cultural front door: what is this place?
+- **[BADGER_CAMP_HQ.md](BADGER_CAMP_HQ.md)** — Orientation hub: where to go next
+- **[quests/GENESIS_REPLAY_001.md](quests/GENESIS_REPLAY_001.md)** — First quest card: prove you can play
 
 ![JOY_REPO Doorway Map](docs/badger_doorway_map.svg)
 
 **JOY_REPO is the front door to Badger Camp.**
 
 It is the cultural layer that welcomes people into the system before they encounter documentation, receipts, and replay exercises.
-
-[Read full JOY_REPO →](JOY_REPO.md)
 
 ---
 
