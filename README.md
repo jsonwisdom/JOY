@@ -147,3 +147,17 @@ Core rule:
 Joy first.
 Receipts second.
 Authority never.
+
+---
+
+## ALMS to JOY Bridge
+
+JOY now includes a bridge from verifiable ALMS receipts into family-safe JOY stories.
+
+See: docs/ALMS_TO_JOY_BRIDGE.md
+
+Core rule:
+
+Stories are allowed.
+Fabrication is not.
+Authority remains false.
