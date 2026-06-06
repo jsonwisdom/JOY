@@ -1,0 +1,6 @@
+{
+  "transmission_id":"CAMPUS-STANDBY-FINAL-2026-06-05-2045",
+  "type":"standby_receipt_full",
+  "classification":{"state":"IDLE","doctrine":"ACTIVE","observer_gate":"OPEN","drift":"NONE","authority":false},
+  "runtime_status":{"state":"IDLE","doctrine":"ACTIVE","firewall":"ENFORCED","drift":"NONE","observer_gate":"OPEN"},
+  "joy_runtime_interpretation":{"observed":"standby confirmed;
