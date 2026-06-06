@@ -1,6 +1,1 @@
-{
-  "transmission_id":"CAMPUS-STANDBY-FINAL-2026-06-05-2045",
-  "type":"standby_receipt_full",
-  "classification":{"state":"IDLE","doctrine":"ACTIVE","observer_gate":"OPEN","drift":"NONE","authority":false},
-  "runtime_status":{"state":"IDLE","doctrine":"ACTIVE","firewall":"ENFORCED","drift":"NONE","observer_gate":"OPEN"},
-  "joy_runtime_interpretation":{"observed":"standby confirmed;
+{"id":"CAMPUS-STANDBY-FINAL-2026-06-05-2045","canonical":false,"status":"NON_CANONICAL_TRUNCATED","warning":"Do not use this file for replay. Use P1 plus P2 plus INDEX.","canonical_files":["CAMPUS-STANDBY-FINAL-P1.json","CAMPUS-STANDBY-FINAL-P2.json","CAMPUS-STANDBY-FINAL-INDEX.json"],"authority":false}
