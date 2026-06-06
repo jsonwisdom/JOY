@@ -133,3 +133,17 @@ Sister One   -> Protect the memory
 Sister Two   -> Keep the joy moving
 Sister Three -> Choose the next safe action
 ```
+
+---
+
+## Super Secret Sister Syntax
+
+JOY now includes a playful sister-language layer for Wisdom Girls, family-safe participation, kindness, memory, and receipt-based verification.
+
+See: docs/SUPER_SECRET_SISTER_SYNTAX.md
+
+Core rule:
+
+Joy first.
+Receipts second.
+Authority never.
