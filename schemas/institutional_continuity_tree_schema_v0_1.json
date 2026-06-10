@@ -7,6 +7,8 @@
     "protocol",
     "entity",
     "claims",
+    "participants",
+    "family_ontology",
     "metrics",
     "replay_paths",
     "authority"
@@ -87,11 +89,135 @@
         "additionalProperties": false
       }
     },
+    "participants": {
+      "type": "array",
+      "description": "Replay-completeness layer. Actual participants, builders, witnesses, memory keepers, caregivers, leaders, and contributors must be represented by evidence when claims depend on them.",
+      "items": {
+        "type": "object",
+        "required": [
+          "participant_id",
+          "display_name",
+          "roles",
+          "relationship_context",
+          "evidence_branches",
+          "replay_required"
+        ],
+        "properties": {
+          "participant_id": { "type": "string" },
+          "display_name": { "type": ["string", "null"] },
+          "roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "builder",
+                "researcher",
+                "engineer",
+                "educator",
+                "leader",
+                "witness",
+                "keeper_of_memory",
+                "caregiver",
+                "creator",
+                "community_member",
+                "family_member",
+                "other"
+              ]
+            },
+            "minItems": 1
+          },
+          "relationship_context": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "father",
+                "mother",
+                "daughter",
+                "son",
+                "grandmother",
+                "grandfather",
+                "sister",
+                "brother",
+                "aunt",
+                "uncle",
+                "caregiver",
+                "mentor",
+                "organization_member",
+                "public_contributor",
+                "unknown",
+                "other"
+              ]
+            }
+          },
+          "evidence_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "branch_id",
+                "source_url",
+                "capture_timestamp_utc",
+                "raw_sha256",
+                "replay_status"
+              ],
+              "properties": {
+                "branch_id": { "type": "string" },
+                "source_url": { "type": ["string", "null"] },
+                "capture_timestamp_utc": { "type": ["string", "null"] },
+                "raw_sha256": { "type": ["string", "null"] },
+                "replay_status": {
+                  "enum": [
+                    "UNVERIFIED",
+                    "REPLAY_PENDING",
+                    "REPLAY_PASS",
+                    "REPLAY_FAIL"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "replay_required": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "family_ontology": {
+      "type": "object",
+      "description": "Family continuity terms available for replay. Relationship does not create authority.",
+      "required": ["enabled", "relationships", "authority_from_relationship"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "father",
+              "mother",
+              "daughter",
+              "son",
+              "grandmother",
+              "grandfather",
+              "sister",
+              "brother",
+              "aunt",
+              "uncle",
+              "caregiver",
+              "mentor",
+              "community_member",
+              "other"
+            ]
+          }
+        },
+        "authority_from_relationship": { "const": false }
+      },
+      "additionalProperties": false
+    },
     "metrics": {
       "type": "object",
       "required": [
         "closed_branches",
         "total_claims",
+        "participant_replay_completeness",
         "replay_independence_factor",
         "abandoned_root_penalties",
         "continuity_score"
@@ -99,6 +225,7 @@
       "properties": {
         "closed_branches": { "type": "integer", "minimum": 0 },
         "total_claims": { "type": "integer", "minimum": 0 },
+        "participant_replay_completeness": { "type": "number", "minimum": 0, "maximum": 1 },
         "replay_independence_factor": { "type": "number", "minimum": 0, "maximum": 1 },
         "abandoned_root_penalties": { "type": "number", "minimum": 0, "maximum": 1 },
         "continuity_score": {
@@ -117,6 +244,7 @@
       "type": "object",
       "properties": {
         "stale_open_branch_penalty_enabled": { "type": "boolean" },
+        "participant_omission_penalty_enabled": { "type": "boolean" },
         "requires_timestamped_public_evidence": { "type": "boolean" },
         "authority_never_from_score": { "type": "boolean" }
       },
