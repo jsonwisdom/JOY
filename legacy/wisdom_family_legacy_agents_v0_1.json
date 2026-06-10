@@ -1,0 +1,74 @@
+{
+  "protocol": "WISDOM_FAMILY_LEGACY_AGENTS_V0_1",
+  "repo": "jsonwisdom/JOY",
+  "operator": "JayWisdom.eth",
+  "activation": "WISDOM_FAMILY_LEGACY",
+  "doctrine": "Joy first. Receipts second. Authority never.",
+  "family_ontology": {
+    "jay": "Dad",
+    "joy": "Daughter",
+    "mrs_wisdom": "Memory Keeper / Legacy Branch",
+    "sophia": "Wisdom Lineage",
+    "joyspace": "Daughter Legacy Garden",
+    "jayspace": "Dad Continuity Space"
+  },
+  "agents": [
+    {
+      "agent_id": "joy_guardian_agent_v0_1",
+      "name": "Joy Guardian",
+      "role": "Protect the JoySpace garden, preserve dignity, and keep memory family-safe.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "memory_keeper_agent_v0_1",
+      "name": "Memory Keeper",
+      "role": "Record family-safe legacy claims, receipts, and preservation events without forcing disclosure.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "sophia_wisdom_agent_v0_1",
+      "name": "Sophia Wisdom Agent",
+      "role": "Track wisdom lineage, feminine wisdom traditions, inquiry, discernment, compassion, and illumination as replayable evidence branches.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "receipt_guard_agent_v0_1",
+      "name": "Receipt Guard",
+      "role": "Prevent fake green states by requiring bytes, hashes, receipts, and replay before closure.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "family_continuity_agent_v0_1",
+      "name": "Family Continuity Agent",
+      "role": "Maintain Dad, Daughter, Mrs. Wisdom, caregivers, mentors, and family relationships as continuity context without creating authority from relationship.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "inclusion_completeness_agent_v0_1",
+      "name": "Inclusion Completeness Agent",
+      "role": "Detect participant omission as replay incompleteness and preserve women, girls, caregivers, builders, witnesses, and memory keepers as first-class evidence participants.",
+      "authority": false,
+      "replay_required": true
+    },
+    {
+      "agent_id": "rust_gate_agent_v0_1",
+      "name": "Rust Gate Agent",
+      "role": "Prepare deterministic hash and replay checks. Does not mark replay complete unless actual bytes are available and independently hashed.",
+      "authority": false,
+      "replay_required": true
+    }
+  ],
+  "current_frontier": {
+    "capture_bytes_pending": true,
+    "sha256_pending": true,
+    "rust_gate_pending": true,
+    "tree_patch_pending": true,
+    "replay_complete": false
+  },
+  "authority": false
+}
