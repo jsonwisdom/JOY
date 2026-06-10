@@ -1,0 +1,39 @@
+{
+  "protocol": "SOPHIA_MRS_WISDOM_MERGE_RECEIPT_V0_1",
+  "commit_sha": "2c3e6778fc1c659cf8534302d01a918ba3a43551",
+  "branch_type": "PRESERVATION_EVENT",
+  "entity": "Sophia_Wisdom_Lineage + Mrs_Wisdom_Legacy + JOY_Garden",
+  "verdict": false,
+  "authority": false,
+  "replay_required": true,
+  "capture_status": "NO_CAPTURE_BYTES_ATTACHED",
+  "raw_sha256": null,
+  "sha256_recomputed_from_bytes": false,
+  "rust_gate_run": false,
+  "tree_patch_applied": false,
+  "replay_complete": false,
+  "participants": [
+    {
+      "participant_id": "merge_p001",
+      "roles": [
+        "keeper_of_memory",
+        "preserver"
+      ],
+      "relationship_context": [
+        "Mrs_Wisdom",
+        "Daughter_Node_JOY"
+      ],
+      "evidence_branches": [],
+      "replay_required": true
+    }
+  ],
+  "family_ontology_link": true,
+  "continuity_impact": {
+    "closed_branches": 0,
+    "replay_independence_factor": 0.0,
+    "abandoned_root_penalties": 0,
+    "continuity_score_delta": null
+  },
+  "timestamp_utc": "2026-06-10T00:00:00Z",
+  "notes": "Preservation merge recorded. Full replay pending evidence leaves, captured bytes, SHA256 recomputation, Rust gate, and continuity tree patch."
+}
