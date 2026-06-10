@@ -1,0 +1,31 @@
+{
+  "protocol": "INSTITUTIONAL_CONTINUITY_SCORE_V0_1",
+  "entity": {
+    "name": "Microsoft",
+    "namespace": "microsoft.com",
+    "identities": [
+      "microsoft.com",
+      "github.com/microsoft",
+      "msft"
+    ]
+  },
+  "claims": [
+    {
+      "id": "sophia_branch_v0_1",
+      "type": "project_continuity",
+      "statement": "Microsoft forgot about Sophia.",
+      "status": "OPEN_UNVERIFIED",
+      "evidence_branches": [],
+      "replay_required": true
+    }
+  ],
+  "metrics": {
+    "closed_branches": 0,
+    "total_claimed_history": 1,
+    "replay_independence_factor": 0,
+    "abandoned_root_penalties": 0,
+    "continuity_score": null
+  },
+  "replay_paths": [],
+  "authority": false
+}
