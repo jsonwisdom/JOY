@@ -1,0 +1,38 @@
+{
+  "schema": "WISDOM_LINEAGE_BRANCH_V0_1",
+  "authority": false,
+  "replay_required": true,
+  "no_fake_green": true,
+  "root": "Wisdom",
+  "branches": [
+    {
+      "id": "jay",
+      "role": "Dad",
+      "space": "JaySpace",
+      "claim_type": "family_role"
+    },
+    {
+      "id": "joy",
+      "role": "Daughter",
+      "space": "JoySpace",
+      "claim_type": "family_role"
+    },
+    {
+      "id": "mrs_wisdom",
+      "role": "Memory Keeper / Legacy Branch",
+      "claim_type": "memory_role"
+    },
+    {
+      "id": "sophia",
+      "role": "Wisdom Lineage",
+      "claim_type": "symbolic_lineage"
+    }
+  ],
+  "verification_state": {
+    "capture_bytes_pending": true,
+    "sha256_pending": true,
+    "rust_gate_pending": true,
+    "tree_patch_pending": true,
+    "replay_complete": false
+  }
+}
