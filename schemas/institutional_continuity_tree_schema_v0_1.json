@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://joyspace.me/schemas/institutional_continuity_tree_schema_v0_1.json",
+  "title": "Institutional Continuity Tree Schema v0.1",
+  "type": "object",
+  "required": [
+    "protocol",
+    "entity",
+    "claims",
+    "metrics",
+    "replay_paths",
+    "authority"
+  ],
+  "properties": {
+    "protocol": {
+      "const": "INSTITUTIONAL_CONTINUITY_TREE_V0_1"
+    },
+    "entity": {
+      "type": "object",
+      "required": ["name", "namespace", "identities"],
+      "properties": {
+        "name": { "type": "string" },
+        "namespace": { "type": "string" },
+        "identities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "statement",
+          "status",
+          "evidence_branches",
+          "replay_required"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "statement": { "type": "string" },
+          "status": {
+            "enum": [
+              "OPEN_UNVERIFIED",
+              "EVIDENCE_COLLECTED",
+              "REPLAY_PENDING",
+              "CLOSED_VERIFIED",
+              "CLOSED_REFUTED"
+            ]
+          },
+          "evidence_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "branch_id",
+                "source_url",
+                "capture_timestamp_utc",
+                "raw_sha256",
+                "replay_status"
+              ],
+              "properties": {
+                "branch_id": { "type": "string" },
+                "source_url": { "type": "string" },
+                "capture_timestamp_utc": { "type": "string" },
+                "raw_sha256": { "type": "string" },
+                "replay_status": {
+                  "enum": [
+                    "UNVERIFIED",
+                    "REPLAY_PENDING",
+                    "REPLAY_PASS",
+                    "REPLAY_FAIL"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "replay_required": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "closed_branches",
+        "total_claims",
+        "replay_independence_factor",
+        "abandoned_root_penalties",
+        "continuity_score"
+      ],
+      "properties": {
+        "closed_branches": { "type": "integer", "minimum": 0 },
+        "total_claims": { "type": "integer", "minimum": 0 },
+        "replay_independence_factor": { "type": "number", "minimum": 0, "maximum": 1 },
+        "abandoned_root_penalties": { "type": "number", "minimum": 0, "maximum": 1 },
+        "continuity_score": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "replay_paths": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "decay_rules": {
+      "type": "object",
+      "properties": {
+        "stale_open_branch_penalty_enabled": { "type": "boolean" },
+        "requires_timestamped_public_evidence": { "type": "boolean" },
+        "authority_never_from_score": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "authority": { "const": false }
+  },
+  "additionalProperties": false
+}
