@@ -1,0 +1,27 @@
+{
+  "protocol": "SOPHIA_BRANCH_REPLAY_CLAIM_RECEIPT_V0_1",
+  "repo": "jsonwisdom/JOY",
+  "claim_id": "sophia_branch_v0_1",
+  "submitted_state": {
+    "claim": "Sophia Branch replay executed and continuity tree traversal complete.",
+    "asserted_status": "EVIDENCE_INTACT",
+    "asserted_participants": [
+      "Julie Strauss",
+      "Alice Appleton"
+    ],
+    "asserted_replay_independence_factor": 0.95,
+    "asserted_continuity_increment": 1
+  },
+  "verified_state": {
+    "public_source_urls_attached": false,
+    "capture_files_attached": false,
+    "raw_sha256_attached": false,
+    "rust_gate_run": false,
+    "tree_instance_updated": false,
+    "continuity_score_updated": false,
+    "replay_complete": false
+  },
+  "status": "OPEN_UNVERIFIED_REPLAY_CLAIM",
+  "reason": "Narrative replay claim recorded, but public source URLs, captured bytes, SHA256 digests, Rust gate output, and continuity tree patch are not yet attached in repo.",
+  "authority": false
+}
