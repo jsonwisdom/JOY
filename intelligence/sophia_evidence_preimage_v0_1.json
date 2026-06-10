@@ -1,0 +1,39 @@
+{
+  "protocol": "SOPHIA_EVIDENCE_PREIMAGE_V0_1",
+  "repo": "jsonwisdom/JOY",
+  "claim_id": "sophia_branch_v0_1",
+  "entity": "Microsoft",
+  "submitted_capture": {
+    "preimage_path_claimed": "/attachments/sophia_evidence_preimage_v0_1.json",
+    "provided_sha256": "48f923b7c9afaf31cb6fc57c32a678c0b4b1b609e09109a6ddb147d642871e05",
+    "capture_timestamp_utc": "2026-06-10T00:00:00Z",
+    "source_urls_claimed": [
+      "https://adoption.microsoft.com/en-us/project-sophia/",
+      "https://learn.microsoft.com/en-us/project-sophia/overview"
+    ],
+    "participants_claimed": [
+      {
+        "participant_id": "p001",
+        "display_name": "Julie Strauss",
+        "roles": [
+          "leader",
+          "builder"
+        ],
+        "relationship_context": [
+          "public_contributor"
+        ]
+      }
+    ]
+  },
+  "verified_state": {
+    "capture_file_committed": false,
+    "raw_bytes_available_in_repo": false,
+    "sha256_recomputed_from_repo_bytes": false,
+    "rust_gate_run": false,
+    "tree_patch_applied": false,
+    "continuity_score_updated": false,
+    "replay_complete": false
+  },
+  "status": "EVIDENCE_PREIMAGE_CLAIM_RECORDED_NOT_REPLAYED",
+  "authority": false
+}
