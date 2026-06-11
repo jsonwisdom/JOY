@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CRP Replay Registry Schema v0.1",
+  "type": "object",
+  "required": ["artifact", "version", "authority", "no_fake_green", "entries"],
+  "properties": {
+    "artifact": { "const": "CRP_REPLAY_REGISTRY_V0_1" },
+    "version": { "const": "0.1" },
+    "authority": { "type": "boolean", "const": false },
+    "no_fake_green": { "type": "boolean", "const": true },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "seed_artifact", "target_seed_hash", "canonicalization_rule", "anchors", "witnesses", "current_registry_state", "sealed"],
+        "properties": {
+          "id": { "type": "string" },
+          "seed_artifact": { "type": "string" },
+          "target_seed_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "canonicalization_rule": { "type": "string" },
+          "anchors": { "type": "object" },
+          "witnesses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["observer", "claim", "scope", "authority"],
+              "properties": {
+                "observer": { "type": "string" },
+                "claim": { "type": "string" },
+                "scope": { "type": "string", "enum": ["internal", "external", "archive_readback"] },
+                "evidence": { "type": "string" },
+                "authority": { "type": "boolean", "const": false }
+              },
+              "additionalProperties": true
+            }
+          },
+          "current_registry_state": { "type": "string" },
+          "sealed": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
