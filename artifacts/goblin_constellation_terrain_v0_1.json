@@ -1,0 +1,18 @@
+{
+  "scanner_version": "0.1.0-level0-terrain",
+  "generated_at": "2026-06-11T18:10:00.000Z",
+  "terrain": {
+    "JOY": {
+      "exists": true,
+      "reachable": true,
+      "public": true,
+      "default_branch": "main",
+      "default_branch_sha": "4b04d3cc61573300ddbce60094815012744be593",
+      "last_commit_time": "2026-06-11T17:16:51Z",
+      "tree_sha": "6671840eb6b915a44ae3c25d8aa7746dd46715a8",
+      "status": "HEALTHY"
+    }
+  },
+  "authority": false,
+  "no_fake_green": true
+}
