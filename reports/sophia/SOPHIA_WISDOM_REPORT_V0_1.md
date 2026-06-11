@@ -38,6 +38,7 @@ A claim may be remembered before it is externally witnessed, but it may not be c
 
 ## Status
 
+```json
 {
   "sophia_proof": "CANON_CANDIDATE",
   "execution_surface": "EXPLICITLY_ZERO_UNTIL_ATTESTED",
