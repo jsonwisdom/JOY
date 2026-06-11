@@ -1,0 +1,2715 @@
+{
+  "scanner_version": "0.1.1-level1-paths-no-deps",
+  "generated_at": "2026-06-11T17:21:28.735Z",
+  "terrain": {
+    "JOY": {
+      "exists": true,
+      "reachable": true,
+      "public": true,
+      "default_branch": "main",
+      "default_branch_sha": "4b04d3cc61573300ddbce60094815012744be593",
+      "last_commit_time": "2026-06-11T17:16:51Z",
+      "tree_sha": "6671840eb6b915a44ae3c25d8aa7746dd46715a8",
+      "status": "HEALTHY"
+    }
+  },
+  "path_surface": [
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/court/COURT_SPEC_V0_1.md",
+      "sha": "e4a62354fa6bec8e7541e9740cede6487773b79c",
+      "size": 2242,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/court/COURT_SPEC_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/ontology/JOY_ONTOLOGY_V0_1.md",
+      "sha": "71b7773dead22037baeefc5aad8d0e2d5c86bdea",
+      "size": 3739,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/ontology/JOY_ONTOLOGY_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+      "sha": "8d6bccaabc50b6567c0e95c3ead033137d5c21b6",
+      "size": 1524,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/receipts/RECEIPT_SCHEMA_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/repository/REPOSITORY_SPEC_V0_1.md",
+      "sha": "a41039868a970239cffe5b1506744ef05ced1bea",
+      "size": 2088,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/repository/REPOSITORY_SPEC_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/ritual/RITUAL_SPEC_V0_1.md",
+      "sha": "1ee765c842213fb38394e2e32f733685b6e11534",
+      "size": 1637,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/ritual/RITUAL_SPEC_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/stories/JOY_STORY_V0_1_FRONT_PORCH_AND_BASEMENT.md",
+      "sha": "1a01449abc68c7c6a881fb3241b1444b0ae19e67",
+      "size": 504,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/stories/JOY_STORY_V0_1_FRONT_PORCH_AND_BASEMENT.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
+      "sha": "46a0fa8e7ab65bdfa4ba1e0c0572004637d54e67",
+      "size": 2420,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/verification/VERIFICATION_RECORD_V0_1.md",
+      "sha": "c86c23e694646825b1543365a9807235db368065",
+      "size": 2073,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/verification/VERIFICATION_RECORD_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "_truth/witness/WITNESS_PROTOCOL_V0_1.md",
+      "sha": "fc230d95ea0f2f319e349d67fb5c26854c947092",
+      "size": 1156,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/_truth/witness/WITNESS_PROTOCOL_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": ".github/workflows/joyspace-validate.yml",
+      "sha": "bdc6eaafb8d536f5af1ff33910bc408068149180",
+      "size": 452,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/.github/workflows/joyspace-validate.yml"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": ".github/workflows/main.yml",
+      "sha": "bb3dbab2d1d7c70059dca20f26ee0fbd969cb9be",
+      "size": 571,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/.github/workflows/main.yml"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": ".github/workflows/real-runtime-halt.yml",
+      "sha": "d7717b61955a63a02c1265a35ab1682124d0ca3e",
+      "size": 4156,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/.github/workflows/real-runtime-halt.yml"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
+      "sha": "003ba5972a59e298253b447abb3de1bf0a33294d",
+      "size": 2531,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1.json",
+      "sha": "fe145784d42550102a17f8032cfc6ac078dacca5",
+      "size": 1706,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/HUMAN_L3_APPROVAL_V0_1.json",
+      "sha": "f6f1ab36b4c0d1be61da581369a38c8a2937c251",
+      "size": 425,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/HUMAN_L3_APPROVAL_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/JAYWISDOM_FULL_SYSTEM_REPLAY_V0_1.json",
+      "sha": "b4859a5f17fa49ad6195829affa708f930c0576c",
+      "size": 1629,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/JAYWISDOM_FULL_SYSTEM_REPLAY_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+      "sha": "ea32a071192545b51a9b3b1153796dcc06e4830b",
+      "size": 924,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L0_ATOMIC_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json",
+      "sha": "fe5593581f89991888d0def07a41b7d8b77fd33e",
+      "size": 2168,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L2_100K_CHALLENGE_PROGRESS_TRACKER_V0_1.json",
+      "sha": "86716ac47adc953d848f9fad9999a465a9f8ce38",
+      "size": 2625,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L2_100K_CHALLENGE_PROGRESS_TRACKER_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L2_JAYWISDOM_TOKEN_CHALLENGE_100K_STAGING_V0_1.json",
+      "sha": "49c28112e590de95be414ec2099a080adbf1480e",
+      "size": 2474,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L2_JAYWISDOM_TOKEN_CHALLENGE_100K_STAGING_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L2_JAYWISDOM_TOKEN_IDENTITY_CORRECTION_V0_1.json",
+      "sha": "c6aed7b0e2e80c34ca8cb0616e0d2a771d9e5ed0",
+      "size": 3572,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L2_JAYWISDOM_TOKEN_IDENTITY_CORRECTION_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_EMISSION_RULES_STAGING_V0_1.json",
+      "sha": "ac4b5490415cfb561aea1e60485949063d190f4e",
+      "size": 2657,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_EMISSION_RULES_STAGING_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_HASH_INTAKE_GEOMETRY_V0_1.json",
+      "sha": "40d2c2e6ddb1044c39dbd9dc36bb75d2d1744305",
+      "size": 2824,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_HASH_INTAKE_GEOMETRY_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_PROOF_TRANSITION_EVALUATION_V0_1.json",
+      "sha": "0099c3cd2a53105a71acb30cede7a53c005db144",
+      "size": 1618,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_PROOF_TRANSITION_EVALUATION_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_PROOF_TRANSITION_LOGIC_V0_1.json",
+      "sha": "00dbf56e7e47735bbc00cfbeca0930091486c0e4",
+      "size": 4462,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_PROOF_TRANSITION_LOGIC_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_PROOF_TRANSITION_REPLAY_EVALUATION_V0_1.json",
+      "sha": "50e8a7a45ad5f83b3c0594fe3f0741848c6f6b3d",
+      "size": 1166,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_PROOF_TRANSITION_REPLAY_EVALUATION_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_RUNTIME_PROOF_V0_1.json",
+      "sha": "e19e32da0557eb54e2bbaa36c77dee46b91d22f0",
+      "size": 1705,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_RUNTIME_PROOF_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_TELEMETRY_LAYER_FREEZE_V0_1.json",
+      "sha": "436fd7b170dc6e1720e7bbec6b0f85290b6d76cc",
+      "size": 4002,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_TELEMETRY_LAYER_FREEZE_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_TRANSITION_STATE_V0_2.json",
+      "sha": "3a72abd2f8b7d3c964bce56b9da66721bdfc313e",
+      "size": 406,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_TRANSITION_STATE_V0_2.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+      "sha": "d1bbdc4391350b715a74d87f976144391667f783",
+      "size": 2699,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L3_VERIFIER_TELEMETRY_MANIFEST_V0_1.json",
+      "sha": "771ca0981d89700e826a8abcbc1a1e89aa8bc589",
+      "size": 1951,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L3_VERIFIER_TELEMETRY_MANIFEST_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json",
+      "sha": "00619953d5c5933d8f855705a8c1fe5628d3bce1",
+      "size": 1355,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_BUNDLE_STRUCTURAL_REVIEW_V0_1.json",
+      "sha": "11fb259dd2c635b12837ba7990eb15e79028f9a9",
+      "size": 1673,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_BUNDLE_STRUCTURAL_REVIEW_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_CLOSURE_INDEX_V0_1.json",
+      "sha": "931338145cb52d96976c6b9c9177e355ae8f65cf",
+      "size": 1569,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_CLOSURE_INDEX_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
+      "sha": "786f6f431dd496b5a7f265ca9cfcea7b5f023673",
+      "size": 1241,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
+      "sha": "b8752ac08156ecbe9cbde6ad99a675c397e71eba",
+      "size": 3213,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1.json",
+      "sha": "2ff1bdb46ed02c18e2ee91f751870c5c47dcdb42",
+      "size": 3694,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/l5/ATOMIC_L5_SNAP_BACK_REPLAY_V0_1.json",
+      "sha": "35042fe57405e0ee228d59b51279764ded1e29e4",
+      "size": 1537,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/l5/ATOMIC_L5_SNAP_BACK_REPLAY_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json",
+      "sha": "793f62111d290a0dcf23cdfd6344c4b7e4e999a9",
+      "size": 1452,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/PROFILE_HEIDEE_V0_4.json",
+      "sha": "cd8005c00e806656a7860dd18b81f447d8f2facd",
+      "size": 1338,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/PROFILE_HEIDEE_V0_4.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
+      "sha": "e9887f1a33c97fa6b2e96cd8c975cfa2e79702c0",
+      "size": 2367,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
+      "sha": "f3c308b205884a94c96c3ee530c9364103f763bb",
+      "size": 1880,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json",
+      "sha": "203f22ca6ff59ded6136048c22c94a59cd67bb75",
+      "size": 747,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "artifacts/zora/L4_ZORA_METADATA_CANDIDATE_V0_1.json",
+      "sha": "516469b542885a7e19f72e284ea29cc707fa4900",
+      "size": 1664,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/artifacts/zora/L4_ZORA_METADATA_CANDIDATE_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "assets/badges/harmony_weaver.svg",
+      "sha": "849ea4c0452db82256ece3e584358c29742871ff",
+      "size": 1481,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/assets/badges/harmony_weaver.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "assets/badges/README.md",
+      "sha": "5c695e25f45de5310555cf531f77a093df16deb5",
+      "size": 323,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/assets/badges/README.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "assets/badges/resilience_thread.svg",
+      "sha": "040728d66541251ed16881712bb06eb1847a68ac",
+      "size": 1043,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/assets/badges/resilience_thread.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "assets/badges/unsealed_loom.svg",
+      "sha": "1b88e775c1bfb1cc07b5d802650a5bf12fda573e",
+      "size": 1700,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/assets/badges/unsealed_loom.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "assets/badges/wisdom_anchor.svg",
+      "sha": "fd6894c68da6499bb8e683d691e3963fa2b29f97",
+      "size": 1276,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/assets/badges/wisdom_anchor.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "audits/daddy-wisdom/DADDY_WISDOM_REPO_AUDIT_V0_1.json",
+      "sha": "838323653e00f8099576649768591f81b326432b",
+      "size": 935,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/audits/daddy-wisdom/DADDY_WISDOM_REPO_AUDIT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_001_award.json",
+      "sha": "2f95099976fe8c64c271fbfb31dc8e7065a333d0",
+      "size": 515,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_002_award.json",
+      "sha": "de394dd7095d645ed6280c8b261a9af35fee4b6a",
+      "size": 517,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_003_award.json",
+      "sha": "968e328055d7921310c06a5bfb587bf9ca574a70",
+      "size": 517,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_004_award.json",
+      "sha": "ff83a1cafed957031334130b66470e0847aef6ef",
+      "size": 517,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_005_award.json",
+      "sha": "393ce5aa30b81f256d6a62281eb675ca16ef5284",
+      "size": 518,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_006_award.json",
+      "sha": "f08b6c08e7fd5c2f4f9e03bd00ce14b55dabe7cc",
+      "size": 516,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_006_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_007_award.json",
+      "sha": "a987cff241ad41cd8471edc5d749dedffdab6feb",
+      "size": 520,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_007_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_008_award.json",
+      "sha": "7fd7f821672b04d42731e86462953e53100b80c0",
+      "size": 515,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_008_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_009_award.json",
+      "sha": "70d52e97981e54aa34c40a367e1f8558cd34f90c",
+      "size": 517,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_009_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/future_protector_010_award.json",
+      "sha": "cae5bcbeb604c9918da0d5eddd98d02dbaa0b846",
+      "size": 517,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/future_protector_010_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_001_award.json",
+      "sha": "396a185310dc2cdeaca7a79ec47fe42fe3292c7e",
+      "size": 511,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_002_award.json",
+      "sha": "2a82934d1a7b67816bb7786008fc7a085e3bbc3d",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_003_award.json",
+      "sha": "d159ea09432c0688bab3cb7ad9c573e55033e2ef",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_004_award.json",
+      "sha": "8f2456d0331b69cc9335d7f0b5551d0f6f8ad93f",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_005_award.json",
+      "sha": "85bbdde6c773ac01e8c0273f00a43e29298e6dad",
+      "size": 514,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_006_award.json",
+      "sha": "186c6ee2d6aa56b0a44d4c7c9a78d19103f9b1e9",
+      "size": 512,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_006_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_007_award.json",
+      "sha": "43654fbe2a04aab9bc959ae9abacccb5e5a43547",
+      "size": 516,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_007_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_008_award.json",
+      "sha": "c3c45044e85bd4018f3c8a10bb3628fb23f28b90",
+      "size": 511,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_008_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_009_award.json",
+      "sha": "dead24966fcba6e693e86f94ab1290500616f177",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_009_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/growth_guardian_010_award.json",
+      "sha": "11212f27b62118bf99f69fec5b6c4816b0f76eb9",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/growth_guardian_010_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_001_award.json",
+      "sha": "8715af07114b8da213b587b62db0ce8ee455242a",
+      "size": 495,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_002_award.json",
+      "sha": "7a18ed7a2b41e7d73075c45a8cf026be8db161c7",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_003_award.json",
+      "sha": "dde66ece635f1c4df1eef8891192fc0fb2fc7138",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_004_award.json",
+      "sha": "6e3cb94e3b86a15acca7fb42b6d23d6497640037",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_005_award.json",
+      "sha": "ab381948d0b54347ce12f58b10dec75d7a90a27c",
+      "size": 498,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_006_award.json",
+      "sha": "efff0182288cb0b812a2fa2775dbb99ddc158cc4",
+      "size": 496,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_006_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_007_award.json",
+      "sha": "8a4c67ac2884a8ea044b3c710c34998878d46b91",
+      "size": 500,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_007_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_008_award.json",
+      "sha": "db5fce1efe9353d4b96ffd25de1dad655791c78c",
+      "size": 495,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_008_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_009_award.json",
+      "sha": "f31979cb5b1f3a0c657c31a7e1c311b68b989919",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_009_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/joy_bringer_010_award.json",
+      "sha": "26985a217f99aabce5004cbe338153d15f308de1",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/joy_bringer_010_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_001_award.json",
+      "sha": "4456eb0b58ca7961b2fe7a560094686d98a5607f",
+      "size": 511,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_002_award.json",
+      "sha": "69cb7ee152a527c28b76a2c0a0e3c1ed77aed50b",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_003_award.json",
+      "sha": "25a57925b1018970ae72494efb3e9d08333580d3",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_004_award.json",
+      "sha": "738d95c73b6f78691840196009835da8f8a8b4b7",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_005_award.json",
+      "sha": "ae6921ba710d9af6e0e1918ed9f2d65c1d9f9360",
+      "size": 514,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_006_award.json",
+      "sha": "d97e5864252364730ca1d0d1aa0ba12dd26cdfc0",
+      "size": 512,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_006_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_007_award.json",
+      "sha": "f09a36a4b23ef63fe8b945b19e1dfb62ca652ac8",
+      "size": 516,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_007_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_008_award.json",
+      "sha": "68ad532be58308c7f5bca448c2ccba27ffc5435d",
+      "size": 511,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_008_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_009_award.json",
+      "sha": "59543deb0285669ef0dda3ad31e7d8e3938347fe",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_009_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/kindness_keeper_010_award.json",
+      "sha": "e488161f9cf5386a049cb0c707f839e6f44de1f3",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/kindness_keeper_010_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_001_award.json",
+      "sha": "d9f999de38f976e9361152545c9a726e70521de9",
+      "size": 499,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_002_award.json",
+      "sha": "b291b59b031ac640d679e1e0222a6eb5d47728b6",
+      "size": 501,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_003_award.json",
+      "sha": "ea14e621f31aa15cd45aca525a2e72d108ec6fcb",
+      "size": 501,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_004_award.json",
+      "sha": "3809e175e50d386032092b99d935ff7b541d6424",
+      "size": 501,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_005_award.json",
+      "sha": "2677bd58b250fb655e6f11306c3b8bd5321e6224",
+      "size": 502,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_006_award.json",
+      "sha": "bac3af9c1717ee17ea83200a9f92f2d44ac26e66",
+      "size": 500,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_006_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_007_award.json",
+      "sha": "b41261abef751f4da74ef5a67f38f4b8813b62e7",
+      "size": 504,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_007_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_008_award.json",
+      "sha": "7b6e218d9ae4f904afc5ab61a9bc568c014c312b",
+      "size": 499,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_008_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_009_award.json",
+      "sha": "0fbf575560d453069cd3d7f0858407f3bbf671e4",
+      "size": 501,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_009_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/seed_planter_010_award.json",
+      "sha": "01cc28b0d346012c8dde920049859f94053ec2a9",
+      "size": 501,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/seed_planter_010_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/v27_joy_user_alpha_seed_planter_001_award.json",
+      "sha": "b164dab7bb7c26ac6317ef0ec99e4b813ee49673",
+      "size": 559,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/v27_joy_user_alpha_seed_planter_001_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/v27_joy_user_beta_future_protector_002_award.json",
+      "sha": "6f039b2797c741c3caf4c64e9ab0ac7a0ddbdede",
+      "size": 577,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/v27_joy_user_beta_future_protector_002_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/v27_joy_user_delta_joy_bringer_004_award.json",
+      "sha": "3e8b038c11c8113c8688b878c2bc0bf2df0cae78",
+      "size": 559,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/v27_joy_user_delta_joy_bringer_004_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/v27_joy_user_epsilon_kindness_keeper_005_award.json",
+      "sha": "53e3858ec5ac75522cf922be435f588b44488683",
+      "size": 588,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/v27_joy_user_epsilon_kindness_keeper_005_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "awards/v27_joy_user_gamma_growth_guardian_003_award.json",
+      "sha": "f8f2a0e023af1bcf62c639e94e953479324c4e98",
+      "size": 575,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/awards/v27_joy_user_gamma_growth_guardian_003_award.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "BADGER_CAMP_HQ.md",
+      "sha": "f15376746974ff7f81edb362dd8b0ac591c597b5",
+      "size": 1238,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/BADGER_CAMP_HQ.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "BADGER_RECEIPTS.md",
+      "sha": "2af4b26ac3c5f24d3a9172014d5c416be43440b1",
+      "size": 651,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/BADGER_RECEIPTS.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/badge_manifest_v0_1.json",
+      "sha": "6b1256dc4d54c0d006c74923c45cd5d992ec1e55",
+      "size": 1499,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/badge_manifest_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/badge_manifest_v0_2.json",
+      "sha": "6579aa330d946222f2d88c1d419a47f49ef5e30e",
+      "size": 2061,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/badge_manifest_v0_2.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/badge_manifest.json",
+      "sha": "bd15039c464c59086f671a2fedba5daef0d3c04d",
+      "size": 3371,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/badge_manifest.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/criteria_index_v0_1.md",
+      "sha": "c69e623b4820552dd67382c26c1006d1148a2975",
+      "size": 1060,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/criteria_index_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/future_protector_v0_1.md",
+      "sha": "3fcdb3b3e161ed20b861e7ff7d6a23b0e9ef00ca",
+      "size": 1240,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/future_protector_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/growth_guardian_v0_1.md",
+      "sha": "cf7934a3c6eb3cc6a2f30b47e4baaa638e2bca81",
+      "size": 1153,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/growth_guardian_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/joy_bringer_v0_1.md",
+      "sha": "37fb4f5f8f4cac9d70b4635a154fbf0c806a011f",
+      "size": 1229,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/joy_bringer_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/kindness_keeper_v0_1.md",
+      "sha": "623b45575bd137fc6e14c18036f5925cdcf9c787",
+      "size": 1170,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/kindness_keeper_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/criteria/seed_planter_v0_1.md",
+      "sha": "3e47c58f5fa712b15dc6c36d6aecc192e43dfda3",
+      "size": 1251,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/criteria/seed_planter_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/diagrams/lineage_diagram_spec_v0_1.md",
+      "sha": "409c001ec968378bd0fbeadfacc0ea530e6695ea",
+      "size": 2601,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/diagrams/lineage_diagram_spec_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/guides/badge_picker_v0_1.md",
+      "sha": "d52cb37859cc084ee8446c881725cfb20bdd0997",
+      "size": 2087,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/guides/badge_picker_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/guides/guide_onboarding_v0_1.md",
+      "sha": "7ee78965f3c14bb4c3238fb373fb2ecb42ada128",
+      "size": 3015,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/guides/guide_onboarding_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/guides/guide_privacy_v0_1.md",
+      "sha": "0eadc4ffe091615f3d38cecb6bd56eddb852e79c",
+      "size": 2591,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/guides/guide_privacy_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/images/future_protector.svg",
+      "sha": "1b0176dec669787be939ac2e692e2cbcb52429c2",
+      "size": 919,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/images/future_protector.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/images/growth_guardian.svg",
+      "sha": "b3734ac4581d56702f52a532f509dcbed60e40de",
+      "size": 1031,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/images/growth_guardian.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/images/joy_bringer.svg",
+      "sha": "9596dfb81809b9e382670784915cd9086f6ead0b",
+      "size": 1417,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/images/joy_bringer.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/images/kindness_keeper.svg",
+      "sha": "cc27f3b78f78126945263172da6f5e7fbf17a555",
+      "size": 1082,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/images/kindness_keeper.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/images/seed_planter.svg",
+      "sha": "1560cb884bbbff93e13af02f525a09be711ee255",
+      "size": 1010,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/images/seed_planter.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/proof/award_record_v0_1.md",
+      "sha": "3b159112b5b189de939d3e80c25236a77d18bf8f",
+      "size": 2558,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/proof/award_record_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/proof/proof_model_v0_1.md",
+      "sha": "0fbfcd0ef9377d097bbeb1d6d9cd5ece9c2b2edd",
+      "size": 2482,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/proof/proof_model_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/proof/witness_model_v0_1.md",
+      "sha": "4e9cf71ccd7be988e39fa25d45d351daae21ffad",
+      "size": 2905,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/proof/witness_model_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/README.md",
+      "sha": "21547f440604a2aef587dd30047f208db41b5acd",
+      "size": 2579,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/README.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "badges/service_catalog_v0_1.md",
+      "sha": "d8df23f20bbb2230e550d264afb5639fd39743db",
+      "size": 3438,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/badges/service_catalog_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "clown-courts/README.md",
+      "sha": "4a0adf884d70203a1b74283ffa2ee573b83788f2",
+      "size": 1829,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/clown-courts/README.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "components/goblin-gate/index.ts",
+      "sha": "7ee80e5f922066e9ab33d677798606e98193dbc7",
+      "size": 14710,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/components/goblin-gate/index.ts"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "dashboard/player_dashboard.md",
+      "sha": "13cb6706b26fd9fba8b0d22808e1e1c16f4b639e",
+      "size": 852,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/dashboard/player_dashboard.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/ALMS_TO_JOY_BRIDGE.md",
+      "sha": "9dfe1e8f269d3bd728f5e2f2603ebde9e48b4da1",
+      "size": 1120,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/ALMS_TO_JOY_BRIDGE.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/audits/TX_DIR_QUANTUM_READINESS_AUDIT_REQUEST_PACKET_V0_1.md",
+      "sha": "d72f63662ed40d418191a7bb1bd1e7adc0dd4c70",
+      "size": 1838,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/audits/TX_DIR_QUANTUM_READINESS_AUDIT_REQUEST_PACKET_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/badger_doorway_map.svg",
+      "sha": "0f596ff15c023390ccbfc0d462a7c7da795c53e5",
+      "size": 2026,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/badger_doorway_map.svg"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/BADGER_PUBLIC_LEDGER_CARD.md",
+      "sha": "6c3731be0c8c61e5bc5da29b4daf8e6366c641c3",
+      "size": 383,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/BADGER_PUBLIC_LEDGER_CARD.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/BADGER_RECEIPTS.md",
+      "sha": "b0e481ed3a9c7c82b8c4fec3749ccc669b379dd6",
+      "size": 548,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/BADGER_RECEIPTS.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/BADGER_TOUCHDOWN_VERIFICATION_CARD.md",
+      "sha": "c33d207198fc0fdc7b67c2000254a4f7757b4bd2",
+      "size": 330,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/BADGER_TOUCHDOWN_VERIFICATION_CARD.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
+      "sha": "30850908cb0f34fbe1673bd7ac36c255f2ec389a",
+      "size": 1913,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/DELTA_2_DRY_RUN_AUDIT_GUARDS.json",
+      "sha": "5bd8a10e8b6ddd71b29c15db82745eee6007d629",
+      "size": 1526,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/DELTA_2_DRY_RUN_AUDIT_GUARDS.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/DRY_HALT_TEST_SPEC_V0_1.json",
+      "sha": "bfbc4b2f03da8f38ff89d34af24d929a445ffbf4",
+      "size": 1734,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/DRY_HALT_TEST_SPEC_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/family-wisdom/MRS_WISDOM_DEEP_SEARCH_V0_1.md",
+      "sha": "afe33a66931edaa85e043c434d92ae28b384e5c6",
+      "size": 868,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/family-wisdom/MRS_WISDOM_DEEP_SEARCH_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/family-wisdom/WISDOM_GIRLS_UPDATE_V0_1.md",
+      "sha": "ec50c9217185758878a3e3e50b217257d1cb609a",
+      "size": 1332,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/family-wisdom/WISDOM_GIRLS_UPDATE_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin_court_mn_edition_v0_1.md",
+      "sha": "4a6a56c151419245304f0ddb114290b27d24d414",
+      "size": 2347,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin_court_mn_edition_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md",
+      "sha": "66b6fe164b508ed549c114e9c6f04927533c9966",
+      "size": 422,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md",
+      "sha": "d1206f91233ebdd52b29e39982f0182bcbd75b22",
+      "size": 447,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
+      "sha": "42f8aba8246260daee2f4b8407a9e5bbfe207d1e",
+      "size": 483,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin-courts/OLA_BHA_PORTAL.md",
+      "sha": "95f886d988a404c3ad4c082087369a0fb1a69ff9",
+      "size": 583,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin-courts/OLA_BHA_PORTAL.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md",
+      "sha": "8c38c9fd437d3ed915b7440a0e86d3f91e36a5c1",
+      "size": 3754,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md",
+      "sha": "61ea6ac2cda2c0e5ac451235ed164c69538988a5",
+      "size": 2804,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/HOME_FIELD_ADVANTAGE_POWERUP.md",
+      "sha": "c791d41ad01089a8676b094cccd9f765ff7d7266",
+      "size": 472,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/HOME_FIELD_ADVANTAGE_POWERUP.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/index.html",
+      "sha": "d9ad98095ef6b38cb3daa71cd2f669d29f035d5c",
+      "size": 1530,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/index.html"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/index.md",
+      "sha": "892c195a31a62205864585b5795f757315f18d8a",
+      "size": 365,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/index.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/joy_project_ledger_v0_2.md",
+      "sha": "35445ffa680c200724abb8fa49e1a93c741c9613",
+      "size": 567,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/joy_project_ledger_v0_2.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/joy_recovery_plan_v0_1.md",
+      "sha": "75893d8bb5cc795cc805c398777cc25ebdbc7fef",
+      "size": 1643,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/joy_recovery_plan_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/joy_remote_witness_replay_harness_v0_1.md",
+      "sha": "a30c44bdb12bf38aa6fcf4c3fcec7da3abc43bd3",
+      "size": 577,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/joy_remote_witness_replay_harness_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/JOY_V0_3_DELTA_1_FIXTURE_MANIFEST.json",
+      "sha": "f20e8f61492f4ddd99467cff787662440b968a1e",
+      "size": 1485,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/JOY_V0_3_DELTA_1_FIXTURE_MANIFEST.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/JOY_V0_3_DELTA_1_HASH_AND_IDENTITY_INVARIANTS.json",
+      "sha": "3f3a4dd065d458ecce6b45d6b7d2091a62d185c4",
+      "size": 1437,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/JOY_V0_3_DELTA_1_HASH_AND_IDENTITY_INVARIANTS.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/JOY_V0_3_DELTA_1_VALIDATOR_EXTENSION.json",
+      "sha": "f6129bcfe2a8a29ca642ebadbe6c2b91b6a7440a",
+      "size": 1811,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/JOY_V0_3_DELTA_1_VALIDATOR_EXTENSION.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json",
+      "sha": "ad1ca392fbd6133e2127278a8ebe6aac3c36b894",
+      "size": 2129,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/JOY_V0_3_READINESS_CHECKLIST.json",
+      "sha": "91942e4cc2e96b12c85255ce3f92221bb8e814b8",
+      "size": 1400,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/JOY_V0_3_READINESS_CHECKLIST.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/LIVE_VERIFICATION_PREFLIGHT_CHECKLIST_V0_1.json",
+      "sha": "4eba8d4144255f8b527bb63683f154372b6e682c",
+      "size": 1613,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/LIVE_VERIFICATION_PREFLIGHT_CHECKLIST_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/MICROSOFT_WISDOM_COLLECTION.md",
+      "sha": "7df9e2560d619258ee583f2e29927e09e13f53f2",
+      "size": 1302,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/MICROSOFT_WISDOM_COLLECTION.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/MN_CIVIC_POINTER_CARD.md",
+      "sha": "9f8e9fd473aa3fbb1e33489cd16c65f3060c3e52",
+      "size": 371,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/MN_CIVIC_POINTER_CARD.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/MOVE_THE_CHAINS_ONCHAIN_CARD.md",
+      "sha": "0751d3ed241a7ce8fd8e6288b579879347223bc3",
+      "size": 497,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/MOVE_THE_CHAINS_ONCHAIN_CARD.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/operator_hash_trigger_v0_1.md",
+      "sha": "1d27ddc96a7889369415e12c43c1cbd51fb9dbe1",
+      "size": 1803,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/operator_hash_trigger_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
+      "sha": "0644dbf74ac73ea18180709d50b3c5b21ac97fb3",
+      "size": 1878,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
+      "sha": "4054aa5f4b4adf1467735b39396354ef9760b977",
+      "size": 5168,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/PROCESS.md",
+      "sha": "96c95638659b142d929284114fa17e3be807b810",
+      "size": 472,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/PROCESS.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/REAL_RUNTIME_HALT_FAILURE_PROCEDURE_V0_1.json",
+      "sha": "99f977e0662b80160877123b4d5be6c4092c7786",
+      "size": 1833,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/REAL_RUNTIME_HALT_FAILURE_PROCEDURE_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/REAL_RUNTIME_HALT_LOG_SPEC_V0_1.json",
+      "sha": "f7dc12396f63db2ba919f4c7f6a369bea6e3a3a7",
+      "size": 2082,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/REAL_RUNTIME_HALT_LOG_SPEC_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/ritual_of_the_unsealed_loom_v0_1.md",
+      "sha": "0858f1b5f4aad3497a24244888984f055f419ce3",
+      "size": 958,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/ritual_of_the_unsealed_loom_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/SECOND_DRIVE_RULES.md",
+      "sha": "73526c8f40e9a044882523d37967738286e2dd31",
+      "size": 493,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/SECOND_DRIVE_RULES.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/SNAPSHOT_MANIFEST_SPEC_V0_1.json",
+      "sha": "4d004f44eb0670ae16db56836f1fb8be959c8cf8",
+      "size": 1808,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/SNAPSHOT_MANIFEST_SPEC_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/SOPHIA_MRS_WISDOM_MERGE.md",
+      "sha": "cf853ee25678b775bc22da4b7ba4b7731210f0db",
+      "size": 1727,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/SOPHIA_MRS_WISDOM_MERGE.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/SOPHIA_WISDOM_BRANCH.md",
+      "sha": "045aa6e224005087e73090c3731c6b1844f2353d",
+      "size": 1137,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/SOPHIA_WISDOM_BRANCH.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/SUPER_SECRET_SISTER_SYNTAX.md",
+      "sha": "79a9e18e05750955606e72725b608e1be999af3a",
+      "size": 1534,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/SUPER_SECRET_SISTER_SYNTAX.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/three_daughters/base_mcp_alms_continuity_witness_v0_1.md",
+      "sha": "ba1eb40c9750527f22d098df1994b5f1b988bf05",
+      "size": 2727,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/three_daughters/base_mcp_alms_continuity_witness_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "docs/three_daughters/trinity_architecture_canon_v0_1.md",
+      "sha": "ed7e940b57ab0d8e02679cf2ed1b4eb82f6e7414",
+      "size": 602,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/docs/three_daughters/trinity_architecture_canon_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "ens_display/ENS_DISCOVERY_INDEX_V0_1.json",
+      "sha": "27d86159deff47a5a3e819fa4739a055b714a267",
+      "size": 578,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/ens_display/ENS_DISCOVERY_INDEX_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "ens_display/README.md",
+      "sha": "a67378ab8d181cab9f0a595775c4080904924699",
+      "size": 1390,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/ens_display/README.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "ens_display/subgraph_config.json",
+      "sha": "ee10bd3438dfe2cc36bca191df7b001d7bf36dbb",
+      "size": 395,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/ens_display/subgraph_config.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "ens_display/subgraph_queries.md",
+      "sha": "8e248080b8072df63f8ce3386bc350b2798884ec",
+      "size": 961,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/ens_display/subgraph_queries.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "ens/JOYSPACE_ENS_ANCHOR_SURFACE_V0_1.html",
+      "sha": "1104b5c2a0147ffe9948ed4171710d4ccd28f290",
+      "size": 4412,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/ens/JOYSPACE_ENS_ANCHOR_SURFACE_V0_1.html"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "feeds/status.json",
+      "sha": "c3e4a1ab55c56d4cca876c0885b1d50c78c6a6c6",
+      "size": 1119,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/feeds/status.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "feeds/status.xml",
+      "sha": "04667abe492bb8144b329f53b97dd009f4eeba94",
+      "size": 1307,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/feeds/status.xml"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "fixtures/delta_1/mixed_version_batch_fixture.json",
+      "sha": "b8fbd108dde4d9d17061abbd9fb7b0e11a1d91d0",
+      "size": 984,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/fixtures/delta_1/mixed_version_batch_fixture.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "fixtures/delta_1/v0_2_acceptance_fixture.json",
+      "sha": "598230e60dbc595e6c60adb68b5b79295fb2855a",
+      "size": 627,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/fixtures/delta_1/v0_2_acceptance_fixture.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "fixtures/delta_1/v0_3_acceptance_fixture.json",
+      "sha": "a1e656e2750ca7236c007ed30f640647028dbe25",
+      "size": 751,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/fixtures/delta_1/v0_3_acceptance_fixture.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "index.html",
+      "sha": "72384d9af473774a26aeb266b431c070ad5598c5",
+      "size": 4500,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/index.html"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "intel/intel_graph_correction_2026-06-10.md",
+      "sha": "050d54def454b6d11533a811687461b788023f36",
+      "size": 3067,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/intel/intel_graph_correction_2026-06-10.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "intel/jaywisdom_identity_intel_update_2026-06-10.md",
+      "sha": "23fe651458207b194c66126d813e162b12abcf2f",
+      "size": 5891,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/intel/jaywisdom_identity_intel_update_2026-06-10.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "intelligence/institutional_continuity_score_microsoft_v0_1.json",
+      "sha": "6fa3c75596d19a65c4798440ba8efeb587e7f1f2",
+      "size": 699,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/intelligence/institutional_continuity_score_microsoft_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "intelligence/sophia_evidence_preimage_v0_1.json",
+      "sha": "7185a15993f832944887fd8ad6762e8dbe6b3d91",
+      "size": 1195,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/intelligence/sophia_evidence_preimage_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "JOY_REPO.md",
+      "sha": "e8fd4a233dd052a4f3c3640e3f1c3031527a98e4",
+      "size": 6259,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/JOY_REPO.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "JOY/joy_living_ledger_v0_1.md",
+      "sha": "3ddfd36a6b8b1096124429581fdc5cc682de89c6",
+      "size": 2572,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/JOY/joy_living_ledger_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "JOY/ledger_nodes/joy_ledger_node_2026_05_31_family_photo_001.md",
+      "sha": "e6a899e5a70ae5f4252db36635cd02cb7952338a",
+      "size": 1042,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/JOY/ledger_nodes/joy_ledger_node_2026_05_31_family_photo_001.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "JOYSPACE_DAY_2_REPLAY_UPGRADE_V0_1.html",
+      "sha": "485b4fec3f90001f0ab04ad8e8ce837775e8a27b",
+      "size": 5806,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/JOYSPACE_DAY_2_REPLAY_UPGRADE_V0_1.html"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "joyspace/JOYSPACE_INDEX_V0_1.md",
+      "sha": "a310b57cf741189c0e479a3322a262b5bb1af42d",
+      "size": 1024,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/joyspace/JOYSPACE_INDEX_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "legacy/wisdom_family_legacy_agents_v0_1.json",
+      "sha": "99e28969e2b1a118c22c9dceadd7ca0e6e96c651",
+      "size": 2706,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/legacy/wisdom_family_legacy_agents_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "lock_replay_proof.py",
+      "sha": "d5c62cff82fde8516188ca64a79fe2d780d56c7e",
+      "size": 4495,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/lock_replay_proof.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "OBSERVER.md",
+      "sha": "5fad4b89fd2922560e6caf86f07cf00e1bb930cd",
+      "size": 538,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/OBSERVER.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_001.json",
+      "sha": "43bde03d3d996f02d0073e5ad9a009e1b9fae6e2",
+      "size": 352,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_002.json",
+      "sha": "4eebee42da70cac39e7fa50474f2610d6f6dba7c",
+      "size": 356,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_003.json",
+      "sha": "64b762e1d2bd95fbeb13421b3513b862f8d81a03",
+      "size": 351,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_004.json",
+      "sha": "ecc19980a2ca1573df44b9a18adc0338a753b3ad",
+      "size": 348,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_005.json",
+      "sha": "77dd2dc5aecd09c30aebaac7c046cb7d574caa9c",
+      "size": 361,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_006.json",
+      "sha": "0acbd29d9577dd25020911ad6ccf81e4da20f5b0",
+      "size": 349,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_006.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_007.json",
+      "sha": "8c7d9fa06dd4c2268a1784154695b35cb2c892d8",
+      "size": 355,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_007.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_008.json",
+      "sha": "3414a0c398f33d833ac74dec613943f71f86f629",
+      "size": 356,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_008.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_009.json",
+      "sha": "ee49bb8fffd1b28ef15d5480a8e746a4493a5b47",
+      "size": 354,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_009.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/future_protector_010.json",
+      "sha": "0445e2b000ca1065b407531cf40ea9d02724138e",
+      "size": 349,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/future_protector_010.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_001.json",
+      "sha": "87608c5b3bf76d61e29c0bba93e6bb40231b8bd9",
+      "size": 349,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_002.json",
+      "sha": "c70859c3d79be7030a458a4846d0b8ffd066cf63",
+      "size": 353,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_003.json",
+      "sha": "16eabbdca68cd6f58a886f9fa51358bf69235686",
+      "size": 348,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_004.json",
+      "sha": "9cdf242f50748b93593a2a86b76419c2d705f270",
+      "size": 345,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_005.json",
+      "sha": "de27fff93934a2912b8fa6616960464edc67f90d",
+      "size": 358,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_006.json",
+      "sha": "f11743f865e9b7ed16c2516e4a9011ba89408324",
+      "size": 346,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_006.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_007.json",
+      "sha": "74714cc64d3177295d28792140e9f98f7d0ea358",
+      "size": 352,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_007.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_008.json",
+      "sha": "45cab4ad8f911f7b477a187c15eb2648330a0b5e",
+      "size": 353,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_008.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_009.json",
+      "sha": "60e96a19314b16875bb50d5e1142388157f27e60",
+      "size": 351,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_009.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/growth_guardian_010.json",
+      "sha": "03cd7863f0142aa1c27737a5703258ffe0427f52",
+      "size": 346,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/growth_guardian_010.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_001.json",
+      "sha": "de77a732537d72c7e206d72cd48aade4494d3992",
+      "size": 337,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_002.json",
+      "sha": "c7e9b540e434d4085a96008cc5894371f7319a07",
+      "size": 341,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_003.json",
+      "sha": "4b8fddd8968ccc2ccebe244715da52024a8e634f",
+      "size": 336,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_004.json",
+      "sha": "474df6f47c6b38ada39b539d9d762554e5057eeb",
+      "size": 333,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_005.json",
+      "sha": "d40bece9f2b52f0f832c2ed22f1749166ff3035d",
+      "size": 346,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_006.json",
+      "sha": "4dbaf701121aed012a8f2f1d8f8b56c5593129f6",
+      "size": 334,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_006.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_007.json",
+      "sha": "b6c8e984f421b1bedfc486347b19a15e2cde1f17",
+      "size": 340,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_007.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_008.json",
+      "sha": "a0fb963ac58fd97a70227d1bfbfc4277d612a5d7",
+      "size": 341,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_008.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_009.json",
+      "sha": "4649e547145eb2939cf35dc3569cf51644a140e7",
+      "size": 339,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_009.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/joy_bringer_010.json",
+      "sha": "d40f1351fade278f8d767cfe56d3f708959473b3",
+      "size": 334,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/joy_bringer_010.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_001.json",
+      "sha": "bb89a61bf4ba40a2068a28a7942d322a1eed36b0",
+      "size": 349,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_002.json",
+      "sha": "ff40a634b02f596612b690eac4ae89b45a0aa3b2",
+      "size": 353,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_003.json",
+      "sha": "129df8b830e07a8a0d6a572e562f175ea16f1376",
+      "size": 348,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_004.json",
+      "sha": "6411e211c55c67debc6d288e523ac1933c26f2b0",
+      "size": 345,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_005.json",
+      "sha": "72c14e453c8081e76c2555b079f629687151edb3",
+      "size": 358,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_006.json",
+      "sha": "1f6ad7943b06324caf66ab0d9d5eb68ae9ca0da8",
+      "size": 346,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_006.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_007.json",
+      "sha": "786a94e29b3820f76219e84855f85e717b183961",
+      "size": 352,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_007.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_008.json",
+      "sha": "ca1a4cc7d3e55ea062f9dd354661b806f41cfcf3",
+      "size": 353,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_008.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_009.json",
+      "sha": "842730d40f6b56df31a9e965521d5cd6805642d8",
+      "size": 351,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_009.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/kindness_keeper_010.json",
+      "sha": "459a6e5c48768df30c92843696c370c5e142bddc",
+      "size": 346,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/kindness_keeper_010.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_001.json",
+      "sha": "896b1ec54a6cae6f89a996c536088758b78a9ee6",
+      "size": 340,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_002.json",
+      "sha": "f1aa9615718e910ac27928fb742f6c9d13bcf71a",
+      "size": 344,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_003.json",
+      "sha": "812e5507f9238957b70b008cc75733a25154089e",
+      "size": 339,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_004.json",
+      "sha": "70a6b7ba2bcf55763e95f0db825905456b9ee76b",
+      "size": 336,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_005.json",
+      "sha": "6ad2e85c95d2d8fef9e1d8d8c9e9e873c0979a45",
+      "size": 349,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_006.json",
+      "sha": "5de43baedccf83002db0e15a3c9e2fb42ba39284",
+      "size": 337,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_006.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_007.json",
+      "sha": "56e175d5066dafe804d707be28693d89005e42c6",
+      "size": 343,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_007.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_008.json",
+      "sha": "22adf5838ff127fa9b1802c7553015ac08b736d5",
+      "size": 344,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_008.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_009.json",
+      "sha": "5a1585b12807a176a9cb6e9d5e03188e65b9b9c5",
+      "size": 342,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_009.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/seed_planter_010.json",
+      "sha": "c821f827fc7f008b1c76cfe1106274cb0e4b29ad",
+      "size": 337,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/seed_planter_010.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/v27_joy_user_alpha_seed_planter_001.json",
+      "sha": "5d20bb59f092fe85f9e6cb89be0c806a7e78ee2a",
+      "size": 328,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/v27_joy_user_alpha_seed_planter_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/v27_joy_user_beta_future_protector_002.json",
+      "sha": "c7067a5ea74a984695ce9ab2657ed1d89157021c",
+      "size": 341,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/v27_joy_user_beta_future_protector_002.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/v27_joy_user_delta_joy_bringer_004.json",
+      "sha": "c05ab2a7d06bbef97b23de1069a820e048167511",
+      "size": 323,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/v27_joy_user_delta_joy_bringer_004.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/v27_joy_user_epsilon_kindness_keeper_005.json",
+      "sha": "8458b2b65f6323c17f936a36d50bd4a0842be9f6",
+      "size": 350,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/v27_joy_user_epsilon_kindness_keeper_005.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "proofs/v27_joy_user_gamma_growth_guardian_003.json",
+      "sha": "99f38f8e81ebc7300d31c4eae9f66ce39236920d",
+      "size": 336,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/proofs/v27_joy_user_gamma_growth_guardian_003.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "quest/quest_log.md",
+      "sha": "1f294c01d9d20348581a84cf686b26dfd6656d7a",
+      "size": 915,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/quest/quest_log.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "quests/GENESIS_REPLAY_001.md",
+      "sha": "a236dcac0a69fdb4cdf3755ac850d0b52397f24a",
+      "size": 1908,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/quests/GENESIS_REPLAY_001.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "quests/GENESIS_REPLAY_002.md",
+      "sha": "e6509044813b74d8e2f9a0b041e88026cf2c7ee9",
+      "size": 2024,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/quests/GENESIS_REPLAY_002.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "quests/QUEST_LOG.md",
+      "sha": "1cdea6702a3215fb417db34c9dd1759024b3ddb8",
+      "size": 1340,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/quests/QUEST_LOG.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "README.md",
+      "sha": "65a696a63450e1e6a84252183ae983809b60352c",
+      "size": 3622,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/README.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-2026-06-05-2045.json",
+      "sha": "142d06c00e588dac1846642409143c4ad9ba2daa",
+      "size": 194,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-2026-06-05-2045.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-CANONICAL-NOTE.json",
+      "sha": "a763213dc553c5f9fc4784aa24573d886bca19ab",
+      "size": 205,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-CANONICAL-NOTE.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-FULL.json",
+      "sha": "9011214ed2172415525bf5ddd5cff49f7fad3a24",
+      "size": 305,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-FULL.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-INDEX.json",
+      "sha": "57b21b4b308969be1ae25598898811381a77786f",
+      "size": 370,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-INDEX.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P1.json",
+      "sha": "804e4912540e7c133d2d26fe73caae746f68021f",
+      "size": 230,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P2.json",
+      "sha": "565208a828bae70098af1e30fdf274f87560901a",
+      "size": 290,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P2.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json",
+      "sha": "d1c584c87850bb4cb63a1a2cf9674ec75756be12",
+      "size": 908,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/badge_family_v0_1_closeout_receipt.json",
+      "sha": "e441b2e22bb89ccd70f2cac7e0b01ad45172c2d4",
+      "size": 493,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/badge_family_v0_1_closeout_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/badge_family_v0_2_recovery_closeout_receipt.json",
+      "sha": "5aa3c5cc1f2eecb6ac93bd359fff960ede5f0083",
+      "size": 1170,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/badge_family_v0_2_recovery_closeout_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/composition/composite_proof_001.json",
+      "sha": "793acd5a997e3b9a5a98345ea2787d51f79c3eb3",
+      "size": 930,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/composition/composite_proof_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1.json",
+      "sha": "727187bbea4362d31cfd28e20961f31b17d6c591",
+      "size": 838,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/harmony_weaver_v0_2_receipt.json",
+      "sha": "3dedb1f1de7670ef8e505650e9dbe199d7e80c7b",
+      "size": 638,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/harmony_weaver_v0_2_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/joy_clean_era_oracle_v0_1.json",
+      "sha": "705fb14768b6f32c7241de0ba79bd81737227002",
+      "size": 633,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/joy_clean_era_oracle_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/oracle_ritual_v0_1_receipt.json",
+      "sha": "2355dbcdc43e2f06600481ccaca64cb31d389a15",
+      "size": 563,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/oracle_ritual_v0_1_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/preflight/DRY_HALT_TEST_RECEIPT_V0_1.json",
+      "sha": "b8d3ad43ebcf79066b2fac37c71fcc119e4b42f7",
+      "size": 1279,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/preflight/DRY_HALT_TEST_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/preflight/OPERATOR_UNLOCK_RECEIPT_V0_1_DRAFT.json",
+      "sha": "4f6fa92266009d2c2690c6e4a0efc11e58366ae8",
+      "size": 1103,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/preflight/OPERATOR_UNLOCK_RECEIPT_V0_1_DRAFT.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/preflight/REAL_RUNTIME_HALT_LOG_V0_1.json",
+      "sha": "f1db27ac7630ea295bfb7193d65c0c673dc91b11",
+      "size": 2387,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/preflight/REAL_RUNTIME_HALT_LOG_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/recursive/ALMS_L4_RECURSIVE_HARNESS_001.py",
+      "sha": "3892deb7a6a463d248e19a2d76f60e2d590489b8",
+      "size": 810,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/recursive/ALMS_L4_RECURSIVE_HARNESS_001.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/resilience_thread_v0_2_receipt.json",
+      "sha": "c2eb9d5bf82e98d16f88dd495c4fc80e3934c478",
+      "size": 577,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/resilience_thread_v0_2_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/ritual_of_the_unsealed_loom_v0_1_receipt.json",
+      "sha": "f3904b2e3520c06ea50524b2f6afbd52c1365329",
+      "size": 322,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/ritual_of_the_unsealed_loom_v0_1_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/skippy_witness_confirmation_v0_1.json",
+      "sha": "d0b4b34f891e12105fef73ae397d3fe0ca48cc1b",
+      "size": 538,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/skippy_witness_confirmation_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/sophia_branch_replay_claim_receipt_v0_1.json",
+      "sha": "b04dba35b882a2e91af090715e30599df5cf29bf",
+      "size": 968,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/sophia_branch_replay_claim_receipt_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/sophia_mrs_wisdom_merge_receipt_v0_1.json",
+      "sha": "3d52a1298782b19b3639fe60f9ce97fa9e772814",
+      "size": 1189,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/sophia_mrs_wisdom_merge_receipt_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/sophia/SOPHIA_PROOF_RECEIPT_V0_1.json",
+      "sha": "2fed9a79cd085592bc629cce8c5f99b147ff9878",
+      "size": 494,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/sophia/SOPHIA_PROOF_RECEIPT_V0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/test_vectors/ALMS_L2_HUMAN_TABLE.md",
+      "sha": "9e792016634b2da1f6ec904f66589bb4b960e523",
+      "size": 901,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/test_vectors/ALMS_L2_HUMAN_TABLE.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/test_vectors/ALMS_L2_KNOWN_GOOD_OUTPUT_001.json",
+      "sha": "456a1a69fdca2740906ce78a7f4fc92f3c67ffe0",
+      "size": 295,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/test_vectors/ALMS_L2_KNOWN_GOOD_OUTPUT_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/test_vectors/ALMS_L2_TEST_VECTOR_001.json",
+      "sha": "9fd89fbe2b7272b56ca4b91e55f28e80390eb288",
+      "size": 893,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/test_vectors/ALMS_L2_TEST_VECTOR_001.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/unsealed_loom_v0_2_receipt.json",
+      "sha": "e77b77b0d6aba50eb1e21743f3ccd748f90ada29",
+      "size": 580,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/unsealed_loom_v0_2_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "receipts/wisdom_anchor_v0_2_receipt.json",
+      "sha": "d109210cb7ef4c1a666caf74efae3df6fbcf72c6",
+      "size": 586,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/receipts/wisdom_anchor_v0_2_receipt.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "reports/ms-wisdom/MS_WISDOM_PUBLIC_REPORT_V0_1.md",
+      "sha": "76d4905359114c7b8644c04e0024f14114d8b4e7",
+      "size": 1716,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/reports/ms-wisdom/MS_WISDOM_PUBLIC_REPORT_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "reports/sophia/SOPHIA_WISDOM_PUBLIC_REPORT_V0_1.md",
+      "sha": "505b1ee82f37bc0b9e538e1b582ef5addd68bdd3",
+      "size": 1236,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/reports/sophia/SOPHIA_WISDOM_PUBLIC_REPORT_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "reports/sophia/SOPHIA_WISDOM_REPORT_V0_1.md",
+      "sha": "65a3ef66c1efb2a44fab2074c515344efa05068b",
+      "size": 1334,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/reports/sophia/SOPHIA_WISDOM_REPORT_V0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/award_record.schema.json",
+      "sha": "7dd8d6c68cdc9158ba1b044ca926751d60bfd320",
+      "size": 1729,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/award_record.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/badge_manifest.schema.json",
+      "sha": "4750981a22b0f5bc3287ce79517b50b6afc804e1",
+      "size": 2969,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/badge_manifest.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/criteria.schema.json",
+      "sha": "7446cecb43006e4de03009630ebfaebf7982d98c",
+      "size": 702,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/criteria.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/institutional_continuity_tree_schema_v0_1.json",
+      "sha": "ee8858b2fbb15b075d53dfb944371662671d299e",
+      "size": 7611,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/institutional_continuity_tree_schema_v0_1.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/joy_ritual_receipt.v0_1.schema.json",
+      "sha": "47d568e56fac98d714201a0b77be833c1cc8d8e3",
+      "size": 513,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/joy_ritual_receipt.v0_1.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/proof.schema.json",
+      "sha": "146e97a01636a5289ee5abbb8b5ee7785703a4b3",
+      "size": 1462,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/proof.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "schemas/witness.schema.json",
+      "sha": "c4be1a6f7371020c05c987d79381ecf31e70e7f3",
+      "size": 912,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/schemas/witness.schema.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/generate_validation_26_batch.py",
+      "sha": "f4b83bf7acf0ca1620e34ddd5f75778859b7b498",
+      "size": 4769,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/generate_validation_26_batch.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/generate_validation_27_multiuser.py",
+      "sha": "a75d825aff8573f216d38b2ee859af9d9a08e6fb",
+      "size": 4341,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/generate_validation_27_multiuser.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/joy_remote_witness_replay_v0_2.py",
+      "sha": "6968896f0c05040db6acd1a8ef121346d5421529",
+      "size": 4078,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/joy_remote_witness_replay_v0_2.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/joy_remote_witness_replay.py",
+      "sha": "ecc80bf4f97aa9d6e31f1c5918a87883e27a3c65",
+      "size": 2134,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/joy_remote_witness_replay.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/l3_emit_runtime_payload.py",
+      "sha": "b1f37747e083bfd56259dd87f591b8bc5290129c",
+      "size": 1101,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/l3_emit_runtime_payload.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/l3_l4_archive_recipe_v0_1.sh",
+      "sha": "bf757b835b0314dc87a0e4008a5e0d53f4f21511",
+      "size": 2008,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/l3_l4_archive_recipe_v0_1.sh"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/l3_recon.sh",
+      "sha": "7c89d5028fe363055b7ea07f2038ab8bd4ab6c4c",
+      "size": 1647,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/l3_recon.sh"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/l3_runtime_execution_gate_v0_1.py",
+      "sha": "8c85a14e6cd37b2c9aa4c6fb432ae3f6fcbc337e",
+      "size": 3017,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/l3_runtime_execution_gate_v0_1.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/path-scanner.mjs",
+      "sha": "c280118a45f32d011bdc7c2102e23374b0f0a576",
+      "size": 4076,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/path-scanner.mjs"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/validate_joyspace.py",
+      "sha": "7939423c745c52b067b910ebaaec2652def853e5",
+      "size": 14509,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/validate_joyspace.py"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "scripts/wisdom-constellation.config.json",
+      "sha": "586346c9502529c46ea243ab4514d45e87084025",
+      "size": 633,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/scripts/wisdom-constellation.config.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "status.html",
+      "sha": "eeba4d978ece8e88cf8cc792de61e7a6292c2a72",
+      "size": 6468,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/status.html"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "validation_26_batch_generator_receipt.txt",
+      "sha": "1ff7cc03b533701026359c8580d2d8e13850bd14",
+      "size": 453,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/validation_26_batch_generator_receipt.txt"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/chaos_tokens_v0_1.md",
+      "sha": "3ecdb4aeaafc3c7f192eaccc2b77df7fe872de70",
+      "size": 2800,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/chaos_tokens_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/continuity_spine_v0_1.md",
+      "sha": "4a9d3d470debeace87de285d1188c54cdb5ffbd8",
+      "size": 2270,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/continuity_spine_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/dad_role_buffs_v0_1.md",
+      "sha": "7831bd7a2370e1db9c62309fe2c9c126d9b8721b",
+      "size": 2836,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/dad_role_buffs_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/family_combo_moves_v0_1.md",
+      "sha": "2ec67958e78a253289d69ab2a66b3fbd677b3df6",
+      "size": 3869,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/family_combo_moves_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/family_lore_cards_v0_1.md",
+      "sha": "3654fa6fc93e240114a5e3abb72007e07a15b9b7",
+      "size": 3905,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/family_lore_cards_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/family_stack_stabilization_v0_1.md",
+      "sha": "f3012d70b5fa9c026418c81c81ea494452263ba5",
+      "size": 2014,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/family_stack_stabilization_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/family_vectors_games_ideas_v0_1.md",
+      "sha": "93c57f7b05db89c1f71e9e7314697eead4c6a0f1",
+      "size": 2994,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/family_vectors_games_ideas_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/game_night_replay_script_v0_1.md",
+      "sha": "48bb6ec5e5ef36665805f1f8a891a7e2979283cf",
+      "size": 1991,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/game_night_replay_script_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/lineage_continuity_audit_v0_1.md",
+      "sha": "1edaea869e12e02d911a7f63a248087bf86c857a",
+      "size": 2804,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/lineage_continuity_audit_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/mirror_flow_audit_v0_1.md",
+      "sha": "5254a8d24625ce251416f364aa1ec135fe140160",
+      "size": 2994,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/mirror_flow_audit_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/mrs_wisdom_shield_moves_v0_1.md",
+      "sha": "e92917fb2e44b291408724adbc71c4c064970fb5",
+      "size": 3404,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/mrs_wisdom_shield_moves_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/node_level_audit_v0_1.md",
+      "sha": "cf039256abc31546891e05cd2ee136bfc426953e",
+      "size": 3097,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/node_level_audit_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/wisdom_family_game_night_v0_1.md",
+      "sha": "a0822733cc9212f2c9f81ab2277954a1a7253a69",
+      "size": 3578,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/wisdom_family_game_night_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/wisdom_game_night_expansion_pack_v0_2.md",
+      "sha": "a3ede8905d22b715689fea0f362ef488e96927bc",
+      "size": 2202,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/wisdom_game_night_expansion_pack_v0_2.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "WISDOM/wisdom_mini_decks_v0_1.md",
+      "sha": "686ebae9306894f50530ed38870edb9242221fe3",
+      "size": 2742,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/WISDOM/wisdom_mini_decks_v0_1.md"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_001_witness.json",
+      "sha": "5543a88ffceaaa157e318efb4a5426daf0348a67",
+      "size": 285,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_002_witness.json",
+      "sha": "110a21dfcd461c3daccb557b481df03ef83c9c9c",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_003_witness.json",
+      "sha": "3fd206bbb370cacf7dc77a1e9443619e3252fb23",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_003_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_004_witness.json",
+      "sha": "828602ef94f0880a47b42cd90e790c8786d18f61",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_005_witness.json",
+      "sha": "10f5dd4b80295f937e2ce71a9fa77a35359b3203",
+      "size": 288,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_006_witness.json",
+      "sha": "39b9b586c57f2981c79b32cdda8a77cf38393a93",
+      "size": 286,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_006_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_007_witness.json",
+      "sha": "86505db2cb7b67016f3a244f15baa8fd64493f6a",
+      "size": 290,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_007_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_008_witness.json",
+      "sha": "f80ab04e4b5c63966433818c7ebd0edeb9fe50d2",
+      "size": 285,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_008_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_009_witness.json",
+      "sha": "aa9621ff67c465976683cfb04477a3261f652156",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_009_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/future_protector_010_witness.json",
+      "sha": "edc1881252308061aae447b4012c662097ad72b8",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/future_protector_010_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_001_witness.json",
+      "sha": "49d42e2cce25416d577a9d260cb71e3cb4283638",
+      "size": 282,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_002_witness.json",
+      "sha": "b22f3a2dfd50c4f9a5ab1fa756788a75c901bc6a",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_003_witness.json",
+      "sha": "96a71eb9cb8fa7372af4c78f025ce07690f60f9c",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_003_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_004_witness.json",
+      "sha": "8ee30fb09f2932e2a73d870e020ca1f6ba84ff9f",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_005_witness.json",
+      "sha": "00160597871b5b6766b665046f2faebbb7d892be",
+      "size": 285,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_006_witness.json",
+      "sha": "3970ac49145e00cb94eddbe9b5d25adf39b69c2e",
+      "size": 283,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_006_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_007_witness.json",
+      "sha": "442e133d78ad8e54459a99f0129574b1a96f2104",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_007_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_008_witness.json",
+      "sha": "16e7c7a3b2aa99c0d039065af7827056c7502765",
+      "size": 282,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_008_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_009_witness.json",
+      "sha": "0bb4cd9714063a0aea63f935f1d9ebc12a4e6c72",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_009_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/growth_guardian_010_witness.json",
+      "sha": "cbb667d48374f476889ac3b7288ffe251ee51f6d",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/growth_guardian_010_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_001_witness.json",
+      "sha": "6967220dcfc4e0f8a85b03edba78ef6ae35c4a07",
+      "size": 270,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_002_witness.json",
+      "sha": "67e0fe3ac7a1bf5af9da8f546ab32161b50890ee",
+      "size": 272,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_003_witness.json",
+      "sha": "2c36cd0aefa97d2806ce65a84bb8a0e65c08f21c",
+      "size": 272,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_003_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_004_witness.json",
+      "sha": "d67380ed0e5623b4a3900fc4f4375db66606ff68",
+      "size": 272,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_005_witness.json",
+      "sha": "413f9542ad7d2ad3c4469f1e3220f68458f47288",
+      "size": 273,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_006_witness.json",
+      "sha": "6fe327838ebfd01655512b447a584abd2affedc1",
+      "size": 271,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_006_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_007_witness.json",
+      "sha": "5475a4c5714dc0939c2667a2878a7fcfca1700d8",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_007_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_008_witness.json",
+      "sha": "27bd613871c37d3664afd2dad4bae9c58cac24ce",
+      "size": 270,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_008_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_009_witness.json",
+      "sha": "7d9f6e47ccfbc0d85cf599791586ddcd7cdc458c",
+      "size": 272,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_009_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/joy_bringer_010_witness.json",
+      "sha": "b9639243d5e0917dfcd3e5da766c374fe4d1d9e6",
+      "size": 272,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/joy_bringer_010_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_001_witness.json",
+      "sha": "ab2538fc6a35b1bfd4aaadf3d8f74aa0d7bc0bb6",
+      "size": 282,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_002_witness.json",
+      "sha": "960c22d1baff8c341e5f84171511ae799b188a27",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_003_witness.json",
+      "sha": "915f1dbe006de5d39795d2b0274a186f7bc4bf02",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_003_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_004_witness.json",
+      "sha": "84a5bc3d8c425ef503d18b21bb2c99d01a20ee7a",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_005_witness.json",
+      "sha": "83a36847fe9f628aab505cb460646a8e0d0cc9db",
+      "size": 285,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_006_witness.json",
+      "sha": "cb2bfe30800b31fd3522d8a6c191bbe24ea4b27e",
+      "size": 283,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_006_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_007_witness.json",
+      "sha": "204764ac22657fc2c8a00f2b7a0b3862f6929753",
+      "size": 287,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_007_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_008_witness.json",
+      "sha": "ac0a165980c79ae90709ed55d49dea6d4aeaccb0",
+      "size": 282,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_008_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_009_witness.json",
+      "sha": "fa6699dafb3ef6d38e844cbf1586654d9ebcaf0f",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_009_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/kindness_keeper_010_witness.json",
+      "sha": "ea5fbe6829e336b439a8c9d48866786826cf9762",
+      "size": 284,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/kindness_keeper_010_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_001_witness.json",
+      "sha": "efe470f4a136876760447e334d52503e58117d96",
+      "size": 273,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_002_witness.json",
+      "sha": "cd141ba88a2b5043f7e4ed0e91c08033200ba8ff",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_003_witness.json",
+      "sha": "51b8b756df24f16e86d65cfab0cc0a0db84d3c35",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_003_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_004_witness.json",
+      "sha": "2bf03bf8a936ff996a3c044034dff49988cc400c",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_005_witness.json",
+      "sha": "be51427085801084fd16e4a6c09ca43521197060",
+      "size": 276,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_006_witness.json",
+      "sha": "e3e00d0d2e4b1d9e845629fc209c0132faaacdd5",
+      "size": 274,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_006_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_007_witness.json",
+      "sha": "ac58e722edd9575be85ab03a2f0a3c703ac914b4",
+      "size": 278,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_007_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_008_witness.json",
+      "sha": "589d7e74a3e79ce4b5c5ddc51da401729206d86c",
+      "size": 273,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_008_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_009_witness.json",
+      "sha": "d8d14fc4073cc29cd61d10215f722ea507a12447",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_009_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/seed_planter_010_witness.json",
+      "sha": "826047db092ba5daea3ae607ad719f3ea147034a",
+      "size": 275,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/seed_planter_010_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/v27_joy_user_alpha_seed_planter_001_witness.json",
+      "sha": "18cafa6da8f06cac74931602073f72f9795d4160",
+      "size": 313,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/v27_joy_user_alpha_seed_planter_001_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/v27_joy_user_beta_future_protector_002_witness.json",
+      "sha": "ee08bcba35e11988c6720ae92e8e7b317ced029b",
+      "size": 320,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/v27_joy_user_beta_future_protector_002_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/v27_joy_user_delta_joy_bringer_004_witness.json",
+      "sha": "a0dbbdf35a1161d3651a94a07f6d9dd6d6698332",
+      "size": 313,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/v27_joy_user_delta_joy_bringer_004_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/v27_joy_user_epsilon_kindness_keeper_005_witness.json",
+      "sha": "b672b4bde00bf240083571f007db25737dff491e",
+      "size": 330,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/v27_joy_user_epsilon_kindness_keeper_005_witness.json"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "path": "witnesses/v27_joy_user_gamma_growth_guardian_003_witness.json",
+      "sha": "5e33e8c07ef532d19824718fba938cd2c74cd594",
+      "size": 321,
+      "url": "https://github.com/jsonwisdom/JOY/blob/main/witnesses/v27_joy_user_gamma_growth_guardian_003_witness.json"
+    }
+  ],
+  "authority": false,
+  "no_fake_green": true
+}
