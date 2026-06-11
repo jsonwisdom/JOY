@@ -1,0 +1,21 @@
+{
+  "receipt_type": "L4_BUNDLE_INDEX",
+  "version": "0.1",
+  "project": "JOY",
+  "layer": "L4",
+  "status": "BUNDLE_INDEX_PUBLISHED",
+  "branch": "sophia-wisdom-report-v0-1",
+  "artifacts": [
+    {
+      "name": "L4_SCOPE_V0_1",
+      "path": "artifacts/L4_SCOPE_V0_1.json",
+      "commit": "b486460",
+      "status": "PUBLISHED"
+    },
+    {
+      "name": "L4_VERIFIER_EXTENSION_V0_1",
+      "path": "_truth/verification/L4_VERIFIER_EXTENSION_V0_1.md",
+      "commit": "28560b8",
+      "status": "PUBLISHED"
+    },
+   
