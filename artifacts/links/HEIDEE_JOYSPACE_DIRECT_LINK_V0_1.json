@@ -1,0 +1,39 @@
+{
+  "artifact": "HEIDEE_JOYSPACE_DIRECT_LINK_V0_1",
+  "version": "0.1",
+  "layer": "L4_TAXONOMY_RECON",
+  "status": "PENDING_FINAL_BUNDLE_LINK",
+  "purpose": "Record HEIDEE GitHub direct links for later inclusion in the final L4 bundle after JOY, AL, and COMPUTERWISDOM receive matching V0.4 structural metadata treatment.",
+  "target": {
+    "repo": "jsonwisdom/HEIDEE",
+    "default_branch": "master",
+    "role": "FAMILY_IDENTITY_PUBLIC_FRONT_DOOR"
+  },
+  "links": {
+    "github_repo_direct": "https://github.com/jsonwisdom/HEIDEE",
+    "joyspace_file_direct": "https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace_v1.md",
+    "index_file_direct": "https://github.com/jsonwisdom/HEIDEE/blob/master/index.json",
+    "readme_file_direct": "https://github.com/jsonwisdom/HEIDEE/blob/master/README.md"
+  },
+  "homepage_candidate": {
+    "github_pages_candidate": "https://jsonwisdom.github.io/HEIDEE/",
+    "verified": false,
+    "reason": "GitHub direct links are recorded first. Pages homepage must be checked before public homepage verification."
+  },
+  "gate": {
+    "HEIDEE_V0_4_STRUCTURAL_PROFILE": "PUSHED",
+    "GLOBAL_L4_BUNDLE_ALLOWED": false,
+    "REMAINING_V0_4_TARGETS": [
+      "jsonwisdom/JOY",
+      "jsonwisdom/AL",
+      "jsonwisdom/COMPUTERWISDOM"
+    ]
+  },
+  "safety": {
+    "content_extraction": false,
+    "writes_to_target_repo": false,
+    "no_fake_green": true,
+    "authority": false,
+    "membrane": "INTACT"
+  }
+}
