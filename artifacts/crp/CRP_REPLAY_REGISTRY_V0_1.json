@@ -1,0 +1,42 @@
+{
+  "artifact": "CRP_REPLAY_REGISTRY_V0_1",
+  "version": "0.1",
+  "authority": false,
+  "no_fake_green": true,
+  "entries": [
+    {
+      "id": "crp-seed-001-a-fathers-wisdom",
+      "seed_artifact": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+      "target_seed_hash": "161ba202b1f92b2411982e8cec86e0ec5b16074c279d0a0bf86bc31b4eb6b3e7",
+      "canonicalization_rule": "CRP_CANONICAL_PREIMAGE_V0_2",
+      "anchors": {
+        "zora": "https://zora.co/coin/base:0x4e25328cf4b700bfd61953079bb950c4e25e2f1e",
+        "metadata_cid": "bafkreiab2ne7u57levww3lu555hex26zliu5bawrqgjmwepo7xdtq5vsmi",
+        "github_yellow_receipt": "artifacts/crp/QSLICES_X_POST_RECEIPT_V0_1.json"
+      },
+      "witnesses": [
+        {
+          "observer": "JOY_INTERNAL",
+          "claim": "GREEN_CONFIRMED",
+          "scope": "internal",
+          "authority": false
+        },
+        {
+          "observer": "QSLICES_EXTERNAL",
+          "claim": "YELLOW_META_RECEIPT",
+          "scope": "external",
+          "evidence": "archived GitHub receipt",
+          "authority": false
+        },
+        {
+          "observer": "CHATGPT_CONNECTED_GITHUB_READBACK",
+          "claim": "YELLOW_RECEIPT_READ_BACK_CONFIRMED",
+          "scope": "archive_readback",
+          "authority": false
+        }
+      ],
+      "current_registry_state": "YELLOW_WITH_INTERNAL_GREEN_CLAIM",
+      "sealed": true
+    }
+  ]
+}
