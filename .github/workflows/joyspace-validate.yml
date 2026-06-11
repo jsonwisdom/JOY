@@ -16,3 +16,6 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install jsonschema
       - run: python scripts/validate_joyspace.py
+
+      - name: Emit L3 runtime payload
+        run: python scripts/l3_emit_runtime_payload.py
