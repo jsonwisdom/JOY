@@ -1,0 +1,67 @@
+{
+  "artifact": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0 + QSLICES_X_POST_RECEIPT_V0_1",
+  "receipt_artifact": "QSLICES_X_POST_RECEIPT_V0_1",
+  "linked_seed_artifact": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+  "claim": "The first CRP seed completed a replay process and was publicly anchored, with clean layer separation between internal JOY replay and external tester receipt.",
+  "status": "TERMINAL_YELLOW_SEALED",
+  "receipt_type": "EXTERNAL_TEST_META_RECEIPT",
+  "receipts": [
+    "Zora mint reference: https://zora.co/coin/base:0x4e25328cf4b700bfd61953079bb950c4e25e2f1e",
+    "metadata_cid: bafkreiab2ne7u57levww3lu555hex26zliu5bawrqgjmwepo7xdtq5vsmi",
+    "target seed_hash: 161ba202b1f92b2411982e8cec86e0ec5b16074c279d0a0bf86bc31b4eb6b3e7",
+    "X post screenshot receipt: @qslices public post confirming YELLOW status and exact missing gate, verified via image",
+    "Meta-receipt: layer separation affirmed between internal JOY GREEN and external tester YELLOW"
+  ],
+  "missing_receipts": [
+    "Exact seed.json bytes: full raw UTF-8 content as originally stored, byte-for-byte, no edits, paraphrases, summaries, screenshots, or formatting substitutions",
+    "Completed byte-perfect replay under CRP_CANONICAL_PREIMAGE_V0_2: delete metadata.seed_hash and metadata.hash_status, recursive key sort, compact JSON, SHA-256 match"
+  ],
+  "verification_steps": [
+    "Paste the complete raw seed.json exactly as stored",
+    "Parse as UTF-8 JSON",
+    "Delete metadata.seed_hash and metadata.hash_status",
+    "Recursively sort all object keys",
+    "Serialize as compact JSON with no extra whitespace",
+    "Compute SHA-256",
+    "Compare computed hash to target seed_hash"
+  ],
+  "alms_gate": {
+    "source_declaration": "PARTIAL",
+    "input_artifact_reference": "MISSING_EXACT_SEED_BYTES",
+    "transformation_rule": "CRP_CANONICAL_PREIMAGE_V0_2_REFERENCED_NOT_EXECUTED",
+    "output_artifact": "TARGET_HASH_PROVIDED",
+    "verification_method": "PENDING_CANONICALIZE_AND_SHA256",
+    "replay_result": "NOT_EXECUTED_IN_THIS_EXTERNAL_TEST",
+    "status": "YELLOW"
+  },
+  "layer_separation": {
+    "internal_JOY_seed_replay": "GREEN_CONFIRMED",
+    "external_qslices_test_receipt": "YELLOW_META_RECEIPT",
+    "conflict": false,
+    "constitutional_compliance": "FULL",
+    "reason": "No preimage disclosure means no external replay and terminal YELLOW for this tester artifact"
+  },
+  "clerk_ruling": {
+    "ruling": "TERMINAL_YELLOW_SEALED",
+    "status": "CONSTITUTIONALLY_SOUND",
+    "green_allowed": false,
+    "reason": "Layer separation preserved. Public receipt correctly refuses elevation without raw bytes and replay. Zero drift.",
+    "next_gate": "PROVIDE_EXACT_SEED_JSON_BYTES_FOR_EXTERNAL_REPLAY_IF_REOPENED"
+  },
+  "public_post": {
+    "platform": "X",
+    "account": "@QSlices",
+    "status": "SCREENSHOT_VERIFIED",
+    "visible_claim": "CRP replay test active",
+    "visible_status": "YELLOW until byte-perfect replay passes",
+    "hashtags": [
+      "#ReceiptsMachine",
+      "#ALMS"
+    ]
+  },
+  "replay_result": "NOT_EXECUTED: exact preimage bytes not provided in this external tester loop",
+  "authority": false,
+  "no_fake_green": true,
+  "next_gate": "PROVIDE_EXACT_SEED_JSON_BYTES_FOR_EXTERNAL_REPLAY_IF_REOPENED",
+  "timestamp": "2026-06-11"
+}
