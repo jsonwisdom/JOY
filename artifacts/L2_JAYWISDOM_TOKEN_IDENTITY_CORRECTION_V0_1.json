@@ -1,0 +1,78 @@
+{
+  "artifact": "L2_JAYWISDOM_TOKEN_IDENTITY_CORRECTION_V0_1",
+  "layer": "L2_STAGING",
+  "status": "PUBLISHED_CORRECTION_RECEIPT",
+  "purpose": "Correct the address role for the JAYWISDOM token challenge by treating 0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F as the reported ERC-20 CreatorCoin token contract, not as a verified liquidity pool.",
+  "reported_token_identity": {
+    "name": "JAYWISDOM",
+    "reported_symbol_or_tracker": "jaywisdom",
+    "standard": "ERC-20",
+    "network": "Base",
+    "contract_address": "0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F",
+    "reported_deployment_pattern": "CreatorCoin minimal proxy",
+    "reported_implementation_prefix": "0x88CC4E08",
+    "source_status": "USER_PROVIDED_ANALYSIS_NOT_INDEPENDENTLY_REPLAYED_BY_THIS_ARTIFACT"
+  },
+  "role_correction": {
+    "previous_role_in_staging": "target_contract_or_pool / pool_marker",
+    "corrected_role": "reported_token_contract",
+    "liquidity_pool_status": "UNCONFIRMED_OR_ABSENT",
+    "treasury_wallet": "0xF18E616d5F315435F9A0C48EeD52048d4051FB27",
+    "correction_required": true
+  },
+  "interpretation": {
+    "what_it_is_about": "JAYWISDOM is documented here as a personal/project CreatorCoin on Base used for identity, community signaling, receipts, metadata, and verification experiments.",
+    "what_it_is_not": [
+      "Not a verified public liquidity pool by this artifact.",
+      "Not a verified 100000-token achieved balance by this artifact.",
+      "Not a mint authorization.",
+      "Not financial advice.",
+      "Not an execution receipt."
+    ]
+  },
+  "affected_artifacts": [
+    {
+      "artifact": "L2_JAYWISDOM_TOKEN_CHALLENGE_100K_STAGING_V0_1",
+      "affected_field": "routing_vectors.target_contract_or_pool",
+      "recommended_future_label": "token_contract_address"
+    },
+    {
+      "artifact": "L2_100K_CHALLENGE_PROGRESS_TRACKER_V0_1",
+      "affected_field": "challenge.pool_marker",
+      "recommended_future_label": "token_contract_address"
+    }
+  ],
+  "verification_requirements": [
+    "Fetch BaseScan or another Base explorer evidence for the contract address.",
+    "Confirm ERC-20 token name, symbol, decimals, contract creation transaction, and proxy or implementation role.",
+    "Search for actual DEX pool addresses separately instead of using the token contract as the pool.",
+    "Attach treasury transfer evidence before treating wallet association as verified.",
+    "Keep 100000 as a target or reported visual marker until balance proof is attached."
+  ],
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "token_contract_is_not_pool": true,
+    "reported_analysis_is_not_independent_replay": true,
+    "target_is_not_balance": true,
+    "metadata_is_not_execution": true,
+    "human_approval_required_for_state_mutation": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "ADDRESS_ROLE": "CORRECTED_TO_REPORTED_TOKEN_CONTRACT",
+    "LIQUIDITY_POOL": "UNCONFIRMED_OR_ABSENT",
+    "TOKEN_PURPOSE": "PROJECT_CREATORCOIN_SIGNAL_AND_RECEIPT_LAYER",
+    "100K_CHALLENGE": "STAGING_ONLY",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true
+  },
+  "next_lawful_moves": [
+    "Create L2_TOKEN_CONTRACT_EVIDENCE_RECEIPT_V0_1 using explorer evidence.",
+    "Create L2_DEX_LIQUIDITY_SEARCH_RECEIPT_V0_1 to locate or rule out active pools.",
+    "Revise the challenge tracker labels from pool_marker to token_contract_address.",
+    "Only claim execution after transaction hash evidence exists."
+  ],
+  "timestamp": "2026-06-11T01:50:00Z"
+}
