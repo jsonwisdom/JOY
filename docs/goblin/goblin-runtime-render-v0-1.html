@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Goblin Runtime Render V0.1</title>
+</head>
+<body>
+  <h1>Goblin Gate Runtime Render V0.1</h1>
+  <p>Source: artifacts/goblin_constellation_v0_1.json</p>
+  <p>authority: false</p>
+  <p>no_fake_green: true</p>
+
+  <section id="cards"></section>
+  <pre id="friction-log"></pre>
+
+  <script>
+    const source = "../artifacts/goblin_constellation_v0_1.json";
+
+    fetch(source)
+      .then(r => r.json())
+      .then(data => {
+        const cards = document.getElementById("cards");
+        data.repos.forEach(repo => {
+          const div = document.createElement("div");
+          div.style.border = "1px solid #999";
+          div.style.padding = "12px";
+          div.style.margin = "12px 0";
+          div.innerHTML = `
+            <h2>${repo.repo}</h2>
+            <p>Status: ${repo.terrain.reachable ? "GREEN" : "HOLD"}</p>
+            <p>Default branch: ${repo.default_branch}</p>
+            <p>Signals: ${(repo.signals || []).join(", ")}</p>
+            <button disabled>Mint disabled</button>
+            <p>Warning: Goblin Gate is navigation only. Minting remains disabled unless separate public evidence exists.</p>
+          `;
+          cards.appendChild(div);
+        });
+
+        document.getElementById("friction-log").textContent = JSON.stringify({
+          component: "Goblin Gate",
+          source,
+          cards_rendered: data.repos.length,
+          mintEnabled: false,
+          authority: data.authority,
+          no_fake_green: data.no_fake_green,
+          unauthorized_transitions: 0,
+          semantic_promotion: false
+        }, null, 2);
+      });
+  </script>
+</body>
+</html>
