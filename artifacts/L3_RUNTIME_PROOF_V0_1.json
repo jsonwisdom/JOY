@@ -1,0 +1,42 @@
+{
+  "artifact": "L3_RUNTIME_PROOF_V0_1",
+  "version": "0.1",
+  "layer": "L3",
+  "timestamp": "2026-06-11T02:14:42Z",
+  "status": "PROOF_CREATED",
+  "execution": "L3_RUNTIME_EXECUTION_GATE_V0_1",
+  "inputs": {
+    "approval": "artifacts/HUMAN_L3_APPROVAL_V0_1.json",
+    "replay": "artifacts/L3_PROOF_TRANSITION_REPLAY_EVALUATION_V0_1.json",
+    "logic": "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
+    "receipt": "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+    "evaluation": "artifacts/L3_PROOF_TRANSITION_EVALUATION_V0_1.json"
+  },
+  "input_sha256": {
+    "approval": "ba0e9b92abf0850ee133ef2c07c76ce6d4e3caf34e94d047d75a8dfb9be6a1bb",
+    "replay": "ebd7a1690a0e8ac8fd1ff054d6b0aec8544e3ac697e78bb852bb6f321eaf0465",
+    "logic": "4a7b2e0eca198c522ea4c3294d49b28054bd93525ad391c4f465ba567584de2d",
+    "receipt": "fc29f8152776f1ddeef0fa9082ae9ce9f018a05b5ab3bec524fa1ba2d1121022",
+    "evaluation": "186c04839ee2dedb7875b2f75afda97b63b7c70257c8260dd76b643243a97da4"
+  },
+  "checks": {
+    "approval_present": true,
+    "approval_status_approved": true,
+    "approval_target_matches": true,
+    "replay_evaluation_present": true,
+    "transition_logic_present": true,
+    "runtime_payload_receipt_present": true,
+    "prior_evaluation_present": true,
+    "authority_not_granted": true,
+    "membrane_intact": true
+  },
+  "runtime_execution_performed": true,
+  "runtime_proof_created": true,
+  "proof_eligible": true,
+  "authority": false,
+  "emission_eligible": false,
+  "no_fake_green": true,
+  "membrane": "INTACT",
+  "decision": "RUNTIME_PROOF_CREATED",
+  "note": "Proof records execution of the L3 transition gate only. It grants no authority and performs no emission."
+}

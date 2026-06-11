@@ -1,0 +1,14 @@
+{
+  "artifact": "L3_TRANSITION_STATE_V0_2",
+  "layer": "L3",
+  "runtime_execution_gate": "EXECUTED",
+  "human_approval": "PRESENT",
+  "runtime_proof": "PROOF_CREATED",
+  "proof_eligible": true,
+  "runtime_proof_created": true,
+  "authority": false,
+  "emission_eligible": false,
+  "no_fake_green": true,
+  "membrane": "INTACT",
+  "next_lawful_move": "REVIEW_RUNTIME_PROOF_AND_DECIDE_L4_OR_EMISSION_GATE"
+}

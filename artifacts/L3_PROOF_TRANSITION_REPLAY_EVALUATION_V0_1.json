@@ -1,0 +1,31 @@
+{
+  "artifact": "L3_PROOF_TRANSITION_REPLAY_EVALUATION_V0_1",
+  "version": "0.1",
+  "layer": "L3",
+  "status": "APPROVED_FOR_RUNTIME_GATE",
+  "purpose": "Replay the L3 proof transition evaluation against the published L3 proof transition logic.",
+  "inputs": {
+    "runtime_payload_receipt": "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+    "prior_transition_evaluation": "artifacts/L3_PROOF_TRANSITION_EVALUATION_V0_1.json",
+    "transition_logic": "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
+    "logic_commit": "8ac914a"
+  },
+  "checks": {
+    "runtime_payload_receipt_present": true,
+    "receipt_pinned_in_repository": true,
+    "transition_evaluation_present": true,
+    "transition_logic_present": true,
+    "weaker_local_candidate_conflict": false,
+    "execution_performed": false,
+    "runtime_proof_created": false,
+    "authority_granted": false,
+    "human_approval_required": true,
+    "human_approval_present": true,
+    "fake_green_risk": false
+  },
+  "decision": "NEEDS_RUNTIME_EXECUTION",
+  "authority": false,
+  "no_fake_green": true,
+  "membrane": "INTACT",
+  "next_lawful_move": "RUN_L3_RUNTIME_EXECUTION_GATE_V0_1"
+}
