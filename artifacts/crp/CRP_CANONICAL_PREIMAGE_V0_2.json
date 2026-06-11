@@ -1,0 +1,14 @@
+{
+  "rule": "CANONICAL_PREIMAGE_V0_2",
+  "version": "0.2",
+  "supersedes": "CANONICAL_PREIMAGE_V0_1",
+  "excluded_fields": [
+    "metadata.seed_hash",
+    "metadata.hash_status"
+  ],
+  "rationale": "Operational metadata must not affect seed identity. Only semantic fields (nodes, edges, metadata.seed_phrase, metadata.seed_phrase_domain) determine the canonical preimage.",
+  "transform": "delete both excluded fields, then sort keys and compact JSON",
+  "command": "jq --sort-keys -c 'del(.metadata.seed_hash, .metadata.hash_status)'",
+  "authority": false,
+  "effective_date": "2026-06-11"
+}
