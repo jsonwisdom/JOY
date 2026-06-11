@@ -8,8 +8,8 @@
     "seed_id": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
     "seed_phrase": "A Father's Wisdom",
     "seed_phrase_domain": "JOY",
-    "seed_hash": null,
-    "hash_status": "PENDING_RECOMPUTE_FROM_EXACT_ACCEPTED_OBJECT"
+    "seed_hash": "885bb9322dd09495509299b206d4cbf5c9f8f90477ac9e6c03a1214641ba00bc",
+    "hash_status": "HASH_WRITTEN_PENDING_REVERIFY"
   },
   "nodes": [
     {
