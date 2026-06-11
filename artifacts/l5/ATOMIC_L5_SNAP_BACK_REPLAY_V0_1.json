@@ -1,0 +1,59 @@
+{
+  "artifact": "ATOMIC_L5_SNAP_BACK_REPLAY_V0_1",
+  "version": "0.1",
+  "layer": "L5",
+  "status": "CANONICAL_DRAFT",
+  "mode": "SNAP_BACK_REPLAY",
+  "purpose": "Replay L5 opening from the pinned L4 closure state without granting authority, execution, or emission.",
+  "snap_back_source": {
+    "L0": "SEALED",
+    "L2": "STAGING",
+    "L3": "PROOF_NOT_ELIGIBLE",
+    "L4": "CLOSED_REVIEW_CHAIN_PATH_PINNED",
+    "MASTER_REPLAY_INDEX": "PINNED",
+    "master_replay_index_commit": "ca637ba"
+  },
+  "l5_target": {
+    "L5": "KNOWLEDGE_OPENING",
+    "role": "READER_INDEXER",
+    "authority": false,
+    "execution": false,
+    "emission": false,
+    "reader_only": true
+  },
+  "atomic_checks": {
+    "l4_closed": true,
+    "master_replay_index_pinned": true,
+    "l3_not_promoted": true,
+    "no_runtime_authority_granted": true,
+    "no_emission_unlocked": true,
+    "no_fake_green": true,
+    "membrane_intact": true
+  },
+  "allowed_actions": [
+    "inspection",
+    "classification",
+    "indexing",
+    "lineage_mapping",
+    "cross_repository_reference_mapping",
+    "knowledge_graph_preparation"
+  ],
+  "forbidden_actions": [
+    "execution",
+    "emission",
+    "runtime_authority",
+    "mint_trigger",
+    "attestation_claim",
+    "state_mutation_without_receipt",
+    "promotion_of_L3_proof_state"
+  ],
+  "result": {
+    "snap_back_valid": true,
+    "l5_opening_allowed": true,
+    "l5_status": "OPEN_AS_KNOWLEDGE_LAYER_ONLY",
+    "authority": false,
+    "emission": false,
+    "execution": false,
+    "membrane": "INTACT"
+  }
+}
