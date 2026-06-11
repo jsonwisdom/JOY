@@ -1,0 +1,75 @@
+{
+  "artifact": "L3_HASH_INTAKE_GEOMETRY_V0_1",
+  "layer": "L3",
+  "status": "PERSISTED",
+  "description": "Pure predicate layer for external hash validation. No execution, no defaults, no synthesis.",
+  "depends_on": {
+    "l0_root_ref": "/artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+    "l3_telemetry_manifest_ref": "/artifacts/L3_VERIFIER_TELEMETRY_MANIFEST_V0_1.json",
+    "runtime_payload_intake_contract": "L3_RUNTIME_PAYLOAD_INTAKE_CONTRACT_V0_1"
+  },
+  "intake_slots": {
+    "SHA256_REPLAY_HASH": {
+      "type": "string",
+      "format": "64 hexadecimal characters lowercase",
+      "validation_predicate": "is_valid_sha256_format(value) && value != ZERO_64 && length(value) == 64",
+      "replay_rule": "MUST equal deterministic replay hash computed from L2 artifacts under identical environment",
+      "source": "EXTERNAL_RUNTIME_ONLY",
+      "rejection": "GATE_REMAINS_LOCKED"
+    },
+    "SHA3_256_BRIDGE_HASH": {
+      "type": "string",
+      "format": "64 hexadecimal characters lowercase",
+      "validation_predicate": "is_valid_sha3_256_format(value) && value != ZERO_64 && length(value) == 64",
+      "bridge_rule": "MUST be attested by external bridge origin and non-forgeable by L3",
+      "source": "EXTERNAL_BRIDGE_ONLY",
+      "rejection": "GATE_REMAINS_LOCKED"
+    }
+  },
+  "composite_validation": {
+    "all_fields_present": true,
+    "no_nulls": true,
+    "required_runtime_fields": [
+      "RUN_ID",
+      "SHA256_REPLAY_HASH",
+      "SHA3_256_BRIDGE_HASH",
+      "CI_STATUS_PASS"
+    ],
+    "cross_check": "RUN_ID uniqueness in global lineage && CI_STATUS_PASS == true",
+    "outcome": {
+      "true": "TRANSITION_TO_PROOF_ELIGIBLE",
+      "false": "GATE_LOCKED_NO_AUTHORITY_TO_OVERRIDE"
+    }
+  },
+  "constitutional_guarantees": [
+    "Functions are pure predicates and never generate values.",
+    "No default values allowed.",
+    "No simulation paths.",
+    "All validation is replay-deterministic.",
+    "Failure keeps membrane intact and NO_FAKE_GREEN enforced.",
+    "Authority remains external only."
+  ],
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "predicate_is_not_payload": true,
+    "validation_is_not_generation": true,
+    "geometry_is_not_runtime_proof": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "MEMBRANE_ISOLATION": "INTACT",
+    "HASH_VALIDATION_LAYER": "DEFINED_PREDICATES_ONLY",
+    "STATE_SEPARATION": "VERIFIED",
+    "INFLATION_GUARD": "ACTIVE_NO_FAKE_GREEN_TRUE",
+    "GATE_STATUS": "LOCKED_AWAITING_REAL_PAYLOAD"
+  },
+  "next_lawful_surfaces": [
+    "Draft Proof Transition Logic",
+    "Freeze L3 Telemetry Layer",
+    "Advance to Runtime Proof Eligibility only after real payload exists"
+  ],
+  "timestamp": "2026-06-11T03:10:00Z"
+}
