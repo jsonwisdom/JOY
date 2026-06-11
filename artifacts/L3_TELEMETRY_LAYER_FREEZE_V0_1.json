@@ -1,0 +1,105 @@
+{
+  "artifact": "L3_TELEMETRY_LAYER_FREEZE_V0_1",
+  "layer": "L3",
+  "status": "PERSISTED_SCHEMA_FREEZE",
+  "purpose": "Freeze the telemetry schema before any external runtime payload is accepted, preventing schema drift, retroactive validation changes, and synthetic proof creation.",
+  "depends_on": {
+    "l0_root_ref": "/artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+    "l0_commit": "4b4c166da2ade8fa4125d409d84a200d14c240a9",
+    "hash_intake_geometry_ref": "/artifacts/L3_HASH_INTAKE_GEOMETRY_V0_1.json",
+    "hash_intake_geometry_commit": "acada55b1382612af1e40983b93defeb7ea4fc5b",
+    "proof_transition_logic_ref": "/artifacts/L3_PROOF_TRANSITION_LOGIC_V0_1.json",
+    "proof_transition_logic_commit": "e87dccae3986afb145307cb5e7555e938bef7a0c"
+  },
+  "frozen_schema": {
+    "RUN_ID": {
+      "type": "string",
+      "required": true,
+      "nullable": false,
+      "valid_range": "non-empty UTF-8 string, unique in lineage",
+      "source": "EXTERNAL_RUNTIME_ONLY"
+    },
+    "COMPUTED_HASHES": {
+      "type": "object",
+      "required": true,
+      "nullable": false,
+      "properties": {
+        "sha256_replay_hash": {
+          "type": "string",
+          "required": true,
+          "nullable": false,
+          "format": "64 lowercase hexadecimal characters",
+          "source": "EXTERNAL_RUNTIME_ONLY"
+        },
+        "sha3_256_bridge_hash": {
+          "type": "string",
+          "required": true,
+          "nullable": false,
+          "format": "64 lowercase hexadecimal characters",
+          "source": "EXTERNAL_BRIDGE_ONLY"
+        }
+      },
+      "additional_properties_allowed": false
+    },
+    "CI_STATUS_PASS": {
+      "type": "boolean",
+      "required": true,
+      "nullable": false,
+      "valid_values": [true, false],
+      "source": "EXTERNAL_CI_OR_VERIFIER_ONLY"
+    }
+  },
+  "schema_lock": {
+    "freeze_timestamp": "2026-06-11T03:30:00Z",
+    "freeze_commit_context": "e87dccae3986afb145307cb5e7555e938bef7a0c",
+    "schema_drift_allowed": false,
+    "retroactive_validation_changes_allowed": false,
+    "payload_before_freeze_allowed": false
+  },
+  "invalidation_rules": [
+    "Any payload missing RUN_ID is invalid.",
+    "Any payload missing COMPUTED_HASHES.sha256_replay_hash is invalid.",
+    "Any payload missing COMPUTED_HASHES.sha3_256_bridge_hash is invalid.",
+    "Any payload missing CI_STATUS_PASS is invalid.",
+    "Any payload with null required fields is invalid.",
+    "Any payload with uppercase, short, long, non-hex, or zero-only hash fields is invalid.",
+    "Any payload with additional unexpected fields inside COMPUTED_HASHES is invalid.",
+    "Any payload received before this freeze artifact is not eligible for automatic proof transition.",
+    "Any later schema revision must create a new version and cannot rewrite this freeze."
+  ],
+  "state_after_freeze": {
+    "runtime_payload_received": false,
+    "input_format_validated": false,
+    "input_replay_validated": false,
+    "ci_status_confirmed": false,
+    "proof_eligible": false,
+    "runtime_proof_created": false,
+    "emission_eligible": false,
+    "execution_performed": false
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "schema_freeze_is_not_payload": true,
+    "schema_freeze_is_not_runtime_proof": true,
+    "proof_eligible_is_not_emission_eligible": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "L3_STATUS": "TELEMETRY_SCHEMA_FROZEN",
+    "RUNTIME_PAYLOAD": "ABSENT",
+    "PROOF_ELIGIBILITY": "NOT_REACHED",
+    "EXECUTION": "NOT_PERFORMED",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true,
+    "MEMBRANE": "INTACT"
+  },
+  "next_lawful_surfaces": [
+    "Await real runtime payload matching frozen schema.",
+    "Create L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1 only after external payload exists.",
+    "Create L3_VERIFIER_RUNTIME_PROOF_V0_1 only after transition predicates pass."
+  ],
+  "timestamp": "2026-06-11T03:30:00Z"
+}
