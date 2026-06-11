@@ -1,0 +1,58 @@
+{
+  "receipt_hash_domain": "COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1",
+  "layer": "L4_TAXONOMY_RECON",
+  "parent_recon_ref": "/artifacts/AL_V0_4_STRUCTURAL_PROFILE_V0_1.json",
+  "l0_root_ref": "/artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+  "l0_commit": "4b4c166da2ade8fa4125d409d84a200d14c240a9",
+  "repo": "jsonwisdom/COMPUTERWISDOM",
+  "branch": "main",
+  "status": "STRUCTURALLY_PROFILED",
+  "structural_elements": {
+    "directory_names": [
+      "artifacts",
+      "docs",
+      "links"
+    ],
+    "manifest_existence": [
+      "README.md",
+      "index.json (pending endpoint confirmation)"
+    ],
+    "git_config_exists": true,
+    "branch_heads": [
+      "main"
+    ],
+    "known_artifacts": [
+      "control-plane markers",
+      "family continuity receipts",
+      "Computer Wisdom identity surface"
+    ],
+    "joyspace_link_potential": true
+  },
+  "discovery_rules": {
+    "allow": [
+      "directory_names",
+      "manifest_existence",
+      "git_config_exists",
+      "branch_heads"
+    ],
+    "deny": [
+      "license_text",
+      "author_signatures",
+      "code_extraction",
+      "semantic_adoption"
+    ]
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT",
+    "daddy_wisdom_invariant": "HOLDING"
+  },
+  "lineage_note": "HEIDEE → JOY → AL → COMPUTERWISDOM progression. Family perimeter mapping completed for named V0.4 targets.",
+  "global_l4_bundle_allowed": false,
+  "remaining_v0_4_targets": [],
+  "timestamp": "2026-06-11T04:30:00Z",
+  "note": "COMPUTERWISDOM structurally mapped in READ_ONLY mode. No content ingestion. Membrane intact."
+}
