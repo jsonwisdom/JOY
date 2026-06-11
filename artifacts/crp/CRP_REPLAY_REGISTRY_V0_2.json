@@ -68,7 +68,7 @@
       "schema_version": "CRP_REPLAY_REGISTRY_SCHEMA_V0_2",
       "protocol_version": "CRP_REPLAY_REGISTRY_UPDATE_PROTOCOL_V0_1",
       "registry_entry_created_at": "2026-06-11T12:00:00Z",
-      "registry_entry_commit_sha": "TBD0000000000000000000000000000000000000",
+      "registry_entry_commit_sha": "e57a7ea6a60ca058060dce528a8447a2775d2dac",
       "authority": false,
       "no_fake_green": true
     }
