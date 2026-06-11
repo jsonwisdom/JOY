@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CRP Replay Registry Schema v0.2",
+  "type": "object",
+  "required": [
+    "artifact",
+    "version",
+    "schema_version",
+    "protocol_version",
+    "authority",
+    "no_fake_green",
+    "append_only",
+    "entries"
+  ],
+  "definitions": {
+    "replay_outcome": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "YELLOW_NO_BYTES",
+        "YELLOW_INCOMPLETE",
+        "GREEN_MATCH",
+        "RED_MISMATCH"
+      ]
+    },
+    "witness_scope": {
+      "type": "string",
+      "enum": [
+        "SELF",
+        "INDEPENDENT",
+        "AGGREGATOR"
+      ]
+    },
+    "witness_claim": {
+      "type": "string",
+      "enum": [
+        "OBSERVED_ONLY",
+        "REPLAY_EXECUTED",
+        "ATTESTED_ELSEWHERE"
+      ]
+    },
+    "registry_state": {
+      "type": "string",
+      "enum": [
+        "EMPTY",
+        "ACTIVE",
+        "SEALED"
+      ]
+    },
+    "witness": {
+      "type": "object",
+      "required": [
+        "witness_id",
+        "witness_scope",
+        "witness_claim",
+        "replay_outcome",
+        "authority"
+      ],
+      "properties": {
+        "witness_id": { "type": "string" },
+        "witness_scope": { "$ref": "#/definitions/witness_scope" },
+        "witness_claim": { "$ref": "#/definitions/witness_claim" },
+        "replay_outcome": { "$ref": "#/definitions/replay_outcome" },
+        "notes": { "type": ["string", "null"] },
+        "evidence": { "type": ["string", "null"] },
+        "authority": { "type": "boolean", "const": false }
+      },
+      "additionalProperties": false
+    },
+    "supersede": {
+      "type": "object",
+      "required": [
+        "supersedes_artifact",
+        "supersedes_entry_id",
+        "supersedes_commit_sha",
+        "supersedes_reason"
+      ],
+      "properties": {
+        "supersedes_artifact": { "type": "string" },
+        "supersedes_entry_id": { "type": "string" },
+        "supersedes_commit_sha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "supersedes_reason": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "artifact": { "const": "CRP_REPLAY_REGISTRY_V0_2" },
+    "version": { "const": "0.2" },
+    "schema_version": { "const": "CRP_REPLAY_REGISTRY_SCHEMA_V0_2" },
+    "protocol_version": { "const": "CRP_REPLAY_REGISTRY_UPDATE_PROTOCOL_V0_1" },
+    "authority": { "type": "boolean", "const": false },
+    "no_fake_green": { "type": "boolean", "const": true },
+    "append_only": { "type": "boolean", "const": true },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "seed_artifact",
+          "seed_cid",
+          "seed_hash",
+          "canonicalization_rule",
+          "anchors",
+          "witnesses",
+          "sealed",
+          "current_registry_state",
+          "schema_version",
+          "protocol_version",
+          "registry_entry_created_at",
+          "registry_entry_commit_sha",
+          "authority",
+          "no_fake_green"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "seed_artifact": { "type": "string" },
+          "seed_cid": { "type": ["string", "null"] },
+          "seed_hash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+          "canonicalization_rule": { "type": ["string", "null"] },
+          "anchors": { "type": "object" },
+          "witnesses": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/witness" }
+          },
+          "supersede": { "$ref": "#/definitions/supersede" },
+          "sealed": { "type": "boolean" },
+          "current_registry_state": { "$ref": "#/definitions/registry_state" },
+          "schema_version": { "const": "CRP_REPLAY_REGISTRY_SCHEMA_V0_2" },
+          "protocol_version": { "const": "CRP_REPLAY_REGISTRY_UPDATE_PROTOCOL_V0_1" },
+          "registry_entry_created_at": { "type": "string", "format": "date-time" },
+          "registry_entry_commit_sha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+          "authority": { "type": "boolean", "const": false },
+          "no_fake_green": { "type": "boolean", "const": true }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
