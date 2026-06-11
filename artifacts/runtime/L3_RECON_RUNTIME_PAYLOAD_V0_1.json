@@ -1,0 +1,19 @@
+{
+  "runtime_payload": {
+    "RUN_ID": "RUN_3e8655d_20260611T030629Z",
+    "REPO": "jsonwisdom/JOY",
+    "HEAD_COMMIT": "3e8655dc436865a87b7b9ffe6ece56e824bd4812",
+    "SHA256_REPLAY_TARGET": "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
+    "SHA256_REPLAY_HASH": "683f91730e1361fb7b7b078a9c29232f96eb623b06537a68d39a6a50831291e7",
+    "SHA3_256_BRIDGE_TARGET": "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+    "SHA3_256_BRIDGE_HASH": "8f546f8c58e7552e89f4766942dcbaec908b80e85cc631ac5003024d08a1842b",
+    "CI_STATUS_PASS": true,
+    "TIMESTAMP_UTC": "2026-06-11T03:06:29Z",
+    "METADATA": {
+      "environment": "local-iron-runner",
+      "version": "0.1.0",
+      "no_fake_green": true,
+      "mock_values_allowed": false
+    }
+  }
+}
