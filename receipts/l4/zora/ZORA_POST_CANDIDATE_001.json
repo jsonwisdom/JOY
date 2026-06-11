@@ -1,0 +1,28 @@
+{
+  "artifact_type": "ZORA_POST_CANDIDATE",
+  "version": "0.1",
+  "project": "JOY",
+  "layer": "L4",
+  "status": "DRAFT_NOT_MINTED",
+  "candidate_id": "ZORA_POST_CANDIDATE_001",
+  "title": "Sophia Wisdom Report: L4 Receipt Chain",
+  "source_chain": {
+    "l4_scope_commit": "b486460",
+    "l4_verifier_extension_commit": "28560b8",
+    "l4_replay_pass_commit": "c27ff83",
+    "mint_decision_commit": "423b65f"
+  },
+  "post_body": "Sophia Wisdom Report enters L4 with a published receipt chain: scope, verifier extension, replay pass, and mint decision gate. No authority claimed. No fake green. Witness over projection. Replay required. Membrane intact.",
+  "mint_state": {
+    "mint_allowed": false,
+    "human_approval_required": true,
+    "executed": false
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT"
+  }
+}
