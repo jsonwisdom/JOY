@@ -1,0 +1,55 @@
+{
+  "receipt_hash_domain": "L3_VERIFIER_TELEMETRY_MANIFEST_V0_1",
+  "layer": "L3",
+  "status": "HOLDING_FOR_OPERATOR_INPUT",
+  "gate_status": "GATE_LOCKED",
+  "purpose": "Freeze the telemetry input surface for L3_VERIFIER_RUNTIME_PROOF_V0_1 without forging, simulating, or projecting runtime proof.",
+  "l0_root_ref": "/artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+  "l0_commit": "4b4c166da2ade8fa4125d409d84a200d14c240a9",
+  "current_commit": "7dd90c0",
+  "target_surface": "L3_VERIFIER_RUNTIME_PROOF_V0_1",
+  "dependencies_satisfied": {
+    "transition_interface_initialized": true,
+    "membrane_intact": true,
+    "lineage_stable": true
+  },
+  "runtime_inputs": {
+    "RUN_ID": null,
+    "COMPUTED_HASHES": {
+      "sha256_replay_hash": null,
+      "sha3_256_bridge_hash": null
+    },
+    "CI_STATUS_PASS": null
+  },
+  "state_lock": "HOLDING_FOR_OPERATOR_INPUT",
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "placeholder_is_not_runtime_proof": true,
+    "telemetry_manifest_is_not_execution": true,
+    "membrane_status": "INTACT"
+  },
+  "horizon_board": {
+    "RUN_ID": "AWAITING",
+    "COMPUTED_HASHES": "EMPTY_BUFFER",
+    "CI_STATUS_PASS": "UNDEFINED"
+  },
+  "arena_assessment": {
+    "L3_STATUS": "GATE_LOCKED",
+    "LINEAGE": "STABLE_4b4c166_TO_7dd90c0",
+    "MEMBRANE": "INTACT",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true,
+    "VERIFIER_RUNTIME": "HOLDING_FOR_PAYLOAD"
+  },
+  "next_lawful_moves": [
+    "Provide actual RUN_ID from verifier runtime.",
+    "Provide computed sha256 replay hash and sha3_256 bridge hash from runtime.",
+    "Provide CI_STATUS_PASS only from real CI or verifier result.",
+    "Create L3_VERIFIER_RUNTIME_PROOF_V0_1 only after payload exists."
+  ],
+  "timestamp": "2026-06-11T03:00:00Z",
+  "note": "Preparation surface frozen. No forge, no mock, no speculation. Awaiting external runtime payload."
+}
