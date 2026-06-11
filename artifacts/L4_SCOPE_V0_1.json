@@ -1,0 +1,20 @@
+{
+  "receipt_type": "L4_SCOPE",
+  "version": "0.1",
+  "project": "JOY",
+  "layer": "L4",
+  "depends_on": "L4_OPENING_RECEIPT_V0_1",
+  "status": "SCOPE_DEFINED",
+  "scope": {
+    "zora_receipt_flywheel": true,
+    "agent_delegation": true,
+    "proof_dashboard": true
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT"
+  }
+}
