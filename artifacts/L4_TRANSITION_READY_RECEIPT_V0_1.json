@@ -1,0 +1,33 @@
+{
+  "artifact": "L4_TRANSITION_READY_RECEIPT_V0_1",
+  "version": "0.1",
+  "layer": "L4",
+  "timestamp": "2026-06-11T02:XX:XXZ",
+  "status": "CANONICAL_DRAFT",
+  "purpose": "Record that L4 has passed review and transition evaluation and may enter transition-ready state as READER_INSPECTOR only. No authority granted. No emission enabled.",
+  "inputs": {
+    "opening_receipt": "artifacts/L4_OPENING_RECEIPT_V0_1.json",
+    "review_evaluation": "artifacts/L4_REVIEW_AND_TRANSITION_EVALUATION_V0_1.json",
+    "transition_evaluation": "artifacts/L4_TRANSITION_EVALUATION_V0_1.json",
+    "l3_runtime_proof": "artifacts/L3_RUNTIME_PROOF_V0_1.json"
+  },
+  "checks": {
+    "opening_receipt_present": true,
+    "review_evaluation_passed": true,
+    "transition_evaluation_passed": true,
+    "l3_runtime_proof_present": true,
+    "workspace_clean": true,
+    "remote_published": true,
+    "authority_granted": false,
+    "emission_eligible": false,
+    "no_evidence_of_crown": true,
+    "membrane_intact": true
+  },
+  "decision": "L4_TRANSITION_READY",
+  "authority": false,
+  "emission_eligible": false,
+  "no_fake_green": true,
+  "membrane": "INTACT",
+  "role": "READER_INSPECTOR",
+  "next_lawful_move": "L4_BUNDLE_INDEX_OR_EMISSION_GATE_REVIEW"
+}
