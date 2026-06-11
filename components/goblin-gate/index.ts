@@ -25,6 +25,24 @@ export type MintingDoor =
 
 export type GateStatus = "OPEN" | "FRICTION" | "BLOCKED";
 
+export type WisdomWorkSubject =
+  | "GOBLIN"
+  | "SOPHIA"
+  | "JOY"
+  | "FROST"
+  | "ALMS"
+  | "ZORA"
+  | "UNKNOWN";
+
+export type WisdomWorkCourt =
+  | "GOBLIN_COURT"
+  | "SOPHIA_COURT"
+  | "JOY_SPACE"
+  | "FROST_ARCHIVE"
+  | "ALMS_ARCHIVE"
+  | "ZORA_GATE"
+  | "UNKNOWN_COURT";
+
 export interface EvidencePlaceholder {
   commit?: string;
   pullRequest?: string;
@@ -71,6 +89,39 @@ export interface GateDecision {
   translation: GateTranslation;
   status: GateStatus;
   visitorMessage: string;
+}
+
+export interface WisdomArtifactInput {
+  repo: string;
+  path: string;
+  title?: string;
+  subject?: WisdomWorkSubject;
+  court?: WisdomWorkCourt;
+  evidence: EvidencePlaceholder;
+}
+
+export interface WisdomArtifactNode {
+  repo: string;
+  path: string;
+  title: string;
+  subject: WisdomWorkSubject;
+  court: WisdomWorkCourt;
+  box: TimeBox;
+  stamp: EvidenceStamp;
+  homepageHref?: string;
+  evidence: EvidencePlaceholder;
+}
+
+export interface WisdomConstellationIndex {
+  module: "WISDOM_WORKS_CONSTELLATION_INDEX_V0_1";
+  primarySubject: WisdomWorkSubject;
+  primaryCourt: WisdomWorkCourt;
+  artifactCount: number;
+  subjects: WisdomWorkSubject[];
+  courts: WisdomWorkCourt[];
+  artifacts: WisdomArtifactNode[];
+  authority: false;
+  no_fake_green: true;
 }
 
 export const GOBLIN_REPLAY_OBJECT: ReplayObject = {
@@ -229,4 +280,235 @@ export function bindMintingOptionsGoblinGate(input: GateClaim): GateDecision {
  */
 export function useMintingOptionsGoblinGate(input: GateClaim): GateDecision {
   return bindMintingOptionsGoblinGate(input);
+}
+
+function inferSubject(input: WisdomArtifactInput): WisdomWorkSubject {
+  const text = `${input.title ?? ""} ${input.repo} ${input.path}`.toLowerCase();
+
+  if (text.includes("goblin")) return "GOBLIN";
+  if (text.includes("sophia")) return "SOPHIA";
+  if (text.includes("joy")) return "JOY";
+  if (text.includes("frost")) return "FROST";
+  if (text.includes("alms")) return "ALMS";
+  if (text.includes("zora")) return "ZORA";
+
+  return "UNKNOWN";
+}
+
+function inferCourt(subject: WisdomWorkSubject): WisdomWorkCourt {
+  if (subject === "GOBLIN") return "GOBLIN_COURT";
+  if (subject === "SOPHIA") return "SOPHIA_COURT";
+  if (subject === "JOY") return "JOY_SPACE";
+  if (subject === "FROST") return "FROST_ARCHIVE";
+  if (subject === "ALMS") return "ALMS_ARCHIVE";
+  if (subject === "ZORA") return "ZORA_GATE";
+
+  return "UNKNOWN_COURT";
+}
+
+function classifyArtifactEvidence(evidence: EvidencePlaceholder): Pick<WisdomArtifactNode, "box" | "stamp"> {
+  const hasReplayEvidence =
+    Boolean(evidence.commit) ||
+    Boolean(evidence.pullRequest) ||
+    Boolean(evidence.receipt) ||
+    Boolean(evidence.uid) ||
+    Boolean(evidence.transaction) ||
+    Boolean(evidence.replayLog);
+
+  const hasPublicSurface = Boolean(evidence.publicUrl);
+  const hasArtifactPath = Boolean(evidence.artifactPath);
+
+  if (hasReplayEvidence && hasPublicSurface) {
+    return { box: "PAST", stamp: "VERIFIED" };
+  }
+
+  if (hasArtifactPath) {
+    return { box: "PRESENT", stamp: "LOCAL" };
+  }
+
+  if (hasPublicSurface) {
+    return { box: "PRESENT", stamp: "RECON" };
+  }
+
+  return { box: "FUTURE", stamp: "UNKNOWN" };
+}
+
+function toHomepageHref(node: WisdomArtifactNode): string | undefined {
+  if (node.evidence.publicUrl) return node.evidence.publicUrl;
+
+  if (node.repo && node.path) {
+    return `https://github.com/${node.repo}/blob/main/${node.path}`;
+  }
+
+  return undefined;
+}
+
+/**
+ * CONSTELLATION MAPPER - ARTIFACT GRAPH
+ *
+ * Goblin is one word, one subject, one court system.
+ * This mapper also supports other Wisdom works of art and ideas by collapsing
+ * each artifact into a subject and court for homepage navigation.
+ *
+ * This function maps. It does not verify external truth.
+ */
+export function mapWisdomArtifacts(
+  artifacts: WisdomArtifactInput[],
+  primarySubject: WisdomWorkSubject = "GOBLIN"
+): WisdomConstellationIndex {
+  const nodes: WisdomArtifactNode[] = artifacts.map((artifact) => {
+    const subject = artifact.subject ?? inferSubject(artifact);
+    const court = artifact.court ?? inferCourt(subject);
+    const classification = classifyArtifactEvidence(artifact.evidence);
+
+    const node: WisdomArtifactNode = {
+      repo: artifact.repo,
+      path: artifact.path,
+      title: artifact.title ?? artifact.path.split("/").pop() ?? artifact.path,
+      subject,
+      court,
+      box: classification.box,
+      stamp: classification.stamp,
+      evidence: artifact.evidence
+    };
+
+    return {
+      ...node,
+      homepageHref: toHomepageHref(node)
+    };
+  });
+
+  const subjects = Array.from(new Set(nodes.map((node) => node.subject)));
+  const courts = Array.from(new Set(nodes.map((node) => node.court)));
+
+  return {
+    module: "WISDOM_WORKS_CONSTELLATION_INDEX_V0_1",
+    primarySubject,
+    primaryCourt: inferCourt(primarySubject),
+    artifactCount: nodes.length,
+    subjects,
+    courts,
+    artifacts: nodes,
+    authority: false,
+    no_fake_green: true
+  };
+}
+
+/**
+ * BOUND GOBLIN CONSTELLATION
+ *
+ * The discovered Goblin-class artifacts across JOY, AL, and COMPUTERWISDOM.
+ * Evidence links are public file surfaces discovered through GitHub search.
+ * Commit fields remain placeholders unless independently pinned.
+ */
+export function bindGoblinRepoConstellation(): WisdomConstellationIndex {
+  return mapWisdomArtifacts(
+    [
+      {
+        repo: "jsonwisdom/JOY",
+        path: "components/goblin-gate/index.ts",
+        title: "Goblin Gate Homepage Module",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          commit: "8e3c056fb29aca9a51f5e0012f1d2ec5b9c51697",
+          artifactPath: "components/goblin-gate/index.ts",
+          publicUrl: "https://github.com/jsonwisdom/JOY/blob/main/components/goblin-gate/index.ts"
+        }
+      },
+      {
+        repo: "jsonwisdom/AL",
+        path: "verify_goblin_stack.py",
+        title: "Goblin Stack Verifier",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "verify_goblin_stack.py",
+          publicUrl: "https://github.com/jsonwisdom/AL/blob/7cc757114e6ae1d4c51a3c283a0829f8fc0e973c/verify_goblin_stack.py"
+        }
+      },
+      {
+        repo: "jsonwisdom/AL",
+        path: "docs/goblin_gap_map_batch_007.md",
+        title: "Goblin Gap Map Batch 007",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "docs/goblin_gap_map_batch_007.md",
+          publicUrl: "https://github.com/jsonwisdom/AL/blob/7cc757114e6ae1d4c51a3c283a0829f8fc0e973c/docs/goblin_gap_map_batch_007.md"
+        }
+      },
+      {
+        repo: "jsonwisdom/AL",
+        path: "_truth/constitution/goblin_full_stack_report.json",
+        title: "Goblin Full Stack Report",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "_truth/constitution/goblin_full_stack_report.json",
+          publicUrl: "https://github.com/jsonwisdom/AL/blob/7cc757114e6ae1d4c51a3c283a0829f8fc0e973c/_truth/constitution/goblin_full_stack_report.json"
+        }
+      },
+      {
+        repo: "jsonwisdom/COMPUTERWISDOM",
+        path: "docs/goblin_verifier_v0_1.md",
+        title: "Goblin Verifier V0.1",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "docs/goblin_verifier_v0_1.md",
+          publicUrl: "https://github.com/jsonwisdom/COMPUTERWISDOM/blob/c5849e2118241f2802be0e326e97ef19dd7a9faa/docs/goblin_verifier_v0_1.md"
+        }
+      },
+      {
+        repo: "jsonwisdom/COMPUTERWISDOM",
+        path: "docket/GOBLIN_DOCKET_V0_1.md",
+        title: "Goblin Docket V0.1",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "docket/GOBLIN_DOCKET_V0_1.md",
+          publicUrl: "https://github.com/jsonwisdom/COMPUTERWISDOM/blob/c5849e2118241f2802be0e326e97ef19dd7a9faa/docket/GOBLIN_DOCKET_V0_1.md"
+        }
+      },
+      {
+        repo: "jsonwisdom/COMPUTERWISDOM",
+        path: "docs/GOBLIN_PRECEDENT_INDEX_V0_1.md",
+        title: "Goblin Precedent Index V0.1",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "docs/GOBLIN_PRECEDENT_INDEX_V0_1.md",
+          publicUrl: "https://github.com/jsonwisdom/COMPUTERWISDOM/blob/c5849e2118241f2802be0e326e97ef19dd7a9faa/docs/GOBLIN_PRECEDENT_INDEX_V0_1.md"
+        }
+      },
+      {
+        repo: "jsonwisdom/COMPUTERWISDOM",
+        path: "schemas/goblin_court_v0_1.schema.json",
+        title: "Goblin Court Schema V0.1",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "schemas/goblin_court_v0_1.schema.json",
+          publicUrl: "https://github.com/jsonwisdom/COMPUTERWISDOM/blob/c5849e2118241f2802be0e326e97ef19dd7a9faa/schemas/goblin_court_v0_1.schema.json"
+        }
+      },
+      {
+        repo: "jsonwisdom/COMPUTERWISDOM",
+        path: "court/goblin_precedent_engine_anchor_packet_v0_1.json",
+        title: "Goblin Precedent Engine Anchor Packet V0.1",
+        subject: "GOBLIN",
+        court: "GOBLIN_COURT",
+        evidence: {
+          artifactPath: "court/goblin_precedent_engine_anchor_packet_v0_1.json",
+          publicUrl: "https://github.com/jsonwisdom/COMPUTERWISDOM/blob/c5849e2118241f2802be0e326e97ef19dd7a9faa/court/goblin_precedent_engine_anchor_packet_v0_1.json"
+        }
+      }
+    ],
+    "GOBLIN"
+  );
+}
+
+export function useGoblinRepoConstellation(): WisdomConstellationIndex {
+  return bindGoblinRepoConstellation();
 }
