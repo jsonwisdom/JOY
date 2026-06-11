@@ -1,0 +1,50 @@
+{
+  "name": "L4 Archive Surface Sealed • wisdom_family_l3_l4_seal_d13cdcc",
+  "description": "Archive surface completed, sealed, pushed, and synced. L3 to L4 closure with real SHA-256 integrity. Membrane INTACT. Off-chain evidence only. Commit 02032a1.",
+  "image": "ipfs://TODO_REPLACE_WITH_PINNED_IMAGE_OR_SNAPSHOT",
+  "external_url": "https://github.com/jsonwisdom/JOY/commit/02032a1",
+  "attributes": [
+    {
+      "trait_type": "Level",
+      "value": "L4"
+    },
+    {
+      "trait_type": "Surface",
+      "value": "Archive"
+    },
+    {
+      "trait_type": "Status",
+      "value": "Sealed + Synced"
+    },
+    {
+      "trait_type": "Commit",
+      "value": "02032a1"
+    },
+    {
+      "trait_type": "Integrity",
+      "value": "Membrane INTACT"
+    },
+    {
+      "trait_type": "Archive SHA256",
+      "value": "5dac64d8df49aa298fcfa6f628687002ba53df5ee983b8d50e8cf05aef5232ed"
+    }
+  ],
+  "properties": {
+    "category": "archive_verification",
+    "archive_name": "wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
+    "archive_sha256": "5dac64d8df49aa298fcfa6f628687002ba53df5ee983b8d50e8cf05aef5232ed",
+    "archive_integrity_check": "PASS",
+    "archive_receipt_commit_context": "02032a1",
+    "archive_head_commit_at_creation": "d13cdccfc0cbb0b9cfc1516365f114cc3f4baad2",
+    "no_fake_green": true,
+    "authority": false,
+    "emission_eligible": false,
+    "index_deployment": "BLOCKED",
+    "membrane": "INTACT",
+    "candidate_only": true
+  },
+  "content": {
+    "mime": "application/json",
+    "uri": "https://github.com/jsonwisdom/JOY/blob/main/receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json"
+  }
+}
