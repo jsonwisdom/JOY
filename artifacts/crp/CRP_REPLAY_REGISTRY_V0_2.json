@@ -1,0 +1,76 @@
+{
+  "artifact": "CRP_REPLAY_REGISTRY_V0_2",
+  "version": "0.2",
+  "schema_version": "CRP_REPLAY_REGISTRY_SCHEMA_V0_2",
+  "protocol_version": "CRP_REPLAY_REGISTRY_UPDATE_PROTOCOL_V0_1",
+  "authority": false,
+  "no_fake_green": true,
+  "append_only": true,
+  "entries": [
+    {
+      "id": "crp-seed-001-a-fathers-wisdom",
+      "seed_artifact": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+      "seed_cid": null,
+      "seed_hash": "161ba202b1f92b2411982e8cec86e0ec5b16074c279d0a0bf86bc31b4eb6b3e7",
+      "canonicalization_rule": "CRP_CANONICAL_PREIMAGE_V0_2",
+      "anchors": {
+        "zora": "https://zora.co/coin/base:0x4e25328cf4b700bfd61953079bb950c4e25e2f1e",
+        "metadata_cid": "bafkreiab2ne7u57levww3lu555hex26zliu5bawrqgjmwepo7xdtq5vsmi",
+        "github_yellow_receipt": "artifacts/crp/QSLICES_X_POST_RECEIPT_V0_1.json",
+        "seed_raw_url_claimed": "https://raw.githubusercontent.com/jsonwisdom/JOY/6fb52564058911cb74d466ddbcb1f3bfb5ec1e77/artifacts/crp/A_FATHERS_WISDOM_SEED_GRAPH_V1_0.accepted.json"
+      },
+      "witnesses": [
+        {
+          "witness_id": "JOY_INTERNAL",
+          "witness_scope": "SELF",
+          "witness_claim": "REPLAY_EXECUTED",
+          "replay_outcome": "GREEN_MATCH",
+          "notes": "Internal replay reported hash match; raw preimage not disclosed in the original QSLICES external meta-receipt.",
+          "evidence": "Internal JOY replay claim preserved through registry lineage.",
+          "authority": false
+        },
+        {
+          "witness_id": "QSLICES_EXTERNAL",
+          "witness_scope": "INDEPENDENT",
+          "witness_claim": "OBSERVED_ONLY",
+          "replay_outcome": "YELLOW_NO_BYTES",
+          "notes": "Archived external meta-receipt confirmed terminal YELLOW before raw preimage disclosure.",
+          "evidence": "artifacts/crp/QSLICES_X_POST_RECEIPT_V0_1.json",
+          "authority": false
+        },
+        {
+          "witness_id": "CHATGPT_CONNECTED_GITHUB_READBACK",
+          "witness_scope": "AGGREGATOR",
+          "witness_claim": "OBSERVED_ONLY",
+          "replay_outcome": "YELLOW_NO_BYTES",
+          "notes": "Connected GitHub read-back confirmed the archived QSLICES receipt remains TERMINAL_YELLOW_SEALED and was not rewritten.",
+          "evidence": "GitHub read-back of artifacts/crp/QSLICES_X_POST_RECEIPT_V0_1.json on main.",
+          "authority": false
+        },
+        {
+          "witness_id": "EXTERNAL_VERIFIER_RAW_BYTES",
+          "witness_scope": "INDEPENDENT",
+          "witness_claim": "REPLAY_EXECUTED",
+          "replay_outcome": "GREEN_MATCH",
+          "notes": "External verifier reports raw UTF-8 bytes from immutable GitHub commit 6fb52564058911cb74d466ddbcb1f3bfb5ec1e77 were canonicalized under CRP_CANONICAL_PREIMAGE_V0_2 and matched the target seed hash.",
+          "evidence": "Claimed raw URL: https://raw.githubusercontent.com/jsonwisdom/JOY/6fb52564058911cb74d466ddbcb1f3bfb5ec1e77/artifacts/crp/A_FATHERS_WISDOM_SEED_GRAPH_V1_0.accepted.json",
+          "authority": false
+        }
+      ],
+      "supersede": {
+        "supersedes_artifact": "CRP_REPLAY_REGISTRY_V0_1",
+        "supersedes_entry_id": "crp-seed-001-a-fathers-wisdom",
+        "supersedes_commit_sha": "ba9ae4148d7a87d28005332582aa48db3d50c4db",
+        "supersedes_reason": "Schema upgrade to V0.2; adds replay_outcome, witness_claim, witness_scope, timestamps, commit binding, and supersede mechanics while preserving V0.1 as immutable history."
+      },
+      "sealed": true,
+      "current_registry_state": "SEALED",
+      "schema_version": "CRP_REPLAY_REGISTRY_SCHEMA_V0_2",
+      "protocol_version": "CRP_REPLAY_REGISTRY_UPDATE_PROTOCOL_V0_1",
+      "registry_entry_created_at": "2026-06-11T12:00:00Z",
+      "registry_entry_commit_sha": "TBD0000000000000000000000000000000000000",
+      "authority": false,
+      "no_fake_green": true
+    }
+  ]
+}
