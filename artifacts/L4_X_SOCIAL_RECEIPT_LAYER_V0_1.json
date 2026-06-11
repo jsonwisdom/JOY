@@ -1,0 +1,86 @@
+{
+  "artifact": "L4_X_SOCIAL_RECEIPT_LAYER_V0_1",
+  "layer": "L4",
+  "status": "PUBLISHED_METADATA_LAYER",
+  "purpose": "Add X.com social identity and receipt metadata references to the L4 review surface without converting social presence into authority or mint execution.",
+  "social_surface": {
+    "platform": "X.com",
+    "handles": [
+      {
+        "handle": "@jaywisdom12",
+        "role": "Jay Wisdom public social surface",
+        "status": "DOCUMENTED_REFERENCE"
+      },
+      {
+        "handle": "@qslices",
+        "role": "secondary or adjacent social surface",
+        "status": "DOCUMENTED_REFERENCE"
+      }
+    ]
+  },
+  "receipt_layer": {
+    "label": "Receipts",
+    "reported_count_or_marker": 50000,
+    "unit": "RECEIPT_MARKER",
+    "status": "REPORTED_NOT_INDEPENDENTLY_REPLAYED",
+    "verification_requirement": "A future verifier must bind this marker to concrete receipt files, commit SHAs, transaction hashes, platform URLs, or another replayable evidence source before it can be treated as verified."
+  },
+  "training_material": {
+    "metadata_rules": [
+      "Social handles may identify a publication surface but do not prove execution by themselves.",
+      "A reported receipt marker must remain REPORTED until bound to replayable evidence.",
+      "Do not infer ownership, audience size, monetary value, or mint status from a handle alone.",
+      "Use X.com references as discovery metadata, not canonical proof.",
+      "Keep Zora, Base, GitHub, and X receipts separate unless a bundle index explicitly links them."
+    ],
+    "recommended_fields_for_future_receipts": [
+      "platform",
+      "handle",
+      "post_url",
+      "archive_url",
+      "screenshot_hash_if_any",
+      "commit_sha",
+      "chain",
+      "transaction_hash_if_any",
+      "receipt_id",
+      "verification_status"
+    ],
+    "operator_pattern": [
+      "Document the social surface.",
+      "Record the claimed marker.",
+      "Do not verify until evidence is attached.",
+      "Attach receipts in a later artifact.",
+      "Update the bundle index only after artifact creation."
+    ]
+  },
+  "links_to_existing_l4_context": {
+    "zora_profile_ref": "zora.co/@jaywisdom",
+    "basename": "jaywisdom.base.eth",
+    "prior_metadata_layer": "L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1"
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "publication_is_not_execution": true,
+    "draft_is_not_mint": true,
+    "social_reference_is_not_verification": true,
+    "reported_marker_is_not_verified_count": true,
+    "human_approval_required_for_mint": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "L4_STATUS": "GREEN_FOR_REVIEW",
+    "X_SOCIAL_LAYER": "DOCUMENTED",
+    "RECEIPT_MARKER": "REPORTED_NOT_REPLAYED",
+    "MINT_STATUS": "LOCKED",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true
+  },
+  "next_lawful_moves": [
+    "Create an X receipt capture artifact with concrete post URLs or archive hashes.",
+    "Bind the 50000 receipt marker to replayable evidence before verification.",
+    "Reference this layer from the next L4 bundle index revision."
+  ],
+  "timestamp": "2026-06-11T01:26:00Z"
+}
