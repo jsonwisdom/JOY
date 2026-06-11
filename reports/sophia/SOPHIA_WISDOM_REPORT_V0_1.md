@@ -20,6 +20,8 @@ It defines a family-safe proof surface for preserving feminine wisdom, care ethi
   "authority": false,
   "no_fake_green": true
 }
+```
+
 ## Dimensions
 
 - D1 Identity: jaywisdom.eth declares the root.
@@ -42,3 +44,5 @@ A claim may be remembered before it is externally witnessed, but it may not be c
   "authority": false,
   "no_fake_green": true
 }
+
+```
