@@ -1,0 +1,28 @@
+{
+  "artifact": "CRP_HASH_MISMATCH_AUDIT_V0_1",
+  "seed": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+  "embedded_hash": "885bb9322dd09495509299b206d4cbf5c9f8f90477ac9e6c03a1214641ba00bc",
+  "recomputed_hash_v0_2": "161ba202b1f92b2411982e8cec86e0ec5b16074c279d0a0bf86bc31b4eb6b3e7",
+  "match": false,
+  "root_cause": "CANONICALIZATION_RULE_DRIFT",
+  "details": {
+    "v0_1_excluded_fields": [
+      "metadata.seed_hash"
+    ],
+    "v0_2_excluded_fields": [
+      "metadata.seed_hash",
+      "metadata.hash_status"
+    ],
+    "affected_field": "metadata.hash_status",
+    "committed_current_value": "HASH_WRITTEN_PENDING_REVERIFY",
+    "seed_body_drift_detected": false,
+    "write_back_drift_detected": false,
+    "original_hash_replay_status": "NOT_REPRODUCED_UNDER_V0_2"
+  },
+  "verdict": "Mismatch is explained by canonicalization rule change. V0.2 artifact is verified, but embedded hash must be replaced with the V0.2 recomputed hash before GREEN can be claimed.",
+  "recommended_next_gate": "WRITE_CORRECT_HASH_AND_REVERIFY",
+  "recommended_seed_hash_v0_2": "161ba202b1f92b2411982e8cec86e0ec5b16074c279d0a0bf86bc31b4eb6b3e7",
+  "authority": false,
+  "no_fake_green": true,
+  "timestamp": "2026-06-11"
+}
