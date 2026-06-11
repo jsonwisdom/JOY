@@ -1,0 +1,33 @@
+{
+  "receipt_hash_domain": "L0_ATOMIC_RECEIPT_V0_1",
+  "layer": "L0",
+  "operator": "Jay Wisdom",
+  "basename": "jaywisdom.base.eth",
+  "token": "JAYWISDOM",
+  "network": "Base",
+  "reputation_model": "Receipts > Stories",
+  "target_marker": 100000,
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT"
+  },
+  "root_state": {
+    "L0_STATUS": "ROOT_REPUTATION_RECEIPT_CREATED",
+    "REPUTATION": "DOCUMENTED_NOT_CROWNED",
+    "EXECUTION": "NOT_PERFORMED",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true
+  },
+  "rule_set": [
+    "Receipt > Story",
+    "Hash > Screenshot",
+    "Replay > Projection",
+    "Target != Balance",
+    "Token != Authority"
+  ],
+  "timestamp": "2026-06-11T02:10:00Z",
+  "note": "Genesis root for Jay-Reputation Layer. Non-delegated, non-inflationary, replay-only."
+}
