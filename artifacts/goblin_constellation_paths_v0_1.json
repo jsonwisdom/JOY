@@ -1,0 +1,7 @@
+{
+  "scanner_version": "0.1.1-level1-paths-no-deps",
+  "source_path": "docs/goblin/goblin_constellation_paths_v0_1.json",
+  "terrain_source_present": true,
+  "authority": false,
+  "no_fake_green": true
+}
