@@ -1,0 +1,28 @@
+{
+  "receipt_type": "MINT_DECISION",
+  "version": "0.1",
+  "project": "JOY",
+  "layer": "L4",
+  "status": "MINT_DECISION_PENDING",
+  "candidate": {
+    "name": "SOPHIA_WISDOM_REPORT_V0_1 + PR31_MERGE_PROOF + L4_RECEIPT_CHAIN",
+    "zora_ready": false
+  },
+  "required_chain": {
+    "l4_scope_commit": "b486460",
+    "l4_verifier_extension_commit": "28560b8",
+    "l4_replay_pass_commit": "c27ff83"
+  },
+  "decision": {
+    "mint_allowed": false,
+    "human_approval_required": true,
+    "reason": "Receipt chain is published, but explicit mint approval has not been recorded."
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT"
+  }
+}
