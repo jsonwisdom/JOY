@@ -1,0 +1,25 @@
+{
+  "scanner_version": "0.1.0",
+  "generated_at": "2026-06-11T18:00:00.000Z",
+  "root_identity": null,
+  "repos": [],
+  "subjects": [
+    "GOBLIN"
+  ],
+  "courts": [
+    "GOBLIN_COURT"
+  ],
+  "classification": {
+    "GOBLIN_GATE": "HOLD",
+    "CONSTELLATION_MAPPER": "HOLD",
+    "GOBLIN_REPO_CONSTELLATION": "HOLD",
+    "PUBLIC_HUMAN_INDEX": "HOLD"
+  },
+  "input_status": {
+    "config": "PRESENT",
+    "terrain_surface": "MISSING",
+    "path_surface": "MISSING"
+  },
+  "authority": false,
+  "no_fake_green": true
+}
