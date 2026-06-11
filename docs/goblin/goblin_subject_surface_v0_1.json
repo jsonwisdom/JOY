@@ -1,11 +1,10 @@
 {
   "scanner_version": "0.1.0-level2-subjects-no-github-no-content",
-  "generated_at": "2026-06-11T17:27:52.304Z",
+  "generated_at": "2026-06-11T17:30:19.257Z",
   "authority": false,
   "no_fake_green": true,
   "input": {
     "source_file": "docs/goblin/goblin_constellation_paths_v0_1.json",
-    "source_blob_sha": "5f017d865b6b0c6400af2f420d9657011120e376",
     "boundary": "LEVEL_1_PATH_SURFACE_ONLY"
   },
   "rules": {
@@ -19,11 +18,93 @@
     "subjects_detected": 7
   },
   "subjects": {
+    "RECEIPTS": {
+      "count": 46,
+      "pattern_ids": [
+        "RECEIPT_SURFACE"
+      ],
+      "paths": [
+        "BADGER_RECEIPTS.md",
+        "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+        "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+        "artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json",
+        "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+        "artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json",
+        "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
+        "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
+        "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
+        "docs/BADGER_RECEIPTS.md",
+        "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
+        "docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json",
+        "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
+        "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
+        "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-2026-06-05-2045.json",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-CANONICAL-NOTE.json",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-FULL.json",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-INDEX.json",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P1.json",
+        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P2.json",
+        "receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json",
+        "receipts/badge_family_v0_1_closeout_receipt.json",
+        "receipts/badge_family_v0_2_recovery_closeout_receipt.json",
+        "receipts/composition/composite_proof_001.json",
+        "receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1.json",
+        "receipts/harmony_weaver_v0_2_receipt.json",
+        "receipts/joy_clean_era_oracle_v0_1.json",
+        "receipts/oracle_ritual_v0_1_receipt.json",
+        "receipts/preflight/DRY_HALT_TEST_RECEIPT_V0_1.json",
+        "receipts/preflight/OPERATOR_UNLOCK_RECEIPT_V0_1_DRAFT.json",
+        "receipts/preflight/REAL_RUNTIME_HALT_LOG_V0_1.json",
+        "receipts/recursive/ALMS_L4_RECURSIVE_HARNESS_001.py",
+        "receipts/resilience_thread_v0_2_receipt.json",
+        "receipts/ritual_of_the_unsealed_loom_v0_1_receipt.json",
+        "receipts/skippy_witness_confirmation_v0_1.json",
+        "receipts/sophia/SOPHIA_PROOF_RECEIPT_V0_1.json",
+        "receipts/sophia_branch_replay_claim_receipt_v0_1.json",
+        "receipts/sophia_mrs_wisdom_merge_receipt_v0_1.json",
+        "receipts/test_vectors/ALMS_L2_HUMAN_TABLE.md",
+        "receipts/test_vectors/ALMS_L2_KNOWN_GOOD_OUTPUT_001.json",
+        "receipts/test_vectors/ALMS_L2_TEST_VECTOR_001.json",
+        "receipts/unsealed_loom_v0_2_receipt.json",
+        "receipts/wisdom_anchor_v0_2_receipt.json",
+        "schemas/joy_ritual_receipt.v0_1.schema.json",
+        "validation_26_batch_generator_receipt.txt"
+      ]
+    },
+    "JOY": {
+      "count": 2,
+      "pattern_ids": [
+        "JOY_SURFACE"
+      ],
+      "paths": [
+        "JOY/joy_living_ledger_v0_1.md",
+        "JOY/ledger_nodes/joy_ledger_node_2026_05_31_family_photo_001.md"
+      ]
+    },
+    "TRUTH": {
+      "count": 9,
+      "pattern_ids": [
+        "TRUTH_SURFACE"
+      ],
+      "paths": [
+        "_truth/court/COURT_SPEC_V0_1.md",
+        "_truth/ontology/JOY_ONTOLOGY_V0_1.md",
+        "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+        "_truth/repository/REPOSITORY_SPEC_V0_1.md",
+        "_truth/ritual/RITUAL_SPEC_V0_1.md",
+        "_truth/stories/JOY_STORY_V0_1_FRONT_PORCH_AND_BASEMENT.md",
+        "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
+        "_truth/verification/VERIFICATION_RECORD_V0_1.md",
+        "_truth/witness/WITNESS_PROTOCOL_V0_1.md"
+      ]
+    },
     "ARTIFACTS": {
       "count": 32,
-      "pattern_ids": ["ARTIFACT_SURFACE"],
+      "pattern_ids": [
+        "ARTIFACT_SURFACE"
+      ],
       "paths": [
-        "artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
         "artifacts/COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1.json",
         "artifacts/HUMAN_L3_APPROVAL_V0_1.json",
         "artifacts/JAYWISDOM_FULL_SYSTEM_REPLAY_V0_1.json",
@@ -48,43 +129,46 @@
         "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
         "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
         "artifacts/L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1.json",
+        "artifacts/PROFILE_HEIDEE_V0_4.json",
+        "artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
         "artifacts/l5/ATOMIC_L5_SNAP_BACK_REPLAY_V0_1.json",
         "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json",
-        "artifacts/PROFILE_HEIDEE_V0_4.json",
         "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
         "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
         "artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json",
         "artifacts/zora/L4_ZORA_METADATA_CANDIDATE_V0_1.json"
       ]
     },
-    "DOCS": {
-      "count": 47,
-      "pattern_ids": ["DOCS_SURFACE"],
+    "GOBLIN": {
+      "count": 8,
+      "pattern_ids": [
+        "GOBLIN_SURFACE"
+      ],
       "paths": [
-        "docs/ALMS_TO_JOY_BRIDGE.md",
-        "docs/audits/TX_DIR_QUANTUM_READINESS_AUDIT_REQUEST_PACKET_V0_1.md",
-        "docs/badger_doorway_map.svg",
-        "docs/BADGER_PUBLIC_LEDGER_CARD.md",
-        "docs/BADGER_RECEIPTS.md",
-        "docs/BADGER_TOUCHDOWN_VERIFICATION_CARD.md",
-        "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
-        "docs/DELTA_2_DRY_RUN_AUDIT_GUARDS.json",
-        "docs/DRY_HALT_TEST_SPEC_V0_1.json",
-        "docs/family-wisdom/MRS_WISDOM_DEEP_SEARCH_V0_1.md",
-        "docs/family-wisdom/WISDOM_GIRLS_UPDATE_V0_1.md",
-        "docs/goblin_court_mn_edition_v0_1.md",
+        "components/goblin-gate/index.ts",
         "docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md",
         "docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md",
         "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
         "docs/goblin-courts/OLA_BHA_PORTAL.md",
         "docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md",
         "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md",
+        "docs/goblin_court_mn_edition_v0_1.md"
+      ]
+    },
+    "DOCS": {
+      "count": 47,
+      "pattern_ids": [
+        "DOCS_SURFACE"
+      ],
+      "paths": [
+        "docs/ALMS_TO_JOY_BRIDGE.md",
+        "docs/BADGER_PUBLIC_LEDGER_CARD.md",
+        "docs/BADGER_RECEIPTS.md",
+        "docs/BADGER_TOUCHDOWN_VERIFICATION_CARD.md",
+        "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
+        "docs/DELTA_2_DRY_RUN_AUDIT_GUARDS.json",
+        "docs/DRY_HALT_TEST_SPEC_V0_1.json",
         "docs/HOME_FIELD_ADVANTAGE_POWERUP.md",
-        "docs/index.html",
-        "docs/index.md",
-        "docs/joy_project_ledger_v0_2.md",
-        "docs/joy_recovery_plan_v0_1.md",
-        "docs/joy_remote_witness_replay_harness_v0_1.md",
         "docs/JOY_V0_3_DELTA_1_FIXTURE_MANIFEST.json",
         "docs/JOY_V0_3_DELTA_1_HASH_AND_IDENTITY_INVARIANTS.json",
         "docs/JOY_V0_3_DELTA_1_VALIDATOR_EXTENSION.json",
@@ -94,104 +178,48 @@
         "docs/MICROSOFT_WISDOM_COLLECTION.md",
         "docs/MN_CIVIC_POINTER_CARD.md",
         "docs/MOVE_THE_CHAINS_ONCHAIN_CARD.md",
-        "docs/operator_hash_trigger_v0_1.md",
         "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
-        "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
         "docs/PROCESS.md",
         "docs/REAL_RUNTIME_HALT_FAILURE_PROCEDURE_V0_1.json",
         "docs/REAL_RUNTIME_HALT_LOG_SPEC_V0_1.json",
-        "docs/ritual_of_the_unsealed_loom_v0_1.md",
         "docs/SECOND_DRIVE_RULES.md",
         "docs/SNAPSHOT_MANIFEST_SPEC_V0_1.json",
         "docs/SOPHIA_MRS_WISDOM_MERGE.md",
         "docs/SOPHIA_WISDOM_BRANCH.md",
         "docs/SUPER_SECRET_SISTER_SYNTAX.md",
-        "docs/three_daughters/base_mcp_alms_continuity_witness_v0_1.md",
-        "docs/three_daughters/trinity_architecture_canon_v0_1.md"
-      ]
-    },
-    "GOBLIN": {
-      "count": 8,
-      "pattern_ids": ["GOBLIN_SURFACE"],
-      "paths": [
-        "components/goblin-gate/index.ts",
-        "docs/goblin_court_mn_edition_v0_1.md",
+        "docs/audits/TX_DIR_QUANTUM_READINESS_AUDIT_REQUEST_PACKET_V0_1.md",
+        "docs/badger_doorway_map.svg",
+        "docs/family-wisdom/MRS_WISDOM_DEEP_SEARCH_V0_1.md",
+        "docs/family-wisdom/WISDOM_GIRLS_UPDATE_V0_1.md",
         "docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md",
         "docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md",
         "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
         "docs/goblin-courts/OLA_BHA_PORTAL.md",
         "docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md",
-        "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md"
-      ]
-    },
-    "JOY": {
-      "count": 2,
-      "pattern_ids": ["JOY_SURFACE"],
-      "paths": [
-        "JOY/joy_living_ledger_v0_1.md",
-        "JOY/ledger_nodes/joy_ledger_node_2026_05_31_family_photo_001.md"
-      ]
-    },
-    "RECEIPTS": {
-      "count": 46,
-      "pattern_ids": ["RECEIPT_SURFACE"],
-      "paths": [
-        "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
-        "BADGER_RECEIPTS.md",
-        "docs/BADGER_RECEIPTS.md",
-        "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
-        "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
-        "docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json",
-        "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
+        "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md",
+        "docs/goblin_court_mn_edition_v0_1.md",
+        "docs/index.html",
+        "docs/index.md",
+        "docs/joy_project_ledger_v0_2.md",
+        "docs/joy_recovery_plan_v0_1.md",
+        "docs/joy_remote_witness_replay_harness_v0_1.md",
+        "docs/operator_hash_trigger_v0_1.md",
         "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
-        "schemas/joy_ritual_receipt.v0_1.schema.json",
-        "validation_26_batch_generator_receipt.txt",
-        "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
-        "artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json",
-        "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
-        "artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json",
-        "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
-        "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
-        "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-2026-06-05-2045.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-CANONICAL-NOTE.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-FULL.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-INDEX.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P1.json",
-        "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P2.json",
-        "receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json",
-        "receipts/badge_family_v0_1_closeout_receipt.json",
-        "receipts/badge_family_v0_2_recovery_closeout_receipt.json",
-        "receipts/composition/composite_proof_001.json",
-        "receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1.json",
-        "receipts/harmony_weaver_v0_2_receipt.json",
-        "receipts/joy_clean_era_oracle_v0_1.json",
-        "receipts/oracle_ritual_v0_1_receipt.json",
-        "receipts/preflight/DRY_HALT_TEST_RECEIPT_V0_1.json",
-        "receipts/preflight/OPERATOR_UNLOCK_RECEIPT_V0_1_DRAFT.json",
-        "receipts/preflight/REAL_RUNTIME_HALT_LOG_V0_1.json",
-        "receipts/recursive/ALMS_L4_RECURSIVE_HARNESS_001.py",
-        "receipts/resilience_thread_v0_2_receipt.json",
-        "receipts/ritual_of_the_unsealed_loom_v0_1_receipt.json",
-        "receipts/skippy_witness_confirmation_v0_1.json",
-        "receipts/sophia_branch_replay_claim_receipt_v0_1.json",
-        "receipts/sophia_mrs_wisdom_merge_receipt_v0_1.json",
-        "receipts/sophia/SOPHIA_PROOF_RECEIPT_V0_1.json",
-        "receipts/test_vectors/ALMS_L2_HUMAN_TABLE.md",
-        "receipts/test_vectors/ALMS_L2_KNOWN_GOOD_OUTPUT_001.json",
-        "receipts/test_vectors/ALMS_L2_TEST_VECTOR_001.json",
-        "receipts/unsealed_loom_v0_2_receipt.json",
-        "receipts/wisdom_anchor_v0_2_receipt.json"
+        "docs/ritual_of_the_unsealed_loom_v0_1.md",
+        "docs/three_daughters/base_mcp_alms_continuity_witness_v0_1.md",
+        "docs/three_daughters/trinity_architecture_canon_v0_1.md"
       ]
     },
     "SCRIPTS": {
       "count": 11,
-      "pattern_ids": ["SCRIPT_SURFACE"],
+      "pattern_ids": [
+        "SCRIPT_SURFACE"
+      ],
       "paths": [
         "scripts/generate_validation_26_batch.py",
         "scripts/generate_validation_27_multiuser.py",
-        "scripts/joy_remote_witness_replay_v0_2.py",
         "scripts/joy_remote_witness_replay.py",
+        "scripts/joy_remote_witness_replay_v0_2.py",
         "scripts/l3_emit_runtime_payload.py",
         "scripts/l3_l4_archive_recipe_v0_1.sh",
         "scripts/l3_recon.sh",
@@ -200,25 +228,940 @@
         "scripts/validate_joyspace.py",
         "scripts/wisdom-constellation.config.json"
       ]
-    },
-    "TRUTH": {
-      "count": 9,
-      "pattern_ids": ["TRUTH_SURFACE"],
-      "paths": [
-        "_truth/court/COURT_SPEC_V0_1.md",
-        "_truth/ontology/JOY_ONTOLOGY_V0_1.md",
-        "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
-        "_truth/repository/REPOSITORY_SPEC_V0_1.md",
-        "_truth/ritual/RITUAL_SPEC_V0_1.md",
-        "_truth/stories/JOY_STORY_V0_1_FRONT_PORCH_AND_BASEMENT.md",
-        "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
-        "_truth/verification/VERIFICATION_RECORD_V0_1.md",
-        "_truth/witness/WITNESS_PROTOCOL_V0_1.md"
-      ]
     }
   },
-  "detections": [],
-  "detections_note": "Compact Level-2 subject surface: subject path buckets are expanded above; detection count records the scanner-equivalent pattern hits without inspecting file contents.",
+  "detections": [
+    {
+      "path": "BADGER_RECEIPTS.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "JOY/joy_living_ledger_v0_1.md",
+      "pattern_id": "JOY_SURFACE",
+      "subject": "JOY",
+      "reason": "Path references JOY surface"
+    },
+    {
+      "path": "JOY/ledger_nodes/joy_ledger_node_2026_05_31_family_photo_001.md",
+      "pattern_id": "JOY_SURFACE",
+      "subject": "JOY",
+      "reason": "Path references JOY surface"
+    },
+    {
+      "path": "_truth/court/COURT_SPEC_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/ontology/JOY_ONTOLOGY_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "_truth/repository/REPOSITORY_SPEC_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/ritual/RITUAL_SPEC_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/stories/JOY_STORY_V0_1_FRONT_PORCH_AND_BASEMENT.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/verification/L3_PROOF_TRANSITION_LOGIC_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/verification/VERIFICATION_RECORD_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "_truth/witness/WITNESS_PROTOCOL_V0_1.md",
+      "pattern_id": "TRUTH_SURFACE",
+      "subject": "TRUTH",
+      "reason": "Path references truth surface"
+    },
+    {
+      "path": "artifacts/COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/HUMAN_L3_APPROVAL_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/JAYWISDOM_FULL_SYSTEM_REPLAY_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L0_ATOMIC_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L2_100K_CHALLENGE_PROGRESS_TRACKER_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L2_JAYWISDOM_TOKEN_CHALLENGE_100K_STAGING_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L2_JAYWISDOM_TOKEN_IDENTITY_CORRECTION_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_EMISSION_RULES_STAGING_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_HASH_INTAKE_GEOMETRY_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_PROOF_TRANSITION_EVALUATION_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_PROOF_TRANSITION_LOGIC_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_PROOF_TRANSITION_REPLAY_EVALUATION_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_RUNTIME_PROOF_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_TELEMETRY_LAYER_FREEZE_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_TRANSITION_STATE_V0_2.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L3_VERIFIER_RUNTIME_PAYLOAD_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L3_VERIFIER_TELEMETRY_MANIFEST_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L4_BUNDLE_REVIEW_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_BUNDLE_STRUCTURAL_REVIEW_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_CLOSURE_INDEX_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L4_TRANSITION_READY_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/L4_X_SOCIAL_RECEIPT_LAYER_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/PROFILE_HEIDEE_V0_4.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/l5/ATOMIC_L5_SNAP_BACK_REPLAY_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "artifacts/zora/L4_ZORA_METADATA_CANDIDATE_V0_1.json",
+      "pattern_id": "ARTIFACT_SURFACE",
+      "subject": "ARTIFACTS",
+      "reason": "Path references artifact surface"
+    },
+    {
+      "path": "components/goblin-gate/index.ts",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/ALMS_TO_JOY_BRIDGE.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/BADGER_PUBLIC_LEDGER_CARD.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/BADGER_RECEIPTS.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/BADGER_RECEIPTS.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/BADGER_TOUCHDOWN_VERIFICATION_CARD.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/DELTA_2_CONTROLLED_DRY_RUN_RECEIPT_AUDIT.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/DELTA_2_DRY_RUN_AUDIT_GUARDS.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/DRY_HALT_TEST_SPEC_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/HOME_FIELD_ADVANTAGE_POWERUP.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/JOY_V0_3_DELTA_1_FIXTURE_MANIFEST.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/JOY_V0_3_DELTA_1_HASH_AND_IDENTITY_INVARIANTS.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/JOY_V0_3_DELTA_1_VALIDATOR_EXTENSION.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/JOY_V0_3_DELTA_1_WORKFLOW_RECEIPT.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/JOY_V0_3_READINESS_CHECKLIST.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/LIVE_VERIFICATION_PREFLIGHT_CHECKLIST_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/MICROSOFT_WISDOM_COLLECTION.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/MN_CIVIC_POINTER_CARD.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/MOVE_THE_CHAINS_ONCHAIN_CARD.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/OPERATOR_UNLOCK_RECEIPT_SCHEMA_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/PROCESS.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/REAL_RUNTIME_HALT_FAILURE_PROCEDURE_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/REAL_RUNTIME_HALT_LOG_SPEC_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/SECOND_DRIVE_RULES.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/SNAPSHOT_MANIFEST_SPEC_V0_1.json",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/SOPHIA_MRS_WISDOM_MERGE.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/SOPHIA_WISDOM_BRANCH.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/SUPER_SECRET_SISTER_SYNTAX.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/audits/TX_DIR_QUANTUM_READINESS_AUDIT_REQUEST_PACKET_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/badger_doorway_map.svg",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/family-wisdom/MRS_WISDOM_DEEP_SEARCH_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/family-wisdom/WISDOM_GIRLS_UPDATE_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin-courts/KAREN11_PORTAL_RUNTIME_TEST_001.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin-courts/MINNESOTA_AUDIT_TEMPLATE.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin-courts/OLA_BHA_13_findings_receipt_cards.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/goblin-courts/OLA_BHA_PORTAL.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin-courts/OLA_BHA_PORTAL.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin/AUTOMATED_SCANNER_SPEC_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin/GOBLIN_REPO_CONSTELLATION_INDEX_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/goblin_court_mn_edition_v0_1.md",
+      "pattern_id": "GOBLIN_SURFACE",
+      "subject": "GOBLIN",
+      "reason": "Path references goblin surface"
+    },
+    {
+      "path": "docs/goblin_court_mn_edition_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/index.html",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/index.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/joy_project_ledger_v0_2.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/joy_recovery_plan_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/joy_remote_witness_replay_harness_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/operator_hash_trigger_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/patterns/RECEIPT_NOISE_SUPPRESSION_LAYER_V0_1.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "docs/ritual_of_the_unsealed_loom_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/three_daughters/base_mcp_alms_continuity_witness_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "docs/three_daughters/trinity_architecture_canon_v0_1.md",
+      "pattern_id": "DOCS_SURFACE",
+      "subject": "DOCS",
+      "reason": "Path is under docs"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-2026-06-05-2045.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-CANONICAL-NOTE.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-FULL.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-INDEX.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/2026-06-05/CAMPUS-STANDBY-FINAL-P2.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/archive/L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1_20260611T031102Z.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/badge_family_v0_1_closeout_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/badge_family_v0_2_recovery_closeout_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/composition/composite_proof_001.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/delta_2/DELTA_2_CONTROLLED_DRY_RUN_CLOSURE_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/harmony_weaver_v0_2_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/joy_clean_era_oracle_v0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/oracle_ritual_v0_1_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/preflight/DRY_HALT_TEST_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/preflight/OPERATOR_UNLOCK_RECEIPT_V0_1_DRAFT.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/preflight/REAL_RUNTIME_HALT_LOG_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/recursive/ALMS_L4_RECURSIVE_HARNESS_001.py",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/resilience_thread_v0_2_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/ritual_of_the_unsealed_loom_v0_1_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/skippy_witness_confirmation_v0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/sophia/SOPHIA_PROOF_RECEIPT_V0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/sophia_branch_replay_claim_receipt_v0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/sophia_mrs_wisdom_merge_receipt_v0_1.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/test_vectors/ALMS_L2_HUMAN_TABLE.md",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/test_vectors/ALMS_L2_KNOWN_GOOD_OUTPUT_001.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/test_vectors/ALMS_L2_TEST_VECTOR_001.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/unsealed_loom_v0_2_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "receipts/wisdom_anchor_v0_2_receipt.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "schemas/joy_ritual_receipt.v0_1.schema.json",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    },
+    {
+      "path": "scripts/generate_validation_26_batch.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/generate_validation_27_multiuser.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/joy_remote_witness_replay.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/joy_remote_witness_replay_v0_2.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/l3_emit_runtime_payload.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/l3_l4_archive_recipe_v0_1.sh",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/l3_recon.sh",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/l3_runtime_execution_gate_v0_1.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/path-scanner.mjs",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/validate_joyspace.py",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "scripts/wisdom-constellation.config.json",
+      "pattern_id": "SCRIPT_SURFACE",
+      "subject": "SCRIPTS",
+      "reason": "Path is under scripts"
+    },
+    {
+      "path": "validation_26_batch_generator_receipt.txt",
+      "pattern_id": "RECEIPT_SURFACE",
+      "subject": "RECEIPTS",
+      "reason": "Path references receipt surface"
+    }
+  ],
   "replay_object": {
     "level_0_terrain": "VERIFIED",
     "level_1_path_surface": "VERIFIED",
