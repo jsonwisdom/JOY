@@ -1,0 +1,23 @@
+{
+  "receipt_type": "L4_REPLAY_PASS",
+  "version": "0.1",
+  "project": "JOY",
+  "layer": "L4",
+  "status": "REPLAY_PASS_DRAFT",
+  "verified_chain": {
+    "l4_scope_commit": "b486460",
+    "l4_verifier_extension_commit": "28560b8"
+  },
+  "checks": {
+    "l4_scope_present": true,
+    "l4_verifier_extension_present": true,
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT"
+  },
+  "mint_allowed": false,
+  "zora_readiness": "PENDING_MINT_DECISION",
+  "notes": "Replay pass records the L4 scope and verifier extension as present. It does not mint, crown, or claim authority."
+}
