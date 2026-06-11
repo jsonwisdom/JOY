@@ -1,0 +1,47 @@
+{
+  "artifact": "PROFILE_HEIDEE_V0_4",
+  "version": "0.4",
+  "layer": "L4_TAXONOMY_RECON",
+  "repo": "jsonwisdom/HEIDEE",
+  "ref": "refs/heads/master",
+  "head_commit_sha": "93cda7b7205e5fb7796ff7a69c8537d3eae18427",
+  "default_branch": "master",
+  "evidence_source": "GITHUB_METADATA_ENDPOINT",
+  "inspection_scope": "TOP_LEVEL_PATHS_ONLY",
+  "top_level_paths_only": [
+    "README.md",
+    "WISDOM_GIRL_JSON_TV_POINTER_V0_1.json",
+    "docs/joyspace_v1.md",
+    "index.json"
+  ],
+  "content_extraction": false,
+  "writes_performed": false,
+  "classification": {
+    "previous_status": "UNKNOWN",
+    "current_status": "STRUCTURALLY_PROFILED",
+    "family": "FAMILY_IDENTITY_PUBLIC_FRONT_DOOR",
+    "has_readme_marker": true,
+    "has_index_marker": true,
+    "has_joyspace_marker": true,
+    "branch_sha_bound": true,
+    "classification_ready": "YES_FOR_STRUCTURAL_CLASS_ONLY"
+  },
+  "gate": {
+    "DIRECTORY_NAMES": "MAPPED",
+    "GIT_URLS": "CONFIRMED",
+    "DEFAULT_BRANCH": "CONFIRMED",
+    "HEAD_SHA": "CONFIRMED_FOR_HEIDEE",
+    "TOP_LEVEL_PATHS": "CONFIRMED_FOR_HEIDEE",
+    "L4_BUNDLE_LINK_ALLOWED": "NOT_GLOBAL_YET"
+  },
+  "safety": {
+    "NO_FAKE_GREEN": true,
+    "MEMBRANE": "INTACT",
+    "AUTHORITY": false
+  },
+  "next_required_profiles": [
+    "jsonwisdom/JOY",
+    "jsonwisdom/AL",
+    "jsonwisdom/COMPUTERWISDOM"
+  ]
+}
