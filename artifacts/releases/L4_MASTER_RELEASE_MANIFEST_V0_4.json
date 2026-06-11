@@ -1,0 +1,70 @@
+{
+  "artifact": "L4_MASTER_RELEASE_MANIFEST_V0_4",
+  "version": "0.4",
+  "layer": "L4_TAXONOMY_RECON",
+  "status": "MASTER_MANIFEST_FROZEN",
+  "purpose": "Freeze the V0.4 structural perimeter sweep into a single L4 master release manifest without content extraction, endpoint simulation, or authority escalation.",
+  "state": {
+    "L4_STATUS": "V0_4_PERIMETER_SWEEP_COMPLETE",
+    "ROLE": "READER_INSPECTOR",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true,
+    "MEMBRANE": "INTACT",
+    "INDEX_DEPLOYMENT": "BLOCKED"
+  },
+  "profile_order": [
+    "HEIDEE",
+    "JOY",
+    "AL",
+    "COMPUTERWISDOM"
+  ],
+  "profiles": {
+    "HEIDEE": {
+      "repo": "jsonwisdom/HEIDEE",
+      "status": "STRUCTURALLY_PROFILED_WITH_DIRECT_LINKS",
+      "profile_ref": "/artifacts/PROFILE_HEIDEE_V0_4.json",
+      "direct_link_ref": "/artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json"
+    },
+    "JOY": {
+      "repo": "jsonwisdom/JOY",
+      "status": "STRUCTURALLY_PROFILED",
+      "profile_ref": "/artifacts/JOY_V0_4_STRUCTURAL_PROFILE_V0_1.json"
+    },
+    "AL": {
+      "repo": "jsonwisdom/AL",
+      "status": "STRUCTURALLY_PROFILED",
+      "profile_ref": "/artifacts/AL_V0_4_STRUCTURAL_PROFILE_V0_1.json"
+    },
+    "COMPUTERWISDOM": {
+      "repo": "jsonwisdom/COMPUTERWISDOM",
+      "status": "STRUCTURALLY_PROFILED",
+      "profile_ref": "/artifacts/COMPUTERWISDOM_V0_4_STRUCTURAL_PROFILE_V0_1.json",
+      "index_marker": "PENDING_ENDPOINT_CONFIRMATION"
+    }
+  },
+  "sweep_constraints": {
+    "content_extraction": false,
+    "code_extraction": false,
+    "license_text_extraction": false,
+    "author_signature_extraction": false,
+    "semantic_adoption": false,
+    "target_repo_writes": false,
+    "index_json_deployment": false
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "replay_required": true,
+    "membrane_status": "INTACT",
+    "daddy_wisdom_invariant": "HOLDING"
+  },
+  "gate": {
+    "L4_MASTER_MANIFEST_FREEZE": "COMPLETE",
+    "GLOBAL_L4_BUNDLE_ALLOWED": "MANIFEST_LINK_ONLY",
+    "INDEX_DEPLOYMENT_ALLOWED": false,
+    "L5_OPEN_ALLOWED": false,
+    "NEXT": "HUMAN_REVIEW_OR_RETURN_TO_L3_VERIFIER_GATE"
+  },
+  "note": "This manifest freezes structural paths only. It does not promote pending endpoints to verified status and does not authorize index deployment."
+}
