@@ -1,0 +1,97 @@
+{
+  "artifact": "L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1",
+  "layer": "L4",
+  "status": "PUBLISHED_METADATA_GUIDE",
+  "profile": {
+    "platform": "Zora",
+    "profile_ref": "zora.co/@jaywisdom",
+    "creator_handle": "@jaywisdom",
+    "operator_identity": "Jay Wisdom",
+    "basename": "jaywisdom.base.eth"
+  },
+  "purpose": "Provide training material and metadata guidance for Zora creator posts, receipts, and future review bundles without authorizing any mint.",
+  "metadata_training_material": {
+    "core_fields": [
+      {
+        "field": "title",
+        "instruction": "Use a short human-readable title that explains the artifact or post candidate."
+      },
+      {
+        "field": "description",
+        "instruction": "State the purpose, evidence boundary, and whether the item is draft, review, or executed."
+      },
+      {
+        "field": "creator",
+        "instruction": "Use Jay Wisdom / @jaywisdom where appropriate and keep identity references consistent."
+      },
+      {
+        "field": "chain",
+        "instruction": "Record Base when the post, coin, or mint is intended for Base."
+      },
+      {
+        "field": "evidence_status",
+        "instruction": "Use explicit states such as DRAFT, REVIEW, AUTHORIZED, EXECUTED, or NOT_MINTED."
+      },
+      {
+        "field": "receipt_refs",
+        "instruction": "Reference repo artifacts, commit SHAs, transaction hashes, or Zora URLs only when they exist."
+      }
+    ],
+    "recommended_tags": [
+      "JayWisdom",
+      "JSONWisdom",
+      "ComputerWisdom",
+      "Base",
+      "Zora",
+      "Receipts",
+      "Replay",
+      "Verification",
+      "NoFakeGreen",
+      "WitnessOverProjection"
+    ],
+    "metadata_rules": [
+      "Do not imply a mint happened unless a mint transaction or platform receipt exists.",
+      "Do not imply authority from a draft, bundle index, candidate post, or coin page.",
+      "Keep public-facing descriptions clear enough for humans and structured enough for agents.",
+      "Prefer stable references: commit SHA, artifact path, profile handle, chain, and timestamp.",
+      "Separate creator narrative from verification evidence."
+    ],
+    "zora_post_template": {
+      "title": "Jay Wisdom Proof Artifact",
+      "description": "A documented L4 creator artifact for Base/Zora review. Publication is not execution. Draft is not mint. Human approval required before irreversible action.",
+      "creator": "Jay Wisdom / @jaywisdom",
+      "profile": "zora.co/@jaywisdom",
+      "chain": "Base",
+      "status": "NOT_MINTED",
+      "authority": false,
+      "no_fake_green": true
+    }
+  },
+  "training_objectives": [
+    "Teach agents to distinguish draft metadata from executed mint evidence.",
+    "Teach reviewers to preserve creator identity, chain context, and receipt lineage.",
+    "Teach future workflows to require explicit human authorization before Zora mint execution.",
+    "Teach metadata writers to avoid narrative drift and unsupported authority claims."
+  ],
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "publication_is_not_execution": true,
+    "draft_is_not_mint": true,
+    "human_approval_required_for_mint": true,
+    "witness_over_projection": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "L4_STATUS": "GREEN_FOR_REVIEW",
+    "MINT_STATUS": "LOCKED",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true
+  },
+  "next_lawful_moves": [
+    "Reference this metadata guide from the L4 bundle index.",
+    "Use the template when revising ZORA_POST_CANDIDATE_001.",
+    "Open a mint authorization receipt only after explicit human approval."
+  ],
+  "timestamp": "2026-06-11T01:24:00Z"
+}
