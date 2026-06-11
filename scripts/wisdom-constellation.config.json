@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "subject": "GOBLIN",
+  "court": "GOBLIN_COURT",
+  "authority": false,
+  "no_fake_green": true,
+  "repos": [
+    {
+      "org": "jsonwisdom",
+      "name": "JOY",
+      "branch": "main"
+    },
+    {
+      "org": "jsonwisdom",
+      "name": "AL",
+      "branch": "main"
+    },
+    {
+      "org": "jsonwisdom",
+      "name": "COMPUTERWISDOM",
+      "branch": "main"
+    }
+  ],
+  "match": {
+    "subject_terms": ["goblin", "GOBLIN"],
+    "paths": [
+      "components/goblin-gate/index.ts",
+      "docs/goblin/",
+      "docs/GOBLIN",
+      "docket/GOBLIN",
+      "schemas/goblin",
+      "court/goblin"
+    ]
+  }
+}
