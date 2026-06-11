@@ -1,0 +1,12 @@
+{
+  "artifact": "CRP_SEED_LINEAGE_RECORD_V0_1",
+  "version": "0.1",
+  "subject": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+  "lineage_status": "FORK_DETECTED",
+  "accepted_green": false,
+  "authority": false,
+  "no_fake_green": true,
+  "fork_note": "A simplified canonical preimage was introduced after the richer seed graph draft.",
+  "anti_ghost_clause": "No green until the hash is computed from the exact accepted seed object.",
+  "next_gate": "RECOMPUTE_HASH_FROM_EXACT_ACCEPTED_SEED_OBJECT"
+}
