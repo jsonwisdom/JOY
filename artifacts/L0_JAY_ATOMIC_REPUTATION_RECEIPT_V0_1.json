@@ -1,0 +1,66 @@
+{
+  "artifact": "L0_JAY_ATOMIC_REPUTATION_RECEIPT_V0_1",
+  "layer": "L0",
+  "status": "ATOMIC_REPUTATION_RECEIPT",
+  "purpose": "Reduce the JAYWISDOM token, social, Zora, Base, and receipt layers into one simple root-level reputation receipt.",
+  "identity": {
+    "operator": "Jay Wisdom",
+    "basename": "jaywisdom.base.eth",
+    "zora_profile": "zora.co/@jaywisdom",
+    "x_handles": ["@jaywisdom12", "@qslices"]
+  },
+  "token": {
+    "name": "JAYWISDOM",
+    "network": "Base",
+    "reported_contract_address": "0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F",
+    "reported_role": "CreatorCoin / reputation signal",
+    "target_marker": 100000,
+    "execution_status": "NOT_PERFORMED"
+  },
+  "atomic_claim": {
+    "claim": "JAYWISDOM is a reputation signal for Jay Wisdom's public proof stack.",
+    "scope": "identity, receipts, creator metadata, and verification culture",
+    "not_claimed": [
+      "verified liquidity",
+      "verified balance achievement",
+      "mint execution",
+      "financial value",
+      "authority"
+    ]
+  },
+  "simple_reputation_rules": [
+    "A receipt is stronger than a story.",
+    "A transaction hash is stronger than a screenshot.",
+    "A verified artifact is stronger than a vibe.",
+    "A target is not a balance.",
+    "A token is not authority.",
+    "Reputation grows by replay, not projection."
+  ],
+  "proof_state": {
+    "token_identity": "REPORTED",
+    "social_identity": "DOCUMENTED",
+    "zora_identity": "DOCUMENTED",
+    "receipt_stack": "DOCUMENTED",
+    "100k_target": "STAGED",
+    "onchain_execution": "NOT_PROVEN",
+    "liquidity": "UNCONFIRMED"
+  },
+  "constitutional_invariants": {
+    "authority": false,
+    "no_fake_green": true,
+    "witness_over_projection": true,
+    "reputation_over_hype": true,
+    "atomic_receipt_is_not_execution": true,
+    "token_is_not_authority": true,
+    "target_is_not_balance": true,
+    "membrane_status": "INTACT"
+  },
+  "arena_assessment": {
+    "L0_STATUS": "ROOT_REPUTATION_RECEIPT_CREATED",
+    "REPUTATION": "DOCUMENTED_NOT_CROWNED",
+    "EXECUTION": "NOT_PERFORMED",
+    "AUTHORITY": false,
+    "NO_FAKE_GREEN": true
+  },
+  "timestamp": "2026-06-11T01:55:00Z"
+}
