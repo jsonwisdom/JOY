@@ -1,18 +1,41 @@
 {
   "scanner_version": "0.1.0-level0-terrain",
-  "generated_at": "2026-06-11T18:10:00.000Z",
-  "terrain": {
-    "JOY": {
+  "generated_at": "2026-06-11T17:56:07.407Z",
+  "terrain": [
+    {
+      "repo": "jsonwisdom/AL",
+      "exists": true,
+      "reachable": true,
+      "public": true,
+      "default_branch": "master",
+      "default_branch_sha": "7cc757114e6ae1d4c51a3c283a0829f8fc0e973c",
+      "last_commit_time": "2026-06-11T10:33:22Z",
+      "tree_sha": "f7e5af355ea2df6e76f7991db7d4e74eb7765432",
+      "status": "HEALTHY"
+    },
+    {
+      "repo": "jsonwisdom/COMPUTERWISDOM",
+      "exists": true,
+      "reachable": true,
+      "public": true,
+      "default_branch": "master",
+      "default_branch_sha": "c5849e2118241f2802be0e326e97ef19dd7a9faa",
+      "last_commit_time": "2026-06-11T04:37:17Z",
+      "tree_sha": "309bbff9803a6171b18907daf8e0b13a0ed20c1d",
+      "status": "HEALTHY"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
       "exists": true,
       "reachable": true,
       "public": true,
       "default_branch": "main",
-      "default_branch_sha": "4b04d3cc61573300ddbce60094815012744be593",
-      "last_commit_time": "2026-06-11T17:16:51Z",
-      "tree_sha": "6671840eb6b915a44ae3c25d8aa7746dd46715a8",
+      "default_branch_sha": "94be9d4f7cabe78d138dd9f900b181efd2e9ddca",
+      "last_commit_time": "2026-06-11T17:54:01Z",
+      "tree_sha": "e52aba079760e9ba485c9d3b5e4927a90f6e4254",
       "status": "HEALTHY"
     }
-  },
+  ],
   "authority": false,
   "no_fake_green": true
 }
