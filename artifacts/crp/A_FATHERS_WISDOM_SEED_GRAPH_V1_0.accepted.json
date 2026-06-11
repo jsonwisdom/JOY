@@ -1,0 +1,69 @@
+{
+  "artifact": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+  "version": "1.0",
+  "status": "ACCEPTED_OBJECT_FROZEN_PENDING_HASH",
+  "authority": false,
+  "no_fake_green": true,
+  "metadata": {
+    "seed_id": "A_FATHERS_WISDOM_SEED_GRAPH_V1_0",
+    "seed_phrase": "A Father's Wisdom",
+    "seed_phrase_domain": "JOY",
+    "seed_hash": null,
+    "hash_status": "PENDING_RECOMPUTE_FROM_EXACT_ACCEPTED_OBJECT"
+  },
+  "nodes": [
+    {
+      "id": "father",
+      "role": "living_relation",
+      "substitution_policy": "non_substitutable",
+      "attributes": {
+        "function": "source_of_care_instruction_and_witness"
+      }
+    },
+    {
+      "id": "child",
+      "role": "living_relation",
+      "substitution_policy": "non_substitutable",
+      "attributes": {
+        "function": "recipient_of_care_and_future_replay"
+      }
+    },
+    {
+      "id": "truth",
+      "role": "constitutional_constraint",
+      "substitution_policy": "constitutional",
+      "attributes": {
+        "function": "validates_without_authority"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "father",
+      "to": "child",
+      "relation": "protects_and_teaches",
+      "persistence": "living",
+      "attributes": {
+        "edge_class": "relational"
+      }
+    },
+    {
+      "from": "truth",
+      "to": "father",
+      "relation": "validates_without_authority",
+      "persistence": "constitutional",
+      "attributes": {
+        "edge_class": "constitutional"
+      }
+    },
+    {
+      "from": "truth",
+      "to": "child",
+      "relation": "inherits_replayable_wisdom",
+      "persistence": "constitutional",
+      "attributes": {
+        "edge_class": "constitutional"
+      }
+    }
+  ]
+}
