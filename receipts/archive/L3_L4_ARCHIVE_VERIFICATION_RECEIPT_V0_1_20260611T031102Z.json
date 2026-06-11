@@ -1,0 +1,23 @@
+{
+  "artifact": "L3_L4_ARCHIVE_VERIFICATION_RECEIPT_V0_1",
+  "version": "0.1",
+  "timestamp_utc": "2026-06-11T03:11:02Z",
+  "repo": "jsonwisdom/JOY",
+  "head_commit": "d13cdccfc0cbb0b9cfc1516365f114cc3f4baad2",
+  "archive_path": "artifacts/archives/wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
+  "archive_name": "wisdom_family_l3_l4_seal_d13cdcc_20260611T031102Z.tar.gz",
+  "sha256_hash": "5dac64d8df49aa298fcfa6f628687002ba53df5ee983b8d50e8cf05aef5232ed",
+  "included_artifacts": [
+    "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
+    "artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json",
+    "artifacts/replay/L3_VERIFIER_REPLAY_RECEIPT_V0_1.json",
+    "scripts/l3_recon.sh"
+  ],
+  "integrity_check": "PASS",
+  "authority": false,
+  "emission_eligible": false,
+  "index_deployment": "BLOCKED",
+  "no_fake_green": true,
+  "mock_values_allowed": false,
+  "membrane": "INTACT"
+}
