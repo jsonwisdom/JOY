@@ -1,0 +1,31 @@
+{
+  "artifact": "DADDY_WISDOM_REPO_AUDIT_V0_1",
+  "workflow": "DADDY_WISDOM_UPDATE_WORKFLOW",
+  "mode": "READ_ONLY_REPLAY_AUDIT",
+  "mutation_allowed": false,
+  "index_rollout_allowed": false,
+  "primary_public_repo": "jsonwisdom/JOY",
+  "repo_role": "family_front_door",
+  "audience": [
+    "PARENT",
+    "CHILD",
+    "BUILDERS"
+  ],
+  "purpose": "Audit Jay Wisdom repo family before deciding README, index.html, GitHub Pages, or public surface changes.",
+  "rules": {
+    "no_index_html_rollout_before_audit": true,
+    "no_repo_role_guessing": true,
+    "separate_family_surface_from_workshop_surface": true,
+    "receipts_decide_truth": true,
+    "joy_welcomes_receipts_verify": true
+  },
+  "repo_classes": {
+    "family_front_door": [],
+    "workshop_repo": [],
+    "identity_or_memory_repo": [],
+    "proof_or_receipt_repo": [],
+    "unknown_pending_review": []
+  },
+  "status": "AUDIT_FIRST",
+  "next": "CLASSIFY_REPO_FAMILY"
+}
