@@ -1,0 +1,46 @@
+{
+  "artifact": "L3_VERIFIER_REPLAY_RECEIPT_V0_1",
+  "version": "0.1",
+  "layer": "L3",
+  "status": "PASS",
+  "purpose": "Replay the sealed L3 recon runtime payload against local repository evidence without projecting or simulating telemetry.",
+  "references": {
+    "expected_public_commit": "366c7f2",
+    "current_head_commit": "366c7f28506e018166a0d2e50c4a876fdc0ecd05",
+    "payload_source": "artifacts/runtime/L3_RECON_RUNTIME_PAYLOAD_V0_1.json",
+    "verifier_script": "scripts/l3_recon.sh",
+    "manifest_target": "artifacts/releases/L4_MASTER_RELEASE_MANIFEST_V0_4.json",
+    "l0_target": "artifacts/L0_ATOMIC_RECEIPT_V0_1.json"
+  },
+  "replay_output": {
+    "RUN_ID": "RUN_3e8655d_20260611T030629Z",
+    "COMPUTED_SHA256_REPLAY_HASH": "683f91730e1361fb7b7b078a9c29232f96eb623b06537a68d39a6a50831291e7",
+    "PAYLOAD_SHA256_REPLAY_HASH": "683f91730e1361fb7b7b078a9c29232f96eb623b06537a68d39a6a50831291e7",
+    "COMPUTED_SHA3_256_BRIDGE_HASH": "8f546f8c58e7552e89f4766942dcbaec908b80e85cc631ac5003024d08a1842b",
+    "PAYLOAD_SHA3_256_BRIDGE_HASH": "8f546f8c58e7552e89f4766942dcbaec908b80e85cc631ac5003024d08a1842b",
+    "CI_STATUS_PASS": true,
+    "REPLAY_STATUS": "PASS",
+    "TIMESTAMP_UTC": "2026-06-11T03:08:25Z"
+  },
+  "checks": {
+    "payload_file_present": true,
+    "manifest_file_present": true,
+    "l0_file_present": true,
+    "head_commit_matches_payload": true,
+    "sha256_replay_hash_matches": true,
+    "sha3_256_bridge_hash_matches": true,
+    "ci_status_pass_true": true,
+    "mock_values_allowed_false": true,
+    "no_fake_green_true": true
+  },
+  "constitutional_constraints": {
+    "authority": false,
+    "emission_eligible": false,
+    "target_execution_performed": false,
+    "verification_performed": true,
+    "no_fake_green": true,
+    "mock_values_allowed": false,
+    "membrane": "INTACT"
+  },
+  "next": "PUSH_RECEIPT_IF_REPLAY_STATUS_PASS"
+}
