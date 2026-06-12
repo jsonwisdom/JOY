@@ -1,0 +1,33 @@
+{
+  "artifact": "MN_ALL_COURTS_BINARY_REPLAY_V0_1",
+  "created_utc": "2026-06-12T20:30:13Z",
+  "operator": "Jay Wisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "e480eb1",
+  "source_head_full": "e480eb15dbf60469b03c0061467835ce23b17e07",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "activation": "REPLAY_ALL_COURTS",
+  "courts": [
+    "MN Goblin Court",
+    "KAREN11 Reporting Agency",
+    "County Level Clown Courts",
+    "Metadata Court",
+    "Crime Not Time Court",
+    "Public Binary Evidence Court"
+  ],
+  "doctrine": "Courts administer evidence; they do not own truth.",
+  "public_binary_rule": "Public proof surfaces must remain replayable through lawful records, redactions, hashes, metadata, receipts, indexes, and scripts.",
+  "crime_not_time_rule": "Observe the alleged action first, then weigh it against time, court action, notice, and metadata.",
+  "dei_lane": "policy_incentive_program_audit_only",
+  "forbidden": [
+    "identity-based accusation",
+    "protected-trait guilt",
+    "criminal finding without evidence",
+    "fake green"
+  ],
+  "packet_id": "ALPHA_DEED_001",
+  "authority": false,
+  "judicial_authority": false,
+  "criminal_finding": false,
+  "no_fake_green": true
+}
