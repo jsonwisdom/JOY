@@ -1,0 +1,47 @@
+{
+  "artifact": "MN_KID_KLICK_JSON_HYPERLANES_REPLAY_V0_1",
+  "created_utc": "2026-06-12T21:06:52Z",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "6671104",
+  "source_head_full": "6671104fee8ee6cf611549743208d24a255d9820",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "edition": "Kid Klick JSON Hyperlanes",
+  "mode": "ui_literacy_replay",
+  "core_lesson": "Copy is an action. Paste is evidence. The UI must make the next paste predictable.",
+  "reverse_influence": "Adults and systems learn from simple user behavior instead of forcing users to decode machine logic.",
+  "karen_upgrade": "GenZ Computer Wisdom: show the exact click, exact paste, exact result.",
+  "screenshot_lesson": "One table copy button can corrupt a field-entry workflow.",
+  "rules": [
+    "one copy block means one paste target",
+    "field names are copyable",
+    "dropdown choices are not copyable",
+    "machine strings are withheld until explicitly requested",
+    "the user must know what happens after paste"
+  ],
+  "json_hyperlane": [
+    "human click",
+    "paste target",
+    "machine field",
+    "receipt object",
+    "hash",
+    "replay"
+  ],
+  "youth_safety": {
+    "minors_targeted": false,
+    "minors_recruited": false,
+    "education_only": true,
+    "computer_literacy": true
+  },
+  "forbidden": [
+    "manipulating minors",
+    "recruiting minors",
+    "dark patterns",
+    "ambiguous copy buttons",
+    "machine-first instructions",
+    "fake authority",
+    "fake green"
+  ],
+  "authority": false,
+  "no_fake_green": true
+}
