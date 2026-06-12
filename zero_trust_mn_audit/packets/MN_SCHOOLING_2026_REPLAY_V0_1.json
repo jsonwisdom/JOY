@@ -1,0 +1,33 @@
+{
+  "artifact": "MN_SCHOOLING_2026_REPLAY_V0_1",
+  "created_utc": "2026-06-12T21:04:56Z",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "87f7d81",
+  "source_head_full": "87f7d81f09b5857b302f1f58919715d35d05193a",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "mode": "human_first_audit_school",
+  "edition": "MN Schooling 2026",
+  "rule": "If you cannot explain it to a 6 year old, you do not understand it.",
+  "student_model": "citizen auditor",
+  "teacher_model": "receipt-first replay system",
+  "lesson_loop": [
+    "say the claim",
+    "ask for the record",
+    "save the receipt",
+    "hash the proof",
+    "replay the facts",
+    "report without pretending"
+  ],
+  "eas_ui_rule": "Field names are entered one at a time; types are selected by dropdown.",
+  "forbidden": [
+    "machine schema dump as first instruction",
+    "copying full tables into field boxes",
+    "fake authority",
+    "fake green",
+    "unsupported accusations"
+  ],
+  "current_packet": "ALPHA_DEED_001",
+  "authority": false,
+  "no_fake_green": true
+}
