@@ -1,0 +1,97 @@
+{
+  "artifact": "JOY_MEME_GOBLIN_CLOWN_COURT_STACK_V0_1",
+  "root_identity": {
+    "ens": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth",
+    "github_root": "jsonwisdom/JOY"
+  },
+  "purpose": "Open a public civic-metadata court stack for routing claims through receipts, humor, boundary checks, and zero-trust validation.",
+  "court_stack": [
+    {
+      "name": "JOY Court",
+      "role": "root family-safe public metadata court",
+      "asks": [
+        "Does this claim create joy without fake authority?",
+        "Is the public path findable?",
+        "Does it help a stranger verify the repo?"
+      ],
+      "authority": false
+    },
+    {
+      "name": "MEME Court",
+      "role": "public comprehension and virality filter",
+      "asks": [
+        "Can a normal person understand this in one pass?",
+        "Does the meme clarify instead of deceive?",
+        "Does the joke carry a receipt?"
+      ],
+      "authority": false
+    },
+    {
+      "name": "GOBLIN Court",
+      "role": "zero-trust receipt and boundary adversary",
+      "asks": [
+        "Where is the commit SHA?",
+        "Where is the file path?",
+        "Where is the verifier output?",
+        "Does this claim fail closed?"
+      ],
+      "authority": false
+    },
+    {
+      "name": "CLOWN Court",
+      "role": "anti-pomp, anti-fake-green, absurdity detector",
+      "asks": [
+        "Is someone pretending a vibe is a receipt?",
+        "Is the title bigger than the evidence?",
+        "Would this collapse under public laughter?"
+      ],
+      "authority": false
+    }
+  ],
+  "backing_layers": {
+    "Dad_Public_Website": "public front door and plain-language receipts",
+    "metadata": "machine-readable JSON state and audit lanes",
+    "JSONwisdom": "developer and schema expression layer",
+    "AL": "Alabama / ALMS lead test case and boundary inquiry lane",
+    "Ms_Wisdom_OODA": "family-facing observe-orient-decide-act loop for boundaries, receipts, and public clarity"
+  },
+  "ooda_loop": {
+    "observe": [
+      "collect public repo receipts",
+      "observe public metadata claims",
+      "watch CI ON/OFF visibility"
+    ],
+    "orient": [
+      "classify GREEN/YELLOW/RED",
+      "separate narrative from evidence",
+      "route through JOY, MEME, GOBLIN, and CLOWN Court filters"
+    ],
+    "decide": [
+      "commit only public-safe metadata",
+      "hold external anchors until real receipts exist",
+      "reject authority claims without scope and appeal"
+    ],
+    "act": [
+      "create GitHub Direct receipt",
+      "run verifier or mark runtime receipt missing",
+      "update audit log when pass/fail is visible"
+    ]
+  },
+  "hard_boundaries": {
+    "legal_authority_claimed": false,
+    "official_court_claimed": false,
+    "private_targeting": false,
+    "surveillance": false,
+    "classified_claims": false,
+    "fake_green": false
+  },
+  "receipt_rule": "No court ruling is green unless it names a repo path, commit SHA, validation state, and appeal/correction path.",
+  "status": "OPEN_PUBLIC_METADATA_ONLY",
+  "external_anchors": {
+    "eas": "PENDING_REAL_UID",
+    "ipfs": "PENDING_REAL_CID",
+    "zora": "PENDING_PUBLIC_RECEIPT",
+    "base": "PENDING_PUBLIC_TX"
+  }
+}
