@@ -1,10 +1,10 @@
 {
   "artifact": "MN_GOBLIN_COURT_PREOPEN_V0_1",
-  "created_utc": "2026-06-12T20:15:42Z",
+  "corrected_utc": "2026-06-12T20:16:40Z",
   "creator": "jaywisdom.base.eth",
   "repo": "jsonwisdom/JOY",
-  "source_head_short": "070c6f0",
-  "source_head_full": "070c6f07a25a42f77fa5795d888cf4fe012da262",
+  "source_head_short": "bb8cff3",
+  "source_head_full": "bb8cff3cd6229b9038c31be613b40e86b4c5632a",
   "court": "MN Goblin Court",
   "jurisdiction_layer": "Minnesota county-level meme justice",
   "reporting_access": "KAREN11_REPORTING_AGENCY_PUBLIC_FACING_V0_1",
@@ -18,5 +18,6 @@
   "promotion_allowed": false,
   "next_gate": "capture outbound DEED request receipt",
   "authority": false,
-  "no_fake_green": true
+  "no_fake_green": true,
+  "correction_note": "Replaced literal shell placeholders with actual source head values."
 }
