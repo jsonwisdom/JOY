@@ -1,0 +1,78 @@
+{
+  "artifact": "ALABAMA_BOUNDARY_INQUIRY_ABI_GENESIS_KEY_V0_1",
+  "short_name": "ABI",
+  "repo": "jsonwisdom/JOY",
+  "project_identity": {
+    "ens": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth"
+  },
+  "disambiguation": {
+    "abi_in_this_repo": "Alabama Boundary Inquiry",
+    "official_agency_claim": false,
+    "law_enforcement_authority_claim": false,
+    "public_authority_claim": false,
+    "note": "This artifact is a civic metadata R&D testcase inside ALMS. It is not an official agency, badge, warrant, demand, subpoena, or investigative authority."
+  },
+  "purpose": "Lead Alabama ALMS testcase for converting vibe-coded civic metadata into receipt-gated audit structure.",
+  "vernacular": {
+    "plain_english": "If it ain't got a receipt, it ain't green.",
+    "alabama_rhythm": "Show the paper trail, keep the story honest, and don't call it authority unless the receipt can carry it."
+  },
+  "lifecycle": [
+    {
+      "phase": "R_AND_D",
+      "meaning": "ideas, sketches, metadata drafts, and local-only receipts",
+      "authority": false,
+      "allowed_outputs": ["json draft", "sha256", "local receipt", "github issue"]
+    },
+    {
+      "phase": "REPO_RECEIPT",
+      "meaning": "file committed to GitHub with path and commit SHA",
+      "authority": false,
+      "allowed_outputs": ["repo path", "commit sha", "file sha256", "audit log entry"]
+    },
+    {
+      "phase": "VALIDATED",
+      "meaning": "zero-trust verifier and workflow pass",
+      "authority": false,
+      "allowed_outputs": ["workflow run", "validation report", "green/yellow/red status"]
+    },
+    {
+      "phase": "EXTERNAL_ANCHOR_READY",
+      "meaning": "ready for IPFS/EAS/Zora/Base only after real external receipt exists",
+      "authority": false,
+      "allowed_outputs": ["pending cid", "pending eas schema", "pending zora receipt"]
+    },
+    {
+      "phase": "AUTHORITY_GATE",
+      "meaning": "requires explicit written authority, legal basis, scope, minimization, and chain of custody",
+      "authority": "NOT_GRANTED_BY_THIS_ARTIFACT",
+      "allowed_outputs": []
+    }
+  ],
+  "genesis_key": {
+    "type": "local_only_shell_receipt",
+    "status": "COMMAND_PROVIDED_NOT_EXECUTED_BY_REPO",
+    "receipt_path": "receipts/alms/abi-genesis-key.local.json",
+    "command": "mkdir -p receipts/alms && TS=$(date -u +%Y-%m-%dT%H:%M:%SZ) && cat > receipts/alms/abi-genesis-key.local.json <<JSON\n{\"artifact\":\"ALABAMA_BOUNDARY_INQUIRY_ABI_GENESIS_KEY_V0_1\",\"ens\":\"jaywisdom.eth\",\"basename\":\"jaywisdom.base.eth\",\"timestamp_utc\":\"$TS\",\"authority\":false,\"no_fake_green\":true,\"scope\":\"local-only shell receipt\"}\nJSON\nsha256sum receipts/alms/abi-genesis-key.local.json"
+  },
+  "green_yellow_red": {
+    "green": ["repo path exists", "commit sha exists", "json parses", "local receipt hash exists after command is run"],
+    "yellow": ["external anchors pending", "workflow run pending", "no public participant feedback yet"],
+    "red": ["official authority implied", "private targeting", "unverified identity claim", "external receipt invented"]
+  },
+  "external_anchors": {
+    "ipfs": "PENDING_REAL_CID",
+    "eas": "PENDING_SCHEMA_OR_UID",
+    "zora": "PENDING_PUBLIC_RECEIPT",
+    "base": "PENDING_PUBLIC_TX"
+  },
+  "rules": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "public_metadata_only_by_default": true,
+    "no_private_targeting": true,
+    "no_official_impersonation": true
+  }
+}
