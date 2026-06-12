@@ -1,0 +1,111 @@
+{
+  "artifact": "MN_METADATA_MEMBRANE_MESH_V0_1",
+  "title": "Minnesota Metadata Membrane Mesh - Outside/Inside Binary Audit Arena",
+  "root_repo": "jsonwisdom/JOY",
+  "project_identity": {
+    "ens": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth"
+  },
+  "inherited_from": {
+    "lane": "ALABAMA_ALMS_KEEPUP",
+    "principle": "metadata claims must disclose scope, purpose, record location, verification method, and receipt"
+  },
+  "state_lane": "MINNESOTA",
+  "status": "GITHUB_RECEIPT_LIVE_EXTERNAL_ANCHORS_PENDING",
+  "membrane_purpose": "Create a lawful public-metadata audit mesh for Minnesota data surfaces using receipts, public records, repo artifacts, schemas, and validation outputs only.",
+  "binary_audit_arena": {
+    "outside_no_authority": {
+      "allowed": [
+        "inspect public GitHub artifacts",
+        "inspect public records and published reports",
+        "open GitHub issues with evidence",
+        "run repo verifier scripts",
+        "classify evidence as GREEN_YELLOW_RED"
+      ],
+      "not_allowed": [
+        "claim legal authority",
+        "access non-public systems",
+        "collect private personal data",
+        "target people or facilities",
+        "treat inference as proof"
+      ]
+    },
+    "inside_with_authority": {
+      "requires": [
+        "written authority",
+        "defined scope",
+        "data minimization",
+        "audit log",
+        "chain of custody",
+        "revocation path"
+      ],
+      "default_state": "NOT_GRANTED"
+    }
+  },
+  "mn_data_audit_lanes": [
+    {
+      "lane": "public_record_inventory",
+      "description": "Index public Minnesota records, reports, schemas, policies, and published datasets without private extraction."
+    },
+    {
+      "lane": "agency_metadata_disclosure",
+      "description": "Record what a public entity says it collects, why, where it is published, and what receipt supports the statement."
+    },
+    {
+      "lane": "workflow_validation",
+      "description": "Use GitHub Actions and verifier scripts to validate JSON, paths, required public text, and hash-ready artifacts."
+    },
+    {
+      "lane": "citizen_feedback",
+      "description": "Route public corrections, broken links, and audit findings through GitHub issues."
+    }
+  ],
+  "federal_visibility_lens": {
+    "label": "NSA_REPLAY_PUBLIC_LENS",
+    "meaning": "Public-source oversight vocabulary only; no intrusion, no operational targeting, no non-public collection.",
+    "allowed_evidence": [
+      "public reports",
+      "public contracts",
+      "public legal documents",
+      "public oversight materials",
+      "repo receipts"
+    ],
+    "blocked_actions": [
+      "network probing",
+      "credential use",
+      "facility targeting",
+      "employee targeting",
+      "classified or restricted data claims"
+    ]
+  },
+  "utah_data_center_lens": {
+    "label": "UTAH_PUBLIC_INFRASTRUCTURE_LENS",
+    "meaning": "Public infrastructure metadata audit only; no technical targeting or facility operations mapping.",
+    "audit_questions": [
+      "What public claims exist?",
+      "What public receipts support them?",
+      "What is unverified?",
+      "What must remain out of scope?"
+    ]
+  },
+  "evidence_scale": {
+    "GREEN": "Direct public receipt, commit, validated JSON, workflow pass, public citation, or external receipt.",
+    "YELLOW": "Plausible or prepared but missing one required receipt.",
+    "RED": "Unsupported, private, unverifiable, overclaimed, or outside scope."
+  },
+  "external_anchors": {
+    "ipfs": "PENDING_REAL_CID",
+    "eas": "PENDING_SCHEMA_OR_UID",
+    "base": "PENDING_PUBLIC_TX",
+    "ens_text_record": "PENDING_EXPLICIT_UPDATE"
+  },
+  "guardrails": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "surveillance_use": false,
+    "private_data_collection": false,
+    "facility_or_person_targeting": false,
+    "public_metadata_only": true
+  }
+}
