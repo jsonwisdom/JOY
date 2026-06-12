@@ -10,7 +10,8 @@ This verifier is intentionally boring:
 
 It validates the repository's public metadata state, computes SHA-256
 hashes for critical files, verifies required state lanes, parses JSON,
-and emits a deterministic JSON report for GitHub Actions and auditors.
+checks ALMS report pairing, and emits a deterministic JSON report for
+GitHub Actions and auditors.
 
 External systems such as IPFS, EAS, Zora, and Base are NOT verified here.
 They remain pending unless explicit public receipts are later added.
@@ -39,16 +40,21 @@ DEFAULT_CRITICAL_FILES = [
     "AUDIT_LOG.md",
     "metadata/operation-vcr/OPERATION_VCR_ALMS_KEEPUP_V0_1.json",
     "metadata/movies/BLOCKBUSTERS_IRL_GENZ_MOVIE_WATCHERS_V0_1.json",
+    "metadata/alms/ALABAMA_CITIZEN_LAUNCH_METADATA_REPORT_V0_1.json",
+    "docs/public/ALABAMA_CITIZEN_LAUNCH_REPORT_V0_1.md",
+    "schemas/eas/SCHEMA_1578_PRECEDENT_TEMPLATE_V0_1.json",
     "schemas/retail/BLOCKBUSTER_RETAIL_2026_PACKAGE_SCHEMA_V0_1.json",
 ]
 
 DEFAULT_REQUIRED_TEXT = {
     "README.md": ["PUBLIC START HERE", "jaywisdom.base.eth", "jsonwisdom/JOY"],
     "PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md": ["jsonwisdom/JOY", "jaywisdom.base.eth", "no_fake_green"],
+    "docs/public/ALABAMA_CITIZEN_LAUNCH_REPORT_V0_1.md": ["Alabama", "paper trail", "Schema #1578"],
 }
 
 DEFAULT_REQUIRED_STATE_LANES = ["MN", "AL", "UTAH"]
 SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "dist", "build", "__pycache__"}
+ALMS_DIR = Path("metadata/alms")
 
 
 def sha256_file(path: Path) -> str:
@@ -206,6 +212,98 @@ def verify_external_anchor_policy(
     return results
 
 
+def expected_markdown_pairs_for_alms_report(path: Path, data: Any) -> list[str]:
+    """Return expected public Markdown reports for an ALMS JSON metadata report."""
+    expected: list[str] = []
+    if isinstance(data, dict):
+        for key in ("public_report_path", "citizen_report_path", "human_report_path", "markdown_report_path"):
+            value = data.get(key)
+            if isinstance(value, str) and value.endswith(".md"):
+                expected.append(value)
+        reports = data.get("reports")
+        if isinstance(reports, dict):
+            for value in reports.values():
+                if isinstance(value, str) and value.endswith(".md"):
+                    expected.append(value)
+
+    stem = path.stem
+    upper_name = path.name.upper()
+    if "_METADATA_REPORT_" in upper_name:
+        expected_stem = stem.replace("_METADATA_REPORT_", "_REPORT_")
+        expected.append(f"docs/public/{expected_stem}.md")
+    elif upper_name.endswith("_REPORT_V0_1.JSON") or "_REPORT_" in upper_name:
+        expected.append(f"docs/public/{stem}.md")
+
+    # Preserve order while deduplicating.
+    deduped: list[str] = []
+    for item in expected:
+        if item not in deduped:
+            deduped.append(item)
+    return deduped
+
+
+def has_nested_key_text(value: Any, needles: tuple[str, ...]) -> bool:
+    if isinstance(value, dict):
+        for key, nested in value.items():
+            joined = f"{key}".lower()
+            if any(needle in joined for needle in needles):
+                return True
+            if has_nested_key_text(nested, needles):
+                return True
+    elif isinstance(value, list):
+        return any(has_nested_key_text(item, needles) for item in value)
+    elif isinstance(value, str):
+        lowered = value.lower()
+        return any(needle in lowered for needle in needles)
+    return False
+
+
+def verify_alms_report_pairs(
+    failures: list[dict[str, str]],
+    warnings: list[dict[str, str]],
+) -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+    alms_root = ROOT / ALMS_DIR
+    if not alms_root.exists():
+        add_warning(warnings, str(ALMS_DIR), "alms_directory_missing")
+        return results
+
+    for path in sorted(alms_root.rglob("*.json")):
+        ok, data = load_json(path)
+        path_rel = rel(path)
+        if not ok:
+            continue
+
+        name_upper = path.name.upper()
+        is_report = "REPORT" in name_upper or (isinstance(data, dict) and str(data.get("artifact", "")).upper().endswith("REPORT"))
+        if not is_report:
+            continue
+
+        expected = expected_markdown_pairs_for_alms_report(path, data)
+        pair_records: list[dict[str, Any]] = []
+        if not expected:
+            add_warning(warnings, path_rel, "alms_report_has_no_public_markdown_pair_rule")
+
+        for expected_path in expected:
+            exists = (ROOT / expected_path).exists()
+            pair_records.append({"path": expected_path, "exists": exists})
+            if not exists:
+                add_failure(failures, path_rel, f"missing_public_markdown_pair:{expected_path}")
+
+        if has_nested_key_text(data, ("boundary",)):
+            if not has_nested_key_text(data, ("appeal",)):
+                add_warning(warnings, path_rel, "boundary_report_missing_appeal_path_signal")
+            if not has_nested_key_text(data, ("funding",)):
+                add_warning(warnings, path_rel, "boundary_report_missing_funding_disclosure_signal")
+
+        results.append({
+            "path": path_rel,
+            "expected_markdown_pairs": pair_records,
+            "status": "PASS" if pair_records and all(item["exists"] for item in pair_records) else "WARN_OR_FAIL",
+        })
+    return results
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--json", action="store_true", help="Emit machine JSON only")
@@ -230,6 +328,7 @@ def main() -> int:
     verify_rules(state, failures)
     state_lane_results = verify_state_lanes(state, failures, warnings)
     external_anchor_results = verify_external_anchor_policy(state, warnings)
+    alms_report_pair_results = verify_alms_report_pairs(failures, warnings)
 
     critical_results = []
     for item in get_critical_files(state):
@@ -295,7 +394,7 @@ def main() -> int:
 
     report = {
         "artifact": "ZERO_TRUST_CIVIC_AUDIT_DRILL_REPORT",
-        "version": "0.2",
+        "version": "0.3",
         "repo_root": "jsonwisdom/JOY",
         "project_identity": ["jaywisdom.base.eth", "jaywisdom.eth"],
         "mode": "public_metadata_validation",
@@ -308,6 +407,7 @@ def main() -> int:
             "sha256": sha256_file(state_path) if state_path.exists() and state_ok else None,
         },
         "state_lanes": state_lane_results,
+        "alms_report_pairs": alms_report_pair_results,
         "critical_files": critical_results,
         "json_files_checked": len(json_results),
         "json_results": json_results,
@@ -323,6 +423,7 @@ def main() -> int:
     else:
         print(f"Zero Trust Civic Audit Drill: {report['status']}")
         print(f"State lanes checked: {len(state_lane_results)}")
+        print(f"ALMS report pairs checked: {len(alms_report_pair_results)}")
         print(f"Critical files checked: {len(critical_results)}")
         print(f"JSON files checked: {len(json_results)}")
         print(f"Failures: {len(failures)}")
