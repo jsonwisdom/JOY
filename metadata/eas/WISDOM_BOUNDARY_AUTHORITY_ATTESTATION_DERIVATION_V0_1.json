@@ -1,0 +1,53 @@
+{
+  "artifact": "WISDOM_BOUNDARY_AUTHORITY_ATTESTATION_DERIVATION_V0_1",
+  "artifact_type": "schema_derivation_plan",
+  "repo": "jsonwisdom/JOY",
+  "source_precedent": {
+    "path": "metadata/eas/IDENTITY_REPETITION_PRECEDENT_001_V0_1.json",
+    "precedent_id": "IDENTITY_REPETITION_PRECEDENT_001",
+    "uid": "0x2a4d436665af872f2a72adf08c112b1dd10b7333f5299f4048d96cd887fb6973",
+    "ruling": "Identity is not session.",
+    "root_anchor": "jaywisdom.base.eth",
+    "lineage_anchor": "jaywisdom.eth",
+    "status": "USER_PROVIDED_PENDING_INDEPENDENT_REPLAY"
+  },
+  "derived_attestation": {
+    "name": "BoundaryAuthorityWisdomV1",
+    "subject": "jaywisdom.base.eth",
+    "lineage": "jaywisdom.eth",
+    "principle": "Before any boundary touches a person, the authority must prove itself.",
+    "inversion": {
+      "old_world": "Power declares boundaries and people must react.",
+      "wisdom_world": "Power must disclose authority, scope, evidence, funding, appeal, and audit trail first."
+    },
+    "status": "SCHEMA_READY_NOT_ATTESTED"
+  },
+  "eas_style_fields": [
+    {"name": "ens", "type": "string"},
+    {"name": "basename", "type": "string"},
+    {"name": "boundaryClaim", "type": "string"},
+    {"name": "authoritySource", "type": "string"},
+    {"name": "scope", "type": "string"},
+    {"name": "evidenceURI", "type": "string"},
+    {"name": "appealPath", "type": "string"},
+    {"name": "auditLogURI", "type": "string"},
+    {"name": "fundingSource", "type": "string"},
+    {"name": "authorityClaimed", "type": "bool"},
+    {"name": "enforcementGreen", "type": "bool"},
+    {"name": "noFakeGreen", "type": "bool"},
+    {"name": "githubCommit", "type": "bytes32"},
+    {"name": "artifactSha256", "type": "bytes32"}
+  ],
+  "green_rule": "No boundary enforcement is green unless authority, scope, receipt, and appeal are all present.",
+  "default_state": {
+    "authority": false,
+    "enforcement_green": false,
+    "no_fake_green": true
+  },
+  "external_anchor_status": {
+    "github": "READY",
+    "eas": "SCHEMA_READY_NOT_ATTESTED",
+    "ipfs": "PENDING_REAL_CID",
+    "base": "PENDING_PUBLIC_TX"
+  }
+}
