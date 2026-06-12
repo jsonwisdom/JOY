@@ -1,0 +1,49 @@
+{
+  "artifact": "GOBLIN_CONSTELLATION_COVER_ART_ENTRY_V0_1",
+  "status": "CONSTELLATION_INDEX_ENTRY_ROOTED",
+  "created_utc": "2026-06-12T02:08:00Z",
+  "authority": false,
+  "no_fake_green": true,
+  "asset": {
+    "id": "GOBLIN_COVER_ART_SELFIE_STYLE_V0_1",
+    "type": "cover_art",
+    "title": "Goblin Cover Art — Selfie Style",
+    "description": "Close-up fantasy goblin selfie cover art with cinematic torchlit dungeon atmosphere.",
+    "media_type": "image/png",
+    "filename": "goblin_rogue_s_selfie_in_the_dungeon.png",
+    "sha256": "0x451d5406c72a0dbce137ea0962d60c6200ad0f7972fb77ab94e27b83c4062e8e",
+    "cid": "ipfs://bafkreigkmn34k444ruy25lvw6ph6goq4lr246qku4uoglkz46kqdfzlf5a",
+    "binding_class": "sha256_cid_binding",
+    "replay_status": "deterministic"
+  },
+  "identity_precedent": {
+    "precedent": "IDENTITY_IS_NOT_SESSION",
+    "court": "Goblin Court",
+    "meme_layer": "Meme Court",
+    "root_anchor": "jaywisdom.base.eth",
+    "lineage_anchor": "jaywisdom.eth",
+    "receipt_hash": "0x32f65c664328a641328812806c8d484c43c52d414c2e4338f65b14beaf374030",
+    "authority": false
+  },
+  "eas": {
+    "chain": "Base",
+    "schema_number": 1578,
+    "schema_uid": "0x79e6535156a3f4652649dff5e8ba5fd47f5d68cc7573203391ea688a0d15703b",
+    "attestation_uid": "0x2a4d436665af872f2a72adf08c112b1dd10b7333f5299f4048d96cd887fb6973",
+    "attestation_tx": "0x591f8c950f3f1e54b71b1dc2050baaabffded0e2021e347700c85268e8ef75b7",
+    "attester": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+    "revocable": true,
+    "revoked": false
+  },
+  "github_lineage": {
+    "repo": "jsonwisdom/JOY",
+    "schema_candidate_commit": "7b7f1fb1c6a35adee0bc17f6d19a572d89ba5375",
+    "schema_receipt_commit": "2517295ba986ea129fec39db2b376d179b725459",
+    "attestation_receipt_commit": "9a9f48ec11dd51d27d32a9e508ba2e61072368e8"
+  },
+  "next_eligible_actions": [
+    "zora_mint_metadata",
+    "eas_asset_attestation",
+    "replay_receipt_expansion"
+  ]
+}
