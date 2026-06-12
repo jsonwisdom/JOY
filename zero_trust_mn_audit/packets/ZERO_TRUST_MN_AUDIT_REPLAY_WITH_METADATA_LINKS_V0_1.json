@@ -1,0 +1,35 @@
+{
+  "artifact": "ZERO_TRUST_MN_AUDIT_REPLAY_WITH_METADATA_LINKS_V0_1",
+  "created_utc": "2026-06-12T20:12:52Z",
+  "creator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "joy_head": "00854958d01a7c168a4ce11760a6b961d193b7db",
+  "joy_head_short": "0085495",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "game_layer": "KAREN11 MN Edition",
+  "packet_id": "ALPHA_DEED_001",
+  "current_state": "CLAIMED",
+  "score": 1,
+  "claim_blob_sha": "57d7761bb36928944bb9e56e054dab2ac5f6d9fb",
+  "draft_blob_sha": "cdc2d9fdcc726cfbe74486a4be06565a4b59c66b",
+  "metadata_adjacency": {
+    "status": "OBSERVED_ADJACENCY_NOT_PROOF",
+    "knowingly_or_unknowingly_connected": true,
+    "alms_surface": "related metadata / audit workflow surface",
+    "computerwisdom_public_side": {
+      "status": "local_git_repo_detected",
+      "local_head": "38a0481d3a3c938f4e324a2ad3896afe3d038fd0",
+      "role": "public workflow memory and replay context"
+    },
+    "rule": "metadata links may guide investigation but may not promote score without receipts"
+  },
+  "public_workflow": {
+    "name": "Wake up to a New Day, Every Day",
+    "mode": "public-facing civic workflow",
+    "claim": "daily replay, public readability, receipt-locked progress"
+  },
+  "sent_receipt_committed": false,
+  "promotion_allowed": false,
+  "authority": false,
+  "no_fake_green": true
+}
