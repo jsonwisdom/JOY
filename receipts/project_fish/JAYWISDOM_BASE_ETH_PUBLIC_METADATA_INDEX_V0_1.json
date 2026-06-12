@@ -1,0 +1,40 @@
+{
+  "artifact": "JAYWISDOM_BASE_ETH_PUBLIC_METADATA_INDEX_V0_1",
+  "project": "Project Fish",
+  "identity": {
+    "basename": "jaywisdom.base.eth",
+    "ens_alias": "jaywisdom.eth"
+  },
+  "environment": "family_builder_environment",
+  "scope": "public_repo_metadata_index_for_zero_trust_artifacts",
+  "repos": [
+    "jsonwisdom/JOY",
+    "jsonwisdom/AL",
+    "jsonwisdom/COMPUTERWISDOM"
+  ],
+  "index_slots": [
+    "commit_sha",
+    "tree_sha",
+    "workflow_run_id",
+    "pull_request_number",
+    "artifact_sha256",
+    "manifest_sha256",
+    "metadata_uri_or_cid",
+    "eas_uid_or_schema_when_present",
+    "basename_pointer"
+  ],
+  "excluded_surfaces": [
+    "secrets",
+    "credentials",
+    "local_mirrors",
+    "unverified_claims"
+  ],
+  "rules": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "receipts_over_narrative": true,
+    "public_evidence_only": true
+  },
+  "status": "PUBLIC_INDEX_CREATED_PENDING_RUNTIME_RECEIPTS"
+}
