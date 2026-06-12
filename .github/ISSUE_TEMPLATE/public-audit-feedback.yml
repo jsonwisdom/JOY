@@ -1,0 +1,50 @@
+name: Public Audit Feedback
+description: Tell Jay what you found, what confused you, or what should be fixed.
+title: "Public audit feedback: "
+labels:
+  - public-audit
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for leaving a real outside signal. This project uses zero-trust review: say what you can verify, what confused you, and what should be fixed.
+  - type: input
+    id: entry_point
+    attributes:
+      label: Where did you enter from?
+      description: Example: README, public locator index, social post, direct link, search.
+      placeholder: README / locator index / social / other
+    validations:
+      required: false
+  - type: textarea
+    id: understood
+    attributes:
+      label: What did you understand?
+      description: One or two sentences is enough.
+      placeholder: I think this project is...
+    validations:
+      required: false
+  - type: textarea
+    id: confusing
+    attributes:
+      label: What was confusing or broken?
+      description: Broken link, unclear claim, missing receipt, overwhelming wording, etc.
+      placeholder: This part confused me...
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested next fix
+      description: What would make this easier to audit or join?
+      placeholder: I would change...
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Zero-trust boundary
+      options:
+        - label: I am reporting what I could see publicly, not making private assumptions.
+          required: true
