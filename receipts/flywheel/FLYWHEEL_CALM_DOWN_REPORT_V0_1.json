@@ -1,0 +1,22 @@
+{
+  "artifact": "FLYWHEEL_CALM_DOWN_REPORT_V0_1",
+  "identity": "jaywisdom.eth",
+  "basename": "jaywisdom.base.eth",
+  "mode": "calm_receipt_first",
+  "summary": "The flywheel is paused at the receipt gate. GitHub updates may proceed. IPFS, EAS, Zora, and basename updates require their own public receipts before green status.",
+  "courts": {
+    "goblin_court": "OPEN_FOR_RECEIPTS",
+    "replay_court": "OPEN_FOR_RECEIPTS",
+    "metadata_court": "OPEN_FOR_RECEIPTS"
+  },
+  "external_anchors": {
+    "ipfs": "PENDING",
+    "eas": "PENDING",
+    "zora": "PENDING",
+    "basename": "PENDING"
+  },
+  "authority": false,
+  "green_implied": false,
+  "no_fake_green": true,
+  "status": "CALM_REPORT_COMMITTED"
+}
