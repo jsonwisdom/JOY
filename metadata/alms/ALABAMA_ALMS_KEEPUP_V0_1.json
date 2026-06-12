@@ -1,10 +1,11 @@
 {
-  "artifact": "ALABAMA_ALMS_KEEPUP_V0_1",
+  "artifact": "ALABAMA_ALMS_KEEPUP_V0_2",
   "github_root": "jsonwisdom/JOY",
   "project_identity": "jaywisdom.base.eth",
   "ens": "jaywisdom.eth",
+  "state_lane": "ALABAMA",
   "lane": "public_metadata_keepup",
-  "purpose": "Add Alabama as a public metadata and validation drill lane for the ALMS keep-up system.",
+  "purpose": "Add Alabama as a public metadata, validation drill, and metadata-rights response lane for the ALMS keep-up system.",
   "scope": [
     "GitHub receipts",
     "JSON metadata",
@@ -13,6 +14,40 @@
     "workflow reports",
     "future external anchors when real receipts exist"
   ],
+  "metadata_response": {
+    "challenged_phrase": "knowingly and unknowingly collect metadata",
+    "zero_trust_answer": "Any metadata claim must declare what is collected, why it is collected, where it is recorded, how it is verified, and what receipt proves it. Unknown collection is not treated as authority. Unverified collection is classified as RED until reduced to public scope, public source, or explicit consent.",
+    "classification_rules": {
+      "declared_public_metadata_with_receipts": "GREEN",
+      "plausible_but_not_yet_receipted": "YELLOW",
+      "private_or_unknown_collection_claimed_as_authority": "RED"
+    },
+    "boundaries": {
+      "private_profiles": false,
+      "secret_collection_authority": false,
+      "unverified_identity_claims": false,
+      "aggregate_public_metadata_only": true,
+      "consent_or_public_record_required": true
+    }
+  },
+  "ens_eas_state": {
+    "ens_subject": "jaywisdom.eth",
+    "basename_subject": "jaywisdom.base.eth",
+    "eas_status": "SCHEMA_DESIGNED_NOT_ATTESTED",
+    "schema_intent": "Record the Alabama ALMS metadata response as a GitHub-first schema candidate before any external EAS/IPFS/Base/Zora anchoring.",
+    "required_receipt_fields": [
+      "github_root",
+      "artifact_path",
+      "commit_sha",
+      "artifact_sha256",
+      "ens_subject",
+      "basename_subject",
+      "classification",
+      "authority",
+      "green_implied",
+      "no_fake_green"
+    ]
+  },
   "drill_steps": [
     "find locator index",
     "run verifier",
@@ -32,5 +67,5 @@
     "no_fake_green": true,
     "aggregate_public_metadata_only": true
   },
-  "version": "0.1"
+  "version": "0.2"
 }
