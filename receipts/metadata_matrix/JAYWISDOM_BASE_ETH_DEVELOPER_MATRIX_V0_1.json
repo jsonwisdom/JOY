@@ -1,0 +1,35 @@
+{
+  "artifact": "JAYWISDOM_BASE_ETH_DEVELOPER_MATRIX_V0_1",
+  "identity": "jaywisdom.base.eth",
+  "environment": "family_builder_environment",
+  "repos": [
+    "jsonwisdom/JOY",
+    "jsonwisdom/AL",
+    "jsonwisdom/COMPUTERWISDOM",
+    "jsonwisdom/HEIDEE"
+  ],
+  "completed_updates": [
+    {
+      "repo": "jsonwisdom/HEIDEE",
+      "path": ".github/workflows/builder-boundary-sentinel.yml",
+      "commit": "be619049207eb640fe935efb6861c305ea65c8b9",
+      "status": "LIVE"
+    }
+  ],
+  "pending_external_receipts": {
+    "ipfs_cid": "PENDING",
+    "eas_uid": "PENDING",
+    "zora_receipt": "PENDING",
+    "jaywisdom_base_eth_record": "PENDING"
+  },
+  "rules": [
+    "receipts before claims",
+    "hashes before narratives",
+    "public commits before promotion",
+    "no fake green"
+  ],
+  "authority": false,
+  "green_implied": false,
+  "no_fake_green": true,
+  "status": "GITHUB_RECEIPT_CREATED"
+}
