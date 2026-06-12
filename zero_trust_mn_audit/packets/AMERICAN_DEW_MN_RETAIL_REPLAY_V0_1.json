@@ -1,0 +1,44 @@
+{
+  "artifact": "AMERICAN_DEW_MN_RETAIL_REPLAY_V0_1",
+  "created_utc": "2026-06-12T21:03:10Z",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "c1e6736",
+  "source_head_full": "c1e6736da04a9b7bc0dedeef1c083a0bf3c1e847",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "edition": "American Dew MN Edition",
+  "retail_layer": "public-facing civic audit packaging",
+  "brand_affiliation": false,
+  "mountain_dew_affiliation": false,
+  "kare11_affiliation": false,
+  "purpose": "Make public-records auditing understandable, replayable, and receipt-locked for Minnesota citizens and veterans.",
+  "public_tagline": "Wake up to a New Day, Every Day. Audit with receipts.",
+  "core_loop": [
+    "claim",
+    "request",
+    "receipt",
+    "hash",
+    "replay",
+    "report"
+  ],
+  "allowed": [
+    "public education",
+    "citizen witness workflow",
+    "redacted receipts",
+    "GitHub replay",
+    "EAS/Base attestation",
+    "Zora-style public artifacts"
+  ],
+  "forbidden": [
+    "fake authority",
+    "brand confusion",
+    "unsupported criminal accusations",
+    "harassment",
+    "personal targeting",
+    "fake green"
+  ],
+  "current_packet": "ALPHA_DEED_001",
+  "score_rule": "No receipt, no promotion.",
+  "authority": false,
+  "no_fake_green": true
+}
