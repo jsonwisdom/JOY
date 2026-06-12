@@ -1,0 +1,49 @@
+{
+  "artifact": "JAYWISDOM_SIMPLE_STATE_V0_1",
+  "project_identity": {
+    "ens": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth",
+    "github_root": "jsonwisdom/JOY",
+    "authority_claimed": false
+  },
+  "layers": {
+    "github_direct": {
+      "role": "developer_receipt_layer",
+      "proof_units": [
+        "repo_path",
+        "commit_sha",
+        "sha256",
+        "workflow_status",
+        "issue_or_pr_url"
+      ]
+    },
+    "alms": {
+      "role": "metadata_memory_layer",
+      "keeps_up_with": [
+        "schemas",
+        "metadata_files",
+        "audit_logs",
+        "drill_reports",
+        "pending_external_anchors"
+      ]
+    },
+    "state_lanes": {
+      "MN": "public metadata membrane",
+      "AL": "business and public metadata keep-up",
+      "UTAH": "public physical infrastructure lens only"
+    },
+    "optional_external_anchors": {
+      "EAS": "pending real schema or UID",
+      "IPFS": "pending real CID",
+      "Zora": "pending public receipt",
+      "Base": "pending public transaction"
+    }
+  },
+  "rules": {
+    "public_metadata_only_by_default": true,
+    "private_targeting": false,
+    "secret_authority": false,
+    "no_fake_green": true,
+    "no_receipt_no_authority": true
+  }
+}
