@@ -1,0 +1,22 @@
+{
+  "artifact": "MN_PUBLIC_BINARY_EVIDENCE_ACCESS_V0_1",
+  "operator": "Jay Wisdom.base.eth",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "activation": "ALL_COURTS_BINARY_SAFE",
+  "court_role": "administrator_of_evidence_not_owner_of_truth",
+  "public_role": "observer_of_lawful_replayable_proof_surfaces",
+  "binary_surfaces": [
+    "redacted files",
+    "hashes",
+    "metadata",
+    "receipts",
+    "docket references",
+    "public indexes",
+    "replay scripts"
+  ],
+  "rule": "observe the alleged action first, then weigh it against time and court action",
+  "privacy_limit": "restricted or sensitive data must be redacted, hashed, or summarized",
+  "criminal_finding": false,
+  "authority": false,
+  "no_fake_green": true
+}
