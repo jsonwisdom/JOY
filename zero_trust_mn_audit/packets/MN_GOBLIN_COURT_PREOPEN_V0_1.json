@@ -1,0 +1,22 @@
+{
+  "artifact": "MN_GOBLIN_COURT_PREOPEN_V0_1",
+  "created_utc": "2026-06-12T20:15:42Z",
+  "creator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "070c6f0",
+  "source_head_full": "070c6f07a25a42f77fa5795d888cf4fe012da262",
+  "court": "MN Goblin Court",
+  "jurisdiction_layer": "Minnesota county-level meme justice",
+  "reporting_access": "KAREN11_REPORTING_AGENCY_PUBLIC_FACING_V0_1",
+  "packet_id": "ALPHA_DEED_001",
+  "packet_state": "CLAIMED",
+  "score": 1,
+  "preopen_status": "READY",
+  "public_reporting_allowed": true,
+  "adjudication_authority": false,
+  "judicial_authority": false,
+  "promotion_allowed": false,
+  "next_gate": "capture outbound DEED request receipt",
+  "authority": false,
+  "no_fake_green": true
+}
