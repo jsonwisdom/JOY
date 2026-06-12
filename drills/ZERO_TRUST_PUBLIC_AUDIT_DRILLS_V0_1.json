@@ -1,0 +1,66 @@
+{
+  "artifact": "ZERO_TRUST_PUBLIC_AUDIT_DRILLS_V0_1",
+  "project": "jaywisdom.base.eth",
+  "repo_root": "jsonwisdom/JOY",
+  "version": "0.1",
+  "authority": false,
+  "green_implied": false,
+  "no_fake_green": true,
+  "purpose": "Gamify public auditing with small repo-native drills and deterministic scoring.",
+  "drills": [
+    {
+      "id": "DRILL_001_FIND_THE_FRONT_DOOR",
+      "title": "Find the canonical public root",
+      "task": "Open the public audit locator and identify the root repository and project identity.",
+      "green_condition": "Auditor finds jsonwisdom/JOY and jaywisdom.base.eth without guessing.",
+      "points": 10
+    },
+    {
+      "id": "DRILL_002_RUN_THE_VERIFIER",
+      "title": "Run the one-command verifier",
+      "task": "Run python3 tools/verify-this-repo.py --json from the repo root.",
+      "green_condition": "Script exits 0 and prints status PASS.",
+      "points": 25
+    },
+    {
+      "id": "DRILL_003_CHECK_JSON_METADATA",
+      "title": "Inspect JSON metadata",
+      "task": "Open metadata and schemas folders and confirm JSON files parse.",
+      "green_condition": "All checked JSON files are valid and have clear purpose fields or schema titles.",
+      "points": 20
+    },
+    {
+      "id": "DRILL_004_OPEN_A_FEEDBACK_ISSUE",
+      "title": "Leave a public audit receipt",
+      "task": "Open a GitHub issue using the public audit template.",
+      "green_condition": "Issue includes path reviewed, result, and suggested next fix.",
+      "points": 20
+    },
+    {
+      "id": "DRILL_005_NO_FAKE_GREEN_CHALLENGE",
+      "title": "Separate GREEN from YELLOW",
+      "task": "Find one repo-native receipt and one pending external anchor lane.",
+      "green_condition": "Auditor does not mark pending anchors as verified.",
+      "points": 25
+    }
+  ],
+  "score_bands": {
+    "0_39": "RED: visitor bounced or could not verify",
+    "40_69": "YELLOW: partial audit completed",
+    "70_89": "GREEN: audit path works",
+    "90_100": "DEEP_GREEN: auditor ran verifier and left a receipt"
+  },
+  "allowed_inputs": [
+    "public GitHub files",
+    "commit SHAs",
+    "workflow summaries",
+    "issue comments",
+    "linked public receipts"
+  ],
+  "refused_inputs": [
+    "private claims",
+    "unverified authority",
+    "personal data",
+    "fake green"
+  ]
+}
