@@ -1,0 +1,105 @@
+{
+  "artifact": "BLOCKBUSTERS_IRL_GENZ_MOVIE_WATCHERS_V0_1",
+  "project": "JAYWISDOM_BASE_ETH_PROJECT_FISH",
+  "format": "metadata_movies",
+  "scope": "cultural_metadata_only",
+  "audience_model": "Gen Z blockbuster watcher archetypes",
+  "privacy_boundary": {
+    "individual_tracking": false,
+    "private_profiles": false,
+    "personal_data": false,
+    "surveillance_use": false,
+    "aggregate_cultural_patterns_only": true
+  },
+  "movie_metadata_axes": [
+    "franchise_gravity",
+    "meme_velocity",
+    "soundtrack_signal",
+    "rewatch_loop",
+    "clip_shareability",
+    "theater_event_energy",
+    "streaming_afterlife",
+    "costume_or_identity_play",
+    "family_safe_entrypoint",
+    "lore_depth"
+  ],
+  "watcher_archetypes": [
+    {
+      "id": "clip_first_viewer",
+      "label": "Clip-First Viewer",
+      "description": "Discovers the movie through short-form clips before watching the full feature.",
+      "signals": ["meme_velocity", "clip_shareability", "soundtrack_signal"],
+      "metadata_notes": "Treat as cultural discovery path, not user identity."
+    },
+    {
+      "id": "lore_diver",
+      "label": "Lore Diver",
+      "description": "Follows timelines, canon, fan theories, and expanded universes.",
+      "signals": ["franchise_gravity", "lore_depth", "rewatch_loop"],
+      "metadata_notes": "Best matched with franchise maps and spoiler-safe summaries."
+    },
+    {
+      "id": "theater_event_builder",
+      "label": "Theater Event Builder",
+      "description": "Treats release night as a shared IRL event.",
+      "signals": ["theater_event_energy", "costume_or_identity_play", "family_safe_entrypoint"],
+      "metadata_notes": "Supports positive group viewing without collecting personal attendance."
+    },
+    {
+      "id": "comfort_rewatcher",
+      "label": "Comfort Rewatcher",
+      "description": "Returns to movies for mood, routine, and shared memory.",
+      "signals": ["rewatch_loop", "streaming_afterlife", "soundtrack_signal"],
+      "metadata_notes": "Use as metadata for recommendation tone, not behavioral scoring."
+    },
+    {
+      "id": "family_bridge_viewer",
+      "label": "Family Bridge Viewer",
+      "description": "Uses blockbusters as a bridge across generations and households.",
+      "signals": ["family_safe_entrypoint", "theater_event_energy", "franchise_gravity"],
+      "metadata_notes": "Primary boundary: family environment stays respected."
+    }
+  ],
+  "blockbuster_categories": [
+    {
+      "category": "hero_cycle",
+      "examples_style": ["origin story", "team-up", "legacy mantle"],
+      "watch_loop": "discover -> explain -> debate -> rewatch -> remix"
+    },
+    {
+      "category": "creature_or_disaster_event",
+      "examples_style": ["monster", "storm", "survival spectacle"],
+      "watch_loop": "trailer awe -> group watch -> reaction clips -> sequel speculation"
+    },
+    {
+      "category": "animated_family_event",
+      "examples_style": ["family comedy", "music-driven animation", "comfort rewatch"],
+      "watch_loop": "family entry -> soundtrack loop -> meme scenes -> repeat viewing"
+    },
+    {
+      "category": "game_or_toy_world",
+      "examples_style": ["game adaptation", "toy universe", "interactive nostalgia"],
+      "watch_loop": "nostalgia hook -> lore compare -> merch/meta discussion -> sequel watch"
+    },
+    {
+      "category": "future_city_matrix",
+      "examples_style": ["AI city", "simulation", "cyber civic myth"],
+      "watch_loop": "concept shock -> theory threads -> repo notes -> symbolic replay"
+    }
+  ],
+  "project_fish_use": {
+    "catch": "public metadata signals",
+    "not_catch": "people, private identities, minors, private behavior, or hidden profiles",
+    "output": "repo-safe JSON movie metadata cards",
+    "anchor_candidate": "jaywisdom.base.eth metadata mesh pending explicit attestation"
+  },
+  "repo_boundary": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "matrix_gate": "closed_until_receipts",
+    "allowed_outputs": ["json", "markdown_summary", "workflow_summary", "hash_manifest"]
+  },
+  "status": "LIVE_METADATA_MOVIE_MAP",
+  "version": "0.1"
+}
