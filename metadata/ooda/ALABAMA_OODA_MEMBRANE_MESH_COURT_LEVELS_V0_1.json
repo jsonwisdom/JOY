@@ -1,0 +1,102 @@
+{
+  "artifact": "ALABAMA_OODA_MEMBRANE_MESH_COURT_LEVELS_V0_1",
+  "version": "0.1",
+  "status": "PUBLIC_METADATA_RECEIPT_LIVE",
+  "classification": "PUBLIC_METADATA_ONLY",
+  "root_identity": {
+    "ens": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth",
+    "repo": "jsonwisdom/JOY"
+  },
+  "operator_phrase": "OODA Loop Files contain the membrane mesh Alabama style. HONK.",
+  "purpose": "Define how OODA-loop files contain and route public metadata through the JOY/MEME/GOBLIN/CLOWN court stack without creating legal authority or fake green.",
+  "membrane_mesh": {
+    "containment_unit": "OODA_LOOP_FILE",
+    "style": "ALABAMA",
+    "principle": "Show the paper trail, classify the claim, keep the receipt, and do not call it green unless the receipt can carry it.",
+    "default_authority": false,
+    "fake_green_allowed": false
+  },
+  "court_stack_levels": {
+    "JOY_COURT": {
+      "declared_level": "STATE_LEVEL",
+      "function": "public clarity, family-safe root, state-lane orientation, and source-of-truth routing",
+      "question": "Can a normal person find the receipt and understand the claim without being tricked?",
+      "authority": false
+    },
+    "MEME_COURT": {
+      "declared_level": "COUNTY_LEVEL",
+      "function": "translate complex metadata into shareable public language without lying",
+      "question": "Does the public-facing story match the evidence file?",
+      "authority": false
+    },
+    "GOBLIN_COURT": {
+      "declared_level": "STATE_LEVEL",
+      "function": "adversarial receipt review, file-path discipline, commit-SHA discipline, and no-fake-green enforcement",
+      "question": "Where is the file, hash, workflow output, or external receipt?",
+      "authority": false
+    },
+    "CLOWN_COURT": {
+      "declared_level": "FEDERAL_LEVEL",
+      "function": "pomp-check titles, badges, fake prestige, inflated authority, and claims bigger than their receipts",
+      "question": "Is this honking louder than the evidence can support?",
+      "authority": false
+    }
+  },
+  "ooda_loop": {
+    "observe": [
+      "read public metadata files",
+      "read GitHub commits",
+      "read verifier status",
+      "read issue feedback",
+      "read external anchors only when real CIDs, UIDs, transaction hashes, or workflow URLs exist"
+    ],
+    "orient": [
+      "classify GREEN/YELLOW/RED",
+      "separate narrative from evidence",
+      "map state, county, federal, and family-facing scope labels",
+      "identify whether authority is claimed or refused"
+    ],
+    "decide": [
+      "commit metadata receipt",
+      "hold external anchors pending real receipts",
+      "fail closed on missing authority",
+      "route vague claims back to OODA file requirements"
+    ],
+    "act": [
+      "create GitHub Direct receipt",
+      "update audit log after pass/fail is visible",
+      "publish citizen-readable report only when paired with machine-readable metadata",
+      "never mint fake green"
+    ]
+  },
+  "public_scope_matrix": {
+    "state_level": ["JOY_COURT", "GOBLIN_COURT"],
+    "county_level": ["MEME_COURT"],
+    "federal_level": ["CLOWN_COURT"],
+    "family_member_layer": ["Dad_Public_Website", "Ms_Wisdom_OODA", "ALMS_Metadata"]
+  },
+  "blocked_claims": [
+    "official court authority",
+    "legal adjudication",
+    "classified authority",
+    "government agency impersonation",
+    "private targeting",
+    "surveillance",
+    "credential use",
+    "network probing",
+    "fake green"
+  ],
+  "receipts_required_for_green": [
+    "repo_path",
+    "commit_sha",
+    "sha256_when_available",
+    "workflow_run_url_when_available",
+    "eas_uid_when_real",
+    "ipfs_cid_when_real",
+    "base_tx_when_real"
+  ],
+  "honk": true,
+  "authority": false,
+  "no_fake_green": true
+}
