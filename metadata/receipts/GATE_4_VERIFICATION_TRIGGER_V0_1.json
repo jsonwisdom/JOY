@@ -1,0 +1,20 @@
+{
+  "artifact": "GATE_4_VERIFICATION_TRIGGER_V0_1",
+  "project": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "gate": 4,
+  "purpose": "Trigger Zero Trust Audit workflow and surface live CI runtime receipt.",
+  "trigger_type": "metadata_path_push",
+  "workflow": ".github/workflows/zero-trust-audit.yml",
+  "verifier": "tools/verify-this-repo.py",
+  "expected_report": "zero-trust-audit-report.json",
+  "status": "TRIGGER_COMMIT_CREATED_AWAITING_WORKFLOW_RECEIPT",
+  "authority": false,
+  "no_fake_green": true,
+  "external_anchors": {
+    "eas": "PENDING_REAL_RECEIPT",
+    "ipfs": "PENDING_REAL_RECEIPT",
+    "zora": "PENDING_REAL_RECEIPT",
+    "base_tx": "PENDING_REAL_RECEIPT"
+  }
+}
