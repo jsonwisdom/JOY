@@ -1,11 +1,11 @@
-# GOBLIN_COVER_ART_FULL_REPLAY_CHAIN_V0_1
+# GOBLIN_COVER_ART_FULL_REPLAY_CHAIN_V0_2
 
 ## Status
 
 ```json
 {
-  "artifact": "GOBLIN_COVER_ART_FULL_REPLAY_CHAIN_V0_1",
-  "status": "FULL_REPLAY_CHAIN_ROOTED",
+  "artifact": "GOBLIN_COVER_ART_FULL_REPLAY_CHAIN_V0_2",
+  "status": "FULL_REPLAY_CHAIN_EXTENDED_WITH_SECOND_SIGNAL",
   "authority": false,
   "no_fake_green": true
 }
@@ -49,7 +49,10 @@
   "repo": "jsonwisdom/JOY",
   "constellation_entry_commit": "1f905307475483764f32ae9951a29147b60424f3",
   "asset_attestation_receipt_commit": "89def01f8f8a13fdb038a618c68685bbb6f1de8d",
-  "zora_witness_commit": "241afb5e573e75af89dc27877cca0c2e9731250f"
+  "zora_witness_commit": "241afb5e573e75af89dc27877cca0c2e9731250f",
+  "farcaster_signal_commit": "c4c5cf2b06b4519003c53a5e17ad2c45a714b652",
+  "second_mint_plan_commit": "a6b6103c36f965f903ad32616db6465693dfdef2",
+  "second_signal_witness_commit": "d76c6ba8e50566742071bb7db8a5ef1f6bc5df1a"
 }
 ```
 
@@ -65,6 +68,33 @@
 }
 ```
 
+## Farcaster Amplification Witness
+
+```json
+{
+  "network": "Farcaster",
+  "cast_hash": "0xcc49d298",
+  "handle": "@cmptrwsdm",
+  "signal_class": "decentralized_social_amplification",
+  "witness_commit": "c4c5cf2b06b4519003c53a5e17ad2c45a714b652"
+}
+```
+
+## Second Signal / Zora Witness
+
+```json
+{
+  "title": "THE RECEIPTS SAW YOU",
+  "transaction_hash": "0x0113754fc69dd33a3c7a31595a9d069bfb3a5f143163fab56c63fdeceb2283a7",
+  "zora_coin": "base:0x704dce5048ab2593a92a2fa9ab8465ba2a30b8fc",
+  "coin_address": "0x704dce5048ab2593a92a2fa9ab8465ba2a30b8fc",
+  "referrer": "0x829adfedbe565f9885a7ea6bc78912acaef055e2",
+  "parent_coin": "base:0xa67faf61779c5c9adfd08ea6eaea60a27f8f2d97",
+  "parent_replay_root": "bb159db68948e0312a81d973533b4079b728f83b",
+  "signal_class": "second_zora_creator_attention_coin_witness"
+}
+```
+
 ## Deterministic Chain
 
 ```text
@@ -72,6 +102,8 @@ object: CID + SHA256
   -> truth: EAS schema #1578 + identity/asset attestations
   -> graph: GitHub constellation + replay receipts
   -> signal: Zora coin witness on Base
+  -> amplification: Farcaster public signal
+  -> second_signal: THE RECEIPTS SAW YOU Zora witness
 ```
 
 ## Boundary
@@ -82,11 +114,16 @@ object: CID + SHA256
   "eas_attested": true,
   "github_rooted": true,
   "zora_witness_returned": true,
+  "farcaster_witness_returned": true,
+  "second_zora_witness_returned": true,
   "recipient_bound": false,
   "external_zora_fetch_by_assistant": false,
+  "external_farcaster_fetch_by_assistant": false,
   "authority": false,
   "no_fake_green": true
 }
 ```
 
-This replay chain seals the Goblin Cover Art as a deterministic object-truth-signal artifact. It does not claim recipient binding where the EAS witness shows `TO: No recipient`, and it does not claim assistant-side external Zora verification.
+This replay chain seals the Goblin Cover Art as a deterministic object-truth-signal artifact and extends it with `THE RECEIPTS SAW YOU` as the second signal.
+
+It does not claim recipient binding where the EAS witness shows `TO: No recipient`, and it does not claim assistant-side external Zora or Farcaster verification.
