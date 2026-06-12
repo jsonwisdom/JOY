@@ -1,0 +1,88 @@
+{
+  "artifact": "IDENTITY_REPETITION_PRECEDENT_001_V0_1",
+  "artifact_type": "eas_precedent_receipt",
+  "repo": "jsonwisdom/JOY",
+  "lane": "JOY_METADATA_EAS_PRECEDENT",
+  "status": "USER_PROVIDED_PENDING_INDEPENDENT_REPLAY",
+  "import_reason": "Preserve prior EAS attestation work as a JOY metadata precedent before deriving new Wisdom boundary-authority attestations.",
+  "search_result_before_import": {
+    "searched_repositories": [
+      "jsonwisdom/JOY",
+      "jsonwisdom/AL",
+      "jsonwisdom/COMPUTERWISDOM",
+      "jsonwisdom/HEIDEE"
+    ],
+    "searched_terms": [
+      "0x2a4d436665af872f2a72adf08c112b1dd10b7333f5299f4048d96cd887fb6973",
+      "IDENTITY_REPETITION_PRECEDENT_001",
+      "2517295ba986ea129fec39db2b376d179b725459",
+      "0x32f65c664328a641328812806c8d484c43c52d414c2e4338f65b14beaf374030"
+    ],
+    "exact_precedent_found_before_import": false
+  },
+  "eas_attestation": {
+    "uid": "0x2a4d436665af872f2a72adf08c112b1dd10b7333f5299f4048d96cd887fb6973",
+    "created_local_display": "06/11/2026 8:56:53 pm",
+    "expiration": "Never",
+    "revoked": false,
+    "revocable": true,
+    "schema_number": 1578,
+    "schema_uid_short": "0x79e653...0d15703b",
+    "from": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+    "to": null,
+    "transaction_id": "0x591f8c950f3f1e54b71b1dc2050baaabffded0e2021e347700c85268e8ef75b7",
+    "referenced_attestation": null,
+    "referencing_attestations_count": 0
+  },
+  "decoded_data": {
+    "Precedent Id": "IDENTITY_REPETITION_PRECEDENT_001",
+    "Court": "Goblin Court",
+    "Root Anchor": "jaywisdom.base.eth",
+    "Lineage Anchor": "jaywisdom.eth",
+    "Receipt Hash": "0x32f65c664328a641328812806c8d484c43c52d414c2e4338f65b14beaf374030",
+    "Github Commit": "2517295ba986ea129fec39db2b376d179b725459",
+    "Ruling": "Identity is not session.",
+    "Authority": false
+  },
+  "raw_data": "0x0000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000001a000000000000000000000000000000000000000000000000000000000000001e032f65c664328a641328812806c8d484c43c52d414c2e4338f65b14beaf37403000000000000000000000000000000000000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000214944454e544954595f52455045544954494f4e5f505245434544454e545f30303100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c476f626c696e20436f757274000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000126a6179776973646f6d2e626173652e6574680000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d6a6179776973646f6d2e6574680000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000283235313732393562613938366561313239666563333964623262333736643137396237323534353900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000184964656e74697479206973206e6f742073657373696f6e2e0000000000000000",
+  "use_in_joy_metadata": {
+    "usable": true,
+    "use_as": [
+      "identity-continuity precedent",
+      "EAS lineage bridge",
+      "prior-work receipt for future Wisdom Boundary Authority schema",
+      "proof that root anchor and lineage anchor were already expressed together"
+    ],
+    "not_use_as": [
+      "current independent replay green",
+      "legal authority",
+      "official court finding",
+      "replacement for workflow validation",
+      "replacement for a new EAS attestation"
+    ]
+  },
+  "next_derivation_candidate": {
+    "schema_name": "BoundaryAuthorityWisdomV1",
+    "root_anchor": "jaywisdom.base.eth",
+    "lineage_anchor": "jaywisdom.eth",
+    "derived_principle": "Before any boundary touches a person, the authority must prove itself.",
+    "required_receipts": [
+      "authority_source",
+      "scope_limit",
+      "duration_or_review_date",
+      "evidence_basis",
+      "appeal_path",
+      "audit_log_uri",
+      "funding_source",
+      "harm_review"
+    ],
+    "status": "SCHEMA_DERIVATION_READY_NOT_ATTESTED"
+  },
+  "boundaries": {
+    "authority": false,
+    "no_fake_green": true,
+    "private_targeting": false,
+    "public_metadata_only": true,
+    "independent_chain_replay_required_for_green": true
+  }
+}
