@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/schemas/eas/SCHEMA_1578_PRECEDENT_TEMPLATE_V0_1.json",
+  "title": "EAS Schema 1578 Precedent Template V0.1",
+  "description": "Repo-side JSON template for preparing JOY-level precedent attestations before any EAS transaction is generated. This file does not create an attestation and does not claim authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "precedent_id",
+    "court",
+    "root_anchor",
+    "lineage_anchor",
+    "receipt_hash",
+    "github_commit",
+    "ruling",
+    "authority"
+  ],
+  "properties": {
+    "precedent_id": {
+      "type": "string",
+      "description": "EAS field: Precedent Id"
+    },
+    "court": {
+      "type": "string",
+      "description": "EAS field: Court"
+    },
+    "root_anchor": {
+      "type": "string",
+      "const": "jaywisdom.base.eth",
+      "description": "EAS field: Root Anchor"
+    },
+    "lineage_anchor": {
+      "type": "string",
+      "const": "jaywisdom.eth",
+      "description": "EAS field: Lineage Anchor"
+    },
+    "receipt_hash": {
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$",
+      "description": "EAS field: Receipt Hash / bytes32"
+    },
+    "github_commit": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{40}$",
+      "description": "EAS field: Github Commit"
+    },
+    "ruling": {
+      "type": "string",
+      "description": "EAS field: Ruling"
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false,
+      "description": "EAS field: Authority. Must be false unless a separate verified authority receipt exists."
+    },
+    "external_anchor_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eas": { "type": "string", "enum": ["PENDING_ON_CHAIN", "ATTESTED_WITH_UID"] },
+        "ipfs": { "type": "string", "enum": ["PENDING_REAL_CID", "CID_RECORDED"] },
+        "zora": { "type": "string", "enum": ["PENDING_PUBLIC_RECEIPT", "PUBLIC_RECEIPT_RECORDED"] },
+        "base": { "type": "string", "enum": ["PENDING_PUBLIC_TX", "PUBLIC_TX_RECORDED"] }
+      }
+    },
+    "no_fake_green": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "schema_1578_fields": [
+    "string Precedent Id",
+    "string Court",
+    "string Root Anchor",
+    "string Lineage Anchor",
+    "bytes32 Receipt Hash",
+    "string Github Commit",
+    "string Ruling",
+    "bool Authority"
+  ],
+  "attestation_generation": "DO_NOT_GENERATE_UNTIL_TEMPLATE_AND_ARTIFACT_ARE_AUDITED"
+}
