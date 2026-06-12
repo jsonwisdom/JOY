@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/schemas/retail/BLOCKBUSTER_RETAIL_2026_PACKAGE_SCHEMA_V0_1.json",
+  "title": "BLOCKBUSTER Retail 2026 Package Schema V0.1",
+  "description": "A jaywisdom.base.eth retail metadata schema for lawful on-chain media package provenance, licensing, receipts, and public replay. BLOCKBUSTER is used here as an imagined blockbuster-scale retail package concept, not as a trademark ownership claim.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "schema_version",
+    "project_identity",
+    "retail_package",
+    "lawful_use_boundary",
+    "provenance",
+    "on_chain_readiness",
+    "external_anchors",
+    "authority",
+    "green_implied",
+    "no_fake_green"
+  ],
+  "properties": {
+    "artifact": {
+      "const": "BLOCKBUSTER_RETAIL_2026_PACKAGE"
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "project_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basename", "ens", "operator"],
+      "properties": {
+        "basename": { "const": "jaywisdom.base.eth" },
+        "ens": { "const": "jaywisdom.eth" },
+        "operator": { "const": "Jay Wisdom" }
+      }
+    },
+    "retail_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_id", "package_name", "release_year", "category", "format", "retail_status"],
+      "properties": {
+        "package_id": { "type": "string", "pattern": "^[A-Z0-9_\\-]{6,96}$" },
+        "package_name": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "release_year": { "const": 2026 },
+        "category": { "enum": ["movie_metadata", "retail_bundle", "collector_pack", "digital_receipt_pack", "on_chain_media_package"] },
+        "format": { "enum": ["json", "jsonld", "ipfs_json", "eas_attested_json", "zora_metadata"] },
+        "retail_status": { "enum": ["draft", "ready_for_review", "ready_for_anchor", "anchored", "retired"] }
+      }
+    },
+    "lawful_use_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["copyright_respect", "license_required", "piracy_enabled", "trademark_claim", "consumer_deception"],
+      "properties": {
+        "copyright_respect": { "const": true },
+        "license_required": { "const": true },
+        "piracy_enabled": { "const": false },
+        "trademark_claim": { "const": false },
+        "consumer_deception": { "const": false }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_repo", "commit_sha", "content_sha256", "created_at_utc", "chain_of_custody"],
+      "properties": {
+        "source_repo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+        "commit_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "created_at_utc": { "type": "string", "format": "date-time" },
+        "chain_of_custody": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step", "receipt_type", "status"],
+            "properties": {
+              "step": { "type": "string" },
+              "receipt_type": { "enum": ["git_commit", "sha256", "ipfs_cid", "eas_uid", "zora_receipt", "retail_manifest"] },
+              "status": { "enum": ["pending", "verified", "failed", "not_applicable"] }
+            }
+          }
+        }
+      }
+    },
+    "on_chain_readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chain", "chain_id", "contract_or_schema_required", "ready_for_submission"],
+      "properties": {
+        "chain": { "enum": ["base", "optimism", "ethereum", "pending"] },
+        "chain_id": { "type": ["integer", "null"] },
+        "contract_or_schema_required": { "type": "boolean" },
+        "ready_for_submission": { "type": "boolean" }
+      }
+    },
+    "external_anchors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ipfs", "eas", "zora", "basename"],
+      "properties": {
+        "ipfs": {
+          "type": "object",
+          "required": ["status", "cid"],
+          "properties": {
+            "status": { "enum": ["pending", "anchored"] },
+            "cid": { "type": ["string", "null"] }
+          }
+        },
+        "eas": {
+          "type": "object",
+          "required": ["status", "schema_uid", "attestation_uid"],
+          "properties": {
+            "status": { "enum": ["pending", "schema_ready", "attested"] },
+            "schema_uid": { "type": ["string", "null"] },
+            "attestation_uid": { "type": ["string", "null"] }
+          }
+        },
+        "zora": {
+          "type": "object",
+          "required": ["status", "receipt"],
+          "properties": {
+            "status": { "enum": ["pending", "minted", "published"] },
+            "receipt": { "type": ["string", "null"] }
+          }
+        },
+        "basename": {
+          "type": "object",
+          "required": ["name", "status"],
+          "properties": {
+            "name": { "const": "jaywisdom.base.eth" },
+            "status": { "enum": ["declared", "updated", "verified"] }
+          }
+        }
+      }
+    },
+    "authority": { "const": false },
+    "green_implied": { "const": false },
+    "no_fake_green": { "const": true }
+  }
+}
