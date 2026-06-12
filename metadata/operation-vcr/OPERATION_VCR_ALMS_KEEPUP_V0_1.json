@@ -1,0 +1,80 @@
+{
+  "artifact": "OPERATION_VCR_ALMS_KEEPUP_V0_1",
+  "project": "JAYWISDOM_BASE_ETH_PROJECT_FISH",
+  "basename": "jaywisdom.base.eth",
+  "ens": "jaywisdom.eth",
+  "purpose": "Add ALMS as the keep-up layer for public metadata, cultural replay, repository receipts, and timed reports.",
+  "mode": "metadata_movies_and_receipts_only",
+  "operation_vcr": {
+    "meaning": "visible capture and replay",
+    "captures": [
+      "public_repo_commits",
+      "workflow_run_receipts",
+      "movie_metadata_maps",
+      "schema_index_updates",
+      "calm_reports",
+      "operator_approved_email_summaries"
+    ],
+    "does_not_capture": [
+      "private_profiles",
+      "unapproved_personal_data",
+      "location_tracking",
+      "secret_surveillance",
+      "unverified_claims"
+    ]
+  },
+  "alms_keepup_layer": {
+    "name": "ALMS",
+    "role": "metadata memory layer for keeping up with fast-moving project artifacts",
+    "inputs": [
+      "JOY root replay plan",
+      "Builder Boundary Sentinel workflows",
+      "BLOCKBUSTERS IRL Gen Z movie metadata",
+      "EAS schema index candidates",
+      "Zora flywheel candidates",
+      "IPFS anchor candidates"
+    ],
+    "outputs": [
+      "small_json_reports",
+      "receipt_indexes",
+      "hash_ready_artifacts",
+      "pending_anchor_manifests",
+      "daily_or_weekly_summary_packets"
+    ],
+    "status_labels": [
+      "PASS",
+      "WARN",
+      "HOLD",
+      "PENDING_ANCHOR",
+      "GREEN_ONLY_WITH_RECEIPT"
+    ]
+  },
+  "movie_metadata_extension": {
+    "source_artifact": "metadata/movies/BLOCKBUSTERS_IRL_GENZ_MOVIE_WATCHERS_V0_1.json",
+    "vcr_signal": "rewatch_loop",
+    "alms_signal": "metadata_keepup_index",
+    "boundary": "aggregate_cultural_patterns_only"
+  },
+  "timed_loops": {
+    "six_hour": "sentinel scan",
+    "daily": "calm report",
+    "weekly": "reputation ledger",
+    "manual": "operator hatch button before Matrix work"
+  },
+  "boundaries": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "personal_tracking": false,
+    "automatic_unapproved_email": false,
+    "private_claims_without_receipts": false,
+    "repo_rule": "receipts, manifests, hashes, commit SHAs, and public metadata only"
+  },
+  "anchor_plan": {
+    "ipfs": "PENDING_REAL_CID",
+    "eas": "PENDING_SCHEMA_OR_UID",
+    "zora": "PENDING_PUBLIC_RECEIPT",
+    "jaywisdom_base_eth": "PENDING_EXPLICIT_ANCHOR_UPDATE"
+  },
+  "status": "LIVE_GITHUB_METADATA_READY_PENDING_EXTERNAL_ANCHORS"
+}
