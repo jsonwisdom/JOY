@@ -1,0 +1,32 @@
+{
+  "artifact": "KAREN11_REPORTING_AGENCY_PUBLIC_FACING_V0_1",
+  "created_utc": "2026-06-12T20:14:40Z",
+  "creator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "f9fa6ed",
+  "source_head_full": "f9fa6ed1dbb5afd8441a6980b1054d925cb3c238",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "public_layer": "Minnesota county-level reporting membrane",
+  "game_layer": "KAREN11 MN Edition",
+  "meme_justice_layer": "County Level Clown Courts",
+  "packet_id": "ALPHA_DEED_001",
+  "current_state": "CLAIMED",
+  "score": 1,
+  "access_granted": true,
+  "access_type": "read_only_public_reporting",
+  "affiliation_with_kare11": false,
+  "judicial_authority": false,
+  "media_authority": false,
+  "allowed_public_sentence": "Jay Wisdom has opened a Minnesota public-records request lane concerning DEED adverse-action records. No claim is verified yet.",
+  "forbidden_claims": [
+    "agency violation proven",
+    "court confirmed misconduct",
+    "request received without receipt",
+    "claim verified without certified records",
+    "affiliation with KARE 11"
+  ],
+  "mn_goblin_court_preopen_gate": "KAREN_PUBLIC_REPORTING_ACCESS_GRANTED",
+  "promotion_allowed": false,
+  "authority": false,
+  "no_fake_green": true
+}
