@@ -1,22 +1,32 @@
-const { createHash } = require('crypto');
+const { createHash, sign, verify, generateKeyPairSync } = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
 class PSRKVSimulator {
-  constructor() {
+  constructor(keyPair = null) {
     this.state = new Map();
     this.receiptChain = [];
     this.currentHash = '0'.repeat(64); // genesis
     this.version = 'PSRKV-0.1';
+    this.keyPair = keyPair;
   }
 
-  // Helper for stable serialization.
   deterministicStringify(obj) {
     const sorted = Object.keys(obj).sort().reduce((acc, key) => {
       acc[key] = obj[key];
       return acc;
     }, {});
     return JSON.stringify(sorted);
+  }
+
+  signReceipt(dataBuffer) {
+    if (!this.keyPair?.privateKey) return null;
+    return sign(null, dataBuffer, this.keyPair.privateKey).toString('base64');
+  }
+
+  verifySignature(dataBuffer, signature) {
+    if (!this.keyPair?.publicKey || !signature) return false;
+    return verify(null, dataBuffer, this.keyPair.publicKey, Buffer.from(signature, 'base64'));
   }
 
   transition(key, value, metadata = {}, opts = {}) {
@@ -35,13 +45,15 @@ class PSRKVSimulator {
     });
 
     const hash = createHash('sha256').update(hashInput).digest('hex');
+    const sigPayload = Buffer.from(hash);
+    const signature = this.signReceipt(sigPayload);
 
     const receipt = {
       hash,
       prevHash,
       data,
       transitionId,
-      signature: this.signReceipt({ hash, prevHash, data, transitionId })
+      signature
     };
 
     this.state.set(key, value);
@@ -52,7 +64,7 @@ class PSRKVSimulator {
   }
 
   replayFromTransitions(transitions) {
-    const sim = new PSRKVSimulator();
+    const sim = new PSRKVSimulator(this.keyPair);
     for (const t of transitions) {
       sim.transition(t.key, t.value, t.metadata || {}, {
         timestamp: t.timestamp,
@@ -62,8 +74,9 @@ class PSRKVSimulator {
     return sim;
   }
 
-  verifyChain() {
+  verifyChain(options = { requireSignatures: false }) {
     let expectedHash = '0'.repeat(64);
+
     for (const receipt of this.receiptChain) {
       const hashInput = this.deterministicStringify({
         prevHash: receipt.prevHash,
@@ -76,6 +89,13 @@ class PSRKVSimulator {
       if (computedHash !== receipt.hash || receipt.prevHash !== expectedHash) {
         return false;
       }
+
+      if (options.requireSignatures) {
+        if (!this.verifySignature(Buffer.from(receipt.hash), receipt.signature)) {
+          return false;
+        }
+      }
+
       expectedHash = receipt.hash;
     }
     return true;
@@ -104,26 +124,25 @@ class PSRKVSimulator {
     return filePath;
   }
 
-  signReceipt(receipt) {
-    // Stub: PSR-SIG-LAYER-V0.1
-    // Implementation target: Ed25519 signing of the canonical receipt hash envelope.
-    return null;
-  }
-
   toLatticePoint(receipt, index) {
-    // Stub: Maps hash to coordinate space for resilience modeling.
     return {
       coord: index,
       label: receipt.hash.slice(0, 16),
       payloadHash: receipt.hash
     };
   }
+
+  static generateKeyPair() {
+    return generateKeyPairSync('ed25519');
+  }
 }
 
 module.exports = { PSRKVSimulator };
 
 if (require.main === module) {
-  const sim = new PSRKVSimulator();
+  const keyPair = PSRKVSimulator.generateKeyPair();
+  const sim = new PSRKVSimulator(keyPair);
+
   sim.transition('asset:gcre', 'protected', {
     lane: 'gcre',
     authority: false,
@@ -140,12 +159,13 @@ if (require.main === module) {
     transitionId: 'gcre-shadow-transition-0002'
   });
 
-  const ok = sim.verifyChain();
+  const ok = sim.verifyChain({ requireSignatures: true });
   const fixturePath = sim.exportGoldenFixtures('fixtures/gcre/psrkv-test-vectors-v0.1.json');
 
   console.log(JSON.stringify({
     simulator: sim.version,
     verifyChain: ok,
+    requireSignatures: true,
     currentHash: sim.currentHash,
     fixturePath
   }, null, 2));
