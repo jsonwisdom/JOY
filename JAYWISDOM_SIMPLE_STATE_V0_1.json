@@ -28,16 +28,66 @@
       ]
     },
     "state_lanes": {
-      "MN": "public metadata membrane",
-      "AL": "business and public metadata keep-up",
-      "UTAH": "public physical infrastructure lens only"
+      "MN": {
+        "role": "public metadata membrane",
+        "status": "ACTIVE_GITHUB_RECEIPT"
+      },
+      "AL": {
+        "role": "business and public metadata keep-up",
+        "status": "ACTIVE_GITHUB_RECEIPT"
+      },
+      "UTAH": {
+        "role": "public physical infrastructure lens only",
+        "status": "PUBLIC_METADATA_ONLY"
+      }
     },
     "optional_external_anchors": {
-      "EAS": "pending real schema or UID",
-      "IPFS": "pending real CID",
-      "Zora": "pending public receipt",
-      "Base": "pending public transaction"
+      "EAS": "PENDING_REAL_SCHEMA_OR_UID",
+      "IPFS": "PENDING_REAL_CID",
+      "Zora": "PENDING_PUBLIC_RECEIPT",
+      "Base": "PENDING_PUBLIC_TRANSACTION"
     }
+  },
+  "verification": {
+    "required_state_lanes": [
+      "MN",
+      "AL",
+      "UTAH"
+    ],
+    "critical_files": [
+      "README.md",
+      "PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md",
+      "VALIDATION_LAYER_START_HERE_V0_1.md",
+      "SIGN_UP_AND_FEEDBACK_V0_1.md",
+      "command-center/JAYWISDOM_GITHUB_COMMAND_CENTER_V0_1.md",
+      "tools/verify-this-repo.py",
+      ".github/workflows/zero-trust-audit.yml",
+      "AUDIT_LOG.md",
+      "metadata/alms/ALABAMA_ALMS_KEEPUP_V0_1.json",
+      "metadata/mn/MN_METADATA_MEMBRANE_MESH_V0_1.json",
+      "metadata/operation-vcr/OPERATION_VCR_ALMS_KEEPUP_V0_1.json",
+      "metadata/movies/BLOCKBUSTERS_IRL_GENZ_MOVIE_WATCHERS_V0_1.json",
+      "schemas/retail/BLOCKBUSTER_RETAIL_2026_PACKAGE_SCHEMA_V0_1.json"
+    ],
+    "required_text": {
+      "README.md": [
+        "PUBLIC START HERE",
+        "jaywisdom.base.eth",
+        "jsonwisdom/JOY"
+      ],
+      "PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md": [
+        "jsonwisdom/JOY",
+        "jaywisdom.base.eth",
+        "no_fake_green"
+      ],
+      "VALIDATION_LAYER_START_HERE_V0_1.md": [
+        "python3 tools/verify-this-repo.py --json",
+        "zero-trust-audit.yml"
+      ]
+    },
+    "hash_policy": "compute_and_report_sha256; compare expected_sha256 only when explicitly pinned",
+    "lane_value_policy": "lane must exist; null is allowed only as declared empty; numeric zero is invalid",
+    "external_anchor_policy": "pending until real public receipt is recorded"
   },
   "rules": {
     "public_metadata_only_by_default": true,
