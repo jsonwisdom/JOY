@@ -1,5 +1,32 @@
 # JOYSPACE 🌈🧾
 
+## PUBLIC START HERE — `jaywisdom.base.eth`
+
+This repository is the current public GitHub root for the `jaywisdom.base.eth` metadata system.
+
+**Canonical public root:** `https://github.com/jsonwisdom/JOY`
+
+**Project identity:** `jaywisdom.base.eth` / `jaywisdom.eth`
+
+**Related public repos to inspect:**
+
+- `https://github.com/jsonwisdom/JOY`
+- `https://github.com/jsonwisdom/AL`
+- `https://github.com/jsonwisdom/COMPUTERWISDOM`
+- `https://github.com/jsonwisdom/HEIDEE`
+
+**New here? Start with these:**
+
+- [`PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md`](PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md) — canonical locator map for auditors, developers, and curious humans
+- [`SIGN_UP_AND_FEEDBACK_V0_1.md`](SIGN_UP_AND_FEEDBACK_V0_1.md) — how to leave a comment, sign up, or ask what this is
+- [`JAYWISDOM_BASE_ETH_ROOT_REPLAY_PLAN_V0_1.md`](JAYWISDOM_BASE_ETH_ROOT_REPLAY_PLAN_V0_1.md) — timed replay plan and repo loop discipline
+- [`schemas/retail/BLOCKBUSTER_RETAIL_2026_PACKAGE_SCHEMA_V0_1.json`](schemas/retail/BLOCKBUSTER_RETAIL_2026_PACKAGE_SCHEMA_V0_1.json) — example JSON schema artifact
+- [`metadata/operation-vcr/OPERATION_VCR_ALMS_KEEPUP_V0_1.json`](metadata/operation-vcr/OPERATION_VCR_ALMS_KEEPUP_V0_1.json) — ALMS keep-up metadata layer
+
+**Zero-trust rule:** public GitHub artifacts are evidence. Narrative is not evidence. No fake green.
+
+---
+
 **JOYSPACE** is a family-safe digital garden, witness layer, and continuity layer for Wisdom Replay Systems.
 
 ## 🚪 Start Here — Badger Camp Front Porch
