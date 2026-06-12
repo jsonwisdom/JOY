@@ -1,0 +1,15 @@
+{
+  "artifact": "zora_metadata_visual_pack_v0_1",
+  "identity": "jaywisdom.base.eth",
+  "status": "VISUAL_CONSTITUTION_BOUND",
+  "authority": false,
+  "no_fake_green": true,
+  "layers": [
+    "Witness Constellation",
+    "Logical Flywheel",
+    "Settlement Topology",
+    "Temporal Membrane",
+    "Replay Receipts",
+    "Observer Frame"
+  ]
+}
