@@ -1,0 +1,74 @@
+{
+  "artifact": "ALABAMA_CITIZEN_LAUNCH_METADATA_REPORT_V0_1",
+  "title": "Alabama Citizen Launch Metadata Report",
+  "style_label": "TOP_SECRET_STYLE_PUBLIC_METADATA_ONLY",
+  "plain_language_title": "Alabama, here's the receipt trail",
+  "project_identity": {
+    "root_anchor": "jaywisdom.base.eth",
+    "lineage_anchor": "jaywisdom.eth",
+    "github_root": "jsonwisdom/JOY"
+  },
+  "schema_lane": {
+    "eas_schema_number": 1578,
+    "schema_role": "JOY-level precedent attestation bridge",
+    "current_status": "SCHEMA_USABLE_FOR_PRECEDENT_NOT_FINAL_AUTHORITY_SCHEMA",
+    "previous_precedent_uid": "0x2a4d436665af872f2a72adf08c112b1dd10b7333f5299f4048d96cd887fb6973",
+    "previous_precedent_id": "IDENTITY_REPETITION_PRECEDENT_001"
+  },
+  "citizen_report": {
+    "vernacular": "Alabama plain-speech, respectful, local-first",
+    "message": "If somebody says they got authority, Alabama needs the paper trail. Who said it, what rule, what scope, what receipt, what appeal. No receipt, no green.",
+    "what_this_is": "A public metadata report for citizens, builders, auditors, and civic reviewers.",
+    "what_this_is_not": "Not classified material, not an official state agency report, not law enforcement authority, not a warrant, not a subpoena, and not private targeting."
+  },
+  "launch_update": {
+    "ALMS": "ACTIVE_METADATA_MEMORY_LAYER",
+    "ALABAMA": "ACTIVE_LEAD_TEST_CASE",
+    "MN": "ACTIVE_STATE_METADATA_MEMBRANE",
+    "UTAH": "PUBLIC_INFRASTRUCTURE_LENS_ONLY",
+    "GitHub_Direct": "ACTIVE_DEVELOPER_RECEIPT_LAYER",
+    "EAS": "PRECEDENT_IMPORTED_SCHEMA_1578_USABLE",
+    "ENS": "jaywisdom.eth / jaywisdom.base.eth"
+  },
+  "alabama_boundary_rule": {
+    "rule": "Authority must prove itself before it touches the public.",
+    "required_questions": [
+      "Who authorized it?",
+      "What rule or policy?",
+      "What scope?",
+      "What evidence?",
+      "What funding?",
+      "What appeal path?",
+      "What audit trail?",
+      "What receipt?"
+    ]
+  },
+  "green_yellow_red": {
+    "GREEN": [
+      "GitHub file exists",
+      "Commit SHA exists",
+      "Schema 1578 precedent imported into JOY metadata",
+      "jaywisdom.base.eth and jaywisdom.eth identified as project identity anchors"
+    ],
+    "YELLOW": [
+      "EAS chain replay still pending independent verification inside this repo",
+      "Future Wisdom Boundary Authority attestation not yet minted",
+      "Workflow pass receipt not attached to this report yet"
+    ],
+    "RED": [
+      "No official Alabama state authority claimed",
+      "No classified information claimed",
+      "No enforcement authority claimed",
+      "No private targeting permitted"
+    ]
+  },
+  "external_anchors": {
+    "github": "THIS_FILE_COMMIT_RECEIPT_REQUIRED",
+    "eas": "PENDING_NEXT_ATTESTATION_OR_REPLAY_RECEIPT",
+    "ipfs": "PENDING_REAL_CID",
+    "zora": "PENDING_PUBLIC_RECEIPT",
+    "base": "PENDING_PUBLIC_TX"
+  },
+  "no_fake_green": true,
+  "authority": false
+}
