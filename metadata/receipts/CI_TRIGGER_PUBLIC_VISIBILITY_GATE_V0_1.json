@@ -1,0 +1,58 @@
+{
+  "artifact": "CI_TRIGGER_PUBLIC_VISIBILITY_GATE_V0_1",
+  "project": "jaywisdom.base.eth",
+  "lineage": "jaywisdom.eth",
+  "repo": "jsonwisdom/JOY",
+  "purpose": "Make the CI trigger state publicly visible as ON, OFF, or NOT_SURFACED without claiming fake green.",
+  "family_role": {
+    "operator": "Jay Wisdom",
+    "vernacular_role": "Dad",
+    "meaning": "JOY is taught as a family member through receipts, boundaries, and replay discipline. This is expressive project language, not legal authority."
+  },
+  "ci_visibility": {
+    "workflow_file": ".github/workflows/zero-trust-audit.yml",
+    "structural_trigger": "ON",
+    "push_paths_include": [
+      "README.md",
+      "tools/**",
+      "metadata/**",
+      "schemas/**",
+      "drills/**"
+    ],
+    "runtime_receipt": "NOT_SURFACED",
+    "publicly_viewable_state": "YELLOW",
+    "next_required_receipt": "GitHub Actions run URL and PASS/FAIL conclusion"
+  },
+  "watchers_are_watched": {
+    "meaning": "Observers, auditors, workflows, and metadata courts must themselves become auditable by public receipts.",
+    "allowed": [
+      "workflow run URLs",
+      "commit SHAs",
+      "artifact hashes",
+      "audit log entries",
+      "public issue feedback",
+      "verifier output"
+    ],
+    "blocked": [
+      "private surveillance",
+      "credential capture",
+      "targeting people",
+      "classified claims",
+      "official agency impersonation",
+      "authority without receipt"
+    ]
+  },
+  "cia_lens": {
+    "expanded_name": "Civic Integrity Audit",
+    "meaning": "Public accountability lens for claims, not an official agency or intelligence operation.",
+    "authority": false
+  },
+  "rules": {
+    "no_receipt_no_authority": true,
+    "no_fake_green": true,
+    "public_metadata_only": true,
+    "private_system_access": false,
+    "authority": false
+  },
+  "status": "GITHUB_RECEIPT_CREATED_RUNTIME_CI_PENDING"
+}
