@@ -1,0 +1,25 @@
+{
+  "packet_id": "ALPHA_DEED_001",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "lane": "DEED_ADVERSE_ACTION_TRAIL",
+  "creator": "jaywisdom.base.eth",
+  "jurisdiction": "Minnesota",
+  "agency": "Minnesota Department of Employment and Economic Development",
+  "claim_status": "UNVERIFIED_CLAIM",
+  "state": "CLAIMED",
+  "score": 1,
+  "authority": false,
+  "affiliation_with_kare11": false,
+  "no_fake_green": true,
+  "required_next_receipt": "signed_mgdpa_request",
+  "evidence_ladder": [
+    "UNKNOWN",
+    "CLAIMED",
+    "OBSERVED",
+    "REQUESTED",
+    "RECEIVED",
+    "PRESERVED",
+    "VERIFIED",
+    "REPLAYABLE"
+  ]
+}
