@@ -1,0 +1,44 @@
+{
+  "artifact": "MN_VETERAN_WITNESS_WORKFLOW_REPLAY_V0_1",
+  "created_utc": "2026-06-12T20:57:45Z",
+  "operator": "Jay Wisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "source_head_short": "f034822",
+  "source_head_full": "f034822406e2e349101ea4e1e110d5d5c39e91d5",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "mode": "daily_grind_witness_workflow",
+  "audience": [
+    "Minnesota veterans",
+    "Minnesota citizens",
+    "public-records observers",
+    "Congress-facing public-interest readers"
+  ],
+  "witness_rule": "Veterans and citizens may submit voluntary witness packets. A witness statement is a claim until receipts support it.",
+  "reporting_layer": "KAREN11 Reporting Agency",
+  "broadcast_layer": "public-facing receipt theater only",
+  "kare11_affiliation": false,
+  "congressional_authority": false,
+  "judicial_authority": false,
+  "criminal_finding": false,
+  "current_packet": "ALPHA_DEED_001",
+  "current_packet_state": "REQUEST_SENT_OBSERVED_PENDING_REPO_RECEIPT",
+  "daily_action": "collect one witness packet, one receipt, one replay note",
+  "forbidden": [
+    "harassment",
+    "personal targeting",
+    "identity-based accusation",
+    "claiming official court or congressional authority",
+    "claiming KARE11 affiliation",
+    "fake green"
+  ],
+  "allowed": [
+    "public-records requests",
+    "voluntary witness statements",
+    "redacted receipts",
+    "metadata comparison",
+    "court and agency index audits",
+    "Congress-facing public-interest summaries"
+  ],
+  "authority": false,
+  "no_fake_green": true
+}
