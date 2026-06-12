@@ -1,0 +1,36 @@
+{
+  "artifact": "ALABAMA_ALMS_KEEPUP_V0_1",
+  "github_root": "jsonwisdom/JOY",
+  "project_identity": "jaywisdom.base.eth",
+  "ens": "jaywisdom.eth",
+  "lane": "public_metadata_keepup",
+  "purpose": "Add Alabama as a public metadata and validation drill lane for the ALMS keep-up system.",
+  "scope": [
+    "GitHub receipts",
+    "JSON metadata",
+    "schema validation",
+    "public feedback issues",
+    "workflow reports",
+    "future external anchors when real receipts exist"
+  ],
+  "drill_steps": [
+    "find locator index",
+    "run verifier",
+    "classify GREEN YELLOW RED",
+    "open public feedback issue",
+    "record only real external receipts"
+  ],
+  "external_anchor_status": {
+    "ipfs": "PENDING_REAL_CID",
+    "eas": "PENDING_SCHEMA_OR_UID",
+    "zora": "PENDING_PUBLIC_RECEIPT",
+    "base": "PENDING_PUBLIC_TX"
+  },
+  "boundary": {
+    "authority": false,
+    "green_implied": false,
+    "no_fake_green": true,
+    "aggregate_public_metadata_only": true
+  },
+  "version": "0.1"
+}
