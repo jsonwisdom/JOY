@@ -1,0 +1,119 @@
+{
+  "artifact": "THREE_CUP_HONEST_COUNT_V0_1",
+  "subject": "Street Math",
+  "requested_surface": "Three Card Monte request received",
+  "main_character": "Jay the Chinese Street Hustler",
+  "mode": "elementary_math_playground_lesson",
+  "tone": [
+    "replay_humor",
+    "audience_laughter",
+    "honest_counting",
+    "no_fake_green"
+  ],
+  "authority": false,
+  "green_implied": false,
+  "core_ruling": {
+    "child_ruling": "Trust the child with the fridge photo, not the child with the pink shoes.",
+    "plain_language": "The winner is not chosen by identity, costume, charm, or expectation. The winner is whoever produces the receipt.",
+    "chinese_caption": "先存证，再吵架。",
+    "english_caption": "Record first, argue second."
+  },
+  "game": {
+    "name": "Three Cup Honest Count",
+    "inspired_by": "three-card-monte style attention game",
+    "safe_classroom_form": "three cups, one token, one photo receipt",
+    "not_a_gambling_instruction": true,
+    "learning_goal": "Teach probability, verification, fairness, and receipt-based trust."
+  },
+  "players": {
+    "jay": {
+      "role": "street_math_teacher",
+      "perspective": "I do not need the kid to believe me. I need the kid to count, look, and replay.",
+      "joke": "Everybody wants the green check. Nobody wants to open the fridge."
+    },
+    "unknown_player": {
+      "role": "learner",
+      "starting_state": "trusts the loudest story",
+      "target_state": "trusts the receipt"
+    },
+    "audience": {
+      "role": "watching_witnesses",
+      "reaction": "LMFAO when the confident guess loses to the quiet photo."
+    }
+  },
+  "math": {
+    "cups": 3,
+    "hidden_token_count": 1,
+    "blind_guess_probability": "1/3",
+    "receipt_check_probability": "deterministic_if_photo_is_valid",
+    "lesson": "Guessing is chance. Verifying is a different game."
+  },
+  "round_rules": [
+    {
+      "round_type": "ordinary_round",
+      "rule": "Player may guess which cup holds the token.",
+      "math_state": "1-in-3 probability if no extra evidence exists."
+    },
+    {
+      "round_type": "every_second_round",
+      "rule": "A receipt is required before any win is accepted.",
+      "math_state": "No receipt means no green check, even if the guess sounds right."
+    },
+    {
+      "round_type": "disputed_round",
+      "rule": "The photo of the fridge beats the story about the fridge.",
+      "math_state": "Observable record outranks narrative."
+    }
+  ],
+  "fairness_policy": {
+    "automatic_winner": false,
+    "gendered_win_rule": "rejected",
+    "winner_rule": "Winner equals whoever shows a valid receipt, girl or boy.",
+    "partner_trust_lesson": "Boys learn to trust partners through verifiable evidence, not dominance. Girls learn a win is stronger when it can be proven, not gifted."
+  },
+  "classroom_props": {
+    "cups": 3,
+    "token": "one visible learning token",
+    "receipt": "photo evidence, timestamp, or agreed classroom record",
+    "sad_checkmark": "appears when a claim has no receipt",
+    "lit_candle": "means the question is open, not settled"
+  },
+  "scene_replay": [
+    {
+      "scene": 1,
+      "jay_says": "Three cups. One token. One story. Which one wins?",
+      "student_says": "The lucky guess?",
+      "jay_says_next": "Nope. The receipt.",
+      "audience": "LMFAO because the math teacher just robbed the scam of its scam."
+    },
+    {
+      "scene": 2,
+      "jay_says": "Every second round, the cup is not enough. Show the fridge photo.",
+      "student_says": "But I picked right!",
+      "jay_says_next": "Then proving it should be easy.",
+      "audience": "The checkmark gets sad until evidence walks in."
+    },
+    {
+      "scene": 3,
+      "jay_internal": "This is not about cups. This is about who controls the story after the shuffle.",
+      "audience_internal": "Wait. This is economics. This is court. This is school. This is every receipt I forgot to keep.",
+      "jay_says": "Now you see the trick. The trick was never the cup. The trick was skipping the record."
+    }
+  ],
+  "ledger": {
+    "claim": "I won because I said so.",
+    "status": "not_verified",
+    "claim_with_receipt": "I won and here is the photo.",
+    "status_with_receipt": "eligible_for_green_check",
+    "final_rule": "No green check without fridge photo."
+  },
+  "closing_line": "Candle lit. Checkmark sad until receipt shown. Ledger honest.",
+  "tags": [
+    "street_math",
+    "honest_json",
+    "three_cup_honest_count",
+    "verification_over_narrative",
+    "no_fake_green",
+    "replay_learning"
+  ]
+}
