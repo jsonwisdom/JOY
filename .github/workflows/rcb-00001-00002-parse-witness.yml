@@ -34,6 +34,8 @@ jobs:
           {
             echo "# RCB 00001-00002 Parse Witness"
             echo
+            echo "trigger_commit: ${GITHUB_SHA}"
+            echo
             echo "## RCB-00001"
             echo '```text'
             sha256sum rcb_parse_witness/RCB-00001.json
