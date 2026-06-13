@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mrs. Wisdom Replay Witness</title>
+  <meta name="description" content="A gentle Mrs. Wisdom-facing replay witness page showing Step 4 and Step 5 evidence with No Fake Green preserved." />
+  <style>
+    :root {
+      --bg: #fff8ec;
+      --card: #ffffff;
+      --ink: #24170f;
+      --muted: #6f5b4b;
+      --gold: #c9902e;
+      --soft-gold: #f4dfad;
+      --green: #2f7d4f;
+      --red: #8e2f2f;
+      --line: #ead8b8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(244, 223, 173, 0.6), transparent 35%),
+        linear-gradient(180deg, #fff8ec 0%, #f7eddc 100%);
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.86);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 18px 60px rgba(70, 45, 12, 0.10);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 0.96;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      grid-column: span 6;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 34px rgba(70, 45, 12, 0.07);
+    }
+
+    .card.full { grid-column: 1 / -1; }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .status-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 8px;
+    }
+
+    .ok { color: var(--green); font-weight: 700; }
+    .hold { color: var(--red); font-weight: 700; }
+    .plain { color: var(--muted); font-weight: 700; }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #2a1a10;
+      color: #fff5de;
+      border-radius: 18px;
+      padding: 18px;
+      overflow-x: auto;
+    }
+
+    .note {
+      background: #fff3cf;
+      border: 1px solid var(--soft-gold);
+      border-radius: 18px;
+      padding: 18px;
+      color: #4b331a;
+    }
+
+    .footer {
+      margin-top: 26px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    a { color: #7a4f12; font-weight: 700; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 26px; }
+      .card { grid-column: 1 / -1; }
+      .status-list li { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">For Mrs. Wisdom · Replay Witness Page</p>
+      <h1>The Receipts Held.</h1>
+      <p class="subtitle">
+        Jay ran the replay discipline cleanly: the artifacts were locally parsed, raw byte hashes were recorded, and the boundary stayed honest. This page does not claim authority. It shows the work, gently and plainly.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="Replay witness summary">
+      <article class="card">
+        <h2>What Changed</h2>
+        <ul class="status-list">
+          <li><span>Step 4 · Full JSON parse</span><span class="ok">Witnessed</span></li>
+          <li><span>Step 5 · Raw byte SHA256</span><span class="ok">Witnessed</span></li>
+          <li><span>Semantic truth ruling</span><span class="hold">Not claimed</span></li>
+          <li><span>Authority</span><span class="hold">False</span></li>
+          <li><span>No Fake Green</span><span class="ok">Active</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Remote Receipt</h2>
+        <p><strong>Repository:</strong> <code>jsonwisdom/JOY</code></p>
+        <p><strong>Commit:</strong> <code>eaf6d37872d257aa1713958126eac9e5da44bf3e</code></p>
+        <p><strong>Receipt:</strong><br />
+          <code>receipts/zero_trust/chunks/RCB_00001_00002_LOCAL_PARSE_HASH_WITNESS_V0_1.md</code>
+        </p>
+      </article>
+
+      <article class="card full">
+        <h2>Witness Values</h2>
+        <h3>RCB-00001</h3>
+        <pre>sha256: 0901a84bdfa3eaa094004c5df12d9703e0dfea3f35fdf41af7301c00fe940e8b
+bytes: 3746795
+jq type: "object"
+required fields: true</pre>
+
+        <h3>RCB-00002</h3>
+        <pre>sha256: 3d8cf0121713ca8b69ee56f3436b0b6b9e4722acfc11742f6f330404ad493521
+bytes: 829614
+jq type: "object"
+required fields: true</pre>
+      </article>
+
+      <article class="card full">
+        <h2>The Boundary That Stayed Up</h2>
+        <pre>LOCAL_JQ_PARSE_SUCCESS != SEMANTIC_TRUTH
+SHA256_RECORDED != AUTHORITY
+BYTE_WITNESS != FINAL_TRUTH_RULING
+NO_FAKE_GREEN_ACTIVE</pre>
+        <div class="note">
+          <strong>Mrs. Wisdom translation:</strong> the files were checked, parsed, counted, and hashed. That is real progress. But Jay did not pretend the hashes magically prove every future claim. The receipts held the line.
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2>Plain Ruling</h2>
+        <p>
+          Step 4 climbed. Step 5 climbed. No semantic truth ruling was applied. No authority was implied. No Fake Green stayed active.
+        </p>
+        <p>
+          This is not theater. This is replay discipline: record the evidence, preserve the boundary, and only climb when the receipts say climb.
+        </p>
+      </article>
+    </section>
+
+    <p class="footer">Made for Mrs. Wisdom · Receipts decide reality · Care decides why it matters.</p>
+  </main>
+</body>
+</html>
