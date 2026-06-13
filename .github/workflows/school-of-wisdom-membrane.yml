@@ -1,0 +1,71 @@
+name: School of Wisdom Membrane Checks
+
+on:
+  push:
+    paths:
+      - 'docs/school-of-wisdom/**'
+      - '.github/workflows/school-of-wisdom-membrane.yml'
+  pull_request:
+    paths:
+      - 'docs/school-of-wisdom/**'
+      - '.github/workflows/school-of-wisdom-membrane.yml'
+  workflow_dispatch:
+
+jobs:
+  membrane:
+    name: no fake green / no fake authority
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify School of Wisdom membrane invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "Checking School of Wisdom artifacts..."
+
+          FAIL=0
+
+          check_file() {
+            local file="$1"
+            echo "::group::Checking $file"
+
+            if ! grep -qi "no_fake_green\|No Fake Green\|no fake green" "$file"; then
+              echo "::error file=$file::Missing no_fake_green / No Fake Green boundary"
+              FAIL=1
+            fi
+
+            if ! grep -qi "authority.*false\|Authority: false\|authority: false" "$file"; then
+              echo "::error file=$file::Missing authority=false boundary"
+              FAIL=1
+            fi
+
+            if grep -Eqi "ethnic_targeting: true|ethnic targeting: true|law_enforcement: true|law enforcement: true|authority: true" "$file"; then
+              echo "::error file=$file::Unsafe authority or targeting assertion detected"
+              FAIL=1
+            fi
+
+            if grep -Eqi "target a community|targeting a community|target the people|blame the community|group blame|guilt by ethnicity" "$file"; then
+              echo "::error file=$file::Unsafe community-targeting frame detected"
+              FAIL=1
+            fi
+
+            if ! grep -q "先存证，再吵架" "$file"; then
+              echo "::warning file=$file::Missing closing rule: 先存证，再吵架"
+            fi
+
+            echo "::endgroup::"
+          }
+
+          while IFS= read -r -d '' file; do
+            check_file "$file"
+          done < <(find docs/school-of-wisdom -type f \( -name '*.md' -o -name '*.html' -o -name '*.json' \) -print0)
+
+          if [[ "$FAIL" -ne 0 ]]; then
+            echo "Membrane check failed. No fake green."
+            exit 1
+          fi
+
+          echo "Membrane check passed: no fake green, no fake authority."
