@@ -1,0 +1,64 @@
+{
+  "receipt_id": "ISD742_MAILBOX_LOCAL_VERIFICATION_V0_1",
+  "status": "OPERATOR_LOCAL_VERIFICATION_PENDING",
+  "authority": false,
+  "no_fake_green": true,
+  "target": "ISD 742 Data Practices mailbox discovery",
+  "operator": "Jason Wisdom",
+  "verified_at_utc": "",
+  "sources": [
+    {
+      "source_id": "policy_722",
+      "url": "https://quorum.sparqdata.com/Documents/DownloadPDF/26d6c030-5284-4558-b735-f9a441d0830b?org=1478",
+      "local_file": "policy_722.pdf",
+      "sha256": "",
+      "search_term": "Data Practices Compliance Official",
+      "verbatim_excerpt": "",
+      "match_result": "PENDING"
+    },
+    {
+      "source_id": "oak_hill_handbook",
+      "url": "https://www.isd742.org/cms/lib/MN01909691/Centricity/Domain/604/Handbooks/Oak_Hill_SH.pdf",
+      "local_file": "oak_hill_handbook.pdf",
+      "sha256": "",
+      "search_term": "Data Practices Officer",
+      "verbatim_excerpt": "",
+      "match_result": "PENDING"
+    },
+    {
+      "source_id": "superintendent_page",
+      "url": "https://www.isd742.org/about-us/superintendent",
+      "local_file": "optional_superintendent_page.html",
+      "sha256": "",
+      "verbatim_excerpt": "",
+      "match_result": "OPTIONAL_PENDING"
+    }
+  ],
+  "claimed_mailbox": {
+    "name": "Tracy Flynn Bowe",
+    "title": "Executive Director of Human Resources / Data Practices Compliance Official",
+    "email": "tracy.bowe@isd742.org",
+    "phone": "(320) 370-8040"
+  },
+  "responsible_authority": {
+    "name": "Laurie Putnam",
+    "title": "Superintendent",
+    "verification_status": "PENDING"
+  },
+  "state_after_completion": {
+    "recipient_contact_confirmed_by_operator": true,
+    "envelope_status": "TRANSMIT_READY",
+    "isd_742_delivery": "NOT_PROVEN",
+    "promotion": false
+  },
+  "current_state": {
+    "local_verification_template": "COMMITTED_BEIGE",
+    "operator_hashes": "PENDING",
+    "verbatim_excerpts": "PENDING",
+    "recipient_contact_confirmed_by_me": false,
+    "recipient_contact_confirmed_by_operator": "PENDING",
+    "sendable": false,
+    "promotion": false,
+    "no_fake_green": true
+  }
+}
