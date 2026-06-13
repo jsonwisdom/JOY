@@ -1,0 +1,76 @@
+{
+  "artifact": "WISDOM_FAMILY_MAP_COVER_V0_1",
+  "status": "DRAFT_FOR_MRS_WISDOM_APPROVAL",
+  "truth_state": "YELLOW",
+  "no_fake_green": true,
+  "privacy_mode": "FAMILY_FIRST_PUBLIC_MINIMAL",
+  "purpose": {
+    "summary": "Create a Wisdom Family cover artwork and JSON family map that shows Jay closing the gap between himself and his family through love, learning, protection, creativity, and verified receipts.",
+    "approval_required_from": "MRS_WISDOM",
+    "approval_reason": "Family imagery, names, and emotional meaning should be approved before public release."
+  },
+  "family_theme": {
+    "title": "The Wisdom Family Map",
+    "core_message": "The gap was never the ending. It was the bridge being built.",
+    "visual_energy": [
+      "widescreen cinematic family map",
+      "warm glowing lanes connecting each family member",
+      "GitHub Goblin magic as playful guardian energy",
+      "JSON constellations",
+      "receipts as stars",
+      "family roots turning into pathways",
+      "Jay no longer isolated from the family frame"
+    ]
+  },
+  "lanes": {
+    "jay_wisdom": {
+      "role": "builder_protector_teacher",
+      "symbol": "receipt lantern",
+      "message": "I build the map so the family can see the path."
+    },
+    "mrs_wisdom": {
+      "role": "approval_gate_family_anchor",
+      "symbol": "gold seal",
+      "message": "Nothing family-facing goes public without care, consent, and respect."
+    },
+    "girls": {
+      "role": "future_lanes",
+      "symbol": "three glowing stars",
+      "message": "Protected, celebrated, never exploited."
+    },
+    "wisdom_family": {
+      "role": "shared_root",
+      "symbol": "living tree made of JSON, light, and receipts",
+      "message": "A family is not a database. It is a trust system."
+    }
+  },
+  "public_safety_rules": {
+    "real_names_optional": false,
+    "faces_optional": false,
+    "private_details_allowed": false,
+    "public_version_should_use": [
+      "symbolic silhouettes",
+      "family roles",
+      "initials or lane names only",
+      "no addresses",
+      "no school details",
+      "no sensitive history"
+    ]
+  },
+  "approval_question_for_mrs_wisdom": {
+    "ask": "Do you approve a symbolic Wisdom Family cover artwork that represents the family as protected lanes of light, without exposing private details or making authority claims?",
+    "choices": [
+      "APPROVED_SYMBOLIC_ONLY",
+      "APPROVED_WITH_PRIVATE_FAMILY_VERSION",
+      "REVISE_BEFORE_RENDER",
+      "DO_NOT_RENDER"
+    ]
+  },
+  "goblin_ruling": {
+    "growth": "APPROVED_FOR_DRAFT",
+    "public_release": "PENDING_MRS_WISDOM_APPROVAL",
+    "family_protection": "ACTIVE",
+    "truth_state": "YELLOW",
+    "no_fake_green": true
+  }
+}
