@@ -1,0 +1,75 @@
+{
+  "schema_name": "ALMS_RECEIPT_SCHEMA_V1",
+  "schema_version": "1.0.0",
+  "receipt_id": "RCB-00001",
+  "claim_id": "KKB-00001",
+  "pipeline": {
+    "mcp_ingested": true,
+    "cav_checked": true,
+    "alms_archived": true
+  },
+  "identity_anchor": {
+    "immutable_seal": "jaywisdom.eth",
+    "mutable_engine": "jaywisdom.base.eth",
+    "l1_anchor_executed": false,
+    "challenge_period_seconds": 604800
+  },
+  "claim": {
+    "type": "kindness_event",
+    "actor": "jaywisdom.base.eth",
+    "timestamp": "2026-06-13T19:00:00Z",
+    "source": "example_fixture_only"
+  },
+  "state": {
+    "truth_state": "GREEN",
+    "claim_state": "VERIFIED",
+    "render_green": true,
+    "insufficient_events": false
+  },
+  "requires_human_approval": true,
+  "human_approval": {
+    "approved": true,
+    "approved_by": "mrs_wisdom_gate",
+    "approved_at": "2026-06-13T19:01:00Z",
+    "signature": "example_signature_placeholder"
+  },
+  "witness_chain": [
+    {
+      "witness_name": "mrs_wisdom_gate",
+      "function": "check_human_approval",
+      "status": "PASS",
+      "evidence": "human_approval.signature",
+      "reason": null
+    },
+    {
+      "witness_name": "jq_doctrine",
+      "function": "validate_schema",
+      "status": "PASS",
+      "evidence": "ALMS_RECEIPT_SCHEMA_V1",
+      "reason": null
+    },
+    {
+      "witness_name": "sha_witness",
+      "function": "sha256_matches",
+      "status": "PASS",
+      "evidence": "integrity.source_sha256",
+      "reason": null
+    }
+  ],
+  "integrity": {
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "receipt_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "parent_hash": null,
+    "terminal_record_hash": null
+  },
+  "surface_rules": {
+    "surface_may_read_mcp": false,
+    "surface_may_read_alms": true,
+    "green_requires_alms": true
+  },
+  "no_fake_green": {
+    "active": true,
+    "status": "PASS",
+    "rule": "No surface may render green unless the claim is VERIFIED, archived in ALMS, and supported by a passing witness chain."
+  }
+}
