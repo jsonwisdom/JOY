@@ -1,0 +1,95 @@
+{
+  "artifact": "SCHOOL_OF_WISDOM_PUBLIC_WEB_BOOK_V0_1",
+  "operator": "JayWisdom.base.eth",
+  "identity_surface": "Jaywisdom.eth",
+  "repo": "jsonwisdom/JOY",
+  "public_path": "docs/school-of-wisdom/index.html",
+  "metadata_path": "docs/school-of-wisdom/metadata.json",
+  "teacher": {
+    "name": "DeepSeek",
+    "role": "prompt_test_teacher",
+    "verified_200": true,
+    "verification_scope": "prompt behavior only",
+    "not_verified": [
+      "external facts",
+      "audit claims",
+      "legal claims",
+      "identity claims",
+      "chain claims"
+    ]
+  },
+  "audience": [
+    "kids",
+    "parents",
+    "teachers",
+    "families",
+    "support desks",
+    "public readers"
+  ],
+  "framing": "Family website / public web book / reputation-safe learning surface",
+  "core_rules": [
+    "No fake green",
+    "No symbolic compliance",
+    "Child clarity as membrane",
+    "Humor is signal, not evidence",
+    "Culture is playable, but people are not targets",
+    "No receipt, no authority"
+  ],
+  "first_arc": {
+    "status": "COMPLETE",
+    "lessons": [
+      {
+        "lesson": 1,
+        "theme": "Evidence Literacy",
+        "phrase": "先存证，再吵架。",
+        "substitution": "Receipt taken ≠ Argument won"
+      },
+      {
+        "lesson": 2,
+        "theme": "Process Literacy",
+        "phrase": "流程没走完，情绪先到站。",
+        "substitution": "Process started ≠ Emotion resolved"
+      },
+      {
+        "lesson": 3,
+        "theme": "Social Literacy",
+        "phrase": "面子先下台，真相还没来。",
+        "substitution": "Face preserved ≠ Truth arrived"
+      },
+      {
+        "lesson": 4,
+        "theme": "Authority Literacy",
+        "phrase": "领导来了，问题走了。",
+        "substitution": "Leader present ≠ Problem solved"
+      },
+      {
+        "lesson": 5,
+        "theme": "Decision Literacy",
+        "phrase": "会议开完了，决定还没来。",
+        "substitution": "Meeting completed ≠ Decision made"
+      },
+      {
+        "lesson": 6,
+        "theme": "Ownership Literacy",
+        "phrase": "文件发出去了，责任还没来。",
+        "substitution": "Document sent ≠ Responsibility accepted"
+      },
+      {
+        "lesson": 7,
+        "theme": "Execution Literacy",
+        "phrase": "干活的人来了，结果还没来。",
+        "substitution": "Worker assigned ≠ Result delivered"
+      },
+      {
+        "lesson": 8,
+        "theme": "Closure Literacy",
+        "phrase": "结果来了，验证还没来。",
+        "substitution": "Result observed ≠ Result verified"
+      }
+    ]
+  },
+  "engine": "Something happened. Something else did not. Humans treated them as equivalent. That substitution is the joke.",
+  "authority": false,
+  "no_fake_green": true,
+  "classification": "PUBLIC_WEB_BOOK_SEED_PRESERVED"
+}
