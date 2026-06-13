@@ -1,0 +1,10 @@
+{
+  "digest_id": "CANONICAL_HASH_DIGEST_V0_1",
+  "input_artifact": "receipts/replay_lanes/replay_lane_index_v0_1.json",
+  "canonical_hash": "ef3f6edcab9119f1dc80a001ba458f551eb00ab060f3cb1b0cce61b98edf714a",
+  "hash_algorithm": "SHA256",
+  "digest_state": "DIGEST_COMPUTED",
+  "authority": false,
+  "verified": false,
+  "no_fake_green": true
+}

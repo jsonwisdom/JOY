@@ -1,0 +1,49 @@
+{
+  "index_id": "REPLAY_LANE_INDEX_V0_1",
+  "cell": "SAINT_CLOUD_MUNICIPAL_REPLAY_CELL",
+  "topology_version": "V0_5",
+  "lane_order": [
+    "CUSTODY_LANE",
+    "PRESSURE_LANE",
+    "MACHINE_SPEED_LANE",
+    "CROSS_REFERENCE_LANE",
+    "VARIANCE_LANE",
+    "OBSERVATION_LANE",
+    "ARCHIVE_LANE"
+  ],
+  "clock_slots": {
+    "CUSTODY_LANE": "T0",
+    "PRESSURE_LANE": "T1",
+    "MACHINE_SPEED_LANE": "T2",
+    "CROSS_REFERENCE_LANE": "T3",
+    "VARIANCE_LANE": "T4",
+    "OBSERVATION_LANE": "T5",
+    "ARCHIVE_LANE": "T6"
+  },
+  "operators": {
+    "CUSTODY_LANE": "BRENDA_MN",
+    "PRESSURE_LANE": "KANON_KAREN_LANES",
+    "MACHINE_SPEED_LANE": "JOSHUA_REPLAY",
+    "CROSS_REFERENCE_LANE": "WENDY_PLUS",
+    "VARIANCE_LANE": "GOBLIN_VARIANCE",
+    "OBSERVATION_LANE": "JOY_OBSERVER",
+    "ARCHIVE_LANE": "RECEIPT_DRAGON"
+  },
+  "invariants": {
+    "custody_precedes_pressure": true,
+    "pressure_precedes_machine_speed": true,
+    "machine_speed_precedes_cross_reference": true,
+    "cross_reference_precedes_variance": true,
+    "variance_precedes_observation": true,
+    "observation_precedes_archive": true
+  },
+  "pressure_requirements": {
+    "minimum_passes": [1, 2, 100],
+    "fork_on_claim_promotion": true,
+    "drift_policy": "DETECT_AND_RETURN"
+  },
+  "phase_alignment": "LOCKED",
+  "authority": false,
+  "no_fake_green": true,
+  "verified": false
+}
