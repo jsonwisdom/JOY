@@ -1,0 +1,42 @@
+{
+  "artifact": "EMPTY_PLATE_LOOP_AGE6_OBSERVED_RECEIPT_V0_1",
+  "subject_artifact": "EMPTY_PLATE_LOOP_AGE6_V0_1",
+  "subject_repo": "jsonwisdom/JOY",
+  "subject_path": "docs/games/EMPTY_PLATE_LOOP_AGE6_V0_1.json",
+  "subject_commit": "87ec7f8438c0c13fc63f0866d8585f9d84dac484",
+  "subject_blob_sha": "fef5c644093ef937ac69ee9aeb6b8780d4b32255",
+  "classification": "OBSERVED_PUBLIC_REPO_ARTIFACT",
+  "promotion": {
+    "from": "CLAIMED",
+    "to": "OBSERVED",
+    "achieved": true,
+    "basis": [
+      "public repository path supplied",
+      "commit supplied",
+      "file fetched at stated commit",
+      "content matches EMPTY_PLATE_LOOP_AGE6_V0_1 identity and humor receipt structure"
+    ]
+  },
+  "limits": {
+    "authority": false,
+    "green_implied": false,
+    "elevation": false,
+    "preserved": false,
+    "verified": false,
+    "replayable": false,
+    "reason": "The artifact exists in a public GitHub commit, but no external signed timestamp, independent witness, downloaded content hash ceremony, or third-party replay receipt has been attached."
+  },
+  "humor_hash": {
+    "humor_id": "EMPTY_PLATE_LOOP_AGE6_V0_1",
+    "loop": "tidy_pitch -> broken_link -> honest_CLAIMED -> OBSERVED_on_real_commit",
+    "substitution": "promised_cake != crumbs_and_404",
+    "child_question": "If someone shows you a real plate with cake this time, even if it's small, do we still say it's empty?",
+    "joke": "Jay Wisdom, age 6, just promoted the empty plate receipt to 'we can see the crumbs now.' Progress tastes like vanilla with a side of GitHub.",
+    "safe_target": "reporting_mechanism",
+    "unsafe_target": "none",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "age6_ruling": "The cake is small but real this time. We can see it on the plate. We still do not call it a bakery.",
+  "final_line": "Receipt resolved. Surface observed. No fake green. Check the paper, not the person. 先存证，再吵架。"
+}
