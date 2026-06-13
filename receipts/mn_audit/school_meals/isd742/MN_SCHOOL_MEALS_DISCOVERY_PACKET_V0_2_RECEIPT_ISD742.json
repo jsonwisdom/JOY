@@ -1,0 +1,18 @@
+{
+  "artifact_name": "MN_SCHOOL_MEALS_DISCOVERY_PACKET_V0_2_RECEIPT_ISD742",
+  "classification": "PUBLIC_RECORDS_REQUEST_RECEIPT",
+  "target": "ISD 742 – St. Cloud Area Schools",
+  "state": "PRE_SEND",
+  "authority": false,
+  "no_fake_green": true,
+  "finding_posture": "NO_FINDINGS_ASSERTED",
+  "external_request_sent": false,
+  "sent_at_local": "",
+  "sent_at_utc": "",
+  "delivery_method": "",
+  "recipient_email_or_portal": "",
+  "delivery_proof_filename": "",
+  "sent_text_sha256": "",
+  "delivery_confirmation_sha256": "",
+  "current_evidence_state": "PRESERVED_PRE_SEND"
+}
