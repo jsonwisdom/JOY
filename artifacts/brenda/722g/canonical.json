@@ -1,0 +1,39 @@
+{
+  "artifact": "BASE BATCHES BRENDA — Replay Queue Operator #722g",
+  "artifact_id": "722g",
+  "prior_artifact": "METADATA_MINTING_BRENDA_722B",
+  "lineage": {
+    "parent_id": "722b",
+    "relationship": "workflow_successor"
+  },
+  "series": "Replay Protocol Character Artifacts",
+  "universe": "Replay Protocol / JOY / COMPUTERWISDOM",
+  "ledger_anchor": "jaywisdom.base.eth",
+  "classification": "symbolic cultural artifact",
+  "theme": "artifact_packaging_and_flow",
+  "state": "MATCH_BATCH_CLEAN",
+  "batch_status": "SURVIVED_QUEUE",
+  "gate": "ELIGIBLE_FOR_LEDGER",
+  "promoted": false,
+  "workflow": [
+    "CREATE",
+    "PACKAGE",
+    "COMMIT",
+    "PUSH",
+    "PIN",
+    "PUBLISH",
+    "REPLAY",
+    "PRESERVE"
+  ],
+  "doctrine": [
+    "Queue is not ledger",
+    "Batch is not proof",
+    "GitHub is not authority",
+    "Survived queue is eligibility, not promotion"
+  ],
+  "authority": false,
+  "investment_claim": false,
+  "audit_finding": false,
+  "no_fake_green": true,
+  "tagline": "Nothing enters the ledger until it survives the queue."
+}
