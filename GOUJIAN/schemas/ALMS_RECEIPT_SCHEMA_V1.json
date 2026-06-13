@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jaywisdom.eth/schemas/alms-receipt-v1.json",
+  "title": "ALMS_RECEIPT_SCHEMA_V1",
+  "description": "Receipt schema for the MCP -> CAV -> ALMS custody pipeline. This schema permits green rendering only after verified witness custody. It is anchored conceptually to jaywisdom.eth as the immutable seal and jaywisdom.base.eth as the mutable engine. It does not assert that an L1 ENS text record has been written.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_name",
+    "schema_version",
+    "receipt_id",
+    "claim_id",
+    "pipeline",
+    "identity_anchor",
+    "claim",
+    "state",
+    "requires_human_approval",
+    "witness_chain",
+    "integrity",
+    "surface_rules",
+    "no_fake_green"
+  ],
+  "properties": {
+    "schema_name": {
+      "const": "ALMS_RECEIPT_SCHEMA_V1"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^RCB-[0-9]{5}$",
+      "description": "Immutable ALMS receipt identifier. Only assigned after CAV witness pass."
+    },
+    "claim_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Original MCP claim identifier, preserved for lineage."
+    },
+    "pipeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mcp_ingested", "cav_checked", "alms_archived"],
+      "properties": {
+        "mcp_ingested": { "type": "boolean" },
+        "cav_checked": { "type": "boolean" },
+        "alms_archived": { "type": "boolean" }
+      }
+    },
+    "identity_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["immutable_seal", "mutable_engine", "l1_anchor_executed"],
+      "properties": {
+        "immutable_seal": {
+          "const": "jaywisdom.eth"
+        },
+        "mutable_engine": {
+          "const": "jaywisdom.base.eth"
+        },
+        "l1_anchor_executed": {
+          "type": "boolean",
+          "description": "Must remain false unless an L1 transaction hash or ENS read-back proof is attached."
+        },
+        "l1_anchor_tx_hash": {
+          "type": "string",
+          "pattern": "^0x[a-fA-F0-9]{64}$"
+        },
+        "challenge_period_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 604800
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "actor", "timestamp", "source"],
+      "properties": {
+        "type": { "type": "string", "minLength": 1 },
+        "actor": { "type": "string", "minLength": 1 },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "source": { "type": "string", "minLength": 1 },
+        "tx_hash": { "type": "string", "pattern": "^0x[a-fA-F0-9]{64}$" },
+        "block_number": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["truth_state", "claim_state", "render_green"],
+      "properties": {
+        "truth_state": {
+          "type": "string",
+          "enum": ["YELLOW", "GREEN", "RED"]
+        },
+        "claim_state": {
+          "type": "string",
+          "enum": ["UNKNOWN", "PRESERVED", "CANDIDATE", "UNVERIFIED", "PENDING", "PARTIAL", "VERIFIED", "REJECTED", "DEPRECATED", "SUPERSEDED"]
+        },
+        "render_green": {
+          "type": "boolean",
+          "description": "May be true only when claim_state is VERIFIED and no_fake_green.status is PASS."
+        },
+        "insufficient_events": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "requires_human_approval": {
+      "type": "boolean"
+    },
+    "human_approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approved", "approved_by"],
+      "properties": {
+        "approved": { "type": "boolean" },
+        "approved_by": { "type": ["string", "null"] },
+        "approved_at": { "type": ["string", "null"], "format": "date-time" },
+        "signature": { "type": ["string", "null"] }
+      }
+    },
+    "witness_chain": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["witness_name", "function", "status"],
+        "properties": {
+          "witness_name": {
+            "type": "string",
+            "enum": ["mrs_wisdom_gate", "jq_doctrine", "sha_witness", "chain_receipt", "manual_reviewer", "other"]
+          },
+          "function": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["PASS", "FAIL", "PENDING"] },
+          "evidence": { "type": ["string", "null"] },
+          "reason": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha256", "receipt_sha256"],
+      "properties": {
+        "source_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "receipt_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "parent_hash": { "type": ["string", "null"] },
+        "terminal_record_hash": { "type": ["string", "null"] }
+      }
+    },
+    "surface_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["surface_may_read_mcp", "surface_may_read_alms", "green_requires_alms"],
+      "properties": {
+        "surface_may_read_mcp": { "const": false },
+        "surface_may_read_alms": { "const": true },
+        "green_requires_alms": { "const": true }
+      }
+    },
+    "no_fake_green": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["active", "status", "rule"],
+      "properties": {
+        "active": { "const": true },
+        "status": { "type": "string", "enum": ["PASS", "FAIL", "ACTIVE"] },
+        "rule": {
+          "const": "No surface may render green unless the claim is VERIFIED, archived in ALMS, and supported by a passing witness chain."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "properties": {
+              "render_green": { "const": true }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "properties": {
+              "truth_state": { "const": "GREEN" },
+              "claim_state": { "const": "VERIFIED" }
+            }
+          },
+          "pipeline": {
+            "properties": {
+              "mcp_ingested": { "const": true },
+              "cav_checked": { "const": true },
+              "alms_archived": { "const": true }
+            }
+          },
+          "no_fake_green": {
+            "properties": {
+              "status": { "const": "PASS" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "requires_human_approval": { "const": true }
+        }
+      },
+      "then": {
+        "required": ["human_approval"],
+        "properties": {
+          "human_approval": {
+            "properties": {
+              "approved": { "const": true }
+            },
+            "required": ["approved_at", "signature"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "identity_anchor": {
+            "properties": {
+              "l1_anchor_executed": { "const": true }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "identity_anchor": {
+            "required": ["l1_anchor_tx_hash"]
+          }
+        }
+      }
+    }
+  ]
+}
