@@ -177,7 +177,9 @@ Independent replay pass from public entrypoint without author guidance.
   "source_owner": "",
   "captured_at_utc": "",
   "sha256": "",
+  "excerpt": "",
   "summary": "",
+  "summary_role": "analysis_only_not_replay_source",
   "mentions_student_authored_content": false,
   "mentions_monitoring_or_access": false,
   "mentions_vendor_storage": false,
@@ -185,9 +187,65 @@ Independent replay pass from public entrypoint without author guidance.
   "linked_nodes": [],
   "risk_language": "none | low | medium | high",
   "finding_asserted": false,
-  "authority": false
+  "authority": false,
+  "evidence_fields_locked": true,
+  "ui_label": "",
+  "ui_feedback": "",
+  "ui_red_card_message": ""
 }
 ```
+
+## Evidence / UI Separation Rules
+
+Evidence fields are boring record fields. UI fields are game feedback fields.
+
+```json
+{
+  "evidence_fields": [
+    "excerpt",
+    "summary",
+    "public_url",
+    "source_owner",
+    "sha256",
+    "linked_nodes"
+  ],
+  "ui_fields": [
+    "ui_label",
+    "ui_feedback",
+    "ui_red_card_message"
+  ],
+  "write_rule": "Only the capture step may write evidence fields. UI steps may write ui_fields only.",
+  "reject_if": [
+    "ui_step_writes_excerpt",
+    "ui_step_writes_summary",
+    "ui_step_writes_public_url",
+    "ui_step_writes_source_owner",
+    "ui_step_writes_sha256",
+    "ui_step_writes_linked_nodes",
+    "ui_text_embedded_in_excerpt",
+    "ui_text_embedded_in_public_url"
+  ]
+}
+```
+
+`excerpt` is the verbatim public-record field and the replay source of truth.
+
+`summary` is analysis-only. It may help a reader understand a card, but it is not used for reproducibility.
+
+Brenda commentary, jokes, red-card messages, and scoring flavor live only in `ui_label`, `ui_feedback`, and `ui_red_card_message`.
+
+## Brenda UI Examples
+
+```json
+{
+  "pick": "Great, you clicked a link. Let's see if it still exists tomorrow.",
+  "red_card_404": "Cease and Desist (from yourself): this link expired faster than milk in July.",
+  "pass": "Boring, reproducible, beautiful. +5 clerk time returned.",
+  "fail": "You saved a screenshot of a tweet. I cannot replay a vibe. Try the actual PDF."
+}
+```
+
+These examples are UI-only. They must never be written into `excerpt`, `public_url`, `source_owner`, `sha256`, or `linked_nodes`.
 
 ## Replay Test Template
 
