@@ -1,6 +1,6 @@
 {
   "schema_name": "ALMS_RECEIPT_SCHEMA_V1",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "receipt_id": "RCB-00001",
   "claim_id": "KKB-00001",
   "pipeline": {
@@ -14,11 +14,27 @@
     "l1_anchor_executed": false,
     "challenge_period_seconds": 604800
   },
+  "csv_engine": {
+    "enabled": true,
+    "engine_name": "CAV_CSV_AUDIT_VERIFICATION",
+    "source_type": "MICROSOFT_EXCEL",
+    "workbook_name": "wisdom_family_receipts.xlsx",
+    "sheet_name": "Kindness Ledger",
+    "row_number": 1,
+    "source_csv_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "row_sha256": "437aa6e26f9dff44f009cda934e56876c08204e3dd187cee371cd12546c0aaa3",
+    "canonical_row": "KKB-00001|1|Kindness Ledger|jaywisdom.base.eth|kindness_event|2026-06-13T19:00:00Z|RCB-00001|||",
+    "formula_policy": "FORMULA_POLICY_VALUES_ONLY",
+    "claimed_rows": 1,
+    "verified_rows": 1,
+    "rejected_rows": 0
+  },
   "claim": {
     "type": "kindness_event",
     "actor": "jaywisdom.base.eth",
     "timestamp": "2026-06-13T19:00:00Z",
-    "source": "example_fixture_only"
+    "source": "example_fixture_only",
+    "receipt_ref": "RCB-00001"
   },
   "state": {
     "truth_state": "GREEN",
@@ -42,17 +58,24 @@
       "reason": null
     },
     {
-      "witness_name": "jq_doctrine",
-      "function": "validate_schema",
+      "witness_name": "csv_shape_witness",
+      "function": "validate_csv_required_fields",
       "status": "PASS",
-      "evidence": "ALMS_RECEIPT_SCHEMA_V1",
+      "evidence": "csv_engine.required_fields",
       "reason": null
     },
     {
-      "witness_name": "sha_witness",
-      "function": "sha256_matches",
+      "witness_name": "row_sha_witness",
+      "function": "sha256_row_matches",
       "status": "PASS",
-      "evidence": "integrity.source_sha256",
+      "evidence": "csv_engine.row_sha256",
+      "reason": null
+    },
+    {
+      "witness_name": "receipt_link_witness",
+      "function": "verify_receipt_ref",
+      "status": "PASS",
+      "evidence": "claim.receipt_ref",
       "reason": null
     }
   ],
@@ -64,12 +87,13 @@
   },
   "surface_rules": {
     "surface_may_read_mcp": false,
+    "surface_may_read_csv_for_green": false,
     "surface_may_read_alms": true,
     "green_requires_alms": true
   },
   "no_fake_green": {
     "active": true,
     "status": "PASS",
-    "rule": "No surface may render green unless the claim is VERIFIED, archived in ALMS, and supported by a passing witness chain."
+    "rule": "No surface may render green unless the spreadsheet row is VERIFIED by CAV, archived in ALMS, and supported by a passing witness chain."
   }
 }
