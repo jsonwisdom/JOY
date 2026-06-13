@@ -1,0 +1,43 @@
+{
+  "artifact": "GITHUB_DIRECT_BOOT_RECOVERY_REPLAY_V0_1",
+  "operator": "jaywisdom.base.eth",
+  "repo": "jsonwisdom/JOY",
+  "project": "ZERO_TRUST_MN_AUDIT_V0_1",
+  "creation_time_rule": "GitHub commit timestamp is the authoritative creation time for this direct-write receipt.",
+  "trigger": "Cloud Shell repeatedly booted during local replay attempts.",
+  "recovery_mode": "GITHUB_DIRECT",
+  "reason": "Local shell instability must not block public receipt preservation.",
+  "source_evidence": [
+    "user screenshots showing successful pushed commits",
+    "user report that Cloud Shell booted repeatedly",
+    "GitHub connector direct write capability"
+  ],
+  "screenshot_observed_commits": [
+    {
+      "commit_short": "87f7d81",
+      "observed_meaning": "American Dew MN retail replay push observed in screenshot",
+      "truth_state": "OBSERVED_FROM_SCREENSHOT"
+    },
+    {
+      "commit_short": "6671104",
+      "observed_meaning": "MN Schooling 2026 replay commit observed in screenshot",
+      "truth_state": "OBSERVED_FROM_SCREENSHOT"
+    }
+  ],
+  "new_operating_rule": [
+    "Do not trust crashed local shell state.",
+    "Do not keep sending giant bash blocks when the shell is unstable.",
+    "Use GitHub Direct for small receipt fixes when Cloud Shell repeatedly boots.",
+    "Promote only what GitHub actually preserves.",
+    "Screenshots are observer evidence, not final verification by themselves.",
+    "Uncommitted local work remains yellow.",
+    "Pushed GitHub commits are the preservation layer."
+  ],
+  "copy_paste_doctrine": "One copy block must equal one paste target.",
+  "child_level_rule": "A child should know what happens after paste.",
+  "authority": false,
+  "official_court": false,
+  "official_government_body": false,
+  "criminal_finding": false,
+  "no_fake_green": true
+}
