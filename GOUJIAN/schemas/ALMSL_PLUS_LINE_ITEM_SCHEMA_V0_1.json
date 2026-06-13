@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jaywisdom.eth/schemas/almsl-plus-line-item-v0-1.json",
+  "title": "ALMSL_PLUS_LINE_ITEM_SCHEMA_V0_1",
+  "description": "JSONL line item schema for ALMSL+: the mapping lane bridge between CAV CSV Audit Verification and ALMS archive custody. Anchored by intent to jaywisdom.eth; does not assert L1 execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_name",
+    "schema_version",
+    "line_id",
+    "lane",
+    "truth_state",
+    "claim_state",
+    "source_row_sha256",
+    "line_sha256",
+    "render_green",
+    "no_fake_green"
+  ],
+  "properties": {
+    "schema_name": { "const": "ALMSL_PLUS_LINE_ITEM_V0_1" },
+    "schema_version": { "const": "0.1.0" },
+    "line_id": { "type": "string", "pattern": "^ALMSL-[0-9]{6}$" },
+    "lane": {
+      "type": "string",
+      "enum": [
+        "lane_00_ingest_claim",
+        "lane_01_csv_row_claim",
+        "lane_02_cav_witness_result",
+        "lane_03_jsonl_mapping",
+        "lane_04_receipt_binding",
+        "lane_05_tombstone_or_supersession",
+        "lane_06_alms_archive",
+        "lane_07_surface_projection"
+      ]
+    },
+    "truth_state": { "type": "string", "enum": ["YELLOW", "GREEN", "RED"] },
+    "claim_state": {
+      "type": "string",
+      "enum": ["UNKNOWN", "PRESERVED", "CANDIDATE", "UNVERIFIED", "PENDING", "PARTIAL", "VERIFIED", "REJECTED", "DEPRECATED", "SUPERSEDED"]
+    },
+    "parent_line_sha256": { "type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$" },
+    "source_row_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "source_csv_sha256": { "type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$" },
+    "cav_witness_ref": { "type": ["string", "null"] },
+    "receipt_ref": { "type": ["string", "null"] },
+    "tombstone_ref": { "type": ["string", "null"] },
+    "supersedes_line_sha256": { "type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$" },
+    "canonical_payload": { "type": ["object", "null"] },
+    "line_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "render_green": { "type": "boolean" },
+    "no_fake_green": { "const": true },
+    "identity_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "immutable_seal": { "const": "jaywisdom.eth" },
+        "mutable_engine": { "const": "jaywisdom.base.eth" },
+        "l1_anchor_executed": { "type": "boolean" }
+      }
+    }
+  }
+}
