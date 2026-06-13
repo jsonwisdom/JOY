@@ -4,7 +4,8 @@
 ## TRUTH: YELLOW
 ## NO_FAKE_GREEN: ACTIVE
 
-```json
+## RECEIPT
+
 {
   "artifact": "FAMILY_INDEX_V0_1",
   "repo": "jsonwisdom/JOY",
@@ -20,7 +21,6 @@
   "truth_state": "YELLOW",
   "no_fake_green": true
 }
-```
 
 ## GOBLIN RULING
 
@@ -30,11 +30,7 @@ This proves remote transport and byte preservation at the GitHub layer.
 
 It does not prove CID permanence, EAS attestation, Base identity control, legal authority, or verified truth.
 
-Final ruling:
-
-```text
 FAMILY_INDEX_REMOTE_ACCEPTED.
 GITHUB_GREEN_CONFIRMED.
 TRUTH_REMAINS_YELLOW.
 NO_FAKE_GREEN_ACTIVE.
-```
