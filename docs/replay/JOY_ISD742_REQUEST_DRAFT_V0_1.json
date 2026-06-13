@@ -1,0 +1,28 @@
+{
+  "doc_id": "JOY_ISD742_REQUEST_DRAFT_V0_1",
+  "status": "DRAFT_ONLY_NOT_SENT",
+  "authority": false,
+  "no_fake_green": true,
+  "prepared_at_utc": "2026-06-12T18:30:00Z",
+  "district": "ISD 742 St. Cloud Area Schools",
+  "request_language": "NEUTRAL_BEIGE",
+  "record_category_status": "TEMPLATE_PLACEHOLDER_NOT_SENDABLE",
+  "record_category": "[specific record category to be inserted]",
+  "body": "This is a request for public records under Minnesota Statutes Chapter 13 (Minnesota Government Data Practices Act). Please provide any non-exempt records related to [specific record category to be inserted]. This request is submitted for documentation purposes and makes no allegations. A timestamped copy of this request is retained for replay verification.",
+  "attachments": [],
+  "sent_at_utc": null,
+  "delivery_receipt": null,
+  "promotion": false,
+  "sendable": false,
+  "send_blockers": [
+    "record_category_placeholder_unfilled",
+    "no_external_delivery_receipt",
+    "no_recipient_contact_confirmed"
+  ],
+  "state": {
+    "isd_742_draft": "COMMITTED_BEIGE_TEMPLATE",
+    "isd_742_delivery": "NOT_PROVEN",
+    "max_state": "PRESERVED_PRE_SEND",
+    "promotion": false
+  }
+}
