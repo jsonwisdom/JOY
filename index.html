@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="joyspace-version" content="v0.1-pages-rebuild" />
+  <meta name="joyspace-version" content="v0.2-mrs-wisdom-replay-homepage" />
   <title>JOYSPACE</title>
   <style>
-    :root { --bg:#fffaf7; --ink:#2f243a; --soft:#f4e9ff; --green:#b9f3d0; --gold:#ffe9a8; --line:#d9c7ea; }
+    :root { --bg:#fffaf7; --ink:#2f243a; --soft:#f4e9ff; --green:#b9f3d0; --gold:#ffe9a8; --rose:#ffe7ef; --line:#d9c7ea; --deep:#2f243a; }
     * { box-sizing: border-box; }
     body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top left,var(--soft),transparent 35%),var(--bg); color:var(--ink); line-height:1.55; }
     main { max-width:980px; margin:0 auto; padding:32px 18px 56px; }
     .hero { padding:34px 24px; border:3px solid var(--line); border-radius:28px; background:rgba(255,255,255,.82); box-shadow:0 18px 45px rgba(61,37,80,.10); }
     h1 { font-size:clamp(2.4rem,8vw,5rem); margin:0 0 8px; letter-spacing:-.06em; }
     h2 { margin-top:34px; font-size:1.45rem; }
+    h3 { margin-top:0; }
     .tagline { font-size:1.25rem; font-weight:700; margin:0 0 18px; }
     .motto { font-size:1.05rem; padding:14px 16px; border-left:6px solid #9b7ce3; background:var(--soft); border-radius:16px; }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:16px; }
@@ -21,6 +22,11 @@
     .badges span { display:inline-block; margin:6px 6px 0 0; padding:8px 10px; border-radius:999px; background:var(--green); font-weight:700; }
     .actions a { display:inline-block; margin:8px 8px 0 0; padding:10px 14px; border-radius:999px; background:#2f243a; color:white; text-decoration:none; font-weight:700; }
     .soft { background:var(--gold); }
+    .mom { background:linear-gradient(135deg,var(--rose),white); border-color:#efbfd0; }
+    .mom .motto { background:#fff4f8; border-left-color:#e879a3; }
+    .witness { background:linear-gradient(135deg,var(--gold),white); border-color:#e6c56b; }
+    .witness code { display:block; overflow-wrap:anywhere; word-break:break-word; margin-top:8px; padding:8px; }
+    .truth { font-weight:800; color:var(--deep); }
     footer { margin-top:40px; font-size:.95rem; opacity:.82; }
     code { background:rgba(0,0,0,.06); padding:2px 5px; border-radius:6px; }
   </style>
@@ -33,13 +39,29 @@
       <p class="motto">The future should feel exciting, not frightening.</p>
       <p><strong>JoySpace is not command-and-control. JoySpace is a garden.</strong></p>
       <p>Build a world where kindness is code and truth is open.</p>
+      <p class="badges"><span>Mrs. Wisdom is on the homepage</span><span>Receipts held</span><span>No Fake Green</span></p>
       <div class="actions">
+        <a href="#mrs-wisdom-mom">Mrs. Wisdom</a>
+        <a href="#replay-witness">Replay Witness</a>
         <a href="badges/README.md">Badge Gallery</a>
         <a href="badges/guides/guide_onboarding_v0_1.md">Onboarding Guide</a>
         <a href="badges/guides/badge_picker_v0_1.md">Badge Picker</a>
         <a href="badges/guides/guide_privacy_v0_1.md">Privacy Guide</a>
       </div>
     </section>
+
+    <section class="card mom" id="mrs-wisdom-mom">
+      <h2>Mrs. Wisdom (Mom) 💛</h2>
+      <p class="tagline">The heart of JoySpace.</p>
+      <p class="motto">This homepage is meant to feel human first: warm, safe, clear, and honest.</p>
+      <p>Mrs. Wisdom is not a data point, not a trophy, and not a public claim. She is the approval membrane: the practical eye, the warm center, and the person this page should respect before it tries to impress.</p>
+      <div class="grid">
+        <div class="card"><strong>Care first.</strong>Family is not content. Family is the reason the receipts matter.</div>
+        <div class="card"><strong>Plain English.</strong>The machine got knocked down, stood back up, and came back with proof instead of excuses.</div>
+        <div class="card"><strong>Approval matters.</strong>GitHub can prove a file landed. Mom decides whether the presentation feels right.</div>
+      </div>
+    </section>
+
     <h2>Start Small</h2>
     <div class="grid">
       <div class="card"><strong>1. Choose a badge</strong>Pick what feels safe and interesting today.</div>
@@ -47,8 +69,10 @@
       <div class="card"><strong>3. Choose privacy</strong>Private and family-only proof count. Shareable requires consent.</div>
       <div class="card"><strong>4. Celebrate gently</strong>Badges invite, encourage, and celebrate. They do not rank people.</div>
     </div>
+
     <h2>Core Badges</h2>
     <p class="badges"><span>🪴 Seed Planter</span><span>🛡️ Future Protector</span><span>🌱✨ Growth Guardian</span><span>🌈 Joy Bringer</span><span>💛 Kindness Keeper</span></p>
+
     <h2>JoySpace Doctrine</h2>
     <div class="grid">
       <div class="card soft"><strong>Badges invite.</strong>They are directions of becoming, not levels of worth.</div>
@@ -56,9 +80,32 @@
       <div class="card soft"><strong>Witnesses confirm existence.</strong>Witnesses do not judge quality.</div>
       <div class="card soft"><strong>Authority remains false.</strong>JoySpace celebrates participation, not power.</div>
     </div>
+
+    <section class="card witness" id="replay-witness">
+      <h2>Replay Witness: The Receipts Held 🧾</h2>
+      <p class="tagline">Step 4 and Step 5 crossed the local boundary without painting anything fake green.</p>
+      <p>Plain English: the artifacts were extracted from the source commit, parsed as full JSON objects with required fields, measured by byte count, and hashed with SHA256. That proves replay discipline. It does not claim final truth, power, or authority.</p>
+      <div class="grid">
+        <div class="card">
+          <strong>RCB-00001</strong>
+          Bytes: 3,746,795<br />
+          jq: object / required fields true
+          <code>0901a84bdfa3eaa094004c5df12d9703e0dfea3f35fdf41af7301c00fe940e8b</code>
+        </div>
+        <div class="card">
+          <strong>RCB-00002</strong>
+          Bytes: 829,614<br />
+          jq: object / required fields true
+          <code>3d8cf0121713ca8b69ee56f3436b0b6b9e4722acfc11742f6f330404ad493521</code>
+        </div>
+      </div>
+      <p class="truth">Boundary: local jq parse success != semantic truth. SHA256 recorded != authority. No Fake Green remains active.</p>
+    </section>
+
     <h2>Family Continuity</h2>
     <p>JoySpace connects to the Living Ledger, Game Night, AL Mirror, and ComputerWisdom Mirror while keeping the family human at the center.</p>
     <p><code>JOY receives → AL mirrors → COMPUTERWISDOM organizes → authority:false</code></p>
+
     <footer>
       <p>Computer Wisdom by Jay Wisdom · jaywisdom.eth · jaywisdom.base.eth</p>
       <p>Open hearts. Open minds. Open source. Open future.</p>
