@@ -1,0 +1,66 @@
+name: RCB 00001-00002 Parse Witness
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rcb-00001-00002-parse-witness.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  parse-witness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC_COMMIT="5d6ed4f06a3f032f5a818901033e28edaa7fb78b"
+          mkdir -p rcb_parse_witness
+          git show "$SRC_COMMIT:artifacts/goblin_constellation_paths_v0_1.json" > rcb_parse_witness/RCB-00001.json
+          git show "$SRC_COMMIT:artifacts/goblin_constellation_v0_1.json" > rcb_parse_witness/RCB-00002.json
+
+      - name: Parse and hash witness
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "# RCB 00001-00002 Parse Witness"
+            echo
+            echo "## RCB-00001"
+            echo '```text'
+            sha256sum rcb_parse_witness/RCB-00001.json
+            wc -c rcb_parse_witness/RCB-00001.json
+            jq -e type rcb_parse_witness/RCB-00001.json
+            jq -e 'has("scanner_version") and has("generated_at") and has("path_surface")' rcb_parse_witness/RCB-00001.json
+            echo '```'
+            echo
+            echo "## RCB-00002"
+            echo '```text'
+            sha256sum rcb_parse_witness/RCB-00002.json
+            wc -c rcb_parse_witness/RCB-00002.json
+            jq -e type rcb_parse_witness/RCB-00002.json
+            jq -e 'has("scanner_version") and has("generated_at") and has("root_identity") and has("repos")' rcb_parse_witness/RCB-00002.json
+            echo '```'
+            echo
+            echo "## Boundary"
+            echo
+            echo '```text'
+            echo "JQ_PARSE_SUCCESS != SEMANTIC_TRUTH"
+            echo "SHA256_RECORDED != AUTHORITY"
+            echo "NO_FAKE_GREEN_ACTIVE"
+            echo '```'
+          } | tee rcb_parse_witness/RCB_00001_00002_PARSE_WITNESS.md
+
+      - name: Upload parse witness artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rcb-00001-00002-parse-witness
+          path: rcb_parse_witness/RCB_00001_00002_PARSE_WITNESS.md
