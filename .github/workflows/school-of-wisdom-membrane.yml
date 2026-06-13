@@ -52,6 +52,22 @@ jobs:
               FAIL=1
             fi
 
+            if grep -qi "ALMS Engine" "$file"; then
+              if ! grep -qi "ALMS Engine: ON\|alms_engine.*ON" "$file"; then
+                echo "::error file=$file::ALMS surface must declare ALMS Engine ON"
+                FAIL=1
+              fi
+              if ! grep -qi "Flywheel Maintenance: OFF\|flywheel_maintenance.*OFF" "$file"; then
+                echo "::error file=$file::ALMS surface must declare Flywheel Maintenance OFF"
+                FAIL=1
+              fi
+            fi
+
+            if grep -Eqi "flywheel_maintenance.*ON|Flywheel Maintenance: ON" "$file"; then
+              echo "::error file=$file::Flywheel Maintenance must remain OFF for this gameplay mode"
+              FAIL=1
+            fi
+
             if ! grep -q "先存证，再吵架" "$file"; then
               echo "::warning file=$file::Missing closing rule: 先存证，再吵架"
             fi
@@ -68,4 +84,4 @@ jobs:
             exit 1
           fi
 
-          echo "Membrane check passed: no fake green, no fake authority."
+          echo "Membrane check passed: no fake green, no fake authority, ALMS posture respected."
