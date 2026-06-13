@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jaywisdom.eth/schemas/alms-archive-entry-v0-1.json",
+  "title": "ALMS_ARCHIVE_ENTRY_SCHEMA_V0_1",
+  "description": "Archive custody schema for ALMS: Automated Ledger of Minted Stories. ALMS accepts mapped JSONL line items from ALMSL+ after CAV witness pass and receipt binding. Anchored by intent to jaywisdom.eth; does not assert L1 execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_name",
+    "schema_version",
+    "entry_id",
+    "entry_type",
+    "truth_state",
+    "claim_state",
+    "almsl_line_id",
+    "almsl_line_sha256",
+    "source_row_sha256",
+    "cav_witness_ref",
+    "receipt_ref",
+    "render_green",
+    "insufficient_events",
+    "no_fake_green"
+  ],
+  "properties": {
+    "schema_name": { "const": "ALMS_ARCHIVE_ENTRY_V0_1" },
+    "schema_version": { "const": "0.1.0" },
+    "entry_id": { "type": "string", "pattern": "^RCB-[0-9]{5}$" },
+    "entry_type": { "const": "MINTED_STORY_RECEIPT" },
+    "truth_state": { "type": "string", "enum": ["YELLOW", "GREEN", "RED"] },
+    "claim_state": {
+      "type": "string",
+      "enum": ["UNKNOWN", "PRESERVED", "CANDIDATE", "UNVERIFIED", "PENDING", "PARTIAL", "VERIFIED", "REJECTED", "DEPRECATED", "SUPERSEDED"]
+    },
+    "almsl_line_id": { "type": "string", "pattern": "^ALMSL-[0-9]{6}$" },
+    "almsl_line_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "source_row_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "cav_witness_ref": { "type": "string", "minLength": 1 },
+    "receipt_ref": { "type": "string", "minLength": 1 },
+    "render_green": { "type": "boolean" },
+    "insufficient_events": { "type": "boolean" },
+    "claimed_events": { "type": "integer", "minimum": 0 },
+    "verified_events": { "type": "integer", "minimum": 0 },
+    "archived_events": { "type": "integer", "minimum": 0 },
+    "parent_entry_id": { "type": ["string", "null"], "pattern": "^RCB-[0-9]{5}$" },
+    "tombstone_ref": { "type": ["string", "null"] },
+    "no_fake_green": { "type": "string", "enum": ["PASS", "ACTIVE", "FAIL"] },
+    "identity_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "immutable_seal": { "const": "jaywisdom.eth" },
+        "mutable_engine": { "const": "jaywisdom.base.eth" },
+        "l1_anchor_executed": { "type": "boolean" }
+      }
+    }
+  }
+}
