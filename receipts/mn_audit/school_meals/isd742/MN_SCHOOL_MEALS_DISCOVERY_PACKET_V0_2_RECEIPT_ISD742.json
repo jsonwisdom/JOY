@@ -1,8 +1,8 @@
 {
   "artifact_name": "MN_SCHOOL_MEALS_DISCOVERY_PACKET_V0_2_RECEIPT_ISD742",
   "classification": "PUBLIC_RECORDS_REQUEST_RECEIPT",
-  "target": "ISD 742 – St. Cloud Area Schools",
-  "state": "PRE_SEND",
+  "target": "ISD 742 \u2013 St. Cloud Area Schools",
+  "state": "PRESERVED_PRE_SEND",
   "authority": false,
   "no_fake_green": true,
   "finding_posture": "NO_FINDINGS_ASSERTED",
@@ -14,5 +14,9 @@
   "delivery_proof_filename": "",
   "sent_text_sha256": "",
   "delivery_confirmation_sha256": "",
-  "current_evidence_state": "PRESERVED_PRE_SEND"
+  "current_evidence_state": "PRESERVED_PRE_SEND",
+  "replay_verdict": "REPLAY_PASS_PRE_SEND_ONLY",
+  "execution_state": "DELIVERY_INCOMPLETE",
+  "next_required_action": "SEND_REQUEST_TO_ISD742",
+  "notes": "Pre-send bundle integrity passes. External delivery has not occurred. No findings asserted."
 }
