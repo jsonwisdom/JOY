@@ -1,12 +1,12 @@
 # FAMILY JSON MAP V0.1
 
-**Dream ID:** DREAM_3275  
-**Lane:** 3275  
-**Shelf:** FAMILY  
-**Operator:** Jay Wisdom  
-**State:** FAMILY_RECON_READY  
-**Authority:** FALSE  
-**No Fake Green:** TRUE  
+**Dream ID:** DREAM_3275
+**Lane:** 3275
+**Shelf:** FAMILY
+**Operator:** Jay Wisdom
+**State:** FAMILY_RECON_READY
+**Authority:** FALSE
+**No Fake Green:** TRUE
 
 ---
 
@@ -73,10 +73,5 @@ It is a family-facing map for memory, care, approval, creativity, and replay.
     "FAMILY_BEFORE_PUBLIC",
     "LOVE_OVER_LEVERAGE"
   ],
-  "artifact_lanes": {
-    "family_receipts": "FAMILY/receipts/",
-    "dream_index": "LIBRARIAN_DREAM_INDEX_V0_1.md",
-    "family_map": "FAMILY_JSON_MAP_V0_1.md"
-  },
   "promotion_rule": "This artifact cannot be promoted beyond FAMILY_RECON_READY until Mrs. Wisdom approval is recorded as a separate receipt."
 }
