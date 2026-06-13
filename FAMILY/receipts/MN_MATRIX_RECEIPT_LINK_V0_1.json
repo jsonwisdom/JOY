@@ -1,0 +1,19 @@
+{
+  "manifest_id": "MN_MATRIX_RECEIPT_LINK_V0_1",
+  "controller": [
+    "jaywisdom.eth",
+    "jaywisdom.base.eth"
+  ],
+  "repo": "jsonwisdom/JOY",
+  "commit_sha": "afb6cd53855f433b091af3a2e9f814a151fbf2c8",
+  "artifact_path": "FAMILY/receipts/JAYS_PLAYBOOK_MINNESOTA_PRESSURE_REPLAY_V0_1.md",
+  "state": "YELLOW",
+  "authority": false,
+  "no_fake_green": true,
+  "claimed_external_receipt": false,
+  "anchors": {
+    "ipfs": null,
+    "eas": null,
+    "base": null
+  }
+}
