@@ -1,0 +1,46 @@
+{
+  "artifact": "EMPTY_PLATE_LOOP_AGE6_V0_1",
+  "humor_id": "EMPTY_PLATE_LOOP_AGE6",
+  "parent_lane": "STREET_MATH",
+  "related_artifacts": [
+    "THREE_CUP_HONEST_COUNT_V0_1",
+    "STREET_MATH_FACEBOOK_PITCH_V0_1"
+  ],
+  "classification": "HONEST_CLAIMED_HUMOR_RECEIPT",
+  "loop": "tidy_pitch -> broken_link -> honest_CLAIMED -> repeat",
+  "substitution": "promised_cake != crumbs_and_404",
+  "child_question": "If someone keeps showing you pictures of empty plates and says 'the cake is in the link,' when do we stop pretending the recipe was followed?",
+  "joke": "Jay Wisdom, age 6, just failed another receipt for cake. At this rate the birthday party is 100% inflation.",
+  "safe_target": "reporting_mechanism",
+  "unsafe_target": "none",
+  "authority": false,
+  "no_fake_green": true,
+  "green_implied": false,
+  "elevation": false,
+  "state": {
+    "claimed": true,
+    "observed": false,
+    "verified": false,
+    "replayable": false
+  },
+  "meaning": {
+    "plain_language": "A polished pitch or broken asset link is not proof that the promised artifact exists.",
+    "age6_version": "A picture of an empty plate is not cake. A broken link is not cake. Show the cake.",
+    "street_math_version": "Promised cake minus working receipt equals crumbs and a 404."
+  },
+  "receipt_gate": {
+    "required_for_promotion": [
+      "working asset URL",
+      "downloaded artifact",
+      "hash of artifact",
+      "repo commit or external publication receipt"
+    ],
+    "rejected_as_proof": [
+      "promise",
+      "pretty pitch",
+      "broken link",
+      "self-declared authority"
+    ]
+  },
+  "closing_line": "No cake, no candle. No receipt, no green."
+}
