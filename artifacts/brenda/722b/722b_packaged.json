@@ -1,0 +1,34 @@
+{
+  "package_id": "METADATA_MINTING_BRENDA_722B_PACKAGE_V0_1",
+  "artifact_id": "722b",
+  "artifact": "METADATA MINTING BRENDA — Garbage Pail Parody #722b",
+  "status": "PACKAGED_FOR_PUBLICATION",
+  "metadata_file": "722b_metadata.json",
+  "readme_file": "README.md",
+  "prior_artifact": "BEIGE_BRENDA_722A",
+  "lineage": {
+    "parent_id": "722a",
+    "relationship": "provenance_successor"
+  },
+  "ledger_anchor": "jaywisdom.base.eth",
+  "authority": false,
+  "investment_claim": false,
+  "audit_finding": false,
+  "no_fake_green": true,
+  "machine_instructions": {
+    "json_is_truth_surface": true,
+    "artwork_is_rendering_layer": true,
+    "marketplace_post_is_publication_event_only": true,
+    "do_not_promote_collectibility_to_authority": true,
+    "do_not_promote_metadata_to_minting": true,
+    "do_not_promote_minting_to_verification": true
+  },
+  "boundary_conditions": [
+    "Publication is not verification",
+    "Collectibility is not authority",
+    "Trading activity is not audit evidence",
+    "Metadata is not minting",
+    "Minting is not authority"
+  ],
+  "brenda_instruction": "Commit the birth certificate before throwing the party."
+}
