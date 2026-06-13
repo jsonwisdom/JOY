@@ -1,0 +1,30 @@
+{
+  "artifact": "METADATA MINTING BRENDA — Garbage Pail Parody #722b",
+  "artifact_id": "722b",
+  "prior_artifact": "BEIGE_BRENDA_722A",
+  "lineage": {
+    "parent_id": "722a",
+    "relationship": "provenance_successor"
+  },
+  "series": "Replay Protocol Character Artifacts",
+  "universe": "Replay Protocol / JOY / COMPUTERWISDOM",
+  "ledger_anchor": "jaywisdom.base.eth",
+  "classification": "symbolic cultural artifact",
+  "style": "original satirical collectible-card-inspired illustration",
+  "theme": "metadata_and_provenance",
+  "state": "METADATA_CANONICAL",
+  "authority": false,
+  "investment_claim": false,
+  "audit_finding": false,
+  "no_fake_green": true,
+  "boundary_conditions": [
+    "Publication is not verification",
+    "Collectibility is not authority",
+    "Trading activity is not audit evidence",
+    "Metadata is not minting",
+    "Minting is not authority"
+  ],
+  "description": "BEIGE BRENDA wasn’t satisfied auditing receipts. She started auditing metadata. Now every artifact, image, receipt, replay, hash, and folder gets interrogated before entering the ledger. In the Replay Protocol universe, Brenda knows the real fight is rarely over evidence — it’s over metadata. This parody artifact highlights tags, hashes, timestamps, provenance trails, and origin records that determine what can actually be trusted, replayed, or remembered.",
+  "collector_line": "I’m not minting your vibe. I’m auditing your metadata.",
+  "tagline": "Green only where the bytes prove themselves. Beige everywhere else."
+}
