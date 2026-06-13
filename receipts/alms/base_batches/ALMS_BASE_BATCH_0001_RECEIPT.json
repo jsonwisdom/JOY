@@ -1,0 +1,47 @@
+{
+  "artifact": "ALMS_BASE_BATCH_RECEIPT_V0_1",
+  "batch_id": "BASE_BATCH_0001",
+  "lane": "BASE_BATCH_LANE_V0_1",
+  "controller": "jaywisdom.base.eth",
+  "network": "Base",
+  "schema": {
+    "schema_id": 1584,
+    "schema_uid": "0xed5ef9168064d51396fb2e50e626efe1f63a0e70858c19b9651661aa867a2045",
+    "name": "ALMS_BASE_BATCH_RECEIPT_V0_1"
+  },
+  "attestation": {
+    "attestation_uid": "0xa16638fca94a7b7941db929fb86809bd617958d4ef8e32dea3e36969781fc20c",
+    "transaction_id": "0x3a47f8afb1004692f007b223c2775950363be5f0a21ebc0ecdf94bc94321fb91",
+    "creator": "0x1dB2C056c7DeCD9f9fC574692b05F62aE34Fb8b5",
+    "recipient": null,
+    "revocable": true,
+    "revoked": false,
+    "created_observed": "2026-06-13T01:30:47"
+  },
+  "decoded_data": {
+    "batch_id": "BASE_BATCH_0001",
+    "lane": "BASE_BATCH_LANE_V0_1",
+    "controller": "jaywisdom.base.eth",
+    "batch_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_manifest_uri": "ipfs://AWAITING_CID",
+    "artifact_count": 0,
+    "replay_state": "SCHEMA_REGISTERED_AWAITING_BATCH",
+    "authority": false,
+    "verified": false,
+    "no_fake_green": true
+  },
+  "classification": {
+    "state": "FIRST_ATTESTATION_OBSERVED",
+    "highest_defensible_state": "OBSERVED",
+    "authority": false,
+    "verified": false,
+    "no_fake_green": true,
+    "promotion_authorized": true,
+    "next_gate": "MANIFEST_CID_OR_BATCH_ROOT"
+  },
+  "notes": [
+    "Schema and attestation are publicly observed on Base EAS.",
+    "This receipt does not prove artifact contents because no manifest CID or nonzero batch root is present.",
+    "No authority or verification is claimed."
+  ]
+}
