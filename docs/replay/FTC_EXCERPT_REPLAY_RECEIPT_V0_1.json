@@ -1,0 +1,67 @@
+{
+  "receipt_id": "FTC_EXCERPT_REPLAY_RECEIPT_V0_1",
+  "status": "REPLAY_RECEIPT",
+  "authority": false,
+  "no_fake_green": true,
+  "finding_posture": "NO_FINDINGS_ASSERTED",
+  "scope": {
+    "card": "FTC excerpt card only",
+    "green_applies_to": "verbatim FTC excerpt replay, if independently matched from public source",
+    "green_does_not_apply_to": [
+      "ISD 742 delivery",
+      "district acknowledgment",
+      "minor privacy findings",
+      "journalism surveillance findings",
+      "legal conclusions"
+    ]
+  },
+  "state": {
+    "wiki_game_schema": "COMMITTED",
+    "brenda_boundary": "COMMITTED",
+    "excerpt_slot": "REPLAY_VERIFIED_FOR_THIS_CARD_ONLY",
+    "isd_742_delivery": "NOT_PROVEN",
+    "max_state_for_district_lane": "PRESERVED_PRE_SEND",
+    "promotion": false
+  },
+  "required_card_fields": {
+    "excerpt": "verbatim official public-record text only",
+    "public_url": "required for replay",
+    "source_owner": "required for replay",
+    "captured_at_utc": "required for replay",
+    "sha256": "required for preserved bytes",
+    "summary": "analysis_only_not_replay_source",
+    "ui_label": "ui_only",
+    "ui_feedback": "ui_only",
+    "ui_red_card_message": "ui_only"
+  },
+  "replay_vector": {
+    "test_question": "Can an independent replayer reach the same FTC excerpt from the public URL and match the preserved excerpt bytes?",
+    "steps": [
+      "Open the public_url from the excerpt card.",
+      "Locate the quoted FTC source text without author guidance.",
+      "Copy the exact excerpt bytes using the same normalization rule declared by the card.",
+      "Compute SHA256 over the preserved excerpt block.",
+      "Compare computed SHA256 to the card sha256.",
+      "Confirm no ui_label, ui_feedback, or ui_red_card_message text appears inside excerpt."
+    ],
+    "pass_conditions": [
+      "public_url resolves to an official FTC source or archived official FTC source",
+      "excerpt text matches the source text under declared normalization",
+      "sha256 matches preserved excerpt bytes",
+      "ui fields are absent from evidence fields",
+      "summary is not used as replay source"
+    ],
+    "fail_conditions": [
+      "public_url unavailable without archive or alternate official source",
+      "excerpt is paraphrased or analytical rather than verbatim",
+      "sha256 mismatch",
+      "Brenda or UI text appears in excerpt/public_url/source_owner/sha256/linked_nodes",
+      "card claims ISD 742 delivery without external receipt"
+    ]
+  },
+  "dashboard_interpretation": {
+    "brenda_ui_feedback": "FTC excerpt replays clean in three clicks. District packet still in your outbox. No paint, just proof.",
+    "ui_scope": "ui_only_not_evidence"
+  },
+  "final_rule": "Green only where the bytes prove themselves. Beige everywhere else."
+}
