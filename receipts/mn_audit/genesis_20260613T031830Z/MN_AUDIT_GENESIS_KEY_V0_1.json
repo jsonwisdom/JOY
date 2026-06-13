@@ -1,0 +1,14 @@
+{
+  "artifact_name": "MN_AUDIT_GENESIS_KEY_V0_1",
+  "classification": "GENESIS_KEY",
+  "jurisdiction": "Minnesota",
+  "operator": "Jason Wisdom",
+  "audit_name": "MN Audit",
+  "authority": false,
+  "no_fake_green": true,
+  "status": "GENESIS",
+  "first_lane": "School_Meals",
+  "repo": "jsonwisdom/JOY",
+  "evidence_ladder": ["UNKNOWN","CLAIMED","OBSERVED","REQUESTED","AWAITING","RECEIVED","PRESERVED","VERIFIED","REPLAYABLE"],
+  "next_action": "Submit first school-meals public-records request and preserve receipt."
+}
