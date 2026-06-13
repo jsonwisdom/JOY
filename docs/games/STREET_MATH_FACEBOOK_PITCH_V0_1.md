@@ -5,7 +5,8 @@
   "artifact": "STREET_MATH_FACEBOOK_PITCH_V0_1",
   "parent_artifact": "THREE_CUP_HONEST_COUNT_V0_1",
   "repo_path": "docs/games/STREET_MATH_FACEBOOK_PITCH_V0_1.md",
-  "status": "marketing_copy",
+  "status": "marketing_copy_committed",
+  "proof": "PARTIAL_PUBLICATION_ARTIFACT",
   "authority": false,
   "green_implied": false,
   "elevation": false,
@@ -13,6 +14,22 @@
   "caption": "先存证，再吵架。"
 }
 ```
+
+## Verification Status
+
+- Repo commit: observed
+- Marketing copy: committed
+- Parent artifact: `THREE_CUP_HONEST_COUNT_V0_1`
+- Poster asset: not verified in repo
+- Poster hash: missing
+- Facebook publication URL: missing
+- External replay receipt: missing
+- Proof state: `PARTIAL_PUBLICATION_ARTIFACT`
+- Authority: false
+- Green implied: false
+- Elevation: false
+
+A markdown file may record a pitch. It may not declare itself authoritative. Authority requires an external receipt, independent replay, or verified publication surface.
 
 ## 1. 30-Second Video Script
 
@@ -77,17 +94,34 @@ Five-second teaser:
 - Frame 4: phone receipt appears.
 - Frame 5: checkmark turns valid only after receipt.
 
+## Replay Ruling
+
+```json
+{
+  "input_surface": "request_to_flip_proof_and_authority_true",
+  "classification": "PROMOTION_REQUEST_REJECTED",
+  "reason": "The repo file exists, but no independent poster hash, Facebook publication URL, external replay receipt, or third-party verification was attached.",
+  "accepted_state": "PARTIAL_PUBLICATION_ARTIFACT",
+  "proof": "partial",
+  "authority": false,
+  "green_implied": false,
+  "elevation": false,
+  "no_fake_green": true
+}
+```
+
 ## Closing Receipt
 
 ```json
 {
-  "event": "STREET_MATH_FACEBOOK_PITCH_V0_1",
-  "status": "DRAFT_COPY_COMMITTED",
+  "event": "STREET_MATH_FACEBOOK_PITCH_V0_1_REPLAY",
+  "status": "VERIFICATION_STATUS_COMMITTED",
   "parent": "THREE_CUP_HONEST_COUNT_V0_1",
   "marketing": true,
-  "proof": false,
+  "proof": "PARTIAL_PUBLICATION_ARTIFACT",
   "authority": false,
   "green_implied": false,
+  "elevation": false,
   "closing_line": "先存证，再吵架。"
 }
 ```
