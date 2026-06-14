@@ -1,0 +1,47 @@
+{
+  "schema": "BIRTHDAY_BRENDA_ZORA_FLYWHEEL_V0_1",
+  "status": "PROTECTED_REPLAY_LANE",
+  "truth_state": "YELLOW_PROTECTED",
+  "no_fake_green": true,
+  "lf": "LOVE_FIRST",
+  "boss": {
+    "lane": "BOSS_BRENDA",
+    "display_name": "Boss Brenda",
+    "birthday_label": "Birthday Brenda",
+    "badge": "BOSS_BRENDA_BADGE"
+  },
+  "public_links": {
+    "zora_coin_url": "https://zora.co/coin/base:0xaae1e84f7872ae75f1c2083278eaf98c96defb5c?referrer=0x829adfedbe565f9885a7ea6bc78912acaef055e2",
+    "zora_profile_url": "https://zora.co/@jaywisdom"
+  },
+  "identity_layers": {
+    "L1": "jaywisdom.eth",
+    "L2": "jaywisdom.base.eth future lane",
+    "L3": "JoySpace / Computer Wisdom As A Service"
+  },
+  "class_project": {
+    "students": "Wisdom Girls protected lanes",
+    "skills": [
+      "JSON payload reading",
+      "CSV comparison",
+      "public URL audit",
+      "Base L2 reference hygiene",
+      "byte-for-byte verification",
+      "JoySpace changelog updates"
+    ]
+  },
+  "green_rule": [
+    "repo_read_back",
+    "public_http_200",
+    "sha256_repo_source_equals_sha256_public_body",
+    "content_marker",
+    "changelog_update",
+    "human_approval"
+  ],
+  "safety_boundary": {
+    "investment_advice": false,
+    "private_details": false,
+    "real_likeness_without_approval": false,
+    "public_green_without_byte_match": false
+  }
+}
