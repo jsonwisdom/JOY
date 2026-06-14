@@ -1,0 +1,21 @@
+{
+  "schema": "JOYSPACE_DEPTH_LEVELS_V0_1",
+  "state": "YELLOW_PROTECTED_UNTIL_PUBLIC_HTTP_200_BYTE_MATCH_AND_HUMAN_APPROVAL",
+  "doctrine": "LOVE_OF_MR_WISDOM_PROTOCOL_LF_NO_FAKE_GREEN",
+  "homepage_role": "JoySpace is not a surface page. It is a layered family, proof, class, and skill navigation system.",
+  "levels": [
+    {"level":"L0","name":"Love First","purpose":"Mrs. Wisdom and family approval membrane before brand or proof theater.","primary_surface":"Boss Birthday Frame"},
+    {"level":"L1","name":"Identity Seal","purpose":"jaywisdom.eth long-term identity and root claims.","primary_surface":"Mr. Wisdom Index"},
+    {"level":"L2","name":"Base Execution","purpose":"jaywisdom.base.eth future receipts, Zora public references, and L2 comparison lanes.","primary_surface":"Zora Index Class"},
+    {"level":"L3","name":"Skills On Demand","purpose":"Reusable JoySpace frames, operator skills, AI builder/verifier roles, and CWaaS buttons.","primary_surface":"Agentic Skills Deck"},
+    {"level":"L4","name":"Computer Class Projects","purpose":"Bri, Bre, Boss Brenda, and Wisdom Girls learn JSON, CSV, Base hygiene, and public byte comparison.","primary_surface":"Byte-for-Byte Self Wisdom Training Academy"},
+    {"level":"L5","name":"Public Proof Gate","purpose":"HTTP 200, content marker, SHA256 equality, changelog update, privacy check, and human approval.","primary_surface":"No Fake Green Gate"}
+  ],
+  "public_profiles": {
+    "zora_primary": "https://zora.co/@jaywisdom",
+    "zora_chromebook": "https://zora.co/@jaywisdom_chromebook"
+  },
+  "protected_boss_lanes": ["MRS_WISDOM","BOSS_BRENDA","BRIANNA","HEIDEE","JAYCEE","BREALEE","LEEANNE","MARYDEE","GRAMMY","GAGA"],
+  "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + PRIVACY_CHECK + HUMAN_VISUAL_CONFIRM",
+  "no_fake_green": true
+}
