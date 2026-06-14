@@ -10,6 +10,7 @@
   },
   "included_lanes": [
     "MRS_WISDOM",
+    "BOSS_BRENDA",
     "BRIANNA",
     "HEIDEE",
     "JAYCEE",
@@ -31,6 +32,7 @@
   ],
   "badges": [
     "BIRTHDAY_BOSS_BADGE",
+    "BOSS_BRENDA_BADGE",
     "BYTE_BOSS_BADGE",
     "MS_WISDOM_BADGE",
     "LF_LOVE_FIRST_BADGE",
