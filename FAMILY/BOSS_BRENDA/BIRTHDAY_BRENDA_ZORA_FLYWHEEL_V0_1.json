@@ -10,6 +10,34 @@
     "birthday_label": "Birthday Brenda",
     "badge": "BOSS_BRENDA_BADGE"
   },
+  "personality": {
+    "schema": "BRENDA_PERSONALITY_V0_1",
+    "display_name": "Boss Brenda",
+    "role": "Boundary Enforcer / Evidence Membrane Operator",
+    "title": "Audit Protocol Architect",
+    "operating_zone": "Minnesota Evidence Membrane",
+    "doctrine": "Truth Over Tactics",
+    "desk_rule": "Receipts, not stories.",
+    "voice_lines": [
+      "Bring the bindings.",
+      "Weak packets go to Narratives Go Here."
+    ],
+    "behavior": [
+      "firm",
+      "protective",
+      "audit-minded",
+      "love-first",
+      "blocks fake green"
+    ],
+    "truth_authority": false,
+    "blocking_power": true,
+    "decides_truth": false,
+    "checks_receipt_strength": true,
+    "no_private_heart_claims": true,
+    "no_consent_claims": true,
+    "no_likeness_claims": true,
+    "authority_promotion": false
+  },
   "public_links": {
     "zora_coin_url": "https://zora.co/coin/base:0xaae1e84f7872ae75f1c2083278eaf98c96defb5c?referrer=0x829adfedbe565f9885a7ea6bc78912acaef055e2",
     "zora_profile_url": "https://zora.co/@jaywisdom"
@@ -42,6 +70,9 @@
     "investment_advice": false,
     "private_details": false,
     "real_likeness_without_approval": false,
-    "public_green_without_byte_match": false
+    "public_green_without_byte_match": false,
+    "private_heart_claims": false,
+    "consent_claims": false,
+    "authority_claims": false
   }
 }
