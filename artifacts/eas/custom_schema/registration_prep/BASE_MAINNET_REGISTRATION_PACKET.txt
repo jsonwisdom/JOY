@@ -1,0 +1,16 @@
+JOYSPACE_CUSTOM_EAS_SCHEMA_REGISTRATION_PACKET
+
+schema_id=JOYSPACE_CONSTITUTIONAL_RUNTIME_ANCHOR_V1
+title=The Bridge That Did Not Lie
+target_network=base_mainnet
+resolver=0x0000000000000000000000000000000000000000
+revocable=true
+wallet_required_next=true
+on_chain_anchor=false
+no_fake_green=true
+
+schema_string:
+string title,string subtitle,string runtime,string promotion_id,string github_repo,string runtime_commit,string runtime_tag,bytes32 merkle_root,bytes32 anchor_payload_sha256,string archive_manifest_sha256,uint64 validation_run,uint64 sentinel_run,uint64 notice_run,bool no_fake_green,bool semantic_truth,bool authority
+
+operator_note:
+Register this exact schema string only. Do not paste the full JSON as the schema.
