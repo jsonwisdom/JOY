@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boss Birthday Frame — JoySpace</title>
+  <meta name="description" content="Standalone JoySpace Boss Birthday frame. Stable shell, changeable payload, Love First doctrine, byte-proof before green.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- JOYSPACE_STANDALONE_BOSS_BIRTHDAY_FRAME_V0_1 -->
+  <main class="shell">
+    <section class="hero card joyspace-home">
+      <p class="eyebrow">JOYSPACE / BOSS BIRTHDAY / LF</p>
+      <h1>Boss Birthday Frame</h1>
+      <p class="lead">The reusable birthday shell. The frame stays stable. The boss payload changes. Love stays first.</p>
+      <p><a href="../">Back to JoySpace Homepage</a></p>
+    </section>
+
+    <section id="boss-birthday-frame" class="card boss-birthday-frame" data-frame-version="BOSS_BIRTHDAY_FRAME_V0_2" data-payload="boss-birthday.json" aria-labelledby="boss-name">
+      <div class="frame-copy">
+        <p class="eyebrow">Stable Birthday Shell</p>
+        <p class="frame-kicker">Reusable by design. Personal by payload.</p>
+        <h2 id="boss-name" data-boss-name>Mrs. Wisdom</h2>
+        <p class="boss-role" data-boss-role>Birthday Girl / Boss of the Day</p>
+        <p class="boss-headline" data-boss-headline>There are 364 other days. This one is mine.</p>
+        <p class="boss-message" data-boss-message>Happy Birthday, Girl. Love first. Receipts second. The frame stays stable; the person inside the frame gets celebrated properly.</p>
+        <div class="boss-actions" data-boss-links>
+          <a href="mrs-wisdom-birthday.html">Open Birthday Page</a>
+          <a href="mrs-wisdom-birthday-girl-entertainment.html">Open Birthday Girl Entertainment Forest</a>
+        </div>
+      </div>
+      <figure class="boss-portrait">
+        <img data-boss-image src="boss-birthday/mrs-wisdom.svg" alt="Stylized birthday portrait frame for Mrs. Wisdom">
+        <figcaption data-boss-caption>Frame stays. Payload changes. Boss gets rendered inside.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card birthday-rule">
+      <p class="eyebrow">No Fake Green</p>
+      <h2>Public proof required</h2>
+      <code>GREEN = HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + HUMAN_VISUAL_CONFIRM</code>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const frame = document.querySelector('[data-payload]');
+      if (!frame) return;
+      const payloadUrl = frame.getAttribute('data-payload');
+      const setText = (selector, value) => {
+        const node = frame.querySelector(selector);
+        if (node && typeof value === 'string' && value.trim()) node.textContent = value;
+      };
+      const localize = (href) => {
+        if (typeof href !== 'string') return '';
+        if (href.startsWith('javascript:') || href.startsWith('data:text/html')) return '';
+        return href.replace(/^joyspace\//, '');
+      };
+      fetch(payloadUrl, { cache: 'no-store' })
+        .then((response) => response.ok ? response.json() : Promise.reject(new Error('payload fetch failed')))
+        .then((payload) => {
+          frame.setAttribute('data-payload-state', payload.state || 'payload_loaded');
+          setText('[data-boss-name]', payload.featured_name);
+          setText('[data-boss-role]', payload.featured_role);
+          setText('[data-boss-headline]', payload.headline);
+          setText('[data-boss-message]', payload.message);
+          setText('[data-boss-caption]', payload.caption);
+          const img = frame.querySelector('[data-boss-image]');
+          if (img && payload.image_url) {
+            img.src = localize(payload.image_url);
+            img.alt = payload.image_alt || payload.featured_name || 'Boss Birthday render';
+          }
+          const links = frame.querySelector('[data-boss-links]');
+          if (links && Array.isArray(payload.links)) {
+            links.replaceChildren();
+            payload.links.forEach((link) => {
+              const href = localize(link.href);
+              if (!href) return;
+              const a = document.createElement('a');
+              a.href = href;
+              a.textContent = link.label || href;
+              links.appendChild(a);
+            });
+          }
+        })
+        .catch(() => {
+          frame.setAttribute('data-payload-state', 'fallback_static');
+        });
+    }());
+  </script>
+</body>
+</html>
