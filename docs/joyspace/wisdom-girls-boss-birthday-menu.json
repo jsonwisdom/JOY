@@ -2,10 +2,11 @@
   "schema": "JOYSPACE_WISDOM_GIRLS_BOSS_BIRTHDAY_MENU_V0_1",
   "state": "YELLOW_PROTECTED",
   "no_fake_green": true,
-  "purpose": "Public-safe choice deck for Mrs. Wisdom Boss Birthday, Wisdom Girls, Alabama ALMS, and CWaaS skills on demand.",
+  "purpose": "Public-safe choice deck for Mrs. Wisdom Boss Birthday, Boss Brenda, Wisdom Girls, Alabama ALMS, and CWaaS skills on demand.",
   "featured_boss": "MRS_WISDOM",
   "protected_lanes": [
     "MRS_WISDOM",
+    "BOSS_BRENDA",
     "BRIANNA",
     "HEIDEE",
     "JAYCEE",
@@ -36,10 +37,12 @@
       "Birthday Page",
       "Entertainment Forest",
       "Standalone Boss Frame",
-      "Payload JSON"
+      "Payload JSON",
+      "Boss Brenda Candidate"
     ],
     "family": [
       "Wisdom Girls Roster",
+      "Boss Brenda",
       "Byte Boss Brianna",
       "Birthday Boss Byte Batches",
       "Boss Byte Scorecard"
