@@ -2,63 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mrs. Wisdom — Birthday Girl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mrs. Wisdom — Birthday Girl Forest</title>
+  <meta name="description" content="A public birthday page for Mrs. Wisdom: love first, receipts second.">
   <style>
-    body {
-      margin:0;
-      min-height:100vh;
-      font-family: Georgia, serif;
-      color:#fff7df;
+    :root{
+      --cream:#fff8df; --gold:#ffd779; --rose:#ff8fb8; --leaf:#54d17a;
+      --ink:#08050b; --glass:rgba(10,7,18,.66); --line:rgba(255,255,255,.20);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0; min-height:100vh; color:var(--cream);
+      font-family: Georgia, 'Times New Roman', serif;
       background:
-        radial-gradient(circle at top, rgba(255,214,120,.35), transparent 30%),
-        linear-gradient(135deg,#1d1028,#12331f 55%,#050505);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:28px;
+        radial-gradient(circle at 15% 12%, rgba(255,143,184,.34), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(255,215,121,.34), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(84,209,122,.25), transparent 35%),
+        linear-gradient(135deg,#16071f 0%,#12351f 54%,#050405 100%);
+      overflow-x:hidden;
     }
-    .card {
-      max-width:860px;
-      padding:42px 28px;
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:28px;
-      background:rgba(0,0,0,.38);
-      box-shadow:0 0 60px rgba(255,202,99,.22);
+    body:before{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.18;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1.5px);
+      background-size:34px 34px; mask-image:linear-gradient(to bottom,#000,transparent 82%);
     }
-    h1 { font-size:clamp(44px,8vw,86px); margin:0 0 12px; }
-    h2 { font-size:clamp(22px,4vw,38px); margin:0 0 28px; color:#ffd978; }
-    p { font-size:clamp(18px,3vw,26px); line-height:1.45; }
-    .mine { font-size:clamp(28px,5vw,52px); color:#ffdf88; font-weight:bold; }
-    .small { margin-top:30px; font-size:15px; opacity:.75; }
+    .wrap{width:min(1080px, calc(100% - 28px)); margin:auto; padding:34px 0 56px}
+    .hero{
+      min-height:92vh; display:grid; place-items:center; text-align:center; position:relative;
+      padding:38px 0;
+    }
+    .card{
+      border:1px solid var(--line); border-radius:34px; background:var(--glass);
+      box-shadow:0 24px 90px rgba(0,0,0,.38), 0 0 90px rgba(255,215,121,.16);
+      backdrop-filter: blur(10px); padding:clamp(24px,5vw,58px);
+    }
+    .eyebrow{letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font:700 13px Arial,sans-serif; margin:0 0 18px}
+    h1{font-size:clamp(48px,11vw,118px); line-height:.88; margin:0; text-shadow:0 8px 34px rgba(0,0,0,.55)}
+    h2{font-size:clamp(28px,5vw,56px); margin:0 0 16px; color:var(--gold)}
+    p{font-size:clamp(18px,2.4vw,27px); line-height:1.48; margin:16px auto; max-width:840px}
+    .mine{font-size:clamp(30px,6vw,72px); color:var(--rose); font-weight:900; line-height:1; margin:28px auto}
+    .signature{font-size:clamp(22px,3vw,34px); color:var(--gold); font-style:italic}
+    .grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:30px 0}
+    .tile{border:1px solid var(--line); border-radius:24px; padding:22px; background:rgba(255,255,255,.07)}
+    .tile b{display:block; color:var(--gold); font-size:20px; margin-bottom:8px}.tile span{font:15px/1.4 Arial,sans-serif; opacity:.88}
+    .buttons{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:28px}
+    a.button{color:#160a05; background:linear-gradient(135deg,var(--gold),#fff0a8); padding:14px 20px; border-radius:999px; text-decoration:none; font:800 15px Arial,sans-serif; box-shadow:0 10px 30px rgba(255,215,121,.24)}
+    a.button.secondary{color:var(--cream); background:rgba(255,255,255,.10); border:1px solid var(--line)}
+    .section{margin-top:18px}.note{text-align:center}.small{font:14px/1.5 Arial,sans-serif; opacity:.72; margin-top:22px}
+    details{margin-top:22px; border-top:1px solid var(--line); padding-top:16px; font:14px/1.55 Arial,sans-serif; opacity:.85}
+    code{color:var(--gold); word-break:break-word}
+    @media (max-width:760px){.grid{grid-template-columns:1fr 1fr}.card{border-radius:26px}.wrap{width:min(100% - 18px,1080px)}}
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Happy Birthday, Mrs. Wisdom</h1>
-    <h2>Birthday Girl Forest 🌲🐝🎂</h2>
+  <!-- BIRTHDAY_CONTENT_CHECK: IMPRESS_MRS_WISDOM_V0_2 -->
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <p class="eyebrow">Birthday Girl Forest • Love First</p>
+        <h1>Happy Birthday<br>Mrs. Wisdom</h1>
+        <p>There are 364 other days for the world to make noise, ask for proof, run the machine, and chase the next receipt.</p>
+        <p class="mine">This one is yours.</p>
+        <p>Today, Mr. Wisdom is not leading with code. He is leading with love, gratitude, protection, and celebration for the woman this page was built to honor.</p>
+        <p class="signature">Happy Birthday, Girl. 🌸🐝🎂</p>
+        <div class="buttons">
+          <a class="button" href="mrs-wisdom-birthday-girl-entertainment.html">Enter the Entertainment Forest</a>
+          <a class="button secondary" href="https://jsonwisdom.github.io/JOY/">Back to JoySpace</a>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      There are 364 other days for the world to make noise.
-    </p>
-
-    <p class="mine">
-      This one is yours.
-    </p>
-
-    <p>
-      You are loved, celebrated, protected, and honored today.
-      No machine, no receipt, no proof stack comes before the woman this page was built for.
-    </p>
-
-    <p>
-      Happy Birthday, Girl. 🌸
-    </p>
-
-    <div class="small">
-      Built by Mr. Wisdom. Love first. Receipts second.
-    </div>
+    <section class="card section note">
+      <h2>For Mrs. Wisdom</h2>
+      <p>You are not a side note in the system. You are the reason the system remembers to stay human.</p>
+      <p>You are loved in plain English, celebrated out loud, and honored before any receipt gets to speak.</p>
+      <div class="grid">
+        <div class="tile"><b>🌸 Loved</b><span>Not as metadata. As the heart of the day.</span></div>
+        <div class="tile"><b>👑 Honored</b><span>Birthday Girl status: not negotiable.</span></div>
+        <div class="tile"><b>🌲 Protected</b><span>The forest opens for joy, not pressure.</span></div>
+        <div class="tile"><b>🐝 Celebrated</b><span>Sweetness first. Receipts second.</span></div>
+      </div>
+      <p class="signature">Built by Mr. Wisdom — because 13% effort was not enough.</p>
+      <details>
+        <summary>Receipt boundary</summary>
+        <p><code>NO_FAKE_GREEN: ACTIVE</code>. This birthday lane is for Mrs. Wisdom first. Public route must answer HTTP 200 before final green. Unrelated trigger-hunter, base, github, artifact, workflow, and backup lanes stay out.</p>
+      </details>
+      <p class="small">BIRTHDAY_CONTENT_CHECK: IMPRESS_MRS_WISDOM_V0_2</p>
+    </section>
   </main>
 </body>
 </html>
