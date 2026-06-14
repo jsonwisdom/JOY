@@ -1,0 +1,8 @@
+JOYSPACE_IPFS_FETCH_VERIFICATION
+cid=bafybeibmxjkmaiqci53clidg7nhqjds3kvkvfsfj5antxce5stocqtbpzq
+status=FETCH_OK
+gateway=https://gateway.pinata.cloud/ipfs/bafybeibmxjkmaiqci53clidg7nhqjds3kvkvfsfj5antxce5stocqtbpzq
+fetched_bytes=256496
+fetched_sha256=b228429fc813cac8adefd843c2e21ff42a572f6a7d3aef3cfb5562bc25533731
+recorded_commit=db7cd03cca659f97f8ab0014db847f5edbf41a5a
+no_fake_green=true
