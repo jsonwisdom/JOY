@@ -1,0 +1,2 @@
+record_id,feature_name,repo_path,public_url,l1,l2,network,json_path,expected_sha256,observed_sha256,http_status,marker,approval,privacy,truth_state,notes
+TEMPLATE_001,profile_index,FAMILY/WISDOM_GIRLS/COMPUTER_CLASS_PROJECT/COMPUTER_WISDOM_CLASS_PROJECT_V0_1.json,https://zora.co/@jaywisdom,jaywisdom.eth,jaywisdom.base.eth,Base,FAMILY/WISDOM_GIRLS/COMPUTER_CLASS_PROJECT/COMPUTER_WISDOM_CLASS_PROJECT_V0_1.json,,,,COMPUTER_WISDOM_CLASS_PROJECT_V0_1,PENDING,REQUIRED,YELLOW_PENDING,Public link only until comparison is run
