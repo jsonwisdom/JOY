@@ -1,0 +1,31 @@
+name: Trigger Hunter
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/**"
+      - "docs/**"
+      - "artifacts/**"
+      - ".github/workflows/**"
+  schedule:
+    - cron: "17 12 * * *"
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run trigger hunter
+        run: |
+          chmod +x scripts/github_trigger_hunter.sh
+          ./scripts/github_trigger_hunter.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trigger-hunter-snapshot
+          path: artifacts/github/

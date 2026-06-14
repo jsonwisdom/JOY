@@ -1,0 +1,9 @@
+{
+  "rpc_status": "0x1",
+  "logs_count": 14,
+  "topic_mentions_observed": true,
+  "direct_zora_coin_log_address_hit": false,
+  "semantic_truth_final": false,
+  "authority": false,
+  "no_fake_green": true
+}
