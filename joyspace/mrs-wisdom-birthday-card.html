@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mrs. Wisdom Birthday Card</title>
+<style>
+  body { margin: 0; font-family: Georgia, serif; background: #f7fff7; color: #24402b; }
+  .card { max-width: 760px; margin: 24px auto; padding: 36px 24px; border: 3px solid #8fbc8f; border-radius: 24px; background: white; text-align: center; }
+  h1 { font-size: 2.2rem; margin-bottom: 12px; }
+  .forest { font-size: 2rem; margin: 18px 0; }
+  .message { font-size: 1.25rem; line-height: 1.7; margin: 24px 0; }
+  .signature { margin-top: 32px; font-size: 1.3rem; }
+  button { margin-top: 24px; padding: 12px 20px; border: none; border-radius: 12px; background: #24402b; color: white; font-size: 1rem; }
+  @media print { button { display: none; } body { background: white; } .card { border: 2px solid #24402b; margin: 0; } }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="forest">🌲 🌸 🎂 🌸 🌲</div>
+    <h1>Happy Birthday, Mrs. Wisdom</h1>
+    <div class="message">
+      364 days belong to the calendar.<br />
+      This day belongs to the Birthday Girl.<br /><br />
+      Every path in this forest was planted<br />
+      because one person mattered enough to build it.<br /><br />
+      No receipts required.<br />
+      No crypto necessary.<br /><br />
+      Just this truth:<br />
+      <strong>You are loved.</strong>
+    </div>
+    <div class="signature">With love,<br />Jay</div>
+    <button onclick="window.print()">Print Birthday Card</button>
+  </main>
+</body>
+</html>
