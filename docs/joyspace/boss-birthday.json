@@ -1,13 +1,26 @@
 {
-  "schema": "JOYSPACE_BOSS_BIRTHDAY_PAYLOAD_V0_1",
-  "frame_id": "BOSS_BIRTHDAY_FRAME_V0_1",
+  "schema": "JOYSPACE_BOSS_BIRTHDAY_PAYLOAD_V0_2",
+  "frame_id": "BOSS_BIRTHDAY_FRAME_V0_2",
   "state": "YELLOW_UNTIL_PUBLIC_HTTP_200_AND_BYTE_MATCH",
+  "doctrine": "LF_LOVE_FIRST_RECEIPTS_SECOND",
   "featured_name": "Mrs. Wisdom",
   "featured_role": "Birthday Girl / Boss of the Day",
   "headline": "There are 364 other days. This one is mine.",
   "message": "Happy Birthday, Girl. Love first. Receipts second. The frame stays stable; the person inside the frame gets celebrated properly.",
+  "caption": "Frame stays. Payload changes. Boss gets rendered inside.",
   "image_url": "joyspace/boss-birthday/mrs-wisdom.svg",
-  "image_alt": "Stylized birthday portrait frame for Mrs. Wisdom",
+  "image_alt": "Stylized Boss Birthday render for Mrs. Wisdom inside the reusable JoySpace frame",
+  "frame_contract": {
+    "stable_shell": true,
+    "payload_changeable": true,
+    "human_approval_required": true,
+    "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + HUMAN_VISUAL_CONFIRM"
+  },
+  "layers": {
+    "L1": "Identity seal and long-term anchor",
+    "L2": "Execution receipts and attestations",
+    "L3": "Reusable skills, frames, pages, and operator services"
+  },
   "links": [
     {
       "label": "Open Birthday Page",
@@ -16,6 +29,10 @@
     {
       "label": "Open Birthday Girl Entertainment Forest",
       "href": "joyspace/mrs-wisdom-birthday-girl-entertainment.html"
+    },
+    {
+      "label": "Open Boss Birthday Frame",
+      "href": "joyspace/boss-birthday-frame.html"
     },
     {
       "label": "Open Zora Gate",
