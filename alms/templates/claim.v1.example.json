@@ -1,0 +1,87 @@
+{
+  "claim_id": "ALMS_OPERATING_THESIS_V1_GREEN_WITNESS",
+  "claim_type": "REPO_WITNESS_CLAIM",
+  "scope": {
+    "jurisdiction": "GLOBAL",
+    "surface": "REPO",
+    "version": "v1"
+  },
+  "doctrine_binding": {
+    "thesis_id": "ALMS_OPERATING_THESIS_V1",
+    "doctrine_ref": "joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md",
+    "doctrine_commit_sha": "2787cb7a2d99045419dcee89cb6878910d4f9ba3"
+  },
+  "proofs": {
+    "source_artifact": {
+      "exists": true,
+      "description": "ALMS Operating Thesis V1 witnessed artifact receipt",
+      "location": {
+        "repo": "jsonwisdom/JOY",
+        "path": "joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md",
+        "branch": "main"
+      },
+      "content_type": "text/markdown",
+      "size_bytes": 0
+    },
+    "commit_sha": {
+      "value": "aeaff9e3d0b211a5db46473e820fa6a2208e3fce",
+      "repo": "jsonwisdom/JOY",
+      "branch": "main",
+      "timestamp": "2026-06-13T00:00:00Z"
+    },
+    "hash_or_cid": {
+      "algorithm": "IPFS_CIDv1",
+      "value": "bafkreibek27v65svqbbmpmqytmu4t7vsdibp2lk7q7sk7xqb5vpmtwc5fu",
+      "computed_from": {
+        "path": "ALMS/OPERATING_THESIS_V1.md",
+        "mode": "RAW_BYTES"
+      }
+    },
+    "receipt": {
+      "id": "ALMS_OPERATING_THESIS_V1_GREEN_WITNESS",
+      "emitter": "HUMAN_CLERK",
+      "timestamp": "2026-06-13T00:00:00Z",
+      "log_location": "joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md",
+      "includes": {
+        "commit_sha": "2787cb7a2d99045419dcee89cb6878910d4f9ba3",
+        "hash_or_cid": "bafkreibek27v65svqbbmpmqytmu4t7vsdibp2lk7q7sk7xqb5vpmtwc5fu",
+        "claim_id": "ALMS_OPERATING_THESIS_V1_GREEN_WITNESS"
+      }
+    },
+    "witness": {
+      "required": true,
+      "status": "PRESENT",
+      "witness_type": "ONCHAIN",
+      "witness_ref": "0xbaf61464a091f8fe6f2e7ba9ff0bcb68855535cd61be7be3f2432afc9fdd4cd2",
+      "witness_statement_hash": "0xa85186db33785e25b9bfcd319fb1a653da803bf82d27ab372bb7b35f96323a0a"
+    },
+    "replay_path": {
+      "exists": true,
+      "status": "PASS",
+      "entrypoint": "manual replay from receipt",
+      "instructions": "Verify commit, CID, schema UID, attestation UID, transaction hash, and recipient against the receipt.",
+      "tooling": [
+        {
+          "name": "GitHub",
+          "version": "web/API",
+          "command": "fetch joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md"
+        },
+        {
+          "name": "EAS/Base Sepolia explorer",
+          "version": "web",
+          "command": "lookup attestation UID"
+        }
+      ],
+      "expected_outputs": {
+        "hash_or_cid": "bafkreibek27v65svqbbmpmqytmu4t7vsdibp2lk7q7sk7xqb5vpmtwc5fu",
+        "receipt_id": "ALMS_OPERATING_THESIS_V1_GREEN_WITNESS"
+      }
+    }
+  },
+  "green_state": {
+    "eligible": true,
+    "reason": "PASS",
+    "evaluated_at": "2026-06-13T00:00:00Z",
+    "evaluator": "HUMAN_CLERK"
+  }
+}
