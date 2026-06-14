@@ -14,7 +14,8 @@
     "L1": "jaywisdom.eth",
     "L2": "jaywisdom.base.eth future execution lane",
     "L3": "JoySpace skills, birthday frames, proof buttons, and agentic skills on demand",
-    "project": "ALABAMA_ALMS_FOR_WISDOM_GIRLS"
+    "project": "ALABAMA_ALMS_FOR_WISDOM_GIRLS",
+    "mr_wisdom_index": "joyspace/mr-wisdom-index.html"
   },
   "wisdom_girls_protected_lanes": [
     "MRS_WISDOM",
@@ -35,54 +36,19 @@
     "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + PRIVACY_CHECK + HUMAN_VISUAL_CONFIRM"
   },
   "links": [
-    {
-      "label": "Open Birthday Page",
-      "href": "joyspace/mrs-wisdom-birthday.html"
-    },
-    {
-      "label": "Open Entertainment Forest",
-      "href": "joyspace/mrs-wisdom-birthday-girl-entertainment.html"
-    },
-    {
-      "label": "Open Boss Frame",
-      "href": "joyspace/boss-birthday-frame.html"
-    },
-    {
-      "label": "Open Girls Menu JSON",
-      "href": "joyspace/wisdom-girls-boss-birthday-menu.json"
-    },
-    {
-      "label": "Choices",
-      "href": "#choice-deck"
-    },
-    {
-      "label": "Wisdom Girls",
-      "href": "#wisdom-girls"
-    },
-    {
-      "label": "Alabama ALMS",
-      "href": "#alabama-alms"
-    },
-    {
-      "label": "Byte Proof Gate",
-      "href": "#proof-gate"
-    },
-    {
-      "label": "Agentic Skills",
-      "href": "#agentic-skills"
-    },
-    {
-      "label": "Meta/Facebook Share Surface",
-      "href": "#meta-share"
-    },
-    {
-      "label": "Zora Gate Later",
-      "href": "https://zora.co/@jaywisdom"
-    },
-    {
-      "label": "JOY GitHub",
-      "href": "https://github.com/jsonwisdom/JOY"
-    }
+    { "label": "Open Birthday Page", "href": "joyspace/mrs-wisdom-birthday.html" },
+    { "label": "Open Entertainment Forest", "href": "joyspace/mrs-wisdom-birthday-girl-entertainment.html" },
+    { "label": "Open Boss Frame", "href": "joyspace/boss-birthday-frame.html" },
+    { "label": "Open Mr. Wisdom Index", "href": "joyspace/mr-wisdom-index.html" },
+    { "label": "Open Girls Menu JSON", "href": "joyspace/wisdom-girls-boss-birthday-menu.json" },
+    { "label": "Choices", "href": "#choice-deck" },
+    { "label": "Wisdom Girls", "href": "#wisdom-girls" },
+    { "label": "Alabama ALMS", "href": "#alabama-alms" },
+    { "label": "Byte Proof Gate", "href": "#proof-gate" },
+    { "label": "Agentic Skills", "href": "#agentic-skills" },
+    { "label": "Meta/Facebook Share Surface", "href": "#meta-share" },
+    { "label": "Zora Gate Later", "href": "https://zora.co/@jaywisdom" },
+    { "label": "JOY GitHub", "href": "https://github.com/jsonwisdom/JOY" }
   ],
   "no_fake_green": true
 }
