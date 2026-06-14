@@ -1,0 +1,89 @@
+name: Verify ALMS Claims (Six Proofs)
+
+on:
+  pull_request:
+    paths:
+      - 'alms/claims/*.json'
+      - 'alms/schema/claim.v1.json'
+      - '.github/workflows/verify-alms-claims.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'alms/claims/*.json'
+      - 'alms/schema/claim.v1.json'
+      - '.github/workflows/verify-alms-claims.yml'
+
+jobs:
+  verify-claims:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ajv CLI
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Detect claim files
+        id: claims
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(alms/claims/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No alms/claims/*.json files found. Nothing to validate yet."
+            echo "has_claims=false" >> "$GITHUB_OUTPUT"
+          else
+            printf '%s\n' "${files[@]}" > /tmp/alms_claims.txt
+            echo "has_claims=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate claim JSON files against schema
+        if: steps.claims.outputs.has_claims == 'true'
+        shell: bash
+        run: |
+          while read -r claim; do
+            echo "Validating $claim ..."
+            ajv validate -s alms/schema/claim.v1.json -d "$claim" --strict=false
+            echo "✅ $claim schema valid"
+          done < /tmp/alms_claims.txt
+
+      - name: Enforce six-proof green rule
+        if: steps.claims.outputs.has_claims == 'true'
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const files = fs.readFileSync('/tmp/alms_claims.txt','utf8').trim().split(/\n+/).filter(Boolean);
+          let failed = false;
+          for (const file of files) {
+            const claim = JSON.parse(fs.readFileSync(file, 'utf8'));
+            const proofs = claim.proofs || {};
+            const checks = {
+              source_artifact: proofs.source_artifact?.exists === true,
+              commit_sha: !!proofs.commit_sha?.value,
+              hash_or_cid: !!proofs.hash_or_cid?.value,
+              receipt: !!proofs.receipt?.id,
+              witness: proofs.witness?.required === false || proofs.witness?.status === 'PRESENT',
+              replay_path: proofs.replay_path?.exists === true && proofs.replay_path?.status === 'PASS'
+            };
+            const missing = Object.entries(checks).filter(([, ok]) => !ok).map(([k]) => k);
+            const eligible = claim.green_state?.eligible === true && claim.green_state?.reason === 'PASS';
+            if (eligible && missing.length) {
+              console.error(`❌ ${file} claims GREEN but is missing: ${missing.join(', ')}`);
+              failed = true;
+            } else if (eligible) {
+              console.log(`✅ ${file} satisfies six-proof GREEN rule`);
+            } else {
+              console.log(`🟡 ${file} is not GREEN; preserved without fake promotion`);
+            }
+          }
+          if (failed) process.exit(1);
+          NODE
+
+      - name: Pass
+        run: echo "🎉 ALMS six-proof validation complete. NO_FAKE_GREEN enforced."
