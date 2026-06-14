@@ -1,0 +1,13 @@
+{
+  "schema_id": "JOYSPACE_CONSTITUTIONAL_RUNTIME_ANCHOR_V1",
+  "title": "JOYSPACE_CONSTITUTIONAL_RUNTIME_ANCHOR_V1",
+  "subtitle": "The Bridge That Did Not Lie",
+  "status": "SCHEMA_DRAFT_READY",
+  "network_target": "PENDING_OPERATOR_SELECTION",
+  "schema_string": "string title,string subtitle,string runtime,string promotion_id,string github_repo,string runtime_commit,string runtime_tag,bytes32 merkle_root,bytes32 anchor_payload_sha256,string archive_manifest_sha256,uint64 validation_run,uint64 sentinel_run,uint64 notice_run,bool no_fake_green,bool semantic_truth,bool authority",
+  "resolver": "0x0000000000000000000000000000000000000000",
+  "revocable": true,
+  "no_fake_green": true,
+  "wallet_required": false,
+  "on_chain_anchor": false
+}
