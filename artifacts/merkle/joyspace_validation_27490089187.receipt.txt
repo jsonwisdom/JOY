@@ -1,0 +1,11 @@
+JOYSPACE_VALIDATION_MERKLE_LEAF_RECEIPT
+timestamp_utc=2026-06-14T05:59:44Z
+repo=jsonwisdom/JOY
+commit=9b46612ee88f3691a4be3966e7c41ea2858f1f8a
+workflow_run=27490089187
+type=joyspace_validation
+state=GREEN_PASS
+base_tx_audit_sha256=8642aaf27aa027da9819da1b4ddcba60edf261c80287bac937a725e0dd5e150a
+no_fake_green=true
+semantic_truth=false
+authority=false
