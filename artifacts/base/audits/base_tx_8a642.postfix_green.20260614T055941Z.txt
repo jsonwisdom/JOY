@@ -1,0 +1,18 @@
+BASE_TX_POSTFIX_AUDIT_RECEIPT
+timestamp_utc=2026-06-14T05:59:41Z
+repo=jsonwisdom/JOY
+head=b2c7f8629e7ec28d9c1c03bb943f5e576b2f1fd1
+receipt_json=artifacts/base/base_tx_8a642.normalized.json
+receipt_json_sha256=6d4f4bca76dd3484835d850e5713cf33ee41dbaf5a995d6460d17bbce0b492c1
+
+== VERIFIER OUTPUT ==
+Initiating Base TX Boundary Verification...
+GREEN: Receipt boundary verification passed. Machine replay authorized.
+
+== AUDIT RULING ==
+verify_exit_code=0
+BASE_TX_STATE=GREEN_PASS
+EXPECTED_HALT=false
+SEMANTIC_TRUTH=false
+AUTHORITY=false
+NO_FAKE_GREEN=true
