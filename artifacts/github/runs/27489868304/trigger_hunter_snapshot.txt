@@ -1,0 +1,48 @@
+GITHUB_TRIGGER_HUNTER_SNAPSHOT
+timestamp_utc=2026-06-14T05:48:27Z
+branch=main
+head=09be3cca530a76fc01bef266ae9fe99a4d591392
+
+== STATUS ==
+## main...origin/main
+ M artifacts/github/trigger_hunter_snapshot.txt
+
+== WORKFLOWS ==
+.github/workflows/builder-boundary-sentinel.yml
+.github/workflows/joyspace-validate.yml
+.github/workflows/main.yml
+.github/workflows/rcb-00001-00002-parse-witness.yml
+.github/workflows/real-runtime-halt.yml
+.github/workflows/school-of-wisdom-membrane.yml
+.github/workflows/trigger-hunter.yml
+.github/workflows/verify-alms-claims.yml
+.github/workflows/zero-trust-audit.yml
+
+== RECENT COMMITS ==
+09be3cc fix(joy): preserve trigger hunter halt as receipt evidence
+
+== MACHINE REPLAY CHECK ==
+Initiating Base TX Boundary Verification...
+HALT: Direct Zora coin log address hit detected.
+machine_replay_exit_code=1
+MACHINE_REPLAY_RESULT=EXPECTED_HALT_OR_AUDIT_REQUIRED
+NO_FAKE_GREEN: verifier halt preserved as receipt evidence
+
+== GITHUB RUNS ==
+in_progress		fix(joy): preserve trigger hunter halt as receipt evidence	Builder Boundary Sentinel	main	push	27489868314	6s	2026-06-14T05:48:22Z
+in_progress		fix(joy): preserve trigger hunter halt as receipt evidence	Trigger Hunter	main	push	27489868304	6s	2026-06-14T05:48:22Z
+completed	success	fix(joy): preserve trigger hunter halt as receipt evidence	JoySpace Pages Notice	main	push	27489868297	6s	2026-06-14T05:48:22Z
+queued		fix(joy): preserve trigger hunter halt as receipt evidence	JoySpace Validation	main	push	27489868293	6s	2026-06-14T05:48:22Z
+in_progress		pages build and deployment	pages-build-deployment	main	dynamic	27489867995	7s	2026-06-14T05:48:21Z
+completed	success	chore(joy): add trigger hunter and base boundary replay artifacts	JoySpace Validation	main	push	27489752364	13s	2026-06-14T05:42:37Z
+completed	success	chore(joy): add trigger hunter and base boundary replay artifacts	JoySpace Pages Notice	main	push	27489752345	5s	2026-06-14T05:42:37Z
+completed	failure	chore(joy): add trigger hunter and base boundary replay artifacts	Trigger Hunter	main	push	27489752336	15s	2026-06-14T05:42:37Z
+completed	success	chore(joy): add trigger hunter and base boundary replay artifacts	Builder Boundary Sentinel	main	push	27489752334	6s	2026-06-14T05:42:37Z
+completed	success	pages build and deployment	pages-build-deployment	main	dynamic	27489752049	26s	2026-06-14T05:42:36Z
+
+== RULING ==
+TRIGGER HUNTER = BOOTED
+SNAP BACK FIXTURE = PRESERVED
+SEMANTIC TRUTH = NOT CLAIMED
+AUTHORITY = FALSE
+NO_FAKE_GREEN = TRUE
