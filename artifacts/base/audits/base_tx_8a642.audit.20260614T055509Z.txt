@@ -1,0 +1,18 @@
+BASE_TX_AUDIT_RECEIPT
+timestamp_utc=2026-06-14T05:55:09Z
+repo=jsonwisdom/JOY
+head=50848a8777f40e1910b09c2b90db78650611e3f3
+receipt_json=artifacts/base/base_tx_8a642.normalized.json
+receipt_json_sha256=6d4f4bca76dd3484835d850e5713cf33ee41dbaf5a995d6460d17bbce0b492c1
+
+== VERIFIER OUTPUT ==
+Initiating Base TX Boundary Verification...
+HALT: Direct Zora coin log address hit detected.
+
+== AUDIT RULING ==
+verify_exit_code=1
+BASE_TX_STATE=HALT_OR_AUDIT_REQUIRED
+EXPECTED_HALT=needs_manual_classification
+SEMANTIC_TRUTH=false
+AUTHORITY=false
+NO_FAKE_GREEN=true
