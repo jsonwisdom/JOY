@@ -16,6 +16,7 @@ This directory organizes the Wisdom girls into protected lanes so family replay 
 
 ```text
 MRS_WISDOM
+BOSS_BRENDA
 BRIANNA
 HEIDEE
 JAYCEE
@@ -44,6 +45,8 @@ TRUTH_STATE: YELLOW_PROTECTED
 ```
 
 Birthday Boss Byte Batches gamify protected birthday frames for the Wisdom girls. The frame stays stable; approved payloads determine who appears inside the frame.
+
+Boss Brenda is now included as a protected boss-birthday candidate lane.
 
 Green requires human approval, repo read-back, HTTP 200, SHA256 repo/public byte-match, content marker, and privacy check.
 
