@@ -24,7 +24,7 @@
   "proofs": {
     "source_artifact": {
       "exists": true,
-      "description": "Zora mint metadata and JOY thesis fragment mirror for MN_CIVIC_PACKET_V1 root. Source bytes committed; mirror remains YELLOW until replay and witness are present.",
+      "description": "Zora mint metadata and JOY thesis fragment mirror for MN_CIVIC_PACKET_V1 root. Source bytes committed; mirror replay and witness are present.",
       "location": {
         "repo": "jsonwisdom/JOY",
         "path": "docs/zora/series_alpha.md",
@@ -50,7 +50,7 @@
     "receipt": {
       "id": "ZORA_SERIES_ALPHA_SOURCE_HASH_RECEIPT",
       "emitter": "HUMAN_CLERK",
-      "timestamp": "2026-06-13T00:00:00Z",
+      "timestamp": "2026-06-13T22:59:52Z",
       "log_location": "alms/claims/ZORA_SERIES_ALPHA.claim.v1.json",
       "includes": {
         "commit_sha": "d7f211f83b9dd170ecaad5c64194fab0753f1bfc",
@@ -60,16 +60,16 @@
     },
     "witness": {
       "required": true,
-      "status": "PENDING",
+      "status": "PRESENT",
       "witness_type": "ONCHAIN",
-      "witness_ref": "PENDING_ZORA_EAS_UID",
-      "witness_statement_hash": "PENDING_ZORA_TX_HASH"
+      "witness_ref": "0x63474b597a4fde557a23a9a71aa7e5b53fd197f78f04ee18a683a3d9e9f7a831",
+      "witness_statement_hash": "0x983fa4dd0c57fdfc92ba1124943a76b16256069411fb0bec65bc8caa1ea7873f"
     },
     "replay_path": {
       "exists": true,
-      "status": "PENDING",
+      "status": "PASS",
       "entrypoint": "make replay-zora-series-alpha",
-      "instructions": "Compute SHA256 over raw bytes of docs/zora/series_alpha.md and compare to proofs.hash_or_cid.value. Confirm root_provenance references MN_CIVIC_PACKET_V1 GREEN witness. Do not promote GREEN until Zora-specific replay and witness are present.",
+      "instructions": "Compute SHA256 over raw bytes of docs/zora/series_alpha.md and compare to proofs.hash_or_cid.value. Confirm root_provenance references MN_CIVIC_PACKET_V1 GREEN witness. Replay PASS confirmed before Track019_ZORA_SERIES_ALPHA witness attestation.",
       "tooling": [
         {
           "name": "sha256sum",
@@ -77,9 +77,9 @@
           "command": "sha256sum docs/zora/series_alpha.md"
         },
         {
-          "name": "ALMS replay",
-          "version": "v1",
-          "command": "make replay-zora-series-alpha"
+          "name": "EAS/Base Sepolia",
+          "version": "schema #2060",
+          "command": "lookup attestation UID 0x63474b597a4fde557a23a9a71aa7e5b53fd197f78f04ee18a683a3d9e9f7a831"
         }
       ],
       "expected_outputs": {
@@ -89,15 +89,23 @@
     }
   },
   "green_state": {
-    "eligible": false,
-    "reason": "MISSING_PROOF",
-    "evaluated_at": "2026-06-13T00:00:00Z",
+    "eligible": true,
+    "reason": "PASS",
+    "evaluated_at": "2026-06-13T22:59:52Z",
     "evaluator": "HUMAN_CLERK"
   },
   "mirror_status": {
-    "status": "MIRROR_DRAFT",
+    "status": "GREEN_MIRROR",
     "root_claim_state": "MN_CIVIC_PACKET_V1_GREEN",
     "no_new_root": true,
     "no_fake_green": true
+  },
+  "witness_metadata": {
+    "track_id": "Track019_ZORA_SERIES_ALPHA",
+    "schema_uid": "0x60b411ae490910a5c647b725969e425b9c4dfc4ffdc2e9bd591709e9614d21dd",
+    "attestation_uid": "0x63474b597a4fde557a23a9a71aa7e5b53fd197f78f04ee18a683a3d9e9f7a831",
+    "tx_hash": "0x983fa4dd0c57fdfc92ba1124943a76b16256069411fb0bec65bc8caa1ea7873f",
+    "recipient": "jaywisdom.base.eth / 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+    "decoded_message": "ZORA_SERIES_ALPHA replay PASS; receipt ZORA_SERIES_ALPHA_SOURCE_HASH_RECEIPT"
   }
 }
