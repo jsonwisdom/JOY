@@ -9,6 +9,7 @@
 | **JAYCEE** | `COMPUTERWISDOM/JOY/FAMILY/JAYCEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
 | **BREALEE** | `COMPUTERWISDOM/JOY/FAMILY/BREALEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
 | **BRIANNA** | `COMPUTERWISDOM/JOY/FAMILY/BRIANNA/` | `[PENDING]` | `FAMILY/BRIANNA/BYTE_BOSS_BRIANNA_V0_1.json` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
+| **BOSS_BRENDA** | `COMPUTERWISDOM/JOY/FAMILY/BOSS_BRENDA/` | `6f53518dbe76c2397607b65b1a470d67753f89b4` | `FAMILY/BOSS_BRENDA/README.md` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
 | **MRS_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/MRS_WISDOM/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
 | **DADDY_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/DADDY_WISDOM/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | ROOT |
 
@@ -19,6 +20,7 @@
 - **TRUTH_STATE:** YELLOW.
 - **REQUIRED_TRANSITION:** Populate all `[PENDING]` fields with replayable proof before GREEN.
 - **MR_WISDOM_PUBLIC_INDEX:** Public profile link is allowed; private family details are not.
+- **BOSS_BRENDA:** Added as a protected Boss Birthday candidate lane; no public render or green state without human approval.
 - **ASSET_PROTECTION:** FAMILY_RESTRICTED and INTERNAL_ONLY lanes remain bounded.
 - **NO_FAKE_GREEN:** No path, hash, commit, CID, EAS, Base, or authority claim is promoted without receipt correlation.
 - **GITHUB_GREEN:** GitHub proves transport only.
