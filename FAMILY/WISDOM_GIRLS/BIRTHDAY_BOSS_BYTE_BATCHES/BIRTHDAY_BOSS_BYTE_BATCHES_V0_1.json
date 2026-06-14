@@ -1,0 +1,58 @@
+{
+  "schema": "BIRTHDAY_BOSS_BYTE_BATCHES_FOR_WISDOM_GIRLS_V0_1",
+  "status": "GAMIFIED_PROTECTED_BATCH_SYSTEM",
+  "truth_state": "YELLOW_PROTECTED",
+  "no_fake_green": true,
+  "lf": "LOVE_FIRST",
+  "stable_frame": {
+    "name": "Boss Birthday Frame",
+    "rule": "The frame stays stable; the approved boss payload changes."
+  },
+  "included_lanes": [
+    "MRS_WISDOM",
+    "BRIANNA",
+    "HEIDEE",
+    "JAYCEE",
+    "BREALEE",
+    "LEEANNE",
+    "MARYDEE",
+    "GRAMMY",
+    "GAGA"
+  ],
+  "game_states": [
+    "PICK_BOSS",
+    "LOAD_APPROVED_PAYLOAD",
+    "BUILD_FRAME",
+    "REPO_READ_BACK",
+    "PUBLIC_HTTP_200",
+    "BYTE_MATCH",
+    "HUMAN_VISUAL_APPROVAL",
+    "BIRTHDAY_GREEN"
+  ],
+  "badges": [
+    "BIRTHDAY_BOSS_BADGE",
+    "BYTE_BOSS_BADGE",
+    "MS_WISDOM_BADGE",
+    "LF_LOVE_FIRST_BADGE",
+    "NO_FAKE_GREEN_BADGE",
+    "HUMAN_APPROVAL_BADGE",
+    "PUBLIC_200_BADGE",
+    "BYTE_MATCH_BADGE"
+  ],
+  "green_rule": {
+    "requires": [
+      "human_approval",
+      "repo_read_back",
+      "http_200",
+      "sha256_repo_source_equals_sha256_public_body",
+      "content_marker",
+      "privacy_check"
+    ]
+  },
+  "privacy_boundary": {
+    "private_details": false,
+    "real_likeness_without_approval": false,
+    "public_biography_without_approval": false,
+    "implied_consent": false
+  }
+}
