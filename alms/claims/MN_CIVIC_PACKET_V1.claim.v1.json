@@ -31,52 +31,65 @@
     },
     "hash_or_cid": {
       "algorithm": "SHA256",
-      "value": "PENDING_SHA256_RAW_BYTES",
+      "value": "aa85eeefb848f5e23db9c8797015c65d1f44c7a6b4a76afbb9c53712f36e595d",
       "computed_from": {
         "path": "docs/mn_civic/packet_v1.md",
         "mode": "RAW_BYTES"
       }
     },
     "receipt": {
-      "id": "MN_CIVIC_PACKET_V1_SOURCE_RECEIPT_PENDING",
+      "id": "MN_CIVIC_PACKET_V1_SOURCE_HASH_RECEIPT",
       "emitter": "HUMAN_CLERK",
-      "timestamp": "2026-06-13T00:00:00Z",
+      "timestamp": "2026-06-13T22:39:06Z",
       "log_location": "alms/claims/MN_CIVIC_PACKET_V1.claim.v1.json",
       "includes": {
         "commit_sha": "be73b5cf0b6f51de93da83d4bcee84fe57947f56",
-        "hash_or_cid": "PENDING_SHA256_RAW_BYTES",
+        "hash_or_cid": "aa85eeefb848f5e23db9c8797015c65d1f44c7a6b4a76afbb9c53712f36e595d",
         "claim_id": "MN_CIVIC_PACKET_V1"
       }
     },
     "witness": {
       "required": true,
-      "status": "PENDING",
+      "status": "PRESENT",
       "witness_type": "ONCHAIN",
-      "witness_ref": "PENDING_EAS_UID",
-      "witness_statement_hash": "PENDING_TX_HASH"
+      "witness_ref": "0x9e897d2acabc6133f481ebad69c5bbd9dadb5201cc7adce847cab5a00325f0c9",
+      "witness_statement_hash": "0x3870fcd23e03e51f60c769d570c7896b7a9d0807bea455734bb618ba813d816c"
     },
     "replay_path": {
       "exists": true,
-      "status": "PENDING",
+      "status": "PASS",
       "entrypoint": "sha256sum docs/mn_civic/packet_v1.md",
-      "instructions": "Compute SHA256 over raw bytes of docs/mn_civic/packet_v1.md and compare to proofs.hash_or_cid.value. Do not promote GREEN until hash is recorded, witness is present, and replay status is PASS.",
+      "instructions": "Compute SHA256 over raw bytes of docs/mn_civic/packet_v1.md and compare to proofs.hash_or_cid.value. Replay PASS confirmed before Track019 witness attestation.",
       "tooling": [
         {
           "name": "sha256sum",
           "version": "coreutils",
           "command": "sha256sum docs/mn_civic/packet_v1.md"
+        },
+        {
+          "name": "EAS/Base Sepolia",
+          "version": "schema #2060",
+          "command": "lookup attestation UID 0x9e897d2acabc6133f481ebad69c5bbd9dadb5201cc7adce847cab5a00325f0c9"
         }
       ],
       "expected_outputs": {
-        "hash_or_cid": "PENDING_SHA256_RAW_BYTES",
-        "receipt_id": "MN_CIVIC_PACKET_V1_SOURCE_RECEIPT_PENDING"
+        "hash_or_cid": "aa85eeefb848f5e23db9c8797015c65d1f44c7a6b4a76afbb9c53712f36e595d",
+        "receipt_id": "MN_CIVIC_PACKET_V1_SOURCE_HASH_RECEIPT"
       }
     }
   },
   "green_state": {
-    "eligible": false,
-    "reason": "MISSING_PROOF",
-    "evaluated_at": "2026-06-13T00:00:00Z",
+    "eligible": true,
+    "reason": "PASS",
+    "evaluated_at": "2026-06-13T22:39:06Z",
     "evaluator": "HUMAN_CLERK"
+  },
+  "witness_metadata": {
+    "track_id": "Track019_MN_Civic_Provenance",
+    "schema_uid": "0x60b411ae490910a5c647b725969e425b9c4dfc4ffdc2e9bd591709e9614d21dd",
+    "attestation_uid": "0x9e897d2acabc6133f481ebad69c5bbd9dadb5201cc7adce847cab5a00325f0c9",
+    "tx_hash": "0x3870fcd23e03e51f60c769d570c7896b7a9d0807bea455734bb618ba813d816c",
+    "recipient": "jaywisdom.base.eth / 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+    "decoded_message": "MN_CIVIC_PACKET_V1 replay PASS; receipt MN_CIVIC_PACKET_V1_SOURCE_HASH_RECEIPT"
   }
 }
