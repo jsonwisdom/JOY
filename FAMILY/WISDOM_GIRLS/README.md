@@ -34,6 +34,19 @@ GAGA
 - Folder existence is not a claim of public consent.
 - Love First. Proof Second. No Fake Green.
 
+## Birthday Boss Byte Batches
+
+```text
+BIRTHDAY_BOSS_BYTE_BATCHES: CREATED
+PATH: FAMILY/WISDOM_GIRLS/BIRTHDAY_BOSS_BYTE_BATCHES/
+STATUS: GAMIFIED_PROTECTED_BATCH_SYSTEM
+TRUTH_STATE: YELLOW_PROTECTED
+```
+
+Birthday Boss Byte Batches gamify protected birthday frames for the Wisdom girls. The frame stays stable; approved payloads determine who appears inside the frame.
+
+Green requires human approval, repo read-back, HTTP 200, SHA256 repo/public byte-match, content marker, and privacy check.
+
 ## Replay Line
 
 ```text
