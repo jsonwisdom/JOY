@@ -20,7 +20,17 @@ git log --oneline -5
 echo
 echo "== MACHINE REPLAY CHECK =="
 if [ -x scripts/verify_base_tx_boundary.sh ] && [ -f artifacts/base/base_tx_8a642.normalized.json ]; then
+  set +e
   ./scripts/verify_base_tx_boundary.sh artifacts/base/base_tx_8a642.normalized.json
+  REPLAY_EXIT="$?"
+  set -e
+  echo "machine_replay_exit_code=$REPLAY_EXIT"
+  if [ "$REPLAY_EXIT" -eq 0 ]; then
+    echo "MACHINE_REPLAY_RESULT=GREEN_PASS"
+  else
+    echo "MACHINE_REPLAY_RESULT=EXPECTED_HALT_OR_AUDIT_REQUIRED"
+    echo "NO_FAKE_GREEN: verifier halt preserved as receipt evidence"
+  fi
 else
   echo "YELLOW: base tx replay harness or normalized receipt missing"
 fi
