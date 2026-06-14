@@ -1,0 +1,87 @@
+{
+  "claim_id": "{UNIT_ID}",
+  "claim_type": "MN_CIVIC_UNIT_TEMPLATE",
+  "scope": {
+    "jurisdiction": "MN",
+    "surface": "CIVIC",
+    "version": "v1"
+  },
+  "doctrine_binding": {
+    "thesis_id": "ALMS_OPERATING_THESIS_V1",
+    "doctrine_ref": "joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md",
+    "doctrine_commit_sha": "2787cb7a2d99045419dcee89cb6878910d4f9ba3"
+  },
+  "proofs": {
+    "source_artifact": {
+      "exists": false,
+      "description": "TEMPLATE_ONLY: replace with actual MN civic source artifact description",
+      "location": {
+        "repo": "jsonwisdom/JOY",
+        "path": "docs/mn_civic/{UNIT_ID}.md",
+        "branch": "main"
+      },
+      "content_type": "text/markdown",
+      "size_bytes": 0
+    },
+    "commit_sha": {
+      "value": "PENDING_SOURCE_COMMIT",
+      "repo": "jsonwisdom/JOY",
+      "branch": "main",
+      "timestamp": "PENDING_TIMESTAMP"
+    },
+    "hash_or_cid": {
+      "algorithm": "SHA256",
+      "value": "PENDING_SHA256_RAW_BYTES",
+      "computed_from": {
+        "path": "docs/mn_civic/{UNIT_ID}.md",
+        "mode": "RAW_BYTES"
+      }
+    },
+    "receipt": {
+      "id": "PENDING_RECEIPT_ID",
+      "emitter": "HUMAN_CLERK",
+      "timestamp": "PENDING_TIMESTAMP",
+      "log_location": "alms/claims/{UNIT_ID}.claim.v1.json",
+      "includes": {
+        "commit_sha": "PENDING_SOURCE_COMMIT",
+        "hash_or_cid": "PENDING_SHA256_RAW_BYTES",
+        "claim_id": "{UNIT_ID}"
+      }
+    },
+    "witness": {
+      "required": true,
+      "status": "PENDING",
+      "witness_type": "ONCHAIN",
+      "witness_ref": "PENDING_EAS_UID",
+      "witness_statement_hash": "PENDING_TX_HASH"
+    },
+    "replay_path": {
+      "exists": true,
+      "status": "PENDING",
+      "entrypoint": "sha256sum docs/mn_civic/{UNIT_ID}.md",
+      "instructions": "Compute SHA256 over raw bytes of the source artifact and compare to proofs.hash_or_cid.value. Do not promote GREEN until hash is recorded, witness is present, and replay status is PASS.",
+      "tooling": [
+        {
+          "name": "sha256sum",
+          "version": "coreutils",
+          "command": "sha256sum docs/mn_civic/{UNIT_ID}.md"
+        }
+      ],
+      "expected_outputs": {
+        "hash_or_cid": "PENDING_SHA256_RAW_BYTES",
+        "receipt_id": "PENDING_RECEIPT_ID"
+      }
+    }
+  },
+  "green_state": {
+    "eligible": false,
+    "reason": "MISSING_PROOF",
+    "evaluated_at": "PENDING_TIMESTAMP",
+    "evaluator": "HUMAN_CLERK"
+  },
+  "template_status": {
+    "status": "TEMPLATE_ONLY",
+    "green_state": "NOT_APPLICABLE",
+    "no_fake_green": true
+  }
+}
