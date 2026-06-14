@@ -1,0 +1,103 @@
+{
+  "claim_id": "ZORA_SERIES_ALPHA",
+  "claim_type": "ZORA_ONCHAIN_MINT_MIRROR",
+  "scope": {
+    "jurisdiction": "GLOBAL",
+    "surface": "ZORA",
+    "version": "alpha"
+  },
+  "doctrine_binding": {
+    "thesis_id": "ALMS_OPERATING_THESIS_V1",
+    "doctrine_ref": "joyspace/receipts/ALMS_OPERATING_THESIS_V1_GREEN_WITNESS.md",
+    "doctrine_commit_sha": "2787cb7a2d99045419dcee89cb6878910d4f9ba3"
+  },
+  "root_provenance": {
+    "source_claim": "MN_CIVIC_PACKET_V1",
+    "source_commit": "be73b5cf0b6f51de93da83d4bcee84fe57947f56",
+    "root_hash": "aa85eeefb848f5e23db9c8797015c65d1f44c7a6b4a76afbb9c53712f36e595d",
+    "root_witness": {
+      "track": "Track019_MN_Civic_Provenance",
+      "eas_uid": "0x9e897d2acabc6133f481ebad69c5bbd9dadb5201cc7adce847cab5a00325f0c9",
+      "tx_hash": "0x3870fcd23e03e51f60c769d570c7896b7a9d0807bea455734bb618ba813d816c"
+    }
+  },
+  "proofs": {
+    "source_artifact": {
+      "exists": false,
+      "description": "Zora mint metadata and JOY thesis fragment mirror for MN_CIVIC_PACKET_V1 root. MIRROR_DRAFT until Zora-specific bytes are committed.",
+      "location": {
+        "repo": "jsonwisdom/JOY",
+        "path": "docs/zora/series_alpha.md",
+        "branch": "main"
+      },
+      "content_type": "text/markdown",
+      "size_bytes": 0
+    },
+    "commit_sha": {
+      "value": "PENDING_ZORA_SOURCE_COMMIT",
+      "repo": "jsonwisdom/JOY",
+      "branch": "main",
+      "timestamp": "PENDING_TIMESTAMP"
+    },
+    "hash_or_cid": {
+      "algorithm": "SHA256",
+      "value": "PENDING_ZORA_SHA256_RAW_BYTES",
+      "computed_from": {
+        "path": "docs/zora/series_alpha.md",
+        "mode": "RAW_BYTES"
+      }
+    },
+    "receipt": {
+      "id": "PENDING_ZORA_SERIES_ALPHA_RECEIPT",
+      "emitter": "HUMAN_CLERK",
+      "timestamp": "PENDING_TIMESTAMP",
+      "log_location": "alms/claims/ZORA_SERIES_ALPHA.claim.v1.json",
+      "includes": {
+        "commit_sha": "PENDING_ZORA_SOURCE_COMMIT",
+        "hash_or_cid": "PENDING_ZORA_SHA256_RAW_BYTES",
+        "claim_id": "ZORA_SERIES_ALPHA"
+      }
+    },
+    "witness": {
+      "required": true,
+      "status": "PENDING",
+      "witness_type": "ONCHAIN",
+      "witness_ref": "PENDING_ZORA_EAS_UID",
+      "witness_statement_hash": "PENDING_ZORA_TX_HASH"
+    },
+    "replay_path": {
+      "exists": true,
+      "status": "PENDING",
+      "entrypoint": "make replay-zora-series-alpha",
+      "instructions": "Compute SHA256 over raw bytes of docs/zora/series_alpha.md and compare to proofs.hash_or_cid.value. Confirm root_provenance references MN_CIVIC_PACKET_V1 GREEN witness. Do not promote GREEN until Zora-specific replay and witness are present.",
+      "tooling": [
+        {
+          "name": "sha256sum",
+          "version": "coreutils",
+          "command": "sha256sum docs/zora/series_alpha.md"
+        },
+        {
+          "name": "ALMS replay",
+          "version": "v1",
+          "command": "make replay-zora-series-alpha"
+        }
+      ],
+      "expected_outputs": {
+        "hash_or_cid": "PENDING_ZORA_SHA256_RAW_BYTES",
+        "receipt_id": "PENDING_ZORA_SERIES_ALPHA_RECEIPT"
+      }
+    }
+  },
+  "green_state": {
+    "eligible": false,
+    "reason": "MISSING_PROOF",
+    "evaluated_at": "2026-06-13T00:00:00Z",
+    "evaluator": "HUMAN_CLERK"
+  },
+  "mirror_status": {
+    "status": "MIRROR_DRAFT",
+    "root_claim_state": "MN_CIVIC_PACKET_V1_GREEN",
+    "no_new_root": true,
+    "no_fake_green": true
+  }
+}
