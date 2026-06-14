@@ -1,0 +1,26 @@
+{
+  "schema": "JOYSPACE_BOSS_BIRTHDAY_PAYLOAD_V0_1",
+  "frame_id": "BOSS_BIRTHDAY_FRAME_V0_1",
+  "state": "YELLOW_UNTIL_PUBLIC_HTTP_200_AND_BYTE_MATCH",
+  "featured_name": "Mrs. Wisdom",
+  "featured_role": "Birthday Girl / Boss of the Day",
+  "headline": "There are 364 other days. This one is mine.",
+  "message": "Happy Birthday, Girl. Love first. Receipts second. The frame stays stable; the person inside the frame gets celebrated properly.",
+  "image_url": "joyspace/boss-birthday/mrs-wisdom.svg",
+  "image_alt": "Stylized birthday portrait frame for Mrs. Wisdom",
+  "links": [
+    {
+      "label": "Open Birthday Page",
+      "href": "joyspace/mrs-wisdom-birthday.html"
+    },
+    {
+      "label": "Open Birthday Girl Entertainment Forest",
+      "href": "joyspace/mrs-wisdom-birthday-girl-entertainment.html"
+    },
+    {
+      "label": "Open Zora Gate",
+      "href": "https://zora.co/@jaywisdom"
+    }
+  ],
+  "no_fake_green": true
+}
