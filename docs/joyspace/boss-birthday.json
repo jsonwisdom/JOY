@@ -1,25 +1,38 @@
 {
-  "schema": "JOYSPACE_BOSS_BIRTHDAY_PAYLOAD_V0_2",
-  "frame_id": "BOSS_BIRTHDAY_FRAME_V0_2",
-  "state": "YELLOW_UNTIL_PUBLIC_HTTP_200_AND_BYTE_MATCH",
+  "schema": "JOYSPACE_BOSS_BIRTHDAY_PAYLOAD_V0_3",
+  "frame_id": "BOSS_BIRTHDAY_FRAME_V0_3",
+  "state": "YELLOW_UNTIL_PUBLIC_HTTP_200_BYTE_MATCH_PRIVACY_CHECK_AND_HUMAN_VISUAL_CONFIRM",
   "doctrine": "LF_LOVE_FIRST_RECEIPTS_SECOND",
   "featured_name": "Mrs. Wisdom",
   "featured_role": "Birthday Girl / Boss of the Day",
   "headline": "There are 364 other days. This one is mine.",
   "message": "Happy Birthday, Girl. Love first. Receipts second. The frame stays stable; the person inside the frame gets celebrated properly.",
-  "caption": "Frame stays. Payload changes. Boss gets rendered inside.",
+  "caption": "Mrs. Wisdom is featured. Wisdom Girls stay protected. Buttons are choices, not private biographies.",
   "image_url": "joyspace/boss-birthday/mrs-wisdom.svg",
   "image_alt": "Stylized Boss Birthday render for Mrs. Wisdom inside the reusable JoySpace frame",
+  "featured_stack": {
+    "L1": "jaywisdom.eth",
+    "L2": "jaywisdom.base.eth future execution lane",
+    "L3": "JoySpace skills, birthday frames, proof buttons, and agentic skills on demand",
+    "project": "ALABAMA_ALMS_FOR_WISDOM_GIRLS"
+  },
+  "wisdom_girls_protected_lanes": [
+    "MRS_WISDOM",
+    "BRIANNA",
+    "HEIDEE",
+    "JAYCEE",
+    "BREALEE",
+    "LEEANNE",
+    "MARYDEE",
+    "GRAMMY",
+    "GAGA"
+  ],
   "frame_contract": {
     "stable_shell": true,
     "payload_changeable": true,
     "human_approval_required": true,
-    "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + HUMAN_VISUAL_CONFIRM"
-  },
-  "layers": {
-    "L1": "Identity seal and long-term anchor",
-    "L2": "Execution receipts and attestations",
-    "L3": "Reusable skills, frames, pages, and operator services"
+    "privacy_check_required": true,
+    "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + PRIVACY_CHECK + HUMAN_VISUAL_CONFIRM"
   },
   "links": [
     {
@@ -27,16 +40,48 @@
       "href": "joyspace/mrs-wisdom-birthday.html"
     },
     {
-      "label": "Open Birthday Girl Entertainment Forest",
+      "label": "Open Entertainment Forest",
       "href": "joyspace/mrs-wisdom-birthday-girl-entertainment.html"
     },
     {
-      "label": "Open Boss Birthday Frame",
+      "label": "Open Boss Frame",
       "href": "joyspace/boss-birthday-frame.html"
     },
     {
-      "label": "Open Zora Gate",
+      "label": "Open Girls Menu JSON",
+      "href": "joyspace/wisdom-girls-boss-birthday-menu.json"
+    },
+    {
+      "label": "Choices",
+      "href": "#choice-deck"
+    },
+    {
+      "label": "Wisdom Girls",
+      "href": "#wisdom-girls"
+    },
+    {
+      "label": "Alabama ALMS",
+      "href": "#alabama-alms"
+    },
+    {
+      "label": "Byte Proof Gate",
+      "href": "#proof-gate"
+    },
+    {
+      "label": "Agentic Skills",
+      "href": "#agentic-skills"
+    },
+    {
+      "label": "Meta/Facebook Share Surface",
+      "href": "#meta-share"
+    },
+    {
+      "label": "Zora Gate Later",
       "href": "https://zora.co/@jaywisdom"
+    },
+    {
+      "label": "JOY GitHub",
+      "href": "https://github.com/jsonwisdom/JOY"
     }
   ],
   "no_fake_green": true
