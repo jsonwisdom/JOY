@@ -1,0 +1,14 @@
+MR_WISDOM_JOY_PROMOTION_RECEIPT
+promotion_id=mr_wisdom_joy_promotion_20260614
+timestamp_utc=2026-06-14T07:34:08Z
+repo=jsonwisdom/JOY
+page=joyspace/mr-wisdom-promotion.html
+page_sha256=96e71eb228f170bbaaf08506d008df2318888ab4658e1e243e9a86d5520dd44b
+source_merkle_root_before=297f3e317a81304957e3c00e9b8a096f1c58398dc3849a56e4664b6a9862b9a4
+promotion_state=PROMOTION_DRAFT
+runtime_activation=false
+on_chain_anchor=false
+semantic_truth=false
+authority=false
+no_fake_green=true
+notes=New Mr. Wisdom JOY promotion lane created without touching artifacts/anchors/onchain.
