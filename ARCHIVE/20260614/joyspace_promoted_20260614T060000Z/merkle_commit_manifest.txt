@@ -1,0 +1,11 @@
+commit d6a8f2090347c9f9eec847c109de61c0b8d63546
+Author: jsonwisdom <jaywisdom44@gmail.com>
+Date:   Sun Jun 14 06:07:18 2026 +0000
+
+    chore(merkle): append joyspace validation leaf for run 27490089187
+
+ MERKLE_ROOT.txt                                    |    2 +-
+ .../joyspace_validation_27490089187.receipt.txt    |   11 +
+ leaves.sha256                                      | 1157 ++++++++++----------
+ 3 files changed, 591 insertions(+), 579 deletions(-)
+ create mode 100644 artifacts/merkle/joyspace_validation_27490089187.receipt.txt

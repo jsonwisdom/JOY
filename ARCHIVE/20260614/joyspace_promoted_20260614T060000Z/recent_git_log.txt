@@ -1,0 +1,10 @@
+d6a8f20 chore(merkle): append joyspace validation leaf for run 27490089187
+9b46612 docs(joy): add post-fix base tx green audit receipt
+b2c7f86 fix(joy): preserve false booleans in base tx verifier
+50848a8 docs(joy): archive trigger hunter live receipt artifact
+09be3cc fix(joy): preserve trigger hunter halt as receipt evidence
+b616095 chore(joy): add trigger hunter and base boundary replay artifacts
+8aeab87 docs(mcp): add local pass receipt for ALMS MCP v0
+1017be9 docs(alms): add MCP V0 read-only verification spec
+1dac53c docs(mcp): add ALMS MCP v0 README
+e9c8134 feat(mcp): add Render deploy config
