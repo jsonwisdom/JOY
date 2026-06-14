@@ -1,0 +1,43 @@
+{
+  "schema_uid": "0xc68dab1d0c9ecb67c6c0cff8da6b5e641dac2f22c21106a0d627ba1ef3636558",
+  "network": "base_mainnet",
+  "schema_fields_ordered": [
+    "title",
+    "subtitle",
+    "runtime",
+    "promotion_id",
+    "github_repo",
+    "runtime_commit",
+    "runtime_tag",
+    "merkle_root",
+    "anchor_payload_sha256",
+    "archive_manifest_sha256",
+    "validation_run",
+    "sentinel_run",
+    "notice_run",
+    "no_fake_green",
+    "semantic_truth",
+    "authority"
+  ],
+  "attestation_values": {
+    "title": "JOYSPACE_CONSTITUTIONAL_RUNTIME_ANCHOR_V1",
+    "subtitle": "The Bridge That Did Not Lie",
+    "runtime": "joyspace",
+    "promotion_id": "joyspace_promoted_20260614T060000Z",
+    "github_repo": "https://github.com/jsonwisdom/JOY",
+    "runtime_commit": "0caf72ce08888b2b36d6937f2dee04ee6200f4da",
+    "runtime_tag": "joyspace/runtime/activated/20260614T061200Z",
+    "merkle_root": "0x142d93a6fa7facd4da1c5b93e7a3d6f24d4578aff3c6d9ad23be4e5df432a491",
+    "anchor_payload_sha256": "0x2aa7859ab323c16e5de8a5a71a05245d23495ce3329a595cd4dd921855e2fa5e",
+    "archive_manifest_sha256": "13ad382fbf4e1ee2ee3e69b4af36ca35dacda43e409592e26fa98667bda2bea5",
+    "validation_run": 27490414212,
+    "sentinel_run": 27490414216,
+    "notice_run": 27490414211,
+    "no_fake_green": true,
+    "semantic_truth": false,
+    "authority": false
+  },
+  "attestation_status": "PREPARED_NOT_SUBMITTED",
+  "on_chain_anchor": false,
+  "no_fake_green": true
+}

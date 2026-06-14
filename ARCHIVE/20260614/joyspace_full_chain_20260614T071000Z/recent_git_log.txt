@@ -1,0 +1,25 @@
+1c9fffb feat(eas): record joyspace runtime base attestation result
+f4e21fc docs(eas): prepare joyspace runtime attestation payload
+e89cde4 docs(eas): record base mainnet joyspace schema registration
+289fd3d docs(eas): prepare base mainnet schema registration packet
+40e0f9d docs(eas): draft joyspace constitutional runtime anchor schema
+0b3b7f5 chore(anchor): prepare joyspace eas ipfs anchor payload
+0caf72c docs(joy): verify runtime activation after green workflows
+3f5898f docs(joy): add runtime activation receipt pending verification
+c0f0970 docs(joy): archive promotion evidence bundle 20260614
+d6a8f20 chore(merkle): append joyspace validation leaf for run 27490089187
+9b46612 docs(joy): add post-fix base tx green audit receipt
+b2c7f86 fix(joy): preserve false booleans in base tx verifier
+50848a8 docs(joy): archive trigger hunter live receipt artifact
+09be3cc fix(joy): preserve trigger hunter halt as receipt evidence
+b616095 chore(joy): add trigger hunter and base boundary replay artifacts
+8aeab87 docs(mcp): add local pass receipt for ALMS MCP v0
+1017be9 docs(alms): add MCP V0 read-only verification spec
+1dac53c docs(mcp): add ALMS MCP v0 README
+e9c8134 feat(mcp): add Render deploy config
+ad05139 feat(mcp): add requirements
+f85b790 feat(mcp): add ALMS MCP v0 server
+f22a421 feat(alms): promote Zora series alpha mirror witness
+688b969 feat(alms): lock Zora series alpha source hash
+d7f211f docs(zora): add series alpha mirror source draft
+9efbb48 feat(alms): add Zora series alpha mirror claim draft

@@ -1,0 +1,13 @@
+commit 1c9fffb11bb696538055b6a95921d3d4ca2b54e1
+Author: jsonwisdom <jaywisdom44@gmail.com>
+Date:   Sun Jun 14 07:09:36 2026 +0000
+
+    feat(eas): record joyspace runtime base attestation result
+
+ MERKLE_ROOT.txt                                    |  2 +-
+ ...ce_runtime_20260614.base_attestation_result.txt | 26 ++++++++++++++++++++++
+ ...ime_20260614.base_attestation_result.txt.sha256 |  1 +
+ leaves.sha256                                      |  1 +
+ 4 files changed, 29 insertions(+), 1 deletion(-)
+ create mode 100644 artifacts/eas/attestations/result/joyspace_runtime_20260614.base_attestation_result.txt
+ create mode 100644 artifacts/eas/attestations/result/joyspace_runtime_20260614.base_attestation_result.txt.sha256

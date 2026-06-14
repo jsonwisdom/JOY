@@ -1,0 +1,26 @@
+{
+  "anchor_type": "EAS_IPFS_PREPARED_PAYLOAD",
+  "runtime": "joyspace",
+  "activation": {
+    "commit": "0caf72ce08888b2b36d6937f2dee04ee6200f4da",
+    "tag": "joyspace/runtime/activated/20260614T061200Z",
+    "tag_object": "f868b77229f2a4a1aabc7fdf245db5cd35b06af7",
+    "tag_target": "0caf72ce08888b2b36d6937f2dee04ee6200f4da",
+    "previous_state": "3f5898f87015365f41718c3ea23ec1dffc72b900"
+  },
+  "verification": {
+    "validation_run": 27490414212,
+    "sentinel_run": 27490414216,
+    "notice_run": 27490414211,
+    "health_check": "POST_COMMIT_WORKFLOWS_GREEN",
+    "no_fake_green": true,
+    "semantic_truth": false,
+    "authority": false
+  },
+  "archive": {
+    "path": "ARCHIVE/20260614/joyspace_promoted_20260614T060000Z",
+    "manifest_sha256": "13ad382fbf4e1ee2ee3e69b4af36ca35dacda43e409592e26fa98667bda2bea5"
+  },
+  "previous_merkle_root": "84a7d25cc4e3a289b3b14d284851dc8ae00dca73080683ef7287afc419617a8a",
+  "on_chain_anchor": false
+}
