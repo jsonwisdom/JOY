@@ -1,0 +1,41 @@
+{
+  "schema": "COMPUTER_WISDOM_CLASS_PROJECT_V0_1",
+  "status": "PROTECTED_COMPUTER_CLASS_PROJECT",
+  "truth_state": "YELLOW_PROTECTED",
+  "no_fake_green": true,
+  "lf": "LOVE_FIRST",
+  "lg": "LETS_GO",
+  "public_anchor": {
+    "zora_profile": "https://zora.co/@jaywisdom",
+    "claim_state": "PUBLIC_LINK_ONLY"
+  },
+  "teaching_layers": {
+    "L1": "jaywisdom.eth identity seal",
+    "L2": "jaywisdom.base.eth Base execution and future receipts",
+    "L3": "JoySpace class page, skills, and family-facing index"
+  },
+  "operators": {
+    "repo_side": "Class Operator A",
+    "public_side": "Class Operator B",
+    "ai_builder": "drafts pages, JSON, CSV, and skill surfaces",
+    "ai_verifier": "blocks fake green until evidence matches"
+  },
+  "features": [
+    "Zora public profile index",
+    "JSON state manifest",
+    "CSV comparison table",
+    "Base future receipt lane",
+    "JoySpace changelog update",
+    "inside/outside byte comparison"
+  ],
+  "green_rule": [
+    "HUMAN_APPROVAL",
+    "REPO_READ_BACK",
+    "PUBLIC_HTTP_200",
+    "SHA256_REPO_EQUALS_PUBLIC",
+    "CONTENT_MARKER",
+    "PRIVACY_CHECK",
+    "CHANGELOG_UPDATE"
+  ],
+  "public_green": false
+}
