@@ -23,38 +23,38 @@
   },
   "proofs": {
     "source_artifact": {
-      "exists": false,
-      "description": "Zora mint metadata and JOY thesis fragment mirror for MN_CIVIC_PACKET_V1 root. MIRROR_DRAFT until Zora-specific bytes are committed.",
+      "exists": true,
+      "description": "Zora mint metadata and JOY thesis fragment mirror for MN_CIVIC_PACKET_V1 root. Source bytes committed; mirror remains YELLOW until replay and witness are present.",
       "location": {
         "repo": "jsonwisdom/JOY",
         "path": "docs/zora/series_alpha.md",
         "branch": "main"
       },
       "content_type": "text/markdown",
-      "size_bytes": 0
+      "size_bytes": 2398
     },
     "commit_sha": {
-      "value": "PENDING_ZORA_SOURCE_COMMIT",
+      "value": "d7f211f83b9dd170ecaad5c64194fab0753f1bfc",
       "repo": "jsonwisdom/JOY",
       "branch": "main",
-      "timestamp": "PENDING_TIMESTAMP"
+      "timestamp": "2026-06-13T00:00:00Z"
     },
     "hash_or_cid": {
       "algorithm": "SHA256",
-      "value": "PENDING_ZORA_SHA256_RAW_BYTES",
+      "value": "1bad14025095a994f41b2d4cfd34b3fc5eb1be90c9702fd5de32ea8f9688a070",
       "computed_from": {
         "path": "docs/zora/series_alpha.md",
         "mode": "RAW_BYTES"
       }
     },
     "receipt": {
-      "id": "PENDING_ZORA_SERIES_ALPHA_RECEIPT",
+      "id": "ZORA_SERIES_ALPHA_SOURCE_HASH_RECEIPT",
       "emitter": "HUMAN_CLERK",
-      "timestamp": "PENDING_TIMESTAMP",
+      "timestamp": "2026-06-13T00:00:00Z",
       "log_location": "alms/claims/ZORA_SERIES_ALPHA.claim.v1.json",
       "includes": {
-        "commit_sha": "PENDING_ZORA_SOURCE_COMMIT",
-        "hash_or_cid": "PENDING_ZORA_SHA256_RAW_BYTES",
+        "commit_sha": "d7f211f83b9dd170ecaad5c64194fab0753f1bfc",
+        "hash_or_cid": "1bad14025095a994f41b2d4cfd34b3fc5eb1be90c9702fd5de32ea8f9688a070",
         "claim_id": "ZORA_SERIES_ALPHA"
       }
     },
@@ -83,8 +83,8 @@
         }
       ],
       "expected_outputs": {
-        "hash_or_cid": "PENDING_ZORA_SHA256_RAW_BYTES",
-        "receipt_id": "PENDING_ZORA_SERIES_ALPHA_RECEIPT"
+        "hash_or_cid": "1bad14025095a994f41b2d4cfd34b3fc5eb1be90c9702fd5de32ea8f9688a070",
+        "receipt_id": "ZORA_SERIES_ALPHA_SOURCE_HASH_RECEIPT"
       }
     }
   },
