@@ -1,0 +1,1 @@
+string docketId,string artifactPath,bytes32 artifactSha256,bytes32 htmlSha256,bytes32 merkleRoot,string repo,string commitSha,string publicUrl,string doctrine,string receiptPath,uint64 timestampUtc
