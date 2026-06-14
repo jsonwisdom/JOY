@@ -1,0 +1,63 @@
+{
+  "schema": "JOYSPACE_WISDOM_GIRLS_BOSS_BIRTHDAY_MENU_V0_1",
+  "state": "YELLOW_PROTECTED",
+  "no_fake_green": true,
+  "purpose": "Public-safe choice deck for Mrs. Wisdom Boss Birthday, Wisdom Girls, Alabama ALMS, and CWaaS skills on demand.",
+  "featured_boss": "MRS_WISDOM",
+  "protected_lanes": [
+    "MRS_WISDOM",
+    "BRIANNA",
+    "HEIDEE",
+    "JAYCEE",
+    "BREALEE",
+    "LEEANNE",
+    "MARYDEE",
+    "GRAMMY",
+    "GAGA"
+  ],
+  "identity_layers": {
+    "L1": "jaywisdom.eth",
+    "L2": "jaywisdom.base.eth future execution lane",
+    "L3": "JoySpace + agentic skills on demand"
+  },
+  "game_loop": [
+    "PICK_BOSS",
+    "LOAD_APPROVED_PAYLOAD",
+    "BUILD_FRAME",
+    "REPO_READ_BACK",
+    "PUBLIC_HTTP_200",
+    "BYTE_MATCH",
+    "PRIVACY_CHECK",
+    "HUMAN_VISUAL_APPROVAL",
+    "BIRTHDAY_GREEN"
+  ],
+  "button_groups": {
+    "birthday": [
+      "Birthday Page",
+      "Entertainment Forest",
+      "Standalone Boss Frame",
+      "Payload JSON"
+    ],
+    "family": [
+      "Wisdom Girls Roster",
+      "Byte Boss Brianna",
+      "Birthday Boss Byte Batches",
+      "Boss Byte Scorecard"
+    ],
+    "proof": [
+      "Repo Read-Back",
+      "HTTP 200",
+      "SHA256 Match",
+      "Privacy Check",
+      "Human Approval"
+    ],
+    "future_brand": [
+      "Meta/Facebook Share Surface",
+      "Zora Gate Later",
+      "CWaaS Skills",
+      "Alabama ALMS"
+    ]
+  },
+  "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + PRIVACY_CHECK + HUMAN_VISUAL_CONFIRM",
+  "privacy_rule": "No private details, no real likeness, no public biography, no implied consent, and no public green state without human approval."
+}
