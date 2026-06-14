@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/alms/claim.schema.json",
+  "title": "ALMS Six-Proof Claim V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "claim_type",
+    "scope",
+    "doctrine_binding",
+    "proofs",
+    "green_state"
+  ],
+  "properties": {
+    "claim_id": { "type": "string", "minLength": 1 },
+    "claim_type": { "type": "string", "minLength": 1 },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jurisdiction", "surface", "version"],
+      "properties": {
+        "jurisdiction": { "enum": ["MN", "VA", "FED", "GLOBAL", "OTHER"] },
+        "surface": { "enum": ["REPO", "CIVIC", "ZORA", "SIM", "OTHER"] },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "doctrine_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["thesis_id", "doctrine_ref", "doctrine_commit_sha"],
+      "properties": {
+        "thesis_id": { "const": "ALMS_OPERATING_THESIS_V1" },
+        "doctrine_ref": { "type": "string", "minLength": 1 },
+        "doctrine_commit_sha": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" }
+      }
+    },
+    "proofs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_artifact", "commit_sha", "hash_or_cid", "receipt", "witness", "replay_path"],
+      "properties": {
+        "source_artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["exists", "description", "location", "content_type", "size_bytes"],
+          "properties": {
+            "exists": { "type": "boolean" },
+            "description": { "type": "string" },
+            "location": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["repo", "path", "branch"],
+              "properties": {
+                "repo": { "type": "string" },
+                "path": { "type": "string" },
+                "branch": { "type": "string" }
+              }
+            },
+            "content_type": { "type": "string" },
+            "size_bytes": { "type": "number", "minimum": 0 }
+          }
+        },
+        "commit_sha": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "repo", "branch", "timestamp"],
+          "properties": {
+            "value": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" },
+            "repo": { "type": "string" },
+            "branch": { "type": "string" },
+            "timestamp": { "type": "string" }
+          }
+        },
+        "hash_or_cid": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["algorithm", "value", "computed_from"],
+          "properties": {
+            "algorithm": { "enum": ["SHA256", "BLAKE3", "IPFS_CIDv1", "OTHER"] },
+            "value": { "type": "string", "minLength": 1 },
+            "computed_from": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["path", "mode"],
+              "properties": {
+                "path": { "type": "string" },
+                "mode": { "enum": ["RAW_BYTES", "NORMALIZED", "ARCHIVE"] }
+              }
+            }
+          }
+        },
+        "receipt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "emitter", "timestamp", "log_location", "includes"],
+          "properties": {
+            "id": { "type": "string" },
+            "emitter": { "enum": ["GITHUB_ACTION", "ALMS_NODE", "HUMAN_CLERK", "OTHER"] },
+            "timestamp": { "type": "string" },
+            "log_location": { "type": "string" },
+            "includes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["commit_sha", "hash_or_cid", "claim_id"],
+              "properties": {
+                "commit_sha": { "type": "string" },
+                "hash_or_cid": { "type": "string" },
+                "claim_id": { "type": "string" }
+              }
+            }
+          }
+        },
+        "witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "status", "witness_type", "witness_ref", "witness_statement_hash"],
+          "properties": {
+            "required": { "type": "boolean" },
+            "status": { "enum": ["PENDING", "PRESENT", "REJECTED"] },
+            "witness_type": { "enum": ["ALMS", "ONCHAIN", "MULTISIG", "OTHER"] },
+            "witness_ref": { "type": "string" },
+            "witness_statement_hash": { "type": "string" }
+          }
+        },
+        "replay_path": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["exists", "status", "entrypoint", "instructions", "tooling", "expected_outputs"],
+          "properties": {
+            "exists": { "type": "boolean" },
+            "status": { "enum": ["PENDING", "PASS", "FAIL"] },
+            "entrypoint": { "type": "string" },
+            "instructions": { "type": "string" },
+            "tooling": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "version", "command"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "version": { "type": "string" },
+                  "command": { "type": "string" }
+                }
+              }
+            },
+            "expected_outputs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["hash_or_cid", "receipt_id"],
+              "properties": {
+                "hash_or_cid": { "type": "string" },
+                "receipt_id": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "green_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "reason", "evaluated_at", "evaluator"],
+      "properties": {
+        "eligible": { "type": "boolean" },
+        "reason": { "enum": ["MISSING_PROOF", "REPLAY_FAIL", "WITNESS_MISSING", "PASS"] },
+        "evaluated_at": { "type": "string" },
+        "evaluator": { "enum": ["ALMS_NODE", "CI_PIPELINE", "HUMAN_CLERK"] }
+      }
+    }
+  }
+}
