@@ -11,9 +11,12 @@ LF: LOVE_FIRST
 ## Public Link
 
 ```text
-ZORA_COIN_PUBLIC_LINK: https://zora.co/coin/base:0xaae1e84f7872ae75f1c2083278eaf98c96defb5c?referrer=0x829adfedbe565f9885a7ea6bc78912acaef055e2
+ZORA_COIN_PUBLIC_LINK: https://zora.co/coin/base:0xe9342c753168594940c39da9ce3a249fa3e3fa36
+ZORA_COIN_ADDRESS_BASE: 0xe9342c753168594940c39da9ce3a249fa3e3fa36
 NETWORK_CONTEXT: Base / L2
 IDENTITY_CONTEXT: jaywisdom.base.eth future lane
+PRESENTED_AS: Boss Brenda
+PRESENTED_BY: Jay Wisdom
 ```
 
 ## Purpose
