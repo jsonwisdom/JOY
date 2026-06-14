@@ -1,0 +1,14 @@
+{
+  "schema": "PROJECT_JAY_CHROMEBOOK_JOYSPACE_LINKS_V0_1",
+  "state": "YELLOW_UNTIL_PUBLIC_HTTP_200_BYTE_MATCH_AND_HUMAN_VISUAL_CONFIRM",
+  "doctrine": "LF_LOVE_FIRST_RECEIPTS_SECOND",
+  "project": "Project Jay Chromebook",
+  "links": {
+    "primary_zora": "https://zora.co/@jaywisdom",
+    "chromebook_zora": "https://zora.co/@jaywisdom_chromebook",
+    "mr_wisdom_lane": "FAMILY/MR_WISDOM/PROJECT_JAY_CHROMEBOOK_V0_1.md"
+  },
+  "joyspace_note": "Mrs. Wisdom remains the featured Boss Birthday lane. Project Jay Chromebook is a public project index only.",
+  "green_rule": "REPO_READ_BACK + PUBLIC_HTTP_200 + SHA256_REPO_EQUALS_PUBLIC + CONTENT_MARKER + HUMAN_VISUAL_APPROVAL",
+  "no_fake_green": true
+}
