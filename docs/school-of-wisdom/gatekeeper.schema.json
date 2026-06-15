@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1.0",
+  "meta": {
+    "description": "Gatekeeper Interface for Circuit Breaker Pattern",
+    "context": "Human-in-the-loop manual signing for on-chain state transitions",
+    "required_audit_protocol": "ALMS_CAV"
+  },
+  "fields": {
+    "original_run_id": "string",
+    "audit_hash": "string (sha256)",
+    "signer_public_key": "string",
+    "signature": "string (hex encoded)",
+    "approval_timestamp_utc": "string (ISO8601)",
+    "status": "APPROVED | REJECTED"
+  },
+  "constraints": {
+    "allow_direct_chain_write": false,
+    "require_cav_validation": true,
+    "enforce_no_fake_green": true
+  }
+}
