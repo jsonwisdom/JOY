@@ -1,0 +1,19 @@
+{
+  "project": "Build Back Better Base Batches for Boys",
+  "batch_id": "BBB_BOYS_001",
+  "status": "YELLOW_BUILDABLE_NOT_GREEN",
+  "chain": "Base",
+  "root": "JOY_v0.1_EXPANSION",
+  "timestamp_utc": "2026-06-15T03:41:31Z",
+  "linked_commit": "eb079de82c26595b94ab21d8233b1bd4123d37a3",
+  "recipient": "0xa380552a27b0a5a2874ea7aa52cac09f542002e8",
+  "proof_stack": ["GitHub", "IPFS", "EAS", "Zora"],
+  "utility": [
+    "JOY_v0.1_runtime",
+    "VA_Claim_Arena_replay",
+    "MN_Civic_Court_receipts",
+    "Goblin_self_defense_memes",
+    "Node8Gate_proofs"
+  ],
+  "claim_boundary": "No mint, no CID, no EAS UID, no Zora proof until separately verified."
+}
