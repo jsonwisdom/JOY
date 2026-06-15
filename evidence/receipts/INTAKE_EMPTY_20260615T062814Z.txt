@@ -1,0 +1,13 @@
+INTAKE_STATUS=EMPTY
+
+UTC=2026-06-15T06:28:14Z
+
+evidence/intake/sos=0
+evidence/intake/irs990=0
+evidence/intake/ag_registry=0
+evidence/intake/opencorporates=0
+evidence/intake/doj=0
+
+NO_FAKE_GREEN=true
+
+NEXT_ACTION=COLLECT_SOURCE_DOCUMENTS
