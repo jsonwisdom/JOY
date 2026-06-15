@@ -1,0 +1,9 @@
+# IPFS Receipt
+
+cid=bafkreic7zpbdwtz2r4d2rz6e6upgxmqrrsiabzljey6mum3r4xyr4x7jxm
+
+git_commit=039dc4bff075fb1ec545dd0adeadcee8a19f15ec
+
+schema_uid=0xca30a2a71d04636ec8ceedac1c3011133cb781e0a008bc9b4eadca0258a8e9f1
+
+status=PINNED
