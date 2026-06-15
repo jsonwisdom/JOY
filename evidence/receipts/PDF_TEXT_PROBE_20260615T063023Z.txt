@@ -1,0 +1,13 @@
+PDF_TEXT_PROBE_V0_1
+UTC=2026-06-15T06:30:23Z
+COMMIT=9b21b4107688998fc762ce926571001629dbef58
+
+== FILE: data/goblin_audit/evidence/pdfs/al_budget_act_2025_251.pdf ==
+-- TEXT SAMPLE --
+
+== FILE: data/goblin_audit/evidence/pdfs/mmb-feb-2026-forecast.pdf ==
+-- TEXT SAMPLE --
+
+== FILE: data/goblin_audit/evidence/pdfs/MMB_Feb2026_Forecast.pdf ==
+-- TEXT SAMPLE --
+
