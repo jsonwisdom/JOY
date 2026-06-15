@@ -1,0 +1,6 @@
+edge_id,source,target,claim,document,page,sha256,status
+E001,FOF,NVF,NVF_sponsored_by_FOF,DOJ_22-cr-223_Indictment.pdf,12,[HASH_PENDING],CITED_UNHASHED
+E002,HMF,NVF,HMF_registered_agent,MN_SOS_NVF_Registration.pdf,1,[HASH_PENDING],CITED_UNHASHED
+E003,CTS,NVF,CTS_vendor_fraud,DOJ_22-cr-223_Indictment.pdf,24,[HASH_PENDING],CITED_UNHASHED
+E004,FOF,HMF,HMF_conspiracy_participant,DOJ_Press_Release_73rd_Def.pdf,1,[HASH_PENDING],CITED_UNHASHED
+E005,CTS,HMF,HMF_control_of_CTS,DOJ_22-cr-223_Indictment.pdf,25,[HASH_PENDING],CITED_UNHASHED
