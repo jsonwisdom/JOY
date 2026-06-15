@@ -1,0 +1,33 @@
+name: GitHub Gamified Proof
+
+on:
+  push:
+    paths:
+      - "docs/school-of-wisdom/**"
+      - ".github/workflows/gamified-proof.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-check-prove:
+    name: Read Check Prove
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read sandbox marker
+        run: |
+          echo "== GITHUB GAMIFIED RUN 002 =="
+          echo "READ FIRST: sandbox marker path"
+          test -f docs/school-of-wisdom/sandbox/GITHUB_GAMIFIED_SANDBOX_TOY_V0_1.txt
+          echo "CHECK SECOND: marker exists"
+          echo "PROVE FOURTH: no fake green boundary preserved"
+
+      - name: Prove no fake green marker text
+        run: |
+          grep -q "No Fake Green: true" docs/school-of-wisdom/sandbox/GITHUB_GAMIFIED_SANDBOX_TOY_V0_1.txt
+          grep -q "Authority: false" docs/school-of-wisdom/sandbox/GITHUB_GAMIFIED_SANDBOX_TOY_V0_1.txt
+          echo "GITHUB_GAMIFIED_PROOF=GREEN_SCOPED"
