@@ -1,0 +1,14 @@
+GRAPH_SNAPSHOT_V0_2
+utc=2026-06-15T07:55:34Z
+commit=af32a208f0694f1dee32b43f81d14878e15abd19
+
+== VERTICES ==
+DOC_001,document,MN General Fund Forecast Feb 2026,6fa7f98,verified
+DOC_002,document,Alabama Budget Act 2025-251,722c511,verified
+DOC_003,document,Minnesota MMB Feb 2026 Forecast,722c511,verified
+
+== EDGES ==
+edge_id,from_vertex,to_vertex,relationship,source_commit,status
+EDGE_001,SOURCE_001,DOC_001,anchors_document,514c32b,verified
+EDGE_002,SOURCE_001,DOC_002,anchors_document,743d931,verified
+EDGE_003,SOURCE_001,DOC_003,anchors_document,743d931,verified
