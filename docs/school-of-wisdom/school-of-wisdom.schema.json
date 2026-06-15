@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.github.io/JOY/docs/school-of-wisdom/school-of-wisdom.schema.json",
+  "schema_version": "0.1.0",
+  "title": "School of Wisdom Evidence Contract",
+  "description": "Repo-native evidence contract for Jay Wisdom's School of Wisdom. Search first, separate evidence classes, speak second.",
+  "owner": {
+    "name": "Jay Wisdom",
+    "handles": [
+      "Jason Wisdom",
+      "JSONWisdom",
+      "jaywisdom.eth",
+      "jaywisdom.base.eth"
+    ]
+  },
+  "source_of_truth": {
+    "repo": "jsonwisdom/JOY",
+    "lane": "docs/school-of-wisdom/",
+    "default_branch": "main"
+  },
+  "authority": false,
+  "no_fake_green": true,
+  "machine_speed_protocol": {
+    "rule_1": "GitHub repo-native evidence first",
+    "rule_2": "Fetch files directly before claiming contents",
+    "rule_3": "Separate evidence classes",
+    "rule_4": "Git blob SHA is not SHA256",
+    "rule_5": "Workflow file existence is not workflow run success",
+    "rule_6": "Empty workflow runs equal YELLOW, not failure",
+    "rule_7": "Full byte-by-byte certainty requires local clone plus sha256 replay",
+    "rule_8": "authority:false means evidence literacy only",
+    "rule_9": "no_fake_green:true is binding"
+  },
+  "evidence_classes": {
+    "commit_sha": {
+      "description": "Git commit object proving a repository state transition",
+      "green_requirement": "Full or uniquely resolvable commit SHA plus path or diff relevance"
+    },
+    "git_blob_sha": {
+      "description": "Git object identity for a file blob",
+      "green_requirement": "Fetched file readback returns matching blob SHA"
+    },
+    "sha256_receipt_line": {
+      "description": "SHA256 digest line over file bytes, distinct from Git blob SHA",
+      "green_requirement": "Fetched receipt file contains digest and target path"
+    },
+    "fetched_content": {
+      "description": "Direct readback of file content from GitHub",
+      "green_requirement": "Content lines support the claim being made"
+    },
+    "workflow_file": {
+      "description": "GitHub Actions workflow definition file",
+      "green_requirement": "Workflow file fetched and relevant watches/checks present"
+    },
+    "workflow_run_status": {
+      "description": "Actual GitHub Actions run result",
+      "green_requirement": "Workflow run ID plus successful conclusion or equivalent run evidence"
+    },
+    "external_chain_readback": {
+      "description": "Independent chain or explorer verification of an on-chain claim",
+      "green_requirement": "Tx hash, block data, attestation UID, or explorer/API readback independently fetched"
+    },
+    "full_tree_replay": {
+      "description": "Local clone plus deterministic sha256 replay of declared files or tree",
+      "green_requirement": "Command transcript or receipt proving byte-by-byte replay"
+    }
+  },
+  "state_labels": {
+    "GREEN": "Direct evidence supports the scoped claim",
+    "GREEN_SCOPED": "Direct evidence supports the file or claim, but not broader execution",
+    "GREEN_AS_DRAFT_SPEC": "Spec file exists and is readable, while its own execution truth remains YELLOW",
+    "PARTIAL_GREEN": "Some evidence classes are satisfied and others remain unresolved",
+    "YELLOW": "Claim is plausible or prepared but lacks required evidence class",
+    "RED": "Evidence directly contradicts the claim"
+  },
+  "core_lesson": {
+    "pattern": [
+      "Something happened",
+      "Something else did not",
+      "Humans treated them as equivalent",
+      "That substitution is the joke"
+    ],
+    "examples": [
+      "Git blob SHA equals SHA256 is false",
+      "Workflow file exists equals workflow run passed is false",
+      "Repo receipt equals external chain readback is false",
+      "Draft spec equals execution is false"
+    ]
+  },
+  "constraints": {
+    "allow_fake_green": false,
+    "allow_direct_chain_write": false,
+    "require_evidence_class_label": true,
+    "require_yellow_for_missing_runs": true,
+    "require_yellow_for_missing_external_readback": true,
+    "family_safe": true,
+    "teach_pattern_not_target_people": true
+  },
+  "known_school_lane_state": {
+    "school_exists": "GREEN",
+    "metadata_fetched": "GREEN",
+    "index_fetched": "GREEN",
+    "membrane_file_fetched": "GREEN",
+    "root_leaves_sha256_fetched": "GREEN",
+    "membrane_sha256_receipt_line": "GREEN",
+    "workflow_run_status": "YELLOW",
+    "full_byte_by_byte_repo_certainty": "YELLOW"
+  }
+}
