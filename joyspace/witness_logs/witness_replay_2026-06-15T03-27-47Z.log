@@ -1,0 +1,9 @@
+WITNESS_REPLAY_RECEIPT_V0_1
+utc=2026-06-15T03:27:47Z
+repo=JOY
+branch=mirror-al-john316-covenant-v0-1
+commit_sha=c3a9538f94a1c75d08e70b7905a0b66b9c8e2837
+rust_replay_verify=PASS
+implementation_independence=TRUE
+remote_lock=GREEN
+no_fake_green=true
