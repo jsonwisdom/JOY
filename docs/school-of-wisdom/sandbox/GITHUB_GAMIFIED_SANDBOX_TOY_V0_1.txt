@@ -1,0 +1,19 @@
+GitHub Gamified Sandbox Toy V0.1
+
+Status: SAFE_MARKER
+Repo: jsonwisdom/JOY
+Lane: docs/school-of-wisdom/
+Created for: READ_CHECK_CHANGE_PROVE dry run
+Authority: false
+No Fake Green: true
+
+Purpose:
+This harmless marker proves the CHANGE step without touching production logic, workflows, secrets, anchors, family data, or destructive terminal paths.
+
+Green rule:
+This file is GREEN only when GitHub returns a commit SHA and a readback blob SHA for this exact path.
+
+Execution scope:
+GREEN_SCOPED for sandbox marker creation.
+YELLOW for workflow run status.
+YELLOW for full byte-by-byte repo certainty.
