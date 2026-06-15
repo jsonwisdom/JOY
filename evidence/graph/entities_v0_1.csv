@@ -1,0 +1,4 @@
+entity_id,type,subtype,label,source_doc_id,source_path,doc_sha256,source_commit,line_start,line_end,raw_text,normalized_text,extractor_version,status
+ENT_001,entity,date,February 2026 Forecast,DOC_001,evidence/documents/MN_General_Fund_Forecast_Feb_2026.pdf,a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7,6fa7f98,3,3,February 2026 Forecast,2026-02,manual_v0_1,verified
+ENT_002,entity,date,November 2025 Forecast,DOC_001,evidence/documents/MN_General_Fund_Forecast_Feb_2026.pdf,a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7,6fa7f98,5,5,Comparisons to November 2025 Forecast,2025-11,manual_v0_1,verified
+ENT_003,entity,date,February 27 2026,DOC_001,evidence/documents/MN_General_Fund_Forecast_Feb_2026.pdf,a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7,6fa7f98,9,9,"February 27, 2026",2026-02-27,manual_v0_1,verified
