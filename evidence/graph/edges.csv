@@ -1,2 +1,4 @@
 edge_id,from_vertex,to_vertex,relationship,source_commit,status
 EDGE_001,SOURCE_001,DOC_001,anchors_document,514c32b,verified
+EDGE_002,SOURCE_001,DOC_002,anchors_document,743d931,verified
+EDGE_003,SOURCE_001,DOC_003,anchors_document,743d931,verified
