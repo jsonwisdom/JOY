@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "artifact": "BULK_LEARNING_PRETTY_JSON_V0_1",
+  "repo": "jsonwisdom/JOY",
+  "lane": "docs/school-of-wisdom/",
+  "operator_label": "jaywisdom.eth",
+  "authority": false,
+  "no_fake_green": true,
+  "purpose": "Pretty JSON map for School of Wisdom bulk learning.",
+  "matrix_columns": [
+    "claim",
+    "evidence_class",
+    "status",
+    "boundary"
+  ],
+  "tracks": [
+    {
+      "id": "JSON-001",
+      "title": "Pretty JSON",
+      "claim": "structured data makes claims inspectable",
+      "evidence_class": "fetched_content",
+      "status": "GREEN_AS_CURRICULUM",
+      "boundary": "curriculum only"
+    },
+    {
+      "id": "MD-001",
+      "title": "Markup Madness",
+      "claim": "markup can teach and organize",
+      "evidence_class": "fetched_content",
+      "status": "GREEN_AS_CURRICULUM",
+      "boundary": "page is not execution proof"
+    },
+    {
+      "id": "MX-001",
+      "title": "Matrix Mathematics",
+      "claim": "every claim should show evidence class, status, and boundary",
+      "evidence_class": "fetched_content",
+      "status": "GREEN_AS_CURRICULUM",
+      "boundary": "no evidence-class substitution"
+    },
+    {
+      "id": "BULK-001",
+      "title": "Bulk Learning",
+      "claim": "many lessons can be organized together",
+      "evidence_class": "fetched_content",
+      "status": "GREEN_AS_CURRICULUM",
+      "boundary": "each lesson still needs its own receipt"
+    }
+  ],
+  "green_rule": "A bulk map organizes learning; it cannot upgrade a claim without the matching evidence class."
+}
