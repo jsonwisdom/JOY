@@ -1,0 +1,19 @@
+PDF_READBACK_INVENTORY_V0_1
+UTC=2026-06-15T06:29:50Z
+COMMIT=5c01e5690cd246da9ded5d60ad36c0083a391146
+
+== PDF FILES ==
+data/goblin_audit/evidence/pdfs/al_budget_act_2025_251.pdf
+data/goblin_audit/evidence/pdfs/mmb-feb-2026-forecast.pdf
+data/goblin_audit/evidence/pdfs/MMB_Feb2026_Forecast.pdf
+
+== SHA256 ==
+a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7  data/goblin_audit/evidence/pdfs/MMB_Feb2026_Forecast.pdf
+c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69  data/goblin_audit/evidence/pdfs/mmb-feb-2026-forecast.pdf
+ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206  data/goblin_audit/evidence/pdfs/al_budget_act_2025_251.pdf
+
+== EXISTING SHA256SUMS ==
+ecf65398c0a34307065aa78d0eafbfbfe4641405cc4a1a14d796058522a78206  data/goblin_audit/evidence/pdfs/al_budget_act_2025_251.pdf
+c4ac46e46b80b42a6abc24edbe0480ac4983cb0090a758bd7458b2ea62faca69  data/goblin_audit/evidence/pdfs/mmb-feb-2026-forecast.pdf
+a0b8de56b17cb32978ad63819f9ae1885a2015da8f90e149671581b1897eefe7  data/goblin_audit/evidence/pdfs/MMB_Feb2026_Forecast.pdf
+e06341d3f14df9d6bb44741b56f007fcd0ebec44f74e40a279435cff58f1109c  data/goblin_audit/evidence/pdfs/SHA256SUMS
