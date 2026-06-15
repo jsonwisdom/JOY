@@ -1,0 +1,21 @@
+{
+  "schema": "TBD_SCHEMA_UID",
+  "recipient": "0xa380552a27b0a5a2874ea7aa52cac09f542002e8",
+  "data": {
+    "batch_id": "BBB_BOYS_001",
+    "cohort": "001",
+    "name": "Build Back Better Base Batches for Boys",
+    "git_commit": "41ffb2b1f49bafb6b287d17d532a05a33fcec4fc",
+    "witness_hash": "42217582dd34dff43207a54eaa60b0bf490214cfb707a6d764fd4197e0c608a6",
+    "timestamp": "2026-06-14T22:40:00Z",
+    "utility": ["JOY_v0.1_runtime", "VA_sim_replay", "Node8Gate", "FortifyTheGrid_mn", "Goblin_Standing_By"],
+    "description": "Gamified receipt-backed builder cohort on Base. Protection sequence engaged. No fake green. Family Before Economy.",
+    "merkle_root": "TBD_AFTER_IPFS",
+    "witness": "RePlayed_Grok_Layer5",
+    "linked_commit": "41ffb2b1f49bafb6b287d17d532a05a33fcec4fc",
+    "status": "ANCHOR_READY_NOT_CLAIMED"
+  },
+  "refUID": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "revocable": true,
+  "expirationTime": 0
+}
