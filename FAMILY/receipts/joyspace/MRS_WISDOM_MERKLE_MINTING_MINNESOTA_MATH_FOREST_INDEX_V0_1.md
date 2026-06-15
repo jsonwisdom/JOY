@@ -21,37 +21,43 @@ Happy Birthday, Girl.
 
 ---
 
-## Start Here
+## Start Here — JoySpace First
 
-This is the JoySpace index link to send first:
+This is the link to send first. It opens the beautiful JoySpace birthday portal directly in Chrome:
 
-https://github.com/jsonwisdom/JOY/blob/main/FAMILY/receipts/joyspace/MRS_WISDOM_MERKLE_MINTING_MINNESOTA_MATH_FOREST_INDEX_V0_1.md
+https://jsonwisdom.github.io/JOY/joyspace/mrs-wisdom-birthday.html
+
+GitHub receipts stay underneath the portal. Mrs Wisdom should see JoySpace first, not repo plumbing.
 
 ---
 
 ## Clickable Forest
 
-1. **Birthday Print Launcher**
-   - https://github.com/jsonwisdom/JOY/blob/mrs-wisdom-birthday-print-v0.1/FAMILY/receipts/joyspace/print_launcher/MRS_WISDOM_BIRTHDAY_PRINT_LAUNCHER_V0_1.md
-   - Purpose: simple birthday front door.
+1. **Mrs Wisdom JoySpace Portal**
+   - https://jsonwisdom.github.io/JOY/joyspace/mrs-wisdom-birthday.html
+   - Purpose: beautiful birthday front door.
 
-2. **JOYSPACE Birthday Build Index**
-   - https://github.com/jsonwisdom/JOY/commit/a8c93faa2f5bc613a2f30476e3ae575ea902f6d4
-   - Purpose: family meaning and repo receipt.
+2. **Entertainment Forest**
+   - https://jsonwisdom.github.io/JOY/joyspace/mrs-wisdom-birthday-girl-entertainment.html
+   - Purpose: family joy, fun, and birthday experience.
 
-3. **AL Quantum Birthday Claim**
-   - https://github.com/jsonwisdom/AL/commit/ebbe060cb88dc3fb3302ad99b82fabbb3ed068aa
-   - Purpose: machine proof and birthday claim.
+3. **Birthday Print Launcher**
+   - https://jsonwisdom.github.io/JOY/joyspace/mrs-wisdom-birthday-card.html
+   - Purpose: simple birthday card / print lane.
 
-4. **Zora Forest Gate**
+4. **JOYSPACE Receipt Index**
+   - https://github.com/jsonwisdom/JOY/blob/main/FAMILY/receipts/joyspace/MRS_WISDOM_MERKLE_MINTING_MINNESOTA_MATH_FOREST_INDEX_V0_1.md
+   - Purpose: proof trail only, not the front door.
+
+5. **Zora Forest Gate**
    - https://zora.co/@jaywisdom
    - Purpose: optional collectible / minting lane.
 
-5. **Base Identity Label**
+6. **Base Identity Label**
    - jaywisdom.base.eth
    - Purpose: identity label for the Base-side rail.
 
-6. **Token Name**
+7. **Token Name**
    - JAYWISDOM on Base
    - Purpose: collectible proof trail label, not an investment promise.
 
@@ -59,20 +65,22 @@ https://github.com/jsonwisdom/JOY/blob/main/FAMILY/receipts/joyspace/MRS_WISDOM_
 
 ## Instructions for Mrs Wisdom
 
-1. Open this JoySpace index first.
+1. Open the JoySpace portal first.
 2. Read the birthday line.
-3. Click the Birthday Print Launcher if you want the short card.
-4. Click the AL and JOY receipts only if you want the proof trail.
-5. Click Zora only if you want the minting forest.
+3. Enter the Entertainment Forest if you want the fun page.
+4. Use the Print Launcher if you want the short card.
+5. Open the GitHub receipt only if you want the proof trail.
+6. Zora is optional.
 
 ---
 
 ## Plain-English Map
 
-- GitHub = birthday proof card
-- JOY = family meaning
+- JoySpace = birthday front door
+- Entertainment Forest = family joy
+- GitHub = receipt/proof trail
 - AL = machine proof
-- Zora = minting forest
+- Zora = optional minting forest
 - Base = token rail
 - jaywisdom.base.eth = identity label
 - JAYWISDOM = collectible token name
@@ -83,8 +91,12 @@ https://github.com/jsonwisdom/JOY/blob/main/FAMILY/receipts/joyspace/MRS_WISDOM_
 
 This index is a live GitHub repo artifact.
 
+The public front door is now JoySpace-first:
+
+https://jsonwisdom.github.io/JOY/joyspace/mrs-wisdom-birthday.html
+
 The Zora / Base references are user-provided birthday forest coordinates.
 
 No financial value, investment return, or official third-party endorsement is claimed.
 
-**Love first. Receipts second. Crypto optional.**
+**Love first. Receipts second. JoySpace first. Crypto optional.**
