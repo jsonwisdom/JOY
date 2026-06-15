@@ -1,0 +1,314 @@
+PDF_TEXT_READBACK_V0_1
+UTC=2026-06-15T06:34:18Z
+COMMIT=55f927fd449f1f701b5e2ff5c1c957c5787f0ae4
+
+== FILE: data/goblin_audit/evidence/pdfs/al_budget_act_2025_251.pdf ==
+Producer:        tx_pdf 32.0.434.500
+CreationDate:    Tue May  6 14:57:45 2025 UTC
+ModDate:         Thu May 15 15:45:55 2025 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           138
+Encrypted:       no
+Page size:       606.95 x 791.6 pts
+Page rot:        0
+File size:       605947 bytes
+Optimized:       no
+PDF version:     1.7
+-- TEXT SAMPLE --
+HB1G
+
+ENROLLED
+
+ACT#2O25-l
+
+1
+
+HB186
+
+2
+
+L5HKKYA-2
+
+3
+
+By Representatives Reynolds, ßlackshear
+RFD: Ways and Means General Fund
+
+5
+
+First Read: 05-Feb-25
+
+MÂY-12025
+- - RECEIVEO
+GOVRNORS OFFICE
+
+J
+
+Page O
+
+r
+
+HB186 Enrolled
+1
+
+Enrolled, An Act,
+
+2
+3
+
+To make appropriations for the ordinary expenses of the
+
+4
+
+executive, legislative, and judicial agencies of the State,
+
+5
+
+for other functions of government, for debt service, and for
+
+6
+
+capital outlay for the fiscal year ending September 30, 2026.
+
+7
+
+BE IT ENACTED BY THE LEGISLATURE OF ALABAMA:
+
+8
+
+Section 1. The monies in Section 3 are appropriated
+
+9
+
+from the named funds for the 2026 fiscal year to the state
+
+10
+
+agencies indicated, as the amounts to be used to pay the
+
+11
+
+expenditures of the named agencies, and are in lieu of all
+
+12
+
+monies appropriated for these purposes in other sections of
+
+13
+
+== FILE: data/goblin_audit/evidence/pdfs/mmb-feb-2026-forecast.pdf ==
+Title:           February 2026 Forecast - General Fund FBA Detail
+Subject:         February 2026 Forecast - General Fund FBA Detail
+Keywords:        February 2026 Forecast - General Fund FBA Detail
+Author:          MMB
+Creator:         Acrobat PDFMaker 25 for Excel
+Producer:        Adobe PDF Library 25.1.86
+CreationDate:    Wed Feb 25 07:43:01 2026 UTC
+ModDate:         Wed Feb 25 07:48:16 2026 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           27
+Encrypted:       no
+Page size:       1008 x 612 pts
+Page rot:        0
+File size:       617965 bytes
+Optimized:       no
+PDF version:     1.6
+-- TEXT SAMPLE --
+General Fund Balance Analysis
+
+February 2026 Forecast
+
+Comparisons to November 2025 Forecast
+2026-27 Biennium
+2028-29 Biennium
+
+February 27, 2026
+
+Table of Contents
+Page
+Summary of Resources and Expenditures
+
+1
+
+Revenues/Resources
+Non-Dedicated
+Dedicated
+Transfers From Other Funds
+Prior Year Adjustments
+
+2
+4
+4
+5
+
+Expenditures/Uses
+E-12 Education
+Higher Education
+Property Tax Aids & Credits
+Health & Human Services
+Public Safety & Judiciary
+Transportation
+Environment and Energy
+Jobs, Commerce, Ag and Housing
+State Government & Veterans
+Debt Service
+Capital Projects & Grants
+Cancellation Estimates
+Estimated Inflation
+
+5
+9
+9
+11
+14
+16
+17
+18
+20
+24
+25
+25
+25
+
+Reserves
+
+25
+
+General Fund - Fund Balance Analysis
+
+($ in Thousands)
+
+Nov
+
+Nov
+
+Feb
+
+Feb
+
+Feb
+
+Feb vs Nov
+
+Feb
+
+Feb
+
+
+== FILE: data/goblin_audit/evidence/pdfs/MMB_Feb2026_Forecast.pdf ==
+Title:           February 2026 Forecast - General Fund FBA Summary
+Subject:         February 2026 Forecast - General Fund FBA Summary
+Keywords:        February 2026 Forecast - General Fund FBA Summary
+Author:          MMB
+Creator:         Acrobat PDFMaker 25 for Excel
+Producer:        Adobe PDF Library 25.1.86
+CreationDate:    Wed Feb 25 08:02:07 2026 UTC
+ModDate:         Wed Feb 25 08:02:54 2026 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           13
+Encrypted:       no
+Page size:       1008 x 612 pts
+Page rot:        0
+File size:       300687 bytes
+Optimized:       no
+PDF version:     1.6
+-- TEXT SAMPLE --
+General Fund Balance Analysis
+
+February 2026 Forecast
+
+Comparisons to November 2025 Forecast
+Expenditures by Omnibus Bill - Summary
+2026-27 Biennium
+2028-29 Biennium
+February 27, 2026
+
+Table of Contents
+Page
+Summary of Resources and Expenditures
+
+1
+
+Revenues/Resources
+Non-Dedicated
+Dedicated
+Transfers From Other Funds
+Prior Year Adjustments
+
+2
+3
+3
+3
+
+Expenditures/Uses
+E-12 Education
+Higher Education
+Property Tax Aids & Credits
+Health & Human Services
+Public Safety & Judiciary
+Transportation
+Environment and Energy
+Jobs, Commerce, Ag and Housing
+State Government & Veterans
+Debt Service
+Capital Projects & Grants
+Cancellation Estimates
+Estimated Inflation
+
+3
+4
+4
+6
+7
+7
+8
+8
+9
+10
+11
+11
+11
+
+Reserves
+
+11
+
+General Fund - Fund Balance Analysis
+
+($ in Thousands)
+
+Nov
+
+Nov
+
+Feb
+
+Feb
+
+Feb
+
+Feb vs Nov
+
+Feb
+
+Feb
+
+
