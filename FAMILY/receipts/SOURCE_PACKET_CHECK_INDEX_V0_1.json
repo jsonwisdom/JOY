@@ -1,0 +1,70 @@
+{
+  "schema_version": "SOURCE_PACKET_CHECK_INDEX_V0_1",
+  "status": "SOURCE_PACKET_CHECK_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/SOURCE_PACKET_CHECK_V0_1.md",
+    "commit": "22887d7ace9260b0097b1f607959cfbae1978b00"
+  },
+  "parent_context": {
+    "alabama_zero_day": "defensive_receipt_layer_only",
+    "replay_alabama": "PASS",
+    "iron_bowl_2013_kick_six_source_packet": "active_source_vector",
+    "broadcast_2013": "metadata_pointer_only",
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "background_monitor_running": false
+  },
+  "required_check_inputs": [
+    "claim_id",
+    "claim_text",
+    "source_packet_path",
+    "source_packet_commit_or_placeholder",
+    "source_packet_content_sha_or_placeholder",
+    "replay_operator",
+    "scope_requested",
+    "promotion_requested"
+  ],
+  "scope_states": [
+    "NO_SOURCE",
+    "SOURCE_STAGED",
+    "GOAL_LINE_REVIEW",
+    "MECHANICS_ONLY",
+    "ROLES_ONLY",
+    "METADATA_ONLY",
+    "TOUCHDOWN_SCOPED",
+    "REJECTED"
+  ],
+  "acceptance_rules": {
+    "source_packet_path_required": true,
+    "source_packet_commit_or_placeholder_required": true,
+    "source_packet_content_sha_or_placeholder_required": true,
+    "replay_operator_required": true,
+    "scope_requested_required": true,
+    "promotion_limited_to_evidence_scope": true,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true
+  },
+  "field_state": {
+    "source_packet_check": "PASS",
+    "replay_alabama_context": true,
+    "deterministic_replay_engine_mode": true,
+    "metadata_only": true,
+    "index_only": true,
+    "live_calls": false,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "SOURCE_PACKET_CHECK != AUTHORITY_TRUE",
+    "SOURCE_PACKET_CHECK != FAMILY_GATE_PASS",
+    "SOURCE_PACKET_CHECK != CHILD_CONSENT",
+    "SOURCE_PACKET_CHECK != MRS_WISDOM_GATE_PASS",
+    "SOURCE_PACKET_CHECK != BACKGROUND_MONITOR_RUNNING",
+    "SOURCE_PACKET_CHECK != BROADCAST_TRANSCRIPT_VERIFIED",
+    "SOURCE_PACKET_CHECK != COMMENTARY_QUOTE_AUTHORIZED",
+    "SOURCE_PACKET_CHECK = REPLAY_GATE_FOR_SOURCE_SCOPE"
+  ],
+  "next_packet": "OFFENSIVE_TRANSITION_V0_1"
+}
