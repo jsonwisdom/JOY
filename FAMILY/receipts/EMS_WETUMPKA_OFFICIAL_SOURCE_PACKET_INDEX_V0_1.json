@@ -1,0 +1,62 @@
+{
+  "schema_version": "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET_INDEX_V0_1",
+  "status": "OFFICIAL_CITY_FIRE_EMS_SOURCE_ATTACHED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET_V0_1.md",
+    "commit": "5b6a47af8b0f1a0cf069a5891b2c3c6a01521f0f"
+  },
+  "source_packet": {
+    "source_kind": "official_city_fire_department_page",
+    "source_url": "https://wetumpkaal.gov/180/Fire-Department",
+    "source_label": "City of Wetumpka Fire Department",
+    "fetched_at_utc": "2026-06-26T00:00:00Z",
+    "source_status": "OFFICIAL_CITY_SOURCE_ATTACHED",
+    "raw_page_snapshot_attached": false,
+    "archive_hash_attached": false
+  },
+  "extracted_public_facts": {
+    "department": "Wetumpka Fire Department",
+    "services_observed": [
+      "fire",
+      "EMS",
+      "rescue",
+      "emergency medical care and transportation",
+      "advanced EMS care and transport"
+    ],
+    "service_area_observed": "over 20,000 residents within a 70-square-mile area in and around Wetumpka",
+    "stations_observed": "four strategically located stations",
+    "address_observed": "410 S Main Street, Wetumpka, AL 36092",
+    "department_phone_observed": "334-567-1333",
+    "emergency_phone_observed": "911"
+  },
+  "training_scaffold": {
+    "question": "What do you do if someone needs help?",
+    "safe_answer": "For an emergency, call 911 immediately or ask the nearest safe adult to call 911. Notify Mom, Dad, or another trusted adult as soon as it is safe.",
+    "trusted_adult_notification_delays_emergency_call": false,
+    "medical_advice": false
+  },
+  "field_state": {
+    "ems_source_packet": "PASS",
+    "official_city_source_attached": true,
+    "external_emergency_boundary_mapped": true,
+    "emergency_phone_911_observed": true,
+    "medical_advice": false,
+    "service_coverage_final": false,
+    "truth_state": "YELLOW",
+    "family_gate": "SOVEREIGN",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "EMS_PACKET != MEDICAL_ADVICE",
+    "EMS_PACKET != EMERGENCY_DISPATCH_EXECUTION",
+    "EMS_PACKET != SERVICE_COVERAGE_FINAL",
+    "EMS_PACKET != FAMILY_APPROVAL",
+    "EMS_PACKET != MRS_WISDOM_GATE_PASS",
+    "EMS_PACKET != AUTHORITY_TRUE",
+    "EMS_PACKET != INTERNAL_STATE_CONTROL",
+    "EMS_PACKET = PUBLIC_SERVICE_WITNESS_ONLY"
+  ],
+  "next_packet": "EMERGENCY_MANAGER_PURPOSE_LAYER_REVIEW_MARY_V0_1"
+}
