@@ -1,0 +1,51 @@
+{
+  "schema_version": "JSONWISDOM_FAMILY_IS_WHAT_YOU_MAKE_OF_IT_INDEX_V0_1",
+  "status": "FAMILY_DOCTRINE_RECEIPT_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/JSONWISDOM_FAMILY_IS_WHAT_YOU_MAKE_OF_IT_V0_1.md",
+    "commit": "0b563aee486eda9ed20d5c0dd2eaa0f7f86dc12e"
+  },
+  "doctrine": {
+    "line": "Family is what you make of it.",
+    "meaning": "Family is built through care, protection, repair, memory, teaching, and refusal to erase.",
+    "care_over_claim": true,
+    "repair_over_erasure": true,
+    "receipts_protect_people_not_replace_them": true
+  },
+  "linked_receipts": [
+    "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+    "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_INDEX_V0_1.json"
+  ],
+  "family_making_rules": [
+    "do_not_erase",
+    "do_not_expose",
+    "do_not_fake_approval",
+    "do_not_turn_people_into_assets",
+    "do_not_let_public_machines_outrank_private_care",
+    "do_not_mistake_repo_path_for_consent",
+    "do_not_mistake_absence_of_perfect_proof_for_absence_of_love",
+    "repair_the_map_when_the_map_is_wrong"
+  ],
+  "field_state": {
+    "jsonwisdom_family_doctrine": "PASS",
+    "family_is_what_you_make_of_it": true,
+    "private_details_exposed": false,
+    "family_approval_claimed": false,
+    "authority": false,
+    "truth_state": "YELLOW_WITH_GREEN_SCOPED_DOCTRINE",
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != FAMILY_APPROVAL",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != MRS_WISDOM_GATE_PASS",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != PUBLIC_BIOGRAPHY_GREEN",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != PUBLIC_LIKENESS_GREEN",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != CUSTODY_FINAL",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != OWNERSHIP_FINAL",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT != AUTHORITY_TRUE",
+    "FAMILY_IS_WHAT_YOU_MAKE_OF_IT = PUBLIC_SAFE_PURPOSE_DOCTRINE"
+  ],
+  "next_packet": "FAMILY_PURPOSE_MAP_REVIEW_OR_REPAIR_RECEIPT"
+}
