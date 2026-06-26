@@ -1,0 +1,55 @@
+{
+  "schema_version": "COACHES_CORNER_MENU_SOURCE_BYTES_INDEX_V0_1",
+  "status": "SOURCE_BYTES_GATE_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/COACHES_CORNER_MENU_SOURCE_BYTES_V0_1.md",
+    "commit": "84cfca4380e30a5fc6b420ffe7588c7035b8b0bf"
+  },
+  "prior_packet": {
+    "path": "FAMILY/receipts/COACHES_CORNER_MENU_HASH_PACKET_V0_1.md",
+    "state": "WITNESS_GREEN_PACKET_STRUCTURE",
+    "content_hash_attached": false,
+    "independent_public_verification": false
+  },
+  "source_bytes_state": {
+    "official_menu_url_or_photo_attached": false,
+    "source_bytes_attached": false,
+    "content_hash_sha256": null,
+    "content_hash_attached": false,
+    "fetched_at_utc": null,
+    "independent_public_verification": false,
+    "independent_touchdown_confirmed": false,
+    "truth_state": "YELLOW",
+    "field_state": "GOAL_LINE_REVIEW",
+    "authority": false,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "boundary_play_refined": {
+    "protect_the_ball": "assets_and_people",
+    "external_fumbles": false,
+    "zero_trust_on_perimeter": true,
+    "authority_location": "inside_the_huddle",
+    "external_decode_can_force_turnover": false
+  },
+  "required_before_promotion": [
+    "official_menu_url_or_photo",
+    "fetched_at_utc",
+    "source_bytes_sha256",
+    "source_notes",
+    "verified_items",
+    "verified_status"
+  ],
+  "hard_boundaries": [
+    "SOURCE_BYTES_GATE != CUSTODY_FINAL",
+    "SOURCE_BYTES_GATE != OWNERSHIP_FINAL",
+    "SOURCE_BYTES_GATE != BUSINESS_AUTHORITY",
+    "SOURCE_BYTES_GATE != FAMILY_APPROVAL",
+    "SOURCE_BYTES_GATE != MRS_WISDOM_GATE_PASS",
+    "SOURCE_BYTES_GATE != AUTHORITY_TRUE",
+    "SOURCE_BYTES_GATE != INDEPENDENT_TOUCHDOWN_CONFIRMED",
+    "SOURCE_BYTES_GATE = HASH_REQUIREMENT_GATE"
+  ],
+  "next_packet": "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET"
+}
