@@ -1,0 +1,88 @@
+{
+  "schema_version": "DOCTRINE_SPINE_INDEX_V0_1",
+  "status": "DOCTRINE_SPINE_LOCKED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/DOCTRINE_SPINE_V0_1.md",
+    "commit": "b4850e80d2d2088a4bb34d58090a887e7080a387"
+  },
+  "source_receipts": [
+    "FAMILY/receipts/JSONWISDOM_FAMILY_IS_WHAT_YOU_MAKE_OF_IT_V0_1.md",
+    "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+    "FAMILY/receipts/PUBLIC_REPO_AUTHORITY_PERIMETER_BOUNDARY_V0_1.md",
+    "FAMILY/receipts/COACHES_CORNER_MENU_SOURCE_BYTES_V0_1.md",
+    "FAMILY/receipts/EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET_V0_1.md",
+    "FAMILY/receipts/ELMORE_COUNTY_EMS_PUBLIC_SERVICE_WITNESS_V0_1.md",
+    "ALMS/vernacular/rows/IRON_BOWL_BROADCAST_2013.json"
+  ],
+  "field_state": {
+    "doctrine_spine": "PASS",
+    "witness_green": true,
+    "truth_yellow": true,
+    "authority": false,
+    "care_over_claim": true,
+    "repair_over_erasure": true,
+    "public_repo_witness_only": true,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "continuity_checks": {
+    "doctrine_core": {
+      "family_is_what_you_make_of_it": true,
+      "private_details_exposed": false,
+      "family_approval_claimed": false,
+      "authority": false
+    },
+    "family_purpose_map": {
+      "lanes_included_with_purpose": true,
+      "public_safe_symbolic_only": true,
+      "private_details_exposed": false,
+      "public_biography": false
+    },
+    "public_repo_perimeter": {
+      "public_repo_witness_only": true,
+      "github_green_transport_only": true,
+      "truth_yellow_allowed": true,
+      "family_authority_public_repo_resolved": false
+    },
+    "coaches_corner": {
+      "official_site_extracted_text_packet_attached": true,
+      "raw_html_bytes_custody_claimed": false,
+      "independent_touchdown_confirmed": false,
+      "field_state": "GOAL_LINE_REVIEW"
+    },
+    "ems_wetumpka": {
+      "official_city_fire_ems_source_attached": true,
+      "emergency_phone_911_observed": true,
+      "medical_advice": false,
+      "service_coverage_final": false
+    },
+    "elmore_county_ems": {
+      "replay": "PASS_WITH_LIMITS",
+      "direct_county_ems_page_found": false,
+      "county_service_coverage_final": false
+    }
+  },
+  "iron_bowl_broadcast_pointer_queue": {
+    "next_packet": "IRON_BOWL_BROADCAST_ASSET_POINTER_V0_1",
+    "broadcast_signal_public": true,
+    "asset_custody_private_or_external": true,
+    "broadcast_pointer_needed": true,
+    "transcript_or_quote_not_claimed": true,
+    "broadcast_rights_claimed": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "DOCTRINE_SPINE != SOVEREIGN_HUMAN_APPROVAL",
+    "DOCTRINE_SPINE != FAMILY_APPROVAL",
+    "DOCTRINE_SPINE != MRS_WISDOM_GATE_PASS",
+    "DOCTRINE_SPINE != CUSTODY_FINAL",
+    "DOCTRINE_SPINE != OWNERSHIP_FINAL",
+    "DOCTRINE_SPINE != BROADCAST_RIGHTS",
+    "DOCTRINE_SPINE != TRANSCRIPT_VERIFICATION",
+    "DOCTRINE_SPINE != AUTHORITY_TRUE",
+    "DOCTRINE_SPINE = PUBLIC_SAFE_WITNESS_SPINE"
+  ],
+  "next_packet": "IRON_BOWL_BROADCAST_ASSET_POINTER_V0_1"
+}
