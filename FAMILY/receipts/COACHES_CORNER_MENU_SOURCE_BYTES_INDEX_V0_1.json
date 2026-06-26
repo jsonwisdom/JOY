@@ -1,10 +1,10 @@
 {
   "schema_version": "COACHES_CORNER_MENU_SOURCE_BYTES_INDEX_V0_1",
-  "status": "SOURCE_BYTES_GATE_INDEXED",
+  "status": "OFFICIAL_SITE_EXTRACTED_TEXT_PACKET_ATTACHED",
   "repo": "jsonwisdom/JOY",
   "md_receipt": {
     "path": "FAMILY/receipts/COACHES_CORNER_MENU_SOURCE_BYTES_V0_1.md",
-    "commit": "84cfca4380e30a5fc6b420ffe7588c7035b8b0bf"
+    "commit": "e2ea44b69f2ff010fbec54cfc067b047aae69cfc"
   },
   "prior_packet": {
     "path": "FAMILY/receipts/COACHES_CORNER_MENU_HASH_PACKET_V0_1.md",
@@ -12,12 +12,17 @@
     "content_hash_attached": false,
     "independent_public_verification": false
   },
-  "source_bytes_state": {
-    "official_menu_url_or_photo_attached": false,
-    "source_bytes_attached": false,
-    "content_hash_sha256": null,
-    "content_hash_attached": false,
-    "fetched_at_utc": null,
+  "source_packet_state": {
+    "official_menu_url_or_photo_attached": true,
+    "source_kind": "official_website_extracted_text_packet",
+    "source_urls": [
+      "https://coachescornersportsbarandgrill.com/",
+      "https://coachescornersportsbarandgrill.com/dinner-menu/",
+      "https://coachescornersportsbarandgrill.com/lunch-menu/"
+    ],
+    "raw_html_bytes_attached": false,
+    "source_packet_sha256": "ddbd52e96aaf865746232ec0b7220ce2f15e5ca4b4cc394a98652dbde11ca7a2",
+    "fetched_at_utc": "2026-06-26T00:00:00Z",
     "independent_public_verification": false,
     "independent_touchdown_confirmed": false,
     "truth_state": "YELLOW",
@@ -26,6 +31,16 @@
     "family_gate": "SOVEREIGN",
     "no_fake_green": true
   },
+  "extracted_items": [
+    "Big Daddy Stuffed Burger $12.49",
+    "Buffalo Wings (10) $10.99",
+    "Ribeye $22.99",
+    "Cheese Grits $3.49",
+    "Fountain Drink $2.99",
+    "Fried Green Tomatoes $3.99",
+    "Lunch Menu Monday-Friday 11AM-2PM",
+    "Mighty Fine Burger $11.49"
+  ],
   "boundary_play_refined": {
     "protect_the_ball": "assets_and_people",
     "external_fumbles": false,
@@ -34,14 +49,14 @@
     "external_decode_can_force_turnover": false
   },
   "required_before_promotion": [
-    "official_menu_url_or_photo",
-    "fetched_at_utc",
-    "source_bytes_sha256",
+    "raw_source_bytes_or_archived_snapshot",
+    "raw_source_bytes_sha256_or_archive_sha256",
     "source_notes",
-    "verified_items",
-    "verified_status"
+    "replay_operator",
+    "promotion_scope"
   ],
   "hard_boundaries": [
+    "SOURCE_BYTES_GATE != RAW_HTML_BYTE_CUSTODY",
     "SOURCE_BYTES_GATE != CUSTODY_FINAL",
     "SOURCE_BYTES_GATE != OWNERSHIP_FINAL",
     "SOURCE_BYTES_GATE != BUSINESS_AUTHORITY",
@@ -49,7 +64,7 @@
     "SOURCE_BYTES_GATE != MRS_WISDOM_GATE_PASS",
     "SOURCE_BYTES_GATE != AUTHORITY_TRUE",
     "SOURCE_BYTES_GATE != INDEPENDENT_TOUCHDOWN_CONFIRMED",
-    "SOURCE_BYTES_GATE = HASH_REQUIREMENT_GATE"
+    "SOURCE_BYTES_GATE = EXTRACTED_TEXT_HASH_REQUIREMENT_GATE"
   ],
   "next_packet": "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET"
 }
