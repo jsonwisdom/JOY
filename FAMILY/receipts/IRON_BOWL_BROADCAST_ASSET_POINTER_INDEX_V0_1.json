@@ -1,0 +1,71 @@
+{
+  "schema_version": "IRON_BOWL_BROADCAST_ASSET_POINTER_INDEX_V0_1",
+  "status": "WITNESS_GREEN_METADATA_POINTER",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/IRON_BOWL_BROADCAST_ASSET_POINTER_V0_1.md",
+    "commit": "3bec062195d6e64c4121a7760f90523da361af1c"
+  },
+  "source_row": {
+    "repo": "jsonwisdom/AL",
+    "path": "ALMS/vernacular/rows/IRON_BOWL_BROADCAST_2013.json",
+    "content_sha": "ba1f5afa29e7f5adc30b8c9e22ebfa26ec8d7fcf",
+    "field_state": "GOAL_LINE_REVIEW",
+    "verified_status": "BROADCAST_METADATA_STAGED",
+    "promotion_scope": "broadcast_metadata_only"
+  },
+  "broadcast_metadata": {
+    "game": "Iron Bowl 2013 / Kick Six",
+    "date": "2013-11-30",
+    "venue": "Jordan-Hare Stadium, Auburn, Alabama",
+    "network": "CBS",
+    "play_by_play": "Verne Lundquist",
+    "analyst": "Gary Danielson",
+    "sideline_reporter": "Allie LaForce",
+    "score_before_play": "28-28",
+    "final_score": "Auburn 34, Alabama 28"
+  },
+  "field_state": {
+    "iron_bowl_broadcast_pointer": "PASS",
+    "witness_green": true,
+    "truth_yellow": true,
+    "broadcast_metadata_staged": true,
+    "broadcast_asset_url_attached": false,
+    "transcript_verified": false,
+    "commentary_quotes_authorized": false,
+    "broadcast_rights_claimed": false,
+    "asset_custody_final": false,
+    "authority": false,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "scoreboard_refinement": {
+    "button_click_points": false,
+    "offline_family_journal_receipts_required": true,
+    "valid_execution_receipts": [
+      "drawn_badge",
+      "spoken_story",
+      "high_five",
+      "witnessed_family_repair_action",
+      "replay_safe_lesson_completed"
+    ]
+  },
+  "required_before_promotion": [
+    "exact_broadcast_asset_url_or_archive_pointer",
+    "fetched_at_utc_or_archived_at_utc",
+    "source_hash_or_archive_hash",
+    "allowed_quote_or_transcript_scope_if_any",
+    "replay_operator"
+  ],
+  "hard_boundaries": [
+    "BROADCAST_POINTER != BROADCAST_TRANSCRIPT_VERIFIED",
+    "BROADCAST_POINTER != COMMENTARY_QUOTE_AUTHORIZED",
+    "BROADCAST_POINTER != BROADCAST_RIGHTS",
+    "BROADCAST_POINTER != ASSET_CUSTODY_FINAL",
+    "BROADCAST_POINTER != FAMILY_APPROVAL",
+    "BROADCAST_POINTER != MRS_WISDOM_GATE_PASS",
+    "BROADCAST_POINTER != AUTHORITY_TRUE",
+    "BROADCAST_POINTER = METADATA_POINTER_ONLY"
+  ],
+  "next_packet": "FAMILY_JOURNAL_EXECUTION_RECEIPT_TEMPLATE_V0_1"
+}
