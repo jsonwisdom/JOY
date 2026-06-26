@@ -1,0 +1,92 @@
+{
+  "schema_version": "SIGNED_FEED_FALLBACK_SCHEMA_INDEX_V0_1",
+  "status": "SIGNED_FEED_FALLBACK_SCHEMA_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/SIGNED_FEED_FALLBACK_SCHEMA_V0_1.md",
+    "commit": "7efd31de1a0ab06769af3c6283a59b0fc6616e3b"
+  },
+  "sequence": {
+    "audit_first": true,
+    "fallback_second": true,
+    "anchor_last": true
+  },
+  "prerequisite": {
+    "replay_audit_required": true,
+    "required_status": "REPLAY_AUDIT_OK",
+    "failure_blocks_fallback": true
+  },
+  "required_fields": {
+    "feed_url": "https_url_required",
+    "pubkey": "hex_or_pem_required",
+    "signature": "detached_signature_required",
+    "epoch": "10_digit_unix_utc_required",
+    "mirror_root": "64_hex_required",
+    "payload": "canonical_payload_required"
+  },
+  "canonical_feed_payload": {
+    "schema_version": "SIGNED_FEED_FALLBACK_SCHEMA_V0_1",
+    "feed_id": "string_required",
+    "mirror_root": "64_hex_required",
+    "epoch": "10_digit_unix_utc_required",
+    "audit_ref": "REPLAY_AUDIT_SPEC_V0_1",
+    "anchor_execution": false,
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "validation_checks": {
+    "signature_valid_required": true,
+    "feed_url_https_required": true,
+    "max_skew_seconds": 900,
+    "mirror_root_consistency_required": true,
+    "partial_pass_allowed": false,
+    "explicit_failure_reason_required": true
+  },
+  "no_execution_state": {
+    "signed_feed_execution": false,
+    "anchor_execution": false,
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false
+  },
+  "field_state": {
+    "signed_feed_fallback_schema": "PASS",
+    "replay_audit_required": true,
+    "fallback_second": true,
+    "anchor_last": true,
+    "max_skew_seconds": 900,
+    "feed_url_https_required": true,
+    "signature_required": true,
+    "mirror_root_consistency_required": true,
+    "signed_feed_execution": false,
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "SIGNED_FEED_FALLBACK_SCHEMA != SIGNED_FEED_EXECUTION",
+    "SIGNED_FEED_FALLBACK_SCHEMA != ANCHOR_EXECUTION",
+    "SIGNED_FEED_FALLBACK_SCHEMA != PAYLOAD_GENERATOR",
+    "SIGNED_FEED_FALLBACK_SCHEMA != TX_SKELETON_GENERATOR",
+    "SIGNED_FEED_FALLBACK_SCHEMA != BROADCAST",
+    "SIGNED_FEED_FALLBACK_SCHEMA != TXID_CLAIM",
+    "SIGNED_FEED_FALLBACK_SCHEMA != WALLET_OPERATION",
+    "SIGNED_FEED_FALLBACK_SCHEMA != PRIVATE_KEY_REQUEST",
+    "SIGNED_FEED_FALLBACK_SCHEMA != SEED_PHRASE_REQUEST",
+    "SIGNED_FEED_FALLBACK_SCHEMA != AUTHORITY_TRUE",
+    "SIGNED_FEED_FALLBACK_SCHEMA = COLD_BACKUP_VALIDATION_SCHEMA"
+  ],
+  "output_format": {
+    "pass": "SIGNED_FEED_FALLBACK_OK",
+    "fail": "SIGNED_FEED_FALLBACK_FAIL reason=<explicit_reason>"
+  },
+  "next_packet": "SIGNED_FEED_FALLBACK_TEST_VECTOR_V0_1_OR_ANCHOR_PATH_REVIEW"
+}
