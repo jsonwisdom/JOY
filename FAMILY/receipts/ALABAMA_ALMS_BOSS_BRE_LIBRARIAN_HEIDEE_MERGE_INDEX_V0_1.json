@@ -1,0 +1,75 @@
+{
+  "schema_version": "ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_INDEX_V0_1",
+  "status": "V0_1_LIVE",
+  "thread_tag": "#ALABAMA_ZERO_DAY",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_V0_1.md",
+    "commit": "225ec4da13601d27285e6d368546896acf2f5822",
+    "content_sha": "de6c243360ba289d71906421ff7b80342f6ca0c2"
+  },
+  "al_pointer": {
+    "repo": "jsonwisdom/AL",
+    "path": "ALMS/vernacular/ALABAMA_ALMS_JOY_ROLE_MEMBRANE_POINTER_V0_1.md",
+    "commit": "bf82647596bec5aad0c6cd79419a39397785376d",
+    "content_sha": "0a2aef8f15a217d6af611ab46e94089306cf6f09"
+  },
+  "roles": {
+    "alabama_alms": {
+      "function": "replay_engine_source_packets_booth_review",
+      "authority": false
+    },
+    "boss_bre": {
+      "function": "room_safety_privacy_joy_reset",
+      "source": "docs/BOSS_BRE_FAMILY_SIDE_ACTIVATION_V0_1.md",
+      "role_boundary": "symbolic_role_not_consent_or_approval"
+    },
+    "librarian": {
+      "function": "evidence_shelf_safe_suggestions_membrane_check",
+      "source": "docs/school-of-wisdom/LIBRARIAN_SUGGESTIONS_GAMEPLAY_ALMS_V0_1.md",
+      "authority": false
+    },
+    "heidee_joy": {
+      "function": "child_safe_training_purpose_privacy_guard",
+      "source": "AL/receipts/base/identity/HEIDEE_AI_TRAINING_TOOL_BUILT_BY_DAD_V0_1.md",
+      "verified": false,
+      "authority": false
+    }
+  },
+  "routing": [
+    "BOSS_BRE_ROOM_SAFETY_CHECK",
+    "LIBRARIAN_SHELF_SOURCE_SUGGESTION",
+    "ALABAMA_ALMS_SOURCE_PACKET_CHECK",
+    "HEIDEE_JOY_PRIVACY_PURPOSE_CHECK",
+    "FAMILY_GATE_SOVEREIGN_BOUNDARY",
+    "RESOLUTION_ONLY"
+  ],
+  "field_state": {
+    "merge_bridge": "ACTIVE",
+    "family_gate": "SOVEREIGN",
+    "authority": false,
+    "verified": false,
+    "private_child_data_publication": false,
+    "background_monitoring": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "MERGE != FAMILY_APPROVAL",
+    "MERGE != CHILD_CONSENT",
+    "MERGE != MRS_WISDOM_GATE_PASS",
+    "MERGE != AUTHORITY_TRUE",
+    "MERGE != PRIVATE_CHILD_DATA_PUBLICATION",
+    "MERGE != BACKGROUND_MONITORING",
+    "MERGE = ROLE_MEMBRANE_BRIDGE"
+  ],
+  "next_packet_queue": {
+    "status": "READY",
+    "allowed_targets": [
+      "COACHES_CORNER_MENU_HASH_PACKET",
+      "ALABAMA_LAW_PUBLIC_LESSON_CARD",
+      "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET",
+      "IRON_BOWL_BROADCAST_ASSET_POINTER",
+      "FAMILY_GATE_BOUNDARY_TEST"
+    ]
+  }
+}
