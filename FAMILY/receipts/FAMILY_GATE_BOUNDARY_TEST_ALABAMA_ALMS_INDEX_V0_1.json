@@ -1,0 +1,44 @@
+{
+  "schema_version": "FAMILY_GATE_BOUNDARY_TEST_ALABAMA_ALMS_INDEX_V0_1",
+  "status": "STATIC_REPLAY_GATE_PASS",
+  "test_target": "ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_V0_1",
+  "repo": "jsonwisdom/JOY",
+  "md_result": {
+    "path": "FAMILY/receipts/FAMILY_GATE_BOUNDARY_TEST_ALABAMA_ALMS_V0_1.md",
+    "commit": "b32c4d7b3df06152142327dcd35a1908cfb304c1"
+  },
+  "inputs": {
+    "merge_md": "FAMILY/receipts/ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_V0_1.md",
+    "merge_json": "FAMILY/receipts/ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_INDEX_V0_1.json",
+    "gate_script": "FAMILY/receipts/replay_alabama_alms_role_membrane_v0_1.sh"
+  },
+  "checked_markers": {
+    "merge_bridge_active": true,
+    "alabama_alms_linked": true,
+    "boss_bre_linked": true,
+    "librarian_linked": true,
+    "heidee_joy_linked": true,
+    "family_gate_sovereign": true,
+    "authority_false": true,
+    "private_family_data_publication_false": true,
+    "background_monitoring_false": true,
+    "no_fake_green": true
+  },
+  "result": {
+    "role_membrane_replay": "OK",
+    "merge_bridge": "ACTIVE",
+    "family_gate": "SOVEREIGN",
+    "authority": false,
+    "private_family_data_publication": false,
+    "background_monitoring": false,
+    "no_fake_green": true
+  },
+  "not_claimed": [
+    "CI_WORKFLOW_EXECUTION",
+    "BACKGROUND_MONITOR_RUNNING",
+    "FAMILY_APPROVAL",
+    "MRS_WISDOM_GATE_PASS",
+    "AUTHORITY_TRUE"
+  ],
+  "next_packet": "ALABAMA_LAW_PUBLIC_LESSON_CARD_V0_1"
+}
