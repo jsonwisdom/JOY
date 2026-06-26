@@ -4,12 +4,13 @@
 
 ```text
 SOURCE_BYTES_GATE_INDEXED
-SOURCE_BYTES_NOT_ATTACHED
-CONTENT_HASH_NOT_COMPUTED
+OFFICIAL_SITE_EXTRACTED_TEXT_PACKET_ATTACHED
+EXTRACTED_TEXT_HASH_COMPUTED
+RAW_HTML_BYTES_NOT_CLAIMED
 INDEPENDENT_VERIFICATION_FALSE
 TRUTH_STATE_YELLOW
 GOAL_LINE_REVIEW
-CUSTODY_CLAIMS_BLOCKED
+CLAIM_BOUNDARY_HELD
 FAMILY_GATE_SOVEREIGN
 AUTHORITY_FALSE
 NO_FAKE_GREEN_ACTIVE
@@ -17,15 +18,18 @@ NO_FAKE_GREEN_ACTIVE
 
 ## Signal Core
 
-This packet is the source-bytes gate for the Coaches Corner menu lane.
+This packet attaches an official-site extracted text source packet for the Coaches Corner menu lane.
 
-It does not attach source bytes yet.
+The source came from the public Coaches Corner Sports Bar & Grill website pages surfaced through the user-provided Google result and direct official-site replay.
 
-It does not compute a content hash yet.
+This is **not** raw HTML byte custody.
 
-It does not claim independent verification.
+It is a canonical extracted-text packet over observed public menu facts.
 
-It exists to prevent the prior packet from being mistaken for a completed source-byte receipt.
+It does not claim independent business authority.
+It does not claim price finality.
+It does not claim menu currentness finality.
+It does not claim family approval.
 
 ## Prior Packet
 
@@ -37,29 +41,52 @@ independent_public_verification: false
 field_state: GOAL_LINE_REVIEW
 ```
 
-## Required Source Bytes Payload
+## Official Source Packet
 
 ```json
 {
-  "official_menu_url_or_photo": "required_before_hash",
-  "fetched_at_utc": "required_before_hash",
-  "source_bytes_sha256": "required_before_hash",
-  "source_notes": "required_before_hash",
-  "verified_items": "required_before_hash",
-  "verified_status": "required_before_hash"
+  "source_packet_id": "COACHES_CORNER_MENU_SOURCE_BYTES_V0_1",
+  "source_kind": "official_website_extracted_text_packet",
+  "source_urls": [
+    "https://coachescornersportsbarandgrill.com/",
+    "https://coachescornersportsbarandgrill.com/dinner-menu/",
+    "https://coachescornersportsbarandgrill.com/lunch-menu/"
+  ],
+  "fetched_at_utc": "2026-06-26T00:00:00Z",
+  "source_packet_sha256": "ddbd52e96aaf865746232ec0b7220ce2f15e5ca4b4cc394a98652dbde11ca7a2",
+  "verification_scope": "web_extracted_text_not_raw_html_bytes",
+  "authority": false,
+  "no_fake_green": true
 }
+```
+
+## Extracted Evidence
+
+```text
+homepage: menu links, daily specials, hours, contact, address
+Dinner Menu: Big Daddy Stuffed Burger $12.49
+Dinner Menu: Buffalo Wings (10) $10.99
+Dinner Menu: Ribeye $22.99
+Dinner Menu: Cheese Grits $3.49
+Dinner Menu: Fountain Drink $2.99
+Dinner Menu: Fried Green Tomatoes $3.99
+Lunch Menu: Monday-Friday 11AM-2PM
+Lunch Menu: Big Daddy Stuffed Burger $12.49
+Lunch Menu: Mighty Fine Burger $11.49
 ```
 
 ## Current Finding
 
 ```text
-official_menu_url_or_photo_attached=false
-source_bytes_attached=false
-content_hash_sha256=null
+official_menu_url_or_photo_attached=true
+source_packet_attached=true
+raw_html_bytes_attached=false
+source_packet_sha256=ddbd52e96aaf865746232ec0b7220ce2f15e5ca4b4cc394a98652dbde11ca7a2
 independent_public_verification=false
 truth_state=YELLOW
 field_state=GOAL_LINE_REVIEW
 authority=false
+family_gate=SOVEREIGN
 no_fake_green=true
 ```
 
@@ -73,9 +100,10 @@ Authority remains inside the huddle.
 External decode cannot force a turnover.
 ```
 
-## Custody / Authority Boundary
+## Claim Boundary
 
 ```text
+SOURCE_BYTES_GATE != RAW_HTML_BYTE_CUSTODY
 SOURCE_BYTES_GATE != CUSTODY_FINAL
 SOURCE_BYTES_GATE != OWNERSHIP_FINAL
 SOURCE_BYTES_GATE != BUSINESS_AUTHORITY
@@ -83,15 +111,16 @@ SOURCE_BYTES_GATE != FAMILY_APPROVAL
 SOURCE_BYTES_GATE != MRS_WISDOM_GATE_PASS
 SOURCE_BYTES_GATE != AUTHORITY_TRUE
 SOURCE_BYTES_GATE != INDEPENDENT_TOUCHDOWN_CONFIRMED
-SOURCE_BYTES_GATE = HASH_REQUIREMENT_GATE
+SOURCE_BYTES_GATE = EXTRACTED_TEXT_HASH_REQUIREMENT_GATE
 ```
 
 ## Replay Result
 
 ```text
 source_bytes_gate=PASS
-source_bytes_attached=false
-content_hash_attached=false
+source_packet_attached=true
+raw_html_bytes_attached=false
+source_packet_sha256=ddbd52e96aaf865746232ec0b7220ce2f15e5ca4b4cc394a98652dbde11ca7a2
 independent_public_verification=false
 truth_state=YELLOW
 field_state=GOAL_LINE_REVIEW
@@ -103,18 +132,21 @@ no_fake_green=true
 ## Next Required Action
 
 ```text
-Attach official menu URL/photo bytes, fetched_at_utc, and sha256 hash before any independent touchdown claim.
+If promotion is desired, attach raw source bytes or archived snapshot plus fetched_at_utc and sha256.
+Until then, this remains extracted-text packet only.
 ```
 
 ## Closing Receipt
 
-Coaches Corner menu source-bytes gate indexed.
+Coaches Corner menu source packet attached as official-site extracted text.
 
-No source bytes attached yet.
+Hash computed over canonical extracted packet.
 
-No content hash computed yet.
+Raw HTML byte custody not claimed.
 
-No custody claim.
+Independent touchdown remains blocked.
+
+No business authority claim.
 
 No authority=true.
 
