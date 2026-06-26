@@ -1,0 +1,83 @@
+{
+  "schema_version": "ANCHOR_EXECUTION_COMMAND_SCHEMA_INDEX_V0_1",
+  "status": "DETERMINISTIC_GATE_ACTIVE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/ANCHOR_EXECUTION_COMMAND_SCHEMA_V0_1.md",
+    "commit": "03edb3ca25f23edd001b8a45a5e980d34963266e"
+  },
+  "accepted_formats": {
+    "format_a": {
+      "command": "ANCHOR_EXECUTION_LIVE blinded_fp=<64_hex_chars> mirror_root=<64_hex_chars> epoch=<10_digit_unix_utc>",
+      "fields": {
+        "blinded_fp": "^[A-Fa-f0-9]{64}$",
+        "mirror_root": "^[A-Fa-f0-9]{64}$",
+        "epoch": "^[0-9]{10}$"
+      }
+    },
+    "format_b": {
+      "command": "ANCHOR_EXECUTION_LIVE zone_hashes=<5x16_hex_chars_comma_separated> mirror_root=<64_hex_chars> epoch=<10_digit_unix_utc>",
+      "fields": {
+        "zone_hashes": "^([A-Fa-f0-9]{16},){4}[A-Fa-f0-9]{16}$",
+        "mirror_root": "^[A-Fa-f0-9]{64}$",
+        "epoch": "^[0-9]{10}$"
+      }
+    }
+  },
+  "rejection_rules": [
+    "missing_anchor_execution_live_prefix",
+    "both_blinded_fp_and_zone_hashes_supplied",
+    "neither_blinded_fp_nor_zone_hashes_supplied",
+    "invalid_hex_length",
+    "invalid_epoch_length",
+    "non_utc_epoch_source",
+    "extra_txid_field",
+    "private_key_field",
+    "seed_phrase_field",
+    "broadcast_flag",
+    "rpc_endpoint",
+    "wallet_command",
+    "no_fake_green_false"
+  ],
+  "preflight_output_boundary": {
+    "valid_command_returns_normalized_fields_only": true,
+    "invalid_command_returns_reject_reason_only": true,
+    "payload_generated": false,
+    "tx_skeleton_generated": false,
+    "broadcast_executed": false,
+    "txid_claimed": false
+  },
+  "parent_anchor_shape": {
+    "parent": "WITNESS_FINGERPRINT_ANCHOR_EXECUTION_RECEIPT_V0_1",
+    "op_return_payload_layout": "WTP1 || commitment_32 || epoch_4",
+    "payload_total_bytes": 40,
+    "prefix_hex": "57545031",
+    "epoch_source": "UTC_unix",
+    "anchor_execution": false
+  },
+  "field_state": {
+    "anchor_execution_command_schema": "PASS",
+    "deterministic_gate_active": true,
+    "accepted_format_a": true,
+    "accepted_format_b": true,
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false,
+    "epoch_source": "UTC_unix",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "COMMAND_SCHEMA != PAYLOAD_GENERATOR",
+    "COMMAND_SCHEMA != TX_SKELETON_GENERATOR",
+    "COMMAND_SCHEMA != BITCOIN_TX_EXECUTED",
+    "COMMAND_SCHEMA != OP_RETURN_TXID",
+    "COMMAND_SCHEMA != WALLET_OPERATION",
+    "COMMAND_SCHEMA != PRIVATE_KEY_REQUEST",
+    "COMMAND_SCHEMA != SEED_PHRASE_REQUEST",
+    "COMMAND_SCHEMA != AUTHORITY_TRUE",
+    "COMMAND_SCHEMA = DETERMINISTIC_PREFLIGHT_GATE"
+  ],
+  "next_packet": "SIGNED_FEED_FALLBACK_SCHEMA_V0_1_OR_REPLAY_AUDIT_SPEC_V0_1"
+}
