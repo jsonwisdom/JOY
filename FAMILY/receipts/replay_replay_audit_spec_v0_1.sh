@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="${1:-.}"
+BASE="$ROOT/FAMILY/receipts"
+MD="$BASE/REPLAY_AUDIT_SPEC_V0_1.md"
+JSON="$BASE/REPLAY_AUDIT_SPEC_INDEX_V0_1.json"
+REQ_MD="$BASE/ANCHOR_EXECUTION_COMMAND_SCHEMA_V0_1.md"
+REQ_JSON="$BASE/ANCHOR_EXECUTION_COMMAND_SCHEMA_INDEX_V0_1.json"
+REQ_SCRIPT="$BASE/replay_anchor_execution_command_schema_v0_1.sh"
+
+fail() {
+  echo "REPLAY_AUDIT_FAIL reason=$1" >&2
+  exit 1
+}
+
+[[ -f "$MD" ]] || fail "missing_replay_audit_md"
+[[ -f "$JSON" ]] || fail "missing_replay_audit_json"
+[[ -f "$REQ_MD" ]] || fail "missing_required_anchor_schema_md"
+[[ -f "$REQ_JSON" ]] || fail "missing_required_anchor_schema_json"
+[[ -f "$REQ_SCRIPT" ]] || fail "missing_required_anchor_schema_script"
+
+grep -q "REPLAY_AUDIT_SPEC_INDEXED" "$MD" || fail "md_missing_audit_indexed"
+grep -q "AUDIT_FIRST_FALLBACK_SECOND_ANCHOR_LAST" "$MD" || fail "md_missing_sequence"
+grep -q "DETERMINISTIC_AUDIT_GATE_ACTIVE" "$MD" || fail "md_missing_deterministic_gate"
+grep -q "NO_EXECUTION_SURFACE" "$MD" || fail "md_missing_no_execution_surface"
+grep -q "NO_PAYLOAD_GENERATION" "$MD" || fail "md_missing_no_payload"
+grep -q "NO_TX_SKELETON_GENERATION" "$MD" || fail "md_missing_no_tx_skeleton"
+grep -q "NO_BROADCAST" "$MD" || fail "md_missing_no_broadcast"
+grep -q "NO_TXID_CLAIM" "$MD" || fail "md_missing_no_txid"
+grep -q "AUTHORITY_FALSE" "$MD" || fail "md_missing_authority_false"
+grep -q "NO_FAKE_GREEN_ACTIVE" "$MD" || fail "md_missing_no_fake_green"
+
+grep -q '"status": "DETERMINISTIC_AUDIT_GATE_ACTIVE"' "$JSON" || fail "json_wrong_status"
+grep -q '"audit_first": true' "$JSON" || fail "json_audit_first_missing"
+grep -q '"fallback_second": true' "$JSON" || fail "json_fallback_second_missing"
+grep -q '"anchor_last": true' "$JSON" || fail "json_anchor_last_missing"
+grep -q '"payload_generation": false' "$JSON" || fail "json_payload_generation_not_false"
+grep -q '"tx_skeleton_generation": false' "$JSON" || fail "json_tx_skeleton_not_false"
+grep -q '"broadcast": false' "$JSON" || fail "json_broadcast_not_false"
+grep -q '"txid_claimed": false' "$JSON" || fail "json_txid_not_false"
+grep -q '"authority": false' "$JSON" || fail "json_authority_not_false"
+grep -q '"no_fake_green": true' "$JSON" || fail "json_no_fake_green_missing"
+grep -q '"partial_pass_allowed": false' "$JSON" || fail "json_partial_pass_not_false"
+grep -q '"epoch_source_required": "UTC_unix"' "$JSON" || fail "json_epoch_source_mismatch"
+
+grep -q "ANCHOR_EXECUTION_COMMAND_SCHEMA_INDEXED" "$REQ_MD" || fail "required_md_missing_schema_indexed"
+grep -q "DETERMINISTIC_GATE_ACTIVE" "$REQ_MD" || fail "required_md_missing_gate"
+grep -q "PAYLOAD_GENERATION_FALSE" "$REQ_MD" || fail "required_md_missing_payload_false"
+grep -q "TX_SKELETON_GENERATION_FALSE" "$REQ_MD" || fail "required_md_missing_tx_skeleton_false"
+grep -q "BROADCAST_FALSE" "$REQ_MD" || fail "required_md_missing_broadcast_false"
+grep -q "AUTHORITY_FALSE" "$REQ_MD" || fail "required_md_missing_authority_false"
+grep -q "NO_FAKE_GREEN_ACTIVE" "$REQ_MD" || fail "required_md_missing_no_fake_green"
+
+grep -q '"payload_generation": false' "$REQ_JSON" || fail "required_json_payload_generation_not_false"
+grep -q '"tx_skeleton_generation": false' "$REQ_JSON" || fail "required_json_tx_skeleton_not_false"
+grep -q '"broadcast": false' "$REQ_JSON" || fail "required_json_broadcast_not_false"
+grep -q '"txid_claimed": false' "$REQ_JSON" || fail "required_json_txid_not_false"
+grep -q '"epoch_source": "UTC_unix"' "$REQ_JSON" || fail "required_json_epoch_source_mismatch"
+grep -q '"authority": false' "$REQ_JSON" || fail "required_json_authority_not_false"
+grep -q '"no_fake_green": true' "$REQ_JSON" || fail "required_json_no_fake_green_missing"
+
+grep -q "ANCHOR_EXECUTION_COMMAND_SCHEMA_OK" "$REQ_SCRIPT" || fail "required_script_missing_ok_marker"
+grep -q "payload_generation=false" "$REQ_SCRIPT" || fail "required_script_missing_payload_false"
+grep -q "tx_skeleton_generation=false" "$REQ_SCRIPT" || fail "required_script_missing_tx_skeleton_false"
+grep -q "broadcast=false" "$REQ_SCRIPT" || fail "required_script_missing_broadcast_false"
+grep -q "txid_claimed=false" "$REQ_SCRIPT" || fail "required_script_missing_txid_false"
+
+grep -q "REPLAY_AUDIT_SPEC != ANCHOR_EXECUTION" "$MD" || fail "md_missing_anchor_boundary"
+grep -q "REPLAY_AUDIT_SPEC != PAYLOAD_GENERATOR" "$MD" || fail "md_missing_payload_boundary"
+grep -q "REPLAY_AUDIT_SPEC != TXID_CLAIM" "$MD" || fail "md_missing_txid_boundary"
+grep -q "REPLAY_AUDIT_SPEC != PRIVATE_KEY_REQUEST" "$MD" || fail "md_missing_private_key_boundary"
+grep -q "REPLAY_AUDIT_SPEC != SEED_PHRASE_REQUEST" "$MD" || fail "md_missing_seed_boundary"
+grep -q "REPLAY_AUDIT_SPEC != AUTHORITY_TRUE" "$MD" || fail "md_missing_authority_boundary"
+
+echo "REPLAY_AUDIT_OK"
+echo "audit_first=true"
+echo "fallback_second=true"
+echo "anchor_last=true"
+echo "required_artifacts=MD_JSON_SCRIPT"
+echo "payload_generation=false"
+echo "tx_skeleton_generation=false"
+echo "broadcast=false"
+echo "txid_claimed=false"
+echo "authority=false"
+echo "no_fake_green=true"
+echo "next_packet=SIGNED_FEED_FALLBACK_SCHEMA_V0_1"
