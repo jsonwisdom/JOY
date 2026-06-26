@@ -1,0 +1,67 @@
+{
+  "schema_version": "ALABAMA_LAW_PUBLIC_LESSON_CARD_INDEX_V0_1",
+  "status": "LESSON_CARD_LIVE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/ALABAMA_LAW_PUBLIC_LESSON_CARD_V0_1.md",
+    "commit": "5f54b47d757552a0850f49163e369bf7f57f223b"
+  },
+  "route": [
+    "FAMILY_GATE_BOUNDARY_TEST_PASS",
+    "BOSS_BRE_ROOM_SAFETY_CHECK",
+    "LIBRARIAN_SHELF_SOURCE_SUGGESTION",
+    "ALABAMA_ALMS_SOURCE_PACKET_CHECK_PARTIAL",
+    "HEIDEE_JOY_PRIVACY_PURPOSE_CHECK",
+    "PUBLIC_LESSON_CARD_ONLY"
+  ],
+  "lesson": {
+    "title": "Respecting Rules & Keeping Everyone Safe — Alabama Style",
+    "audience": "child_safe_public_training_scaffold",
+    "core_truth": "Rules help people play fair, stay safe, and take care of each other.",
+    "legal_advice": false,
+    "authority": false,
+    "verified": false
+  },
+  "public_sources": [
+    {
+      "label": "seatbelt_safety_example",
+      "reference": "AL Code Section 32-5B-4 public reference",
+      "source_status": "PUBLIC_REFERENCE_CHECKED_NOT_LEGAL_AUTHORITY"
+    },
+    {
+      "label": "help_responsibly_example",
+      "reference": "AL Code Section 6-5-332 public reference",
+      "source_status": "PUBLIC_REFERENCE_CHECKED_NOT_LEGAL_AUTHORITY"
+    }
+  ],
+  "lesson_points": [
+    "SAFETY_FIRST",
+    "RESPECT_PROPERTY",
+    "HELP_OTHERS_RESPONSIBLY",
+    "SCHOOL_AND_HOME_RULES",
+    "JOY_RULE_KINDNESS"
+  ],
+  "field_state": {
+    "lesson_card_ingestion": "PASS",
+    "public_safe": true,
+    "legal_advice": false,
+    "authority": false,
+    "private_family_data_publication": false,
+    "background_monitoring": false,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "LESSON_CARD != LEGAL_ADVICE",
+    "LESSON_CARD != COURT_AUTHORITY",
+    "LESSON_CARD != FAMILY_APPROVAL",
+    "LESSON_CARD != MRS_WISDOM_GATE_PASS",
+    "LESSON_CARD != PRIVATE_FAMILY_DATA_PUBLICATION",
+    "LESSON_CARD != BACKGROUND_MONITORING",
+    "LESSON_CARD = PUBLIC_SAFE_TRAINING_SCAFFOLD"
+  ],
+  "next_queue": {
+    "recommended": "COACHES_CORNER_MENU_HASH_PACKET",
+    "alternate": "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET"
+  }
+}
