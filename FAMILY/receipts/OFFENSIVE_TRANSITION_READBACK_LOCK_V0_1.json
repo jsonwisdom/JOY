@@ -1,0 +1,83 @@
+{
+  "packet_id": "OFFENSIVE_TRANSITION_READBACK_LOCK_V0_1",
+  "schema_version": "OFFENSIVE_TRANSITION_READBACK_LOCK_JSON_V0_1",
+  "status": "LOCK_ACTIVE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_READBACK_LOCK_V0_1.md",
+    "commit": "95211abe0f64241d1f78f8062c49d5298cc64331"
+  },
+  "source_index_path": "FAMILY/receipts/OFFENSIVE_TRANSITION_INDEX_V0_1.json",
+  "commit": "bb23cb48fbdf4c861dfbd77a9fed5190a6890882",
+  "content_sha": "c4c17171866e46602d6ba8cf62189fb25515b413",
+  "source_readback": {
+    "offensive_transition_md": {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_V0_1.md",
+      "commit": "a92caa9b7c08ac64d511a36b00c8faacd8fc53b7",
+      "content_sha": "606e472a8b1b45b1b94b7cb68331180edf3b1556"
+    },
+    "offensive_transition_json": {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_INDEX_V0_1.json",
+      "commit": "bb23cb48fbdf4c861dfbd77a9fed5190a6890882",
+      "content_sha": "c4c17171866e46602d6ba8cf62189fb25515b413"
+    }
+  },
+  "replay_operator": "JSONWisdom_SIPS",
+  "timestamp": "2026-06-26T17:07:00Z",
+  "scope": "iron_bowl_2013_counter_layer_sim",
+  "locks": {
+    "readback_only": true,
+    "controlled_simulation_only": true,
+    "metadata_only": true,
+    "index_only": true,
+    "zero_execution_surface": true,
+    "live_calls": false,
+    "anchor_execution": false,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true,
+    "replay_alabama_context": true
+  },
+  "drift_checks": {
+    "computed_sha_matches_expected": true,
+    "commit_matches_index": true,
+    "controlled_simulation_only_preserved": true,
+    "metadata_only_preserved": true,
+    "index_only_preserved": true,
+    "live_calls_false_preserved": true,
+    "anchor_execution_false_preserved": true,
+    "authority_false_preserved": true,
+    "family_gate_intact_preserved": true,
+    "no_fake_green_preserved": true
+  },
+  "output_states": {
+    "pass": "OFFENSIVE_TRANSITION_READBACK_LOCK_OK",
+    "fail": "READBACK_LOCK_FAIL reason=<mismatch|drift|boundary_violation>"
+  },
+  "verification_result": "OFFENSIVE_TRANSITION_READBACK_LOCK_OK",
+  "field_state": {
+    "offensive_transition_readback_lock": "PASS",
+    "readback_only": true,
+    "controlled_simulation_only": true,
+    "metadata_only": true,
+    "index_only": true,
+    "zero_execution_surface": true,
+    "live_calls": false,
+    "anchor_execution": false,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != LIVE_EXECUTION",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != CYBER_OFFENSE",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != PAYLOAD_GENERATOR",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != TX_SKELETON_GENERATOR",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != BROADCAST",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != TXID_CLAIM",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != FAMILY_GATE_PASS",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK != AUTHORITY_TRUE",
+    "OFFENSIVE_TRANSITION_READBACK_LOCK = READBACK_LOCK_FOR_CONTROLLED_SIMULATION"
+  ],
+  "next_packet": "SIMULATION_CHECKPOINT_V0_1_OR_COUNTER_LAYER_MERGE_STUB_V0_1"
+}
