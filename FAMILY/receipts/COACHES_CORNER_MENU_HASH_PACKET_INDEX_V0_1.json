@@ -1,0 +1,61 @@
+{
+  "schema_version": "COACHES_CORNER_MENU_HASH_PACKET_INDEX_V0_1",
+  "status": "WITNESS_GREEN_PACKET_STRUCTURE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/COACHES_CORNER_MENU_HASH_PACKET_V0_1.md",
+    "commit": "2cf994a85787310caead4742dc2d658a8700879d"
+  },
+  "source_surface": {
+    "repo": "jsonwisdom/AL",
+    "path": "ALMS/vernacular/COACHES_CORNER_36092_MENU_GAME_V0_1.md",
+    "source_sha": "b3a6557bfd3c04ff500d4c35c014ec3628bee467",
+    "field_state": "GOAL_LINE_REVIEW",
+    "source_status": "OPERATOR_ASSERTED_OFFICIAL_SITE_PACKET_HASH_PENDING"
+  },
+  "place": {
+    "name": "Coaches Corner Sports Bar & Grill",
+    "locality": "Wetumpka, AL 36092",
+    "public_credit_allowed": true,
+    "business_authority_claimed": false
+  },
+  "indexed_menu_plays": [
+    "ROLL_TIDE_PLATE_001",
+    "WAR_EAGLE_SPECIAL_001",
+    "COACHES_CORNER_COMBO_001",
+    "FOURTH_QUARTER_SNACK_001",
+    "DAILY_SPECIALS_LANE"
+  ],
+  "hash_packet_state": {
+    "packet_structure": "PASS",
+    "content_hash_attached": false,
+    "official_menu_url_or_photo_attached": false,
+    "fetched_at_utc_attached": false,
+    "independent_public_verification": false,
+    "independent_touchdown_confirmed": false,
+    "field_state": "GOAL_LINE_REVIEW",
+    "authority": false,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "required_before_promotion": [
+    "official_menu_url_or_photo",
+    "fetched_at_utc",
+    "content_hash_sha256",
+    "source_notes",
+    "replay_operator",
+    "verified_items",
+    "verified_status"
+  ],
+  "hard_boundaries": [
+    "COACHES_CORNER_MENU_HASH_PACKET != INDEPENDENT_TOUCHDOWN_CONFIRMED",
+    "COACHES_CORNER_MENU_HASH_PACKET != PRICE_FINAL",
+    "COACHES_CORNER_MENU_HASH_PACKET != MENU_CURRENTNESS_FINAL",
+    "COACHES_CORNER_MENU_HASH_PACKET != BUSINESS_AUTHORITY",
+    "COACHES_CORNER_MENU_HASH_PACKET != FAMILY_APPROVAL",
+    "COACHES_CORNER_MENU_HASH_PACKET != MRS_WISDOM_GATE_PASS",
+    "COACHES_CORNER_MENU_HASH_PACKET != AUTHORITY_TRUE",
+    "COACHES_CORNER_MENU_HASH_PACKET = WITNESS_GREEN_PACKET_STRUCTURE_ONLY"
+  ],
+  "next_packet": "COACHES_CORNER_MENU_SOURCE_BYTES_V0_1"
+}
