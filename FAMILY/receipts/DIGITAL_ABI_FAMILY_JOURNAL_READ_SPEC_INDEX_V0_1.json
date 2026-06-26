@@ -1,0 +1,84 @@
+{
+  "schema_version": "DIGITAL_ABI_FAMILY_JOURNAL_READ_SPEC_INDEX_V0_1",
+  "status": "DIGITAL_ABI_READ_SPEC_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/DIGITAL_ABI_FAMILY_JOURNAL_READ_SPEC_V0_1.md",
+    "commit": "6eb75e60d60e431f014b31c94afdd355a895eae3"
+  },
+  "linked_template": {
+    "md": "FAMILY/receipts/FAMILY_JOURNAL_EXECUTION_RECEIPT_TEMPLATE_V0_1.md",
+    "json": "FAMILY/receipts/FAMILY_JOURNAL_EXECUTION_RECEIPT_TEMPLATE_INDEX_V0_1.json"
+  },
+  "field_state": {
+    "digital_abi_family_journal_read_spec": "PASS",
+    "read_only_mirror": true,
+    "mutation_path_sealed": true,
+    "offline_receipt_source_of_truth": true,
+    "witness_creation_forbidden": true,
+    "execution_hash_creation_forbidden": true,
+    "purpose_layer_approval_creation_forbidden": true,
+    "gold_state_creation_forbidden": true,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "may_read": [
+    "receipt_id",
+    "date",
+    "mission_name",
+    "execution_type",
+    "witness_present",
+    "review_state",
+    "cooldown_state",
+    "points_state",
+    "execution_hash_present",
+    "no_fake_green_state"
+  ],
+  "may_create": [],
+  "may_not_create": [
+    "witness_statement",
+    "execution_hash",
+    "review_approval",
+    "truth_state",
+    "GOLD_state",
+    "family_approval",
+    "authority_true"
+  ],
+  "canonical_read_object": {
+    "schema_version": "DIGITAL_ABI_FAMILY_JOURNAL_READ_SPEC_V0_1",
+    "receipt_id": "string_required",
+    "date": "string_required",
+    "mission_name": "string_required",
+    "execution_type": "enum_required",
+    "witness_present": "boolean_required",
+    "review_state": "enum_required",
+    "cooldown_state": "enum_required",
+    "points_state": "enum_required",
+    "execution_hash_present": "boolean_required",
+    "no_fake_green_state": "boolean_required",
+    "authority": false
+  },
+  "allowed_enums": {
+    "execution_type": ["drawn_badge", "spoken_story", "high_five", "witnessed_repair_action", "replay_safe_lesson_completed", "other_safe_action"],
+    "review_state": ["not_reviewed", "review_requested", "reviewed_pending", "approved_after_review", "rejected_after_review"],
+    "cooldown_state": ["not_started", "active", "complete", "failed"],
+    "points_state": ["no_points", "gold_pending", "gold_review", "gold_authorized", "rejected"]
+  },
+  "no_fake_green_rules": [
+    "witness_present_false_blocks_gold_states",
+    "execution_hash_present_false_blocks_gold_states",
+    "cooldown_not_complete_blocks_gold_authorized",
+    "review_not_approved_blocks_gold_authorized",
+    "no_fake_green_state_false_rejects_read_object"
+  ],
+  "hard_boundaries": [
+    "DIGITAL_ABI_READ_SPEC != WITNESS_STATEMENT",
+    "DIGITAL_ABI_READ_SPEC != EXECUTION_HASH",
+    "DIGITAL_ABI_READ_SPEC != PURPOSE_LAYER_APPROVAL",
+    "DIGITAL_ABI_READ_SPEC != GOLD_STATE_CREATOR",
+    "DIGITAL_ABI_READ_SPEC != FAMILY_APPROVAL",
+    "DIGITAL_ABI_READ_SPEC != AUTHORITY_TRUE",
+    "DIGITAL_ABI_READ_SPEC = READ_ONLY_STATE_MIRROR"
+  ],
+  "next_packet": "WITNESS_FINGERPRINT_PROTOCOL_V0_1"
+}
