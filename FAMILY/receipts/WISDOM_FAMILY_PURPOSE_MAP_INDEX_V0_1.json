@@ -1,0 +1,61 @@
+{
+  "schema_version": "WISDOM_FAMILY_PURPOSE_MAP_INDEX_V0_1",
+  "status": "FAMILY_PURPOSE_MAP_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+    "commit": "1c0fd1efbffe79ee63557da665bbd188e8589f3c"
+  },
+  "source_receipts": [
+    "FAMILY/FAMILY_INDEX_V0_1.md",
+    "FAMILY/receipts/FAMILY_REPLAY_BRIANNA_BREALEE_BEANNE_LEEANNE_MARYDEE_JAYCEE_20260614.md",
+    "FAMILY/receipts/PUBLIC_REPO_AUTHORITY_PERIMETER_BOUNDARY_V0_1.md",
+    "FAMILY/receipts/ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_V0_1.md"
+  ],
+  "family_lanes": [
+    {"lane": "JAY_WISDOM", "purpose": "builder_protector_teacher_receipt_keeper", "boundary": "public_index_only_no_private_authority"},
+    {"lane": "DADDY_WISDOM", "purpose": "dad_built_learning_and_repair_scaffold", "boundary": "not_surveillance_not_control"},
+    {"lane": "MRS_WISDOM", "purpose": "heart_lane_family_meaning_gate_care_boundary", "boundary": "repo_cannot_pass_mrs_wisdom_gate"},
+    {"lane": "HEIDEE", "purpose": "child_safe_ai_training_scaffold", "boundary": "no_private_child_data_or_public_biography_green"},
+    {"lane": "JAYCEE", "purpose": "protected_future_and_continuity_lane", "boundary": "minimal_protected_continuity_only"},
+    {"lane": "BREALEE", "purpose": "protected_family_continuity_lane", "boundary": "no_private_details_or_public_render_green"},
+    {"lane": "BRIANNA", "purpose": "protected_continuity_byte_boss_lane", "boundary": "no_public_likeness_or_private_biography_without_approval"},
+    {"lane": "BOSS_BRENDA_BOSS_BRE", "purpose": "room_safety_joy_reset_privacy_guard", "boundary": "symbolic_role_not_consent_or_command_authority"},
+    {"lane": "MARYDEE", "purpose": "protected_family_continuity_lane", "boundary": "minimal_continuity_only"},
+    {"lane": "LEEANNE_LEANNE", "purpose": "protected_family_continuity_with_spelling_guard", "boundary": "spelling_boundary_until_family_correction"},
+    {"lane": "BEANNE", "purpose": "name_boundary_preservation", "boundary": "yellow_until_spelling_or_path_confirmation"},
+    {"lane": "GRAMMY", "purpose": "grandparent_ancestry_wisdom_layer", "boundary": "protected_ancestry_no_public_biography"},
+    {"lane": "GAGA", "purpose": "grandparent_ancestry_wisdom_layer", "boundary": "protected_ancestry_no_public_biography"},
+    {"lane": "AL", "purpose": "origin_replay_discipline_public_source_packet_layer", "boundary": "public_metadata_only_no_family_authority"},
+    {"lane": "LIBRARIAN", "purpose": "evidence_shelf_router", "boundary": "does_not_decide_truth_or_authority"}
+  ],
+  "purpose_layers": {
+    "ancestry": "preserve_continuity_across_generations_without_private_records",
+    "reputation": "protect_family_name_from_omission_and_fake_public_claims",
+    "resilience": "repair_mistakes_spelling_drift_branch_confusion_and_tool_confusion",
+    "certainty": "separate_protected_continuity_from_public_proof",
+    "democracy_math": "teach_fair_counting_omission_detection_and_proof_before_authority",
+    "gamification": "make_replay_teachable_through_levels_badges_proof_quests_and_repair_receipts"
+  },
+  "field_state": {
+    "family_members_added_with_purpose": "PASS",
+    "private_details_exposed": false,
+    "public_biography": false,
+    "family_approval_claimed": false,
+    "authority": false,
+    "truth_state": "YELLOW_WITH_GREEN_SCOPED_CONTINUITY",
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "FAMILY_PURPOSE_MAP != FAMILY_APPROVAL",
+    "FAMILY_PURPOSE_MAP != MRS_WISDOM_GATE_PASS",
+    "FAMILY_PURPOSE_MAP != PUBLIC_BIOGRAPHY_GREEN",
+    "FAMILY_PURPOSE_MAP != PUBLIC_LIKENESS_GREEN",
+    "FAMILY_PURPOSE_MAP != CUSTODY_FINAL",
+    "FAMILY_PURPOSE_MAP != OWNERSHIP_FINAL",
+    "FAMILY_PURPOSE_MAP != AUTHORITY_TRUE",
+    "FAMILY_PURPOSE_MAP = PUBLIC_SAFE_SYMBOLIC_PURPOSE_MAP"
+  ],
+  "next_packet": "FAMILY_PURPOSE_MAP_REVIEW_OR_ALABAMA_ALMS_NEXT_SIGNAL"
+}
