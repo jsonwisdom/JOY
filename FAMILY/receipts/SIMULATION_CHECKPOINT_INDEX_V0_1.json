@@ -1,0 +1,97 @@
+{
+  "packet_id": "SIMULATION_CHECKPOINT_V0_1",
+  "schema_version": "SIMULATION_CHECKPOINT_INDEX_V0_1",
+  "status": "SIMULATION_CHECKPOINT_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/SIMULATION_CHECKPOINT_V0_1.md",
+    "commit": "00d2a62b5b5e66e4c8eac2e6fab210bcbdf60b28"
+  },
+  "checkpoint_id": "SIMCHK_IRON_BOWL_2013_COUNTER_LAYER_SIM_V0_1",
+  "scope": "iron_bowl_2013_counter_layer_sim",
+  "checkpoint_operator": "JSONWisdom_SIPS",
+  "checkpoint_mode": "read_only_snapshot",
+  "source_packets": [
+    {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_READBACK_LOCK_V0_1.md",
+      "commit": "95211abe0f64241d1f78f8062c49d5298cc64331",
+      "content_sha": "be7be9c5f64b431476e635263cef77ba45d5febc"
+    },
+    {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_READBACK_LOCK_V0_1.json",
+      "commit": "d6abccaeb9c536191a4b9c9b0a764a37d9024a6f",
+      "content_sha": "15d0cf093b7c1fc8f99a4e8b8a7506db8e8aa6a8"
+    },
+    {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_V0_1.md",
+      "commit": "a92caa9b7c08ac64d511a36b00c8faacd8fc53b7",
+      "content_sha": "606e472a8b1b45b1b94b7cb68331180edf3b1556"
+    },
+    {
+      "path": "FAMILY/receipts/OFFENSIVE_TRANSITION_INDEX_V0_1.json",
+      "commit": "bb23cb48fbdf4c861dfbd77a9fed5190a6890882",
+      "content_sha": "c4c17171866e46602d6ba8cf62189fb25515b413"
+    },
+    {
+      "path": "FAMILY/receipts/SOURCE_PACKET_CHECK_V0_1.md",
+      "commit": "22887d7ace9260b0097b1f607959cfbae1978b00",
+      "content_sha": "433b48c9c26c1a1d27121f1448c4bfe09b4cd6cd"
+    },
+    {
+      "path": "FAMILY/receipts/SOURCE_PACKET_CHECK_INDEX_V0_1.json",
+      "commit": "f6d8c9cb631552ce94944f71c887368f20d3d0bf",
+      "content_sha": "7bedc9fee0488652da1b1596580b35672ad0cc43"
+    }
+  ],
+  "validation_gates": {
+    "hash_integrity_required": true,
+    "commit_binding_required": true,
+    "boundary_recheck_required": true,
+    "no_drift_required": true,
+    "partial_pass_allowed": false,
+    "explicit_failure_reason_required": true
+  },
+  "locks": {
+    "read_only_snapshot": true,
+    "controlled_simulation_only": true,
+    "metadata_only": true,
+    "index_only": true,
+    "zero_execution_surface": true,
+    "live_calls": false,
+    "anchor_execution": false,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true
+  },
+  "output_states": {
+    "pass": "SIMULATION_CHECKPOINT_OK checkpoint_id=SIMCHK_IRON_BOWL_2013_COUNTER_LAYER_SIM_V0_1",
+    "fail": "SIMULATION_CHECKPOINT_FAIL reason=<hash_mismatch|commit_mismatch|boundary_violation|missing_packet>"
+  },
+  "field_state": {
+    "simulation_checkpoint": "PASS",
+    "checkpoint_id": "SIMCHK_IRON_BOWL_2013_COUNTER_LAYER_SIM_V0_1",
+    "read_only_snapshot": true,
+    "controlled_simulation_only": true,
+    "metadata_only": true,
+    "index_only": true,
+    "zero_execution_surface": true,
+    "live_calls": false,
+    "anchor_execution": false,
+    "authority": false,
+    "family_gate": "INTACT_NOT_TOUCHED",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "SIMULATION_CHECKPOINT != COUNTER_LAYER_MERGE",
+    "SIMULATION_CHECKPOINT != LIVE_EXECUTION",
+    "SIMULATION_CHECKPOINT != CYBER_OFFENSE",
+    "SIMULATION_CHECKPOINT != PAYLOAD_GENERATOR",
+    "SIMULATION_CHECKPOINT != TX_SKELETON_GENERATOR",
+    "SIMULATION_CHECKPOINT != BROADCAST",
+    "SIMULATION_CHECKPOINT != TXID_CLAIM",
+    "SIMULATION_CHECKPOINT != FAMILY_GATE_PASS",
+    "SIMULATION_CHECKPOINT != AUTHORITY_TRUE",
+    "SIMULATION_CHECKPOINT = READ_ONLY_SIMULATION_SNAPSHOT"
+  ],
+  "next_packet": "COUNTER_LAYER_MERGE_STUB_V0_1"
+}
