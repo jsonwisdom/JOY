@@ -1,0 +1,89 @@
+{
+  "schema_version": "FAMILY_JOURNAL_EXECUTION_RECEIPT_TEMPLATE_INDEX_V0_1",
+  "status": "FAMILY_JOURNAL_TEMPLATE_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/FAMILY_JOURNAL_EXECUTION_RECEIPT_TEMPLATE_V0_1.md",
+    "commit": "d6aa7ea8044852f62adfdfab37e2ebe1c0a1ddba"
+  },
+  "core_rules": {
+    "digital_side_read_only": true,
+    "witness_required": true,
+    "physical_execution_hash_required": true,
+    "cooldown_required_before_gold": true,
+    "purpose_layer_required_before_gold": true,
+    "button_click_points": false,
+    "repo_commit_points": false,
+    "ai_praise_points": false
+  },
+  "execution_types": [
+    "drawn_badge",
+    "spoken_story",
+    "high_five",
+    "witnessed_repair_action",
+    "replay_safe_lesson_completed",
+    "other_safe_action"
+  ],
+  "state_model": {
+    "DRAFT": "template_exists_no_offline_action_logged",
+    "WITNESSED": "witness_statement_present",
+    "GOLD_PENDING": "witness_present_hash_present_cooldown_active_or_complete",
+    "GOLD_REVIEW": "cooldown_complete_review_requested",
+    "GOLD": "purpose_layer_explicitly_authorizes_points_after_review",
+    "REJECTED": "missing_witness_invalid_hash_unsafe_content_pressure_or_unclear_execution"
+  },
+  "digital_read_boundary": {
+    "may_read": [
+      "receipt_id",
+      "date",
+      "mission_name",
+      "execution_type",
+      "witness_present",
+      "review_state",
+      "cooldown_state",
+      "points_state",
+      "execution_hash_present",
+      "no_fake_green_state"
+    ],
+    "may_create": [],
+    "may_not_create": [
+      "witness_statement",
+      "execution_hash",
+      "review_approval",
+      "truth_state",
+      "GOLD_state"
+    ]
+  },
+  "privacy_rules": {
+    "sensitive_details_exposed": false,
+    "use_initials_roles_or_first_names_only": true,
+    "addresses_allowed": false,
+    "school_details_allowed": false,
+    "health_details_allowed": false,
+    "account_details_allowed": false,
+    "passwords_allowed": false,
+    "sensitive_content_upload_allowed": false
+  },
+  "field_state": {
+    "family_journal_template": "PASS",
+    "digital_side_read_only": true,
+    "witness_required": true,
+    "physical_execution_hash_required": true,
+    "cooldown_required_before_gold": true,
+    "purpose_layer_required_before_gold": true,
+    "sensitive_details_exposed": false,
+    "authority": false,
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "FAMILY_JOURNAL_TEMPLATE != FAMILY_APPROVAL",
+    "FAMILY_JOURNAL_TEMPLATE != MRS_WISDOM_GATE_PASS",
+    "FAMILY_JOURNAL_TEMPLATE != GOLD_STATE",
+    "FAMILY_JOURNAL_TEMPLATE != PUBLIC_BIOGRAPHY_GREEN",
+    "FAMILY_JOURNAL_TEMPLATE != PRIVATE_DATA_PUBLICATION",
+    "FAMILY_JOURNAL_TEMPLATE != AUTHORITY_TRUE",
+    "FAMILY_JOURNAL_TEMPLATE = OFFLINE_EXECUTION_RECEIPT_TEMPLATE"
+  ],
+  "next_packet": "DIGITAL_ABI_FAMILY_JOURNAL_READ_SPEC_V0_1"
+}
