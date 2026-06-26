@@ -1,0 +1,102 @@
+{
+  "schema_version": "WITNESS_FINGERPRINT_ANCHOR_EXECUTION_RECEIPT_INDEX_V0_1",
+  "status": "ANCHOR_READY_EXECUTION_SHAPE_LOCKED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/WITNESS_FINGERPRINT_ANCHOR_EXECUTION_RECEIPT_V0_1.md",
+    "commit": "dd8c1567b01dbf7eac6977c39e74b1b1fdef4545"
+  },
+  "parent_protocol": {
+    "md": "FAMILY/receipts/WITNESS_FINGERPRINT_PROTOCOL_V0_1.md",
+    "json": "FAMILY/receipts/WITNESS_FINGERPRINT_PROTOCOL_INDEX_V0_1.json"
+  },
+  "deployment_defaults": {
+    "anchor_medium_primary": "bitcoin_op_return",
+    "anchor_medium_fallback": "signed_append_only_feed",
+    "signed_feed_pubkey": "pubkey_placeholder_offline_injection",
+    "epoch_source": "UTC_unix",
+    "anchor_execution": false,
+    "broadcast_txid": null
+  },
+  "op_return_payload_format": {
+    "total_bytes": 40,
+    "prefix_ascii": "WTP1",
+    "prefix_hex": "57545031",
+    "commitment_bytes": 32,
+    "epoch_bytes": 4,
+    "layout": "prefix_4 || commitment_32 || epoch_4"
+  },
+  "commitment_input": {
+    "formula": "SHA256(blinded_fp || mirror_root || epoch || protocol_version)",
+    "required_fields_before_execution": [
+      "blinded_fp",
+      "mirror_root",
+      "epoch",
+      "protocol_version",
+      "commitment",
+      "sovereign_review_state",
+      "anchor_operator"
+    ],
+    "commitment_bound_to_protocol_version": true
+  },
+  "execution_gate": {
+    "can_prepare_payload": true,
+    "can_execute_anchor_in_this_receipt": false,
+    "requires_explicit_future_command": true,
+    "requires_sovereign_review_state": true,
+    "requires_commitment_present": true,
+    "requires_epoch_present": true,
+    "requires_no_fake_green": true
+  },
+  "signed_feed_fallback": {
+    "fallback_medium": "signed_append_only_feed",
+    "fallback_status": "COLD_BACKUP",
+    "pubkey_status": "PLACEHOLDER_PENDING_OFFLINE_INJECTION",
+    "feed_operator_trust_required": true,
+    "fallback_execution": false
+  },
+  "physical_receipt_invariants": {
+    "paper_size_allowed": ["US_LETTER", "A4"],
+    "minimum_scan_dpi": 300,
+    "phash_pass_threshold": 5,
+    "phash_review_threshold": 10,
+    "qr_payload_max_chars": 512,
+    "private_details_must_be_omitted_or_redacted": true,
+    "manual_reanchor_required_for_review_or_reject": true
+  },
+  "field_state": {
+    "witness_fingerprint_anchor_execution_receipt": "PASS",
+    "anchor_ready": true,
+    "anchor_execution": false,
+    "anchor_medium_primary": "bitcoin_op_return",
+    "op_return_payload_total_bytes": 40,
+    "op_return_prefix_hex": "57545031",
+    "epoch_source": "UTC_unix",
+    "signed_feed_pubkey": "pubkey_placeholder_offline_injection",
+    "signed_feed_fallback_status": "COLD_BACKUP",
+    "physical_gold_source_of_truth": true,
+    "digital_reporter_only": true,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "no_fake_green_rules": [
+    "anchor_execution_false_blocks_txid_claim",
+    "placeholder_pubkey_blocks_signed_feed_execution",
+    "missing_commitment_blocks_payload_build",
+    "missing_epoch_blocks_payload_build",
+    "missing_protocol_version_blocks_payload_build",
+    "no_fake_green_false_rejects_anchor_execution"
+  ],
+  "hard_boundaries": [
+    "ANCHOR_EXECUTION_RECEIPT != BITCOIN_TX_EXECUTED",
+    "ANCHOR_EXECUTION_RECEIPT != OP_RETURN_TXID",
+    "ANCHOR_EXECUTION_RECEIPT != SIGNED_FEED_EXECUTED",
+    "ANCHOR_EXECUTION_RECEIPT != WITNESS_CREATION",
+    "ANCHOR_EXECUTION_RECEIPT != PURPOSE_LAYER_APPROVAL",
+    "ANCHOR_EXECUTION_RECEIPT != GOLD_AUTHORIZATION",
+    "ANCHOR_EXECUTION_RECEIPT != FAMILY_TRUTH_CREATOR",
+    "ANCHOR_EXECUTION_RECEIPT != AUTHORITY_TRUE",
+    "ANCHOR_EXECUTION_RECEIPT = ANCHOR_READY_EXECUTION_SHAPE"
+  ],
+  "next_packet": "ANCHOR_EXECUTION_LIVE_RECEIPT_REQUIRES_EXPLICIT_COMMAND"
+}
