@@ -1,0 +1,86 @@
+{
+  "schema_version": "WITNESS_FINGERPRINT_PROTOCOL_INDEX_V0_1",
+  "status": "WITNESS_FINGERPRINT_PROTOCOL_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/WITNESS_FINGERPRINT_PROTOCOL_V0_1.md",
+    "commit": "38edefc0cd66891dded47e4c29ba697a09e562d7"
+  },
+  "defaults_locked": {
+    "anchor_medium": "bitcoin_op_return_preferred",
+    "anchor_execution": false,
+    "pHash_hamming_distance_threshold": 5,
+    "qr_payload_max_chars": 512,
+    "paper_size": ["US_LETTER", "A4"],
+    "minimum_scan_dpi": 300,
+    "protocol_version": "WITNESS_FINGERPRINT_PROTOCOL_V0_1"
+  },
+  "commitment_structure": {
+    "formula": "H(blinded_fp || mirror_root || epoch || protocol_version)",
+    "required_fields": [
+      "blinded_fp",
+      "mirror_root",
+      "epoch",
+      "protocol_version",
+      "commitment"
+    ],
+    "commitment_bound_to_protocol_version": true
+  },
+  "qr_transfer_rule": {
+    "payload_formula": "base64url(blinded_fp || epoch || checksum)",
+    "max_payload_chars": 512,
+    "plaintext_forbidden": true,
+    "metadata_forbidden": true,
+    "blinded_payload_only": true
+  },
+  "invariant_zones": [
+    "receipt_id",
+    "date",
+    "mission_name",
+    "execution_type_checkbox",
+    "witness_initials_or_role",
+    "physical_execution_hash_phrase_or_symbol",
+    "purpose_layer_review_state",
+    "signature_or_mark"
+  ],
+  "verification_flow": {
+    "decode_base64url_payload": true,
+    "validate_checksum": true,
+    "validate_payload_length_lte_512": true,
+    "validate_protocol_version": true,
+    "recompute_commitment": true,
+    "phash_pass_threshold_lte": 5,
+    "phash_review_threshold_lte": 10,
+    "manual_reanchor_required_for_review_or_reject": true,
+    "digital_side_mirrors_status_only": true
+  },
+  "leakage_controls": {
+    "air_gap_required": true,
+    "one_way_transfer": true,
+    "plaintext_forbidden": true,
+    "private_metadata_forbidden": true,
+    "sensitive_content_upload_allowed": false,
+    "blinded_payload_only": true
+  },
+  "field_state": {
+    "witness_fingerprint_protocol": "PASS",
+    "digital_side_observer_only": true,
+    "offline_receipt_source_of_truth": true,
+    "anchor_medium": "bitcoin_op_return_preferred",
+    "anchor_execution": false,
+    "commitment_bound_to_protocol_version": true,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "WITNESS_FINGERPRINT_PROTOCOL != WITNESS_CREATION",
+    "WITNESS_FINGERPRINT_PROTOCOL != PURPOSE_LAYER_APPROVAL",
+    "WITNESS_FINGERPRINT_PROTOCOL != GOLD_AUTHORIZATION",
+    "WITNESS_FINGERPRINT_PROTOCOL != FAMILY_TRUTH_CREATOR",
+    "WITNESS_FINGERPRINT_PROTOCOL != BITCOIN_TX_EXECUTED",
+    "WITNESS_FINGERPRINT_PROTOCOL != OP_RETURN_TXID",
+    "WITNESS_FINGERPRINT_PROTOCOL != AUTHORITY_TRUE",
+    "WITNESS_FINGERPRINT_PROTOCOL = READ_ONLY_COMMITMENT_PROTOCOL"
+  ],
+  "next_packet": "WITNESS_FINGERPRINT_ANCHOR_EXECUTION_RECEIPT_V0_1_OR_SIGNED_FEED_FALLBACK"
+}
