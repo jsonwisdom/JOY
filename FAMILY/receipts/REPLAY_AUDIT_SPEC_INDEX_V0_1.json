@@ -1,0 +1,82 @@
+{
+  "schema_version": "REPLAY_AUDIT_SPEC_INDEX_V0_1",
+  "status": "DETERMINISTIC_AUDIT_GATE_ACTIVE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/REPLAY_AUDIT_SPEC_V0_1.md",
+    "commit": "d67fbbdf5bf682da9d48005bfe8c0bf6b40ba3df"
+  },
+  "sequence": {
+    "audit_first": true,
+    "fallback_second": true,
+    "anchor_last": true
+  },
+  "required_artifacts": {
+    "md": "FAMILY/receipts/ANCHOR_EXECUTION_COMMAND_SCHEMA_V0_1.md",
+    "json": "FAMILY/receipts/ANCHOR_EXECUTION_COMMAND_SCHEMA_INDEX_V0_1.json",
+    "script": "FAMILY/receipts/replay_anchor_execution_command_schema_v0_1.sh"
+  },
+  "expected_audit_record": {
+    "md": {
+      "commit": "03edb3ca25f23edd001b8a45a5e980d34963266e",
+      "content_sha": "da78e74c6d0992844644540e136e1fce89a97985"
+    },
+    "json": {
+      "commit": "f4d734e7efabb8a1feaafd382b2e6987f921b6e1",
+      "content_sha": "2a55f4a1c6b70e4cf53a63a5b3749fcfb361b8da"
+    },
+    "script": {
+      "commit": "2704eab00d34d47101adaa19e3ef414e46279d28",
+      "content_sha": "89dae06e0a4dd1923a167a2519f7d5cfacabd4c6"
+    }
+  },
+  "validation_checks": {
+    "existence_required": true,
+    "hash_integrity_required": true,
+    "commit_binding_required": true,
+    "no_execution_traces_required": true,
+    "authority_false_required": true,
+    "no_fake_green_required": true,
+    "epoch_source_required": "UTC_unix",
+    "partial_pass_allowed": false,
+    "explicit_failure_reason_required": true
+  },
+  "no_execution_state": {
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false,
+    "anchor_execution": false
+  },
+  "output_format": {
+    "pass": "REPLAY_AUDIT_OK",
+    "fail": "REPLAY_AUDIT_FAIL reason=<explicit_reason>"
+  },
+  "field_state": {
+    "replay_audit_spec": "PASS",
+    "audit_first": true,
+    "fallback_second": true,
+    "anchor_last": true,
+    "required_artifacts": "MD_JSON_SCRIPT",
+    "payload_generation": false,
+    "tx_skeleton_generation": false,
+    "broadcast": false,
+    "txid_claimed": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "REPLAY_AUDIT_SPEC != ANCHOR_EXECUTION",
+    "REPLAY_AUDIT_SPEC != PAYLOAD_GENERATOR",
+    "REPLAY_AUDIT_SPEC != TX_SKELETON_GENERATOR",
+    "REPLAY_AUDIT_SPEC != BROADCAST",
+    "REPLAY_AUDIT_SPEC != TXID_CLAIM",
+    "REPLAY_AUDIT_SPEC != SIGNED_FEED_EXECUTION",
+    "REPLAY_AUDIT_SPEC != WALLET_OPERATION",
+    "REPLAY_AUDIT_SPEC != PRIVATE_KEY_REQUEST",
+    "REPLAY_AUDIT_SPEC != SEED_PHRASE_REQUEST",
+    "REPLAY_AUDIT_SPEC != AUTHORITY_TRUE",
+    "REPLAY_AUDIT_SPEC = DETERMINISTIC_AUDIT_GATE"
+  ],
+  "next_packet": "SIGNED_FEED_FALLBACK_SCHEMA_V0_1"
+}
