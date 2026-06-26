@@ -1,0 +1,50 @@
+{
+  "schema_version": "PUBLIC_REPO_AUTHORITY_PERIMETER_BOUNDARY_INDEX_V0_1",
+  "status": "BOUNDARY_TRIPLE_ACTIVE",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/PUBLIC_REPO_AUTHORITY_PERIMETER_BOUNDARY_V0_1.md",
+    "commit": "a68e356e3b1da67beedcca37dc1b035af9affb88"
+  },
+  "field_state": {
+    "public_repo_witness_only": true,
+    "github_green_transport_only": true,
+    "truth_yellow_allowed": true,
+    "family_authority_public_repo_resolved": false,
+    "authority": false,
+    "private_monitoring": false,
+    "background_monitoring": false,
+    "no_fake_green": true
+  },
+  "inputs": [
+    "JAYWISDOM_SIMPLE_STATE_V0_1.json",
+    "FAMILY/receipts/FAMILY_INDEX_REPLAY_WITNESS_V0_1.md",
+    "FAMILY/receipts/FAMILY_INDEX_FINAL_STATUS_V0_1.md",
+    "FAMILY/receipts/WISDOM_FAMILY_MAP_COVER_V0_1.json",
+    "AL/docs/abi/ABI_SOURCE_V1.json",
+    "AL/docs/ALMS-v0-REGISTRY.md",
+    "JOY/docs/zora/BASE_TX_8A642_TOPIC_DECODE_BOUNDARY_RECEIPT_V0_1.md"
+  ],
+  "hard_boundaries": [
+    "PUBLIC_REPO_PERIMETER != FAMILY_APPROVAL",
+    "PUBLIC_REPO_PERIMETER != MRS_WISDOM_GATE_PASS",
+    "PUBLIC_REPO_PERIMETER != AUTHORITY_TRUE",
+    "PUBLIC_REPO_PERIMETER != OWNERSHIP_FINAL",
+    "PUBLIC_REPO_PERIMETER != CUSTODY_FINAL",
+    "PUBLIC_REPO_PERIMETER != PRIVATE_MONITORING",
+    "PUBLIC_REPO_PERIMETER != BACKGROUND_MONITORING",
+    "PUBLIC_REPO_PERIMETER = WITNESS_ONLY_BOUNDARY"
+  ],
+  "routing_forward": [
+    "PUBLIC_REPO_PERIMETER_CHECK",
+    "BOSS_BRE_ROOM_SAFETY_CHECK",
+    "LIBRARIAN_SHELF_SOURCE_SUGGESTION",
+    "ALABAMA_ALMS_REPLAY_CHECK",
+    "FAMILY_GATE_SOVEREIGN_BOUNDARY",
+    "RESOLUTION_ONLY"
+  ],
+  "next_packet": {
+    "recommended": "COACHES_CORNER_MENU_HASH_PACKET",
+    "alternate": "EMS_WETUMPKA_OFFICIAL_SOURCE_PACKET"
+  }
+}
