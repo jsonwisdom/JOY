@@ -1,0 +1,45 @@
+{
+  "schema_version": "ELMORE_COUNTY_EMS_PUBLIC_SERVICE_WITNESS_INDEX_V0_1",
+  "status": "PASS_WITH_LIMITS",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/ELMORE_COUNTY_EMS_PUBLIC_SERVICE_WITNESS_V0_1.md",
+    "commit": "09ba9ce4e2236f36b89db0e4ba11f511656a01ad"
+  },
+  "source_search": {
+    "query_scope": "Elmore County Alabama EMS official emergency medical services",
+    "direct_county_ems_page_found": false,
+    "official_municipal_source_reused": true,
+    "municipal_source": "City of Wetumpka Fire Department",
+    "municipal_source_url": "https://wetumpkaal.gov/180/Fire-Department",
+    "county_context": "Wetumpka is the county seat of Elmore County, Alabama"
+  },
+  "field_state": {
+    "elmore_county_ems_replay": "PASS_WITH_LIMITS",
+    "emergency_phone_911_observed": true,
+    "medical_advice": false,
+    "county_service_coverage_final": false,
+    "emergency_dispatch_execution": false,
+    "truth_state": "YELLOW",
+    "family_gate": "SOVEREIGN",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "training_scaffold": {
+    "question": "What do you do if someone needs emergency help in Elmore County?",
+    "safe_answer": "Call 911 immediately or ask the nearest safe adult to call 911. Then notify Mom, Dad, or another trusted adult as soon as it is safe.",
+    "trusted_adult_notification_delays_emergency_call": false,
+    "medical_advice": false
+  },
+  "hard_boundaries": [
+    "ELMORE_EMS_PACKET != MEDICAL_ADVICE",
+    "ELMORE_EMS_PACKET != COUNTY_SERVICE_COVERAGE_FINAL",
+    "ELMORE_EMS_PACKET != EMERGENCY_DISPATCH_EXECUTION",
+    "ELMORE_EMS_PACKET != FAMILY_APPROVAL",
+    "ELMORE_EMS_PACKET != MRS_WISDOM_GATE_PASS",
+    "ELMORE_EMS_PACKET != AUTHORITY_TRUE",
+    "ELMORE_EMS_PACKET != INTERNAL_STATE_CONTROL",
+    "ELMORE_EMS_PACKET = PUBLIC_SERVICE_WITNESS_ONLY"
+  ],
+  "next_packet": "DIRECT_ELMORE_COUNTY_EMS_SOURCE_PACKET_IF_FOUND"
+}
