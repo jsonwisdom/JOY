@@ -249,6 +249,53 @@ Win condition:
 A person can explain the system in plain language without overclaiming.
 ```
 
+## Game 9: Family Math Mechanics
+
+Goal: remember the family roles without turning roles into authority.
+
+Module:
+
+```text
+WISDOM/family_math_mechanics_v0_1.md
+```
+
+Family table:
+
+```text
+Uncle Jay
+Aunt May
+Aunt Rann
+Uncle Dee
+GAGA
+GRAMMY
+```
+
+Mechanics:
+
+```text
+Uncle Jay -> explains the mechanics
+Aunt May  -> asks the purpose question
+Aunt Rann -> keeps the care loop moving
+Uncle Dee -> checks the doorway
+GAGA      -> keeps the porch warm
+GRAMMY    -> keeps the memory gentle
+```
+
+Safety rule:
+
+```text
+Roles help memory.
+Roles do not control people.
+Roles do not replace receipts.
+Roles do not create authority.
+```
+
+Win condition:
+
+```text
+Everyone can explain the family math without turning any person into the boss of the system.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -262,6 +309,7 @@ Safe outputs may include:
 - Alabama Porches math card
 - Purpose May question card
 - Mechanics Jay explainer card
+- Family Math Mechanics role card
 
 ## Public Safety Filter
 
