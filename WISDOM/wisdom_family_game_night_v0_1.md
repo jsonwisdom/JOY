@@ -185,6 +185,70 @@ Win condition:
 Everyone can explain the map without turning anyone into a command role.
 ```
 
+## Game 7: Purpose May
+
+Goal: ask why before anyone touches the tools.
+
+Module:
+
+```text
+WISDOM/purpose_may_v0_1.md
+```
+
+Core question:
+
+```text
+May this move forward?
+```
+
+Game steps:
+
+```text
+1. Pick one possible action.
+2. Ask why it should exist.
+3. Ask who it helps.
+4. Ask what receipt is needed next.
+5. If unclear, choose REST_ALLOWED.
+```
+
+Win condition:
+
+```text
+Everyone understands the purpose before mechanics begin.
+```
+
+## Game 8: Mechanics Jay
+
+Goal: explain how the machine works without making the machine the boss.
+
+Module:
+
+```text
+WISDOM/mechanics_jay_v0_1.md
+```
+
+Core question:
+
+```text
+How does the machine move without losing the people?
+```
+
+Game steps:
+
+```text
+1. Pick one safe artifact.
+2. Name its purpose.
+3. Find the receipt or mark it missing.
+4. Ask what would make it replayable.
+5. Save one safe note.
+```
+
+Win condition:
+
+```text
+A person can explain the system in plain language without overclaiming.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -196,6 +260,8 @@ Safe outputs may include:
 - shareable caption with no private identifiers
 - yearly replay book outline
 - Alabama Porches math card
+- Purpose May question card
+- Mechanics Jay explainer card
 
 ## Public Safety Filter
 
