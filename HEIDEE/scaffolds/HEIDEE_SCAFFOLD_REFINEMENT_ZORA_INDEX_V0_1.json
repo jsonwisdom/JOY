@@ -1,0 +1,82 @@
+{
+  "packet_id": "HEIDEE_SCAFFOLD_REFINEMENT_ZORA_V0_1",
+  "schema_version": "HEIDEE_SCAFFOLD_REFINEMENT_ZORA_INDEX_V0_1",
+  "status": "HEIDEE_SCAFFOLD_REFINEMENT_ZORA_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "HEIDEE/scaffolds/HEIDEE_SCAFFOLD_REFINEMENT_ZORA_V0_1.md",
+    "commit": "49b16b3808619af4a137dfa7c92cfc463666d69d"
+  },
+  "source_receipt": {
+    "path": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_V0_1.md",
+    "commit": "4ab029f5e319febc8060c55a817db18ca141b411",
+    "content_sha": "957accd78c44f515a845225aa80850814163c787"
+  },
+  "source_index": {
+    "path": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_INDEX_V0_1.json",
+    "commit": "fba0a1f53dc06146e88ed6b3cdb2989d9daa654d",
+    "content_sha": "4f1743e046ef105eb59f02b40cf5fc510e307bf5"
+  },
+  "canonical_bio_input": "Witness. Wisdom. Wonder. 💜 Public-safe storytelling on truth, kindness, courage, purpose. Protected by Love. Powered by Purpose. JOY-anchored.",
+  "bridge_translation_map": {
+    "Indexed": "Found",
+    "Anchored": "Kept",
+    "Verified": "Checked",
+    "Replayable": "Repeatable",
+    "Joyful": "Shared"
+  },
+  "joy_story_card": {
+    "title": "ZORA: The Story We Can Check and Share",
+    "body": "ZORA is a public-safe story space about truth, kindness, courage, and purpose. In JOY language: a receipt was found, the source was kept, the bio was checked, the story can be repeated, and the joy can be shared. ZORA reminds us that wisdom is not just knowing things. Wisdom is using truth with kindness, courage, and care. Protected by Love. Powered by Purpose. JOY-anchored.",
+    "reflection_prompts": [
+      "What does it mean to tell the truth kindly?",
+      "How can courage help someone protect joy?",
+      "What is one story you can repeat because it has a receipt?",
+      "What does Protected by Love mean in a safe public story?",
+      "How can purpose help a room feel warmer?"
+    ]
+  },
+  "provenance_fields": {
+    "receipt_hash": "957accd78c44f515a845225aa80850814163c787",
+    "source": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_V0_1.md",
+    "verification_status": "checked_from_repo_readback",
+    "replay_status": "repeatable_public_safe_story_card"
+  },
+  "invariants": {
+    "simplify_language": true,
+    "remove_provenance": false,
+    "tell_stories": true,
+    "celebrate_outcomes": true,
+    "invent_receipts": false,
+    "alter_verification": false,
+    "authority": false,
+    "family_gate": "UNTOUCHED",
+    "private_family_data_publication": false,
+    "financial_advice": false,
+    "coin_value_claim": false,
+    "no_fake_green": true
+  },
+  "field_state": {
+    "heidee_scaffold_refinement_zora": "PASS",
+    "alms_to_joy_bridge": true,
+    "public_safe_story_card_attached": true,
+    "provenance_fields_attached": true,
+    "simplify_language": true,
+    "remove_provenance": false,
+    "invent_receipts": false,
+    "alter_verification": false,
+    "family_gate": "UNTOUCHED",
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != FAMILY_APPROVAL",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != MRS_WISDOM_GATE_PASS",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != PRIVATE_FAMILY_DATA_PUBLICATION",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != INVESTMENT_ADVICE",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != COIN_VALUE_ATTESTATION",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA != AUTHORITY_TRUE",
+    "HEIDEE_SCAFFOLD_REFINEMENT_ZORA = PUBLIC_SAFE_ALMS_TO_JOY_STORY_CARD"
+  ],
+  "next_packet": "JOY_STORY_CARD_ZORA_INDEX_ENTRY_V0_1"
+}
