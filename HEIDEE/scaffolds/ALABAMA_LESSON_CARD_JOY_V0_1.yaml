@@ -1,0 +1,86 @@
+schema_version: HEIDEE_ALABAMA_LESSON_CARD_JOY_SCAFFOLD_V0_1
+packet_id: HEIDEE_SCAFFOLD_ALABAMA_LESSON_CARD_JOY_V0_1
+status: PUBLIC_SAFE_SCAFFOLD_INDEXED
+repo: jsonwisdom/JOY
+path: HEIDEE/scaffolds/ALABAMA_LESSON_CARD_JOY_V0_1.yaml
+round: ROUND_005
+lane: HEIDEE_TO_JOY
+purpose: >-
+  Bridge public-safe education into JOY witness and replay without touching
+  FAMILY sovereignty or private family layers.
+source_receipt:
+  path: FAMILY/receipts/ALABAMA_LAW_PUBLIC_LESSON_CARD_V0_1.md
+  content_sha: 94722715ab6f2b3be7aa7a6bfd673694ac4652a7
+  source_status: PUBLIC_REFERENCE_CHECKED_NOT_LEGAL_AUTHORITY
+lesson:
+  title: Respecting Rules & Keeping Everyone Safe — Alabama Style
+  core_truth: Rules help us play fair, stay safe, and take care of each other.
+public_references:
+  - label: Alabama safety belt reference
+    public_reference: AL Code Section 32-5B-4, 2025 public code reference
+    lesson_use: seatbelt safety example
+  - label: Alabama emergency care / Good Samaritan reference
+    public_reference: AL Code Section 6-5-332, 2025 public code reference
+    lesson_use: help responsibly example
+training_prompts:
+  - Draw or tell a story about a safe family road trip.
+  - 'Practice saying: "Please buckle your seatbelt. I want you safe."'
+  - Name one thing you should ask permission before borrowing.
+  - Name one safe adult you can ask for help.
+  - Say one kind thing that helps the room calm down.
+protection_invariants:
+  chat_not_github: true
+  authority: false
+  no_fake_green: true
+  truth_state: YELLOW
+  family_sovereignty: UNTOUCHED
+  no_bleed: true
+  merkle_continuity: APPEND_ONLY
+  public_safe: true
+  private_family_data_publication: false
+  legal_advice: false
+  background_monitoring: false
+  family_gate: SOVEREIGN
+routing:
+  input_lane: HEIDEE
+  output_lane: JOY
+  allowed_input_types:
+    - lesson_card
+    - curriculum_fragment
+    - pedagogy_note
+  forbidden_input_types:
+    - family_identifier
+    - private_narrative
+    - internal_sovereignty_data
+    - legal_advice_claim
+    - authority_claim
+joy_output_rules:
+  witness_grade: true
+  replay_stable: true
+  hash_linked: true
+  receipt_bound: true
+  purpose_map_feed: true
+  exposes_family_layer: false
+jurisdiction_facts:
+  - fact_id: JF_AL_001
+    label: safety_belt_public_reference
+    text: AL Code Section 32-5B-4 is used only as a public seatbelt safety reference.
+    legal_advice: false
+    official_legal_authority_claimed: false
+  - fact_id: JF_AL_002
+    label: emergency_care_public_reference
+    text: AL Code Section 6-5-332 is used only as a public emergency care / Good Samaritan-style reference.
+    legal_advice: false
+    official_legal_authority_claimed: false
+  - fact_id: JF_AL_003
+    label: family_learning_value_only
+    text: School, home, kindness, and safety lessons are value-learning scaffolds, not legal instruction or family approval.
+    legal_advice: false
+    official_legal_authority_claimed: false
+replay_result:
+  round_005_replay_heidee_to_joy: INITIATED
+  public_safe_scaffold: PASS
+  authority: false
+  family_gate: SOVEREIGN
+  no_fake_green: true
+  next_receipt: FAMILY/receipts/ROUND_005_JOY_SEED_COMMIT_V0_1.md
