@@ -296,6 +296,51 @@ Win condition:
 Everyone can explain the family math without turning any person into the boss of the system.
 ```
 
+## Game 10: Porch Triad Recall
+
+Goal: make the porch map instantly visible and explainable.
+
+Module:
+
+```text
+WISDOM/porch_triad_recall_v0_1.md
+```
+
+Core equation:
+
+```text
+Triads + Purpose + Care + Doorway + Warmth + Gentle Memory
+----------------------------------------------------------
+                     Living Porch Map
+```
+
+Game steps:
+
+```text
+1. Draw three porch circles or use cards.
+2. Place the nine names and Jay outside as witness/operator.
+3. Each role asks or answers one safe question about their position.
+4. Uncle Jay explains the 9 + 1 rule out loud.
+5. Save only one safe continuity note.
+6. End with authority=false.
+```
+
+Safety rule:
+
+```text
+The map is memory language.
+It does not prove ownership.
+It does not assign control.
+Receipts still decide.
+People remain human.
+```
+
+Win condition:
+
+```text
+Everyone can sketch and explain the porch triads + Jay role in under two minutes without turning any person into a boss.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -310,6 +355,7 @@ Safe outputs may include:
 - Purpose May question card
 - Mechanics Jay explainer card
 - Family Math Mechanics role card
+- Porch Triad Recall sketch card
 
 ## Public Safety Filter
 
