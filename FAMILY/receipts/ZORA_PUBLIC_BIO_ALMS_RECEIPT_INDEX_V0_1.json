@@ -1,0 +1,67 @@
+{
+  "packet_id": "ZORA_PUBLIC_BIO_ALMS_RECEIPT_V0_1",
+  "schema_version": "ZORA_PUBLIC_BIO_ALMS_RECEIPT_INDEX_V0_1",
+  "status": "ZORA_PUBLIC_BIO_ALMS_RECEIPT_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_V0_1.md",
+    "commit": "4ab029f5e319febc8060c55a817db18ca141b411"
+  },
+  "canonical_bio": "Witness. Wisdom. Wonder. 💜 Public-safe storytelling on truth, kindness, courage, purpose. Protected by Love. Powered by Purpose. JOY-anchored.",
+  "zora_surface": {
+    "network": "Base",
+    "coin_address": "0xac960d5d2d4a62ed46ba8bbb77e1ab1ccc1f2157",
+    "referrer_address_observed": "0x829adfedbe565f9885a7ea6bc78912acaef055e2",
+    "surface_status": "USER_SUBMITTED_LINK_OBSERVED"
+  },
+  "lane_logic": {
+    "ALMS": "witness_receipt_drop_only",
+    "HEIDEE": "public_safe_storytelling_scaffold",
+    "JOY": "membrane_protection_engine",
+    "FAMILY": "sovereign_untouched",
+    "ZORA": "public_surface"
+  },
+  "constitutional_breakdown": {
+    "alms_alignment": "witness_language_only_no_truth_authority_claim",
+    "heidee_safety": "public_safe_no_private_lane_leakage",
+    "joy_membrane": "love_protected_purpose_anchored_no_family_bleed",
+    "zora_ux": "short_high_signal_public_facing_bio"
+  },
+  "guardrails": {
+    "investment_claim": false,
+    "financial_advice": false,
+    "coin_value_claim": false,
+    "price_prediction": false,
+    "family_approval_claimed": false,
+    "private_family_data_publication": false,
+    "public_biography_green": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "field_state": {
+    "zora_public_bio_alms_receipt": "PASS",
+    "alms_receipt_drop": true,
+    "canonical_bio_attached": true,
+    "zora_surface_observed": true,
+    "joy_membrane_compliant": true,
+    "heidee_safe_public_storytelling": true,
+    "family_gate": "UNTOUCHED",
+    "investment_claim": false,
+    "financial_advice": false,
+    "coin_value_claim": false,
+    "private_family_data_publication": false,
+    "authority": false,
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != INVESTMENT_ADVICE",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != FINANCIAL_RETURN_CLAIM",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != COIN_VALUE_ATTESTATION",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != FAMILY_APPROVAL",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != MRS_WISDOM_GATE_PASS",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != PRIVATE_FAMILY_DATA_PUBLICATION",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT != AUTHORITY_TRUE",
+    "ZORA_PUBLIC_BIO_ALMS_RECEIPT = PUBLIC_SAFE_ZORA_BIO_WITNESS_RECEIPT"
+  ],
+  "next_packet": "JOY_MEMBRANE_EXPANSION_ZORA_V0_1_OR_HEIDEE_SCAFFOLD_REFINEMENT_ZORA_V0_1"
+}
