@@ -341,6 +341,51 @@ Win condition:
 Everyone can sketch and explain the porch triads + Jay role in under two minutes without turning any person into a boss.
 ```
 
+## Game 11: Receipt Chain Link
+
+Goal: transform single receipts into a safe, replayable family timeline.
+
+Module:
+
+```text
+WISDOM/receipt_chain_link_v0_1.md
+```
+
+Core equation:
+
+```text
+Artifact + Purpose + Care + Doorway + Warmth + Gentle Memory
+------------------------------------------------------------
+                       Receipt Chain
+```
+
+Game steps:
+
+```text
+1. Place one safe starting receipt or artifact on the table.
+2. Each role adds one safe link: what came before, what came after, purpose, or note.
+3. Uncle Dee checks the doorway at each step.
+4. Mark unknowns clearly. No guessing.
+5. Save one clean chain note.
+6. End with authority=false.
+```
+
+Safety rule:
+
+```text
+Chains preserve memory, not control.
+No forcing links.
+Unknowns stay unknown.
+Receipts decide truth.
+People remain human.
+```
+
+Win condition:
+
+```text
+Family can reconstruct one short safe timeline from receipts without fabricating certainty or hierarchy.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -356,6 +401,7 @@ Safe outputs may include:
 - Mechanics Jay explainer card
 - Family Math Mechanics role card
 - Porch Triad Recall sketch card
+- Receipt Chain Link timeline card
 
 ## Public Safety Filter
 
