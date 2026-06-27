@@ -1,0 +1,92 @@
+{
+  "packet_id": "BOSS_BRE_FAMILY_REBOOT_V0_1",
+  "schema_version": "BOSS_BRE_FAMILY_REBOOT_INDEX_V0_1",
+  "status": "BOSS_BRE_FAMILY_REBOOT_INDEXED",
+  "repo": "jsonwisdom/JOY",
+  "md_receipt": {
+    "path": "FAMILY/receipts/BOSS_BRE_FAMILY_REBOOT_V0_1.md",
+    "commit": "4a20ba761659ab100b6346db6f5348c7527f432a"
+  },
+  "source_receipts": [
+    {
+      "path": "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_INDEX_V0_1.json",
+      "content_sha": "a5d65bf4f7c25514bdf7537efc85ccc980a30e59",
+      "role_source": "BOSS_BRENDA_BOSS_BRE room_safety_joy_reset_privacy_guard"
+    },
+    {
+      "path": "HEIDEE/scaffolds/ALABAMA_LESSON_CARD_JOY_V0_1.yaml",
+      "content_sha": "ba76c703448d155da1e647e3b71d370f14f5eedf",
+      "operator_lane_source": "HEIDEE_TO_JOY public_safe_scaffold"
+    },
+    {
+      "path": "FAMILY/receipts/ROUND_005_JOY_SEED_COMMIT_V0_1.md",
+      "content_sha": "9cace12cd6cfd4197a461b7654f786c76a7c95cc",
+      "round_source": "ROUND_005_REPLAY_HEIDEE_TO_JOY_INITIATED"
+    }
+  ],
+  "role_bindings": {
+    "boss_bre": {
+      "purpose": "room_safety_joy_reset_privacy_guard",
+      "boundary": "symbolic_role_not_consent_or_command_authority",
+      "reboot_scope": "joy_repo_public_safe_room_reset"
+    },
+    "heidee": {
+      "purpose": "child_safe_ai_training_scaffold",
+      "operator_lane": "public_safe_training_scaffold",
+      "boundary": "no_private_child_data_or_public_biography_green"
+    }
+  },
+  "reboot_state": {
+    "reboot_id": "BOSS_BRE_ROOM_RESET_ROUND_005",
+    "source_round": "ROUND_005_REPLAY_HEIDEE_TO_JOY",
+    "operator_lane": "HEIDEE",
+    "reboot_lane": "BOSS_BRE",
+    "truth_state": "YELLOW",
+    "family_gate": "SOVEREIGN",
+    "public_safe": true
+  },
+  "protection_rules": {
+    "room_safety": true,
+    "joy_reset": true,
+    "privacy_guard": true,
+    "proof_before_claim": true,
+    "care_over_claim": true,
+    "repair_over_erasure": true,
+    "public_safe_learning_may_enter_joy": true,
+    "joy_may_produce_witness_grade_replay_receipts": true,
+    "joy_may_update_public_safe_purpose_vectors": true,
+    "joy_may_pass_family_gate": false,
+    "joy_may_claim_family_approval": false,
+    "joy_may_publish_private_family_details": false,
+    "joy_may_create_authority_true": false
+  },
+  "field_state": {
+    "boss_bre_family_reboot": "PASS",
+    "joy_repo_public_safe_reboot": true,
+    "room_safety_joy_reset_privacy_guard_active": true,
+    "heidee_operator_lane_acknowledged": true,
+    "family_purpose_map_feed_only": true,
+    "family_sovereignty_untouched": true,
+    "real_world_command": false,
+    "consent_or_command_authority": false,
+    "public_biography": false,
+    "private_details_exposed": false,
+    "authority": false,
+    "truth_state": "YELLOW",
+    "family_gate": "SOVEREIGN",
+    "no_fake_green": true
+  },
+  "hard_boundaries": [
+    "BOSS_BRE_FAMILY_REBOOT != FAMILY_APPROVAL",
+    "BOSS_BRE_FAMILY_REBOOT != MRS_WISDOM_GATE_PASS",
+    "BOSS_BRE_FAMILY_REBOOT != CHILD_CONSENT",
+    "BOSS_BRE_FAMILY_REBOOT != CUSTODY_FINAL",
+    "BOSS_BRE_FAMILY_REBOOT != OWNERSHIP_FINAL",
+    "BOSS_BRE_FAMILY_REBOOT != PRIVATE_FAMILY_DATA_PUBLICATION",
+    "BOSS_BRE_FAMILY_REBOOT != PUBLIC_BIOGRAPHY_GREEN",
+    "BOSS_BRE_FAMILY_REBOOT != REAL_WORLD_COMMAND",
+    "BOSS_BRE_FAMILY_REBOOT != AUTHORITY_TRUE",
+    "BOSS_BRE_FAMILY_REBOOT = JOY_REPO_PUBLIC_SAFE_ROOM_RESET"
+  ],
+  "next_packet": "BOSS_BRE_REBOOT_READBACK_VERIFY_V0_1"
+}
