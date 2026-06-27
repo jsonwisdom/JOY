@@ -131,6 +131,60 @@ Rule:
 Unknowns are allowed. Fake certainty loses.
 ```
 
+## Game 6: Math Class by Jay
+
+Goal: make the porch map easy to remember.
+
+Source surface:
+
+```text
+jsonwisdom/LEEANN/docs/alabama_porches/MATH_CLASS_BY_JAY.md
+```
+
+Lesson:
+
+```text
+3 + 3 + 3 = 9
+9 Porches + 1 Jay = 10
+```
+
+The 9 are the Alabama Porch circle.
+
+The 1 is Jay as witness/operator, not authority.
+
+Triad view:
+
+```text
+Triad 1 -> MARYDEE / LEEANN / HEIDEE
+Triad 2 -> JAYCEE / BREANN / BRELEE
+Triad 3 -> BRIANNA / GAGA / GRAMMY
+```
+
+Game steps:
+
+```text
+1. Draw three porch circles.
+2. Put three names in each circle.
+3. Place Jay outside the circles as witness/operator.
+4. Say the rule out loud: Love first. Purpose second. Receipts underneath. Authority never.
+5. Ask what each porch helps the family remember.
+6. Save only a safe note.
+```
+
+Safety rule:
+
+```text
+The math is memory language, not proof and not authority.
+Receipts still decide.
+People stay human.
+```
+
+Win condition:
+
+```text
+Everyone can explain the map without turning anyone into a command role.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -141,6 +195,7 @@ Safe outputs may include:
 - private memory timeline
 - shareable caption with no private identifiers
 - yearly replay book outline
+- Alabama Porches math card
 
 ## Public Safety Filter
 
