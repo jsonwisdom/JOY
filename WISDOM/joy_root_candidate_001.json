@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "candidate_id": "JOY_ROOT_CANDIDATE_001",
+  "status": "PENDING_RECEIPTOS_VERIFICATION",
+  "joy_status": "CANDIDATE_DECLARED",
+  "receiptos_status": "PENDING",
+  "al_status": "BLOCKED_UNTIL_VERIFIED",
+  "authority": false,
+  "execution": false,
+  "verification": false,
+  "candidate_root": "PENDING_RECEIPTOS_VERIFICATION",
+  "created_from": "JOY semantic continuity artifacts",
+  "referenced_artifacts": [
+    "docs/JOY_LEAF_QUALIFICATION_RULES_V0_1.md",
+    "schemas/joy/leaf_qualification.schema.json",
+    "WISDOM/joy_leaf_qualification_v0_1.example.json",
+    "docs/JOY_MANIFEST_ROOT_PROTOCOL_V0_1.md",
+    "schemas/joy/manifest_root.schema.json",
+    "WISDOM/joy_manifest_root_v0_1.example.json",
+    "WISDOM/receipt_chain_link_v0_1.md",
+    "WISDOM/receipt_chain_link_v0_1.manifest.json",
+    "schemas/joy/receipt_chain_link_v0_1.schema.json",
+    "docs/JOY_RECEIPT_CHAIN_VALIDATION_MODEL_V0_1.md",
+    "leaves.sha256"
+  ],
+  "handoff_boundary": "JOY declares a semantic candidate. ReceiptOS verifies or rejects canonical artifacts. AL remains blocked until ReceiptOS verification exists.",
+  "no_fake_green": true,
+  "notes": "This is a loving declaration and candidate pointer only. No Merkle root is computed here. No verification is claimed by JOY."
+}
