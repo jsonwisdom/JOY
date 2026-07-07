@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "ingestion_request_id": "JOY_ROOT_CANDIDATE_001_RECEIPTOS_INGESTION_REQUEST",
+  "source_repo": "jsonwisdom/JOY",
+  "source_artifact": "WISDOM/joy_root_candidate_001.json",
+  "requested_target": "ReceiptOS",
+  "requested_action": "ingest_and_judge_candidate",
+  "joy_status": "CANDIDATE_DECLARED",
+  "receiptos_status": "PENDING",
+  "al_status": "BLOCKED_UNTIL_VERIFIED",
+  "authority": false,
+  "execution": false,
+  "verification": false,
+  "candidate_root": "PENDING_RECEIPTOS_VERIFICATION",
+  "allowed_outcomes": [
+    "VERIFIED_BY_RECEIPTOS",
+    "REJECTED_BY_RECEIPTOS"
+  ],
+  "boundary": "JOY records semantic continuity. ReceiptOS verifies canonical artifacts. AL consumes verified artifacts.",
+  "no_fake_green": true
+}
