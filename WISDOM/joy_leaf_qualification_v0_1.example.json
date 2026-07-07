@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "leaf_id": "JOY_LEAF_QUALIFICATION_V0_1_EXAMPLE",
+  "source_file": "WISDOM/receipt_chain_link_v0_1.manifest.json",
+  "version": "v0.1",
+  "authority": false,
+  "execution": false,
+  "verification": false,
+  "boundary": "JOY records semantic continuity. ReceiptOS verifies canonical artifacts. AL consumes verified artifacts.",
+  "unknowns": "unknowns stay unknown",
+  "stable": true,
+  "human_safe": true
+}
