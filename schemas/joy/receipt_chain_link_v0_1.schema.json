@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "schemas/joy/receipt_chain_link_v0_1.schema.json",
+  "title": "JOY Receipt Chain Link v0.1",
+  "description": "Canonical schema for the JOY receipt_chain_link_v0_1 embedded receipt.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "module": {
+      "type": "string",
+      "const": "receipt_chain_link_v0_1"
+    },
+    "surface": {
+      "type": "string",
+      "const": "WISDOM_FAMILY_GAME_NIGHT"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Uncle Jay",
+          "Aunt May",
+          "Aunt Rann",
+          "Uncle Dee",
+          "GAGA",
+          "GRAMMY"
+        ]
+      },
+      "minItems": 6,
+      "uniqueItems": true,
+      "allOf": [
+        { "contains": { "const": "Uncle Jay" } },
+        { "contains": { "const": "Aunt May" } },
+        { "contains": { "const": "Aunt Rann" } },
+        { "contains": { "const": "Uncle Dee" } },
+        { "contains": { "const": "GAGA" } },
+        { "contains": { "const": "GRAMMY" } }
+      ]
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    },
+    "execution": {
+      "type": "boolean",
+      "const": false
+    },
+    "verification": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "const": "SEEDED"
+    }
+  },
+  "required": [
+    "module",
+    "surface",
+    "roles",
+    "authority",
+    "execution",
+    "verification",
+    "status"
+  ]
+}
