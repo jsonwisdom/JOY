@@ -12,6 +12,28 @@ VOICE_DIR = pathlib.Path("voice/")
 FAMILY_DIR = pathlib.Path("FAMILY/")
 STAGING_DIR = pathlib.Path("/tmp/docs-staging/")
 
+FORBIDDEN_TERMS = [
+    "verified",
+    "verification",
+    "live url",
+    "pages enabled",
+    "deployment",
+    "elevate",
+    "authority:",
+    "fake_green: true",
+]
+
+
+def enforce_doctrine(item):
+    """Fail closed on JOY doctrine violations."""
+    content = str(item.get("content", "")).lower()
+
+    for term in FORBIDDEN_TERMS:
+        if term in content:
+            raise RuntimeError(f"JOY doctrine violation: forbidden term detected: {term}")
+
+    return True
+
 
 def load_voice_inputs():
     """Load raw voice/transcript artifacts."""
@@ -26,6 +48,7 @@ def apply_joy_transforms(transcripts):
     """Apply JOY ingestion transforms (HEIDEE layer)."""
     transformed = []
     for t in transcripts:
+        enforce_doctrine(t)
         transformed.append({
             "id": t.get("id"),
             "timestamp": datetime.datetime.utcnow().isoformat(),
