@@ -216,3 +216,21 @@ JOY never claims cryptographic verification. Candidate roots recorded in JOY are
 - [docs/JOY_MANIFEST_ROOT_PROTOCOL_V0_1.md](docs/JOY_MANIFEST_ROOT_PROTOCOL_V0_1.md)
 - [schemas/joy/manifest_root.schema.json](schemas/joy/manifest_root.schema.json)
 - [WISDOM/joy_manifest_root_v0_1.example.json](WISDOM/joy_manifest_root_v0_1.example.json)
+
+---
+
+## JOY Leaf Qualification Rules
+
+JOY defines strict qualification rules for what may become a leaf in `leaves.sha256` and future manifest root snapshots.
+
+- JOY records semantic continuity only.
+- ReceiptOS verifies canonical artifacts.
+- AL consumes verified artifacts.
+- A JOY leaf must be stable, versioned, human-safe, and boundary-explicit.
+- JOY never claims cryptographic truth or verification.
+
+See:
+
+- [docs/JOY_LEAF_QUALIFICATION_RULES_V0_1.md](docs/JOY_LEAF_QUALIFICATION_RULES_V0_1.md)
+- [schemas/joy/leaf_qualification.schema.json](schemas/joy/leaf_qualification.schema.json)
+- [WISDOM/joy_leaf_qualification_v0_1.example.json](WISDOM/joy_leaf_qualification_v0_1.example.json)
