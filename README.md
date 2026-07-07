@@ -234,3 +234,23 @@ See:
 - [docs/JOY_LEAF_QUALIFICATION_RULES_V0_1.md](docs/JOY_LEAF_QUALIFICATION_RULES_V0_1.md)
 - [schemas/joy/leaf_qualification.schema.json](schemas/joy/leaf_qualification.schema.json)
 - [WISDOM/joy_leaf_qualification_v0_1.example.json](WISDOM/joy_leaf_qualification_v0_1.example.json)
+
+---
+
+## JOY Root Candidate 001 Handoff
+
+JOY Root Candidate 001 is the first bridge receipt declaring a semantic candidate for ReceiptOS judgment.
+
+Status triad:
+
+```text
+JOY_STATUS: CANDIDATE_DECLARED
+RECEIPTOS_STATUS: PENDING
+AL_STATUS: BLOCKED_UNTIL_VERIFIED
+```
+
+JOY does not compute a Merkle root here and does not claim verification. ReceiptOS must verify or reject the candidate before AL can consume it.
+
+- [WISDOM/joy_root_candidate_001.json](WISDOM/joy_root_candidate_001.json)
+- [docs/JOY_TO_RECEIPTOS_HANDOFF_V0_1.md](docs/JOY_TO_RECEIPTOS_HANDOFF_V0_1.md)
+- [receipts/receiptos_ingestion/JOY_ROOT_CANDIDATE_001_INGESTION_REQUEST.json](receipts/receiptos_ingestion/JOY_ROOT_CANDIDATE_001_INGESTION_REQUEST.json)
