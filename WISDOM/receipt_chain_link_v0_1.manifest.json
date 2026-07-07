@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "module": "receipt_chain_link_v0_1",
+  "source_file": "WISDOM/receipt_chain_link_v0_1.md",
+  "surface": "WISDOM_FAMILY_GAME_NIGHT",
+  "status": "SEEDED",
+  "authority": false,
+  "execution": false,
+  "verification": false,
+  "purpose": "Preserve the human-readable Receipt Chain Link doctrine as a canonical, hashable artifact for future verification.",
+  "safety_rule": "authority=false; execution=false; verification=false; unknowns stay unknown; chains preserve memory, not control; receipts decide; people remain human.",
+  "roles": [
+    "Uncle Jay",
+    "Aunt May",
+    "Aunt Rann",
+    "Uncle Dee",
+    "GAGA",
+    "GRAMMY"
+  ],
+  "outputs": [
+    "Canonical semantic receipt for WISDOM_FAMILY_GAME_NIGHT.",
+    "Stable manifest for ReceiptOS verification workflows."
+  ],
+  "receipt": {
+    "kind": "embedded_doctrine",
+    "location": "WISDOM/receipt_chain_link_v0_1.md",
+    "module": "receipt_chain_link_v0_1",
+    "surface": "WISDOM_FAMILY_GAME_NIGHT",
+    "status": "SEEDED"
+  },
+  "validation_boundary": "JOY records semantic continuity. JOY does not verify cryptographic truth. ReceiptOS may verify canonical artifacts later."
+}
