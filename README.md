@@ -200,3 +200,19 @@ The JOY Receipt Chain Link Validation Model documents how semantic receipts beco
 - [WISDOM/receipt_chain_link_v0_1.manifest.json](WISDOM/receipt_chain_link_v0_1.manifest.json)
 - [schemas/joy/receipt_chain_link_v0_1.schema.json](schemas/joy/receipt_chain_link_v0_1.schema.json)
 - [docs/JOY_RECEIPT_CHAIN_VALIDATION_MODEL_V0_1.md](docs/JOY_RECEIPT_CHAIN_VALIDATION_MODEL_V0_1.md)
+
+---
+
+## JOY Manifest Root Protocol
+
+JOY organizes semantic continuity into stable collections of manifests and leaves. These collections can be hashed and assembled into candidate Merkle roots, but JOY does not claim cryptographic truth.
+
+- JOY records semantic continuity and defines manifest snapshots.
+- ReceiptOS computes and verifies Merkle roots over the digests recorded in JOY, for example in `leaves.sha256`.
+- AL consumes verified state and uses it for replay and automation.
+
+JOY never claims cryptographic verification. Candidate roots recorded in JOY are informational only and become meaningful only when ReceiptOS performs verification.
+
+- [docs/JOY_MANIFEST_ROOT_PROTOCOL_V0_1.md](docs/JOY_MANIFEST_ROOT_PROTOCOL_V0_1.md)
+- [schemas/joy/manifest_root.schema.json](schemas/joy/manifest_root.schema.json)
+- [WISDOM/joy_manifest_root_v0_1.example.json](WISDOM/joy_manifest_root_v0_1.example.json)
