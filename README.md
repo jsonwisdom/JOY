@@ -189,3 +189,14 @@ Stories are allowed.
 Fabrication is not.
 Authority remains false.
 Status: Gate 4 Execution (Awaiting CI Receipt)
+
+---
+
+## Receipt Chain Link Validation Model
+
+The JOY Receipt Chain Link Validation Model documents how semantic receipts become canonical artifacts without claiming verification.
+
+- [WISDOM/receipt_chain_link_v0_1.md](WISDOM/receipt_chain_link_v0_1.md)
+- [WISDOM/receipt_chain_link_v0_1.manifest.json](WISDOM/receipt_chain_link_v0_1.manifest.json)
+- [schemas/joy/receipt_chain_link_v0_1.schema.json](schemas/joy/receipt_chain_link_v0_1.schema.json)
+- [docs/JOY_RECEIPT_CHAIN_VALIDATION_MODEL_V0_1.md](docs/JOY_RECEIPT_CHAIN_VALIDATION_MODEL_V0_1.md)
