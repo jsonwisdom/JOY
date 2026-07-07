@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "JOY_MANIFEST_ROOT_V0_1_EXAMPLE",
+  "created_from": "leaves.sha256",
+  "leaf_manifest": [
+    "WISDOM/receipt_chain_link_v0_1.manifest.json",
+    "WISDOM/future_family_receipt_v0_1.manifest.json"
+  ],
+  "leaf_count": 2,
+  "candidate_root": "PENDING_RECEIPTOS_VERIFICATION",
+  "authority": false,
+  "execution": false,
+  "verification": false,
+  "boundary": "JOY records semantic continuity. ReceiptOS verifies canonical artifacts. AL consumes verified artifacts."
+}
