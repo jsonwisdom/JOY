@@ -35,26 +35,30 @@ jobs:
         run: |
           mkdir -p docs
           mkdir -p scripts
+          mkdir -p voice
 
-      - name: Build JOY docs from governed inputs
+      - name: Enforce JOY doctrine via HEIDEE ingestion
         run: |
-          if [ -f scripts/joy_build_docs.py ]; then
-            python scripts/joy_build_docs.py
-          else
-            echo 'scripts/joy_build_docs.py not present; skipping build step.'
+          set -euo pipefail
+          if [ ! -f scripts/joy_build_docs.py ]; then
+            echo 'Missing scripts/joy_build_docs.py'
+            exit 1
           fi
+          python scripts/joy_build_docs.py
 
-      - name: Render JOY pages into /docs
+      - name: Enforce JOY doctrine via Mrs Wisdom render
         run: |
-          if [ -f scripts/render_joy_pages.py ]; then
-            python scripts/render_joy_pages.py
-          else
-            echo 'scripts/render_joy_pages.py not present; skipping render step.'
+          set -euo pipefail
+          if [ ! -f scripts/render_joy_pages.py ]; then
+            echo 'Missing scripts/render_joy_pages.py'
+            exit 1
           fi
+          python scripts/render_joy_pages.py
 
       - name: Detect /docs changes
         id: docs_changes
         run: |
+          set -euo pipefail
           if git diff --quiet -- docs; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
@@ -64,6 +68,7 @@ jobs:
       - name: Commit /docs updates
         if: steps.docs_changes.outputs.changed == 'true'
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs
