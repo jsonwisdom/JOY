@@ -12,6 +12,27 @@ STAGING_DIR = pathlib.Path("/tmp/docs-staging/")
 DOCS_DIR = pathlib.Path("docs/")
 
 LANGUAGE_LAYER = "MRS_WISDOM_APPROVED_JOYSPACE"
+FORBIDDEN_TERMS = [
+    "verified",
+    "verification",
+    "live url",
+    "pages enabled",
+    "deployment",
+    "elevate",
+    "authority:",
+    "fake_green: true",
+]
+
+
+def enforce_doctrine(item):
+    """Fail closed on JOY doctrine violations."""
+    content = str(item.get("content", "")).lower()
+
+    for term in FORBIDDEN_TERMS:
+        if term in content:
+            raise RuntimeError(f"JOY doctrine violation: forbidden term detected: {term}")
+
+    return True
 
 
 def load_staged():
@@ -25,6 +46,7 @@ def load_staged():
 
 def apply_language_layer(item):
     """Apply Mrs Wisdom language layer to staged content."""
+    enforce_doctrine(item)
     return {
         "id": item.get("id"),
         "rendered_at": datetime.datetime.utcnow().isoformat(),
