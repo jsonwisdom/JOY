@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "schemas/joy/leaf_qualification.schema.json",
+  "title": "JOY Leaf Qualification",
+  "description": "Schema describing the qualification requirements for JOY leaves.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "leaf_id": {
+      "type": "string",
+      "description": "Identifier for the leaf artifact."
+    },
+    "source_file": {
+      "type": "string",
+      "description": "Path to the leaf artifact within the JOY repository."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the leaf artifact."
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    },
+    "execution": {
+      "type": "boolean",
+      "const": false
+    },
+    "verification": {
+      "type": "boolean",
+      "const": false
+    },
+    "boundary": {
+      "type": "string",
+      "const": "JOY records semantic continuity. ReceiptOS verifies canonical artifacts. AL consumes verified artifacts."
+    },
+    "unknowns": {
+      "type": "string",
+      "description": "Statement acknowledging unknowns remain unknown."
+    },
+    "stable": {
+      "type": "boolean",
+      "description": "Indicates the leaf is stable and versioned.",
+      "const": true
+    },
+    "human_safe": {
+      "type": "boolean",
+      "description": "Indicates the leaf is human-safe and non-executable.",
+      "const": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "leaf_id",
+    "source_file",
+    "version",
+    "authority",
+    "execution",
+    "verification",
+    "boundary",
+    "unknowns",
+    "stable",
+    "human_safe"
+  ]
+}
