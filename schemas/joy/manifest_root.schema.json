@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "schemas/joy/manifest_root.schema.json",
+  "title": "JOY Manifest Root",
+  "description": "Schema for a JOY Manifest Root snapshot. Candidate Merkle roots are informational only and do not imply verification.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of the manifest root schema."
+    },
+    "snapshot_id": {
+      "type": "string",
+      "description": "Identifier for this manifest snapshot within JOY."
+    },
+    "created_from": {
+      "type": "string",
+      "description": "Source used to construct the snapshot (for example, leaves.sha256)."
+    },
+    "leaf_manifest": {
+      "type": "array",
+      "description": "Collection of leaf manifest paths or identifiers participating in this snapshot.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "leaf_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of leaves included in this snapshot."
+    },
+    "candidate_root": {
+      "type": "string",
+      "description": "Informational candidate Merkle root value. This field does not claim verification."
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false,
+      "description": "JOY authority boundary. Must be false."
+    },
+    "execution": {
+      "type": "boolean",
+      "const": false,
+      "description": "Execution boundary. Must be false; manifest roots do not trigger actions."
+    },
+    "verification": {
+      "type": "boolean",
+      "const": false,
+      "description": "Verification boundary. Must be false; JOY does not verify cryptographic truth."
+    },
+    "boundary": {
+      "type": "string",
+      "const": "JOY records semantic continuity. ReceiptOS verifies canonical artifacts. AL consumes verified artifacts.",
+      "description": "Explicit boundary statement for JOY, ReceiptOS, and AL."
+    }
+  },
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "created_from",
+    "leaf_manifest",
+    "leaf_count",
+    "candidate_root",
+    "authority",
+    "execution",
+    "verification",
+    "boundary"
+  ]
+}
