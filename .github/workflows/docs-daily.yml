@@ -1,0 +1,79 @@
+name: docs-daily
+
+on:
+  schedule:
+    - cron: '5 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: joy-docs-daily
+  cancel-in-progress: false
+
+env:
+  JOY_AUTHORITY: 'false'
+  JOY_FAKE_GREEN: 'forbidden'
+  JOY_OPERATOR: 'HEIDEE'
+  JOY_LANGUAGE_LAYER: 'MRS_WISDOM_APPROVED_JOYSPACE'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Prepare directories
+        run: |
+          mkdir -p docs
+          mkdir -p scripts
+
+      - name: Build JOY docs from governed inputs
+        run: |
+          if [ -f scripts/joy_build_docs.py ]; then
+            python scripts/joy_build_docs.py
+          else
+            echo 'scripts/joy_build_docs.py not present; skipping build step.'
+          fi
+
+      - name: Render JOY pages into /docs
+        run: |
+          if [ -f scripts/render_joy_pages.py ]; then
+            python scripts/render_joy_pages.py
+          else
+            echo 'scripts/render_joy_pages.py not present; skipping render step.'
+          fi
+
+      - name: Detect /docs changes
+        id: docs_changes
+        run: |
+          if git diff --quiet -- docs; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit /docs updates
+        if: steps.docs_changes.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs
+          git commit -m "Regenerate JOY /docs via governed daily workflow.
+- Output surface limited to /docs.
+- authority:false preserved.
+- fake_green:forbidden preserved.
+- Verification lane untouched."
+          git push
+
+      - name: No-op when /docs unchanged
+        if: steps.docs_changes.outputs.changed != 'true'
+        run: echo 'No /docs changes detected; nothing to commit.'
