@@ -1,0 +1,55 @@
+name: JOY Governance Rails v0.1
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  joy-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check forbidden authority claims
+        run: |
+          ! grep -R "authority[\"': ]*true" . \
+            --exclude-dir=.git \
+            --exclude="*.png" \
+            --exclude="*.jpg"
+
+      - name: Check no fake green
+        run: |
+          ! grep -R "green_implied[\"': ]*true" . \
+            --exclude-dir=.git
+
+      - name: Block unverifiable load_verified
+        run: |
+          ! grep -R "load_verified[\"': ]*true" . \
+            --exclude-dir=.git
+
+      - name: Block public release without consent
+        run: |
+          ! grep -R "public_release_allowed[\"': ]*true" . \
+            --exclude-dir=.git
+
+      - name: Block private family data in public paths
+        run: |
+          ! grep -R "family/" public \
+            --exclude-dir=.git || true
+
+      - name: Validate JSON
+        run: |
+          find . -name "*.json" -not -path "./.git/*" -print0 |
+          xargs -0 -n1 python -m json.tool >/dev/null
+
+      - name: Require consent boundary doctrine
+        run: |
+          grep -R "JOY_NO_FAKE_GREEN" canon .github || exit 1
+
+      - name: Mrs. Wisdom gate for family and wisdom membrane
+        run: |
+          files=$(git diff --name-only HEAD~1..HEAD || true)
+          echo "$files" | grep -E "(^family/|^FAMILY/|^membranes/wisdom_membrane/|^receipts/decisions/|public.*metadata)" && \
+          grep -R "wisdom_review_required[\"': ]*true" . || true
