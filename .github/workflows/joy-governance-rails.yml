@@ -1,0 +1,110 @@
+# Queue poke: 2026-07-09T06:33:00Z
+name: JOY Governance Rails v0.1
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  joy-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check forbidden authority claims in governed data
+        run: |
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "authority[\"': ]*true" "$p" \
+              --exclude-dir=.git \
+              --exclude="*.png" \
+              --exclude="*.jpg"
+          done
+
+      - name: Check no fake green in governed data
+        run: |
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "green_implied[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
+
+      - name: Block unverifiable load_verified in governed data
+        run: |
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "load_verified[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
+
+      - name: Block public release without consent in governed data
+        run: |
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "public_release_allowed[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
+
+      - name: Block private family data in public paths
+        run: |
+          if [ -d public ]; then
+            ! grep -R "family/" public --exclude-dir=.git || true
+          fi
+
+      - name: Validate JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          roots = [
+              Path('JAYWISDOM_SIMPLE_STATE_V0_1.json'),
+              Path('receipts'),
+              Path('metadata'),
+              Path('schemas'),
+              Path('artifacts'),
+              Path('membranes'),
+              Path('adapters'),
+              Path('engines'),
+              Path('examples'),
+          ]
+          failures = []
+          checked = 0
+          seen = set()
+          for root in roots:
+              if not root.exists():
+                  continue
+              paths = [root] if root.is_file() else sorted(root.rglob('*.json'))
+              for path in paths:
+                  if '.git' in path.parts:
+                      continue
+                  key = str(path)
+                  if key in seen:
+                      continue
+                  seen.add(key)
+                  checked += 1
+                  try:
+                      json.loads(path.read_text(encoding='utf-8'))
+                  except Exception as exc:
+                      failures.append({'path': key, 'error': f'{type(exc).__name__}: {exc}'})
+          print(f'JSON files checked: {checked}')
+          if failures:
+              print(json.dumps({'failures': failures}, indent=2, sort_keys=True))
+              raise SystemExit(1)
+          PY
+
+      - name: Require consent boundary doctrine
+        run: |
+          grep -R "JOY_NO_FAKE_GREEN" canon .github || exit 1
+
+      - name: Mrs. Wisdom gate for family and wisdom membrane
+        run: |
+          files=$(git diff --name-only HEAD~1..HEAD || true)
+          echo "$files" | grep -E "(^family/|^FAMILY/|^membranes/wisdom_membrane/|^receipts/decisions/|public.*metadata)" && \
+          grep -R "wisdom_review_required[\"': ]*true" . || true
