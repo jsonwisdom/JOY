@@ -1,0 +1,17 @@
+{
+  "decision_id": "WISDOM_CONSENT_DRY_RUN_DECISION_V0_1",
+  "version": "0.1",
+  "ingress_ref": "WISDOM_CONSENT_DRY_RUN_INGRESS_V0_1",
+  "timestamp": "2026-07-09T01:50:00-05:00",
+  "membrane": "mrs_wisdom",
+  "decision": "consent_pending",
+  "public_render_allowed": false,
+  "consent_status": "pending",
+  "family_protection": "active",
+  "authority": false,
+  "no_fake_green": true,
+  "replay_required": true,
+  "receipt_hash": null,
+  "hash_status": "DRY_RUN_UNHASHED",
+  "notes": "Dry-run decision receipt confirming Mrs. Wisdom membrane activation and correct governance behavior under JOY Governance Rails v0.1."
+}

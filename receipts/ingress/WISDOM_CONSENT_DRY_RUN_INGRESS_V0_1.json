@@ -1,0 +1,18 @@
+{
+  "ingress_id": "WISDOM_CONSENT_DRY_RUN_INGRESS_V0_1",
+  "version": "0.1",
+  "timestamp": "2026-07-09T01:50:00-05:00",
+  "artifact_type": "CONSENT_DRY_RUN",
+  "source": "operator_local",
+  "target_membrane": "mrs_wisdom",
+  "family_impact": "none",
+  "consent_required": true,
+  "consent_status": "pending",
+  "public_render_requested": false,
+  "authority": false,
+  "no_fake_green": true,
+  "replay_expected": true,
+  "receipt_expected": true,
+  "external_surfaces": [],
+  "notes": "Dry-run ingress envelope to test Mrs. Wisdom consent lane propagation through JOY Governance Rails v0.1."
+}
