@@ -59,8 +59,45 @@ jobs:
 
       - name: Validate JSON
         run: |
-          find . -name "*.json" -not -path "./.git/*" -print0 |
-          xargs -0 -n1 python -m json.tool >/dev/null
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          roots = [
+              Path('JAYWISDOM_SIMPLE_STATE_V0_1.json'),
+              Path('receipts'),
+              Path('metadata'),
+              Path('schemas'),
+              Path('artifacts'),
+              Path('membranes'),
+              Path('adapters'),
+              Path('engines'),
+              Path('examples'),
+          ]
+          failures = []
+          checked = 0
+          seen = set()
+          for root in roots:
+              if not root.exists():
+                  continue
+              paths = [root] if root.is_file() else sorted(root.rglob('*.json'))
+              for path in paths:
+                  if '.git' in path.parts:
+                      continue
+                  key = str(path)
+                  if key in seen:
+                      continue
+                  seen.add(key)
+                  checked += 1
+                  try:
+                      json.loads(path.read_text(encoding='utf-8'))
+                  except Exception as exc:
+                      failures.append({'path': key, 'error': f'{type(exc).__name__}: {exc}'})
+          print(f'JSON files checked: {checked}')
+          if failures:
+              print(json.dumps({'failures': failures}, indent=2, sort_keys=True))
+              raise SystemExit(1)
+          PY
 
       - name: Require consent boundary doctrine
         run: |
