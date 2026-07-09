@@ -25,12 +25,13 @@ jobs:
       - name: Verify repo metadata
         run: |
           set +e
-          python3 tools/verify-this-repo.py --json > zero-trust-audit-report.json
+          python3 tools/verify-this-repo.py --json > /tmp/zero-trust-audit-report.json
           status=$?
+          cp /tmp/zero-trust-audit-report.json zero-trust-audit-report.json
           python3 - <<'PY'
           import json
           from pathlib import Path
-          report = json.loads(Path('zero-trust-audit-report.json').read_text())
+          report = json.loads(Path('/tmp/zero-trust-audit-report.json').read_text())
           compact = {
               'status': report.get('status'),
               'strict': report.get('strict'),
