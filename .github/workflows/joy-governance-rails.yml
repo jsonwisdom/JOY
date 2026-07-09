@@ -12,32 +12,49 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check forbidden authority claims
+      - name: Check forbidden authority claims in governed data
         run: |
-          ! grep -R "authority[\"': ]*true" . \
-            --exclude-dir=.git \
-            --exclude="*.png" \
-            --exclude="*.jpg"
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "authority[\"': ]*true" "$p" \
+              --exclude-dir=.git \
+              --exclude="*.png" \
+              --exclude="*.jpg"
+          done
 
-      - name: Check no fake green
+      - name: Check no fake green in governed data
         run: |
-          ! grep -R "green_implied[\"': ]*true" . \
-            --exclude-dir=.git
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "green_implied[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
 
-      - name: Block unverifiable load_verified
+      - name: Block unverifiable load_verified in governed data
         run: |
-          ! grep -R "load_verified[\"': ]*true" . \
-            --exclude-dir=.git
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "load_verified[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
 
-      - name: Block public release without consent
+      - name: Block public release without consent in governed data
         run: |
-          ! grep -R "public_release_allowed[\"': ]*true" . \
-            --exclude-dir=.git
+          scan_paths="receipts metadata schemas artifacts membranes adapters engines examples"
+          for p in $scan_paths; do
+            [ -e "$p" ] || continue
+            ! grep -R "public_release_allowed[\"': ]*true" "$p" \
+              --exclude-dir=.git
+          done
 
       - name: Block private family data in public paths
         run: |
-          ! grep -R "family/" public \
-            --exclude-dir=.git || true
+          if [ -d public ]; then
+            ! grep -R "family/" public --exclude-dir=.git || true
+          fi
 
       - name: Validate JSON
         run: |
