@@ -57,3 +57,4 @@ If a stranger cannot find it, click it, read it, and verify it, it is not public
 Authority: false
 Green implied: false
 No fake green: true
+no_fake_green: true
