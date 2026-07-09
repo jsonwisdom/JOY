@@ -10,6 +10,23 @@ This registry records merged JOY artifacts for public navigation and audit revie
 
 The registry is an index. It is not an authority source, activation switch, or truth engine.
 
+## Missing Algebra Correction
+
+The registry distinguishes the two Wisdom lanes as complementary controls:
+
+| Lane | Function | Switch | Scope |
+|---|---|---|---|
+| Mr Wisdom | Logic / constraint / boundary checking | OFF by default | Reference only; no activation |
+| Mrs Wisdom | Sacred / human signature / witness consent | ON_SIGNATURE_ONLY | May attest own lane only |
+
+The combined rule is:
+
+```text
+VALID_WITNESS_PATH = ROOT_AUDIT + REGISTRY_INDEX + HUMAN_SIGNATURE_TEMPLATE + EXPLICIT_HUMAN_SIGNATURE
+```
+
+No single lane may promote itself into global authority.
+
 ## Registered Artifacts
 
 | Artifact | Type | Status | Binding |
