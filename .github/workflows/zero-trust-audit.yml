@@ -40,9 +40,16 @@ jobs:
               'json_files_checked': report.get('json_files_checked'),
               'state_file': report.get('state_file'),
           }
+          Path('zero-trust-audit-compact.json').write_text(json.dumps(compact, indent=2, sort_keys=True) + '\n')
           print(json.dumps(compact, indent=2, sort_keys=True))
           PY
           exit $status
+      - name: Upload compact audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zero-trust-audit-compact
+          path: zero-trust-audit-compact.json
       - name: Summary
         if: always()
         run: |
