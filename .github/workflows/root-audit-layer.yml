@@ -1,0 +1,20 @@
+name: ROOT_AUDIT_LAYER_V0_1
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  root-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run root audit layer
+        run: bash .github/scripts/root-audit-layer.sh
