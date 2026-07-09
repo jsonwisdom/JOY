@@ -23,7 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify repo metadata
-        run: python3 tools/verify-this-repo.py --json > zero-trust-audit-report.json
+        run: |
+          set +e
+          python3 tools/verify-this-repo.py --json > zero-trust-audit-report.json
+          status=$?
+          cat zero-trust-audit-report.json
+          exit $status
       - name: Summary
         if: always()
         run: |
