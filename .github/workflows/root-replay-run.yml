@@ -1,0 +1,56 @@
+name: Root Replay Run
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '**'
+      - '.github/workflows/root-replay-run.yml'
+      - 'scripts/root_replay.py'
+
+permissions:
+  contents: read
+
+jobs:
+  root-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository root
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate root manifest and anomaly report
+        run: |
+          mkdir -p root-replay-output
+          python3 scripts/root_replay.py \
+            --root . \
+            --out root-replay-output/root-manifest.json
+
+      - name: Replay same root and verify determinism
+        run: |
+          python3 scripts/root_replay.py \
+            --root . \
+            --out root-replay-output/root-manifest-replay.json \
+            --compare root-replay-output/root-manifest.json \
+            > root-replay-output/replay-comparison.json
+
+      - name: Publish job summary
+        run: |
+          {
+            echo '## Root Replay Run'
+            echo
+            echo '```json'
+            cat root-replay-output/replay-comparison.json
+            echo '```'
+            echo
+            echo '`authority = false`'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload replay receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: root-replay-${{ github.sha }}
+          path: root-replay-output/
+          if-no-files-found: error
+          retention-days: 30
