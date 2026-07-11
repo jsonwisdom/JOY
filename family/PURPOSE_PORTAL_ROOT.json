@@ -1,0 +1,45 @@
+{
+  "manifest_type": "PURPOSE_PORTAL_ROOT",
+  "version": "1.0",
+  "identity_anchor": "jaywisdom.base.eth",
+  "operator_discovery_alias": "jaywisdom.eth",
+  "replay_root": {
+    "status": "PENDING_FIRST_FAMILY_REPLAY",
+    "hash_algorithm": "sha256",
+    "binding_hash": null,
+    "binding_receipt": null
+  },
+  "authority": false,
+  "portal_nodes": {
+    "WHO": "ugs8://identity/bios",
+    "WHAT": "ugs8://identity/directives",
+    "BUILD": "ugs8://registry/active-repos",
+    "VERIFY": "ugs8://registry/audit-lattice",
+    "REPLAY": "ugs8://registry/execution-logs",
+    "FAMILY": "ugs8://registry/purpose-layer",
+    "PUBLIC_EVIDENCE": "ugs8://registry/attestation-stream"
+  },
+  "family_repositories": [
+    "jsonwisdom/JOY",
+    "jsonwisdom/AL",
+    "jsonwisdom/COMPUTERWISDOM",
+    "jsonwisdom/receiptos-base"
+  ],
+  "public_portal": {
+    "name": "Meme Court",
+    "url": "https://meme-court-verifier-2y4hej4r2a-uc.a.run.app/api/frame",
+    "role": "public replay and witness surface",
+    "authority": false
+  },
+  "governance_rules": [
+    "all nodes must resolve through the replay root",
+    "start every audit at the family workspace root",
+    "end every audit at the family workspace root",
+    "no directory-state inheritance between operations",
+    "no fake green",
+    "no placeholder hash may be promoted as verified",
+    "authority remains false"
+  ],
+  "status": "UNBOUND_PENDING_REPLAY_RECEIPT",
+  "last_updated": "2026-07-11"
+}

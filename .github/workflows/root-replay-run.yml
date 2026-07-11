@@ -1,0 +1,205 @@
+name: Root Replay Family Run
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '**'
+      - '.github/workflows/root-replay-run.yml'
+      - 'scripts/root_replay.py'
+      - 'family/PURPOSE_PORTAL_ROOT.json'
+
+permissions:
+  contents: read
+
+jobs:
+  family-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create family workspace and checkout JOY
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: root-replay/JOY
+          fetch-depth: 0
+
+      - name: Resolve family repositories from root
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT_REPLAY_HOME="$GITHUB_WORKSPACE/root-replay"
+          cd "$ROOT_REPLAY_HOME"
+
+          git clone --quiet https://github.com/jsonwisdom/AL.git AL
+          cd "$ROOT_REPLAY_HOME"
+          git clone --quiet https://github.com/jsonwisdom/COMPUTERWISDOM.git COMPUTERWISDOM
+          cd "$ROOT_REPLAY_HOME"
+          git clone --quiet https://github.com/jsonwisdom/receiptos-base.git receiptos-base
+          cd "$ROOT_REPLAY_HOME"
+
+          test "$PWD" = "$ROOT_REPLAY_HOME"
+          printf '%s\n' 'ROOT_START_END_VERIFIED=true'
+
+      - name: Generate repository manifests from root
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT_REPLAY_HOME="$GITHUB_WORKSPACE/root-replay"
+          OUTPUT="$GITHUB_WORKSPACE/root-replay-output"
+          SCANNER="$ROOT_REPLAY_HOME/JOY/scripts/root_replay.py"
+          mkdir -p "$OUTPUT"
+          cd "$ROOT_REPLAY_HOME"
+
+          for repo in JOY AL COMPUTERWISDOM receiptos-base; do
+            cd "$ROOT_REPLAY_HOME"
+            python3 "$SCANNER" \
+              --root "$ROOT_REPLAY_HOME/$repo" \
+              --out "$OUTPUT/$repo.manifest.json"
+            cd "$ROOT_REPLAY_HOME"
+            test "$PWD" = "$ROOT_REPLAY_HOME"
+          done
+
+          cd "$ROOT_REPLAY_HOME"
+          test "$PWD" = "$ROOT_REPLAY_HOME"
+
+      - name: Build ordered family receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT_REPLAY_HOME="$GITHUB_WORKSPACE/root-replay"
+          OUTPUT="$GITHUB_WORKSPACE/root-replay-output"
+          cd "$ROOT_REPLAY_HOME"
+
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          root = Path(os.environ['GITHUB_WORKSPACE']) / 'root-replay'
+          output = Path(os.environ['GITHUB_WORKSPACE']) / 'root-replay-output'
+          ordered = ['JOY', 'AL', 'COMPUTERWISDOM', 'receiptos-base']
+          repos = []
+
+          for name in ordered:
+              manifest = json.loads((output / f'{name}.manifest.json').read_text())
+              commit = subprocess.check_output(
+                  ['git', '-C', str(root / name), 'rev-parse', 'HEAD'], text=True
+              ).strip()
+              repos.append({
+                  'name': name,
+                  'repository_full_name': f'jsonwisdom/{name}',
+                  'commit_sha': commit,
+                  'manifest_sha256': manifest['manifest_sha256'],
+                  'file_count': manifest['file_count'],
+                  'anomaly_count': manifest['anomaly_count'],
+                  'anomalies_file': f'{name}.manifest.json'
+              })
+
+          family_core = {
+              'artifact_type': 'FAMILY_REPLAY_CORE_V1',
+              'authority': False,
+              'repository_order': ordered,
+              'repositories': repos,
+          }
+          canonical = json.dumps(family_core, sort_keys=True, separators=(',', ':')).encode()
+          family_hash = hashlib.sha256(canonical).hexdigest()
+          receipt = {
+              'receipt_type': 'PURPOSE_PORTAL_ROOT_BINDING_V1',
+              'identity_anchor': 'jaywisdom.base.eth',
+              'authority': False,
+              'workflow_run_id': os.environ['GITHUB_RUN_ID'],
+              'workflow_commit_sha': os.environ['GITHUB_SHA'],
+              'repositories': repos,
+              'family_manifest_sha256': family_hash,
+              'portal_manifest_sha256_before_binding': hashlib.sha256(
+                  (root / 'JOY/family/PURPOSE_PORTAL_ROOT.json').read_bytes()
+              ).hexdigest(),
+              'independent_replay': {
+                  'performed': False,
+                  'recomputed_family_manifest_sha256': None,
+                  'match': None
+              },
+              'binding_status': 'GENERATED_PENDING_INDEPENDENT_REPLAY'
+          }
+          (output / 'family-replay-core.json').write_text(
+              json.dumps(family_core, indent=2, sort_keys=True) + '\n'
+          )
+          (output / 'family-binding-receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n'
+          )
+          print(json.dumps({
+              'family_manifest_sha256': family_hash,
+              'repository_count': len(repos),
+              'authority': False,
+              'binding_status': receipt['binding_status']
+          }, indent=2, sort_keys=True))
+          PY
+
+          cd "$ROOT_REPLAY_HOME"
+          test "$PWD" = "$ROOT_REPLAY_HOME"
+
+      - name: Independently recompute family hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT_REPLAY_HOME="$GITHUB_WORKSPACE/root-replay"
+          OUTPUT="$GITHUB_WORKSPACE/root-replay-output"
+          cd "$ROOT_REPLAY_HOME"
+
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          output = Path(os.environ['GITHUB_WORKSPACE']) / 'root-replay-output'
+          core = json.loads((output / 'family-replay-core.json').read_text())
+          receipt_path = output / 'family-binding-receipt.json'
+          receipt = json.loads(receipt_path.read_text())
+          canonical = json.dumps(core, sort_keys=True, separators=(',', ':')).encode()
+          recomputed = hashlib.sha256(canonical).hexdigest()
+          expected = receipt['family_manifest_sha256']
+          match = recomputed == expected
+          receipt['independent_replay'] = {
+              'performed': True,
+              'recomputed_family_manifest_sha256': recomputed,
+              'match': match
+          }
+          receipt['binding_status'] = 'REPLAY_MATCHED_PENDING_PORTAL_UPDATE' if match else 'DIVERGED'
+          receipt_path.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(receipt['independent_replay'], indent=2, sort_keys=True))
+          if not match:
+              raise SystemExit(2)
+          PY
+
+          cd "$ROOT_REPLAY_HOME"
+          test "$PWD" = "$ROOT_REPLAY_HOME"
+
+      - name: Publish replay summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT_REPLAY_HOME="$GITHUB_WORKSPACE/root-replay"
+          OUTPUT="$GITHUB_WORKSPACE/root-replay-output"
+          cd "$ROOT_REPLAY_HOME"
+          {
+            echo '## RootReplay Family Receipt'
+            echo
+            echo '```json'
+            cat "$OUTPUT/family-binding-receipt.json"
+            echo '```'
+            echo
+            echo '`authority = false`'
+          } >> "$GITHUB_STEP_SUMMARY"
+          cd "$ROOT_REPLAY_HOME"
+          test "$PWD" = "$ROOT_REPLAY_HOME"
+
+      - name: Upload family replay receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: family-root-replay-${{ github.run_id }}
+          path: root-replay-output/
+          if-no-files-found: error
+          retention-days: 30

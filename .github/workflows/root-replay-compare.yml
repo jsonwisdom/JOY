@@ -1,0 +1,95 @@
+name: Root Replay Compare
+
+on:
+  workflow_dispatch:
+    inputs:
+      baseline_ref:
+        description: Baseline branch, tag, or SHA
+        required: true
+        default: main
+      target_ref:
+        description: Target branch, tag, or SHA
+        required: true
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  replay-compare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout workflow implementation
+        uses: actions/checkout@v4
+        with:
+          path: workflow-source
+
+      - name: Preserve scanner outside compared trees
+        run: cp workflow-source/scripts/root_replay.py /tmp/root_replay.py
+
+      - name: Checkout baseline
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.baseline_ref }}
+          path: baseline
+          fetch-depth: 0
+
+      - name: Checkout target
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target_ref }}
+          path: target
+          fetch-depth: 0
+
+      - name: Generate independent manifests
+        run: |
+          mkdir -p root-replay-output
+          python3 /tmp/root_replay.py --root baseline --out root-replay-output/baseline.json
+          python3 /tmp/root_replay.py --root target --out root-replay-output/target.json
+
+      - name: Compare manifests and surface anomalies
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          baseline = json.loads(Path('root-replay-output/baseline.json').read_text())
+          target = json.loads(Path('root-replay-output/target.json').read_text())
+          before = {f['path']: f['sha256'] for f in baseline['files']}
+          after = {f['path']: f['sha256'] for f in target['files']}
+
+          report = {
+              'artifact_type': 'ROOT_REPLAY_DELTA_V0_1',
+              'authority': False,
+              'baseline_ref': '${{ inputs.baseline_ref }}',
+              'target_ref': '${{ inputs.target_ref }}',
+              'added': sorted(set(after) - set(before)),
+              'removed': sorted(set(before) - set(after)),
+              'modified': sorted(p for p in set(before) & set(after) if before[p] != after[p]),
+              'baseline_anomalies': baseline['anomalies'],
+              'target_anomalies': target['anomalies'],
+              'new_anomalies': [a for a in target['anomalies'] if a not in baseline['anomalies']],
+          }
+          Path('root-replay-output/delta.json').write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(report, indent=2, sort_keys=True))
+          PY
+
+      - name: Publish job summary
+        run: |
+          {
+            echo '## Root Replay Delta'
+            echo
+            echo '```json'
+            cat root-replay-output/delta.json
+            echo '```'
+            echo
+            echo '`authority = false`'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload replay receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: root-replay-delta-${{ github.run_id }}
+          path: root-replay-output/
+          if-no-files-found: error
+          retention-days: 30
