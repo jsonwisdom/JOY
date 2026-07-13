@@ -14,3 +14,7 @@ def claim_event(event_id: str) -> bool:
         return True
     except FileExistsError:
         return False
+
+def release_event(event_id: str) -> None:
+    """Release an event claim when raw receipt storage fails."""
+    (DEDUP_DIR / f"{event_id}.lock").unlink(missing_ok=True)

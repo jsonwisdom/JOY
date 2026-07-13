@@ -5,8 +5,10 @@ import httpx
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from sse_starlette.sse import EventSourceResponse
+from mcp.courtlistener.receiver import router as courtlistener_router
 
 app = FastAPI(title="ALMS MCP V0")
+app.include_router(courtlistener_router)
 
 GITHUB_BASE = "https://raw.githubusercontent.com/jsonwisdom/JOY/main/alms/claims"
 BASE_SEPOLIA_EAS = "https://base-sepolia.easscan.org/attestation/view"
