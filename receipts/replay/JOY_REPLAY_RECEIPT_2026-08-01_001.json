@@ -1,0 +1,98 @@
+{
+  "receipt_id": "JOY-REPLAY-20260801-001",
+  "replay_time": "2026-08-01T22:06:00-05:00",
+  "repository": "jsonwisdom/JOY",
+  "pull_request": 63,
+  "replayed_branch": "design/mrs-wisdom-emergency-iphone-v0-1",
+  "replayed_head_sha": "052f2fabf6b150f11e219bbeb332e525acc0c42e",
+  "base_branch": "main",
+  "base_sha": "474ad06b59e8ba202ba6df254d1f3cf139ae1bec",
+  "replay_class": "STRUCTURAL_REPOSITORY_STATE",
+  "result": "PASS_STRUCTURAL_STATE_ONLY",
+  "machine_grade_replay": false,
+  "independent_execution": false,
+  "authority_created": false,
+  "sealed": false,
+  "replay_ready": false,
+  "live_enforcement": "PROHIBITED",
+  "promotion": "PROHIBITED",
+  "repository_state": {
+    "pr_state": "OPEN",
+    "pr_draft": true,
+    "pr_merged": false,
+    "pr_mergeable": true,
+    "commits_ahead_of_main": 14,
+    "commits_behind_main": 0,
+    "changed_files": 10,
+    "additions": 1619,
+    "deletions": 0,
+    "ci_status_records": 0,
+    "ci_pass_inferred": false
+  },
+  "artifact_blobs": {
+    "mrs_wisdom_config": "b7ba9266a1f8f11de95b4ae1fe3343d15522efa1",
+    "doctrine_config": "ae2ccd35bcc96705173efe0062b5f14b7dc88560",
+    "clyde_pincer_config": "f9ac06209cd2e21d9deac5c8ccb8698b1948df8d"
+  },
+  "mrs_wisdom": {
+    "primary_domain": "FAMILY_INTELLIGENCE",
+    "secondary_domain": "WORK",
+    "default_surface": "FAMILY",
+    "profile": "APPLE_ONLY_SIMULATION",
+    "exact_os_version": null,
+    "exact_toolchain": null,
+    "authority_created": false,
+    "consent_inferred": false,
+    "operational_use": false,
+    "promotion": "PROHIBITED"
+  },
+  "doctrine": {
+    "state": "HOLD_DRAFT",
+    "architecture": "COHERENT",
+    "contract_status": "UNVERIFIED",
+    "fingerprint_verified": false,
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED",
+    "machine_grade_gates_passed": 0,
+    "machine_grade_gates_total": 10
+  },
+  "locked_distinctions": {
+    "record_equals_truth": false,
+    "hash_equals_authorship": false,
+    "signature_equals_authority": false,
+    "attestation_equals_validation": false,
+    "blockchain_equals_legal_effect": false,
+    "replay": "REPRODUCIBILITY_TEST"
+  },
+  "clyde_pincer": {
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "status": "OPEN",
+    "digest_string_match_alone_sufficient": false,
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED"
+  },
+  "drift": {
+    "family_priority": false,
+    "work_authority_expansion": false,
+    "doctrine_state": false,
+    "contract_verification": false,
+    "sealed_state": false,
+    "replay_ready": false,
+    "enforcement": false,
+    "pincer_closure": false,
+    "promotion": false
+  },
+  "verdict": {
+    "structural_state_consistent": true,
+    "repository_replay_pass": true,
+    "machine_grade_replay_pass": false,
+    "independent_rail_pass": false,
+    "hold_draft_active": true
+  }
+}
