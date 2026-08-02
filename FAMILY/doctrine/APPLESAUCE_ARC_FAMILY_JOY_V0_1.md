@@ -234,7 +234,29 @@ ACCUSATION       = FALSE_UNLESS_SEPARATELY_SUPPORTED
 
 ---
 
-## 9. Repository bridge manifest
+## 9. JOY Math family game lane
+
+The family doctrine now links two separate quadratic-voting artifacts:
+
+```text
+FAMILY/games/WISDOM_FAMILY_GAME_NIGHT_QUADRATIC_VOTING_V0_1.md
+verification/QUADRATIC_PROOF_V0_1.md
+```
+
+Their boundaries are different:
+
+```text
+GAME NIGHT = FAMILY LEARNING + CONSENT + REPLAYABLE ARITHMETIC
+PROOF SPEC = QUARANTINED ZERO-KNOWLEDGE VERIFICATION DESIGN
+```
+
+The Game Night edition may be played with paper ballots and transparent arithmetic. The proof specification remains nonexecuted until its promotion gate is satisfied.
+
+No game result creates legal authority, business ownership, punishment, identity assignment, or family obligation.
+
+---
+
+## 10. Repository bridge manifest
 
 ```json
 {
@@ -259,6 +281,16 @@ ACCUSATION       = FALSE_UNLESS_SEPARATELY_SUPPORTED
 
 ---
 
-## 10. Canonical family thesis
+## 11. Canonical family thesis
 
 > Trust and Wisdom go hand in hand. LOVE protects each family member. LOGIC protects the family process. JOY welcomes and explains. Mrs. Wisdom adds advice and kindness. COMPUTERWISDOM builds the family business. AL records the Alabama operating context. Receipts—not narrative—determine what has been verified.
+
+## Family theorem
+
+```text
+LOVE WITHOUT LOGIC CAN LOSE THE RECORD.
+LOGIC WITHOUT LOVE CAN LOSE THE PERSON.
+JOY KEEPS THEM AT THE SAME TABLE.
+REPLAY KEEPS THE MATH HONEST.
+WISDOM KNOWS WHEN THE GAME MUST YIELD TO FAMILY.
+```
