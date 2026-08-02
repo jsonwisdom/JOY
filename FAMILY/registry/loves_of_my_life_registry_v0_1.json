@@ -1,0 +1,235 @@
+{
+  "artifact": "LOVES_OF_MY_LIFE_REGISTRY",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "registry_role": "CANONICAL_FAMILY_NAME_ROUTER",
+  "parent_domain": "FAMILY_INTELLIGENCE",
+  "discovery_root": {
+    "name": "jaywisdom.base.eth",
+    "classification": "OPERATOR_SUPPLIED_DISCOVERY_POINTER",
+    "resolution_verified": false,
+    "identity_proof": false,
+    "consent_proof": false,
+    "ownership_proof": false,
+    "family_authority": false,
+    "onchain_truth": false,
+    "record_changed_by_this_artifact": false
+  },
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "public_biography": false,
+  "precise_geolocation_default": "DENY",
+  "promotion": "PROHIBITED",
+  "root_lane": {
+    "lane_id": "JAY_WISDOM",
+    "aliases": [
+      "Jay Wisdom",
+      "Jason Wisdom",
+      "Mr. Wisdom",
+      "Daddy Wisdom"
+    ],
+    "relation_class": "OPERATOR_SELF_REFERENCE",
+    "purpose": [
+      "builder",
+      "father",
+      "protector",
+      "teacher",
+      "receipt_keeper"
+    ],
+    "identity_proof": false
+  },
+  "family_lanes": [
+    {
+      "lane_id": "MRS_WISDOM",
+      "aliases": [
+        "Mrs. Wisdom",
+        "May",
+        "Mary Wisdom"
+      ],
+      "group": "HEART_LANE",
+      "relation_class": "OPERATOR_DEFINED_HEART_LANE",
+      "purpose": [
+        "family_meaning_gate",
+        "care_boundary",
+        "consent_boundary",
+        "privacy_boundary"
+      ],
+      "public_release_requires_human_approval": true,
+      "precise_location_allowed_by_default": false
+    },
+    {
+      "lane_id": "JAYCEE",
+      "aliases": [
+        "Jaycee"
+      ],
+      "group": "DAUGHTER_LANES",
+      "relation_class": "OPERATOR_REPORTED_DAUGHTER",
+      "purpose": [
+        "protected_future",
+        "family_continuity"
+      ]
+    },
+    {
+      "lane_id": "BRIANNA",
+      "aliases": [
+        "Brianna"
+      ],
+      "group": "DAUGHTER_LANES",
+      "relation_class": "OPERATOR_REPORTED_DAUGHTER",
+      "purpose": [
+        "protected_continuity",
+        "byte_boss_lane"
+      ]
+    },
+    {
+      "lane_id": "HEIDEE",
+      "aliases": [
+        "Heidee"
+      ],
+      "group": "DAUGHTER_LANES",
+      "relation_class": "OPERATOR_REPORTED_DAUGHTER",
+      "purpose": [
+        "child_safe_learning",
+        "verification_scaffold"
+      ]
+    },
+    {
+      "lane_id": "BREALEE",
+      "aliases": [
+        "Brealee"
+      ],
+      "group": "PROTECTED_FAMILY_LANES",
+      "relation_class": "PROTECTED_FAMILY_LANE",
+      "purpose": [
+        "continuity_without_omission"
+      ]
+    },
+    {
+      "lane_id": "MARYDEE",
+      "aliases": [
+        "MaryDee"
+      ],
+      "group": "PROTECTED_FAMILY_LANES",
+      "relation_class": "PROTECTED_FAMILY_LANE",
+      "purpose": [
+        "protected_continuity"
+      ],
+      "repository_path": "FAMILY/MARYDEE/README.md"
+    },
+    {
+      "lane_id": "LEEANNE",
+      "aliases": [
+        "Leeanne",
+        "Leanne"
+      ],
+      "group": "PROTECTED_FAMILY_LANES",
+      "relation_class": "PROTECTED_FAMILY_LANE_WITH_SPELLING_BOUNDARY",
+      "purpose": [
+        "continuity",
+        "duplicate_identity_prevention"
+      ]
+    },
+    {
+      "lane_id": "BOSS_BRENDA",
+      "aliases": [
+        "Boss Brenda",
+        "Boss Bre"
+      ],
+      "group": "PROTECTED_FAMILY_LANES",
+      "relation_class": "PROTECTED_FAMILY_ROLE",
+      "purpose": [
+        "room_safety",
+        "laughter",
+        "privacy",
+        "pressure_reduction",
+        "repair"
+      ]
+    },
+    {
+      "lane_id": "GRAMMY",
+      "aliases": [
+        "Grammy"
+      ],
+      "group": "ANCESTRY_LANES",
+      "relation_class": "PROTECTED_ANCESTRY_LANE",
+      "purpose": [
+        "grandparent_memory",
+        "generational_continuity"
+      ]
+    },
+    {
+      "lane_id": "GAGA",
+      "aliases": [
+        "Gaga"
+      ],
+      "group": "ANCESTRY_LANES",
+      "relation_class": "PROTECTED_ANCESTRY_LANE",
+      "purpose": [
+        "grandparent_memory",
+        "humor",
+        "repair",
+        "continuity"
+      ]
+    }
+  ],
+  "name_boundaries": [
+    {
+      "lane_id": "BEANNE_BOUNDARY",
+      "aliases": [
+        "Beanne"
+      ],
+      "relation_class": "UNRESOLVED_NAME_BOUNDARY",
+      "exact_repository_path_confirmed": false,
+      "state": "YELLOW",
+      "rule": "DO_NOT_ERASE_DO_NOT_INVENT"
+    }
+  ],
+  "symbolic_support_roles": [
+    {
+      "lane_id": "LIBRARIAN",
+      "relation_class": "SYMBOLIC_EVIDENCE_ROUTER",
+      "person_identity_claimed": false,
+      "purpose": [
+        "route_receipts",
+        "route_sources",
+        "suggest_safer_wording",
+        "identify_stop_conditions"
+      ]
+    }
+  ],
+  "alias_policy": {
+    "alias_creates_new_person": false,
+    "silent_identity_merge": false,
+    "human_approved_separation_required": true
+  },
+  "geojson_policy": {
+    "family_name_source": "LOVES_OF_MY_LIFE_REGISTRY_V0_1",
+    "stable_key": "lane_id",
+    "family_people_are_geographic_objects_by_default": false,
+    "precise_coordinates": "DENY_BY_DEFAULT",
+    "location_inference": "DENY",
+    "background_tracking": "DENY",
+    "public_home_point": "DENY",
+    "consent_token_required": true,
+    "purpose_required": true,
+    "expiry_required": true,
+    "null_geometry_allowed": true,
+    "region_pointer_allowed": true
+  },
+  "conflict_resolution": {
+    "silent_merge": false,
+    "new_person_from_alias": false,
+    "relationship_inference": false,
+    "location_inference": false,
+    "result": "HUMAN_REVIEW_REQUIRED"
+  },
+  "boundaries": {
+    "registry_complete_enough_for_routing": true,
+    "family_approval_claimed": false,
+    "public_release_green": false,
+    "geolocation_green": false,
+    "authority": false,
+    "state": "HOLD_DRAFT"
+  }
+}
