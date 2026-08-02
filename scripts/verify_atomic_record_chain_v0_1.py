@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """Verify JSONWisdom Layer 3 Atomic Record chain v0.1.
 
-This verifier implements the locked JSONWISDOM_JCS_SAFE_V0_1 profile:
+Locked profile:
 - RFC 8785 JCS data model
 - ASCII object keys only
-- integers only (floats are rejected)
-- no duplicate object keys
-- UTF-8, no insignificant whitespace
-- lexicographically sorted keys
+- integers only; floats rejected
+- duplicate object keys rejected
+- UTF-8, sorted keys, no insignificant whitespace
+- entry = SHA-256(raw previous digest || raw payload digest)
 
-It verifies deterministic payload digests, raw-digest chain links, repository
-artifact hashes, and core no-fake-green invariants. It does not claim legal,
-tax, identity, or global authority.
+The verifier checks deterministic hashes and no-fake-green invariants. It does
+not claim legal, tax, identity, or global authority.
 """
 
 from __future__ import annotations
@@ -108,15 +107,13 @@ def check_no_fake_green(record: dict[str, Any]) -> None:
         if entrance["source_type"] not in ALLOWED_OFFICIAL_SOURCES:
             raise ValueError(f"{record['record_id']}: effect claimed without official source")
 
-    if scope == "PHYSICAL_LOCATION":
-        if record["legal_effect_claimed"] or record["tax_effect_claimed"]:
-            raise ValueError(f"{record['record_id']}: geometry promoted into legal or tax effect")
+    if scope == "PHYSICAL_LOCATION" and (
+        record["legal_effect_claimed"] or record["tax_effect_claimed"]
+    ):
+        raise ValueError(f"{record['record_id']}: geometry promoted into legal or tax effect")
 
     if scope == "WALLET_IDENTITY" and outcome == "MATCH":
-        control_proof = any(
-            item["artifact_type"] == "PERSON_CONTROL_PROOF" for item in evidence
-        )
-        if not control_proof:
+        if not any(item["artifact_type"] == "PERSON_CONTROL_PROOF" for item in evidence):
             raise ValueError(f"{record['record_id']}: wallet identity MATCH without control proof")
 
     if surface == "FEDERAL" and outcome == "MATCH":
@@ -126,18 +123,18 @@ def check_no_fake_green(record: dict[str, Any]) -> None:
             "OFFICIAL_NOTICE",
             "AGENCY_ACCOUNT_RECORD",
         }:
-            raise ValueError(f"{record['record_id']}: federal MATCH inherited without federal entrance")
+            raise ValueError(f"{record['record_id']}: federal MATCH without federal entrance")
 
 
 def verify(ledger_path: Path, repo_root: Path) -> None:
     document = load_json(ledger_path)
-    records = document["records"]
+    entries = document["entries"]
 
     if document["authority"] is not False or document["verification"] is not False:
         raise ValueError("ledger must preserve authority=false and verification=false")
     if document["no_fake_green"] is not True:
         raise ValueError("no_fake_green must be true")
-    if document["chain_length"] != len(records):
+    if document["chain_length"] != len(entries):
         raise ValueError("chain_length mismatch")
 
     for binding_name, binding in document["bindings"].items():
@@ -151,32 +148,38 @@ def verify(ledger_path: Path, repo_root: Path) -> None:
             )
 
     previous = ZERO_DIGEST
-    for expected_sequence, envelope in enumerate(records):
+    for expected_sequence, entry in enumerate(entries):
+        path = repo_root / entry["record_path"]
+        envelope = load_json(path)
         record = envelope["record"]
-        ledger = envelope["ledger"]
+        embedded = envelope["ledger"]
 
-        if ledger["sequence"] != expected_sequence:
-            raise ValueError(f"{record['record_id']}: sequence mismatch")
-        if ledger["previous_entry_digest"] != previous:
-            raise ValueError(f"{record['record_id']}: previous digest mismatch")
-        if ledger["canonicalization"] != "RFC8785-JCS":
-            raise ValueError(f"{record['record_id']}: canonicalization drift")
-        if ledger["canonicalization_profile"] != "JSONWISDOM_JCS_SAFE_V0_1":
-            raise ValueError(f"{record['record_id']}: profile drift")
-        if ledger["hash_input_rule"] != "ENTRY=SHA256(raw_previous_digest||raw_payload_digest)":
-            raise ValueError(f"{record['record_id']}: hash-input drift")
-        if ledger["authority"] is not False or ledger["verification_claimed"] is not False:
-            raise ValueError(f"{record['record_id']}: authority or verification elevation")
+        if entry["sequence"] != expected_sequence:
+            raise ValueError(f"{entry['record_id']}: manifest sequence mismatch")
+        if record["record_id"] != entry["record_id"]:
+            raise ValueError(f"{entry['record_id']}: record identifier mismatch")
+        if embedded["sequence"] != entry["sequence"]:
+            raise ValueError(f"{entry['record_id']}: embedded sequence mismatch")
+        if entry["previous_entry_digest"] != previous:
+            raise ValueError(f"{entry['record_id']}: manifest previous digest mismatch")
+        if embedded["previous_entry_digest"] != previous:
+            raise ValueError(f"{entry['record_id']}: embedded previous digest mismatch")
+        if embedded["canonicalization"] != "RFC8785-JCS":
+            raise ValueError(f"{entry['record_id']}: canonicalization drift")
+        if embedded["canonicalization_profile"] != "JSONWISDOM_JCS_SAFE_V0_1":
+            raise ValueError(f"{entry['record_id']}: profile drift")
+        if embedded["hash_input_rule"] != "ENTRY=SHA256(raw_previous_digest||raw_payload_digest)":
+            raise ValueError(f"{entry['record_id']}: hash-input drift")
+        if embedded["authority"] is not False or embedded["verification_claimed"] is not False:
+            raise ValueError(f"{entry['record_id']}: authority or verification elevation")
 
         payload_digest = sha256_bytes(jcs_bytes(record))
-        if payload_digest != ledger["payload_digest"]:
-            raise ValueError(f"{record['record_id']}: payload digest mismatch")
+        if payload_digest != entry["payload_digest"] or payload_digest != embedded["payload_digest"]:
+            raise ValueError(f"{entry['record_id']}: payload digest mismatch")
 
-        entry_digest = sha256_bytes(
-            bytes.fromhex(previous) + bytes.fromhex(payload_digest)
-        )
-        if entry_digest != ledger["entry_digest"]:
-            raise ValueError(f"{record['record_id']}: entry digest mismatch")
+        entry_digest = sha256_bytes(bytes.fromhex(previous) + bytes.fromhex(payload_digest))
+        if entry_digest != entry["entry_digest"] or entry_digest != embedded["entry_digest"]:
+            raise ValueError(f"{entry['record_id']}: entry digest mismatch")
 
         for evidence in record["evidence_refs"]:
             expected_hash = evidence["sha256"]
@@ -185,12 +188,9 @@ def verify(ledger_path: Path, repo_root: Path) -> None:
                 continue
             source_path = repo_root / source_uri
             if not source_path.is_file():
-                raise ValueError(f"{record['record_id']}: missing evidence {source_uri}")
-            actual_hash = sha256_file(source_path)
-            if actual_hash != expected_hash:
-                raise ValueError(
-                    f"{record['record_id']}: evidence hash mismatch for {source_uri}"
-                )
+                raise ValueError(f"{entry['record_id']}: missing evidence {source_uri}")
+            if sha256_file(source_path) != expected_hash:
+                raise ValueError(f"{entry['record_id']}: evidence hash mismatch for {source_uri}")
 
         check_no_fake_green(record)
         previous = entry_digest
@@ -198,24 +198,18 @@ def verify(ledger_path: Path, repo_root: Path) -> None:
     if previous != document["chain_head"]:
         raise ValueError("chain_head mismatch")
 
-    print(
-        json.dumps(
-            {
-                "artifact": str(ledger_path),
-                "chain_id": document["chain_id"],
-                "chain_length": len(records),
-                "chain_head": previous,
-                "deterministic_chain_match": True,
-                "bound_artifacts_match": True,
-                "no_fake_green_checks": "PASS",
-                "authority": False,
-                "verification_claimed": False,
-                "receiptos_status": "PENDING",
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
+    print(json.dumps({
+        "artifact": str(ledger_path),
+        "chain_id": document["chain_id"],
+        "chain_length": len(entries),
+        "chain_head": previous,
+        "deterministic_chain_match": True,
+        "bound_artifacts_match": True,
+        "no_fake_green_checks": "PASS",
+        "authority": False,
+        "verification_claimed": False,
+        "receiptos_status": "PENDING"
+    }, indent=2, sort_keys=True))
 
 
 def main() -> int:
@@ -226,7 +220,6 @@ def main() -> int:
     )
     parser.add_argument("--repo-root", default=".")
     args = parser.parse_args()
-
     verify(Path(args.ledger), Path(args.repo_root))
     return 0
 
