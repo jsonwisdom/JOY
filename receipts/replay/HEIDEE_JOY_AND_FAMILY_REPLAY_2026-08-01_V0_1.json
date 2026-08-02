@@ -1,0 +1,175 @@
+{
+  "artifact": "HEIDEE_JOY_AND_FAMILY_REPLAY",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "replay_id": "HEIDEE_JOY_FAMILY_REPLAY_20260801_a33fa7b",
+  "operator_label": "PERFECT_REPLAY",
+  "operator_label_effect": "NONE",
+  "replay_class": "STRUCTURAL_FAMILY_ALIGNMENT",
+  "result": "PASS_WITH_OPEN_RAILS",
+  "observation": {
+    "repository": "jsonwisdom/JOY",
+    "pull_request": 63,
+    "replayed_branch": "design/mrs-wisdom-emergency-iphone-v0-1",
+    "replayed_head_sha": "a33fa7bfefbeb561b4f4bd9851c2823ab5592ac2",
+    "base_branch": "main",
+    "base_sha": "474ad06b59e8ba202ba6df254d1f3cf139ae1bec",
+    "replay_time_local": "2026-08-01T22:56:00-05:00"
+  },
+  "boundaries": {
+    "authority_created": false,
+    "identity_proof": false,
+    "consent_inferred": false,
+    "family_approval_claimed": false,
+    "public_release_approved": false,
+    "freeze_executed": false,
+    "pincer_perfect": false,
+    "canonized": false,
+    "promotion": "PROHIBITED"
+  },
+  "heidee": {
+    "lane_id": "HEIDEE",
+    "relation_class": "OPERATOR_REPORTED_DAUGHTER",
+    "relation_proof": false,
+    "purpose": [
+      "CHILD_SAFE_LEARNING",
+      "VERIFICATION_SCAFFOLD"
+    ],
+    "joy_present": true,
+    "menu_present": true,
+    "menu_state": "BUILT_DRAFT",
+    "static_offline_simulation": true,
+    "menu_doors": [
+      "JOY_CHECK_IN",
+      "IMAGINATION_STATION",
+      "STORY_RECEIPT_SHELF",
+      "FAMILY_PORCH",
+      "LEARN_AND_BUILD",
+      "REPLAY_WITH_ME",
+      "HELP_NOW",
+      "MY_PRIVACY"
+    ],
+    "work_mode_present": false,
+    "wallet_controls_present": false,
+    "purchases_present": false,
+    "advertising_present": false,
+    "external_side_effects": "DENY"
+  },
+  "mrs_wisdom": {
+    "lane_id": "MRS_WISDOM",
+    "relation_class": "OPERATOR_DEFINED_HEART_LANE",
+    "relation_proof": false,
+    "primary_domain": "FAMILY_INTELLIGENCE",
+    "secondary_domain": "WORK",
+    "default_surface": "FAMILY",
+    "family_safety_over_work": true,
+    "consent_over_convenience": true,
+    "surveillance": false,
+    "automatic_location_tracking": false,
+    "secret_profiling": false,
+    "work_inherits_family_data": false
+  },
+  "family_router": {
+    "artifact": "LOVES_OF_MY_LIFE_REGISTRY",
+    "state": "HOLD_DRAFT",
+    "registry_role": "CANONICAL_FAMILY_NAME_ROUTER",
+    "root_lane": "JAY_WISDOM",
+    "protected_lanes": [
+      "MRS_WISDOM",
+      "JAYCEE",
+      "BRIANNA",
+      "HEIDEE",
+      "BREALEE",
+      "MARYDEE",
+      "LEEANNE",
+      "BOSS_BRENDA",
+      "GRAMMY",
+      "GAGA"
+    ],
+    "name_boundaries": [
+      "BEANNE_BOUNDARY"
+    ],
+    "symbolic_roles": [
+      "LIBRARIAN"
+    ],
+    "routing_tree_is_legal_genealogy": false,
+    "alias_creates_new_person": false,
+    "silent_identity_merge": false
+  },
+  "love_logic_fold": {
+    "model": "PURPOSE_BOUND_REPRODUCIBILITY",
+    "love_role": "CONSTRAINT_AUTHOR",
+    "logic_role": "DETERMINISTIC_ENFORCER",
+    "record_equals_truth": false,
+    "hash_equals_authorship": false,
+    "signature_equals_authority": false,
+    "attestation_equals_validation": false,
+    "blockchain_equals_legal_effect": false,
+    "replay_role": "REPRODUCIBILITY_TEST"
+  },
+  "privacy": {
+    "precise_geolocation_default": "DENY",
+    "location_inference": "DENY",
+    "background_tracking": "DENY",
+    "public_home_point": "DENY",
+    "microphone_recording": "OFF",
+    "camera_access": "OFF",
+    "contact_access": "OFF",
+    "public_posting": "OFF",
+    "purchases": "OFF",
+    "private_key_ingestion": "DENIED"
+  },
+  "continuity": {
+    "previous_receipt": "docs/joyspace/receipts/JOYSPACE_HEIDEE_MRS_WISDOM_REPLAY_20260614.md",
+    "heidee_remains_included": true,
+    "mrs_wisdom_remains_included": true,
+    "family_scope_expanded_in_draft": true,
+    "previous_receipt_rewritten": false
+  },
+  "evidence": [
+    {
+      "path": "FAMILY/registry/loves_of_my_life_registry_v0_1.json",
+      "blob_sha": "72b2183692d742f132a53b6384e186e1b664ae21"
+    },
+    {
+      "path": "configs/family/heidee_menu_v0_1.json",
+      "blob_sha": "7580c8b323c9c6652227c052c3f62fe0fe2ed571"
+    },
+    {
+      "path": "configs/emergency-management/mrs_wisdom_family_intelligence_apple_only_simulation_v0_2.json",
+      "blob_sha": "b7ba9266a1f8f11de95b4ae1fe3343d15522efa1"
+    },
+    {
+      "path": "configs/replay/love_logic_folded_system_v0_1.json",
+      "blob_sha": "bd716c1c6447a0cde6af45f341b4d55ae47ea163"
+    },
+    {
+      "path": "FAMILY/WISDOM_GIRLS/README.md",
+      "blob_sha": "43a5b711a71c493e8d7265c8348d1d2366b47480"
+    },
+    {
+      "path": "docs/joyspace/receipts/JOYSPACE_HEIDEE_MRS_WISDOM_REPLAY_20260614.md",
+      "blob_sha": "70ecb14a6016ba2f44fe8760b5d19e9b6f6163d6"
+    }
+  ],
+  "rails": {
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "pincer_status": "OPEN",
+    "pincer_perfect": false,
+    "sealed": false,
+    "replay_ready": false,
+    "canonized": false,
+    "live_enforcement": "PROHIBITED"
+  },
+  "verdict": {
+    "heidee_joy_and_family_replay": "PASS_STRUCTURAL_ONLY",
+    "family_first": "PRESERVED",
+    "heidee_agency": "PRESERVED",
+    "mrs_wisdom_gate": "PRESERVED",
+    "family_privacy": "PRESERVED_IN_DESIGN",
+    "surveillance_expansion": "DENIED",
+    "no_fake_green": "ACTIVE"
+  }
+}
