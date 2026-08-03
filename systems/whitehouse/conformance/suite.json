@@ -1,0 +1,48 @@
+{
+  "suite_id": "CMP-WH-V0.1-CONFORMANCE-SUITE",
+  "suite_version": "0.1.0",
+  "protocol_version": "CMP-WH/0.1",
+  "schema_version": "0.3.0",
+  "execution_mode": "FAIL_CLOSED",
+  "official_affiliation": "NONE",
+  "government_authority_created": false,
+  "test_count": 60,
+  "category_ranges": [
+    {"start": 1, "end": 10, "category": "SCHEMA_VALIDATION"},
+    {"start": 11, "end": 12, "category": "CHAIN_VALIDATION"},
+    {"start": 13, "end": 14, "category": "STATE_MACHINE_VALIDATION"},
+    {"start": 15, "end": 16, "category": "EVIDENCE_VALIDATION"},
+    {"start": 17, "end": 18, "category": "PRIVACY_VALIDATION"},
+    {"start": 19, "end": 19, "category": "TEMPORAL_VALIDATION"},
+    {"start": 20, "end": 20, "category": "CHAIN_VALIDATION"},
+    {"start": 21, "end": 23, "category": "VERSION_VALIDATION"},
+    {"start": 24, "end": 26, "category": "IDENTITY_VALIDATION"},
+    {"start": 27, "end": 28, "category": "HASH_VALIDATION"},
+    {"start": 29, "end": 29, "category": "SCHEMA_VALIDATION"},
+    {"start": 30, "end": 31, "category": "REDACTION_VALIDATION"},
+    {"start": 32, "end": 33, "category": "PRIVACY_VALIDATION"},
+    {"start": 34, "end": 34, "category": "REDACTION_VALIDATION", "mode": "COMPARE_INDEPENDENT_IMPLEMENTATIONS"},
+    {"start": 35, "end": 36, "category": "IDENTITY_VALIDATION"},
+    {"start": 37, "end": 45, "category": "HASH_VALIDATION"},
+    {"start": 46, "end": 49, "category": "VERSION_VALIDATION"},
+    {"start": 50, "end": 50, "category": "IDENTITY_VALIDATION"},
+    {"start": 51, "end": 53, "category": "PUBLIC_ID_VALIDATION"},
+    {"start": 54, "end": 60, "category": "REDACTION_VALIDATION"}
+  ],
+  "tests": [
+    {
+      "test_id": "CMP-CT-0000",
+      "category": "RUNNER_SELF_TEST",
+      "description": "Reference runner loads a valid fixture and emits eligibility-only fields.",
+      "fixture": "runner_self_test",
+      "expected": "PASS"
+    }
+  ],
+  "implementation_status": {
+    "normative_tests_declared": 60,
+    "normative_tests_materialized": 0,
+    "runner_self_tests": 1,
+    "conformance_execution_ready": false,
+    "reason": "Normative fixtures and validator engines remain to be materialized."
+  }
+}
