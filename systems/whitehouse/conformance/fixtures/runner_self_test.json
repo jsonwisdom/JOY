@@ -1,0 +1,8 @@
+{
+  "fixture_id": "runner_self_test",
+  "protocol_version": "CMP-WH/0.1",
+  "schema_version": "0.3.0",
+  "object_kind": "RUNNER_SELF_TEST",
+  "authority_created": false,
+  "expected_runner_behavior": "PASS"
+}
