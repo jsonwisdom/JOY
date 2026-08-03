@@ -17,11 +17,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-
 PASS = "PASS"
 FAIL = "FAIL"
 BLOCKED = "BLOCKED"
-
 
 @dataclass(frozen=True)
 class Outcome:
@@ -29,11 +27,9 @@ class Outcome:
     error_code: str | None = None
     detail: str = ""
 
-
 def load_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
-
 
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -41,7 +37,6 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(65536), b""):
             digest.update(chunk)
     return digest.hexdigest()
-
 
 def validate_manifest(test: dict[str, Any]) -> Outcome:
     required = {"test_id", "category", "description", "expected"}
@@ -52,12 +47,10 @@ def validate_manifest(test: dict[str, Any]) -> Outcome:
         return Outcome(FAIL, "E_INVALID_EXPECTATION", "invalid expected result")
     return Outcome(PASS)
 
-
 def run_test(test: dict[str, Any], fixtures_dir: Path) -> Outcome:
     manifest_check = validate_manifest(test)
     if manifest_check.result != PASS:
         return manifest_check
-
     fixture_name = test.get("fixture")
     if fixture_name:
         fixture_path = fixtures_dir / f"{fixture_name}.json"
@@ -67,29 +60,25 @@ def run_test(test: dict[str, Any], fixtures_dir: Path) -> Outcome:
             load_json(fixture_path)
         except (OSError, json.JSONDecodeError) as exc:
             return Outcome(FAIL, "E_FIXTURE_INVALID", str(exc))
-
-    if test.get("mode") == "COMPARE_INDEPENDENT_IMPLEMENTATIONS":
-        attestation = test.get("independence_attestation")
-        if not attestation:
-            return Outcome(BLOCKED, "E_INDEPENDENCE_ATTESTATION_MISSING")
-
-    # Category engines are intentionally explicit. Unimplemented validation
-    # classes block rather than silently passing.
+    if test.get("mode") == "COMPARE_INDEPENDENT_IMPLEMENTATIONS" and not test.get("independence_attestation"):
+        return Outcome(BLOCKED, "E_INDEPENDENCE_ATTESTATION_MISSING")
     implemented = {"RUNNER_SELF_TEST"}
     if test["category"] not in implemented:
         return Outcome(BLOCKED, "E_VALIDATOR_NOT_IMPLEMENTED", test["category"])
-
     return Outcome(PASS)
-
 
 def build_report(suite: dict[str, Any], outcomes: list[dict[str, Any]], suite_path: Path) -> dict[str, Any]:
     passed = sum(item["actual"] == PASS for item in outcomes)
     failed = sum(item["actual"] == FAIL for item in outcomes)
     blocked = sum(item["actual"] == BLOCKED for item in outcomes)
     total = len(outcomes)
-    conformance_passed = total > 0 and passed == total and failed == 0 and blocked == 0
+    status = suite.get("implementation_status", {})
+    declared = int(status.get("normative_tests_declared", suite.get("test_count", 0)))
+    materialized = int(status.get("normative_tests_materialized", 0))
+    execution_ready = bool(status.get("conformance_execution_ready", False))
+    suite_complete = declared == 60 and materialized == 60 and execution_ready
     metadata_complete = all(item.get("metadata_complete", True) for item in outcomes)
-
+    conformance_passed = suite_complete and total >= 60 and passed == total and failed == 0 and blocked == 0
     return {
         "report_id": "CMP-WH-CONFORMANCE-REPORT-000001",
         "suite_id": suite.get("suite_id"),
@@ -102,9 +91,12 @@ def build_report(suite: dict[str, Any], outcomes: list[dict[str, Any]], suite_pa
             "version": "0.1.0",
             "runtime_platform": platform.python_implementation() + " " + platform.python_version(),
             "operating_system": platform.platform(),
-            "suite_sha256": sha256_file(suite_path),
+            "suite_sha256": sha256_file(suite_path)
         },
-        "total_tests": total,
+        "normative_tests_declared": declared,
+        "normative_tests_materialized": materialized,
+        "suite_complete": suite_complete,
+        "total_tests_executed": total,
         "passed": passed,
         "failed": failed,
         "blocked": blocked,
@@ -116,9 +108,8 @@ def build_report(suite: dict[str, Any], outcomes: list[dict[str, Any]], suite_pa
         "human_freeze_authorized": False,
         "human_openapi_authorization": False,
         "next_gate": "EXPLICIT_HUMAN_AUTHORIZATION" if conformance_passed else "IMPLEMENTATION_COMPLETION",
-        "outcomes": outcomes,
+        "outcomes": outcomes
     }
-
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -126,18 +117,15 @@ def main() -> int:
     parser.add_argument("--fixtures", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
-
     try:
         suite = load_json(args.suite)
     except (OSError, json.JSONDecodeError) as exc:
         print(f"FAIL: cannot load suite: {exc}", file=sys.stderr)
         return 1
-
     tests = suite.get("tests")
     if not isinstance(tests, list) or not tests:
         print("FAIL: suite has no tests", file=sys.stderr)
         return 1
-
     outcomes: list[dict[str, Any]] = []
     for test in tests:
         outcome = run_test(test, args.fixtures)
@@ -147,15 +135,13 @@ def main() -> int:
             "actual": outcome.result,
             "error_code": outcome.error_code,
             "detail": outcome.detail,
-            "metadata_complete": outcome.error_code != "E_INDEPENDENCE_ATTESTATION_MISSING",
+            "metadata_complete": outcome.error_code != "E_INDEPENDENCE_ATTESTATION_MISSING"
         })
-
     report = build_report(suite, outcomes, args.suite)
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: report[k] for k in ("result", "passed", "failed", "blocked", "next_gate")}, indent=2))
+    print(json.dumps({k: report[k] for k in ("result", "suite_complete", "passed", "failed", "blocked", "next_gate")}, indent=2))
     return 0 if report["conformance_passed"] else 1
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
