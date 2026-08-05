@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gray Baby — Fractions & Fairness</title>
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#151c33; --panel2:#1d2747; --text:#f7f8ff;
+      --muted:#aeb8d8; --accent:#8ea7ff; --accent2:#b69cff; --good:#7ee2a8;
+      --warn:#ffd27a; --border:#33416b;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:
+      radial-gradient(circle at top left,#1a2550 0,transparent 38%),
+      linear-gradient(180deg,#0b1020,#11182c);color:var(--text);min-height:100vh}
+    main{max-width:980px;margin:auto;padding:20px}
+    .shell{border:1px solid var(--border);background:rgba(21,28,51,.94);border-radius:24px;overflow:hidden}
+    header{padding:22px;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    h1,h2,h3,p{margin-top:0} h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:6px}
+    .sub{color:var(--muted);margin:0}.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#24315a;color:#dce4ff;font-size:.85rem}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;padding:18px}
+    .card{background:var(--panel2);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .hidden{display:none!important}.choices{display:grid;gap:10px}.choice,.primary,.secondary{
+      width:100%;border:1px solid var(--border);border-radius:14px;padding:12px 14px;
+      background:#202b4d;color:var(--text);font-size:1rem;text-align:left;cursor:pointer}
+    .choice:hover,.choice:focus,.secondary:hover,.secondary:focus{border-color:var(--accent)}
+    .primary{background:var(--accent);color:#11172c;border-color:transparent;text-align:center;font-weight:700}
+    .secondary{text-align:center}.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1 1 180px}
+    .meter{height:10px;border-radius:999px;background:#10172c;overflow:hidden;margin:8px 0 14px}
+    .meter>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%}
+    .crew{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+    .crew div{background:#111831;border:1px solid var(--border);padding:10px;border-radius:12px;text-align:center}
+    textarea{width:100%;min-height:100px;border:1px solid var(--border);border-radius:14px;padding:12px;background:#10172c;color:var(--text);font:inherit}
+    .result{padding:14px;border-radius:14px;background:#10172c;border:1px solid var(--border);margin-top:12px}
+    .good{color:var(--good)} .warn{color:var(--warn)} .muted{color:var(--muted)}
+    .small{font-size:.9rem}.stat{font-size:1.6rem;font-weight:800}.footer{padding:16px 18px;border-top:1px solid var(--border);color:var(--muted)}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.crew{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="shell">
+    <header>
+      <div>
+        <span class="badge">CANDIDATE • LOCAL-ONLY DEMO</span>
+        <h1>🛸 Gray Baby: Fractions & Fairness</h1>
+        <p class="sub">Explore a math universe. No ranking. No attitude score. No hidden profile.</p>
+      </div>
+      <div class="badge" id="statusBadge">Consent required</div>
+    </header>
+
+    <section id="consentScreen" class="grid">
+      <article class="card">
+        <h2>Before we launch</h2>
+        <p>Want to explore this mission with Gray Baby? You can stop, reset, or skip reflection at any time.</p>
+        <div class="choices">
+          <label class="choice"><input id="localConsent" type="checkbox"> I agree to use this local demo.</label>
+          <label class="choice"><input id="reflectionConsent" type="checkbox"> I choose whether to write a private reflection.</label>
+          <button id="startBtn" class="primary" type="button">Start mission</button>
+        </div>
+      </article>
+      <aside class="card">
+        <h3>Your boundaries</h3>
+        <p class="small">This prototype stores nothing after refresh and sends nothing anywhere.</p>
+        <p class="small">Guardian View reveals topics explored—not private reflections or mistakes.</p>
+      </aside>
+    </section>
+
+    <section id="missionScreen" class="hidden">
+      <div class="grid">
+        <article class="card">
+          <div class="row">
+            <div><div class="small muted">Mission progress</div><div class="meter"><span id="progress"></span></div></div>
+            <div><div class="small muted">Universes explored</div><div class="stat" id="branchCount">0</div></div>
+          </div>
+          <h2>Mission: Divide 20 energy units</h2>
+          <div class="crew">
+            <div>Crew A<br><strong>2 people</strong></div>
+            <div>Crew B<br><strong>4 people</strong></div>
+            <div>Crew C<br><strong>3 people</strong></div>
+            <div>Crew D<br><strong>1 injured</strong></div>
+          </div>
+          <p>Which rule should the station test first?</p>
+          <div class="choices" id="choices">
+            <button class="choice" data-rule="crew" type="button">Equal by crew</button>
+            <button class="choice" data-rule="person" type="button">Equal by person</button>
+            <button class="choice" data-rule="need" type="button">Need-weighted</button>
+            <button class="choice" data-rule="custom" type="button">Custom rule</button>
+          </div>
+          <div id="result" class="result hidden" aria-live="polite"></div>
+          <div class="row" style="margin-top:12px">
+            <button id="forkBtn" class="secondary hidden" type="button">Fork this universe</button>
+            <button id="continueBtn" class="primary hidden" type="button">Continue</button>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h3>Gray Baby’s scanner</h3>
+          <p class="small muted">The scanner compares assumptions. It does not judge people.</p>
+          <div id="scanner">
+            <p><strong>Math result:</strong> waiting</p>
+            <p><strong>Assumption:</strong> waiting</p>
+            <p><strong>Trade-off:</strong> waiting</p>
+            <p><strong>Human decision:</strong> yours</p>
+          </div>
+          <hr style="border:0;border-top:1px solid var(--border);margin:18px 0">
+          <button id="guardianBtn" class="secondary" type="button">Open Guardian View</button>
+          <div id="guardianView" class="result hidden">
+            <strong>Guardian View</strong>
+            <p class="small">Visible: topic explored, mission started, number of branches.</p>
+            <p class="small">Hidden: private reflection, exact mistakes, inferred emotions.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div id="reflectionCard" class="card hidden" style="margin:0 18px 18px">
+        <h2>Mistake Museum</h2>
+        <p>What surprised you? This stays in memory only until the page refreshes.</p>
+        <textarea id="reflection" placeholder="Example: Equal by crew looked fair at first, but Crew B had more people..."></textarea>
+        <div class="row" style="margin-top:12px">
+          <button id="saveReflection" class="primary" type="button">Keep private note</button>
+          <button id="skipReflection" class="secondary" type="button">Skip</button>
+        </div>
+        <p id="reflectionStatus" class="small muted" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      STATUS = CANDIDATE · IMPLEMENTED = DEMO_ONLY · AUTHORITY_CREATED = FALSE
+    </div>
+  </section>
+</main>
+
+<script>
+  const state = { branches: 0, step: 0, selected: null, reflection: "" };
+  const $ = (id) => document.getElementById(id);
+
+  $("startBtn").addEventListener("click", () => {
+    if (!$("localConsent").checked) {
+      alert("Choose local-demo consent before starting.");
+      return;
+    }
+    $("consentScreen").classList.add("hidden");
+    $("missionScreen").classList.remove("hidden");
+    $("statusBadge").textContent = "Mission active";
+    updateProgress(20);
+  });
+
+  document.querySelectorAll("[data-rule]").forEach(btn => {
+    btn.addEventListener("click", () => evaluateRule(btn.dataset.rule));
+  });
+
+  function evaluateRule(rule) {
+    state.selected = rule;
+    state.step = 1;
+    const data = {
+      crew: {
+        title: "Equal by crew",
+        result: "Each crew receives 5 units.",
+        assumption: "Every crew is treated as one equal unit.",
+        tradeoff: "Crew size and injury are ignored."
+      },
+      person: {
+        title: "Equal by person",
+        result: "Each person receives 2 units.",
+        assumption: "Each person has equal need.",
+        tradeoff: "The injured crew member receives no extra support."
+      },
+      need: {
+        title: "Need-weighted",
+        result: "A larger share is reserved for medical need.",
+        assumption: "Urgent need can justify unequal allocation.",
+        tradeoff: "The weighting rule must be transparent and challengeable."
+      },
+      custom: {
+        title: "Custom rule",
+        result: "You created a new branch rather than accepting the presets.",
+        assumption: "Fairness rules can be designed and tested.",
+        tradeoff: "A custom rule must still explain who benefits and why."
+      }
+    }[rule];
+
+    $("result").classList.remove("hidden");
+    $("result").innerHTML = `<strong>${data.title}</strong><p>${data.result}</p><p class="warn">Not wrong—this universe exposes a trade-off.</p>`;
+    $("scanner").innerHTML = `
+      <p><strong>Math result:</strong> ${data.result}</p>
+      <p><strong>Assumption:</strong> ${data.assumption}</p>
+      <p><strong>Trade-off:</strong> ${data.tradeoff}</p>
+      <p><strong>Human decision:</strong> yours</p>`;
+    $("forkBtn").classList.remove("hidden");
+    $("continueBtn").classList.remove("hidden");
+    updateProgress(55);
+  }
+
+  $("forkBtn").addEventListener("click", () => {
+    state.branches += 1;
+    $("branchCount").textContent = state.branches;
+    $("result").innerHTML += `<p class="good">Universe ${state.branches} preserved. Try another rule and compare.</p>`;
+    updateProgress(Math.min(85, 55 + state.branches * 10));
+  });
+
+  $("continueBtn").addEventListener("click", () => {
+    updateProgress(100);
+    if ($("reflectionConsent").checked) {
+      $("reflectionCard").classList.remove("hidden");
+      $("reflectionCard").scrollIntoView({behavior:"smooth"});
+    } else {
+      $("statusBadge").textContent = "Mission complete";
+      $("result").innerHTML += `<p class="good">Mission complete. Reflection skipped by your choice.</p>`;
+    }
+  });
+
+  $("guardianBtn").addEventListener("click", () => {
+    $("guardianView").classList.toggle("hidden");
+  });
+
+  $("saveReflection").addEventListener("click", () => {
+    state.reflection = $("reflection").value.trim();
+    $("reflectionStatus").textContent = state.reflection
+      ? "Private note kept in this page session only."
+      : "No note saved.";
+    $("statusBadge").textContent = "Mission complete";
+  });
+
+  $("skipReflection").addEventListener("click", () => {
+    $("reflectionCard").classList.add("hidden");
+    $("statusBadge").textContent = "Mission complete";
+  });
+
+  function updateProgress(value) {
+    $("progress").style.width = value + "%";
+  }
+</script>
+</body>
+</html>
