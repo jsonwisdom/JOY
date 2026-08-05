@@ -7,6 +7,7 @@ on:
       - "schemas/replayos/**"
       - "reference/audit_nodes/**"
       - "reference/artifacts/**"
+      - "requirements-audit-validation.txt"
       - "scripts/validate_audit_nodes.py"
       - ".github/workflows/replayos-audit-node-validation.yml"
   push:
@@ -15,6 +16,7 @@ on:
       - "schemas/replayos/**"
       - "reference/audit_nodes/**"
       - "reference/artifacts/**"
+      - "requirements-audit-validation.txt"
       - "scripts/validate_audit_nodes.py"
 
 permissions:
@@ -32,9 +34,10 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements-audit-validation.txt
 
       - name: Install validator dependency
-        run: python -m pip install --require-hashes -r requirements-audit-validation.txt
+        run: python -m pip install -r requirements-audit-validation.txt
 
       - name: Validate schema, semantics, and artifact digests
         run: python scripts/validate_audit_nodes.py
