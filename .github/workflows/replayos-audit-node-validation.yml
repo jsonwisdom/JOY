@@ -1,0 +1,40 @@
+name: ReplayOS Audit Node Validation
+
+on:
+  pull_request:
+    paths:
+      - "docs/rfcs/RFC_0001_AUDIT_NODE_CONTRACT.md"
+      - "schemas/replayos/**"
+      - "reference/audit_nodes/**"
+      - "reference/artifacts/**"
+      - "scripts/validate_audit_nodes.py"
+      - ".github/workflows/replayos-audit-node-validation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "schemas/replayos/**"
+      - "reference/audit_nodes/**"
+      - "reference/artifacts/**"
+      - "scripts/validate_audit_nodes.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-audit-nodes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install validator dependency
+        run: python -m pip install --require-hashes -r requirements-audit-validation.txt
+
+      - name: Validate schema, semantics, and artifact digests
+        run: python scripts/validate_audit_nodes.py
