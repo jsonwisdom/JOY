@@ -1,0 +1,7 @@
+{
+  "claim_id": "obs-004",
+  "state": "PROVEN",
+  "evidence_ref": "sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "created_at": "2026-08-07T13:31:00Z",
+  "prior_state_ref": "obs-004.json"
+}
