@@ -66,13 +66,22 @@ jobs:
           if not isinstance(script, str) or not script.strip():
               raise SystemExit('production gate step has no runnable shell body')
 
-          base_line = 'BASE_SHA="${{ github.event.pull_request.base.sha || github.event.before }}"'
-          head_line = 'HEAD_SHA="${{ github.sha }}"'
-          if base_line not in script or head_line not in script:
-              raise SystemExit('production gate SHA binding lines changed; proof harness refuses silent drift')
+          lines = script.splitlines()
+          base_hits = [i for i, line in enumerate(lines) if line.lstrip().startswith('BASE_SHA=')]
+          head_hits = [i for i, line in enumerate(lines) if line.lstrip().startswith('HEAD_SHA=')]
+          if len(base_hits) != 1 or len(head_hits) != 1:
+              raise SystemExit(
+                  f'production gate SHA bindings changed; BASE_SHA hits={len(base_hits)}, HEAD_SHA hits={len(head_hits)}'
+              )
 
-          script = script.replace(base_line, "BASE_SHA='HEAD~1'", 1)
-          script = script.replace(head_line, "HEAD_SHA='HEAD'", 1)
+          base_i = base_hits[0]
+          head_i = head_hits[0]
+          base_indent = lines[base_i][:-len(lines[base_i].lstrip())]
+          head_indent = lines[head_i][:-len(lines[head_i].lstrip())]
+          lines[base_i] = base_indent + "BASE_SHA='HEAD~1'"
+          lines[head_i] = head_indent + "HEAD_SHA='HEAD'"
+          script = '\n'.join(lines) + '\n'
+
           out = Path('/tmp/joy-production-epistemic-gate.sh')
           out.write_text(script, encoding='utf-8')
           print('PRODUCTION_GATE_BODY_EXTRACTED')
