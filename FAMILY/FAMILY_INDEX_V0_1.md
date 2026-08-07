@@ -15,6 +15,25 @@
 
 ---
 
+## FIRST CAST / JOY PAGES GATE
+
+```text
+HTTP_200: TRUE
+BYTE_MATCH_VERIFIED: TRUE
+BYTE_MATCH_TARGET: main:/docs
+PAGES_RUNTIME_SOURCE: main:/docs
+THIRD_BUILD_CASE: FALSE
+HUMAN_VISUAL_CONFIRM: PENDING
+PUBLIC_GREEN: FALSE
+FIRST_CAST_STATUS: HOLD_PENDING_HUMAN_VISUAL_CONFIRM
+NO_FAKE_GREEN: TRUE
+RECEIPT: FAMILY/receipts/FAMILY_DIRECTORIES_FIRST_CAST_GATE_V0_1.md
+```
+
+The family directory layer is updated before first cast. Runtime source is byte-proven as `main:/docs`; visual confirmation remains operator-only and pending.
+
+---
+
 ## PROTOCOL NOTES
 
 - **TRUTH_STATE:** YELLOW.
@@ -24,6 +43,7 @@
 - **ASSET_PROTECTION:** FAMILY_RESTRICTED and INTERNAL_ONLY lanes remain bounded.
 - **NO_FAKE_GREEN:** No path, hash, commit, CID, EAS, Base, or authority claim is promoted without receipt correlation.
 - **GITHUB_GREEN:** GitHub proves transport only.
+- **FIRST_CAST_GATE:** Byte match alone does not authorize public green; human visual confirmation is still required.
 
 ## GOBLIN RULING
 
@@ -33,5 +53,6 @@ PATH_EXISTS != HASH_EXISTS
 HASH_EXISTS != CID_EXISTS
 CID_EXISTS != EAS_GREEN
 GITHUB_GREEN != TRUTH_GREEN
+BYTE_MATCH_VERIFIED != HUMAN_VISUAL_CONFIRM
 REPLAY DECIDES.
 ```
