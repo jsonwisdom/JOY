@@ -1,0 +1,30 @@
+{
+  "uid": "REFLECTION_0001",
+  "schema_version": "0.0.1-EXPERIMENTAL",
+  "type": "PUBLIC_REFLECTION",
+  "authority": {
+    "voice": "JAY",
+    "level": "individual",
+    "note": "Distinct from FAMILY_AUTHORITY system state; this is authored perspective, not systemic privilege."
+  },
+  "timestamp": "2026-08-07T10:30:00Z",
+  "content_hash": "sha256:85dc7efc82e352ac62b8ab96ef8f38b45a408214e37ea8c508c26708c2516587",
+  "content_commit_sha": "c980e76976206c340a22346e3a3e173eacb9fd76",
+  "commit_anchor_rule": "The receipt records the already-existing content commit. The receipt's own commit SHA is derived from Git history and MUST NOT self-reference inside the receipt.",
+  "invariant_assertions": {
+    "child_private_data": false,
+    "contains_identifying_details": false
+  },
+  "privacy_scan": {
+    "status": "ADVISORY",
+    "flags": [
+      "potential_birth_year_or_date",
+      "capitalized_sentence_start"
+    ],
+    "human_review_required": true,
+    "author_attestation": "I have reviewed the content and confirm no private child data is revealed.",
+    "attestation_timestamp": "2026-08-07T10:35:00Z"
+  },
+  "previous_uid": null,
+  "revocation_status": "active"
+}
