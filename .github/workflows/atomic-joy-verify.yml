@@ -1,0 +1,115 @@
+name: Atomic JOY Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read   # no repository write
+
+concurrency:
+  group: atomic-joy-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  atomic-joy-verify:
+    name: atomic-joy-verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout (full history for A/B/C)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # required: COMMIT_A/B/C must be present
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned verifier deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r bot/requirements.txt
+
+      - name: Run exact verifier (capture raw stdout + exit code)
+        id: verify
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p artifacts/atomic_joy/runtime
+
+          set +e
+          python bot/atomic_joy_verify.py --json > artifacts/atomic_joy/runtime/verifier_stdout.json 2> artifacts/atomic_joy/runtime/verifier_stderr.txt
+          code=$?
+          set -e
+
+          echo "$code" > artifacts/atomic_joy/runtime/exit_code.txt
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+
+          # Fail closed unless exit 0 (GREEN). YELLOW=2, RED=1, GRAY=3 all fail the job.
+          if [ "$code" -ne 0 ]; then
+            echo "ATOMIC_JOY_VERIFY_FAILED exit_code=$code"
+            cat artifacts/atomic_joy/runtime/verifier_stdout.json || true
+            cat artifacts/atomic_joy/runtime/verifier_stderr.txt || true
+            exit "$code"
+          fi
+
+          # Extra hard gate: state must be exactly GREEN
+          state=$(python -c "import json; print(json.load(open('artifacts/atomic_joy/runtime/verifier_stdout.json'))['state'])")
+          if [ "$state" != "GREEN" ]; then
+            echo "ATOMIC_JOY_VERIFY_NOT_GREEN state=$state"
+            exit 1
+          fi
+          echo "ATOMIC_JOY_VERIFY_GREEN"
+
+      - name: Build receipt_manifest.json (hash stdout bytes, identify HEAD)
+        shell: bash
+        run: |
+          set -euo pipefail
+          HEAD_SHA=$(git rev-parse HEAD)
+          STDOUT_SHA=$(sha256sum artifacts/atomic_joy/runtime/verifier_stdout.json | awk '{print $1}')
+          EXIT_CODE=$(cat artifacts/atomic_joy/runtime/exit_code.txt)
+
+          export HEAD_SHA STDOUT_SHA EXIT_CODE
+
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+
+          manifest = {
+              "protocol": "ATOMIC_JOY_CI_RECEIPT",
+              "version": "0.0.1",
+              "workflow": "atomic-joy-verify",
+              "head_sha": os.environ["HEAD_SHA"],
+              "stdout_sha256": os.environ["STDOUT_SHA"],
+              "exit_code": int(os.environ["EXIT_CODE"]),
+              "run_id": os.environ.get("GITHUB_RUN_ID", "local"),
+              "run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", "1"),
+              "timestamp_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "artifact_paths": [
+                  "artifacts/atomic_joy/runtime/verifier_stdout.json",
+                  "artifacts/atomic_joy/runtime/exit_code.txt",
+                  "artifacts/atomic_joy/runtime/receipt_manifest.json",
+                  "artifacts/atomic_joy/runtime/verifier_stderr.txt",
+              ],
+              "no_fake_green": True,
+              "sealed_bytes_touched": False,
+          }
+
+          with open("artifacts/atomic_joy/runtime/receipt_manifest.json", "w", encoding="utf-8") as f:
+              json.dump(manifest, f, indent=2, sort_keys=True)
+              f.write("\n")
+          PY
+
+      - name: Upload runtime receipt artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomic-joy-runtime-${{ github.sha }}
+          path: artifacts/atomic_joy/runtime/
+          retention-days: 90
+          if-no-files-found: error
