@@ -1,0 +1,102 @@
+name: Atomic JOY Discord Delivery
+
+on:
+  workflow_run:
+    workflows: ["Atomic JOY Verify"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: atomic-joy-discord-delivery-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    name: artifact-first-discord-delivery
+    if: >-
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout exact verified HEAD
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 1
+
+      - name: Download exact upstream runtime artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: atomic-joy-runtime-${{ github.event.workflow_run.head_sha }}
+          path: artifacts/input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Resolve GitHub artifact identity and digest
+        id: artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, urllib.request
+
+          repo = os.environ['REPO']
+          run_id = os.environ['RUN_ID']
+          head = os.environ['HEAD_SHA']
+          name = f'atomic-joy-runtime-{head}'
+          req = urllib.request.Request(
+              f'https://api.github.com/repos/{repo}/actions/runs/{run_id}/artifacts?per_page=100',
+              headers={
+                  'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+                  'Accept': 'application/vnd.github+json',
+                  'X-GitHub-Api-Version': '2022-11-28',
+              },
+          )
+          with urllib.request.urlopen(req, timeout=15) as r:
+              payload = json.load(r)
+          matches = [a for a in payload.get('artifacts', []) if a.get('name') == name and not a.get('expired')]
+          if len(matches) != 1:
+              raise SystemExit(f'expected exactly one unexpired artifact {name}; got {len(matches)}')
+          artifact = matches[0]
+          digest = artifact.get('digest')
+          if not isinstance(digest, str) or not digest.startswith('sha256:'):
+              raise SystemExit('artifact digest missing or malformed')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f:
+              f.write(f"id={artifact['id']}\n")
+              f.write(f"digest={digest}\n")
+          PY
+
+      - name: Deliver presentation-only receipt and record Receipt 2
+        shell: bash
+        env:
+          DISCORD_TOKEN: ${{ secrets.ATOMIC_JOY_DISCORD_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.ATOMIC_JOY_DISCORD_CHANNEL_ID }}
+          ATOMIC_JOY_EXPECTED_HEAD: ${{ github.event.workflow_run.head_sha }}
+          ATOMIC_JOY_EXPECTED_RUN_ID: ${{ github.event.workflow_run.id }}
+          ATOMIC_JOY_ARTIFACT_ID: ${{ steps.artifact.outputs.id }}
+          ATOMIC_JOY_ARTIFACT_DIGEST: ${{ steps.artifact.outputs.digest }}
+        run: |
+          set -euo pipefail
+          test -n "$DISCORD_TOKEN"
+          test -n "$DISCORD_CHANNEL_ID"
+          python scripts/deliver_discord_receipt.py
+
+      - name: Upload delivery receipt artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomic-joy-discord-delivery-${{ github.event.workflow_run.head_sha }}
+          path: artifacts/atomic_joy/delivery/
+          retention-days: 90
+          if-no-files-found: warn
