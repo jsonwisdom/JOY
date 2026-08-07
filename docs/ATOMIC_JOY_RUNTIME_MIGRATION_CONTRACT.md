@@ -107,10 +107,24 @@ MERGE_AUTHORIZED = FALSE
 - Partial delivery possible from this attempt: FALSE
 - Outcome: `DELIVERY_FAILED_PRE_SIDE_EFFECT`
 
-The first Gate 2 attempt failed closed at the credential-presence gate. Both configured GitHub Actions secret references resolved to empty values. The live delivery step and all post-delivery steps were skipped, and the evidence upload reported no delivery files. This failure does not invalidate Gate 1 and does not authorize a retry by itself.
+The first Gate 2 attempt failed closed at the credential-presence gate. Both configured GitHub Actions secret references resolved to empty values. The live delivery step and all post-delivery steps were skipped, and the evidence upload reported no delivery files.
+
+## Gate 2 accidental trigger 002
+
+A documentation commit after attempt 001 emitted another `pull_request/synchronize` event. The one-shot workflow therefore started run `31181312508` before the trigger design was disarmed. It encountered the same empty-secret gate and did not reach Discord delivery.
+
+- Discord POST attempted: FALSE
+- Receipt 2 created: FALSE
+- Delivery side effect: NONE
+- Cause: live workflow was bound to every PR `synchronize` event rather than a one-use authorization event
+- Corrective action: `.github/workflows/atomic-joy-gate2-live.yml` removed from the PR branch at commit `cbebd1b086b73cb11b3a5915c020f652a078597c`
+
+The duplicate trigger is preserved as an orchestration defect. It did not produce a Discord side effect, but it proves that `pull_request/synchronize` is not an acceptable single-shot authorization mechanism for Gate 2.
 
 GATE2_ATTEMPT_001 = FAILED_PRE_SIDE_EFFECT
+GATE2_TRIGGER_002 = FAILED_PRE_SIDE_EFFECT
+GATE2_LIVE_WORKFLOW = DISARMED
 RUNTIME_DISCORD_DELIVERY_PROVEN = FALSE
 MERGE_AUTHORIZED = FALSE
 
-A retry requires explicit provisioning of the two repository Actions secrets and a fresh successful Gate 1 contract run before another live side effect is attempted.
+A future Gate 2 attempt requires explicit provisioning of the two repository Actions secrets, a fresh successful Gate 1 contract run, and a genuinely one-use execution mechanism that cannot be retriggered by ordinary PR commits.
