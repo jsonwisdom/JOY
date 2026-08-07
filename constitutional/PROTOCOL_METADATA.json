@@ -1,0 +1,10 @@
+{
+  "protocol": "JOY_CONSTITUTIONAL_AMENDMENT_PROTOCOL",
+  "version": "0.1.1-DRAFT",
+  "status": "PROPOSED_BOOTSTRAP_PROTOCOL",
+  "proposal_pr": 73,
+  "proposal_timestamp": "2026-08-07T13:39:06Z",
+  "governing_protocol_version": "BOOTSTRAP_PRE_PROTOCOL",
+  "supersedes": "0.1.0-DRAFT",
+  "ratification_authorized": false
+}
