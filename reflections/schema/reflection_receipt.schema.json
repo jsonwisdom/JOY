@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://atomic-joy.io/reflection_receipt.schema.json",
+  "title": "Transition Receipt",
+  "description": "Cryptographically self-verifying transition proof",
+  "type": "object",
+  "properties": {
+    "transition_id": {
+      "type": "string",
+      "pattern": "^TRANS_[0-9]{4,}$"
+    },
+    "uid": {
+      "type": "string",
+      "pattern": "^REFLECTION_[0-9]{4,}$"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "ISSUE",
+        "REVOKE"
+      ]
+    },
+    "from_state": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "ACTIVE"
+      ]
+    },
+    "to_state": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "REVOKED",
+        "REJECTED"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "receipt_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256(JCS(all fields except receipt_hash))"
+    },
+    "previous_state_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256(JCS(state before transition))"
+    },
+    "resulting_state_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256(JCS(state after transition))"
+    }
+  },
+  "required": [
+    "transition_id",
+    "uid",
+    "action",
+    "from_state",
+    "to_state",
+    "timestamp",
+    "receipt_hash",
+    "previous_state_hash",
+    "resulting_state_hash"
+  ],
+  "oneOf": [
+    {
+      "properties": {
+        "action": {
+          "const": "ISSUE"
+        },
+        "from_state": {
+          "const": "NONE"
+        },
+        "to_state": {
+          "enum": [
+            "ACTIVE",
+            "REJECTED"
+          ]
+        }
+      },
+      "required": [
+        "action",
+        "from_state",
+        "to_state"
+      ]
+    },
+    {
+      "properties": {
+        "action": {
+          "const": "REVOKE"
+        },
+        "from_state": {
+          "const": "ACTIVE"
+        },
+        "to_state": {
+          "const": "REVOKED"
+        }
+      },
+      "required": [
+        "action",
+        "from_state",
+        "to_state"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}

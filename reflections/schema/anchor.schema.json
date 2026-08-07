@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://atomic-joy.io/anchor.schema.json",
+  "title": "Anchor Record",
+  "description": "Separate commit that anchors an already-existing reflection index immutably without self-reference",
+  "type": "object",
+  "properties": {
+    "index_commit_sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$",
+      "description": "Git commit SHA containing the sealed reflections/index.json"
+    },
+    "index_content_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 of reflections/index.json bytes at index_commit_sha"
+    },
+    "state_head_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Canonical final state hash bound by the sealed index"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Anchor creation timestamp"
+    }
+  },
+  "required": [
+    "index_commit_sha",
+    "index_content_sha256",
+    "state_head_hash",
+    "timestamp"
+  ],
+  "additionalProperties": false
+}

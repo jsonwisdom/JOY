@@ -1,0 +1,86 @@
+{
+  "protocol": "ATOMIC_JOY_REFLECTION_PROTOCOL",
+  "protocol_version": "0.0.1",
+  "schema_set_status": "FROZEN",
+  "schema_files": [
+    {
+      "path": "reflections/schema/reflection.schema.json",
+      "sha256": "a6119b3156069160aebf52e2631ed01cce8286c8b390d092c3a6c6dea8d27de5"
+    },
+    {
+      "path": "reflections/schema/reflection_receipt.schema.json",
+      "sha256": "a179437adc3396c221993bfc7acb48a84b253427208472c7ebf59a95f9c34d72"
+    },
+    {
+      "path": "reflections/schema/reflection_index.schema.json",
+      "sha256": "b9c4dfe17c4bab7ece5682f950f684ad1e45273109dd95d8674e1a6c91c66713"
+    },
+    {
+      "path": "reflections/schema/reflection_transition.schema.json",
+      "sha256": "9799dfe44a5870b187801385dfc19228cba6aa083cafd26ec6ee8fac27ea8c2c"
+    },
+    {
+      "path": "reflections/schema/anchor.schema.json",
+      "sha256": "634970997598a93bc278f8b454e6982c74d6d9bb34320fc71ecbbac1f3aa8fa5"
+    }
+  ],
+  "canonical_state_contract": {
+    "shape": {
+      "issued_uids": [
+        "REFLECTION_0001"
+      ],
+      "status_by_uid": {
+        "REFLECTION_0001": "ACTIVE"
+      }
+    },
+    "rules": {
+      "issued_uids_order": "issuance order; immutable",
+      "NONE": "virtual pre-issuance state; never persisted",
+      "ISSUE_VALID": "append UID; set status ACTIVE",
+      "ISSUE_INVALID": "append UID; set status REJECTED",
+      "REVOKE": "issued_uids unchanged; set ACTIVE UID to REVOKED"
+    }
+  },
+  "invariants": {
+    "ISSUED_UID_NEVER_REUSED": true,
+    "REVOKED_IS_TERMINAL": true,
+    "REJECTED_IS_TERMINAL": true,
+    "HISTORY_APPEND_ONLY": true,
+    "ACTIVE_COUNT_COMPUTED": true,
+    "ISSUED_COUNT_COMPUTED": true,
+    "LATEST_ACTIVE_CAN_NULL": true,
+    "NO_FAKE_GREEN": true
+  },
+  "cryptographic_profile": {
+    "JCS_PROFILE": "RFC 8785",
+    "JCS_INPUT": "I-JSON",
+    "HASH_ALGORITHM": "SHA-256",
+    "HASH_INPUT_ENCODING": "UTF-8",
+    "UNICODE_NORMALIZATION": "NONE"
+  },
+  "anchoring_protocol": [
+    "INDEX_COMMIT commits reflections/index.json",
+    "ANCHOR_COMMIT records index_commit_sha, index_content_sha256, and state_head_hash"
+  ],
+  "seal_hash_recipe": {
+    "canonicalization": "RFC 8785 JCS",
+    "hash_algorithm": "SHA-256",
+    "schema_hash_order": "schema_files array order",
+    "input_object": {
+      "schemas": "array of schema_files[].sha256",
+      "manifest": "SHA-256 of exact SEAL_MANIFEST_v0.0.1.json bytes",
+      "protocol_version": "0.0.1",
+      "timestamp": "seal_timestamp recorded in reflections/index.json"
+    }
+  },
+  "author_design_signature": {
+    "signed_by": "JAY",
+    "design_sequence": [
+      3,
+      6,
+      9
+    ],
+    "signature_type": "DECLARED_AUTHOR_MARK",
+    "cryptographic_signature": false
+  }
+}

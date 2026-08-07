@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://atomic-joy.io/reflection_index.schema.json",
+  "title": "Reflection Index",
+  "description": "Append-only transition history with computed aggregate state and cryptographic head integrity",
+  "type": "object",
+  "properties": {
+    "transitions": {
+      "type": "array",
+      "items": {
+        "$ref": "reflection_receipt.schema.json"
+      },
+      "description": "Append-only transition log"
+    },
+    "computed": {
+      "type": "object",
+      "properties": {
+        "total_issued_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of all UIDs ever issued"
+        },
+        "total_active_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of UIDs currently ACTIVE"
+        },
+        "latest_issued_uid": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^REFLECTION_[0-9]{4,}$"
+        },
+        "latest_active_uid": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^REFLECTION_[0-9]{4,}$"
+        }
+      },
+      "required": [
+        "total_issued_count",
+        "total_active_count",
+        "latest_issued_uid",
+        "latest_active_uid"
+      ],
+      "additionalProperties": false
+    },
+    "crypto": {
+      "type": "object",
+      "properties": {
+        "transition_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of transitions in history"
+        },
+        "state_head_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 of RFC 8785 JCS-serialized final canonical state; equals the final receipt resulting_state_hash"
+        }
+      },
+      "required": [
+        "transition_count",
+        "state_head_hash"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "transitions",
+    "computed",
+    "crypto"
+  ],
+  "additionalProperties": false,
+  "invariants": {
+    "HISTORY_APPEND_ONLY": "verified by replay plus externally anchored transition_count/state_head_hash",
+    "HASH_CHAIN_CONTINUITY": "receipt[n].previous_state_hash == receipt[n-1].resulting_state_hash and both hashes are independently recomputed",
+    "CANONICAL_SERIALIZATION": "RFC 8785 JCS",
+    "TRUNCATION_PROOF": "two-phase public Git anchor binds index commit, index content SHA-256, and state head hash"
+  }
+}

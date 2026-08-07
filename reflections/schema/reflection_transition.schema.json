@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://atomic-joy.io/reflection_transition.schema.json",
+  "title": "Transition Rules",
+  "description": "Normative transition authority mirroring the receipt lifecycle constraints",
+  "type": "object",
+  "properties": {
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "ISSUE",
+              "REVOKE"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "ACTIVE"
+            ]
+          },
+          "to": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "REVOKED",
+              "REJECTED"
+            ]
+          },
+          "terminal": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action",
+          "from",
+          "to",
+          "terminal"
+        ],
+        "additionalProperties": false,
+        "oneOf": [
+          {
+            "properties": {
+              "action": {
+                "const": "ISSUE"
+              },
+              "from": {
+                "const": "NONE"
+              },
+              "to": {
+                "const": "ACTIVE"
+              },
+              "terminal": {
+                "const": false
+              }
+            }
+          },
+          {
+            "properties": {
+              "action": {
+                "const": "ISSUE"
+              },
+              "from": {
+                "const": "NONE"
+              },
+              "to": {
+                "const": "REJECTED"
+              },
+              "terminal": {
+                "const": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "action": {
+                "const": "REVOKE"
+              },
+              "from": {
+                "const": "ACTIVE"
+              },
+              "to": {
+                "const": "REVOKED"
+              },
+              "terminal": {
+                "const": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "semantic_distinction": {
+      "type": "object",
+      "properties": {
+        "REVOKED": {
+          "const": "payload accepted; UID active; later withdrawn"
+        },
+        "REJECTED": {
+          "const": "issuance attempted; UID reserved; payload never accepted"
+        }
+      },
+      "required": [
+        "REVOKED",
+        "REJECTED"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "transitions",
+    "semantic_distinction"
+  ],
+  "additionalProperties": false
+}

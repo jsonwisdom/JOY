@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://atomic-joy.io/reflection.schema.json",
+  "title": "Reflection State",
+  "description": "Core persisted state of a single issued reflection UID. NONE is virtual pre-issuance state and is never persisted.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "pattern": "^REFLECTION_[0-9]{4,}$",
+      "description": "Permanent, never-reused identifier"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "REVOKED",
+        "REJECTED"
+      ],
+      "description": "Current persisted lifecycle state"
+    },
+    "payload": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Accepted payload when ACTIVE; null or absent otherwise"
+    },
+    "history_pointer": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Index into the append-only transition history for this UID"
+    }
+  },
+  "required": [
+    "uid",
+    "status",
+    "history_pointer"
+  ],
+  "if": {
+    "properties": {
+      "status": {
+        "const": "ACTIVE"
+      }
+    },
+    "required": [
+      "status"
+    ]
+  },
+  "then": {
+    "required": [
+      "payload"
+    ],
+    "properties": {
+      "payload": {
+        "type": "object"
+      }
+    }
+  },
+  "else": {
+    "properties": {
+      "payload": {
+        "const": null
+      }
+    }
+  },
+  "additionalProperties": false
+}
