@@ -2,9 +2,9 @@
 """Artifact-first Atomic JOY Discord delivery adapter.
 
 This program never reruns eligibility logic. It consumes a previously produced
-Atomic JOY CI artifact, verifies provenance bindings, builds a deterministic
-presentation payload, optionally emits a dry-run proof, delivers to Discord,
-and records Receipt 2.
+Atomic JOY CI artifact plus GitHub artifact metadata, verifies all provenance
+bindings, builds a deterministic presentation payload, optionally emits a
+secret-free dry-run proof, delivers to Discord, and records Receipt 2.
 """
 
 from __future__ import annotations
@@ -76,13 +76,31 @@ def verify_source(input_dir: Path, ctx: dict[str, str]) -> tuple[dict, str]:
     manifest_path = input_dir / "receipt_manifest.json"
     stdout_path = input_dir / "verifier_stdout.json"
     exit_path = input_dir / "exit_code.txt"
-    for path in (manifest_path, stdout_path, exit_path):
+    metadata_path = input_dir / "github_artifact_metadata.json"
+    for path in (manifest_path, stdout_path, exit_path, metadata_path):
         if not path.is_file():
             fail(f"artifact file missing: {path}")
 
     manifest = load_json(manifest_path)
+    metadata = load_json(metadata_path)
     stdout_raw = stdout_path.read_bytes()
     verifier = load_json(stdout_path)
+
+    expected_name = f"atomic-joy-runtime-{ctx['head']}"
+    if metadata.get("head_sha") != ctx["head"]:
+        fail("GitHub artifact metadata HEAD mismatch")
+    if str(metadata.get("run_id")) != ctx["run_id"]:
+        fail("GitHub artifact metadata run id mismatch")
+    if str(metadata.get("artifact_id")) != ctx["artifact_id"]:
+        fail("GitHub artifact metadata id mismatch")
+    if metadata.get("artifact_name") != expected_name:
+        fail("GitHub artifact metadata name mismatch")
+    if metadata.get("artifact_digest") != ctx["artifact_digest"]:
+        fail("GitHub artifact metadata digest mismatch")
+
+    digest = ctx["artifact_digest"]
+    if not digest.startswith("sha256:") or len(digest) != 71:
+        fail("GitHub artifact digest is malformed")
 
     if manifest.get("protocol") != "ATOMIC_JOY_CI_RECEIPT":
         fail("unexpected receipt protocol")
@@ -102,10 +120,6 @@ def verify_source(input_dir: Path, ctx: dict[str, str]) -> tuple[dict, str]:
     stdout_sha = sha256_bytes(stdout_raw)
     if manifest.get("stdout_sha256") != stdout_sha:
         fail("verifier stdout digest mismatch")
-
-    digest = ctx["artifact_digest"]
-    if not digest.startswith("sha256:") or len(digest) != 71:
-        fail("GitHub artifact digest is malformed")
 
     return verifier, stdout_sha
 
