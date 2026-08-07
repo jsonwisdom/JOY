@@ -7,6 +7,8 @@
   "required": [
     "amendment_id",
     "protocol_version",
+    "governing_protocol_version",
+    "proposal_timestamp",
     "title",
     "status",
     "rationale",
@@ -19,8 +21,10 @@
   "properties": {
     "amendment_id": {"type": "string", "pattern": "^AMENDMENT_[0-9]{4}$"},
     "protocol_version": {"type": "string", "minLength": 1},
+    "governing_protocol_version": {"type": "string", "minLength": 1},
+    "proposal_timestamp": {"type": "string", "format": "date-time"},
     "title": {"type": "string", "minLength": 1},
-    "status": {"type": "string", "enum": ["DRAFT", "REVIEWED", "RATIFIED", "REJECTED", "SUPERSEDED"]},
+    "status": {"type": "string", "enum": ["DRAFT", "REVIEWED", "RATIFIED", "REJECTED", "WITHDRAWN", "ABANDONED", "SUPERSEDED"]},
     "rationale": {"type": "string", "minLength": 1},
     "affected_rules": {
       "type": "array",
@@ -46,7 +50,8 @@
         "failure_domain_isolation": {"$ref": "#/$defs/reviewCriterion"},
         "human_signoffs": {
           "type": "array",
-          "items": {"type": "string", "minLength": 1}
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/signoff"}
         }
       }
     },
@@ -56,6 +61,7 @@
       "uniqueItems": true,
       "items": {"type": "string", "minLength": 1}
     },
+    "disposition_reason": {"type": "string", "minLength": 1},
     "ratification": {
       "type": "object",
       "additionalProperties": false,
@@ -84,6 +90,10 @@
           }
         }
       }
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["REJECTED", "WITHDRAWN", "ABANDONED"]}}, "required": ["status"]},
+      "then": {"required": ["disposition_reason"]}
     }
   ],
   "$defs": {
@@ -94,6 +104,16 @@
       "properties": {
         "result": {"type": "string", "enum": ["PASS", "FAIL"]},
         "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "signoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer_id", "decision", "timestamp"],
+      "properties": {
+        "reviewer_id": {"type": "string", "minLength": 1},
+        "decision": {"type": "string", "enum": ["APPROVE", "REJECT"]},
+        "timestamp": {"type": "string", "format": "date-time"}
       }
     }
   }
