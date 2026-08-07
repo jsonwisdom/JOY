@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/joy-revenue-agent/opportunity.schema.json",
+  "title": "JOY Revenue Opportunity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "opportunity_id",
+    "source",
+    "title",
+    "url",
+    "payout_usd",
+    "acceptance_probability",
+    "estimated_agent_hours",
+    "estimated_human_minutes",
+    "discovered_at"
+  ],
+  "properties": {
+    "opportunity_id": {
+      "type": "string",
+      "pattern": "^opp_[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "payout_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "acceptance_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "estimated_agent_hours": {
+      "type": "number",
+      "minimum": 0
+    },
+    "estimated_human_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "discovered_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "deadline_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "currency_original": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 12
+    },
+    "payout_original": {
+      "type": "number",
+      "minimum": 0
+    },
+    "source_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skills": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 5000
+    }
+  }
+}
