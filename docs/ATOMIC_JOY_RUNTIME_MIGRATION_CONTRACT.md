@@ -29,7 +29,15 @@ No failure state may emit a GREEN receipt.
 
 Receipt 1: CI artifact receipt. Proves eligibility and binds HEAD, verifier stdout bytes, run id, and artifact identity.
 
-Receipt 2: Delivery receipt. Proves the exact source digest presented, destination channel, Discord message id, payload hash, delivery id, and timestamp. Delivery receipts are append-only artifacts and never alter Receipt 1.
+Receipt 2: Delivery receipt. Proves presentation only and contains exactly:
+
+- `original_digest`
+- `delivery_id`
+- `timestamp`
+- `channel_id`
+- `discord_message_id`
+
+Receipt 2 never alters or upgrades Receipt 1 authority.
 
 ## Runtime state machine
 
@@ -45,9 +53,42 @@ The implementation compensates by:
 
 1. creating a deterministic delivery_id before network delivery;
 2. embedding delivery_id and original artifact digest in the Discord payload;
-3. writing a pre-delivery intent receipt before POST;
+3. writing a pre-delivery intent before POST;
 4. writing the final delivery receipt atomically after Discord returns a message id;
 5. failing the workflow if final recording fails;
 6. never treating an unrecorded delivery as audited success.
 
 This preserves detectability without pretending external APIs provide transactional semantics.
+
+## Secret boundary
+
+Discord credentials are resolved only inside the network delivery function. Artifact verification, provenance checks, deterministic payload construction, and `--dry-run` execute without Discord credentials.
+
+## Pre-merge proof gate
+
+Known-good fixture:
+
+- HEAD: `71e437d2b4c3148033f62236932de3ce2476696b`
+- Run: `31176908693`
+- Artifact: `8993161146`
+- Artifact digest: `sha256:ba0578b39372de5b92b00d6e33a2267bb6f9cba49c28a970402e4db669986cf1`
+- Stored verifier stdout SHA256: `c947b6d7fb8759c250a8fcedb5810edcb7111bd5db87e4a62a9647095d76de31`
+- Seal SHA256: `f422886213bf194be858f81c63414a563ccac72838255f26b9686ec98ab67da8`
+
+GitHub Actions run `31180955202`, job `92873832412`, completed successfully on PR #70. It downloaded artifact `8993161146`, confirmed the GitHub digest, and passed 9/9 contract tests:
+
+1. known-artifact dry-run without Discord secrets
+2. deterministic delivery_id and payload
+3. Discord credentials resolved only at delivery time
+4. missing `no_fake_green` fails closed
+5. exact Receipt 2 schema
+6. non-GREEN stored verifier fails closed
+7. tampered verifier bytes fail stdout-hash binding
+8. wrong artifact digest fails closed
+9. wrong HEAD fails closed
+
+PRE_MERGE_CONTRACT_TEST = GREEN
+RUNTIME_DISCORD_DELIVERY_PROVEN = FALSE
+MERGE_AUTHORIZED = FALSE
+
+A real Discord delivery remains a separate gate because the contract test intentionally performs no Discord side effects.
