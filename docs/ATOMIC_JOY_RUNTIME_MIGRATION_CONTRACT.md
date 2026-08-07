@@ -91,4 +91,26 @@ PRE_MERGE_CONTRACT_TEST = GREEN
 RUNTIME_DISCORD_DELIVERY_PROVEN = FALSE
 MERGE_AUTHORIZED = FALSE
 
-A real Discord delivery remains a separate gate because the contract test intentionally performs no Discord side effects.
+## Gate 2 attempt 001
+
+- PR branch commit: `e854a0eba69d57d5e0011421532f747532d0c30c`
+- Workflow run: `31181214701`
+- Job: `92874678377`
+- Known artifact download: PASS
+- GitHub source binding: PASS
+- Gate 1 contract tests immediately before side effect: 9/9 PASS
+- `ATOMIC_JOY_DISCORD_TOKEN` available to GitHub Actions: FALSE
+- `ATOMIC_JOY_DISCORD_CHANNEL_ID` available to GitHub Actions: FALSE
+- Discord POST attempted: FALSE
+- Receipt 2 created: FALSE
+- Delivery artifact created: FALSE
+- Partial delivery possible from this attempt: FALSE
+- Outcome: `DELIVERY_FAILED_PRE_SIDE_EFFECT`
+
+The first Gate 2 attempt failed closed at the credential-presence gate. Both configured GitHub Actions secret references resolved to empty values. The live delivery step and all post-delivery steps were skipped, and the evidence upload reported no delivery files. This failure does not invalidate Gate 1 and does not authorize a retry by itself.
+
+GATE2_ATTEMPT_001 = FAILED_PRE_SIDE_EFFECT
+RUNTIME_DISCORD_DELIVERY_PROVEN = FALSE
+MERGE_AUTHORIZED = FALSE
+
+A retry requires explicit provisioning of the two repository Actions secrets and a fresh successful Gate 1 contract run before another live side effect is attempted.
