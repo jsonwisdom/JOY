@@ -5,6 +5,7 @@ on:
     paths:
       - 'constitutional/**'
       - 'schema/constitutional_amendment.schema.json'
+      - 'schema/claim_revocation.schema.json'
       - 'docs/CONSTITUTIONAL_AMENDMENT_PROTOCOL.md'
       - '.github/workflows/constitutional-amendment-gate.yml'
   workflow_dispatch:
@@ -28,18 +29,103 @@ jobs:
       - name: Install pinned schema tooling
         run: python -m pip install jsonschema==4.23.0
 
+      - name: Validate v0.1.1 protocol metadata and sections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          meta = json.loads(Path('constitutional/PROTOCOL_METADATA.json').read_text())
+          assert meta['version'] == '0.1.1-DRAFT'
+          assert meta['proposal_pr'] == 73
+          assert meta['proposal_timestamp']
+          assert meta['ratification_authorized'] is False
+
+          text = Path('docs/CONSTITUTIONAL_AMENDMENT_PROTOCOL.md').read_text()
+          required = [
+              '## Section A — Quorum',
+              '## Section B — Amendment lifecycle and failed dispositions',
+              '## Section C — Human reviewer identity and multiplicity',
+              '## Section D — Bootstrap reviewer authority',
+              '## Section E — Self-amendment temporal rule',
+              '## Section F — Revocation provenance authority model',
+          ]
+          missing = [x for x in required if x not in text]
+          if missing:
+              raise SystemExit(f'MISSING_PROTOCOL_SECTIONS={missing}')
+          print('PROTOCOL_SECTIONS_A_TO_F = PASS')
+          PY
+
+      - name: Validate bootstrap reviewer registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          registry = json.loads(Path('constitutional/bootstrap-reviewers.json').read_text())
+          minimum = registry['minimum_active_reviewers']
+          active = [r for r in registry['reviewers'] if r['status'] == 'ACTIVE']
+          ids = {r['reviewer_id'] for r in active}
+          if len(ids) < minimum:
+              raise SystemExit(f'BOOTSTRAP_REVIEWER_QUORUM_UNSATISFIED: active={len(ids)} required={minimum}')
+          if not any(r['authority_basis'] == 'repository_owner_admin' for r in active):
+              raise SystemExit('BOOTSTRAP_REPOSITORY_AUTHORITY_MISSING')
+          print('BOOTSTRAP_REVIEWER_REGISTRY = PASS')
+          PY
+
       - name: Validate amendment artifacts
         shell: bash
         run: |
           set -euo pipefail
-
           if [ -d constitutional/amendments ]; then
             find constitutional/amendments -name 'AMENDMENT_*.json' -print0 | while IFS= read -r -d '' file; do
               python -m jsonschema -i "$file" schema/constitutional_amendment.schema.json
             done
           fi
 
-      - name: Enforce append-only ratified constitutional history
+      - name: Validate revocation XOR schema semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+
+          schema = json.loads(Path('schema/claim_revocation.schema.json').read_text())
+          v = Draft202012Validator(schema)
+          issuer = {
+              'original_claim_ref': 'claims/example.json',
+              'revocation_authority_model': 'ISSUER_CENTRIC',
+              'revocation_timestamp': '2026-08-07T13:39:06Z',
+              'issuer_signature': 'base64:YWJjZA==',
+              'issuer_key_ref': 'keys/example.pub'
+          }
+          override = {
+              'original_claim_ref': 'claims/example.json',
+              'revocation_authority_model': 'CONSTITUTIONAL_OVERRIDE',
+              'revocation_timestamp': '2026-08-07T13:39:06Z',
+              'override_authority_id': 'authorities/example',
+              'constitutional_ground_ref': 'ARTICLE_X_SECTION_4',
+              'override_rationale': 'Constitutional override rationale.',
+              'co_ratifier_id': 'authorities/second',
+              'co_ratifier_timestamp': '2026-08-07T13:40:06Z'
+          }
+          mixed = dict(issuer, override_authority_id='authorities/example')
+          if list(v.iter_errors(issuer)):
+              raise SystemExit('ISSUER_CENTRIC_VALID_FIXTURE_REJECTED')
+          if list(v.iter_errors(override)):
+              raise SystemExit('CONSTITUTIONAL_OVERRIDE_VALID_FIXTURE_REJECTED')
+          if not list(v.iter_errors(mixed)):
+              raise SystemExit('MIXED_MODEL_REVOCATION_NOT_REJECTED')
+          print('REVOCATION_AUTHORITY_XOR = PASS')
+          PY
+
+      - name: Enforce append-only constitutional history
         shell: bash
         run: |
           set -euo pipefail
@@ -67,17 +153,18 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ -d constitutional/amendments ]; then
-            python - <<'PY'
+          python - <<'PY'
           import json
           from pathlib import Path
 
-          for path in sorted(Path('constitutional/amendments').glob('AMENDMENT_*.json')):
-              data = json.loads(path.read_text())
-              if data.get('status') == 'RATIFIED' and not data.get('review', {}).get('human_signoffs'):
-                  raise SystemExit(f'RATIFIED amendment missing explicit human sign-off: {path}')
+          meta = json.loads(Path('constitutional/PROTOCOL_METADATA.json').read_text())
+          if meta.get('ratification_authorized') is not False:
+              raise SystemExit('BOOTSTRAP_METADATA_MUST_REMAIN_UNRATIFIED_PRE_REVIEW')
+
+          if Path('constitutional/amendments').exists():
+              for path in sorted(Path('constitutional/amendments').glob('AMENDMENT_*.json')):
+                  data = json.loads(path.read_text())
+                  if data.get('status') == 'RATIFIED' and not data.get('review', {}).get('human_signoffs'):
+                      raise SystemExit(f'RATIFIED amendment missing explicit human sign-off: {path}')
           print('AUTOMATION_IS_NOT_RATIFIER = PASS')
           PY
-          else
-            echo 'AUTOMATION_IS_NOT_RATIFIER = PASS (bootstrap: no amendment artifacts yet)'
-          fi
