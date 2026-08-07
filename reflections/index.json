@@ -1,7 +1,9 @@
 {
   "protocol": "ATOMIC_JOY_REFLECTION_PROTOCOL",
-  "version": "0.0.1-EXPERIMENTAL",
-  "schema_sealed": false,
+  "version": "0.0.1",
+  "schema_sealed": true,
+  "seal_hash": "f422886213bf194be858f81c63414a563ccac72838255f26b9686ec98ab67da8",
+  "seal_timestamp": "2026-08-07T11:13:16Z",
   "publication_allowed": true,
   "child_private_data_allowed": false,
   "counters": {
