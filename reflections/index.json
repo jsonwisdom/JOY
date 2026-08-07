@@ -1,0 +1,26 @@
+{
+  "protocol": "ATOMIC_JOY_REFLECTION_PROTOCOL",
+  "version": "0.0.1-EXPERIMENTAL",
+  "schema_sealed": false,
+  "publication_allowed": true,
+  "child_private_data_allowed": false,
+  "counters": {
+    "latest_issued_uid": "REFLECTION_0001",
+    "latest_active_uid": "REFLECTION_0001",
+    "total_issued_count": 1,
+    "total_active_count": 1
+  },
+  "entries": [
+    {
+      "uid": "REFLECTION_0001",
+      "path": "reflections/2026/08/2026-08-07-the-mirror-and-the-gate.md",
+      "receipt_path": "receipts/reflections/REFLECTION_0001.json",
+      "status": "ACTIVE",
+      "issued_at": "2026-08-07T10:30:00Z",
+      "content_hash": "sha256:85dc7efc82e352ac62b8ab96ef8f38b45a408214e37ea8c508c26708c2516587",
+      "content_commit_sha": "c980e76976206c340a22346e3a3e173eacb9fd76",
+      "receipt_commit_sha": "17758ca4d82363a0d8f4f49bbae251bf1a2f2905"
+    }
+  ],
+  "index_commit_anchor_rule": "The index commit SHA is derived from Git history and MUST NOT self-reference inside index.json."
+}
