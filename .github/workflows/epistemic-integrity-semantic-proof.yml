@@ -1,0 +1,213 @@
+name: Epistemic Integrity Semantic Proof
+
+on:
+  pull_request:
+    paths:
+      - 'tests/epistemic-fixtures/**'
+      - '.github/workflows/epistemic-integrity-semantic-proof.yml'
+      - '.github/workflows/epistemic-integrity-gate.yml'
+      - 'schema/claim_state.schema.json'
+      - 'schema/claim_revocation.schema.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prove-semantics:
+    name: prove-${{ matrix.case }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - case: active-claim-blocks-deletion
+            expected_status: 1
+            expected_message: "Referenced by active claim states: CLAIMED"
+          - case: revoked-claim-allows-deletion
+            expected_status: 0
+            expected_message: "Epistemic integrity verified. Constitution upheld."
+          - case: in-place-modification-blocked
+            expected_status: 1
+            expected_message: "In-place modification of claims detected"
+          - case: valid-transition-appended
+            expected_status: 0
+            expected_message: "Epistemic integrity verified. Constitution upheld."
+
+    steps:
+      - name: Checkout proof branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned schema tooling
+        run: python -m pip install jsonschema==4.23.0
+
+      - name: Build isolated fixture history
+        shell: bash
+        env:
+          CASE: ${{ matrix.case }}
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE"
+          WORK="$RUNNER_TEMP/epistemic-$CASE"
+          rm -rf "$WORK"
+          mkdir -p "$WORK/schema" "$WORK/claims" "$WORK/evidence" "$WORK/revocations"
+          cp "$ROOT/schema/claim_state.schema.json" "$WORK/schema/"
+          cp "$ROOT/schema/claim_revocation.schema.json" "$WORK/schema/"
+          cd "$WORK"
+          git init -q
+          git config user.name 'JOY Epistemic Fixture'
+          git config user.email 'fixture@example.invalid'
+
+          case "$CASE" in
+            active-claim-blocks-deletion)
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/claims/obs-001.json" claims/
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/evidence/"* evidence/
+              git add . && git commit -qm 'fixture: active baseline'
+              rm evidence/sha256-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              git add -A && git commit -qm 'fixture: attempt active evidence deletion'
+              ;;
+            revoked-claim-allows-deletion)
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/claims/obs-002.json" claims/
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/evidence/"* evidence/
+              git add . && git commit -qm 'fixture: revoked baseline'
+              rm evidence/sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+              git add -A && git commit -qm 'fixture: archive revoked evidence'
+              ;;
+            in-place-modification-blocked)
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/claims/obs-003.json" claims/
+              git add . && git commit -qm 'fixture: immutable claim baseline'
+              python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('claims/obs-003.json')
+          obj = json.loads(p.read_text())
+          obj['state'] = 'PROVEN'
+          p.write_text(json.dumps(obj, indent=2) + '\n')
+          PY
+              git add -A && git commit -qm 'fixture: illegal in-place modification'
+              ;;
+            valid-transition-appended)
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/claims/obs-004.json" claims/
+              git add . && git commit -qm 'fixture: claimed baseline'
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/claims/obs-004.proven.json" claims/
+              cp "$ROOT/tests/epistemic-fixtures/$CASE/evidence/"* evidence/
+              git add -A && git commit -qm 'fixture: append proven transition'
+              ;;
+            *)
+              echo "unknown fixture case: $CASE" >&2
+              exit 2
+              ;;
+          esac
+
+          echo "FIXTURE_WORK=$WORK" >> "$GITHUB_ENV"
+
+      - name: Execute constitutional gate logic
+        id: gate
+        shell: bash
+        env:
+          EXPECTED_STATUS: ${{ matrix.expected_status }}
+          EXPECTED_MESSAGE: ${{ matrix.expected_message }}
+        run: |
+          set -euo pipefail
+          cd "$FIXTURE_WORK"
+
+          set +e
+          (
+            set -euo pipefail
+            echo '🔍 Validating claim state machines...'
+            if [ -d claims ]; then
+              find claims -name '*.json' -print0 | while IFS= read -r -d '' file; do
+                python -m jsonschema -i "$file" schema/claim_state.schema.json
+              done
+            fi
+
+            if [ -d revocations ]; then
+              find revocations -name '*.json' -print0 | while IFS= read -r -d '' file; do
+                python -m jsonschema -i "$file" schema/claim_revocation.schema.json
+              done
+            fi
+
+            BASE_SHA='HEAD~1'
+            HEAD_SHA='HEAD'
+
+            echo '🛡️ Checking evidence deletion safety...'
+            DELETED_EVIDENCE=$(git diff --name-only --diff-filter=D "$BASE_SHA" "$HEAD_SHA" | grep '^evidence/' || true)
+            if [ -n "$DELETED_EVIDENCE" ]; then
+              while IFS= read -r file; do
+                [ -z "$file" ] && continue
+                REF=$(basename "$file")
+                ACTIVE_REFS=''
+                if compgen -G 'claims/*.json' > /dev/null; then
+                  ACTIVE_REFS=$(jq -r --arg ref "$REF" 'select(.state != "REVOKED" and .evidence_ref == $ref) | .state' claims/*.json 2>/dev/null || true)
+                fi
+                if [ -n "$ACTIVE_REFS" ]; then
+                  echo "::error::BLOCKED: Cannot delete '$file'. Referenced by active claim states: $ACTIVE_REFS"
+                  echo '::notice::Transition dependent claims to REVOKED with a schema-valid revocation artifact before archival or removal.'
+                  exit 1
+                fi
+              done <<< "$DELETED_EVIDENCE"
+            fi
+
+            echo '📜 Verifying append-only claim transitions...'
+            MODIFIED_CLAIMS=$(git diff --name-only --diff-filter=M "$BASE_SHA" "$HEAD_SHA" | grep '^claims/' || true)
+            if [ -n "$MODIFIED_CLAIMS" ]; then
+              echo "::error::BLOCKED: In-place modification of claims detected: $MODIFIED_CLAIMS"
+              echo '::notice::Claims are immutable. Append a new transition artifact with prior_state_ref instead.'
+              exit 1
+            fi
+
+            MODIFIED_REVOCATIONS=$(git diff --name-only --diff-filter=M "$BASE_SHA" "$HEAD_SHA" | grep '^revocations/' || true)
+            if [ -n "$MODIFIED_REVOCATIONS" ]; then
+              echo "::error::BLOCKED: In-place modification of revocations detected: $MODIFIED_REVOCATIONS"
+              exit 1
+            fi
+
+            echo '✅ Epistemic integrity verified. Constitution upheld.'
+          ) >gate-output.txt 2>&1
+          STATUS=$?
+          set -e
+
+          cat gate-output.txt
+          echo "observed_status=$STATUS" >> "$GITHUB_OUTPUT"
+
+          if [ "$STATUS" -ne "$EXPECTED_STATUS" ]; then
+            echo "::error::Wrong gate exit code. Expected $EXPECTED_STATUS, observed $STATUS"
+            exit 1
+          fi
+          if ! grep -Fq "$EXPECTED_MESSAGE" gate-output.txt; then
+            echo "::error::Expected constitutional diagnostic not found: $EXPECTED_MESSAGE"
+            exit 1
+          fi
+
+          echo "SEMANTIC_CASE_PASS=${{ matrix.case }}"
+
+      - name: Assert four-state interpretation
+        shell: bash
+        run: |
+          set -euo pipefail
+          case '${{ matrix.case }}' in
+            active-claim-blocks-deletion)
+              test '${{ steps.gate.outputs.observed_status }}' = '1'
+              echo 'EXPECTED_RED_CONFIRMED: active claim protects evidence'
+              ;;
+            revoked-claim-allows-deletion)
+              test '${{ steps.gate.outputs.observed_status }}' = '0'
+              echo 'EXPECTED_GREEN_CONFIRMED: revoked claim releases evidence'
+              ;;
+            in-place-modification-blocked)
+              test '${{ steps.gate.outputs.observed_status }}' = '1'
+              echo 'EXPECTED_RED_CONFIRMED: claims are immutable'
+              ;;
+            valid-transition-appended)
+              test '${{ steps.gate.outputs.observed_status }}' = '0'
+              echo 'EXPECTED_GREEN_CONFIRMED: transitions are append-only'
+              ;;
+          esac
