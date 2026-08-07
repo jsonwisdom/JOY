@@ -8,6 +8,11 @@ LF: LOVE_FIRST
 LANE: MRS_WISDOM_BOSS_BIRTHDAY_V0_2
 FEATURED_ON_JOYSPACE: TRUE
 PROJECT_JAY_CHROMEBOOK_AWARE: TRUE
+PAGES_RUNTIME_SOURCE: main:/docs
+BYTE_MATCH_VERIFIED: TRUE
+HUMAN_VISUAL_CONFIRM: PENDING
+PUBLIC_GREEN: FALSE
+FIRST_CAST_STATUS: HOLD_PENDING_HUMAN_VISUAL_CONFIRM
 ```
 
 ## Purpose
@@ -24,6 +29,24 @@ BIRTHDAY_PAGE: docs/joyspace/mrs-wisdom-birthday.html
 ENTERTAINMENT_FOREST: docs/joyspace/mrs-wisdom-birthday-girl-entertainment.html
 JOYSPACE_HOME: docs/index.html
 ```
+
+## First Cast Gate
+
+```text
+HTTP_200: TRUE
+BYTE_MATCH_VERIFIED: TRUE
+BYTE_MATCH_TARGET: main:/docs
+PAGES_RUNTIME_SOURCE: main:/docs
+THIRD_BUILD_CASE: FALSE
+HUMAN_VISUAL_CONFIRM: PENDING
+PUBLIC_GREEN: FALSE
+FIRST_CAST_STATUS: HOLD_PENDING_HUMAN_VISUAL_CONFIRM
+RECEIPT: FAMILY/receipts/FAMILY_DIRECTORIES_FIRST_CAST_GATE_V0_1.md
+```
+
+The deployed bytes are matched to the `docs` source. The remaining gate is human visual confirmation of the live Mrs. Wisdom experience in a real browser.
+
+The final live verification line is not authorized until that visual confirmation occurs.
 
 ## Project Jay Linkage
 
@@ -42,5 +65,6 @@ LOVE_FIRST
 NO_PRIVATE_DETAILS
 NO_FAKE_GREEN
 HUMAN_VISUAL_APPROVAL_REQUIRED
+BYTE_MATCH_VERIFIED != HUMAN_VISUAL_CONFIRM
 MRS_WISDOM_REMAINS_FEATURED_BOSS
 ```
