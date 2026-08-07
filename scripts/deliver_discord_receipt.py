@@ -110,7 +110,7 @@ def build_payload(verifier: dict, stdout_sha: str) -> tuple[dict, str, str]:
         f"**ARTIFACT_ID:** `{ARTIFACT_ID}`\n"
         f"**ARTIFACT_DIGEST:** `{ARTIFACT_DIGEST}`\n"
         f"**VERIFIER_STDOUT_SHA256:** `{stdout_sha}`\n"
-        f"**LOCAL_VERIFIER:** `GREEN`\n"
+        f"**SOURCE_VERIFIER:** `GREEN`\n"
         f"**SEAL_SHA256:** `{seal_sha}`\n"
         f"**DELIVERY_ID:** `{delivery_id}`"
     )
@@ -158,9 +158,7 @@ def main() -> int:
     payload, delivery_id, payload_sha = build_payload(verifier, stdout_sha)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    intent = {
-        "protocol": "ATOMIC_JOY_DELIVERY_INTENT",
-        "version": "0.0.1",
+    common = {
         "delivery_id": delivery_id,
         "head_sha": EXPECTED_HEAD,
         "source_run_id": EXPECTED_RUN_ID,
@@ -170,13 +168,18 @@ def main() -> int:
         "payload_sha256": payload_sha,
         "no_fake_green": True,
     }
+    intent = {
+        "protocol": "ATOMIC_JOY_DELIVERY_INTENT",
+        "version": "0.0.1",
+        **common,
+    }
     atomic_json(OUTPUT_DIR / "delivery_intent.json", intent)
 
     message = discord_post(payload)
     receipt = {
         "protocol": "ATOMIC_JOY_DELIVERY_RECEIPT",
         "version": "0.0.1",
-        **intent,
+        **common,
         "discord_message_id": str(message["id"]),
         "timestamp_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "delivery_status": "DELIVERED_AND_RECORDED",
