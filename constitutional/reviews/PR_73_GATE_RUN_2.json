@@ -1,0 +1,18 @@
+{
+  "pr": 73,
+  "protocol_version": "0.1.1-DRAFT",
+  "head": "7f9090507f2482a7c5aefdba4197f63e48806d69",
+  "workflow_run_id": 31184712630,
+  "gate": "Constitutional Amendment Gate",
+  "result": "FAIL",
+  "passed_before_failure": [
+    "Validate v0.1.1 protocol metadata and sections"
+  ],
+  "failure_step": "Validate bootstrap reviewer registry",
+  "failure_reason": "BOOTSTRAP_REVIEWER_QUORUM_UNSATISFIED",
+  "active_reviewers": 1,
+  "required_active_reviewers": 2,
+  "interpretation": "CORRECT_FAIL_CLOSED",
+  "review_2_authorized": false,
+  "ratification_authorized": false
+}
