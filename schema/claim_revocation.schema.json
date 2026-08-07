@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schema/claim_revocation.schema.json",
+  "title": "JOY Claim Revocation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["original_claim_id", "historical_proof_ref", "current_status", "revocation_reason", "new_evidence_ref", "affected_verifier_version", "revoked_at"],
+  "properties": {
+    "original_claim_id": {"type": "string", "minLength": 1},
+    "historical_proof_ref": {"type": "string", "minLength": 1},
+    "current_status": {"const": "REVOKED"},
+    "revocation_reason": {"type": "string", "minLength": 1},
+    "new_evidence_ref": {"type": "string", "minLength": 1},
+    "affected_verifier_version": {"type": "string", "minLength": 1},
+    "revoked_at": {"type": "string", "format": "date-time"},
+    "revoked_by": {"type": "string", "minLength": 1}
+  }
+}
