@@ -1,0 +1,83 @@
+name: Constitutional Amendment Gate
+
+on:
+  pull_request:
+    paths:
+      - 'constitutional/**'
+      - 'schema/constitutional_amendment.schema.json'
+      - 'docs/CONSTITUTIONAL_AMENDMENT_PROTOCOL.md'
+      - '.github/workflows/constitutional-amendment-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  constitutional-amendment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned schema tooling
+        run: python -m pip install jsonschema==4.23.0
+
+      - name: Validate amendment artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -d constitutional/amendments ]; then
+            find constitutional/amendments -name 'AMENDMENT_*.json' -print0 | while IFS= read -r -d '' file; do
+              python -m jsonschema -i "$file" schema/constitutional_amendment.schema.json
+            done
+          fi
+
+      - name: Enforce append-only ratified constitutional history
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_SHA="${{ github.event.pull_request.base.sha || github.event.before }}"
+          HEAD_SHA="${{ github.sha }}"
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = '0000000000000000000000000000000000000000' ]; then
+            BASE_SHA='HEAD~1'
+          fi
+
+          DELETED=$(git diff --name-only --diff-filter=D "$BASE_SHA" "$HEAD_SHA" | grep '^constitutional/' || true)
+          if [ -n "$DELETED" ]; then
+            echo "::error::BLOCKED: Constitutional history is append-only. Deleted paths: $DELETED"
+            exit 1
+          fi
+
+          MODIFIED_AMENDMENTS=$(git diff --name-only --diff-filter=M "$BASE_SHA" "$HEAD_SHA" | grep '^constitutional/amendments/AMENDMENT_.*\.json$' || true)
+          if [ -n "$MODIFIED_AMENDMENTS" ]; then
+            echo "::error::BLOCKED: Amendment artifacts are append-only. Supersede with a new amendment artifact: $MODIFIED_AMENDMENTS"
+            exit 1
+          fi
+
+          echo 'CONSTITUTIONAL_HISTORY_APPEND_ONLY = PASS'
+
+      - name: Refuse automated ratification claims
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d constitutional/amendments ]; then
+            python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for path in sorted(Path('constitutional/amendments').glob('AMENDMENT_*.json')):
+              data = json.loads(path.read_text())
+              if data.get('status') == 'RATIFIED' and not data.get('review', {}).get('human_signoffs'):
+                  raise SystemExit(f'RATIFIED amendment missing explicit human sign-off: {path}')
+          print('AUTOMATION_IS_NOT_RATIFIER = PASS')
+          PY
+          else
+            echo 'AUTOMATION_IS_NOT_RATIFIER = PASS (bootstrap: no amendment artifacts yet)'
+          fi
