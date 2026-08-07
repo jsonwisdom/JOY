@@ -1,0 +1,25 @@
+name: Revenue Agent EEV Proof
+
+on:
+  pull_request:
+    paths:
+      - 'joy-revenue-agent/**'
+      - '.github/workflows/revenue-agent-eev.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  eev-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned test dependency
+        run: python -m pip install jsonschema==4.23.0
+      - name: Run EEV unit tests
+        run: python -m unittest discover -s joy-revenue-agent/tests -p 'test_*.py' -v
