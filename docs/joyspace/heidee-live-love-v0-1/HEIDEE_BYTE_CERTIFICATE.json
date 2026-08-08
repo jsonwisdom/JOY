@@ -1,0 +1,33 @@
+{
+  "artifact": "HEIDEE_BYTE_CERTIFICATE",
+  "version": "0.1.0",
+  "certificate_id": "HEIDEE-LIVE-LOVE-20260801-FDED587CA091",
+  "status": "STAMPED_PASS_LOCAL_AND_BROWSER_AUDIT",
+  "issued_after_audit": true,
+  "issued_time_local": "2026-08-01T23:05:00-05:00",
+  "scope": "EXACT_HOMEPAGE_AND_EMBEDDED_COVER_BYTES_ONLY",
+  "homepage_sha256": "cdf4380ac7729b897dd873c977a574dba7105f2259e666c96553801fc46f0d91",
+  "homepage_size_bytes": 3687576,
+  "cover_sha256": "fded587ca0919f9eaf527b1bc7235688adfcf618d7232d214fe2ee747ee85de2",
+  "cover_size_bytes": 2756310,
+  "cover_dimensions": [
+    1054,
+    1492
+  ],
+  "audit_report_sha256": "cbe17971803d8ff92c6f3ade51f3ae5e37bcf9503ee1b2458f29ab10111fb7e7",
+  "menu_door_count": 8,
+  "audit_result": "PASS",
+  "authority_effect": "NONE",
+  "identity_proof": false,
+  "consent_inferred": false,
+  "family_relationship_proven": false,
+  "independent_verification": false,
+  "frozen_artifact_rail": "NOT_PASSED",
+  "verified_execution_rail": "NOT_PASSED",
+  "cross_rail_binding": "NOT_PROVEN",
+  "pincer_status": "OPEN",
+  "canonized": false,
+  "promotion": "PROHIBITED",
+  "browser_runtime_check": "PASS",
+  "render_screenshot_sha256": "744c1d2b1530455a1cc6b7573c6500c1b4758f9b391d04e8fd4136d7615762d1"
+}

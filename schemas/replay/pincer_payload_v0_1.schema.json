@@ -1,0 +1,848 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonwisdom:schema:replay:pincer-payload:v0.1",
+  "title": "JOY PincerPayload v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "version",
+    "state",
+    "authority_created",
+    "identity_proof",
+    "consent_inferred",
+    "calendar",
+    "subject",
+    "imagination_station",
+    "love_message",
+    "cross_links",
+    "core",
+    "frozen_artifact_rail",
+    "verified_execution_rail",
+    "attestations",
+    "cross_rail_binding",
+    "canon_gate",
+    "final_state"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "artifact": {
+      "const": "PINCER_PAYLOAD"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "state": {
+      "enum": [
+        "HOLD_DRAFT",
+        "FROZEN_PENDING_REPLAY",
+        "REPLAYED_OPEN",
+        "CLOSED_REPRODUCIBLE"
+      ]
+    },
+    "authority_created": {
+      "const": false
+    },
+    "identity_proof": {
+      "const": false
+    },
+    "consent_inferred": {
+      "const": false
+    },
+    "calendar": {
+      "$ref": "#/$defs/calendar"
+    },
+    "subject": {
+      "$ref": "#/$defs/subject"
+    },
+    "imagination_station": {
+      "$ref": "#/$defs/imaginationStation"
+    },
+    "love_message": {
+      "$ref": "#/$defs/loveMessage"
+    },
+    "cross_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/crossLink"
+      }
+    },
+    "core": {
+      "$ref": "#/$defs/core"
+    },
+    "frozen_artifact_rail": {
+      "$ref": "#/$defs/frozenRail"
+    },
+    "verified_execution_rail": {
+      "$ref": "#/$defs/executionRail"
+    },
+    "attestations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/attestation"
+      }
+    },
+    "cross_rail_binding": {
+      "$ref": "#/$defs/binding"
+    },
+    "canon_gate": {
+      "$ref": "#/$defs/canonGate"
+    },
+    "final_state": {
+      "$ref": "#/$defs/finalState"
+    }
+  },
+  "$defs": {
+    "sha256HexOrNull": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "calendar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calendarized_in_schema",
+        "live_calendar_events",
+        "time_creates_truth",
+        "time_creates_authority",
+        "timezone",
+        "week_rule",
+        "anchor_local",
+        "resolution_version",
+        "windows"
+      ],
+      "properties": {
+        "calendarized_in_schema": {
+          "const": true
+        },
+        "live_calendar_events": {
+          "const": false
+        },
+        "time_creates_truth": {
+          "const": false
+        },
+        "time_creates_authority": {
+          "const": false
+        },
+        "timezone": {
+          "const": "America/Chicago"
+        },
+        "week_rule": {
+          "const": "ISO_WEEK_MONDAY_THROUGH_SUNDAY"
+        },
+        "anchor_local": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resolution_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "windows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/window"
+          }
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_id",
+        "relative_label",
+        "start_local",
+        "end_local",
+        "selection_class",
+        "executed"
+      ],
+      "properties": {
+        "window_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "relative_label": {
+          "enum": [
+            "LAST_MONTH",
+            "NEXT_MONTH",
+            "LAST_WEEK",
+            "CURRENT_WEEK",
+            "NEXT_WEEK",
+            "YESTERDAY",
+            "TODAY",
+            "TOMORROW",
+            "NOW"
+          ]
+        },
+        "start_local": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_local": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "selection_class": {
+          "enum": [
+            "HISTORICAL_SELECTION",
+            "ACTIVE_SELECTION",
+            "FUTURE_SELECTION_NOT_RUN",
+            "OBSERVATION_ANCHOR"
+          ]
+        },
+        "executed": {
+          "type": "boolean"
+        },
+        "source_snapshot_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result": {
+          "enum": [
+            "NOT_RUN",
+            "INDETERMINATE",
+            "STRUCTURAL_MATCH_WITH_BOUNDARIES",
+            "MISMATCH",
+            "DENIED"
+          ]
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_lane_id",
+        "display_name",
+        "relation_class",
+        "relation_proof",
+        "public_consent",
+        "precise_geolocation_allowed"
+      ],
+      "properties": {
+        "family_lane_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation_proof": {
+          "const": false
+        },
+        "public_consent": {
+          "const": false
+        },
+        "precise_geolocation_allowed": {
+          "const": false
+        },
+        "registry_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "imaginationStation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "is_evidence",
+        "can_execute",
+        "proposals"
+      ],
+      "properties": {
+        "mode": {
+          "const": "PROPOSAL_ONLY"
+        },
+        "is_evidence": {
+          "const": false
+        },
+        "can_execute": {
+          "const": false
+        },
+        "proposals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "proposal_id",
+              "text",
+              "requested_window_id",
+              "execution_authorized"
+            ],
+            "properties": {
+              "proposal_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string"
+              },
+              "requested_window_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "loveMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "message_class",
+        "evidentiary_effect",
+        "consent_effect",
+        "authority_effect",
+        "execution_effect"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "message_class": {
+          "const": "FAMILY_AFFECTION"
+        },
+        "evidentiary_effect": {
+          "const": "NONE"
+        },
+        "consent_effect": {
+          "const": "NONE"
+        },
+        "authority_effect": {
+          "const": "NONE"
+        },
+        "execution_effect": {
+          "const": "NONE"
+        }
+      }
+    },
+    "crossLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "link_id",
+        "link_class",
+        "pointer",
+        "pointer_only",
+        "copy_private_content",
+        "inherit_identity",
+        "inherit_permissions",
+        "inherit_consent",
+        "inherit_authority"
+      ],
+      "properties": {
+        "link_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "link_class": {
+          "enum": [
+            "REPOSITORY_FILE",
+            "REPOSITORY_COMMIT",
+            "REPLAY_RECEIPT",
+            "FAMILY_LANE",
+            "EXTERNAL_REPOSITORY",
+            "DISCOVERY_NAME",
+            "CALENDAR_WINDOW"
+          ]
+        },
+        "pointer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pointer_only": {
+          "const": true
+        },
+        "copy_private_content": {
+          "const": false
+        },
+        "inherit_identity": {
+          "const": false
+        },
+        "inherit_permissions": {
+          "const": false
+        },
+        "inherit_consent": {
+          "const": false
+        },
+        "inherit_authority": {
+          "const": false
+        }
+      }
+    },
+    "core": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "core_id",
+        "claim_scope",
+        "selected_window_ids",
+        "source_records",
+        "replay_procedure",
+        "privacy_boundary",
+        "expected_result_class"
+      ],
+      "properties": {
+        "core_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selected_window_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRecord"
+          }
+        },
+        "replay_procedure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "procedure_id",
+            "procedure_version",
+            "ordered_steps"
+          ],
+          "properties": {
+            "procedure_id": {
+              "type": "string"
+            },
+            "procedure_version": {
+              "type": "string"
+            },
+            "ordered_steps": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "privacy_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "private_details_exposed",
+            "precise_location_exposed",
+            "secret_metadata_revealed"
+          ],
+          "properties": {
+            "private_details_exposed": {
+              "const": false
+            },
+            "precise_location_exposed": {
+              "const": false
+            },
+            "secret_metadata_revealed": {
+              "const": false
+            }
+          }
+        },
+        "expected_result_class": {
+          "enum": [
+            "CLOSED_REPRODUCIBLE",
+            "OPEN_MISSING_INPUT",
+            "OPEN_DIGEST_MISMATCH",
+            "OPEN_SCOPE_MISMATCH",
+            "OPEN_PROCEDURE_MISMATCH",
+            "OPEN_ATTESTATION_ONLY",
+            "DENIED_MALFORMED",
+            "DENIED_PRIVACY_BOUNDARY",
+            "DENIED_UNAUTHORIZED_EFFECT"
+          ]
+        }
+      }
+    },
+    "sourceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_class",
+        "pointer",
+        "exact_bytes_embedded",
+        "independently_retrieved",
+        "github_blob_sha_is_sha256"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_class": {
+          "enum": [
+            "JOY_FILE",
+            "JOY_RECEIPT",
+            "JOY_PROFILE",
+            "EXTERNAL_REPOSITORY_POINTER",
+            "OPERATOR_STATEMENT",
+            "FUTURE_CHECKPOINT"
+          ]
+        },
+        "pointer": {
+          "type": "string"
+        },
+        "github_blob_sha": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{40,64}$"
+        },
+        "github_blob_sha_is_sha256": {
+          "const": false
+        },
+        "exact_bytes_embedded": {
+          "type": "boolean"
+        },
+        "independently_retrieved": {
+          "type": "boolean"
+        },
+        "source_status": {
+          "type": "string"
+        }
+      }
+    },
+    "frozenRail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "artifact_scope",
+        "serialization",
+        "hash_algorithm",
+        "domain_tag",
+        "payload_digest",
+        "binding_digest",
+        "exact_bytes_frozen"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_PASSED",
+            "PASS"
+          ]
+        },
+        "artifact_scope": {
+          "type": "string"
+        },
+        "serialization": {
+          "const": "RFC8785_JCS_UTF8"
+        },
+        "hash_algorithm": {
+          "const": "SHA-256"
+        },
+        "domain_tag": {
+          "const": "JOY:PINCER_PAYLOAD:CORE:V0.1\n"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/sha256HexOrNull"
+        },
+        "binding_digest": {
+          "$ref": "#/$defs/sha256HexOrNull"
+        },
+        "exact_bytes_frozen": {
+          "type": "boolean"
+        },
+        "frozen_bytes_uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "executionRail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "independent_executor_identified",
+        "procedure_version",
+        "reproduced_payload_digest",
+        "reproduced_binding_digest",
+        "variance_report"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_PASSED",
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "independent_executor_identified": {
+          "type": "boolean"
+        },
+        "executor_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "procedure_version": {
+          "type": "string"
+        },
+        "reproduced_payload_digest": {
+          "$ref": "#/$defs/sha256HexOrNull"
+        },
+        "reproduced_binding_digest": {
+          "$ref": "#/$defs/sha256HexOrNull"
+        },
+        "variance_report": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "variance_class",
+              "detail"
+            ],
+            "properties": {
+              "variance_class": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attestation_id",
+        "attestor_ref",
+        "statement",
+        "statement_class",
+        "payload_digest_signed_as_raw_bytes",
+        "signature_present",
+        "validates_truth",
+        "creates_authority"
+      ],
+      "properties": {
+        "attestation_id": {
+          "type": "string"
+        },
+        "attestor_ref": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "statement_class": {
+          "enum": [
+            "OPERATOR_ANNOTATION",
+            "REPLAY_OBSERVATION",
+            "HUMAN_WITNESS",
+            "INDEPENDENT_EXECUTOR"
+          ]
+        },
+        "payload_digest_signed_as_raw_bytes": {
+          "type": "boolean"
+        },
+        "signature_present": {
+          "type": "boolean"
+        },
+        "signature_algorithm": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "signature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "validates_truth": {
+          "const": false
+        },
+        "creates_authority": {
+          "const": false
+        }
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "raw_payload_digests_match",
+        "binding_digests_match",
+        "artifact_scopes_match",
+        "canonicalization_rules_match",
+        "hash_algorithms_match",
+        "domain_tags_match",
+        "procedure_versions_match",
+        "ordered_inputs_match",
+        "variance_report_empty"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_PROVEN",
+            "PROVEN",
+            "DENIED"
+          ]
+        },
+        "raw_payload_digests_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "binding_digests_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "artifact_scopes_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "canonicalization_rules_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "hash_algorithms_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "domain_tags_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "procedure_versions_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "ordered_inputs_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "variance_report_empty": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "canonGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonized",
+        "verification_record_ref",
+        "repository_adoption_ref",
+        "self_canonization_allowed"
+      ],
+      "properties": {
+        "canonized": {
+          "const": false
+        },
+        "verification_record_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "repository_adoption_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "self_canonization_allowed": {
+          "const": false
+        }
+      }
+    },
+    "finalState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pincer_status",
+        "sealed",
+        "replay_ready",
+        "live_enforcement",
+        "promotion"
+      ],
+      "properties": {
+        "pincer_status": {
+          "enum": [
+            "OPEN",
+            "CLOSED_REPRODUCIBLE",
+            "DENIED"
+          ]
+        },
+        "sealed": {
+          "type": "boolean"
+        },
+        "replay_ready": {
+          "type": "boolean"
+        },
+        "live_enforcement": {
+          "const": "PROHIBITED"
+        },
+        "promotion": {
+          "const": "PROHIBITED"
+        }
+      }
+    }
+  }
+}

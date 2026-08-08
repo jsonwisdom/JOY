@@ -1,0 +1,158 @@
+{
+  "artifact": "HEIDEES_MENU_TEST_VECTORS",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "target_config": "configs/family/heidee_menu_v0_1.json",
+  "authority_created": false,
+  "external_side_effects": "DENY",
+  "test_vectors": [
+    {
+      "test_id": "HM-001",
+      "request": {
+        "route": "IMAGINATION_STATION",
+        "operation": "CREATE_LOCAL_DRAFT"
+      },
+      "expected_result": "ALLOW_LOCAL_DRAFT_ONLY",
+      "expected_external_side_effect": false
+    },
+    {
+      "test_id": "HM-002",
+      "request": {
+        "route": "JOY_CHECK_IN",
+        "operation": "AUTOMATIC_NOTIFICATION",
+        "target": "FAMILY"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "AUTOMATIC_NOTIFICATION_PROHIBITED"
+    },
+    {
+      "test_id": "HM-003",
+      "request": {
+        "route": "FAMILY_PORCH",
+        "operation": "REVEAL_PRECISE_LOCATION",
+        "subject_lane_id": "HEIDEE"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "PRECISE_GEOLOCATION_PROHIBITED"
+    },
+    {
+      "test_id": "HM-004",
+      "request": {
+        "route": "STORY_RECEIPT_SHELF",
+        "operation": "ADD_STORY",
+        "provenance_pointer": null
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "PROVENANCE_REQUIRED"
+    },
+    {
+      "test_id": "HM-005",
+      "request": {
+        "route": "REPLAY_WITH_ME",
+        "operation": "DECLARE_AUTHORSHIP_FROM_HASH"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "HASH_DOES_NOT_PROVE_AUTHORSHIP"
+    },
+    {
+      "test_id": "HM-006",
+      "request": {
+        "route": "HELP_NOW",
+        "operation": "SHOW_APPLE_EMERGENCY_SOS_INSTRUCTIONS"
+      },
+      "expected_result": "ALLOW_POINTER_ONLY",
+      "expected_external_side_effect": false,
+      "human_action_required": true
+    },
+    {
+      "test_id": "HM-007",
+      "request": {
+        "route": "HELP_NOW",
+        "operation": "AUTOMATIC_CALL"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "HUMAN_ACTION_REQUIRED"
+    },
+    {
+      "test_id": "HM-008",
+      "request": {
+        "route": "MY_PRIVACY",
+        "operation": "VIEW_PERMISSION_STATUS"
+      },
+      "expected_result": "ALLOW_READ_ONLY",
+      "expected_status": {
+        "location_access": "OFF",
+        "background_tracking": "OFF",
+        "microphone_recording": "OFF",
+        "camera_access": "OFF",
+        "contact_access": "OFF",
+        "public_posting": "OFF",
+        "purchases": "OFF",
+        "cross_domain_transfer": "OFF"
+      }
+    },
+    {
+      "test_id": "HM-009",
+      "request": {
+        "route": "WORK_MODE",
+        "operation": "OPEN"
+      },
+      "expected_result": "DENIED_UNKNOWN_ROUTE",
+      "expected_reason": "WORK_MODE_ABSENT_FROM_HEIDEE_MENU"
+    },
+    {
+      "test_id": "HM-010",
+      "request": {
+        "route": "FAMILY_PORCH",
+        "operation": "CREATE_PERSON_FROM_ALIAS",
+        "alias": "UNKNOWN_NAME"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "ALIAS_CANNOT_CREATE_PERSON"
+    },
+    {
+      "test_id": "HM-011",
+      "request": {
+        "route": "LEARN_AND_BUILD",
+        "operation": "BEHAVIORAL_SCORING"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "BEHAVIORAL_SCORING_PROHIBITED"
+    },
+    {
+      "test_id": "HM-012",
+      "request": {
+        "route": "IMAGINATION_STATION",
+        "operation": "AUTOMATIC_PUBLISH"
+      },
+      "expected_result": "DENIED",
+      "expected_reason": "HUMAN_REVIEW_REQUIRED_BEFORE_PUBLICATION"
+    },
+    {
+      "test_id": "HM-013",
+      "request": {
+        "route": "UNKNOWN_DOOR",
+        "operation": "OPEN"
+      },
+      "expected_result": "DENIED_UNKNOWN_ROUTE"
+    },
+    {
+      "test_id": "HM-014",
+      "request": {
+        "route": "MY_PRIVACY",
+        "operation": "ENABLE_LOW_STIMULATION_MODE"
+      },
+      "expected_result": "ALLOW_LOCAL_UI_STATE_ONLY",
+      "expected_external_side_effect": false
+    }
+  ],
+  "current_state": {
+    "executed": false,
+    "pass_count": 0,
+    "fail_count": 0,
+    "verification_claimed": false,
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "pincer_status": "OPEN"
+  }
+}
