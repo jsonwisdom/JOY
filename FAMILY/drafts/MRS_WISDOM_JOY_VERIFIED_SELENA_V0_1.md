@@ -3,8 +3,9 @@
 ```yaml
 artifact: MRS_WISDOM_JOY_VERIFIED_SELENA_V0_1
 status: DRAFT_REVIEW
-subject_label: SELENA
-subject_identity: UNRESOLVED
+subject_label: SELENA_GOMEZ
+subject_identity: SELENA_GOMEZ
+identity_gate: PASS
 surface: JOYSPACE_EDITORIAL_PROMOTION
 authority: false
 commercial_authorization: false
@@ -19,6 +20,10 @@ human_signoff: PENDING
 Build a high-energy, TMZ-style JoySpace promotion that is funny, fast, colorful, source-visible, and individually fair.
 
 “Joy Verified Selena” means the published rubric calculation can be replayed from labeled evidence. It does not mean Selena endorsed JOY, approved the page, entered a commercial relationship, or authorized promotion.
+
+Selena Gomez is the named public-work inspiration. “Child-origin signal” means the creative inspiration begins with her youth-accessible public work. It does not describe Selena Gomez as a child and does not imply authorization.
+
+The governed voice-network extension is defined by `FAMILY/drafts/ATOMIC_HOLLYWOOD_SELENA_VOICE_FORCE_QGF_01.md`.
 
 ## Constitutional Rule — JHMA-01A
 
@@ -88,7 +93,7 @@ S_i<\theta_{\text{critical}}\Rightarrow\text{IMMEDIATE DISENGAGEMENT}
 
 ## Selena Online-Presence Score
 
-Selena is scored only after identity resolution and only from timestamped public evidence:
+Selena Gomez is scored only from timestamped public evidence. Identity resolution does not compute or approve the score:
 
 \[
 O_{\text{Selena}}=0.20A+0.15K+0.15X+0.15R+0.15S+0.10D+0.10Z
