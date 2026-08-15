@@ -122,18 +122,63 @@ RADIANCE = generational memory, warmth, humor, repair, and continuity lane
 RESILIENCE = preserve roots and memory while keeping private details and relationship proof bounded
 ```
 
-### AL
+### MN — OBSERVATION / WITNESS
 
 ```text
-RADIANCE = replay discipline and source-structure lane
-RESILIENCE = keep public-source logic separate from private family authority or unresolved state
+RADIANCE = observable evidence, measurement, source status, and gap-watching lane
+RESILIENCE = preserve UNKNOWN / CONFLICTED / UNSUPPORTED as typed states; never substitute story, confidence, or consensus for a missing observation
 ```
+
+MN answers: **What did we actually observe, measure, source, or fail to establish?**
+
+### AL — CONTEXT / MEANING
+
+```text
+RADIANCE = family / local context, meaning, interpretation, care, and why-the-story-matters lane
+RESILIENCE = preserve meaning without upgrading interpretation into measurement, certification, public fact, or external authority
+```
+
+AL answers: **Why does this matter to the people carrying the story?**
 
 ### LIBRARIAN
 
 ```text
 RADIANCE = evidence-path routing
 RESILIENCE = suggest sources, safer wording, and stop conditions without deciding truth or authority
+```
+
+## Wisconsin Education Binding
+
+Canonical lesson artifact:
+
+`WISDOM/wisconsin_lesson_001_giant_m_mn_al_replay_v0_1.md`
+
+```text
+LOCAL STORY ───────────────→ AL / CONTEXT + MEANING
+VISIBLE OBJECT ────────────→ MN / OBSERVATION + WITNESS
+                                  ↓
+                           CLAIM TO TEST
+                                  ↓
+                           GRAY BABY
+                         "HOW DO WE KNOW?"
+                                  ↓
+                  SOURCE → MEASUREMENT → COMPARISON
+                                  ↓
+                                GAP
+                                  ↓
+                              REPLAY
+                                  ↓
+                             RADIANCE
+```
+
+The two rails may meet in a replay, but they do not collapse into one evidence class.
+
+```text
+AL_CONTEXT != MN_EVIDENCE
+STORY != MEASUREMENT
+LOCAL_SOURCE_SUPPORT != GUINNESS_CERTIFICATION
+MEANING != AUTHORITY
+CLAIM != FACT
 ```
 
 ## Hard Boundaries
@@ -147,6 +192,7 @@ MAP != GENEALOGY_PROOF
 REPLAY != AUTHORITY
 STORY != EVIDENCE
 REPO_COMMIT != FAMILY_CONSENT
+AL_CONTEXT != MN_EVIDENCE
 ```
 
 ## Replay Result
@@ -154,6 +200,9 @@ REPO_COMMIT != FAMILY_CONSENT
 ```text
 RADIANCE_LAYER = ADDED_AS_REPLAY_OVERLAY
 RESILIENCE_LAYER = PRESERVED_AND_EXTENDED
+MN_OBSERVATION_WITNESS = ACTIVE
+AL_CONTEXT_MEANING = ACTIVE
+WISCONSIN_LESSON_001 = SEEDED
 MIND_THE_GAP = ACTIVE
 LOG_THE_MAP = ACTIVE
 REPLAY_JAY = ACTIVE
