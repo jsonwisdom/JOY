@@ -1,0 +1,157 @@
+{
+  "graph_id": "WISDOM_FAMILY_EDGE_GRAPH",
+  "version": "1.1",
+  "classification": "FAMILY_REPLAY_BASELINE",
+  "source_scope": "USER_DECLARED_BASELINE",
+  "authority_created": false,
+  "silent_inference": false,
+  "nodes": [
+    {"node_id": "DADDY_JAY", "display": "Daddy Jay", "aliases": ["Jason Wisdom", "Jay Wisdom"]},
+    {"node_id": "MRS_WISDOM", "display": "Mrs. Wisdom", "aliases": []},
+    {"node_id": "MARYDEE", "display": "MaryDee", "aliases": []},
+    {"node_id": "LEANNE", "display": "Leanne", "aliases": []},
+    {"node_id": "GAGA", "display": "Gaga", "aliases": []},
+    {"node_id": "GRAMMY", "display": "Grammy", "aliases": []},
+    {"node_id": "JAYCEE", "display": "JayCee", "aliases": []},
+    {"node_id": "HEIDEE", "display": "HeiDee", "aliases": []},
+    {"node_id": "BRIANNA", "display": "Brianna", "aliases": []},
+    {"node_id": "BE", "display": "Be", "aliases": []},
+    {"node_id": "BRE", "display": "Bre", "aliases": []},
+    {"node_id": "AUNT_RANN", "display": "Aunt Rann", "aliases": []},
+    {"node_id": "AUNT_MAY", "display": "Aunt May", "aliases": []},
+    {"node_id": "UNCLE_DEE", "display": "Uncle Dee", "aliases": []}
+  ],
+  "identity_constraints": [
+    {
+      "constraint_id": "IDENTITY-001",
+      "type": "DISTINCT_NODE",
+      "left": "MRS_WISDOM",
+      "right": "DADDY_JAY",
+      "evidence_class": "USER_DECLARED",
+      "state": "DECLARED",
+      "authority_created": false
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "EDGE-001",
+      "subject": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "object": "JAYCEE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-002",
+      "subject": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "object": "HEIDEE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-003",
+      "subject": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "object": "BRIANNA",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-004",
+      "subject": "MARYDEE",
+      "predicate": "PARENT_OF",
+      "object": "JAYCEE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-005",
+      "subject": "MARYDEE",
+      "predicate": "PARENT_OF",
+      "object": "HEIDEE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-006",
+      "subject": "GAGA",
+      "predicate": "PARENT_OF",
+      "object": "MARYDEE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-007",
+      "subject": "GAGA",
+      "predicate": "PARENT_OF",
+      "object": "LEANNE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-008",
+      "subject": "LEANNE",
+      "predicate": "PARENT_OF",
+      "object": "BE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "EDGE-009",
+      "subject": "LEANNE",
+      "predicate": "PARENT_OF",
+      "object": "BRE",
+      "origin": "USER_DECLARED",
+      "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+      "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": null, "timestamp": null}],
+      "authority_created": false,
+      "evidence_refs": []
+    },
+    {
+      "edge_id": "HOLD-001",
+      "subject": "DADDY_JAY",
+      "predicate": null,
+      "object": "MARYDEE",
+      "origin": "EXPLICIT_HOLD",
+      "current": {"evidence_class": "UNKNOWN", "relationship_state": "HOLD_UNSPECIFIED"},
+      "evidence_events": [],
+      "authority_created": false,
+      "evidence_refs": []
+    }
+  ],
+  "sealed_invariants": [
+    "EVIDENCE_CLASS_NE_RELATIONSHIP_STATE",
+    "KNOWN_NODE_NE_KNOWN_EDGE",
+    "KNOWN_EDGE_NE_ADJACENT_EDGE",
+    "SHARED_OBJECT_NE_RELATIONSHIP_BETWEEN_SUBJECTS",
+    "EVIDENCE_FOR_EDGE_A_NE_EVIDENCE_FOR_EDGE_B",
+    "SILENCE_IS_VALID_GRAPH_STATE",
+    "HOLD_UNSPECIFIED_NE_INVITATION_TO_GUESS",
+    "EDGE_PROMOTION_IS_LOCAL_ONLY"
+  ]
+}
