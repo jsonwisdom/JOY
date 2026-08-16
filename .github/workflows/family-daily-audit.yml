@@ -1,0 +1,97 @@
+name: Family Daily Audit
+
+on:
+  push:
+    branches:
+      - main
+      - agent/family-daily-audit-v1-2
+    paths:
+      - "FAMILY/**"
+      - "tools/family_daily_audit_v1_2.py"
+      - ".github/workflows/family-daily-audit.yml"
+  pull_request:
+    paths:
+      - "FAMILY/**"
+      - "tools/family_daily_audit_v1_2.py"
+      - ".github/workflows/family-daily-audit.yml"
+  schedule:
+    - cron: "15 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-family-graph:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout exact triggering commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Verify exact checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED="${{ github.event.pull_request.head.sha || github.sha }}"
+          ACTUAL="$(git rev-parse HEAD)"
+          echo "expected=${EXPECTED}"
+          echo "actual=${ACTUAL}"
+          test "${ACTUAL}" = "${EXPECTED}"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run whole-family audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/family_daily_audit_v1_2.py \
+            --graph FAMILY/graph/FAMILY_EDGE_GRAPH_V1_1.json \
+            --out build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+
+      - name: Print audit receipt
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json ]; then
+            cat build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+          fi
+
+      - name: Add audit summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path('build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json')
+          if not p.exists():
+              raise SystemExit(0)
+          r = json.loads(p.read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('## Family Daily Audit\n\n')
+              f.write(f"- Status: **{r['status']}**\n")
+              f.write(f"- Nodes: **{r['coverage']['node_count']}**\n")
+              f.write(f"- Edges: **{r['coverage']['edge_count']}**\n")
+              f.write(f"- Non-Jay edges audited: **{r['coverage']['non_jay_edge_count']}**\n")
+              f.write(f"- HOLD_UNSPECIFIED: **{r['relationship_state_counts']['hold_unspecified']}**\n")
+              f.write(f"- Silent nodes preserved: **{len(r['coverage']['silent_nodes'])}**\n")
+              f.write(f"- Adversarial tests: **{sum(1 for x in r['adversarial_tests'] if x['pass'])}/{len(r['adversarial_tests'])} PASS**\n")
+              f.write('- Facts promoted: **0**\n')
+              f.write('- Authority created: **false**\n')
+          PY
+
+      - name: Upload family audit receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: family-daily-audit-receipt
+          path: build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+          if-no-files-found: error
