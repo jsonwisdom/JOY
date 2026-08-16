@@ -1,0 +1,164 @@
+{
+  "artifact": "JAYSPACE_RELATIONSHIP_CLAIMS_v0.1",
+  "version": "0.1",
+  "surface": "FAMILY/JAYSPACE",
+  "subject": "DADDY_JAY",
+  "purpose": "Store Jay-centered family relationship declarations edge-by-edge without inferring adjacent relationships or promoting declarations into verified genealogy.",
+  "claims": [
+    {
+      "edge_id": "DADDY_JAY_PARENT_OF_HEIDEE_v0.1",
+      "from": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "to": "HEIDEE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "DADDY_JAY_PARENT_OF_JAYCEE_v0.1",
+      "from": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "to": "JAYCEE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "DADDY_JAY_PARENT_OF_BRIANNA_v0.1",
+      "from": "DADDY_JAY",
+      "predicate": "PARENT_OF",
+      "to": "BRIANNA",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "MARYDEE_PARENT_OF_HEIDEE_v0.1",
+      "from": "MARYDEE",
+      "predicate": "PARENT_OF",
+      "to": "HEIDEE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "MARYDEE_PARENT_OF_JAYCEE_v0.1",
+      "from": "MARYDEE",
+      "predicate": "PARENT_OF",
+      "to": "JAYCEE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "GAGA_PARENT_OF_MARYDEE_v0.1",
+      "from": "GAGA",
+      "predicate": "PARENT_OF",
+      "to": "MARYDEE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "GAGA_PARENT_OF_LEANNE_v0.1",
+      "from": "GAGA",
+      "predicate": "PARENT_OF",
+      "to": "LEANNE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "LEANNE_PARENT_OF_BE_v0.1",
+      "from": "LEANNE",
+      "predicate": "PARENT_OF",
+      "to": "BE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    },
+    {
+      "edge_id": "LEANNE_PARENT_OF_BRE_v0.1",
+      "from": "LEANNE",
+      "predicate": "PARENT_OF",
+      "to": "BRE",
+      "edge_exists": true,
+      "evidence_class": "USER_DECLARED",
+      "relationship_state": "DECLARED",
+      "relationship_verified": false,
+      "evidence_refs": [],
+      "notes": "Declared relationship edge. No genealogy verification performed by this artifact."
+    }
+  ],
+  "protected_gaps": [
+    {
+      "gap_id": "DADDY_JAY_MARYDEE_ADULT_RELATIONSHIP_v0.1",
+      "participants": [
+        "DADDY_JAY",
+        "MARYDEE"
+      ],
+      "relationship_state": "HOLD_UNSPECIFIED",
+      "predicate": null,
+      "edge_exists": false,
+      "forbidden_inferences": [
+        "SPOUSE_OF",
+        "PARTNER_OF",
+        "CO_PARENT_OF",
+        "HOUSEHOLD_WITH",
+        "CUSTODY_RELATIONSHIP",
+        "INTERPERSONAL_HISTORY"
+      ],
+      "reason": "Shared child nodes do not establish an adult relationship edge."
+    }
+  ],
+  "promotion_rule": {
+    "USER_DECLARED": "Preserve as DECLARED only unless a new qualifying evidence event supports promotion.",
+    "DOCUMENT_SOURCE_BOUND": "May support evaluation but does not automatically verify identity or kinship.",
+    "PERSON_CONFIRMED": "May support VERIFIED after edge-local evaluation.",
+    "CONFLICTED": "Move only the affected edge to DISPUTED; do not contaminate neighboring edges.",
+    "UNKNOWN": "Preserve the gap; do not infer."
+  },
+  "invariants": [
+    "EVIDENCE_CLASS != RELATIONSHIP_STATE",
+    "EDGE_EXISTS != RELATIONSHIP_VERIFIED",
+    "USER_DECLARED_EDGE != VERIFIED_GENEALOGY",
+    "SHARED_CHILD != ADULT_RELATIONSHIP",
+    "LANE_PRESENT != FAMILY_EDGE",
+    "ROLE_CARD != GENEALOGY_PROOF",
+    "EDGE_PROMOTION_IS_LOCAL_ONLY",
+    "NO_ADJACENT_EDGE_INFERENCE"
+  ],
+  "counts": {
+    "relationship_claim_objects": 9,
+    "verified_relationship_edges": 0,
+    "inferred_relationship_edges": 0,
+    "protected_unspecified_adult_relationships": 1
+  },
+  "relationship_verification_performed": false,
+  "new_family_created": false,
+  "authority_created": false
+}
