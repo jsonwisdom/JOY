@@ -1,0 +1,144 @@
+name: Family Daily Audit
+
+on:
+  push:
+    branches:
+      - main
+      - agent/family-daily-audit-v1-2
+    paths:
+      - "FAMILY/**"
+      - "tools/family_daily_audit_v1_2.py"
+      - ".github/workflows/family-daily-audit.yml"
+  pull_request:
+    paths:
+      - "FAMILY/**"
+      - "tools/family_daily_audit_v1_2.py"
+      - ".github/workflows/family-daily-audit.yml"
+  schedule:
+    - cron: "15 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # required for keyless Sigstore / cosign OIDC signing of the receipt
+
+jobs:
+  audit-family-graph:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+
+    steps:
+      - name: Checkout exact triggering commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Capture provenance SHAs
+        id: sha
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED="${{ github.event.pull_request.head.sha || github.sha }}"
+          ACTUAL="$(git rev-parse HEAD)"
+          echo "expected=${EXPECTED}"
+          echo "actual=${ACTUAL}"
+          if [ "${ACTUAL}" = "${EXPECTED}" ]; then
+            MATCH="true"
+          else
+            MATCH="false"
+          fi
+          echo "match=${MATCH}"
+          echo "tested_commit_sha=${ACTUAL}" >> "$GITHUB_OUTPUT"
+          echo "trigger_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          echo "pr_head_sha=${{ github.event.pull_request.head.sha || '' }}" >> "$GITHUB_OUTPUT"
+          echo "exact_checkout_match=${MATCH}" >> "$GITHUB_OUTPUT"
+          # Fail hard if checkout does not match the intended SHA
+          test "${ACTUAL}" = "${EXPECTED}"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run whole-family audit
+        shell: bash
+        env:
+          TESTED_COMMIT_SHA: ${{ steps.sha.outputs.tested_commit_sha }}
+          TRIGGER_SHA: ${{ steps.sha.outputs.trigger_sha }}
+          PULL_REQUEST_HEAD_SHA: ${{ steps.sha.outputs.pr_head_sha }}
+          EXACT_CHECKOUT_MATCH: ${{ steps.sha.outputs.exact_checkout_match }}
+        run: |
+          set -euo pipefail
+          python tools/family_daily_audit_v1_2.py \
+            --graph FAMILY/graph/FAMILY_EDGE_GRAPH_V1_1.json \
+            --out build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3.7.0
+
+      - name: Sign audit receipt (keyless)
+        shell: bash
+        run: |
+          set -euo pipefail
+          cosign sign-blob \
+            --yes \
+            --bundle build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.sigstore.json \
+            build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+
+      - name: Verify Sigstore bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cosign verify-blob \
+            --bundle build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.sigstore.json \
+            --certificate-identity-regexp "https://github.com/jsonwisdom/JOY/.*" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+
+      - name: Print audit receipt
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json ]; then
+            cat build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+          fi
+
+      - name: Add audit summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path('build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json')
+          if not p.exists():
+              raise SystemExit(0)
+          r = json.loads(p.read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('## Family Daily Audit v1.3\n\n')
+              f.write(f"- Status: **{r['status']}**\n")
+              f.write(f"- tested_commit_sha: `{r.get('tested_commit_sha')}`\n")
+              f.write(f"- trigger_sha: `{r.get('trigger_sha')}`\n")
+              f.write(f"- exact_checkout_match: **{r.get('exact_checkout_match')}**\n")
+              f.write(f"- graph.sha256: `{r['graph']['sha256']}`\n")
+              f.write(f"- Nodes: **{r['coverage']['node_count']}**\n")
+              f.write(f"- Edges: **{r['coverage']['edge_count']}**\n")
+              f.write(f"- Non-Jay edges audited: **{r['coverage']['non_jay_edge_count']}**\n")
+              f.write(f"- HOLD_UNSPECIFIED: **{r['relationship_state_counts']['hold_unspecified']}**\n")
+              f.write(f"- Silent nodes preserved: **{len(r['coverage']['silent_nodes'])}**\n")
+              f.write(f"- Adversarial tests: **{sum(1 for x in r['adversarial_tests'] if x['pass'])}/{len(r['adversarial_tests'])} PASS**\n")
+              f.write('- Facts promoted: **0**\n')
+              f.write('- Authority created: **false**\n')
+              f.write('- Sigstore: **signed + verified**\n')
+          PY
+
+      - name: Upload family audit receipt + Sigstore bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: family-daily-audit-receipt
+          path: |
+            build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.json
+            build/receipts/FAMILY_DAILY_AUDIT_RECEIPT.sigstore.json
+          if-no-files-found: error
