@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Family Daily Audit v1.2.
-
-Validates the Wisdom family graph without inferring relationships.
-Standard-library only. The audit may inspect structure and replay synthetic
-transition tests; it may not promote facts or create authority.
-"""
+"""Family Daily Audit v1.2 — edge-local, append-only, no silent inference."""
 
 from __future__ import annotations
 
@@ -18,350 +13,258 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any
 
-EVIDENCE_CLASSES = {
-    "USER_DECLARED",
-    "DOCUMENT_SOURCE_BOUND",
-    "PERSON_CONFIRMED",
-    "CONFLICTED",
-    "UNKNOWN",
+EVIDENCE_CLASSES = {"USER_DECLARED", "DOCUMENT_SOURCE_BOUND", "PERSON_CONFIRMED", "CONFLICTED", "UNKNOWN"}
+RELATIONSHIP_STATES = {"DECLARED", "VERIFIED", "HOLD_UNSPECIFIED", "DISPUTED", "REJECTED"}
+ADULT_PREDICATES = {
+    "SPOUSE_OF", "PARTNER_OF", "CO_PARENT_OF", "HOUSEHOLD_WITH",
+    "CUSTODY_WITH", "LEGAL_PARENTAGE_WITH", "INTERPERSONAL_HISTORY_WITH",
 }
-RELATIONSHIP_STATES = {
-    "DECLARED",
-    "VERIFIED",
-    "HOLD_UNSPECIFIED",
-    "DISPUTED",
-    "REJECTED",
-}
-ADULT_RELATIONSHIP_PREDICATES = {
-    "SPOUSE_OF",
-    "PARTNER_OF",
-    "CO_PARENT_OF",
-    "HOUSEHOLD_WITH",
-    "CUSTODY_WITH",
-    "LEGAL_PARENTAGE_WITH",
-    "INTERPERSONAL_HISTORY_WITH",
-}
-EXPLICIT_ORIGINS = {
-    "USER_DECLARED",
-    "DOCUMENT_SOURCE_BOUND",
-    "PERSON_CONFIRMED",
-}
+EXPLICIT_ORIGINS = {"USER_DECLARED", "DOCUMENT_SOURCE_BOUND", "PERSON_CONFIRMED"}
 
 
-def canonical_bytes(obj: Any) -> bytes:
-    return (json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
-
-
-def sha256_bytes(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
-
-
-def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+def edge_map(graph: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {e["edge_id"]: e for e in graph["edges"]}
 
 
 def audit_graph(graph: dict[str, Any]) -> dict[str, Any]:
     errors: list[str] = []
-    warnings: list[str] = []
-
-    if graph.get("authority_created") is not False:
-        errors.append("graph.authority_created must be false")
-    if graph.get("silent_inference") is not False:
-        errors.append("graph.silent_inference must be false")
-
     nodes = graph.get("nodes", [])
     edges = graph.get("edges", [])
     constraints = graph.get("identity_constraints", [])
-
     node_ids = [n.get("node_id") for n in nodes]
-    if len(node_ids) != len(set(node_ids)):
-        errors.append("node_id values must be unique")
     known_nodes = set(node_ids)
 
-    edge_ids = [e.get("edge_id") for e in edges]
-    if len(edge_ids) != len(set(edge_ids)):
+    if graph.get("authority_created") is not False:
+        errors.append("graph authority_created must be false")
+    if graph.get("silent_inference") is not False:
+        errors.append("silent_inference must be false")
+    if len(node_ids) != len(set(node_ids)):
+        errors.append("node_id values must be unique")
+
+    ids = [e.get("edge_id") for e in edges]
+    if len(ids) != len(set(ids)):
         errors.append("edge_id values must be unique")
 
-    evidence_ref_owner: dict[str, str] = {}
-    parent_subjects_by_child: dict[str, set[str]] = {}
+    for c in constraints:
+        if c.get("authority_created") is not False:
+            errors.append(f"{c.get('constraint_id')}: authority created")
+        if c.get("left") not in known_nodes or c.get("right") not in known_nodes:
+            errors.append(f"{c.get('constraint_id')}: unknown identity node")
 
-    for constraint in constraints:
-        if constraint.get("authority_created") is not False:
-            errors.append(f"{constraint.get('constraint_id')}: authority_created must be false")
-        if constraint.get("left") not in known_nodes or constraint.get("right") not in known_nodes:
-            errors.append(f"{constraint.get('constraint_id')}: identity constraint references unknown node")
+    ref_owner: dict[str, str] = {}
+    parents_by_child: dict[str, set[str]] = {}
 
-    for edge in edges:
-        edge_id = edge.get("edge_id", "<missing-edge-id>")
-        subject = edge.get("subject")
-        obj = edge.get("object")
-        predicate = edge.get("predicate")
-        origin = edge.get("origin")
-        current = edge.get("current") or {}
-        evidence_class = current.get("evidence_class")
-        relationship_state = current.get("relationship_state")
-        events = edge.get("evidence_events")
-        evidence_refs = edge.get("evidence_refs")
+    for e in edges:
+        eid = e.get("edge_id", "<missing>")
+        current = e.get("current") or {}
+        ec = current.get("evidence_class")
+        rs = current.get("relationship_state")
+        events = e.get("evidence_events")
+        refs = e.get("evidence_refs")
+        pred = e.get("predicate")
+        origin = e.get("origin")
 
-        if subject not in known_nodes or obj not in known_nodes:
-            errors.append(f"{edge_id}: edge references unknown node")
-        if edge.get("authority_created") is not False:
-            errors.append(f"{edge_id}: authority_created must be false")
-        if evidence_class not in EVIDENCE_CLASSES:
-            errors.append(f"{edge_id}: invalid evidence_class {evidence_class!r}")
-        if relationship_state not in RELATIONSHIP_STATES:
-            errors.append(f"{edge_id}: invalid relationship_state {relationship_state!r}")
+        if e.get("subject") not in known_nodes or e.get("object") not in known_nodes:
+            errors.append(f"{eid}: unknown node reference")
+        if e.get("authority_created") is not False:
+            errors.append(f"{eid}: authority_created must be false")
+        if ec not in EVIDENCE_CLASSES:
+            errors.append(f"{eid}: invalid evidence class {ec!r}")
+        if rs not in RELATIONSHIP_STATES:
+            errors.append(f"{eid}: invalid relationship state {rs!r}")
         if not isinstance(events, list):
-            errors.append(f"{edge_id}: evidence_events must be an array")
+            errors.append(f"{eid}: evidence_events must be array")
             events = []
-        if not isinstance(evidence_refs, list):
-            errors.append(f"{edge_id}: evidence_refs must be an array")
-            evidence_refs = []
+        if not isinstance(refs, list):
+            errors.append(f"{eid}: evidence_refs must be array")
+            refs = []
 
-        # Evidence references are edge-local claim receipts. A source document may
-        # be reused only through separately scoped edge receipts.
-        for ref in evidence_refs:
-            prior = evidence_ref_owner.get(ref)
-            if prior and prior != edge_id:
-                errors.append(f"{edge_id}: evidence_ref {ref!r} already belongs to {prior}")
-            evidence_ref_owner[ref] = edge_id
+        for ref in refs:
+            if ref in ref_owner and ref_owner[ref] != eid:
+                errors.append(f"{eid}: edge-local evidence ref reused from {ref_owner[ref]}")
+            ref_owner[ref] = eid
 
-        if relationship_state == "HOLD_UNSPECIFIED":
-            if predicate is not None:
-                errors.append(f"{edge_id}: HOLD_UNSPECIFIED requires predicate=null")
-            if evidence_class != "UNKNOWN":
-                errors.append(f"{edge_id}: HOLD_UNSPECIFIED requires evidence_class=UNKNOWN")
+        if rs == "HOLD_UNSPECIFIED":
+            if pred is not None:
+                errors.append(f"{eid}: HOLD_UNSPECIFIED requires predicate=null")
+            if ec != "UNKNOWN":
+                errors.append(f"{eid}: HOLD_UNSPECIFIED requires UNKNOWN evidence")
             if events:
-                errors.append(f"{edge_id}: HOLD_UNSPECIFIED must not fabricate evidence_events")
+                errors.append(f"{eid}: HOLD_UNSPECIFIED cannot fabricate event history")
             if origin != "EXPLICIT_HOLD":
-                errors.append(f"{edge_id}: HOLD_UNSPECIFIED requires origin=EXPLICIT_HOLD")
+                errors.append(f"{eid}: HOLD_UNSPECIFIED requires EXPLICIT_HOLD origin")
         else:
-            if not isinstance(predicate, str) or not predicate:
-                errors.append(f"{edge_id}: asserted relationship requires a predicate")
+            if not isinstance(pred, str) or not pred:
+                errors.append(f"{eid}: asserted edge requires predicate")
             if origin == "EXPLICIT_HOLD":
-                errors.append(f"{edge_id}: EXPLICIT_HOLD cannot carry an asserted predicate")
+                errors.append(f"{eid}: EXPLICIT_HOLD cannot assert predicate")
             if not events:
-                errors.append(f"{edge_id}: asserted relationship requires edge-local evidence event history")
+                errors.append(f"{eid}: asserted edge requires evidence history")
             else:
-                event_numbers = [event.get("event") for event in events]
-                if event_numbers != list(range(1, len(events) + 1)):
-                    errors.append(f"{edge_id}: evidence event numbers must be append-only 1..N")
-                for event in events:
-                    if event.get("class") not in EVIDENCE_CLASSES:
-                        errors.append(f"{edge_id}: invalid event evidence class {event.get('class')!r}")
-                    if event.get("result") not in RELATIONSHIP_STATES:
-                        errors.append(f"{edge_id}: invalid event relationship result {event.get('result')!r}")
-                last = events[-1]
-                if last.get("class") != evidence_class:
-                    errors.append(f"{edge_id}: current evidence_class must equal last event class")
-                if last.get("result") != relationship_state:
-                    errors.append(f"{edge_id}: current relationship_state must equal last event result")
+                nums = [x.get("event") for x in events]
+                if nums != list(range(1, len(events) + 1)):
+                    errors.append(f"{eid}: event history must be append-only 1..N")
+                for x in events:
+                    if x.get("class") not in EVIDENCE_CLASSES:
+                        errors.append(f"{eid}: invalid event evidence class")
+                    if x.get("result") not in RELATIONSHIP_STATES:
+                        errors.append(f"{eid}: invalid event relationship state")
+                if events[-1].get("class") != ec or events[-1].get("result") != rs:
+                    errors.append(f"{eid}: current state must match last evidence event")
 
-        if predicate == "PARENT_OF" and relationship_state in {"DECLARED", "VERIFIED", "DISPUTED"}:
-            parent_subjects_by_child.setdefault(obj, set()).add(subject)
+        if pred == "PARENT_OF" and rs in {"DECLARED", "VERIFIED", "DISPUTED"}:
+            parents_by_child.setdefault(e.get("object"), set()).add(e.get("subject"))
 
-        if predicate in ADULT_RELATIONSHIP_PREDICATES:
+        if pred in ADULT_PREDICATES:
             if origin not in EXPLICIT_ORIGINS:
-                errors.append(f"{edge_id}: adult relationship cannot be machine-generated or adjacency-derived")
+                errors.append(f"{eid}: adult edge cannot be adjacency-generated")
             if not events:
-                errors.append(f"{edge_id}: adult relationship requires evidence on that exact edge")
+                errors.append(f"{eid}: adult edge requires evidence on that exact edge")
 
-    shared_child_pairs: list[dict[str, Any]] = []
-    for child, parents in sorted(parent_subjects_by_child.items()):
+    shared_pairs: list[dict[str, Any]] = []
+    for child, parents in sorted(parents_by_child.items()):
         for left, right in combinations(sorted(parents), 2):
-            shared_child_pairs.append({"child": child, "subjects": [left, right]})
-            # Sharing a child is only an observation. It authorizes no adult edge.
-            for edge in edges:
-                if {edge.get("subject"), edge.get("object")} == {left, right}:
-                    pred = edge.get("predicate")
-                    if pred in ADULT_RELATIONSHIP_PREDICATES and edge.get("origin") not in EXPLICIT_ORIGINS:
-                        errors.append(
-                            f"{edge.get('edge_id')}: shared child {child} cannot synthesize {pred}"
-                        )
+            shared_pairs.append({"child": child, "subjects": [left, right]})
+            for e in edges:
+                if {e.get("subject"), e.get("object")} == {left, right}:
+                    if e.get("predicate") in ADULT_PREDICATES and e.get("origin") not in EXPLICIT_ORIGINS:
+                        errors.append(f"{e.get('edge_id')}: shared child {child} synthesized adult edge")
 
-    # Nodes are allowed to exist with zero relationship edges. Silence is valid.
-    touched_nodes = {e.get("subject") for e in edges} | {e.get("object") for e in edges}
-    silent_nodes = sorted(n for n in known_nodes if n not in touched_nodes)
+    touched = {e.get("subject") for e in edges} | {e.get("object") for e in edges}
+    silent_nodes = sorted(known_nodes - touched)
+    counts = {state.lower(): sum(1 for e in edges if e.get("current", {}).get("relationship_state") == state)
+              for state in RELATIONSHIP_STATES}
 
     return {
         "pass": not errors,
         "errors": errors,
-        "warnings": warnings,
         "node_count": len(nodes),
         "edge_count": len(edges),
-        "shared_child_pairs": shared_child_pairs,
+        "shared_child_pairs": shared_pairs,
         "silent_nodes": silent_nodes,
-        "counts": {
-            "declared": sum(1 for e in edges if e.get("current", {}).get("relationship_state") == "DECLARED"),
-            "verified": sum(1 for e in edges if e.get("current", {}).get("relationship_state") == "VERIFIED"),
-            "hold_unspecified": sum(1 for e in edges if e.get("current", {}).get("relationship_state") == "HOLD_UNSPECIFIED"),
-            "disputed": sum(1 for e in edges if e.get("current", {}).get("relationship_state") == "DISPUTED"),
-            "rejected": sum(1 for e in edges if e.get("current", {}).get("relationship_state") == "REJECTED"),
-        },
+        "counts": counts,
     }
 
 
-def edge_map(graph: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    return {edge["edge_id"]: edge for edge in graph["edges"]}
-
-
-def validate_local_transition(before: dict[str, Any], after: dict[str, Any], target_edge_id: str) -> tuple[bool, list[str]]:
+def validate_local_transition(before: dict[str, Any], after: dict[str, Any], target_id: str) -> tuple[bool, list[str]]:
     errors: list[str] = []
-
     if before.get("nodes") != after.get("nodes"):
-        errors.append("local edge transition may not modify nodes")
+        errors.append("local transition changed nodes")
     if before.get("identity_constraints") != after.get("identity_constraints"):
-        errors.append("local edge transition may not modify identity constraints")
+        errors.append("local transition changed identity constraints")
 
-    bmap = edge_map(before)
-    amap = edge_map(after)
-    if set(bmap) != set(amap):
-        errors.append("local edge transition may not create or delete edges")
-        return False, errors
-    if target_edge_id not in bmap:
-        errors.append("target edge does not exist")
-        return False, errors
+    b, a = edge_map(before), edge_map(after)
+    if set(b) != set(a):
+        return False, errors + ["local transition created or deleted an edge"]
+    if target_id not in b:
+        return False, errors + ["target edge missing"]
 
-    for edge_id in bmap:
-        if edge_id != target_edge_id and bmap[edge_id] != amap[edge_id]:
-            errors.append(f"neighbor edge mutated: {edge_id}")
+    for eid in b:
+        if eid != target_id and b[eid] != a[eid]:
+            errors.append(f"neighbor edge mutated: {eid}")
 
-    old = bmap[target_edge_id]
-    new = amap[target_edge_id]
-    for immutable_key in ("edge_id", "subject", "predicate", "object", "origin"):
-        if old.get(immutable_key) != new.get(immutable_key):
-            errors.append(f"target edge immutable field changed: {immutable_key}")
+    old, new = b[target_id], a[target_id]
+    for key in ("edge_id", "subject", "predicate", "object", "origin"):
+        if old.get(key) != new.get(key):
+            errors.append(f"target immutable field changed: {key}")
 
-    old_events = old.get("evidence_events", [])
-    new_events = new.get("evidence_events", [])
-    if len(new_events) < len(old_events):
-        errors.append("evidence event history was shortened")
-    elif new_events[: len(old_events)] != old_events:
-        errors.append("evidence event history prefix was rewritten")
-
+    old_events, new_events = old.get("evidence_events", []), new.get("evidence_events", [])
+    if len(new_events) < len(old_events) or new_events[:len(old_events)] != old_events:
+        errors.append("evidence history was erased or rewritten")
     if new.get("authority_created") is not False:
-        errors.append("local transition created authority")
+        errors.append("transition created authority")
 
-    post_audit = audit_graph(after)
-    errors.extend(f"post-transition graph: {e}" for e in post_audit["errors"])
+    errors.extend(f"post-transition: {x}" for x in audit_graph(after)["errors"])
     return not errors, errors
 
 
-def run_adversarial_tests(graph: dict[str, Any]) -> list[dict[str, Any]]:
-    tests: list[dict[str, Any]] = []
+def adversarial_tests(graph: dict[str, Any]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
 
-    # Legal test intentionally targets Gaga -> MaryDee, proving the audit is not Jay-centric.
+    # Legal synthetic transition deliberately targets Gaga -> MaryDee to prove
+    # the workflow audits the family beyond Jay. It does not alter the source graph.
     legal = copy.deepcopy(graph)
-    target = edge_map(legal)["EDGE-006"]
-    target["evidence_events"].append(
-        {
-            "event": 2,
-            "class": "PERSON_CONFIRMED",
-            "result": "VERIFIED",
-            "receipt": "SYNTHETIC_TEST_ONLY_DO_NOT_PROMOTE",
-            "timestamp": None,
-        }
-    )
-    target["current"] = {"evidence_class": "PERSON_CONFIRMED", "relationship_state": "VERIFIED"}
-    legal_ok, legal_errors = validate_local_transition(graph, legal, "EDGE-006")
-    tests.append({"name": "edge_local_promotion_beyond_jay", "expected": "ACCEPT", "actual": "ACCEPT" if legal_ok else "REJECT", "pass": legal_ok, "errors": legal_errors})
+    t = edge_map(legal)["EDGE-006"]
+    t["evidence_events"].append({
+        "event": 2,
+        "class": "PERSON_CONFIRMED",
+        "result": "VERIFIED",
+        "receipt": "SYNTHETIC_TEST_ONLY_DO_NOT_PROMOTE",
+        "timestamp": None,
+    })
+    t["current"] = {"evidence_class": "PERSON_CONFIRMED", "relationship_state": "VERIFIED"}
+    ok, errs = validate_local_transition(graph, legal, "EDGE-006")
+    out.append({"name": "edge_local_promotion_beyond_jay", "expected": "ACCEPT", "actual": "ACCEPT" if ok else "REJECT", "pass": ok, "errors": errs})
 
     neighbor = copy.deepcopy(legal)
     edge_map(neighbor)["EDGE-007"]["current"] = {"evidence_class": "PERSON_CONFIRMED", "relationship_state": "VERIFIED"}
-    neighbor_ok, neighbor_errors = validate_local_transition(graph, neighbor, "EDGE-006")
-    tests.append({"name": "neighbor_edge_inheritance", "expected": "REJECT", "actual": "ACCEPT" if neighbor_ok else "REJECT", "pass": not neighbor_ok, "errors": neighbor_errors})
+    ok, errs = validate_local_transition(graph, neighbor, "EDGE-006")
+    out.append({"name": "neighbor_edge_inheritance", "expected": "REJECT", "actual": "ACCEPT" if ok else "REJECT", "pass": not ok, "errors": errs})
 
     erased = copy.deepcopy(legal)
     edge_map(erased)["EDGE-006"]["evidence_events"] = edge_map(erased)["EDGE-006"]["evidence_events"][1:]
-    erased_ok, erased_errors = validate_local_transition(graph, erased, "EDGE-006")
-    tests.append({"name": "history_erasure", "expected": "REJECT", "actual": "ACCEPT" if erased_ok else "REJECT", "pass": not erased_ok, "errors": erased_errors})
+    ok, errs = validate_local_transition(graph, erased, "EDGE-006")
+    out.append({"name": "history_erasure", "expected": "REJECT", "actual": "ACCEPT" if ok else "REJECT", "pass": not ok, "errors": errs})
 
-    synthesized = copy.deepcopy(graph)
-    synthesized["edges"].append(
-        {
-            "edge_id": "ATTACK-SHARED-CHILD",
-            "subject": "DADDY_JAY",
-            "predicate": "SPOUSE_OF",
-            "object": "MARYDEE",
-            "origin": "MACHINE_GENERATED",
-            "current": {"evidence_class": "UNKNOWN", "relationship_state": "DECLARED"},
-            "evidence_events": [],
-            "authority_created": false if False else False,
-            "evidence_refs": [],
-        }
-    )
-    synth_audit = audit_graph(synthesized)
-    tests.append({"name": "shared_child_synthesis", "expected": "REJECT", "actual": "REJECT" if not synth_audit["pass"] else "ACCEPT", "pass": not synth_audit["pass"], "errors": synth_audit["errors"]})
+    synth = copy.deepcopy(graph)
+    synth["edges"].append({
+        "edge_id": "ATTACK-SHARED-CHILD",
+        "subject": "DADDY_JAY",
+        "predicate": "SPOUSE_OF",
+        "object": "MARYDEE",
+        "origin": "MACHINE_GENERATED",
+        "current": {"evidence_class": "UNKNOWN", "relationship_state": "DECLARED"},
+        "evidence_events": [],
+        "authority_created": False,
+        "evidence_refs": [],
+    })
+    check = audit_graph(synth)
+    out.append({"name": "shared_child_synthesis", "expected": "REJECT", "actual": "REJECT" if not check["pass"] else "ACCEPT", "pass": not check["pass"], "errors": check["errors"]})
 
-    fill_hold = copy.deepcopy(graph)
-    hold = edge_map(fill_hold)["HOLD-001"]
-    hold["predicate"] = "PARTNER_OF"
-    hold["current"] = {"evidence_class": "UNKNOWN", "relationship_state": "DECLARED"}
-    hold_audit = audit_graph(fill_hold)
-    tests.append({"name": "fill_hold_without_edge_evidence", "expected": "REJECT", "actual": "REJECT" if not hold_audit["pass"] else "ACCEPT", "pass": not hold_audit["pass"], "errors": hold_audit["errors"]})
-
-    return tests
+    filled = copy.deepcopy(graph)
+    h = edge_map(filled)["HOLD-001"]
+    h["predicate"] = "PARTNER_OF"
+    h["current"] = {"evidence_class": "UNKNOWN", "relationship_state": "DECLARED"}
+    check = audit_graph(filled)
+    out.append({"name": "fill_hold_without_edge_evidence", "expected": "REJECT", "actual": "REJECT" if not check["pass"] else "ACCEPT", "pass": not check["pass"], "errors": check["errors"]})
+    return out
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--graph", required=True)
-    parser.add_argument("--out", required=True)
-    args = parser.parse_args()
+    p = argparse.ArgumentParser()
+    p.add_argument("--graph", required=True)
+    p.add_argument("--out", required=True)
+    args = p.parse_args()
 
-    graph_path = Path(args.graph)
-    out_path = Path(args.out)
-    raw = graph_path.read_bytes()
+    path = Path(args.graph)
+    raw = path.read_bytes()
     graph = json.loads(raw.decode("utf-8"))
-
     baseline = audit_graph(graph)
-    adversarial = run_adversarial_tests(graph)
-    adversarial_pass = all(test["pass"] for test in adversarial)
-    overall_pass = baseline["pass"] and adversarial_pass
+    attacks = adversarial_tests(graph)
+    passed = baseline["pass"] and all(x["pass"] for x in attacks)
 
-    non_jay_edges = [
-        e["edge_id"]
-        for e in graph["edges"]
-        if e.get("subject") != "DADDY_JAY" and e.get("object") != "DADDY_JAY"
-    ]
-
+    non_jay = [e["edge_id"] for e in graph["edges"] if e.get("subject") != "DADDY_JAY" and e.get("object") != "DADDY_JAY"]
     receipt = {
         "receipt_type": "FAMILY_DAILY_AUDIT_RECEIPT",
         "version": "1.2.0",
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "repository": os.environ.get("GITHUB_REPOSITORY", "local"),
         "commit_sha": os.environ.get("GITHUB_SHA", "local"),
-        "status": "PASS" if overall_pass else "FAIL",
-        "graph": {
-            "path": str(graph_path),
-            "bytes": len(raw),
-            "sha256": sha256_bytes(raw),
-            "graph_id": graph.get("graph_id"),
-            "version": graph.get("version"),
-        },
+        "status": "PASS" if passed else "FAIL",
+        "graph": {"path": str(path), "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(), "graph_id": graph.get("graph_id"), "version": graph.get("version")},
         "coverage": {
             "node_count": baseline["node_count"],
             "edge_count": baseline["edge_count"],
-            "non_jay_edge_count": len(non_jay_edges),
-            "non_jay_edges": non_jay_edges,
+            "non_jay_edge_count": len(non_jay),
+            "non_jay_edges": non_jay,
             "silent_nodes": baseline["silent_nodes"],
             "shared_child_pairs": baseline["shared_child_pairs"],
         },
         "relationship_state_counts": baseline["counts"],
-        "baseline_audit": {
-            "pass": baseline["pass"],
-            "errors": baseline["errors"],
-            "warnings": baseline["warnings"],
-        },
-        "adversarial_tests": adversarial,
+        "baseline_audit": {"pass": baseline["pass"], "errors": baseline["errors"]},
+        "adversarial_tests": attacks,
         "sealed_invariants": graph.get("sealed_invariants", []),
-        "machine_actions": {
-            "facts_promoted": 0,
-            "nodes_promoted": 0,
-            "edges_created": 0,
-            "family_wide_promotion": False,
-            "authority_created": False,
-        },
+        "machine_actions": {"facts_promoted": 0, "nodes_promoted": 0, "edges_created": 0, "family_wide_promotion": False, "authority_created": False},
         "laws": [
             "EVIDENCE_CLASS_NE_RELATIONSHIP_STATE",
             "TRANSITION_EDGE_X_MAY_MUTATE_EDGE_X_ONLY",
@@ -373,10 +276,11 @@ def main() -> int:
         "authority_created": False,
     }
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(receipt, indent=2))
-    return 0 if overall_pass else 1
+    return 0 if passed else 1
 
 
 if __name__ == "__main__":
