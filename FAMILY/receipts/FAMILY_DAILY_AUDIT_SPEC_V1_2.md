@@ -1,4 +1,4 @@
-# FAMILY DAILY AUDIT — v1.2
+# FAMILY DAILY AUDIT — v1.3 (hardened from v1.2)
 
 **Repository:** `jsonwisdom/JOY`  
 **Mode:** `REPLAY / VALIDATION ONLY`  
@@ -18,7 +18,8 @@ The workflow may:
 - preserve `HOLD_UNSPECIFIED`,
 - prove that nodes may remain intentionally without asserted relationship edges,
 - run synthetic adversarial transitions against a copy of the graph,
-- emit a machine-readable receipt.
+- emit a machine-readable receipt,
+- sign the receipt with Sigstore (keyless OIDC) and verify the bundle.
 
 The workflow may not:
 
@@ -40,35 +41,52 @@ SHARED OBJECT ≠ RELATIONSHIP BETWEEN SUBJECTS
 EVIDENCE FOR EDGE A ≠ EVIDENCE FOR EDGE B
 SILENCE = VALID GRAPH STATE
 HOLD_UNSPECIFIED ≠ INVITATION TO GUESS
+ASSERTED EDGE REQUIRES EXPLICIT ORIGIN
 ```
 
-## Current baseline coverage
+## Origin rule (v1.3 hardening)
 
-The v1.1 graph includes declared parent edges across multiple branches/generations and intentionally includes family nodes that have no asserted relationship edge in this fixture. Those silent nodes are expected to remain valid.
+Any asserted edge (predicate ≠ null AND relationship_state ≠ HOLD_UNSPECIFIED) must carry an origin in:
 
-The adversarial transition test deliberately targets `GAGA → PARENT_OF → MARYDEE`, rather than a Jay edge, to prove that the validator is whole-family and edge-local.
+```text
+USER_DECLARED
+DOCUMENT_SOURCE_BOUND
+PERSON_CONFIRMED
+```
+
+MACHINE_GENERATED, ADJACENCY_DERIVED, SHARED_CHILD_DERIVED, SOCIAL_EXPECTATION_DERIVED (and any other non-explicit origin) are rejected for every kinship predicate, including PARENT_OF, AUNT_OF, and future predicates.
+
+## Provenance fields (v1.3)
+
+Every receipt records:
+
+- `trigger_sha` — the SHA that triggered the workflow event
+- `tested_commit_sha` — the SHA that was actually checked out and executed (`git rev-parse HEAD`)
+- `pull_request_head_sha` — present on pull_request events
+- `exact_checkout_match` — boolean that the checked-out HEAD matched the intended SHA
+- `graph.sha256` — SHA-256 of the exact graph file bytes read by the auditor
+
+The receipt is then signed with cosign keyless (`sign-blob` + OIDC) and the Sigstore bundle is verified before upload.
+
+## Adversarial gates (v1.3)
+
+- legal edge-local synthetic promotion beyond Jay: ACCEPT
+- neighboring-edge inheritance: REJECT
+- evidence-history erasure: REJECT
+- MACHINE_GENERATED PARENT_OF: REJECT
+- MACHINE_GENERATED AUNT_OF: REJECT
+- shared-child adult-edge synthesis: REJECT
+- filling HOLD_UNSPECIFIED without edge evidence: REJECT
 
 ## Daily schedule
-
-The workflow contains:
 
 ```text
 cron = 15 12 * * *
 ```
 
-That is **12:15 UTC daily**. GitHub scheduled workflows execute only from the repository default branch, so the daily timer does not become active until the workflow is merged to `main`.
-
-Pushes and pull requests run the validator immediately before merge.
+12:15 UTC daily. GitHub scheduled workflows execute only from the default branch; the timer becomes active only after merge to `main`.
 
 ## Receipt rule
-
-Every run emits:
-
-```text
-FAMILY_DAILY_AUDIT_RECEIPT.json
-```
-
-with graph SHA-256, node/edge counts, non-Jay coverage, silent nodes, shared-child pairs, relationship-state counts, baseline errors, adversarial-test results, and explicit zero-promotion / zero-authority fields.
 
 ```text
 AUDIT PASS ≠ FAMILY APPROVAL
@@ -76,3 +94,5 @@ AUDIT PASS ≠ RELATIONSHIP VERIFICATION
 AUDIT PASS ≠ PUBLICATION AUTHORITY
 AUDIT PASS = GRAPH OBEYED ITS DECLARED TYPE RULES DURING THIS RUN
 ```
+
+Sigstore provides an identity-bound signature + transparency-log evidence of the workflow run that produced the receipt. It does not create human authority.

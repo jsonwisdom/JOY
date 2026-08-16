@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Family Daily Audit v1.2 — edge-local, append-only, no silent inference."""
+"""Family Daily Audit v1.3 — edge-local, append-only, no silent inference, hardened origin + provenance."""
 
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ ADULT_PREDICATES = {
     "SPOUSE_OF", "PARTNER_OF", "CO_PARENT_OF", "HOUSEHOLD_WITH",
     "CUSTODY_WITH", "LEGAL_PARENTAGE_WITH", "INTERPERSONAL_HISTORY_WITH",
 }
+# Explicit origins that may assert any kinship edge. Everything else is rejected.
 EXPLICIT_ORIGINS = {"USER_DECLARED", "DOCUMENT_SOURCE_BOUND", "PERSON_CONFIRMED"}
 
 
@@ -94,10 +95,17 @@ def audit_graph(graph: dict[str, Any]) -> dict[str, Any]:
             if origin != "EXPLICIT_HOLD":
                 errors.append(f"{eid}: HOLD_UNSPECIFIED requires EXPLICIT_HOLD origin")
         else:
+            # Asserted edge (any non-null predicate, non-HOLD state)
             if not isinstance(pred, str) or not pred:
                 errors.append(f"{eid}: asserted edge requires predicate")
             if origin == "EXPLICIT_HOLD":
                 errors.append(f"{eid}: EXPLICIT_HOLD cannot assert predicate")
+            # Strong future-proof rule: any asserted kinship edge needs explicit origin
+            if origin not in EXPLICIT_ORIGINS:
+                errors.append(
+                    f"{eid}: asserted edge origin {origin!r} not in EXPLICIT_ORIGINS; "
+                    "MACHINE_GENERATED / ADJACENCY_DERIVED / SHARED_CHILD_DERIVED / SOCIAL_EXPECTATION_DERIVED rejected"
+                )
             if not events:
                 errors.append(f"{eid}: asserted edge requires evidence history")
             else:
@@ -115,9 +123,8 @@ def audit_graph(graph: dict[str, Any]) -> dict[str, Any]:
         if pred == "PARENT_OF" and rs in {"DECLARED", "VERIFIED", "DISPUTED"}:
             parents_by_child.setdefault(e.get("object"), set()).add(e.get("subject"))
 
+        # Adult predicates retain the extra local-evidence requirement (already covered by EXPLICIT_ORIGINS)
         if pred in ADULT_PREDICATES:
-            if origin not in EXPLICIT_ORIGINS:
-                errors.append(f"{eid}: adult edge cannot be adjacency-generated")
             if not events:
                 errors.append(f"{eid}: adult edge requires evidence on that exact edge")
 
@@ -206,6 +213,51 @@ def adversarial_tests(graph: dict[str, Any]) -> list[dict[str, Any]]:
     ok, errs = validate_local_transition(graph, erased, "EDGE-006")
     out.append({"name": "history_erasure", "expected": "REJECT", "actual": "ACCEPT" if ok else "REJECT", "pass": not ok, "errors": errs})
 
+    # ATTACK: MACHINE_GENERATED PARENT_OF (must REJECT under the stronger rule)
+    attack_parent = copy.deepcopy(graph)
+    attack_parent["edges"].append({
+        "edge_id": "ATTACK-MACHINE-PARENT",
+        "subject": "DADDY_JAY",
+        "predicate": "PARENT_OF",
+        "object": "JAYCEE",
+        "origin": "MACHINE_GENERATED",
+        "current": {"evidence_class": "USER_DECLARED", "relationship_state": "DECLARED"},
+        "evidence_events": [{"event": 1, "class": "USER_DECLARED", "result": "DECLARED", "receipt": None, "timestamp": None}],
+        "authority_created": False,
+        "evidence_refs": [],
+    })
+    check = audit_graph(attack_parent)
+    out.append({
+        "name": "machine_generated_parent_of",
+        "expected": "REJECT",
+        "actual": "REJECT" if not check["pass"] else "ACCEPT",
+        "pass": not check["pass"],
+        "errors": check["errors"],
+    })
+
+    # ATTACK: MACHINE_GENERATED AUNT_OF
+    attack_aunt = copy.deepcopy(graph)
+    attack_aunt["edges"].append({
+        "edge_id": "ATTACK-MACHINE-AUNT",
+        "subject": "AUNT_MAY",
+        "predicate": "AUNT_OF",
+        "object": "JAYCEE",
+        "origin": "MACHINE_GENERATED",
+        "current": {"evidence_class": "UNKNOWN", "relationship_state": "DECLARED"},
+        "evidence_events": [{"event": 1, "class": "UNKNOWN", "result": "DECLARED", "receipt": None, "timestamp": None}],
+        "authority_created": False,
+        "evidence_refs": [],
+    })
+    check = audit_graph(attack_aunt)
+    out.append({
+        "name": "machine_generated_aunt_of",
+        "expected": "REJECT",
+        "actual": "REJECT" if not check["pass"] else "ACCEPT",
+        "pass": not check["pass"],
+        "errors": check["errors"],
+    })
+
+    # Shared-child adult synthesis (still required)
     synth = copy.deepcopy(graph)
     synth["edges"].append({
         "edge_id": "ATTACK-SHARED-CHILD",
@@ -244,14 +296,30 @@ def main() -> int:
     passed = baseline["pass"] and all(x["pass"] for x in attacks)
 
     non_jay = [e["edge_id"] for e in graph["edges"] if e.get("subject") != "DADDY_JAY" and e.get("object") != "DADDY_JAY"]
+
+    # Provenance: prefer actual checked-out HEAD when available; fall back to env
+    tested_commit_sha = os.environ.get("TESTED_COMMIT_SHA") or os.environ.get("GITHUB_SHA", "local")
+    trigger_sha = os.environ.get("TRIGGER_SHA") or os.environ.get("GITHUB_SHA", "local")
+    pr_head_sha = os.environ.get("PULL_REQUEST_HEAD_SHA") or ""
+    exact_match = os.environ.get("EXACT_CHECKOUT_MATCH", "unknown")
+
     receipt = {
         "receipt_type": "FAMILY_DAILY_AUDIT_RECEIPT",
-        "version": "1.2.0",
+        "version": "1.3.0",
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "repository": os.environ.get("GITHUB_REPOSITORY", "local"),
-        "commit_sha": os.environ.get("GITHUB_SHA", "local"),
+        "trigger_sha": trigger_sha,
+        "tested_commit_sha": tested_commit_sha,
+        "pull_request_head_sha": pr_head_sha or None,
+        "exact_checkout_match": exact_match == "true",
         "status": "PASS" if passed else "FAIL",
-        "graph": {"path": str(path), "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(), "graph_id": graph.get("graph_id"), "version": graph.get("version")},
+        "graph": {
+            "path": str(path),
+            "bytes": len(raw),
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "graph_id": graph.get("graph_id"),
+            "version": graph.get("version"),
+        },
         "coverage": {
             "node_count": baseline["node_count"],
             "edge_count": baseline["edge_count"],
@@ -264,7 +332,13 @@ def main() -> int:
         "baseline_audit": {"pass": baseline["pass"], "errors": baseline["errors"]},
         "adversarial_tests": attacks,
         "sealed_invariants": graph.get("sealed_invariants", []),
-        "machine_actions": {"facts_promoted": 0, "nodes_promoted": 0, "edges_created": 0, "family_wide_promotion": False, "authority_created": False},
+        "machine_actions": {
+            "facts_promoted": 0,
+            "nodes_promoted": 0,
+            "edges_created": 0,
+            "family_wide_promotion": False,
+            "authority_created": False,
+        },
         "laws": [
             "EVIDENCE_CLASS_NE_RELATIONSHIP_STATE",
             "TRANSITION_EDGE_X_MAY_MUTATE_EDGE_X_ONLY",
@@ -272,6 +346,7 @@ def main() -> int:
             "SILENCE_IS_VALID_GRAPH_STATE",
             "HOLD_UNSPECIFIED_NE_INVITATION_TO_GUESS",
             "EVIDENCE_IS_NOT_CONTAGIOUS",
+            "ASSERTED_EDGE_REQUIRES_EXPLICIT_ORIGIN",
         ],
         "authority_created": False,
     }
