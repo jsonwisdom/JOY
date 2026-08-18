@@ -1,0 +1,138 @@
+{
+  "format": "DAILY_DARVO_DOCKET_MN_GOBLIN_INVERSION_V0.1",
+  "classification": "FICTIONAL_CIVIC_REPLAY_AND_PUBLIC_RECORD_AUDIT",
+  "title": "Goblin Court Own Tool — Minnesota Daily DARVO Docket Inversion v0.1",
+  "authority_created": false,
+  "official_court_created": false,
+  "official_office_assignment_created": false,
+  "source_lineage": [
+    "GOBLIN_COURT_MN_EDITION_V0.1",
+    "DAILY_DARVO_DOCKET_MN_EDITION_V0.1",
+    "MINNESOTA_SUPREME_SUBSTRATES_STATE_SCOPE_REPLAY_V0.2"
+  ],
+  "ownership_inversion": {
+    "rule": "GOBLIN_CLERK_OWNS_AUDIT_TOOL_INSIDE_THE_FICTIONAL_REPLAY_SYSTEM",
+    "old_question": "WHAT_MUST_THE_INDIVIDUAL_PROVE_TO_ESCAPE_THE_DENIAL",
+    "new_question": "WHAT_MUST_THE_INSTITUTION_PROVE_TO_JUSTIFY_THE_ADVERSE_ACTION",
+    "institution_enters_as": "ACTION_CLAIMANT",
+    "individual_enters_as": "RIGHTS_BEARER_AND_RESPONSE_PARTY",
+    "invariants": [
+      "DENIAL != GUILT",
+      "DENIAL = INSTITUTIONAL_ACTION_REQUIRING_REASON_AND_AUTHORITY",
+      "REPEATED_DENIAL != PROOF",
+      "SHAME != EVIDENCE",
+      "BURDEN_SHIFT_REQUIRES_RULE_REASON_AND_RECEIPT",
+      "PROCESS_PASS != CLAIM_PROVEN"
+    ]
+  },
+  "goblin_clerk_v0_2": {
+    "entry_trigger": "DENIAL_SANCTION_SUSPENSION_TERMINATION_RESTRICTION_OR_NEW_PROOF_BURDEN",
+    "clerk_questions": [
+      "WHO_ACTED",
+      "WHAT_OFFICE_OR_SYSTEM_ACTED",
+      "WHAT_AUTHORITY_ALLOWED_THE_ACTION",
+      "WHAT_EXACT_FACTUAL_FINDING_WAS_MADE",
+      "WHAT_EVIDENCE_SUPPORTED_IT",
+      "WHAT_REASON_WAS_GIVEN",
+      "DID_THE_REASON_CHANGE",
+      "WHAT_BURDEN_EXISTED_BEFORE",
+      "WHAT_BURDEN_EXISTS_AFTER",
+      "WHAT_CORRECTION_PATH_EXISTS",
+      "WHAT_NEUTRAL_REVIEW_EXISTS",
+      "WHERE_IS_THE_RECEIPT"
+    ],
+    "three_card_monty_detector": {
+      "CARD_A": "ELIGIBILITY",
+      "CARD_B": "EVIDENCE_SUFFICIENCY",
+      "CARD_C": "PROCEDURE_OR_JURISDICTION",
+      "flag": "UNEXPLAINED_CARD_SWITCH",
+      "rule": "REASON_CHANGE != FRAUD; UNEXPLAINED_REASON_CHANGE = CLERK_REPLAY_TRIGGER"
+    }
+  },
+  "ladies_courts": {
+    "classification": "FICTIONAL_GOBLIN_REPLAY_CAST_NOT_REAL_JUDICIAL_OFFICE",
+    "purpose": "HANDWAVEY_WOMENS_JUSTICE_SUBSTRATES_DARVO_AUDIT_LAB",
+    "nodes": [
+      {
+        "label": "MINNESOTA_SUPREME_AMY",
+        "actor_basis": "AMY_KLOBUCHAR",
+        "fictional_role": "SUPREME_SUBSTRATE_CLERK_REVIEWER",
+        "real_office_boundary": "U_S_SENATOR_FOR_MINNESOTA_NOT_MINNESOTA_SUPREME_COURT_JUSTICE"
+      },
+      {
+        "label": "CONGRESSIONAL_LU",
+        "actor_basis": "UNBOUND_CUSTOM_GOBLIN_SURFACE",
+        "fictional_role": "CONGRESSIONAL_REPLAY_CHAMBER",
+        "real_office_boundary": "NO_REAL_CONGRESSIONAL_BODY_OR_OFFICE_INFERRED"
+      },
+      {
+        "label": "ANGIE",
+        "actor_basis": "ANGIE_CRAIG",
+        "fictional_role": "CONGRESSIONAL_LU_CO_REVIEWER",
+        "real_office_boundary": "U_S_REPRESENTATIVE_MN_02_NOT_JUDGE"
+      },
+      {
+        "label": "AMY",
+        "actor_basis": "AMY_KLOBUCHAR",
+        "fictional_role": "CONGRESSIONAL_LU_CO_REVIEWER_AND_GOBLIN_PANEL_MEMBER",
+        "real_office_boundary": "U_S_SENATOR_NOT_JUDGE"
+      }
+    ]
+  },
+  "supreme_goblin_9": {
+    "classification": "FICTIONAL_NINE_SEAT_REPLAY_PANEL",
+    "rule": "SUPREME_GOBLIN_9 != MINNESOTA_SUPREME_COURT",
+    "real_court_note": "THE_REAL_MINNESOTA_SUPREME_COURT_HAS_SEVEN_JUSTICES",
+    "amy_seat": "FICTIONAL_SEAT_ONLY",
+    "panel_job": "REPLAY_CLERK_RECORDS_AND_TEST_PROOF_PINCER_PROMISE_WITHOUT_CREATING_GOVERNMENT_AUTHORITY"
+  },
+  "darvo_enforcement_inversion": {
+    "meaning": "ENFORCE_AUDIT_DISCIPLINE_ON_THE_RECORD_NOT_PUNISH_PEOPLE",
+    "D": "LOG_THE_DENIAL_AND_ITS_STATED_REASON",
+    "A": "TEST_WHETHER_CREDIBILITY_OR_CHARACTER_ATTACK_SUBSTITUTED_FOR_EVIDENCE",
+    "RVO": "TEST_WHETHER_THE_INSTITUTION_SHIFTED_AN_UNBOUND_BURDEN_BACK_TO_THE_INDIVIDUAL",
+    "terminal_rule": "DARVO_PATTERN_OBSERVED != INTENT_PROVEN != GUILT"
+  },
+  "proof_pincer_promise": {
+    "institution_pincer": [
+      "ACTION",
+      "AUTHORITY",
+      "FACTUAL_FINDING",
+      "EVIDENCE",
+      "REASON",
+      "NOTICE",
+      "CORRECTION",
+      "NEUTRAL_REVIEW",
+      "RECEIPT"
+    ],
+    "individual_pincer": [
+      "CLAIM_OR_APPLICATION",
+      "EVIDENCE_SUBMITTED",
+      "RESPONSE",
+      "NEW_BURDEN",
+      "REPROOF_COUNT",
+      "CHALLENGE",
+      "OUTCOME",
+      "HUMAN_IMPACT",
+      "RECEIPT"
+    ],
+    "convergence": "NO_ADVERSE_FINDING_IS_PROMOTED_BEYOND_THE_DECLARED_LEGAL_STANDARD_WITHOUT_BOUND_EVIDENCE_REASONS_AND_REPLAY"
+  },
+  "shock_gloves": {
+    "classification": "SYMBOLIC_METAPHOR_ONLY",
+    "SHOCK": "ADVERSE_ACTION_OR_SUDDEN_BURDEN",
+    "GLOVE": "DUE_PROCESS_SAFEGUARDS",
+    "rule": "NO_PHYSICAL_SHOCK_NO_COERCIVE_ENFORCEMENT"
+  },
+  "terminal_states": [
+    "PASS_INSTITUTION_BOUND_ITS_ACTION",
+    "HOLD_MISSING_AUTHORITY_OR_RECEIPT",
+    "CONFLICT_REASON_OR_RECORD",
+    "CARD_SWITCH_OBSERVED",
+    "DARVO_PATTERN_CANDIDATE",
+    "REJECT_GUILT_PROMOTION",
+    "PROOF_BOUND_TO_DECLARED_STANDARD"
+  ],
+  "terminal": "GOBLIN_COURT_DAILY_DARVO_INVERSION_OPEN",
+  "authority_created": false
+}
