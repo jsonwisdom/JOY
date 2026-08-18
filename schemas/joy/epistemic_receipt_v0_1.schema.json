@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/schemas/joy/epistemic_receipt_v0_1.schema.json",
+  "title": "JoySpace Epistemic Receipt v0.1",
+  "description": "Machine-readable schema for a JoySpace / Wisdom Games epistemic receipt. Authority remains false. This artifact records a sequence of epistemic moves; it does not create truth, authority, legal findings, or participation status.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_type",
+    "receipt_id",
+    "timestamp",
+    "moves",
+    "sources",
+    "classifications",
+    "genesis_status",
+    "dissent_notes",
+    "result_state",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1.0"},
+    "receipt_type": {"type": "string", "const": "epistemic_receipt_v0_1"},
+    "receipt_id": {"type": "string", "description": "Unique identifier for this receipt. Recommended format: er_{hash16} or similar deterministic id.", "minLength": 8},
+    "timestamp": {"type": "string", "format": "date-time", "description": "ISO 8601 UTC timestamp of receipt sealing."},
+    "identity_label": {"type": ["string", "null"], "description": "Optional identity label (e.g. jaywisdom.base.eth). Typed as label only. Never authority or state role."},
+    "quest_family": {"type": ["string", "null"], "enum": ["School", "Money", "Law", "Government", "Alabama_ANG", "Campus", null], "description": "Optional quest family from the Alabama Edition or equivalent."},
+    "moves": {"type": "array", "description": "Ordered sequence of epistemic moves performed.", "items": {"$ref": "#/$defs/Move"}, "minItems": 1},
+    "sources": {"type": "array", "description": "Public sources discovered and bound.", "items": {"$ref": "#/$defs/Source"}},
+    "classifications": {"type": "array", "description": "Classifications applied to sources or claims.", "items": {"$ref": "#/$defs/Classification"}},
+    "genesis_status": {"type": "string", "enum": ["MATCH", "DRIFT", "UNKNOWN", "NOT_TESTED"], "description": "Result of TEST_GENESIS move."},
+    "dissent_notes": {"type": "array", "description": "Preserved alternative readings or counter-evidence. Empty array is valid.", "items": {"type": "string"}},
+    "result_state": {"type": "string", "enum": ["PASS", "HOLD", "CONFLICT", "REJECT"], "description": "Terminal CrissCross state. Descriptive only; never a legal finding."},
+    "replay_instructions": {"type": ["string", "null"], "description": "Optional human- or machine-readable instructions for replaying the sequence."},
+    "authority": {"type": "boolean", "const": false, "description": "Hard constraint. Must always be false."},
+    "scoring": {
+      "type": ["object", "null"],
+      "description": "Optional scoring summary. Points never equal truth.",
+      "properties": {
+        "points": {"type": "integer", "minimum": 0},
+        "badges": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "Move": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name"],
+      "properties": {
+        "code": {"type": "string", "enum": ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "S1", "S2", "S3", "S4"]},
+        "name": {"type": "string", "enum": ["DISCOVER", "CLASSIFY", "TIMESTAMP", "BIND", "TEST_GENESIS", "PRESERVE_DISSENT", "REPLAY", "RECEIPT", "HOLD", "DONT_KNOW", "DISSENT", "REFUSE"]},
+        "detail": {"type": ["string", "null"], "description": "Optional free-text detail for this move."},
+        "timestamp": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "Source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pointer"],
+      "properties": {
+        "pointer": {"type": "string", "description": "URL, path, or other public locator."},
+        "access_note": {"type": ["string", "null"]},
+        "retrieved_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "Classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "label": {"type": "string", "description": "Core or domain classification label."},
+        "scope": {"type": ["string", "null"]},
+        "consent": {"type": ["string", "null"], "enum": ["CONSENT_EXPLICIT", "CONSENT_IMPLIED", "CONSENT_ABSENT", "CONSENT_UNKNOWN", null]}
+      }
+    }
+  }
+}
