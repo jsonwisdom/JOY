@@ -1,0 +1,70 @@
+{
+  "artifact": "HEIDEE_JOYSPACE_LIVE_LOVE_V0_1_GITHUB_PUBLICATION",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "requested_command": "PUBLISH_HEIDEE_JOYSPACE_TO_PR_63",
+  "repository": "jsonwisdom/JOY",
+  "pull_request": 63,
+  "branch": "design/mrs-wisdom-emergency-iphone-v0-1",
+  "publication_class": "TRANSPORT_ENVELOPE_PUBLISHED",
+  "full_package_published": false,
+  "binary_payload_committed": false,
+  "text_evidence_committed": true,
+  "local_package": {
+    "homepage": {
+      "filename": "index.html",
+      "sha256": "cdf4380ac7729b897dd873c977a574dba7105f2259e666c96553801fc46f0d91",
+      "size_bytes": 3687576,
+      "committed_to_github": false
+    },
+    "cover": {
+      "filename": "live-love-heidee-joy-cover.png",
+      "sha256": "fded587ca0919f9eaf527b1bc7235688adfcf618d7232d214fe2ee747ee85de2",
+      "size_bytes": 2756310,
+      "dimensions": [1054, 1492],
+      "committed_to_github": false
+    },
+    "render_check": {
+      "filename": "RENDER_CHECK.png",
+      "sha256": "744c1d2b1530455a1cc6b7573c6500c1b4758f9b391d04e8fd4136d7615762d1",
+      "committed_to_github": false
+    },
+    "package_zip": {
+      "filename": "HEIDEE_JOYSPACE_LIVE_LOVE_V0_1.zip",
+      "sha256": "42dbef7f8086d15117b17fd6371b54fe4ed1859b767227f4b0bcbb0886f3c4f8",
+      "size_bytes": 8366370,
+      "committed_to_github": false
+    }
+  },
+  "published_text_records": [
+    "README.md",
+    "PUBLISH_MANIFEST.json",
+    "LOCAL_PACKAGE_README.md",
+    "AUDIT_REPORT.json",
+    "HEIDEE_BYTE_CERTIFICATE.json",
+    "HEIDEE_BYTE_CERTIFICATE.md",
+    "SUMMARY.txt"
+  ],
+  "transport_limitation": {
+    "github_connector_binary_file_parameter_available": false,
+    "mounted_binary_streaming_available": false,
+    "binary_reencoding_permitted": false,
+    "result": "FAIL_CLOSED_TEXT_ENVELOPE_ONLY"
+  },
+  "boundaries": {
+    "authority_created": false,
+    "identity_proof": false,
+    "consent_inferred": false,
+    "public_release_approved": false,
+    "freeze_executed": false,
+    "independent_verification": false,
+    "canonized": false,
+    "promotion": "PROHIBITED"
+  },
+  "rails": {
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "pincer_status": "OPEN"
+  }
+}

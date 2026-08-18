@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light" />
+<title>Heidee’s Menu — JOY</title>
+<style>
+  :root {
+    --ink: #2d2140;
+    --muted: #655b73;
+    --paper: #fffaff;
+    --soft: #f3eaff;
+    --soft-2: #fff1f8;
+    --line: #d8c5eb;
+    --focus: #4a2d70;
+    --safe: #245a45;
+    --shadow: 0 14px 40px rgba(53, 35, 76, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #f8efff 0%, #fffaff 54%, #f6fbff 100%);
+    color: var(--ink);
+  }
+
+  button { font: inherit; }
+
+  .app {
+    width: min(100%, 520px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 18px 16px 36px;
+  }
+
+  .status {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 2px 4px 12px;
+  }
+
+  .hero {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1;
+  }
+
+  .love {
+    margin: 12px 0 0;
+    font-size: 1.08rem;
+    font-weight: 700;
+  }
+
+  .principle {
+    margin: 10px 0 0;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .safety-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .pill {
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    background: #edf8f2;
+    color: var(--safe);
+    border: 1px solid #b8decc;
+  }
+
+  .section-title {
+    margin: 26px 4px 12px;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .menu-button {
+    min-height: 132px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--ink);
+    box-shadow: 0 7px 20px rgba(53, 35, 76, 0.07);
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  }
+
+  .menu-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(53, 35, 76, 0.12);
+  }
+
+  .menu-button:focus-visible,
+  .close:focus-visible,
+  .mode-button:focus-visible {
+    outline: 4px solid rgba(74, 45, 112, 0.28);
+    outline-offset: 3px;
+  }
+
+  .icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 14px;
+  }
+
+  .label {
+    display: block;
+    font-weight: 800;
+    font-size: 1.02rem;
+  }
+
+  .hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+
+  .help-button {
+    border-color: #e6b7c9;
+    background: linear-gradient(145deg, #fff7fa, #fff0f5);
+  }
+
+  .privacy-button {
+    border-color: #bcd9cf;
+    background: linear-gradient(145deg, #fbfffd, #edf9f4);
+  }
+
+  .panel {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    background: rgba(32, 20, 46, 0.4);
+    padding: 12px;
+    z-index: 10;
+  }
+
+  .panel.open { display: flex; }
+
+  .sheet {
+    width: min(100%, 520px);
+    max-height: 82vh;
+    overflow: auto;
+    border-radius: 28px 28px 20px 20px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 22px;
+    box-shadow: 0 -18px 50px rgba(32, 20, 46, 0.22);
+  }
+
+  .sheet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .sheet h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .sheet p,
+  .sheet li {
+    line-height: 1.55;
+  }
+
+  .sheet ul { padding-left: 1.2rem; }
+
+  .close,
+  .mode-button {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: white;
+    color: var(--ink);
+    padding: 10px 13px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .rule-box {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 16px;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .privacy-list {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    margin-top: 14px;
+  }
+
+  .off {
+    color: var(--safe);
+    font-weight: 800;
+  }
+
+  .footer {
+    margin: 22px 4px 0;
+    padding: 16px;
+    border: 1px dashed var(--line);
+    border-radius: 18px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .low-stim body,
+  body.low-stim {
+    background: #f7f7f7;
+  }
+
+  body.low-stim .hero,
+  body.low-stim .menu-button,
+  body.low-stim .sheet {
+    box-shadow: none;
+    background: white;
+  }
+
+  @media (max-width: 370px) {
+    .menu-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; transition: none !important; }
+  }
+
+  @media print {
+    .menu-button, .mode-button { box-shadow: none; }
+    .panel { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="app" aria-labelledby="page-title">
+  <div class="status" aria-label="Simulation status">
+    <span>Offline simulation</span>
+    <span>Tracking off 🔒</span>
+  </div>
+
+  <section class="hero">
+    <h1 id="page-title">Heidee’s Menu 💜</h1>
+    <p class="love">LoveLoveLoves U — Heidee JOY.</p>
+    <p class="principle">Tell the truth kindly. Keep the source attached. Ask for human help when you need it. Your private life is not the price of learning.</p>
+    <div class="safety-strip" aria-label="Safety defaults">
+      <span class="pill">Location off</span>
+      <span class="pill">No ads</span>
+      <span class="pill">No purchases</span>
+      <span class="pill">No auto-posting</span>
+    </div>
+  </section>
+
+  <div class="section-title">Choose a door</div>
+
+  <section class="menu-grid" aria-label="Heidee menu choices">
+    <button class="menu-button" data-panel="checkin" aria-label="Open Joy Check-In">
+      <span class="icon" aria-hidden="true">💜</span>
+      <span class="label">Joy Check-In</span>
+      <span class="hint">A private way to name today.</span>
+    </button>
+
+    <button class="menu-button" data-panel="imagination" aria-label="Open Imagination Station">
+      <span class="icon" aria-hidden="true">✨</span>
+      <span class="label">Imagination Station</span>
+      <span class="hint">Stories, drawings, questions, and ideas.</span>
+    </button>
+
+    <button class="menu-button" data-panel="shelf" aria-label="Open Story and Receipt Shelf">
+      <span class="icon" aria-hidden="true">📚</span>
+      <span class="label">Story & Receipt Shelf</span>
+      <span class="hint">Friendly stories with sources attached.</span>
+    </button>
+
+    <button class="menu-button" data-panel="porch" aria-label="Open Family Porch">
+      <span class="icon" aria-hidden="true">🏡</span>
+      <span class="label">Family Porch</span>
+      <span class="hint">Approved family cards and plans.</span>
+    </button>
+
+    <button class="menu-button" data-panel="learn" aria-label="Open Learn and Build">
+      <span class="icon" aria-hidden="true">🧠</span>
+      <span class="label">Learn & Build</span>
+      <span class="hint">Question, try, notice, check, explain.</span>
+    </button>
+
+    <button class="menu-button" data-panel="replay" aria-label="Open Replay With Me">
+      <span class="icon" aria-hidden="true">🔁</span>
+      <span class="label">Replay With Me</span>
+      <span class="hint">Compare a story with its source.</span>
+    </button>
+
+    <button class="menu-button help-button" data-panel="help" aria-label="Open Help Now">
+      <span class="icon" aria-hidden="true">🆘</span>
+      <span class="label">Help Now</span>
+      <span class="hint">Find a trusted human or safety plan.</span>
+    </button>
+
+    <button class="menu-button privacy-button" data-panel="privacy" aria-label="Open My Privacy">
+      <span class="icon" aria-hidden="true">🔒</span>
+      <span class="label">My Privacy</span>
+      <span class="hint">See exactly what is off and denied.</span>
+    </button>
+  </section>
+
+  <div class="section-title">Comfort</div>
+  <button id="lowStim" class="mode-button" type="button" aria-pressed="false">Turn on low-stimulation mode</button>
+
+  <div class="footer">
+    <strong>Draft boundary:</strong> This page is a static family-safe simulation. It does not call, message, track, diagnose, publish, purchase, prove identity, infer consent, create authority, or close either Pincer rail.
+  </div>
+</main>
+
+<div class="panel" id="detailPanel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+  <section class="sheet">
+    <div class="sheet-head">
+      <div>
+        <div id="panelIcon" class="icon" aria-hidden="true">💜</div>
+        <h2 id="panelTitle">Joy Check-In</h2>
+      </div>
+      <button class="close" id="closePanel" type="button" aria-label="Close menu detail">Close</button>
+    </div>
+    <div id="panelBody"></div>
+  </section>
+</div>
+
+<script>
+  const details = {
+    checkin: {
+      icon: "💜",
+      title: "Joy Check-In",
+      body: `
+        <p>You may choose a feeling, write a private note, or close this screen without explaining anything.</p>
+        <ul>
+          <li>Private draft by default</li>
+          <li>No diagnosis or hidden score</li>
+          <li>No automatic family notification</li>
+          <li>Sharing always requires a visible human choice</li>
+        </ul>
+        <div class="rule-box">PRIVATE_DRAFT → OPTIONAL_HUMAN_REVIEW → BOUNDED_SHARE_OR_DELETE</div>`
+    },
+    imagination: {
+      icon: "✨",
+      title: "Imagination Station",
+      body: `
+        <p>Make a story, picture, question, experiment, or brand-new idea. Imagination is welcome here.</p>
+        <ul>
+          <li>Drafts stay local in this simulation</li>
+          <li>A story is not automatically a fact</li>
+          <li>An idea is not permission to execute</li>
+          <li>Nothing is posted automatically</li>
+        </ul>
+        <div class="rule-box">IMAGINATION != FACT<br>STORY != RECEIPT<br>PROPOSAL != AUTHORIZATION</div>`
+    },
+    shelf: {
+      icon: "📚",
+      title: "Story & Receipt Shelf",
+      body: `
+        <p>Read a friendly explanation and keep the source attached so someone else can check it later.</p>
+        <ul>
+          <li>Simple language is allowed</li>
+          <li>Removing provenance is denied</li>
+          <li>Inventing receipts is denied</li>
+          <li>Friendly words cannot upgrade verification status</li>
+        </ul>
+        <div class="rule-box">STORY + SOURCE POINTER + HONEST STATUS</div>`
+    },
+    porch: {
+      icon: "🏡",
+      title: "Family Porch",
+      body: `
+        <p>The porch holds approved family-safe cards, kind messages, and plan pointers.</p>
+        <ul>
+          <li>No precise locations</li>
+          <li>No medical details</li>
+          <li>No private messages or credentials</li>
+          <li>No relationship inference from a name or alias</li>
+        </ul>
+        <div class="rule-box">FAMILY_CARD = POINTER_ONLY<br>CONSENT_AND_PRIVACY_GATE = REQUIRED</div>`
+    },
+    learn: {
+      icon: "🧠",
+      title: "Learn & Build",
+      body: `
+        <p>Learning is a loop, not a score.</p>
+        <ol>
+          <li>Ask a question</li>
+          <li>Try something safe</li>
+          <li>Notice what happened</li>
+          <li>Check the source</li>
+          <li>Explain it kindly</li>
+          <li>Save a draft</li>
+        </ol>
+        <p>No rankings, streak punishment, eligibility decisions, or behavior scoring.</p>`
+    },
+    replay: {
+      icon: "🔁",
+      title: "Replay With Me",
+      body: `
+        <p>Replay compares what a record says with the source someone points to.</p>
+        <ul>
+          <li>SAME</li>
+          <li>DIFFERENT</li>
+          <li>SOURCE MISSING</li>
+          <li>NOT READY</li>
+        </ul>
+        <div class="rule-box">RECORD != TRUTH<br>HASH != AUTHORSHIP<br>REPLAY = REPRODUCIBILITY TEST</div>`
+    },
+    help: {
+      icon: "🆘",
+      title: "Help Now",
+      body: `
+        <p><strong>A human help request outranks every lesson, story, game, or replay.</strong></p>
+        <p>This simulation can show where approved safety instructions, contact cards, and family plans would appear.</p>
+        <ul>
+          <li>It does not automatically call or message</li>
+          <li>It does not share location</li>
+          <li>It does not declare an emergency</li>
+          <li>A real person must choose the next action</li>
+        </ul>
+        <div class="rule-box">HELP_REQUEST → HUMAN_ACTION</div>`
+    },
+    privacy: {
+      icon: "🔒",
+      title: "My Privacy",
+      body: `
+        <p>The safe default is visible and simple:</p>
+        <div class="privacy-list">
+          <span>Location access</span><span class="off">OFF</span>
+          <span>Background tracking</span><span class="off">OFF</span>
+          <span>Microphone recording</span><span class="off">OFF</span>
+          <span>Camera access</span><span class="off">OFF</span>
+          <span>Contacts access</span><span class="off">OFF</span>
+          <span>Public posting</span><span class="off">OFF</span>
+          <span>Purchases</span><span class="off">OFF</span>
+          <span>Cross-domain transfer</span><span class="off">OFF</span>
+        </div>
+        <div class="rule-box">PRIVATE LIFE IS NOT THE PRICE OF LEARNING</div>`
+    }
+  };
+
+  const panel = document.getElementById("detailPanel");
+  const panelIcon = document.getElementById("panelIcon");
+  const panelTitle = document.getElementById("panelTitle");
+  const panelBody = document.getElementById("panelBody");
+  const closePanel = document.getElementById("closePanel");
+  const lowStim = document.getElementById("lowStim");
+  let lastFocused = null;
+
+  document.querySelectorAll("[data-panel]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const detail = details[button.dataset.panel];
+      if (!detail) return;
+      lastFocused = button;
+      panelIcon.textContent = detail.icon;
+      panelTitle.textContent = detail.title;
+      panelBody.innerHTML = detail.body;
+      panel.classList.add("open");
+      closePanel.focus();
+    });
+  });
+
+  function closeDetail() {
+    panel.classList.remove("open");
+    if (lastFocused) lastFocused.focus();
+  }
+
+  closePanel.addEventListener("click", closeDetail);
+  panel.addEventListener("click", (event) => {
+    if (event.target === panel) closeDetail();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && panel.classList.contains("open")) closeDetail();
+  });
+
+  lowStim.addEventListener("click", () => {
+    const enabled = document.body.classList.toggle("low-stim");
+    lowStim.setAttribute("aria-pressed", String(enabled));
+    lowStim.textContent = enabled
+      ? "Turn off low-stimulation mode"
+      : "Turn on low-stimulation mode";
+  });
+</script>
+</body>
+</html>
