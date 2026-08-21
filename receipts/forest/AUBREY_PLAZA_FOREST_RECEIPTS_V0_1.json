@@ -1,0 +1,155 @@
+{
+  "fixture": "aubrey_plaza_public_receipts_v0_1",
+  "fixture_semantics": {
+    "public_interview_is_private": false,
+    "series_start_year_equals_participation_year": false,
+    "synthetic_creative_replay_is_factual_evidence": false,
+    "cross_tree_inference": false,
+    "authority_created": false
+  },
+  "epistemic_receipts": [
+    {
+      "schema_version": "0.1.0",
+      "receipt_type": "epistemic_receipt_v0_1",
+      "receipt_id": "er_a89d40c0adb99383",
+      "timestamp": "2026-08-20T23:48:00-05:00",
+      "identity_label": null,
+      "quest_family": null,
+      "moves": [
+        {"code": "M1", "name": "DISCOVER", "detail": "https://www.theguardian.com/film/2012/dec/14/aubrey-plaza-parks-and-recreation-comedy", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M2", "name": "CLASSIFY", "detail": "PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M4", "name": "BIND", "detail": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT observed as 21; scope=PUBLIC; source_kind=PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M8", "name": "RECEIPT", "detail": "Forest leaf sidecar may reference this receipt.", "timestamp": "2026-08-20T23:48:00-05:00"}
+      ],
+      "sources": [{"pointer": "https://www.theguardian.com/film/2012/dec/14/aubrey-plaza-parks-and-recreation-comedy", "access_note": "PUBLIC / PUBLIC_SOURCE", "retrieved_at": "2026-08-20T23:48:00-05:00"}],
+      "classifications": [{"label": "PUBLIC_SOURCE", "scope": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT", "consent": null}],
+      "genesis_status": "NOT_TESTED",
+      "dissent_notes": ["Source reports July 2005 and age 21."],
+      "result_state": "PASS",
+      "replay_instructions": "Re-fetch source pointer, compare the exact target_id and claim semantics, then recompute canonical receipt bytes.",
+      "authority": false,
+      "scoring": null
+    },
+    {
+      "schema_version": "0.1.0",
+      "receipt_type": "epistemic_receipt_v0_1",
+      "receipt_id": "er_3b38c8ed069a5be2",
+      "timestamp": "2026-08-20T23:48:00-05:00",
+      "identity_label": null,
+      "quest_family": null,
+      "moves": [
+        {"code": "M1", "name": "DISCOVER", "detail": "https://www.theguardian.com/culture/2016/aug/04/aubrey-plaza-mike-dave-different-meaning-death-so-close", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M2", "name": "CLASSIFY", "detail": "PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M4", "name": "BIND", "detail": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT observed as 20; scope=PUBLIC; source_kind=PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M8", "name": "RECEIPT", "detail": "Forest leaf sidecar may reference this receipt.", "timestamp": "2026-08-20T23:48:00-05:00"}
+      ],
+      "sources": [{"pointer": "https://www.theguardian.com/culture/2016/aug/04/aubrey-plaza-mike-dave-different-meaning-death-so-close", "access_note": "PUBLIC / PUBLIC_SOURCE", "retrieved_at": "2026-08-20T23:48:00-05:00"}],
+      "classifications": [{"label": "PUBLIC_SOURCE", "scope": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT", "consent": null}],
+      "genesis_status": "NOT_TESTED",
+      "dissent_notes": ["Source headline/body reports the stroke as occurring at age 20."],
+      "result_state": "PASS",
+      "replay_instructions": "Re-fetch source pointer, compare the exact target_id and claim semantics, then recompute canonical receipt bytes.",
+      "authority": false,
+      "scoring": null
+    },
+    {
+      "schema_version": "0.1.0",
+      "receipt_type": "epistemic_receipt_v0_1",
+      "receipt_id": "er_74d24be6e0d1a4f0",
+      "timestamp": "2026-08-20T23:48:00-05:00",
+      "identity_label": null,
+      "quest_family": null,
+      "moves": [
+        {"code": "M1", "name": "DISCOVER", "detail": "https://www.tvline.com/casting-news/aubrey-plaza-the-white-lotus-season-2-cast-1234777450/", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M2", "name": "CLASSIFY", "detail": "PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M4", "name": "BIND", "detail": "ROLE.WHITE_LOTUS.AUBREY_PLAZA.PARTICIPATION_YEAR observed as 2022; scope=PUBLIC; source_kind=PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M8", "name": "RECEIPT", "detail": "Forest leaf sidecar may reference this receipt.", "timestamp": "2026-08-20T23:48:00-05:00"}
+      ],
+      "sources": [{"pointer": "https://www.tvline.com/casting-news/aubrey-plaza-the-white-lotus-season-2-cast-1234777450/", "access_note": "PUBLIC / PUBLIC_SOURCE", "retrieved_at": "2026-08-20T23:48:00-05:00"}],
+      "classifications": [{"label": "PUBLIC_SOURCE", "scope": "ROLE.WHITE_LOTUS.AUBREY_PLAZA.PARTICIPATION_YEAR", "consent": null}],
+      "genesis_status": "NOT_TESTED",
+      "dissent_notes": [],
+      "result_state": "PASS",
+      "replay_instructions": "Re-fetch source pointer, compare the exact target_id and claim semantics, then recompute canonical receipt bytes.",
+      "authority": false,
+      "scoring": null
+    },
+    {
+      "schema_version": "0.1.0",
+      "receipt_type": "epistemic_receipt_v0_1",
+      "receipt_id": "er_78888c26264ffa7a",
+      "timestamp": "2026-08-20T23:48:00-05:00",
+      "identity_label": null,
+      "quest_family": null,
+      "moves": [
+        {"code": "M1", "name": "DISCOVER", "detail": "https://www.imdb.com/name/nm2201555/", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M2", "name": "CLASSIFY", "detail": "PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M4", "name": "BIND", "detail": "WORK.WHITE_LOTUS.SERIES_START_YEAR_LABEL observed as 2021; scope=PUBLIC; source_kind=PUBLIC_SOURCE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M8", "name": "RECEIPT", "detail": "Forest leaf sidecar may reference this receipt.", "timestamp": "2026-08-20T23:48:00-05:00"}
+      ],
+      "sources": [{"pointer": "https://www.imdb.com/name/nm2201555/", "access_note": "PUBLIC / PUBLIC_SOURCE", "retrieved_at": "2026-08-20T23:48:00-05:00"}],
+      "classifications": [{"label": "PUBLIC_SOURCE", "scope": "WORK.WHITE_LOTUS.SERIES_START_YEAR_LABEL", "consent": null}],
+      "genesis_status": "NOT_TESTED",
+      "dissent_notes": ["A series-title year label is not equivalent to the performer's participation year."],
+      "result_state": "PASS",
+      "replay_instructions": "Re-fetch source pointer, compare the exact target_id and claim semantics, then recompute canonical receipt bytes.",
+      "authority": false,
+      "scoring": null
+    },
+    {
+      "schema_version": "0.1.0",
+      "receipt_type": "epistemic_receipt_v0_1",
+      "receipt_id": "er_c33bfd31b37f1868",
+      "timestamp": "2026-08-20T23:48:00-05:00",
+      "identity_label": null,
+      "quest_family": null,
+      "moves": [
+        {"code": "M1", "name": "DISCOVER", "detail": "urn:joy:creative:aubrey-plaza-chaos-agent-v0.1", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M2", "name": "CLASSIFY", "detail": "CREATIVE", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M4", "name": "BIND", "detail": "CREATIVE.AUBREY_PLAZA.CHAOS_AGENT_CALIBRATION observed as 'Use public career moments as a stress test for nonlinear metadata without inferring private intent.'; scope=SYNTHETIC_TEST; source_kind=CREATIVE_REPLAY", "timestamp": "2026-08-20T23:48:00-05:00"},
+        {"code": "M8", "name": "RECEIPT", "detail": "Forest leaf sidecar may reference this receipt.", "timestamp": "2026-08-20T23:48:00-05:00"}
+      ],
+      "sources": [{"pointer": "urn:joy:creative:aubrey-plaza-chaos-agent-v0.1", "access_note": "SYNTHETIC_TEST / CREATIVE_REPLAY", "retrieved_at": "2026-08-20T23:48:00-05:00"}],
+      "classifications": [{"label": "CREATIVE", "scope": "CREATIVE.AUBREY_PLAZA.CHAOS_AGENT_CALIBRATION", "consent": null}],
+      "genesis_status": "NOT_TESTED",
+      "dissent_notes": [],
+      "result_state": "PASS",
+      "replay_instructions": "Re-fetch source pointer, compare the exact target_id and claim semantics, then recompute canonical receipt bytes.",
+      "authority": false,
+      "scoring": null
+    }
+  ],
+  "forest_envelopes": [
+    {"envelope_id": "fle_5632db95d8f27c5f", "schema_version": "0.1.0", "envelope_type": "forest_leaf_envelope_v0_1", "receipt_ref": "er_a89d40c0adb99383", "subject_id": "PERSON.AUBREY_PLAZA", "target_id": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT", "claim": {"type": "integer", "value": 21, "unit": "years", "qualifier": "reported"}, "source_kind": "PUBLIC_SOURCE", "access_scope": "PUBLIC", "operation": "EXTRACT", "source_locator": "https://www.theguardian.com/film/2012/dec/14/aubrey-plaza-parks-and-recreation-comedy", "published_at": "2012-12-14T00:00:00Z", "retrieved_at": "2026-08-20T23:48:00-05:00", "candidate_class": "PUBLIC_SOURCE", "root_name": "public_research", "conflict_group": "aubrey_stroke_age", "evidence_weight": 1.0, "synthetic": false, "may_resolve_factual_conflict": true, "authority_created": false},
+    {"envelope_id": "fle_64a22bdea4bec5b4", "schema_version": "0.1.0", "envelope_type": "forest_leaf_envelope_v0_1", "receipt_ref": "er_3b38c8ed069a5be2", "subject_id": "PERSON.AUBREY_PLAZA", "target_id": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT", "claim": {"type": "integer", "value": 20, "unit": "years", "qualifier": "reported"}, "source_kind": "PUBLIC_SOURCE", "access_scope": "PUBLIC", "operation": "EXTRACT", "source_locator": "https://www.theguardian.com/culture/2016/aug/04/aubrey-plaza-mike-dave-different-meaning-death-so-close", "published_at": "2016-08-04T00:00:00Z", "retrieved_at": "2026-08-20T23:48:00-05:00", "candidate_class": "PUBLIC_SOURCE", "root_name": "public_research", "conflict_group": "aubrey_stroke_age", "evidence_weight": 1.0, "synthetic": false, "may_resolve_factual_conflict": true, "authority_created": false},
+    {"envelope_id": "fle_02fa04829cb21213", "schema_version": "0.1.0", "envelope_type": "forest_leaf_envelope_v0_1", "receipt_ref": "er_74d24be6e0d1a4f0", "subject_id": "PERSON.AUBREY_PLAZA", "target_id": "ROLE.WHITE_LOTUS.AUBREY_PLAZA.PARTICIPATION_YEAR", "claim": {"type": "integer", "value": 2022, "unit": "year", "qualifier": "Season 2 casting/publication year"}, "source_kind": "PUBLIC_SOURCE", "access_scope": "PUBLIC", "operation": "CREDIT", "source_locator": "https://www.tvline.com/casting-news/aubrey-plaza-the-white-lotus-season-2-cast-1234777450/", "published_at": "2022-01-10T00:00:00Z", "retrieved_at": "2026-08-20T23:48:00-05:00", "candidate_class": "PUBLIC_SOURCE", "root_name": "public_research", "conflict_group": "white_lotus_temporal_semantics", "evidence_weight": 1.0, "synthetic": false, "may_resolve_factual_conflict": true, "authority_created": false},
+    {"envelope_id": "fle_1d65a8b798006811", "schema_version": "0.1.0", "envelope_type": "forest_leaf_envelope_v0_1", "receipt_ref": "er_78888c26264ffa7a", "subject_id": "PERSON.AUBREY_PLAZA", "target_id": "WORK.WHITE_LOTUS.SERIES_START_YEAR_LABEL", "claim": {"type": "integer", "value": 2021, "unit": "year", "qualifier": "series-title year label"}, "source_kind": "PUBLIC_SOURCE", "access_scope": "PUBLIC", "operation": "SUMMARY", "source_locator": "https://www.imdb.com/name/nm2201555/", "published_at": null, "retrieved_at": "2026-08-20T23:48:00-05:00", "candidate_class": "PUBLIC_SOURCE", "root_name": "public_research", "conflict_group": "white_lotus_temporal_semantics", "evidence_weight": 1.0, "synthetic": false, "may_resolve_factual_conflict": true, "authority_created": false},
+    {"envelope_id": "fle_43b0938ac804b29a", "schema_version": "0.1.0", "envelope_type": "forest_leaf_envelope_v0_1", "receipt_ref": "er_c33bfd31b37f1868", "subject_id": "PERSON.AUBREY_PLAZA", "target_id": "CREATIVE.AUBREY_PLAZA.CHAOS_AGENT_CALIBRATION", "claim": {"type": "string", "value": "Use public career moments as a stress test for nonlinear metadata without inferring private intent.", "qualifier": "synthetic creative replay"}, "source_kind": "CREATIVE_REPLAY", "access_scope": "SYNTHETIC_TEST", "operation": "NARRATE", "source_locator": "urn:joy:creative:aubrey-plaza-chaos-agent-v0.1", "published_at": null, "retrieved_at": "2026-08-20T23:48:00-05:00", "candidate_class": "CREATIVE", "root_name": "leah_prime", "conflict_group": null, "evidence_weight": 0.0, "synthetic": true, "may_resolve_factual_conflict": false, "authority_created": false}
+  ],
+  "boxdee": {
+    "conflicts": [{"target_id": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT", "verdict": "CONFLICT", "values": [{"value": 20, "envelopes": ["fle_64a22bdea4bec5b4"]}, {"value": 21, "envelopes": ["fle_5632db95d8f27c5f"]}], "resolution": "HOLD", "authority_created": false}],
+    "notes": [
+      "Stroke-age receipts share one exact target_id and disagree, so they remain CONFLICT/HOLD.",
+      "White Lotus series-start year and Plaza participation year use different target_ids, so no false conflict is created.",
+      "Synthetic creative replay is routed to CREATIVE with evidence_weight=0 and cannot resolve factual conflicts."
+    ],
+    "authority_created": false
+  },
+  "forest_manifest": {
+    "system": "AppleBlossomAwesomeLeahPrimeMerkleForest",
+    "version": "0.1",
+    "replay": "AubreyPlazaChaosAgent",
+    "subject_id": "PERSON.AUBREY_PLAZA",
+    "roots": {
+      "family": {"class": "PRIVATE_OR_APPROVED", "leaf_count": 0, "root": null, "leaf_envelopes": []},
+      "alabama": {"class": "PUBLIC_LOCAL", "leaf_count": 0, "root": null, "leaf_envelopes": []},
+      "apple_blossom": {"class": "BOUNDARY_RECEIPT", "leaf_count": 0, "root": null, "leaf_envelopes": []},
+      "leah_prime": {"class": "CREATIVE", "leaf_count": 1, "root": "4a976b23c43a6d28c2ad7380837b7c496f251f376e0a953eac1acb3c4f3d8449", "leaf_envelopes": ["fle_43b0938ac804b29a"]},
+      "public_research": {"class": "PUBLIC_SOURCE", "leaf_count": 4, "root": "ca33109ac84fd343502df4c43406764dce2bbda36780024d0d861fa89794a2da", "leaf_envelopes": ["fle_5632db95d8f27c5f", "fle_64a22bdea4bec5b4", "fle_02fa04829cb21213", "fle_1d65a8b798006811"]}
+    },
+    "cross_tree_inference": false,
+    "shared_authority": false,
+    "authority_created": false,
+    "forest_manifest_hash": "636040281d6012964bec555bb553bacfe9e4c0592ad46241be34980896065da9"
+  }
+}
