@@ -148,6 +148,41 @@ Discovery is not extraction. It is the gentle opening of questions that May—or
 }
 ```
 
+## Responsive-language traversal binding
+
+Curiosity must use the sibling protocol:
+
+`FAMILY/JOY_PROTOCOLS/DIRECTORIES_FIRST_RESPONSIVE_LANGUAGE_V0_1.md`
+
+Before opening a new discovery path, treat familiar project terms as existing path candidates first.
+
+```text
+DIRECTORIES_FIRST = TRUE
+WORD = PATH_TOKEN
+REPEATED_WORD = INCREASE_LOOKUP_DEPTH
+VARIANT = CHECK_LINEAGE_BEFORE_NEW_NODE
+KNOWN_TERM = REPLAY_EXISTING_SEMANTICS_THEN_APPLY_DELTA
+```
+
+For family terms such as `PARENT`, `DAD`, `DADDY_JAY`, `DADDY_WISDOM`, `MR_WISDOM`, `MRS_WISDOM`, or `MS_WISDOM`, Curiosity must inspect the existing family graph, role/approval surfaces, and variant/conflict receipts before proposing any new layer.
+
+```text
+EXISTING_PARENTAL_LINEAGE
+→ READ
+→ CLASSIFY ROLE / EDGE / APPROVAL / VARIANT
+→ PRESERVE CONFLICT
+→ APPLY CURRENT DELTA
+```
+
+Not:
+
+```text
+PARENT TOKEN
+→ INVENT NEW_PARENT_LAYER
+```
+
+This navigation rule does not convert role labels into legal authority or relationship proof.
+
 ## Closing Principle
 
 The machine does not win.  
