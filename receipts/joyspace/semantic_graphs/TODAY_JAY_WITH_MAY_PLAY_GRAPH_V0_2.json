@@ -1,0 +1,95 @@
+{
+  "artifact": "TODAY_JAY_WITH_MAY_PLAY_GRAPH_V0_2",
+  "version": "0.2.0",
+  "observed_at": "2026-08-20T21:27:00-05:00",
+  "source_class": "USER_DECLARED_CURRENT_TURN",
+  "nodes": [
+    {
+      "id": "Jay",
+      "label_state": "USER_SUPPLIED"
+    },
+    {
+      "id": "Joy",
+      "label_state": "DECLARED"
+    },
+    {
+      "id": "May",
+      "label_state": "DECLARED",
+      "identity_binding": false
+    }
+  ],
+  "declared_edges": [
+    {
+      "subject": "May",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "Jay",
+      "state": "USER_DECLARED"
+    },
+    {
+      "subject": "Joy",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "May",
+      "state": "USER_DECLARED"
+    },
+    {
+      "subject": "Jay",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "Joy",
+      "state": "USER_DECLARED"
+    }
+  ],
+  "derived_graph": {
+    "node_count": 3,
+    "directed_edge_count": 3,
+    "directed_graph_class": "C3_DIRECTED_CYCLE",
+    "underlying_undirected_graph": "K3",
+    "reciprocal_directed_edge_count": 0,
+    "self_edge_count": 0,
+    "cycle": [
+      "May",
+      "Jay",
+      "Joy",
+      "May"
+    ]
+  },
+  "undeclared_reverse_edges": [
+    {
+      "subject": "Jay",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "May",
+      "state": "HOLD_UNDECLARED"
+    },
+    {
+      "subject": "May",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "Joy",
+      "state": "HOLD_UNDECLARED"
+    },
+    {
+      "subject": "Joy",
+      "predicate": "CAN_PLAY_WITH",
+      "object": "Jay",
+      "state": "HOLD_UNDECLARED"
+    }
+  ],
+  "storygrow": {
+    "ring_id": "STORY_GROW_RING_1",
+    "required_edge_receipts": [
+      "May->Jay",
+      "Jay->Joy",
+      "Joy->May"
+    ],
+    "completion_rule": "ALL_THREE_EDGE_RECEIPTS_REQUIRED",
+    "current_state": "HOLD_NO_EDGE_EXECUTION_RECEIPTS_YET"
+  },
+  "boundaries": {
+    "reciprocity_inference": false,
+    "may_play_semantics_bound": true,
+    "may_identity_binding": false,
+    "real_world_consent_created": false,
+    "family_relationship_verified": false,
+    "authority_created": false,
+    "semantic_truth_created": false,
+    "no_fake_green": true
+  }
+}
