@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/schemas/joy/forest_manifest_v0_1.schema.json",
+  "title": "AppleBlossomAwesome LeahPrime Merkle Forest Manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["system", "version", "replay", "roots", "cross_tree_inference", "shared_authority", "authority_created", "forest_manifest_hash"],
+  "properties": {
+    "system": {"type": "string", "const": "AppleBlossomAwesomeLeahPrimeMerkleForest"},
+    "version": {"type": "string", "const": "0.1.0"},
+    "replay": {"type": "string", "const": "AlabamaJammaSlamma"},
+    "roots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "alabama", "apple_blossom", "leah_prime", "public_research"],
+      "properties": {
+        "family": {"$ref": "#/$defs/PrivateRoot"},
+        "alabama": {"$ref": "#/$defs/PublicLocalRoot"},
+        "apple_blossom": {"$ref": "#/$defs/BoundaryRoot"},
+        "leah_prime": {"$ref": "#/$defs/CreativeRoot"},
+        "public_research": {"$ref": "#/$defs/PublicSourceRoot"}
+      }
+    },
+    "cross_tree_inference": {"type": "boolean", "const": false},
+    "shared_authority": {"type": "boolean", "const": false},
+    "authority_created": {"type": "boolean", "const": false},
+    "forest_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "RootBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class", "root", "leaf_count"],
+      "properties": {
+        "class": {"type": "string"},
+        "root": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "leaf_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "PrivateRoot": {"allOf": [{"$ref": "#/$defs/RootBase"}, {"properties": {"class": {"const": "PRIVATE_OR_APPROVED"}}}]},
+    "PublicLocalRoot": {"allOf": [{"$ref": "#/$defs/RootBase"}, {"properties": {"class": {"const": "PUBLIC_LOCAL"}}}]},
+    "BoundaryRoot": {"allOf": [{"$ref": "#/$defs/RootBase"}, {"properties": {"class": {"const": "BOUNDARY_RECEIPT"}}}]},
+    "CreativeRoot": {"allOf": [{"$ref": "#/$defs/RootBase"}, {"properties": {"class": {"const": "CREATIVE"}}}]},
+    "PublicSourceRoot": {"allOf": [{"$ref": "#/$defs/RootBase"}, {"properties": {"class": {"const": "PUBLIC_SOURCE"}}}]}
+  }
+}
