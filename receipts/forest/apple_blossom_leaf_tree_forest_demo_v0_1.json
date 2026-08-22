@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "authority_created": false,
+    "cross_tree_inference": false,
+    "forest_manifest_hash": "c1223a7b1f040a246d84f6e14e80ee613094c6979f2f049eb3cc5e77b2d333a9",
+    "replay": "AlabamaJammaSlamma",
+    "roots": {
+      "alabama": {
+        "class": "PUBLIC_LOCAL",
+        "leaf_count": 0,
+        "root": "dd24ec23e77057fbfe6adad32208d556da619f1709571001bbae5ae8484da115"
+      },
+      "apple_blossom": {
+        "class": "BOUNDARY_RECEIPT",
+        "leaf_count": 1,
+        "root": "f3840a89e6505c817770f300744e3bb16e45314630310e6ce36e809215aac6e8"
+      },
+      "family": {
+        "class": "PRIVATE_OR_APPROVED",
+        "leaf_count": 0,
+        "root": "2df501154360dfa8612d274fbc4414c10cbfb3cb1a5ce5b68761d3ca790f27f4"
+      },
+      "leah_prime": {
+        "class": "CREATIVE",
+        "leaf_count": 0,
+        "root": "d4626c2e2a95c70d0848df0071f7de6c84c964c3bca45d75544a110c0dff5875"
+      },
+      "public_research": {
+        "class": "PUBLIC_SOURCE",
+        "leaf_count": 0,
+        "root": "977f1d3ca7467904f5520acbf99a020d0c5403463c4f28b3a45ec16644d17c1a"
+      }
+    },
+    "shared_authority": false,
+    "system": "AppleBlossomAwesomeLeahPrimeMerkleForest",
+    "version": "0.1.0"
+  },
+  "route_receipt": {
+    "authority_created": false,
+    "classification": {
+      "alternative_classes": [],
+      "authority_created": false,
+      "cross_tree_inference": false,
+      "decision": "ROUTE",
+      "evidence_weight": {
+        "label": "REPLAYED",
+        "level": 2
+      },
+      "primary_class": "BOUNDARY_RECEIPT",
+      "reason_codes": ["EXPLICIT_EVIDENCE_CLASS"],
+      "root_candidate": "apple_blossom",
+      "routing_confidence": 1.0
+    },
+    "cross_tree_inference": false,
+    "forest_manifest_hash_after": "c1223a7b1f040a246d84f6e14e80ee613094c6979f2f049eb3cc5e77b2d333a9",
+    "forest_manifest_hash_before": "2098822cbcaded15791edd11e085615bae87af9fd4c3f2a86d0ea956bfadae47",
+    "leaf_count_after": 1,
+    "leaf_hash": "5b82a14abd232a7e229f48087dbec76a839d5d3f59dba0a1818ea3330c46f3b8",
+    "root_mutated": "apple_blossom",
+    "status": "ROUTED",
+    "tree_root_after": "f3840a89e6505c817770f300744e3bb16e45314630310e6ce36e809215aac6e8"
+  }
+}
