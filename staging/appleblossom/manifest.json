@@ -1,0 +1,86 @@
+{
+  "schema_version": "APPLE_BLOSSOM_STAGING_MANIFEST_V0_1",
+  "deployment_scope": "STAGING_PUBLIC_READ_ONLY",
+  "generated_at": "2026-08-22T00:00:00Z",
+  "source_repository": "jsonwisdom/JOY",
+  "source_base": {
+    "branch": "main",
+    "commit": "4b5429baa59b0105e48148cded5f114e7b8ff1d5"
+  },
+  "surfaces": [
+    {
+      "id": "AppleBlossomEvidenceModel",
+      "source": "jsonwisdom/JOY#88",
+      "exact_head": "c082cc3289c4a187e65c28b33c986ca63e508a87",
+      "role": "Evidence classification and single-tree routing",
+      "state": "DRAFT_CI_OBSERVED"
+    },
+    {
+      "id": "AppleBlossomArchitecture",
+      "source": "APPLE_BLOSSOM_ONION_CROSSWALK_EVAL_20260822",
+      "role": "Non-authoritative cross-repository component map",
+      "state": "SUPPORTED_CONCEPTUALLY_CROSS_EDGES_HOLD"
+    },
+    {
+      "id": "AppleBlossomLoopDesignAudit",
+      "source": "jsonwisdom/COMPUTERWISDOM#518",
+      "exact_head": "fd880e0c4d39cd84d2e46bc9bf67ba9803571db9",
+      "role": "Language-loop design, bounded tests, and assistance/replay audit",
+      "state": "DRAFT_CI_OBSERVED"
+    },
+    {
+      "id": "BoxDeeArchitecture_FAFO_3_0_ReverseReceiptOnionSackLaunchAnalysis",
+      "role": "Story/replay launch-analysis namespace; not a factual or authority finding",
+      "state": "LABELS_OBSERVED_SOURCES_PARTIAL"
+    }
+  ],
+  "tracking": {
+    "maxwell": {
+      "source_path": "jsonwisdom/COMPUTERWISDOM/receipts/zora/maxwells_joystick_agenda_zora_receipt_v0_1.json",
+      "state": "SOURCE_PATH_OBSERVED_CHANGE_FEED_NOT_CONFIGURED"
+    },
+    "aetc": {
+      "state": "HOLD_NO_EXACT_REPOSITORY_MATCH"
+    },
+    "white_house": {
+      "source_path": "jsonwisdom/COMPUTERWISDOM/docs/watches/us_ai_eo_level_3_watch_v0_1.md",
+      "state": "SOURCE_PATH_OBSERVED_LIVE_FEED_NOT_CONFIGURED"
+    }
+  },
+  "identity_and_publication": {
+    "ens": [
+      "jaywisdom.eth",
+      "jaywisdom.base.eth"
+    ],
+    "ens_state": "REPOSITORY_REFERENCES_OBSERVED_NOT_RESOLVED_BY_THIS_DEPLOYMENT",
+    "zora_profile": "https://zora.co/@jaywisdom",
+    "zora_state": "PROFILE_LOAD_RECEIPT_EXISTS_COIN_LOAD_INDEPENDENT_VERIFICATION_HOLD",
+    "base_token_candidate": {
+      "address_supplied": "0x694ce46c64d9d1a5e9376a9febcf85ec05d72e9f",
+      "checksummed_address_from_existing_joy_correction": "0x694cE46C64D9D1a5e9376A9feBcF85Ec05D72e9F",
+      "network": "Base",
+      "role": "REPORTED_TOKEN_CONTRACT",
+      "address_match_existing_joy_correction": true,
+      "state": "USER_CONFIRMED_ADDRESS_MATCH_NOT_INDEPENDENTLY_REPLAYED",
+      "liquidity_pool": "UNCONFIRMED_OR_ABSENT"
+    }
+  },
+  "integration": {
+    "cross_edges": "HOLD",
+    "executable_lineage": false,
+    "unclassified_input_rejection_test": "MISSING"
+  },
+  "openai": {
+    "required_for_core": false,
+    "api_key_required": false,
+    "binding_configured": false
+  },
+  "drive": {
+    "continuity_observed": true,
+    "public_links_embedded": false,
+    "cross_provider_atomicity": false
+  },
+  "authority_created": false,
+  "merge_authorized": false,
+  "canon_promotion": false
+}
