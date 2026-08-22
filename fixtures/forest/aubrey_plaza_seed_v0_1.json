@@ -1,0 +1,72 @@
+{
+  "fixture": "aubrey_plaza_seed_v0_1",
+  "subject_id": "PERSON.AUBREY_PLAZA",
+  "seeds": [
+    {
+      "seed_id": "stroke_guardian_2012",
+      "target_id": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT",
+      "claim": {"type": "integer", "value": 21, "unit": "years", "qualifier": "reported"},
+      "source_kind": "PUBLIC_SOURCE",
+      "access_scope": "PUBLIC",
+      "operation": "EXTRACT",
+      "source_locator": "https://www.theguardian.com/film/2012/dec/14/aubrey-plaza-parks-and-recreation-comedy",
+      "published_at": "2012-12-14T00:00:00Z",
+      "retrieved_at": "2026-08-20T23:48:00-05:00",
+      "conflict_group": "aubrey_stroke_age",
+      "dissent_notes": ["Source reports July 2005 and age 21."]
+    },
+    {
+      "seed_id": "stroke_guardian_2016",
+      "target_id": "PERSON.AUBREY_PLAZA.HEALTH.STROKE.AGE_AT_EVENT",
+      "claim": {"type": "integer", "value": 20, "unit": "years", "qualifier": "reported"},
+      "source_kind": "PUBLIC_SOURCE",
+      "access_scope": "PUBLIC",
+      "operation": "EXTRACT",
+      "source_locator": "https://www.theguardian.com/culture/2016/aug/04/aubrey-plaza-mike-dave-different-meaning-death-so-close",
+      "published_at": "2016-08-04T00:00:00Z",
+      "retrieved_at": "2026-08-20T23:48:00-05:00",
+      "conflict_group": "aubrey_stroke_age",
+      "dissent_notes": ["Source headline/body reports the stroke as occurring at age 20."]
+    },
+    {
+      "seed_id": "white_lotus_tvline_2022",
+      "target_id": "ROLE.WHITE_LOTUS.AUBREY_PLAZA.PARTICIPATION_YEAR",
+      "claim": {"type": "integer", "value": 2022, "unit": "year", "qualifier": "Season 2 casting/publication year"},
+      "source_kind": "PUBLIC_SOURCE",
+      "access_scope": "PUBLIC",
+      "operation": "CREDIT",
+      "source_locator": "https://www.tvline.com/casting-news/aubrey-plaza-the-white-lotus-season-2-cast-1234777450/",
+      "published_at": "2022-01-10T00:00:00Z",
+      "retrieved_at": "2026-08-20T23:48:00-05:00",
+      "conflict_group": "white_lotus_temporal_semantics"
+    },
+    {
+      "seed_id": "white_lotus_imdb_series_label",
+      "target_id": "WORK.WHITE_LOTUS.SERIES_START_YEAR_LABEL",
+      "claim": {"type": "integer", "value": 2021, "unit": "year", "qualifier": "series-title year label"},
+      "source_kind": "PUBLIC_SOURCE",
+      "access_scope": "PUBLIC",
+      "operation": "SUMMARY",
+      "source_locator": "https://www.imdb.com/name/nm2201555/",
+      "published_at": null,
+      "retrieved_at": "2026-08-20T23:48:00-05:00",
+      "conflict_group": "white_lotus_temporal_semantics",
+      "dissent_notes": ["A series-title year label is not equivalent to the performer's participation year."]
+    },
+    {
+      "seed_id": "leahprime_chaos_agent_replay",
+      "target_id": "CREATIVE.AUBREY_PLAZA.CHAOS_AGENT_CALIBRATION",
+      "claim": {"type": "string", "value": "Use public career moments as a stress test for nonlinear metadata without inferring private intent.", "qualifier": "synthetic creative replay"},
+      "source_kind": "CREATIVE_REPLAY",
+      "access_scope": "SYNTHETIC_TEST",
+      "operation": "NARRATE",
+      "source_locator": "urn:joy:creative:aubrey-plaza-chaos-agent-v0.1",
+      "published_at": null,
+      "retrieved_at": "2026-08-20T23:48:00-05:00",
+      "conflict_group": null,
+      "synthetic": true,
+      "evidence_weight": 0.0,
+      "hold": false
+    }
+  ]
+}
