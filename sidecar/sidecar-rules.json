@@ -1,0 +1,105 @@
+{
+  "artifact": "THREE_SISTERS_SUPER_SECRET_SIDECAR",
+  "version": "0.1",
+  "repo": "jsonwisdom/JOY",
+  "move": "012",
+  "authority": false,
+  "sidecar_is_owner": false,
+  "sidecar_is_repo": false,
+  "terminal_hold": false,
+  "parents": [
+    {
+      "name": "Three Sisters Gaming Algorithms",
+      "path": "README.md"
+    },
+    {
+      "name": "Super Secret Sister Syntax",
+      "path": "docs/SUPER_SECRET_SISTER_SYNTAX.md"
+    }
+  ],
+  "sisters": {
+    "one": {
+      "verb": "PRESERVE",
+      "job": "Protect the memory",
+      "path": "sidecar/SISTER_ONE_PRESERVE.md"
+    },
+    "two": {
+      "verb": "CONTINUE",
+      "job": "Keep the joy moving",
+      "path": "sidecar/SISTER_TWO_CONTINUE.md"
+    },
+    "three": {
+      "verb": "ROUTE",
+      "job": "Choose the next safe action",
+      "path": "sidecar/SISTER_THREE_ROUTE.md"
+    }
+  },
+  "rides_beside": [
+    "AppleBlossom",
+    "AL",
+    "ComputerWisdom",
+    "JOY",
+    "HEIDEE",
+    "ReceiptOS",
+    "ReplayOS",
+    "Gray Baby",
+    "BoxD"
+  ],
+  "rules": [
+    {
+      "id": "RULE_01",
+      "statement": "SIDECAR != OWNER",
+      "enforcement": "The Sidecar may not declare itself the owner of any surface it rides beside."
+    },
+    {
+      "id": "RULE_02",
+      "statement": "SIDECAR != REPO",
+      "enforcement": "The Sidecar must not become a new repository. Its home is jsonwisdom/JOY."
+    },
+    {
+      "id": "RULE_03",
+      "statement": "SIDECAR != AUTHORITY",
+      "enforcement": "Authority remains false. No promotion, custody, consent, or legal claim is issued here."
+    },
+    {
+      "id": "RULE_04",
+      "statement": "PRESERVE without rewrite",
+      "sister": "one",
+      "enforcement": "Memory may be protected. History may not be silently rewritten. Absence is evidence."
+    },
+    {
+      "id": "RULE_05",
+      "statement": "CONTINUE without terminal hold",
+      "sister": "two",
+      "enforcement": "TERMINAL_HOLD must remain false. Pause and privacy are allowed. Freeze is not the default."
+    },
+    {
+      "id": "RULE_06",
+      "statement": "ROUTE without collapse",
+      "sister": "three",
+      "enforcement": "Next safe action is adjacency. Surfaces named in rides_beside must not be merged or spoken for."
+    },
+    {
+      "id": "RULE_07",
+      "statement": "Joy first. Receipts second. Authority never.",
+      "enforcement": "Inherited from docs/SUPER_SECRET_SISTER_SYNTAX.md. Motion is not GREEN."
+    },
+    {
+      "id": "RULE_08",
+      "statement": "Family safety outranks system expansion",
+      "enforcement": "Inherited from docs/GAME_OF_WISDOM_FAMILY_GATE_V0_1.md. No private details. No pressure. No public family claim without permission."
+    },
+    {
+      "id": "RULE_09",
+      "statement": "Ride beside; do not collapse",
+      "enforcement": "AppleBlossom, AL, ComputerWisdom, JOY, HEIDEE, ReceiptOS, ReplayOS, Gray Baby, and BoxD remain distinct. The Sidecar points. It does not absorb."
+    }
+  ],
+  "invariants": {
+    "terminal_hold": false,
+    "authority_created": false,
+    "no_fake_green": true,
+    "family_approval_claimed": false,
+    "child_consent_claimed": false
+  }
+}

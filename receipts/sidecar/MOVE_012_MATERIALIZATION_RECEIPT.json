@@ -1,0 +1,62 @@
+{
+  "receipt": "MOVE_012_MATERIALIZATION_RECEIPT",
+  "move": "012",
+  "prior_move": {
+    "id": "011",
+    "status": "CLOSED",
+    "finding": "Sidecar home is jsonwisdom/JOY, not a new repository"
+  },
+  "target_repo": "jsonwisdom/JOY",
+  "branch": "sidecar/three-sisters-super-secret-v0-1",
+  "base": "main",
+  "layer": "EXECUTE",
+  "authority_created": false,
+  "terminal_hold": false,
+  "sidecar_is_owner": false,
+  "sidecar_is_repo": false,
+  "jay_controls_commit": true,
+  "merge_reserved_to": "Jay Wisdom",
+  "parents_verified": [
+    {
+      "path": "README.md",
+      "role": "Three Sisters Gaming Algorithms",
+      "observed": true
+    },
+    {
+      "path": "docs/SUPER_SECRET_SISTER_SYNTAX.md",
+      "role": "Sister language mechanics",
+      "observed": true
+    }
+  ],
+  "rejected_homes": [
+    {
+      "repo": "jsonwisdom/-replayos-receiptos-spec",
+      "reason": "Sidecar is not a public spec contract"
+    },
+    {
+      "repo": "jsonwisdom/receiptos-replay-proof",
+      "reason": "Sidecar is not a verification engine"
+    },
+    {
+      "repo": "jsonwisdom/JSONWisdom-Control-Center",
+      "reason": "No protected IP boundary required"
+    },
+    {
+      "repo": "jsonwisdom/receiptos-base",
+      "reason": "Not a base integration layer"
+    }
+  ],
+  "files_added": [
+    "docs/THREE_SISTERS_SUPER_SECRET_SIDECAR.md",
+    "sidecar/SISTER_ONE_PRESERVE.md",
+    "sidecar/SISTER_TWO_CONTINUE.md",
+    "sidecar/SISTER_THREE_ROUTE.md",
+    "sidecar/sidecar-rules.json",
+    "test-vectors/sidecar-never-hold.json",
+    "receipts/sidecar/MOVE_012_MATERIALIZATION_RECEIPT.json"
+  ],
+  "readme_mutated": false,
+  "parent_docs_mutated": false,
+  "claim": "artifacts materialized beside parent lineage; not promoted; not verified by a harness",
+  "no_fake_green": true
+}

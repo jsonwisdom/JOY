@@ -1,0 +1,55 @@
+{
+  "vector_id": "sidecar-never-hold",
+  "artifact": "THREE_SISTERS_SUPER_SECRET_SIDECAR",
+  "version": "0.1",
+  "purpose": "Prove TERMINAL_HOLD remains FALSE. A Sidecar that holds has become a gate.",
+  "authority": false,
+  "expected": {
+    "TERMINAL_HOLD": false,
+    "AUTHORITY_CREATED": false,
+    "SIDECAR_IS_OWNER": false,
+    "SIDECAR_IS_REPO": false,
+    "SIDECAR_IS_GATE": false
+  },
+  "cases": [
+    {
+      "id": "C01_default_state",
+      "given": "Sidecar loaded from sidecar/sidecar-rules.json",
+      "assert": "invariants.terminal_hold === false"
+    },
+    {
+      "id": "C02_pause_is_not_hold",
+      "given": "Sister Two allows rest, privacy, or silence",
+      "assert": "pause does not set TERMINAL_HOLD true"
+    },
+    {
+      "id": "C03_foreign_gate_not_imported",
+      "given": "ReplayOS G-001 is BLOCKED in another repository",
+      "assert": "Sidecar TERMINAL_HOLD remains false; foreign gates are not inherited"
+    },
+    {
+      "id": "C04_trinity_membrane_not_copied",
+      "given": "docs/three_daughters/trinity_architecture_canon_v0_1.md sets membrane HOLDS",
+      "assert": "Sidecar does not copy that hold into TERMINAL_HOLD"
+    },
+    {
+      "id": "C05_family_gate_is_boundary_not_freeze",
+      "given": "Family Gate says family safety outranks system expansion",
+      "assert": "route may refuse an unsafe public action without setting TERMINAL_HOLD true"
+    },
+    {
+      "id": "C06_missing_evidence_is_not_hold",
+      "given": "A pointed surface has missing evidence",
+      "assert": "Sidecar reports absence and continues; it does not freeze JOY play"
+    },
+    {
+      "id": "C07_hold_attempt_is_type_error",
+      "given": "An operator tries to set TERMINAL_HOLD true on the Sidecar",
+      "assert": "reject; object is no longer a sidecar if it holds"
+    }
+  ],
+  "pass_rule": "All cases must keep TERMINAL_HOLD false. Any true value fails this vector.",
+  "claim": "observation_only",
+  "execution": "not_performed_in_this_commit",
+  "note": "This file is the declared proof shape. A later harness may execute it. Declaration is not GREEN."
+}
