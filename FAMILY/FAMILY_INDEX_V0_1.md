@@ -1,4 +1,9 @@
 # FAMILY_INDEX_V0_1
+
+> **SUPERSESSION NOTICE — 2026-08-18**  
+> This file is a historical family-index surface and contains legacy labels. The current candidate canonical registry is [`WISDOM_FAMILY_FILES_V0_1.md`](./WISDOM_FAMILY_FILES_V0_1.md) with machine receipt [`WISDOM_FAMILY_FILES_V0_1.json`](./WISDOM_FAMILY_FILES_V0_1.json).  
+> `FAMILY_FILES != WISDOM_FAMILY_FILES`. Legacy labels below are preserved for replay and must not override the canonical member registry.
+
 ## STATUS: MAPPED | TRUTH: YELLOW | NO_FAKE_GREEN: ACTIVE
 
 | LANE | PATH | COMMIT_HASH | ARTIFACT_PATH | SHA256 | READ_BACK | PRIVACY_BOUNDS | AUTHORITY |
@@ -7,11 +12,11 @@
 | **MR_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/MR_WISDOM/` | `47e078ce813d6e347a6d89d44486e72e9a404a87` | `docs/joyspace/mr-wisdom-index.html` | `[PENDING]` | `[PENDING]` | PUBLIC_INDEX_ONLY | ROOT |
 | **HEIDEE** | `COMPUTERWISDOM/JOY/FAMILY/HEIDEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
 | **JAYCEE** | `COMPUTERWISDOM/JOY/FAMILY/JAYCEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
-| **BREALEE** | `COMPUTERWISDOM/JOY/FAMILY/BREALEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
+| **BREALEE** | `COMPUTERWISDOM/JOY/FAMILY/BREALEE/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | LEGACY_LABEL |
 | **BRIANNA** | `COMPUTERWISDOM/JOY/FAMILY/BRIANNA/` | `[PENDING]` | `FAMILY/BRIANNA/BYTE_BOSS_BRIANNA_V0_1.json` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
-| **BOSS_BRENDA** | `COMPUTERWISDOM/JOY/FAMILY/BOSS_BRENDA/` | `6f53518dbe76c2397607b65b1a470d67753f89b4` | `FAMILY/BOSS_BRENDA/README.md` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
+| **BOSS_BRENDA** | `COMPUTERWISDOM/JOY/FAMILY/BOSS_BRENDA/` | `6f53518dbe76c2397607b65b1a470d67753f89b4` | `FAMILY/BOSS_BRENDA/README.md` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | LEGACY_SURFACE_HOLD |
 | **MRS_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/MRS_WISDOM/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | PRESENT |
-| **DADDY_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/DADDY_WISDOM/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | ROOT |
+| **DADDY_WISDOM** | `COMPUTERWISDOM/JOY/FAMILY/DADDY_WISDOM/` | `[PENDING]` | `[PENDING]` | `[PENDING]` | `[PENDING]` | FAMILY_RESTRICTED | LEGACY_LABEL |
 
 ---
 
@@ -39,7 +44,7 @@ The family directory layer is updated before first cast. Runtime source is byte-
 - **TRUTH_STATE:** YELLOW.
 - **REQUIRED_TRANSITION:** Populate all `[PENDING]` fields with replayable proof before GREEN.
 - **MR_WISDOM_PUBLIC_INDEX:** Public profile link is allowed; private family details are not.
-- **BOSS_BRENDA:** Added as a protected Boss Birthday candidate lane; no public render or green state without human approval.
+- **BOSS_BRENDA:** Historical/protected lane; not a canonical Wisdom Family member label without explicit binding.
 - **ASSET_PROTECTION:** FAMILY_RESTRICTED and INTERNAL_ONLY lanes remain bounded.
 - **NO_FAKE_GREEN:** No path, hash, commit, CID, EAS, Base, or authority claim is promoted without receipt correlation.
 - **GITHUB_GREEN:** GitHub proves transport only.

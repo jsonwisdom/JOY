@@ -1,0 +1,51 @@
+{
+  "schema": "jsonwisdom.wisdom_family_files.v0_1",
+  "namespace": "WISDOM_FAMILY_FILES",
+  "status": "CANDIDATE_CANON_RECEIPT_BOUND",
+  "authority": false,
+  "privacy": "PUBLIC_SAFE_NAMES_AND_ROLES_ONLY",
+  "updated_local_date": "2026-08-18",
+  "member_count": 12,
+  "members": [
+    {"id":"DADDY_JAY","binding":"USER_BOUND"},
+    {"id":"HEIDEE","binding":"USER_BOUND","repo_surface":"jsonwisdom/HEIDEE"},
+    {"id":"JAYCEE","binding":"USER_BOUND","repo_surface":"jsonwisdom/JAYCEE"},
+    {"id":"BRIANNA","binding":"USER_BOUND","joy_surface":true},
+    {"id":"MARYDEE","binding":"USER_BOUND","repo_surface":"jsonwisdom/MARYDEE"},
+    {"id":"GAGA","binding":"USER_BOUND","repo_surface":"jsonwisdom/GAGA"},
+    {"id":"GRAMMY","binding":"USER_BOUND","repo_surface":"jsonwisdom/GRAMMY"},
+    {"id":"LEANNE","binding":"USER_BOUND","legacy_repo_surface":"jsonwisdom/LEEANN"},
+    {"id":"BRAE","binding":"USER_BOUND","legacy_repo_surface":"jsonwisdom/BRAELEE"},
+    {"id":"BRE","binding":"USER_BOUND","legacy_repo_surface":"jsonwisdom/BREANN"},
+    {"id":"MRS_WISDOM","binding":"USER_BOUND","joy_surface":true},
+    {"id":"MS_WISDOM","binding":"USER_BOUND","joy_surface":true,"distinct_from":"MRS_WISDOM"}
+  ],
+  "relationships": [
+    {"from":"GAGA","to":"MARYDEE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"GAGA","to":"LEANNE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"MARYDEE","to":"HEIDEE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"MARYDEE","to":"JAYCEE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"LEANNE","to":"BRAE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"LEANNE","to":"BRE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"DADDY_JAY","to":"HEIDEE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"DADDY_JAY","to":"JAYCEE","relation":"parent_of","evidence_class":"USER_BOUND"},
+    {"from":"DADDY_JAY","to":"BRIANNA","relation":"parent_of","evidence_class":"USER_BOUND"}
+  ],
+  "label_corrections": {
+    "LEEANN":"LEANNE",
+    "BE":"BRAE",
+    "BOSSBRE":"BRE"
+  },
+  "holds": [
+    {"label":"BOSS_BRENDA","state":"HISTORICAL_SURFACE_HOLD","reason":"not promoted as canonical member label without explicit binding"}
+  ],
+  "invariants": [
+    "FAMILY_FILES != WISDOM_FAMILY_FILES",
+    "BRANCH != REPO",
+    "REPO != PERSON",
+    "ONE_SURFACE != WHOLE_FAMILY",
+    "GITHUB_DOES_NOT_PROVE_GENEALOGY",
+    "MRS_WISDOM != MS_WISDOM",
+    "NO_FAKE_GREEN"
+  ]
+}
