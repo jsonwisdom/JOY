@@ -8,10 +8,10 @@
   "build": "JOY_AND_JAY_BUILD",
   "language": "AppleBlossomAwesomeAuditSuperSecretSisterSyntax",
   "files": {
-    "garden_index": "_truth\JOY_GARDEN_INDEX_V0_1.md",
-    "al_lane_readme": "AL\16gb_lane\README.md",
-    "alms_lane_readme": "alms\16gb_lane\README.md",
-    "lane_index": "metadata\alms\16gb_lane\JOY_AL_ALMS_16GB_LANE_INDEX_V0_1.json"
+    "garden_index": "_truth/JOY_GARDEN_INDEX_V0_1.md",
+    "al_lane_readme": "AL/16gb_lane/README.md",
+    "alms_lane_readme": "alms/16gb_lane/README.md",
+    "lane_index": "metadata/alms/16gb_lane/JOY_AL_ALMS_16GB_LANE_INDEX_V0_1.json"
   },
   "sha256": {
     "garden_index": "2ae8ace18c7c25e813a3895c09b496be5bc8d1ac2a4d138934d253a015bfad0e",
