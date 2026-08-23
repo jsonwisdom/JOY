@@ -1,0 +1,47 @@
+﻿{
+  "index_type": "JOY_AL_ALMS_16GB_LANE_INDEX_V0_1",
+  "created_at_utc": "2026-08-23T11:23:05Z",
+  "repo": "jsonwisdom/JOY",
+  "branch": "main",
+  "head_commit_before_commit": "71e437d2b4c3148033f62236932de3ce2476696b",
+  "root": "Heidee",
+  "build": "JOY_AND_JAY_BUILD",
+  "language": "AppleBlossomAwesomeAuditSuperSecretSisterSyntax",
+  "authority_created": false,
+  "production_green": false,
+  "lanes": {
+    "AL_16GB_LANE": {
+      "path": "AL/16gb_lane",
+      "status": "CREATED",
+      "role": "local Alabama playfield",
+      "raw_bytes": "NOT_STARTED",
+      "money_graph": "NOT_STARTED"
+    },
+    "ALMS_16GB_LANE": {
+      "path": "alms/16gb_lane",
+      "status": "CREATED",
+      "role": "local Alabama replay discipline",
+      "raw_bytes": "NOT_STARTED",
+      "money_graph": "NOT_STARTED"
+    },
+    "METADATA_INDEX": {
+      "path": "metadata/alms/16gb_lane",
+      "status": "CREATED"
+    },
+    "RECEIPT_LANE": {
+      "path": "receipts/alms/16gb_lane",
+      "status": "CREATED"
+    },
+    "JOY_GARDEN_INDEX": {
+      "path": "_truth/JOY_GARDEN_INDEX_V0_1.md",
+      "status": "CREATED"
+    }
+  },
+  "source_boundaries": {
+    "oldcc_raw_bytes": "NOT_STARTED",
+    "alabama_money_graph": "NOT_STARTED",
+    "model_testing": "RESTING",
+    "image_art": "REFERENCE_CONTEXT_ONLY"
+  },
+  "ruling": "AL and ALMS 16GB lanes created as directory-first local substrate. No raw bytes, no money graph, no authority, no production green."
+}

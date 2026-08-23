@@ -1,0 +1,28 @@
+﻿{
+  "receipt_type": "JOY_AL_ALMS_16GB_LANE_RECEIPT_V0_1",
+  "created_at_utc": "2026-08-23T11:23:05Z",
+  "repo": "jsonwisdom/JOY",
+  "branch": "main",
+  "head_commit_before_commit": "71e437d2b4c3148033f62236932de3ce2476696b",
+  "root": "Heidee",
+  "build": "JOY_AND_JAY_BUILD",
+  "language": "AppleBlossomAwesomeAuditSuperSecretSisterSyntax",
+  "files": {
+    "garden_index": "_truth\JOY_GARDEN_INDEX_V0_1.md",
+    "al_lane_readme": "AL\16gb_lane\README.md",
+    "alms_lane_readme": "alms\16gb_lane\README.md",
+    "lane_index": "metadata\alms\16gb_lane\JOY_AL_ALMS_16GB_LANE_INDEX_V0_1.json"
+  },
+  "sha256": {
+    "garden_index": "2ae8ace18c7c25e813a3895c09b496be5bc8d1ac2a4d138934d253a015bfad0e",
+    "al_lane_readme": "9993e37331a40ab45ebf2a5a3b9c9e2234a36c9b9c4acb4b164262b6d8a26dd2",
+    "alms_lane_readme": "a82bdaafefc01b39b092595aab3cf61174d2f9e736e6aee77f03ba2483958509",
+    "lane_index": "71f30b0afcd32c4d8b1ee39bb7fa1f111d372f480a0faf6b5507aad38430bd43"
+  },
+  "truth_state": "JOY_AL_ALMS_16GB_LANES_CREATED_DIRECTORY_FIRST",
+  "raw_bytes": "NOT_STARTED",
+  "money_graph": "NOT_STARTED",
+  "authority_created": false,
+  "production_green": false,
+  "ruling": "Directory-first AL and ALMS 16GB lanes created in JOY. Existing modified .github/PULL_REQUEST_TEMPLATE.md intentionally untouched."
+}
