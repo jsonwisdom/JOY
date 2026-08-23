@@ -1,0 +1,41 @@
+{
+  "receipt_id": "HEIDEE_APPLEBLOSSOM_QUAD_ONION_V1",
+  "type": "implementation_contract",
+  "timestamp_utc": "2026-08-23T09:25:00Z",
+  "authorityCreated": false,
+  "old_leaves_overwritten": false,
+  "app_promoted_into_organism": false,
+  "child_surface": [
+    "Blossom",
+    "Discover",
+    "Create",
+    "Replay"
+  ],
+  "child_surface_language": "no security language, no authority warnings, no hashes, no permissions, no threat vocabulary, no institutional framing",
+  "quad_onion": {
+    "Experience": "Child-safe story, art, learning and play",
+    "Continuity": "Names, paths, versions and redundant routes",
+    "Receipt": "Bytes, commits, SHA-256 and replay checkpoints",
+    "Authority": "Parent gate, consent state and authorityCreated:false"
+  },
+  "reverse_replay": [
+    "BROADCAST",
+    "CREATED OBJECT",
+    "APPLEBLOSSOM PATH",
+    "SOURCE RECEIPT",
+    "CONSENT CHECKPOINT",
+    "PARENTAL PUBLICATION GATE",
+    "ORIGINAL BYTES"
+  ],
+  "child_visible_results": [
+    "Ready to open",
+    "Let’s check this one",
+    "Ask a grown-up",
+    "This path changed",
+    "Let’s try the other path"
+  ],
+  "machine_marks": ["MATCH", "DELTA", "HOLD", "EJECT"],
+  "burden_placement": "Jason continuity machinery + Jay Delta machinery + parental rail carry the burden behind the membrane",
+  "final_mark": "CHILD_NODE_IS_JOY · QUAD_ONION_BEHIND_MEMBRANE · APPLEBLOSSOM_OPENS · REVERSE_REPLAY_PROVES · AUTHORITY_NOT_MINTED",
+  "note": "Append-only implementation contract. Child homepage receives only Blossom · Discover · Create · Replay. Machine marks remain behind the membrane."
+}
