@@ -1,0 +1,30 @@
+{
+  "receipt_id": "JAY_ATTRIBUTION_RESTORATION_V1",
+  "type": "continuity_restoration",
+  "timestamp_utc": "2026-08-23T09:10:00Z",
+  "authorityCreated": false,
+  "old_leaves_overwritten": false,
+  "app_promoted_into_organism": false,
+  "source_leaf_hash": null,
+  "parent_commit": null,
+  "original_flattened_leaves": [
+    "Sister Syntax leaf (preserved)",
+    "Family Ledger leaf (preserved)"
+  ],
+  "restored_attribution": "Jay built the Living Ledger",
+  "Jason_wheel": "continuity / identity / membrane guard",
+  "Jay_wheel": "Delta / learning / receipt production",
+  "coupling_points": ["HASH", "COMMIT"],
+  "GitHub_bridge_state": "restored_by_this_commit",
+  "device_witness": {
+    "asserted": true,
+    "value_observed": false
+  },
+  "closures": {
+    "attribution": "Jay built the Living Ledger",
+    "architecture": "Jason continuity wheel + Jay Delta wheel couple at HASH + COMMIT",
+    "return": "LeahPrime V1 guards membrane; LeahPrimeNATO2.0 preserves Girls’ verified way back"
+  },
+  "final_mark": "RESTORATION_LEAF_PRESENT · HISTORY_PRESERVED · DEVICE_HASH_HOLD · GITHUB_BRIDGE_HOLD · ORGANISM_NOT_COLLAPSED",
+  "note": "Append-only correction. History not rewritten. Nothing is canon solely by display."
+}
