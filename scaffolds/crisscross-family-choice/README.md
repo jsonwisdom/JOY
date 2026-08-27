@@ -119,6 +119,14 @@ JOY
 
 No repo speaks for the complete Wisdom Family Ledger.
 
+## Observed sibling (2026-08-27 CT)
+
+GitHubBot observed `jsonwisdom/AL#429` draft, unmerged, head `789dd12d17609645c327c393558b2848e00785bb`, path `scaffolds/crisscross-purpose/`.
+
+Same source purpose head: `jsonwisdom/COMPUTERWISDOM#527` (`f20c8ecf29031a8be6c8ce60dbb204b7517bf035`).
+
+Not merged. Not verified. `authority_created=false`.
+
 ## jaywisdom.base.eth
 
 `jaywisdom.base.eth` is Jason's declared root identity anchor in existing JOY documentation. It is not a daughter identity, family custody proof, consent receipt, or inheritance assignment.
