@@ -1,0 +1,16 @@
+{
+  "vector": "blocked-route",
+  "active_piece": "sister_one_shield",
+  "position": [12, 20],
+  "ordinary_legal_moves": [],
+  "sidecar_activated": true,
+  "preserved_state": true,
+  "turn_remains_open": true,
+  "node_route_candidates": [[11, 19], [11, 20], [12, 19], [13, 19], [13, 20]],
+  "selected_safe_route": [11, 19],
+  "selection_rule": "row_then_column_ascending",
+  "result": "ROUTED",
+  "terminal_hold": false,
+  "receipt_class": "routing",
+  "authority_created": false
+}

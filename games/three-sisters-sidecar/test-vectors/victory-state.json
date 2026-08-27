@@ -1,0 +1,16 @@
+{
+  "vector": "victory-state",
+  "game": "three-sisters-sidecar-v0.1",
+  "move": 192,
+  "pieces": [
+    {"id": "sister_one_shield", "owner": "sister_one", "type": "shield", "row": 63, "column": 20},
+    {"id": "sister_two_spiral", "owner": "sister_two", "type": "spiral", "row": 63, "column": 42},
+    {"id": "sister_three_node", "owner": "sister_three", "type": "node", "row": 63, "column": 63}
+  ],
+  "lineage_intact": true,
+  "joy_intact": true,
+  "safe_path_confirmed": true,
+  "terminal_hold": false,
+  "authority_created": false,
+  "expected_result": "VICTORY"
+}

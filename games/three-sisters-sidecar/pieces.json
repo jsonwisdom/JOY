@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "pieces": {
+    "shield": {
+      "owner": "sister_one",
+      "zone_columns": [0, 20],
+      "movement": {"kind": "orthogonal", "distance": 1},
+      "ability": {"id": "preserve_adjacent", "duration_turns": 1},
+      "boundary_crossing": "sidecar_route_only",
+      "receipt_class": "preservation"
+    },
+    "spiral": {
+      "owner": "sister_two",
+      "zone_columns": [21, 42],
+      "movement": {"kind": "diagonal", "distance": "any_positive_unobstructed"},
+      "ability": {"id": "joy_trail", "duration_turns": 1, "movement_bonus": 1},
+      "boundary_crossing": "sidecar_route_only",
+      "receipt_class": "continuity"
+    },
+    "node": {
+      "owner": "sister_three",
+      "zone_columns": [43, 63],
+      "movement": {"kind": "knight", "delta": [[1, 2], [2, 1], [-1, 2], [-2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1]]},
+      "ability": {"id": "route_around_block", "activation": "blocked_piece"},
+      "boundary_crossing": "free",
+      "receipt_class": "routing"
+    }
+  },
+  "receipt": {
+    "canonicalization": "RFC8785_JCS",
+    "digest": "SHA-256",
+    "encoding": "lowercase_hex",
+    "chain_field": "previous_receipt_sha256"
+  },
+  "authority_created": false
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "type": "routing_membrane",
+  "overlays": ["sister_one", "sister_two", "sister_three"],
+  "terminal_hold": false,
+  "activation": "active_piece_has_zero_ordinary_legal_moves",
+  "resolution_order": [
+    "preserve_current_state",
+    "keep_current_turn_open",
+    "enumerate_node_routes",
+    "reject_unsafe_routes",
+    "select_lexicographically_first_safe_route",
+    "emit_routing_receipt"
+  ],
+  "safe_route_requires": [
+    "destination_on_board",
+    "destination_unoccupied",
+    "lineage_preserved",
+    "authority_created_false",
+    "publication_unchanged"
+  ],
+  "no_demonstrated_route_state": "ROUTE_REQUIRED",
+  "no_demonstrated_route_is_terminal": false,
+  "node_sidecar_relocation": {
+    "destination": "safe_cell_adjacent_to_blocked_piece",
+    "adjacency": "orthogonal_or_diagonal_1",
+    "selection": "row_then_column_ascending"
+  },
+  "authority_created": false
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "mode": "cooperative",
+  "elimination": false,
+  "predicate": {
+    "all_three_on_row": 63,
+    "simultaneous_state": true,
+    "lineage_intact": true,
+    "joy_intact": true,
+    "safe_path_confirmed": true,
+    "terminal_hold": false,
+    "authority_created": false
+  },
+  "result_when_true": "VICTORY",
+  "result_when_false": "CONTINUE_OR_ROUTE",
+  "authority_created": false
+}

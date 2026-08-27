@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:joy:games:three-sisters-sidecar:board-state:v0.1",
+  "title": "Three Sisters Sidecar Board State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["game", "move", "pieces", "lineage_intact", "joy_intact", "safe_path_confirmed", "terminal_hold", "authority_created"],
+  "properties": {
+    "game": {"const": "three-sisters-sidecar-v0.1"},
+    "move": {"type": "integer", "minimum": 0},
+    "pieces": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "owner", "type", "row", "column"],
+        "properties": {
+          "id": {"enum": ["sister_one_shield", "sister_two_spiral", "sister_three_node"]},
+          "owner": {"enum": ["sister_one", "sister_two", "sister_three"]},
+          "type": {"enum": ["shield", "spiral", "node"]},
+          "row": {"type": "integer", "minimum": 0, "maximum": 63},
+          "column": {"type": "integer", "minimum": 0, "maximum": 63}
+        }
+      }
+    },
+    "lineage_intact": {"type": "boolean"},
+    "joy_intact": {"type": "boolean"},
+    "safe_path_confirmed": {"type": "boolean"},
+    "terminal_hold": {"const": false},
+    "authority_created": {"const": false}
+  },
+  "board_encoding": {
+    "rows": 64,
+    "columns": 64,
+    "cells": 4096,
+    "coordinates": "zero_based_row_column"
+  },
+  "zones": [
+    {"id": "sister_one", "columns": [0, 20], "color": "blue", "role": "preserve"},
+    {"id": "sister_two", "columns": [21, 42], "color": "gold", "role": "continue"},
+    {"id": "sister_three", "columns": [43, 63], "color": "green", "role": "route"}
+  ]
+}
