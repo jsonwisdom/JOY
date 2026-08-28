@@ -1,0 +1,51 @@
+{
+  "pin_kind": "family_daily_audit_receipt_locator",
+  "graph_path": "FAMILY/graph/FAMILY_EDGE_GRAPH_V1_1.json",
+  "authority_created": false,
+  "facts_promoted": 0,
+  "note": "AUDIT PASS ≠ FAMILY APPROVAL. Receipt pin only. Graph JSON, HOLD-001, and silent nodes are not mutated by this file.",
+  "receipts": [
+    {
+      "audit_date_utc": "2026-08-27",
+      "repository": "jsonwisdom/JOY",
+      "branch": "main",
+      "graph_path": "FAMILY/graph/FAMILY_EDGE_GRAPH_V1_1.json",
+      "graph_blob_sha": "8f0e1d6c1e3776d0df163018fd346243ed957612",
+      "graph_commit": "0db5bbf7b4e690ae3048353f074edcc24b703270",
+      "graph_content_sha256": "sha256:75b2665228731ec43c702bbfae4c436528e3965b0697b6b88b3134e834e2e400",
+      "receipt_artifact_name": "family-daily-audit-receipt",
+      "actions_run_id": 33121768819,
+      "actions_run_number": 39,
+      "actions_run_event": "schedule",
+      "workflow": ".github/workflows/family-daily-audit.yml",
+      "workflow_created_at_utc": "2026-08-27T22:15:36Z",
+      "artifact_id": 9666723610,
+      "artifact_digest": "sha256:81ce36de83cfa8e0a90d5d8c1b858bba1ba08a8fc4b79d8668c014c9ab5db50f",
+      "UNPACKED": true,
+      "inner_files": [
+        {
+          "name": "FAMILY_DAILY_AUDIT_RECEIPT.json",
+          "sha256": "sha256:d3bbcd877ae11961a62ab38938240b45fee47de63aadd28caa97466b66a3b243"
+        },
+        {
+          "name": "FAMILY_DAILY_AUDIT_RECEIPT.sigstore.json",
+          "sha256": "sha256:47d2ee2c31f14ed76dcafe7714d6bfdccbbc126511abc21dbbf9c10cc55dccc6"
+        }
+      ],
+      "audit_status": "PASS",
+      "authority_created": false,
+      "facts_promoted": 0,
+      "not": [
+        "FAMILY_APPROVAL",
+        "RELATIONSHIP_VERIFICATION",
+        "INTRODUCED_AT_PROMOTION",
+        "HOLD-001_MUTATION",
+        "SILENT_NODE_PROMOTION",
+        "ISSUE_81_REOPEN"
+      ],
+      "live_verified": true,
+      "live_matches_known_state": true,
+      "actions_url": "https://github.com/jsonwisdom/JOY/actions/runs/33121768819"
+    }
+  ]
+}
