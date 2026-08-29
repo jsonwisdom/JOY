@@ -1,0 +1,72 @@
+{
+  "schema": "FAMILY_SCENE_FLOW_V0_1",
+  "authority_created": false,
+  "purpose": "render family information flow as replayable scenes without converting presentation into evidence",
+  "roles": {
+    "mr_wisdom": "builder_operator",
+    "heidee": "child_specific_joyspace_surface",
+    "mrs_wisdom": "observer_steward_when_human_directed",
+    "mary_d": "external_reviewer_advisory"
+  },
+  "scenes": [
+    {
+      "order": 1,
+      "id": "DADDY_BUILDS",
+      "from": "MR_WISDOM",
+      "to": "MR_WISDOM",
+      "required": ["purpose", "artifact_list", "created_at"]
+    },
+    {
+      "order": 2,
+      "id": "DADDY_PACKS_PAYLOAD",
+      "from": "MR_WISDOM",
+      "to": "HEIDEE_JOYSPACE",
+      "required": ["sent_at", "payload_manifest", "hashes_when_available"]
+    },
+    {
+      "order": 3,
+      "id": "JOYSPACE_RECEIVES",
+      "from": "MR_WISDOM",
+      "to": "HEIDEE_JOYSPACE",
+      "required": ["received_at_or_unknown", "receipt_state"]
+    },
+    {
+      "order": 4,
+      "id": "MOM_OBSERVES",
+      "from": "HEIDEE_JOYSPACE",
+      "to": "MRS_WISDOM",
+      "condition": "human_directed_participation",
+      "required": ["review_scope", "timestamp_or_unknown"]
+    },
+    {
+      "order": 5,
+      "id": "MARY_D_REVIEWS",
+      "from": "MR_WISDOM_OR_HUMAN_OPERATOR",
+      "to": "MARY_D_EXTERNAL_REVIEWER",
+      "condition": "explicit_human_submission",
+      "required": ["exact_payload", "declared_purpose"]
+    },
+    {
+      "order": 6,
+      "id": "RESPONSE_RETURNS",
+      "from": "REVIEWER_OR_JOYSPACE",
+      "to": "HUMAN_DECISION_POINT",
+      "required": ["result", "reason", "returned_at"]
+    },
+    {
+      "order": 7,
+      "id": "REVERSE_REPLAY",
+      "from": "CURRENT_STATE",
+      "to": "PRIOR_STATE",
+      "required": ["before", "after", "delta", "evidence"]
+    }
+  ],
+  "result_states": ["MATCH", "DELTA", "HOLD", "UNKNOWN"],
+  "rules": {
+    "story_is_evidence": false,
+    "role_is_authority": false,
+    "model_output_is_consent": false,
+    "automatic_accusation": false,
+    "automatic_police_dispatch": false
+  }
+}
