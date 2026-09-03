@@ -1,0 +1,70 @@
+{
+  "event": "JASON_WISDOM_REPLAY_THREAD_V0_1_FROZEN",
+  "timestamp": "2026-09-03T09:35:21Z",
+  "status": "ARCHITECTURE_DOCUMENT_FROZEN",
+  "authority_created": false,
+  "scope": {
+    "artifact": "Jason_Wisdom_Replay_Thread_Manual_V0_1.docx",
+    "artifact_sha256": "d75bd1a9cdd90b4cc7378abfb94da6d5705d0456b8034527736b366b4a0eaa57",
+    "artifact_bytes": 2625247,
+    "freeze_meaning": "architecture document only; not a public authority object",
+    "body_verified_in_this_session": true,
+    "body_modified_by_this_receipt": false
+  },
+  "frozen_state": {
+    "ARCHITECTURE_REPLAY": "COMPLETE_V0_1",
+    "PUMPJAY_T0_60_REPLAY": "HOLD_MISSING_TRANSACTION_PACKET",
+    "PUMPJAY_TO_JWISDOM_LINK": "NOT_PROVEN",
+    "ENS_DIRECT_RESOLUTION": "NOT_CAPTURED",
+    "MERKLE_ROOT_EQUALITY": "NOT_ESTABLISHED",
+    "ZORA_TECHNICALLY_READY": false,
+    "AUTHORITY_CREATED": false
+  },
+  "allowed_claims": [
+    "Identity boundaries and replay path are specified.",
+    "Address 0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8 is an EAS-associated public anchor, not a captured ENS resolver proof.",
+    "Three JOY Merkle-root claims remain three claims; equality and merge are not established.",
+    "The public-learning illustration is generated teaching material, not evidence."
+  ],
+  "disallowed_claims": [
+    "PUMPJAY creation",
+    "first-60-second market or state sequence",
+    "PUMPJAY to Jay Wisdom identity link",
+    "direct ENS resolution",
+    "Merkle-root identity across the three JOY claims",
+    "Zora readiness",
+    "created authority"
+  ],
+  "teaching_artifact": {
+    "file": "exec-af82fa86-427e-4c0d-987e-9c4e084f4fd5.png",
+    "sha256": "1558cfd92dc8278e98a08d14a83e6f4517ec17faa910ce09adb95449693696de",
+    "bytes": 2569045,
+    "evidence": false
+  },
+  "next_packet": {
+    "name": "PUMPJAY_T0_60_RAW_SLOT_ORDERED_PACKET",
+    "accept_only_if": [
+      "creation transaction signature",
+      "slot and block time",
+      "creator signer address",
+      "mint address",
+      "Pump.fun URL or equivalent public locator",
+      "every transaction from creation through T+60 seconds ordered by slot, transaction index, then instruction or log index",
+      "for each transaction: signature, account roles, value deltas, decoded method or event, and success or failure",
+      "first public reachability proof resolving to the same mint",
+      "raw source dump bound to the transaction signatures"
+    ],
+    "narrative_fill_allowed": false,
+    "only_legal_next_transition": "evaluate PUMPJAY_T0_60_REPLAY"
+  },
+  "non_substitutes": [
+    "later Base activity",
+    "pumpjay.base.eth name sightings",
+    "Zora profile pages",
+    "EAS association"
+  ],
+  "publication": {
+    "zora_mint_withheld": true,
+    "reason": "V0.1 contains an incomplete PUMPJAY replay and is not technically ready."
+  }
+}
