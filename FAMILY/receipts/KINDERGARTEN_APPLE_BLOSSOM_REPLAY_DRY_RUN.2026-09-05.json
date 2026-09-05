@@ -1,0 +1,25 @@
+{
+  "receipt_id": "KINDERGARTEN_APPLE_BLOSSOM_REPLAY_DRY_RUN.2026-09-05",
+  "mode": "DRY_RUN",
+  "option_selected": 2,
+  "sit_down": false,
+  "class_in_session": false,
+  "specimen_id": "APPLE_BLOSSOM_001",
+  "specimen_blob": "fca41b1e3ab1e805a94829e962b35ba8ff091af6",
+  "image": "ABSENT",
+  "image_cid": null,
+  "petal_count": "NOT_RUN",
+  "verdict": "I_DONT_KNOW",
+  "fake_cid": "REJECTED",
+  "workflow_check": {
+    "steps_present": true,
+    "cid_null": true,
+    "family_story_forbidden": true,
+    "can_halt_on_missing_image": true
+  },
+  "replay_of_claim": "NOT_RUN",
+  "replay_receipt_live": "PENDING",
+  "launch": "SCHEDULED_NOT_STARTED",
+  "authority_created": false,
+  "grading_active": false
+}
