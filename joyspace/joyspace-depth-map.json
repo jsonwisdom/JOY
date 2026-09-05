@@ -15,7 +15,7 @@
     "zora_primary": "https://zora.co/@jaywisdom",
     "zora_chromebook": "https://zora.co/@jaywisdom_chromebook"
   },
-  "protected_boss_lanes": ["MRS_WISDOM","BOSS_BRENDA","BRIANNA","HEIDEE","JAYCEE","BREALEE","LEEANNE","MARYDEE","GRAMMY","GAGA"],
+  "protected_boss_lanes": ["MRS_WISDOM","BOSS_BRENDA","BRIANNA","HEIDEE","JAYCEE","BREALEE","LEEANNE","MARYDEE","GRAMMY","GAGA","SIDCARS"],
   "green_rule": "HTTP_200 + SHA256(repo_source) == SHA256(public_body) + CONTENT_MARKER + PRIVACY_CHECK + HUMAN_VISUAL_CONFIRM",
   "no_fake_green": true
 }

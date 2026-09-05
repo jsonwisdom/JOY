@@ -1,0 +1,18 @@
+{
+  "receipt_id": "JOYSPACE_SIDCARS_FRONT_DOOR.2026-09-05",
+  "type": "joyspace_update",
+  "feature": "JOYSPACE_SIDCARS_V0_1",
+  "status": "YELLOW_PROTECTED",
+  "public_green": false,
+  "human_visual_confirm": "PENDING",
+  "manuscript": "UNBOUND",
+  "story_bind": "HOLD",
+  "routes": {
+    "docs": "docs/joyspace/sidcars.html",
+    "fallback": "joyspace/sidcars.html"
+  },
+  "content_marker": "JOYSPACE_SIDCARS_V0_1",
+  "authority_created": false,
+  "usaf_endorsement": false,
+  "facts_promoted": 0
+}
