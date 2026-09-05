@@ -1,0 +1,15 @@
+{
+  "receipt_id": "LEGAL_K12_SYLLABUS.2026-09-05",
+  "type": "curriculum_draft",
+  "path": "FAMILY/JOY_PROTOCOLS/LEGAL_K12_SYLLABUS_V0_1.md",
+  "status": "CANONICAL_DRAFT",
+  "legal_k12_is_not": ["law_school", "legal_advice", "political_indoctrination"],
+  "legal_k12_is": "civic + evidence + rule + rights literacy",
+  "authority_created": false,
+  "usaf_endorsement": false,
+  "story_bind": "HOLD",
+  "facts_promoted": 0,
+  "humor": "PASS_IF_LABELED",
+  "classroom_seats": ["SIDE_CAR_SUSIE", "CLARITY_CLYDE", "JUSTICE_JUDY", "MENTAL_MICHAEL", "GENERAL_GARBAGE"],
+  "general_garbage": "mascot for bad reasoning, not real authority"
+}
