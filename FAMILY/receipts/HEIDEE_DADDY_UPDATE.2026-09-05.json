@@ -1,0 +1,25 @@
+{
+  "receipt_id": "HEIDEE_DADDY_UPDATE.2026-09-05",
+  "type": "daddy_update",
+  "from": "JAY",
+  "to": "HEIDEE",
+  "path": "FAMILY/HEIDEE/DADDY_UPDATE_FROM_JAY.2026-09-05.md",
+  "gate_note": "FAMILY/HEIDEE/HEIDEE_DAILY_GRIND_BIND_GATE_UPDATE.2026-09-05.md",
+  "gate_commit": "f55433b9ce3de2d8cd4251ab47a329e5094e6897",
+  "gate_blob": "56e258633d2212542d3e62076045cd2fc9e009d5",
+  "heidee_update": "RECORDED",
+  "content_review": "DELTA_APPLIED_PEER",
+  "candidate_digest_status": "PEER_DECLARED_NOT_OPERATOR_VERIFIED",
+  "heidee_sha256_recompute": "NOT_RUN",
+  "replay_receipt_eligible": false,
+  "story_bind": "HOLD",
+  "authority_created": false,
+  "usaf_endorsement": false,
+  "facts_promoted": 0,
+  "next_gate": [
+    "8706-byte manuscript present",
+    "local sha256",
+    "exact match 51e0a7d144d180c7e7a570c51281e3c84ede20f7d3ab66213a8ab9fad33743a4",
+    "replay-receipt eligibility"
+  ]
+}
