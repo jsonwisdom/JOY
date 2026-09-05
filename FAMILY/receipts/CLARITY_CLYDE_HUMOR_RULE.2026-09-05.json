@@ -1,0 +1,15 @@
+{
+  "receipt_id": "CLARITY_CLYDE_HUMOR_RULE.2026-09-05",
+  "type": "clarity_ruling",
+  "lane": "CLARITY_CLYDE",
+  "question": "What rule are we using, who made it, and where does it live?",
+  "who_made_it": "CLARITY_CLYDE",
+  "where_it_lives": "FAMILY/JOY_PROTOCOLS/CLARITY_CLYDE_HUMOR_RULE_V0_1.md",
+  "humor": "PASS",
+  "ambiguous_attribution": "HOLD",
+  "authority_created": false,
+  "story_bind": "HOLD",
+  "facts_promoted": 0,
+  "usaf_endorsement": false,
+  "one_liner": "Funny is fine. What rule says funny gets to impersonate evidence?"
+}
