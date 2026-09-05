@@ -1,0 +1,29 @@
+{
+  "receipt_id": "SISTER_SIDCARS_LANE_ADD.2026-09-05",
+  "type": "family_lane_add",
+  "lane": "SIDCARS",
+  "display": "Sister Sidcars",
+  "status": "LANE_CREATED",
+  "manuscript": "UNBOUND",
+  "story_bytes": "ABSENT",
+  "story_digest": "NOT_RUN",
+  "story_bind": "HOLD",
+  "privacy_bounds": "FAMILY_RESTRICTED",
+  "distinct_from": [
+    "LEEANN",
+    "LEAHPRIME187",
+    "MARYDEE",
+    "HEIDEE",
+    "JAYCEE",
+    "BREALEE",
+    "BRIANNA",
+    "JASON",
+    "JAY"
+  ],
+  "usaf_endorsement": false,
+  "military_authority": false,
+  "authority_created": false,
+  "facts_promoted": 0,
+  "family_story_command": "UNCHANGED",
+  "daily_grind_manuscript": "STILL_ABSENT"
+}
