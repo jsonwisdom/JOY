@@ -1,0 +1,30 @@
+{
+  "receipt_id": "FAMILY_STORY_COMMAND.REVIEW.2026-09-05",
+  "type": "family_story_command_review",
+  "status": "ACKNOWLEDGED",
+  "command_plan_approved": true,
+  "manuscript": "UNBOUND",
+  "story_bytes": "ABSENT",
+  "story_digest": "NOT_RUN",
+  "story_bind": "HOLD",
+  "peer_receipt_name": "FAMILY_STORY_COMMAND.REVIEW.2026-09-05.json",
+  "peer_receipt_sha256": {
+    "status": "DECLARED",
+    "value": "3110f97fe7403bb2d8033e48bcb05ce6e32c582b09a04712b542b00a8d12a01b"
+  },
+  "operator_receipt_digest": "NOT_RUN",
+  "receipt_bind": "HOLD",
+  "review_seat": "LEAHPRIME187",
+  "leeann_real_person_rail": "PRESERVED",
+  "jason_jay": "DISTINCT",
+  "usaf_endorsement": false,
+  "military_authority": false,
+  "authority_created": false,
+  "facts_promoted": 0,
+  "next_gate": [
+    "story_bytes",
+    "exact_digest_on_operator",
+    "replay_receipt",
+    "bind"
+  ]
+}
