@@ -1,0 +1,45 @@
+{
+  "receipt_id": "FAMILY_STORY_CANDIDATE_DIGEST.2026-09-05",
+  "type": "candidate_digest_declaration",
+  "status": "PEER_DECLARED",
+  "content_review": "DELTA_APPLIED_PEER",
+  "patch_scope": "C16 / C17 / C18 ONLY",
+  "c19_changed": false,
+  "source": {
+    "manuscript_bytes": 8647,
+    "manuscript_sha256": "1c9f70ac896ef6f6960a50d7b3b7adec79a94dfd1bd602d140ac105eda22aa9f",
+    "ledgers_bytes": 4952,
+    "ledgers_sha256": "07b7704d52c5f322bbe020afc710148af00692f37055100429d0a88aadcb99d0"
+  },
+  "candidate": {
+    "manuscript_bytes": 8706,
+    "manuscript_sha256": "51e0a7d144d180c7e7a570c51281e3c84ede20f7d3ab66213a8ab9fad33743a4",
+    "ledgers_bytes": 5109,
+    "ledgers_sha256": "318c621ffe1f60905426ac3ea78354402a5478e8a85c06e4ec4deb2158e41c61"
+  },
+  "operator_bytes_present_here": false,
+  "operator_recompute": "NOT_RUN",
+  "candidate_story_digest_status": "PEER_DECLARED_NOT_OPERATOR_VERIFIED",
+  "replay_receipt": "NOT_CREATED",
+  "story_bind": "HOLD",
+  "authority_created": false,
+  "usaf_endorsement": false,
+  "facts_promoted": 0,
+  "c16": {
+    "source": "FAMILY_SAYS / JASON_SAYS",
+    "status": "PRESERVED_AS_DECLARED",
+    "public_verification": "NOT_ESTABLISHED"
+  },
+  "c17": {
+    "source": "FAMILY_SAYS / JASON_SAYS",
+    "status": "PRESERVED_AS_DECLARED",
+    "public_verification": "NOT_ESTABLISHED"
+  },
+  "c18": {
+    "source": "FAMILY_SAYS / JASON_SAYS",
+    "status": "PRESERVED_AS_DECLARED",
+    "genealogical_external_bind": "NOT_ESTABLISHED"
+  },
+  "c19": "UNPROMOTED",
+  "gate": "Independent operator must hash the exact 8706-byte manuscript. Match to 51e0a7d1... is required before replay-receipt eligibility."
+}
