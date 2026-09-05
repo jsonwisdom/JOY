@@ -1,0 +1,47 @@
+{
+  "receipt_id": "FAMILY_STORY_CONTENT_REVIEW.DELTA.2026-09-05",
+  "type": "content_review_delta",
+  "status": "DELTA",
+  "required_patch": "FAMILY_SAYS_CLASSIFICATION_ONLY",
+  "peer_declared": {
+    "manuscript_bytes": 8647,
+    "manuscript_sha256": "1c9f70ac896ef6f6960a50d7b3b7adec79a94dfd1bd602d140ac105eda22aa9f",
+    "ledgers_bytes": 4952,
+    "ledgers_sha256": "07b7704d52c5f322bbe020afc710148af00692f37055100429d0a88aadcb99d0",
+    "prefix_match": "PASS",
+    "operator_bytes_present_here": false
+  },
+  "operator_digest": "NOT_RUN",
+  "story_digest": "NOT_PROMOTED_TO_BIND_DIGEST",
+  "replay_receipt": "NOT_CREATED",
+  "story_bind": "HOLD",
+  "authority_created": false,
+  "usaf_endorsement": false,
+  "military_authority": false,
+  "facts_promoted": 0,
+  "c19_colonel_irl": "UNPROMOTED_UNLESS_CURRENT_OFFICIAL_EFFECTIVE_RANK_RECORD",
+  "patch": [
+    {
+      "id": "C16",
+      "claim": "LeeAnn drives by Maxwell every day",
+      "source": "FAMILY_SAYS / JASON_SAYS",
+      "status": "PRESERVED_AS_DECLARED",
+      "public_verification": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "C17",
+      "claim": "MaryDee drives by Maxwell every day",
+      "source": "FAMILY_SAYS / JASON_SAYS",
+      "status": "PRESERVED_AS_DECLARED",
+      "public_verification": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "C18",
+      "claim": "LeeAnn and MaryDee are sisters",
+      "source": "FAMILY_SAYS / JASON_SAYS",
+      "status": "PRESERVED_AS_DECLARED",
+      "genealogical_external_bind": "NOT_ESTABLISHED"
+    }
+  ],
+  "rule": "FAMILY_SAYS is preserved without becoming USAF or public fact. Classification change is not a bind."
+}
