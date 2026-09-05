@@ -1,0 +1,20 @@
+{
+  "receipt_id": "KINDERGARTEN_APPLE_BLOSSOM_PACKET.2026-09-05",
+  "event": "KINDERGARTEN_APPLE_BLOSSOM_REBOOT",
+  "mission": "JASON_CLASS_OF_THE_FUTURE",
+  "status": "PACKET_DEFINED",
+  "game_initialized": true,
+  "launch": "SCHEDULED_NOT_STARTED",
+  "student_sheet": "FAMILY/JOY_PROTOCOLS/LEGAL_K12/K/STUDENT_SHEET.md",
+  "teacher_rubric": "FAMILY/JOY_PROTOCOLS/LEGAL_K12/K/TEACHER_RUBRIC_HOLD.md",
+  "public_specimen": "FAMILY/JOY_PROTOCOLS/LEGAL_K12/K/PUBLIC_SPECIMEN_APPLE_BLOSSOM_001.json",
+  "replay_receipt": "PENDING",
+  "grading_active": false,
+  "feedback_only": true,
+  "identity_fusion": false,
+  "private_bind": false,
+  "authority_created": false,
+  "watch_not_mint": true,
+  "fake_cid_rejected": true,
+  "family_story_specimen": "FORBIDDEN"
+}

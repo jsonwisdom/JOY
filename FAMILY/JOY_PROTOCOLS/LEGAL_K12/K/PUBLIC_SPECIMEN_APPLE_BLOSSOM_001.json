@@ -1,0 +1,24 @@
+{
+  "specimen_id": "APPLE_BLOSSOM_001",
+  "class": "NEUTRAL_PUBLIC_SPECIMEN",
+  "observer_lane": "Jaywisdom Classroom",
+  "observation_claim": "An apple blossom typically has five petals.",
+  "source_class": "CLASSROOM_CLAIM",
+  "image": {
+    "status": "ABSENT",
+    "cid": null,
+    "note": "No CID is declared. Placeholder CIDs are forbidden."
+  },
+  "timestamp_declared": "2026-09-05T00:00:00Z",
+  "verification_status": "PENDING",
+  "replay_status": "NOT_RUN",
+  "authority_created": false,
+  "private_bind": false,
+  "family_story_forbidden": true,
+  "replay_steps": [
+    "Obtain a public photo of an apple blossom or look at a real blossom.",
+    "Count the petals.",
+    "Mark MATCH, DIFFERENT, or I DON'T KNOW.",
+    "Do not invent an image CID."
+  ]
+}
