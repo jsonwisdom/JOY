@@ -1,0 +1,120 @@
+{
+  "artifacts": {
+    "mission_spec": {
+      "creation_commit": "045a26be6d30e5d4110921cafdaf80b987c9c086",
+      "path": "docs/joyspace/missions/TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_STORY_GROW_V0_2.md",
+      "sha256": "5dc6aeb451f3895bf416a6cfe9ce8724c356c8e1f7bfdb9934c55756947a1ef4"
+    },
+    "play_graph": {
+      "creation_commit": "baa85c687e5b9c8dc5f05d047a54d9e5a5e1fcb2",
+      "path": "receipts/joyspace/semantic_graphs/TODAY_JAY_WITH_MAY_PLAY_GRAPH_V0_2.json",
+      "sha256": "01a4f6277f3407b48f3fafd2da7996bc449a18525e03555443c6cc3360675f76"
+    },
+    "wisdom_doc": {
+      "creation_commit": "e363f3a429a13a934020de0a0d442f17f164bdfd",
+      "path": "docs/joyspace/wisdom/WISDOM_FAMILY_PLAY_GRAPH_V0_2.md",
+      "sha256": "614080c0a2608294396153b4a7df7ac67a47589adad2a44ebabdd39861c12010"
+    }
+  },
+  "base": {
+    "block_number": null,
+    "chain_id": 8453,
+    "eas_attestation_uid": null,
+    "eas_schema_uid": null,
+    "network": "Base Mainnet",
+    "signed_message_hash": null,
+    "signer_address": null,
+    "state": "PREPARED_NOT_SUBMITTED",
+    "tx_hash": null,
+    "v0_1_candidate_state": "SUPERSEDED_PRE_SUBMISSION"
+  },
+  "eas_schema_proposal": {
+    "attestation_submitted": false,
+    "registered": false,
+    "schema": "string missionId,uint16 missionVersion,bytes32 missionHash,bytes32 wisdomHash,bytes32 graphHash,bytes32 receiptHash,string githubRepo,string githubCommit,uint32 chainId,bool noFakeGreen,bool semanticTruth,bool authority",
+    "schema_uid": null
+  },
+  "mission_id": "TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_STORY_GROW_V0_2",
+  "observed_at": "2026-08-20T21:27:00-05:00",
+  "openai": {
+    "api_key_required_for_core": false,
+    "candidate_surfaces": [
+      "Responses API",
+      "Agents SDK",
+      "Tracing"
+    ],
+    "core_dependency": false,
+    "output_is_identity_binding": false,
+    "output_is_play_permission": false,
+    "trace_is_base_receipt": false
+  },
+  "schema": "TODAY_JAY_WITH_MAY_APPLE_BLOSSOM_STORY_GROW_RECEIPT_V0_2",
+  "semantic_graph": {
+    "declared_edges": [
+      [
+        "May",
+        "CAN_PLAY_WITH",
+        "Jay"
+      ],
+      [
+        "Joy",
+        "CAN_PLAY_WITH",
+        "May"
+      ],
+      [
+        "Jay",
+        "CAN_PLAY_WITH",
+        "Joy"
+      ]
+    ],
+    "directed_graph_class": "C3_DIRECTED_CYCLE",
+    "mutual_reciprocity": "HOLD_NOT_DECLARED",
+    "nodes": [
+      "Jay",
+      "Joy",
+      "May"
+    ],
+    "reciprocity_inference": false,
+    "underlying_undirected_graph": "K3"
+  },
+  "semantics": {
+    "may_identity_binding": false,
+    "may_node_label": "DECLARED",
+    "may_play_semantics": "BOUND_TO_DECLARED_EDGE",
+    "may_real_person_binding": false,
+    "real_world_consent_created": false,
+    "relationship_verification_performed": false
+  },
+  "source": {
+    "class": "USER_DECLARED_CURRENT_TURN",
+    "literal_label": "TodayJayWithMay"
+  },
+  "states": {
+    "authority_created": false,
+    "base_submission_authorized": false,
+    "github": "BOUND_DRAFT",
+    "merge_authorized": false,
+    "no_fake_green": true,
+    "semantic_truth_created": false
+  },
+  "storygrow": {
+    "current_state": "HOLD_NO_EDGE_EXECUTION_RECEIPTS_YET",
+    "loop": [
+      "SEE_EDGE",
+      "NAME_PLAY",
+      "PLAY_OR_CREATE",
+      "CONFIRM_EDGE_USED",
+      "RECEIPT",
+      "REPLAY",
+      "GROW_STORY"
+    ],
+    "required_edge_receipts": [
+      "May->Jay",
+      "Jay->Joy",
+      "Joy->May"
+    ],
+    "ring_id": "STORY_GROW_RING_1"
+  },
+  "supersedes": "TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_BASE_REPLAY_RECEIPT_V0_1",
+  "version": "0.2.0"
+}
