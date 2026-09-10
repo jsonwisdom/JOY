@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.local/schemas/apple_blossom_receipt_packet_v0_1.schema.json",
+  "title": "Apple Blossom Receipt Packet V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "packet_version",
+    "packet_id",
+    "created_at",
+    "producer",
+    "source_object",
+    "exact_words",
+    "subject_scope",
+    "claim",
+    "evidence_refs",
+    "authority_refs",
+    "delta",
+    "privacy",
+    "consent",
+    "replay",
+    "surface_receipts",
+    "authority_created"
+  ],
+  "properties": {
+    "schema": {"const": "APPLE_BLOSSOM_RECEIPT_PACKET_V0_1"},
+    "packet_version": {"type": "string", "const": "0.1.0"},
+    "packet_id": {"type": "string", "format": "uuid"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "predecessor_packet_id": {"type": ["string", "null"], "format": "uuid"},
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "role"],
+      "properties": {
+        "label": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "identity_proven": {"type": "boolean", "default": false}
+      }
+    },
+    "source_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locator", "media_type", "hash_state"],
+      "properties": {
+        "locator": {"type": "string", "minLength": 1},
+        "media_type": {"type": "string", "minLength": 1},
+        "sha256": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+        "hash_state": {"enum": ["BOUND", "NOT_AVAILABLE", "NOT_COMPUTED", "CONFLICT"]},
+        "source_date": {"type": ["string", "null"]}
+      }
+    },
+    "exact_words": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_for_replay", "original", "derived_variants"],
+      "properties": {
+        "required_for_replay": {"type": "boolean"},
+        "original": {"type": ["string", "null"]},
+        "derived_variants": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "subject_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key_type", "key", "name_only_linkage"],
+      "properties": {
+        "key_type": {"enum": ["PUBLIC_DOCUMENT_ID", "SALTED_COMMITMENT", "PUBLIC_WALLET_ID", "OTHER"]},
+        "key": {"type": "string", "minLength": 1},
+        "name_only_linkage": {"const": false}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "classification"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "classification": {"enum": ["QUESTION", "CLAIM", "USER_STATEMENT", "INSTITUTIONAL_STATEMENT", "AUDIT_REQUEST"]}
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locator", "relationship"],
+        "properties": {
+          "locator": {"type": "string", "minLength": 1},
+          "relationship": {"enum": ["SUPPORTS", "CONTRADICTS", "CONTEXT", "PREDECESSOR", "SUCCESSOR"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"}
+        }
+      }
+    },
+    "authority_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locator", "authority_state"],
+        "properties": {
+          "locator": {"type": "string", "minLength": 1},
+          "authority_state": {"enum": ["CITED", "BOUND", "DISPUTED", "MISSING", "NOT_APPLICABLE"]}
+        }
+      }
+    },
+    "delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "prior_state_hash", "new_state_hash"],
+      "properties": {
+        "state": {"enum": ["NO_CHANGE", "OBSERVED", "HOLD", "NOT_REPLAYABLE", "DELTA_CONFLICT", "CORRECTION", "SUPERSEDED_BY_RECEIPT"]},
+        "prior_state_hash": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+        "new_state_hash": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+        "reason": {"type": ["string", "null"]}
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "public_pii_allowed"],
+      "properties": {
+        "classification": {"enum": ["PUBLIC_SAFE", "FAMILY_ONLY", "PRIVATE", "REDACTED_PUBLIC"]},
+        "public_pii_allowed": {"const": false},
+        "redactions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["NOT_REQUIRED", "UNKNOWN", "REQUESTED", "GRANTED", "DENIED", "WITHDRAWN"]},
+        "receipt_locator": {"type": ["string", "null"]}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "requirements_missing"],
+      "properties": {
+        "state": {"enum": ["PASS", "HOLD", "CONFLICT", "NOT_TESTED", "REJECT"]},
+        "requirements_missing": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "surface_receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["surface", "locator", "content_sha256", "state"],
+        "properties": {
+          "surface": {"enum": ["GITHUB", "GOOGLE_DRIVE", "LOCAL", "ONCHAIN", "COURT", "AGENCY", "OTHER"]},
+          "locator": {"type": "string", "minLength": 1},
+          "content_sha256": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+          "state": {"enum": ["PRESENT", "PREPARED", "SUBMITTED", "CONFIRMED", "VERIFIED", "MISSING", "CONFLICT"]}
+        }
+      }
+    },
+    "authority_created": {"const": false}
+  }
+}
