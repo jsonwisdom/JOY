@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/systems/whitehouse/schemas/receipt.schema.json",
+  "title": "JOY WhiteHouse Receipt",
+  "description": "A receipt records evidence, observation, simulation, or replay state. It creates no authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "timestamp",
+    "type",
+    "summary",
+    "evidence_status",
+    "authority_created"
+  ],
+  "properties": {
+    "receipt_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "type": {
+      "enum": ["observation", "replay", "boundary_check", "scenario_output", "witness_note"]
+    },
+    "summary": { "type": "string" },
+    "evidence_status": {
+      "enum": ["semantic", "unverified", "attested_by_submitter"]
+    },
+    "authority_created": { "const": false },
+    "official_affiliation": { "const": false },
+    "federal_authority": { "const": "none" },
+    "cryptographic_verification": { "const": false },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

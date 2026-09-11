@@ -1,0 +1,36 @@
+name: JOY Whitehouse Module Validation
+
+on:
+  push:
+    paths:
+      - 'systems/whitehouse/**'
+      - 'scripts/validate_whitehouse.py'
+      - '.github/workflows/validate-whitehouse.yml'
+  pull_request:
+    paths:
+      - 'systems/whitehouse/**'
+      - 'scripts/validate_whitehouse.py'
+      - '.github/workflows/validate-whitehouse.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bench_tester:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml jsonschema
+
+      - name: Run Validation Script
+        run: python scripts/validate_whitehouse.py
