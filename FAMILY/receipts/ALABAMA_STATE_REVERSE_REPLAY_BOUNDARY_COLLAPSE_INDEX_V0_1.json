@@ -1,0 +1,123 @@
+{
+  "schema_version": "ALABAMA_STATE_REVERSE_REPLAY_BOUNDARY_COLLAPSE_INDEX_V0_1",
+  "status": "JOY_ONLY_ALABAMA_PROJECT_SEATED",
+  "repo": "jsonwisdom/JOY",
+  "authority_created": false,
+  "consent_created": false,
+  "legal_finding_created": false,
+  "no_fake_green": true,
+  "source_parent_commit": "7f9e17a7b775c46b50ece29596b257d3cd518d80",
+  "artifact": {
+    "path": "FAMILY/receipts/ALABAMA_STATE_REVERSE_REPLAY_BOUNDARY_COLLAPSE_V0_1.md",
+    "git_blob_sha": "bfaf2148ffb4be16edfccf4b0ebaba62e63773cc"
+  },
+  "grammar": {
+    "APPLE_BLOSSOM": "family/local learning object",
+    "AWESOME": "affect / teach-back score",
+    "AUDIT": "receipt-closure check",
+    "REVERSE": "trace provenance backward",
+    "REPLAY": "rerun frozen inputs",
+    "CODE": "implementation logic"
+  },
+  "core_rule": "CONNECTED_GRAPH != COLLAPSED_GRAPH",
+  "collapse_test": {
+    "invalid_formula": "FAMILY_RELATION + SHARED_STATE + SHARED_EDUCATIONAL_CONTEXT = SHARED_AUTHORITY",
+    "classification": "BOUNDARY_COLLAPSE_REJECTED"
+  },
+  "edges": [
+    {"from": "PARENT", "to": "STUDENT", "type": "FAMILY_RELATIONSHIP"},
+    {"from": "STUDENT", "to": "CAMPUS", "type": "ENROLLMENT_OR_INSTITUTION_RELATIONSHIP"},
+    {"from": "CAMPUS", "to": "ALABAMA", "type": "JURISDICTION_OR_LOCATION_RELATIONSHIP"},
+    {"from": "ALABAMA", "to": "LAW", "type": "GOVERNMENTAL_AUTHORITY_RELATIONSHIP"}
+  ],
+  "membranes": [
+    "PARENT != UNIVERSITY",
+    "UNIVERSITY != STATE_OF_ALABAMA",
+    "STUDENT_ATTENDANCE != PARENTAL_AUTHORITY_TRANSFER",
+    "PARENTING != CAMPUS_GOVERNANCE",
+    "CAMPUS_POLICY != STATE_LAW",
+    "STATE_LAW != UNIVERSITY_IMPLEMENTATION",
+    "AI_CLASSIFICATION != LEGAL_DETERMINATION",
+    "APPLE_BLOSSOM != CIVIC_AUTHORITY",
+    "AWESOME_SCORE != TRUTH",
+    "CODE != AUTHORITY",
+    "FAMILY_RELATIONSHIP != LEGAL_AUTHORITY",
+    "DAD_ROLE != SURVEILLANCE",
+    "DAD_ROLE != CONTROL",
+    "DAD_ROLE != PUBLIC_AUTHORITY"
+  ],
+  "reverse_requirements": {
+    "STATE_AUTHORITY_RECEIPT": "REQUIRED_FOR_STATE_AUTHORITY_CLAIM",
+    "UNIVERSITY_POLICY_RECEIPT": "REQUIRED_FOR_CAMPUS_POLICY_CLAIM",
+    "STUDENT_CONSENT_RECEIPT": "SEPARATE_CONSENT_LANE",
+    "PARENT_ROLE_RECEIPT": "SEPARATE_FAMILY_LANE",
+    "AI_CLASSIFICATION_RECEIPT": "SEPARATE_MACHINE_OBSERVATION_LANE"
+  },
+  "join_policy": {
+    "required": [
+      "independent_receipts",
+      "matching_join_fields",
+      "compatible_provenance",
+      "no_scope_conflict"
+    ],
+    "otherwise": ["NO_JOIN", "HOLD", "CONFLICT"]
+  },
+  "prior_work_receipts": [
+    {
+      "name": "WISDOM_FAMILY_PURPOSE_MAP_V0_1",
+      "path": "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+      "git_blob_sha": "ed7fbf1c933d900c2eddea8c68166e3dd9ef572e"
+    },
+    {
+      "name": "JAYCEE_AI_TRAINING_TOOL_BUILT_BY_DAD_V0_1",
+      "path": "AL/receipts/base/identity/JAYCEE_AI_TRAINING_TOOL_BUILT_BY_DAD_V0_1.md",
+      "git_blob_sha": "5a2eb3c6b7868da9dc3144181ebe96efca7e0800"
+    },
+    {
+      "name": "AL_ALMS_COMPUTERWISDOM_MRS_WISDOM_OODA_REPLAY_V0_1",
+      "path": "FAMILY/receipts/AL_ALMS_COMPUTERWISDOM_MRS_WISDOM_OODA_REPLAY_V0_1.md",
+      "git_blob_sha": "736e7bca42789ff22dd6cd3cc7256d6aad662096"
+    },
+    {
+      "name": "ALABAMA_BOUNDARY_INQUIRY_ABI_GENESIS_KEY_V0_1",
+      "path": "metadata/alms/ALABAMA_BOUNDARY_INQUIRY_ABI_GENESIS_KEY_V0_1.json",
+      "git_blob_sha": "192446c774648c10839560313a4e70640b5997d2"
+    },
+    {
+      "name": "ALABAMA_LAW_PUBLIC_LESSON_CARD_V0_1",
+      "path": "FAMILY/receipts/ALABAMA_LAW_PUBLIC_LESSON_CARD_V0_1.md",
+      "git_blob_sha": "94722715ab6f2b3be7aa7a6bfd673694ac4652a7"
+    }
+  ],
+  "historical_commit_receipts": {
+    "apple_blossom_replay": "017564d44d8e6635a904fef7558623016aa53652",
+    "ground_zero_debug_parent": "7f9e17a7b775c46b50ece29596b257d3cd518d80"
+  },
+  "drive_source_only": {
+    "title": "Apple Blossom Awesome Audit Cross Link — CrissCrossAppleSauce Replay — Leanne — Alabama Family Update v0.2",
+    "document_id": "1kQl_5xi5Nj7No7YMiaArsKWV4RtPXsOz8OgepNzZS64",
+    "write_performed": false
+  },
+  "hash_lane": [
+    "BLOB_SHA != COMMIT_SHA",
+    "FILE_SHA256 != GIT_BLOB_SHA",
+    "PROJECT_RAW_SLICE_SHA256 != JCS_SHA256 != FILE_SHA256 != MERKLE_SHA256",
+    "HASH_EQUAL != BYTE_IDENTITY_PROVEN_WITHOUT_MATCHING_ALGORITHM_PREIMAGE_ENCODING_SCOPE"
+  ],
+  "allowed_classifications": [
+    "EDGE_CLOSED",
+    "HOLD_MISSING_RECEIPT",
+    "NO_JOIN",
+    "CONFLICT",
+    "SCOPE_MISMATCH",
+    "PROVENANCE_MISMATCH",
+    "BOUNDARY_COLLAPSE_REJECTED"
+  ],
+  "forbidden_promotions": [
+    "CONNECTED_GRAPH -> SHARED_AUTHORITY",
+    "AI_CLASSIFICATION -> LEGAL_DETERMINATION",
+    "PARENT_ROLE -> UNIVERSITY_AUTHORITY",
+    "UNIVERSITY_LOCATION -> STATE_POLICY",
+    "FAMILY_LESSON -> GOVERNMENT_POLICY"
+  ]
+}
