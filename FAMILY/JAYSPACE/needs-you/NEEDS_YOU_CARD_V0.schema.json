@@ -1,0 +1,26 @@
+{
+  "schema_id": "NEEDS_YOU_CARD_V0",
+  "version": "0.1",
+  "authority_created": false,
+  "fields": {
+    "card_id": "string",
+    "for_person": "string",
+    "title": "string",
+    "ask": "string|null",
+    "visibility": "PRIVATE|FAMILY|PUBLIC",
+    "status": "NEEDS_ANSWER|STILL_THINKING|CONTINUE|UNRESOLVED|ANSWERED",
+    "actions": ["ANSWER", "STILL_THINKING", "NOT_FOR_ME"],
+    "person_words": "string|null",
+    "share_answer": "boolean",
+    "source_object": "string|null",
+    "created_from": "string|null",
+    "private_payload": "LOCAL_ONLY|null"
+  },
+  "invariants": [
+    "PERSON_WORDS_ARE_NEVER_INVENTED",
+    "STILL_THINKING_IS_NOT_A_NEGATIVE_ANSWER",
+    "HOLD_DOES_NOT_STOP_OTHER_CARDS",
+    "PRIVATE_DOES_NOT_PROMOTE_TO_FAMILY_OR_PUBLIC",
+    "BOT_OUTPUT_IS_NOT_PERSON_SPEECH"
+  ]
+}

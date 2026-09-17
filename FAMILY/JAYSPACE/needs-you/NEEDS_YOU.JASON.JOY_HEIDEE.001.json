@@ -1,0 +1,16 @@
+{
+  "schema_id": "NEEDS_YOU_CARD_V0",
+  "card_id": "NEEDS_YOU.JASON.JOY_HEIDEE.001",
+  "for_person": "JASON",
+  "title": "Choose what happens next",
+  "ask": null,
+  "visibility": "PRIVATE",
+  "status": "NEEDS_ANSWER",
+  "actions": ["ANSWER", "STILL_THINKING", "NOT_FOR_ME"],
+  "person_words": null,
+  "share_answer": false,
+  "source_object": "JOY_HEIDEE_BREAK",
+  "created_from": "MASTER_ROOM.FUNCTION_PRIMER.NEEDS_YOU",
+  "private_payload": "LOCAL_ONLY",
+  "authority_created": false
+}

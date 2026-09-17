@@ -1,0 +1,16 @@
+{
+  "schema_id": "NEEDS_YOU_CARD_V0",
+  "card_id": "NEEDS_YOU.JASON.PURPOSE_PINS.001",
+  "for_person": "JASON",
+  "title": "This needs your answer",
+  "ask": "Should LeeAnn's and MaryDee's purpose lines stay open for now, or will you write them when you're ready?",
+  "visibility": "FAMILY",
+  "status": "NEEDS_ANSWER",
+  "actions": ["ANSWER", "STILL_THINKING", "NOT_FOR_ME"],
+  "person_words": null,
+  "share_answer": false,
+  "source_object": "PURPOSE_PINS",
+  "created_from": "MASTER_ROOM.FUNCTION_PRIMER.NEEDS_YOU",
+  "private_payload": null,
+  "authority_created": false
+}
