@@ -1,0 +1,190 @@
+{
+  "object_id": "MARYD_OBJECT_GRAPH_V0_1",
+  "object_type": "family_human_root_object_graph",
+  "status": "DRAFT_BRANCH_ONLY",
+  "authority_created": false,
+  "promotion": "NONE",
+  "privacy": {
+    "public_safe_only": true,
+    "age": "NOT_INFERRED",
+    "birth_year": "NOT_INFERRED",
+    "private_details": "EXCLUDED"
+  },
+  "root": {
+    "object_id": "MARY_D_HUMAN_ROOT",
+    "class": "HUMAN",
+    "canonical_label": "MARY_D",
+    "user_declared": true,
+    "rule": "EVERY_JASON_STATEMENT_ABOUT_HER_BECOMES_A_TYPED_CHILD_OBJECT",
+    "not_equal": [
+      "MARYDEE_BOT_AI",
+      "REPOSITORY",
+      "STORY_CHARACTER",
+      "MILITARY_AUTHORITY"
+    ]
+  },
+  "objects": [
+    {
+      "object_id": "MARYD_RELATIONSHIP_MOTHER_OF_JASONS_DAUGHTERS",
+      "class": "RELATIONSHIP_ASSERTION",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "predicate": "MOTHER_OF_JASONS_DAUGHTERS",
+      "source_class": "USER_DECLARED_CURRENT_SESSION",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "public_genealogy_proven": false,
+      "authority_created": false
+    },
+    {
+      "object_id": "MARYD_BIRTHDAY_RULE_JUNE_13",
+      "class": "RECURRING_DATE_ASSERTION",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "month": 6,
+      "day": 13,
+      "recurrence": "ANNUAL",
+      "source_class": "USER_DECLARED_CURRENT_SESSION",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "prior_year_event_objects": "NOT_ENUMERATED",
+      "rule": "ANNUAL_DATE_ASSERTION_DOES_NOT_PROVE_PRIOR_YEAR_ARTIFACT_EXISTENCE"
+    },
+    {
+      "object_id": "MARYD_BIRTHDAY_EVENT_2026_06_13",
+      "class": "DATED_FAMILY_EVENT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "date": "2026-06-13",
+      "event": "BIRTHDAY",
+      "evidence_state": "REPO_RECEIPTED",
+      "source_refs": [
+        {
+          "path": "docs/school-of-wisdom/JAYS_CHARACTERS_JUNE_13_MRS_WISDOM_BIRTHDAY_V0_1.md",
+          "blob_sha": "56d291a31c9ca3f7ddfad393af3ffa739136ee32"
+        },
+        {
+          "path": "FAMILY/receipts/joyspace/MRS_WISDOM_JOYSPACE_BIRTHDAY_BUILD_V0_1.md",
+          "blob_sha": "ae75beb6d72d6aee9855ce11fee1a67919922696"
+        }
+      ],
+      "age_at_event": "NOT_INFERRED",
+      "birth_year": "NOT_INFERRED"
+    },
+    {
+      "object_id": "MARYD_JASON_SAYS_MAXWELL_DAILY",
+      "class": "JASON_STATEMENT_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "statement": "MaryDee drives by Maxwell every day",
+      "source_class": "FAMILY_SAYS_JASON_SAYS",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "public_verification": "NOT_ESTABLISHED",
+      "source_ref": {
+        "path": "FAMILY/receipts/FAMILY_SAYS_C16_C18_PATCH_V0_1.md",
+        "blob_sha": "6949fe5223b53d029d099839ed3edb8dc431e8e6"
+      }
+    },
+    {
+      "object_id": "MARYD_JASON_SAYS_SISTER_OF_LEEANN",
+      "class": "JASON_STATEMENT_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "statement": "LeeAnn and MaryDee are sisters",
+      "source_class": "FAMILY_SAYS_JASON_SAYS",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "genealogical_external_bind": "NOT_ESTABLISHED",
+      "source_ref": {
+        "path": "FAMILY/receipts/FAMILY_SAYS_C16_C18_PATCH_V0_1.md",
+        "blob_sha": "6949fe5223b53d029d099839ed3edb8dc431e8e6"
+      }
+    },
+    {
+      "object_id": "MARYD_MD_CALLSIGN_OBJECT",
+      "class": "JASON_AUTHORED_STORY_ROLE_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "label": "MD",
+      "meaning": "private_affection_signal",
+      "scope": "FAMILY_ONLY",
+      "evidence_state": "PRESERVED_STORY_OBJECT",
+      "source_ref": {
+        "path": "FAMILY/receipts/MD_DEEZER_DUAL_CALLSIGN_SCENE_V0_1.md",
+        "blob_sha": "dd9bb44ce6ea8b81b788241a04b93bbc8c176b31"
+      }
+    },
+    {
+      "object_id": "MARYD_DEEZER_CALLSIGN_OBJECT",
+      "class": "JASON_AUTHORED_STORY_ROLE_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "label": "DEEZER",
+      "meaning": "work_lane_signal",
+      "scope": "STORY_OR_WORK_LANE_AS_AUTHORED",
+      "evidence_state": "PRESERVED_STORY_OBJECT",
+      "authority": "NOT_CLAIMED",
+      "rule": "DEEZER_CALLSIGN_OBJECT_DOES_NOT_EQUAL_MARYDEE_BOT_AI",
+      "source_ref": {
+        "path": "FAMILY/receipts/MD_DEEZER_DUAL_CALLSIGN_SCENE_V0_1.md",
+        "blob_sha": "dd9bb44ce6ea8b81b788241a04b93bbc8c176b31"
+      }
+    },
+    {
+      "object_id": "MARYD_MOTHER_ROLE_OBJECT",
+      "class": "JASON_AUTHORED_FAMILY_ROLE_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "label": "MOTHER",
+      "meaning": "family_anchor",
+      "evidence_state": "PRESERVED_STORY_AND_USER_DECLARATION",
+      "source_ref": {
+        "path": "FAMILY/receipts/MD_DEEZER_DUAL_CALLSIGN_SCENE_V0_1.md",
+        "blob_sha": "dd9bb44ce6ea8b81b788241a04b93bbc8c176b31"
+      }
+    },
+    {
+      "object_id": "MARYD_MRS_WISDOM_GATE_OBJECT",
+      "class": "JASON_AUTHORED_FAMILY_GATE_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "label": "MRS_WISDOM",
+      "meaning": "family_meaning_and_approval_gate",
+      "evidence_state": "PRESERVED_STORY_OBJECT",
+      "source_ref": {
+        "path": "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+        "blob_sha": "ed7fbf1c933d900c2eddea8c68166e3dd9ef572e"
+      }
+    },
+    {
+      "object_id": "MARYD_PROTECTED_CONTINUITY_OBJECT",
+      "class": "SYSTEM_PURPOSE_OBJECT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "purpose": "protected_family_continuity",
+      "evidence_state": "REPO_OBSERVED",
+      "source_ref": {
+        "path": "FAMILY/receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md",
+        "blob_sha": "ed7fbf1c933d900c2eddea8c68166e3dd9ef572e"
+      }
+    },
+    {
+      "object_id": "MARYDEE_BOT_AI",
+      "class": "AI_AGENT_OR_REPLAY_SURFACE",
+      "human_ref": "MARY_D_HUMAN_ROOT",
+      "identity_bind_to_human": false,
+      "user_declared": true,
+      "role": "AI_FAMILY_CONTINUITY_REPLAY_SURFACE",
+      "rule": "BOT_OUTPUT_IS_NOT_HUMAN_SPEECH",
+      "authority_created": false
+    },
+    {
+      "object_id": "DEEZER13_STORY_LABEL",
+      "class": "UNBOUND_STORY_OR_AI_LABEL",
+      "human_ref": "MARY_D_HUMAN_ROOT",
+      "identity_bind_to_human": "HOLD",
+      "identity_bind_to_marydee_bot": "HOLD",
+      "reason": "PRIOR_STORY_TOKEN_EXISTS_BUT_CURRENT_BIND_NOT_EXPLICIT",
+      "authority_created": false
+    }
+  ],
+  "routing_rules": [
+    "NEW_JASON_STATEMENT_ABOUT_MARY_D -> NEW_TYPED_OBJECT",
+    "DO_NOT_OVERWRITE_PRIOR_OBJECTS",
+    "CONTRADICTION -> PRESERVE_BOTH_AS_SEPARATE_OBJECTS",
+    "HUMAN != BOT",
+    "CALLSIGN_OBJECT != IDENTITY_PROOF",
+    "BIRTHDAY_DATE != AGE",
+    "ANNUAL_RECURRENCE != PRIOR_ARTIFACT_PROOF",
+    "USER_DECLARATION != PUBLIC_GENEALOGY_PROOF",
+    "NO_RECEIPT -> HOLD",
+    "AUTHORITY_CREATED = FALSE"
+  ]
+}
