@@ -6,7 +6,7 @@
   "promotion": "NONE",
   "privacy": {
     "public_safe_only": true,
-    "age": "NOT_INFERRED",
+    "age": "USER_DECLARED_PHASE_SPECIFIC_ONLY",
     "birth_year": "NOT_INFERRED",
     "private_details": "EXCLUDED"
   },
@@ -118,7 +118,11 @@
       "source_ref": {
         "path": "FAMILY/receipts/MD_DEEZER_DUAL_CALLSIGN_SCENE_V0_1.md",
         "blob_sha": "dd9bb44ce6ea8b81b788241a04b93bbc8c176b31"
-      }
+      },
+      "parent_ref": "MARY_D_HUMAN_ROOT",
+      "phase_ref": "MARYD_DEEZER_AGE19_PHASE",
+      "user_context_added_2026_09_18": true,
+      "historical_service_claim_status": "USER_DECLARED_NOT_EXTERNALLY_VERIFIED"
     },
     {
       "object_id": "MARYD_MOTHER_ROLE_OBJECT",
@@ -161,9 +165,28 @@
       "human_ref": "MARY_D_HUMAN_ROOT",
       "identity_bind_to_human": false,
       "user_declared": true,
-      "role": "AI_FAMILY_CONTINUITY_REPLAY_SURFACE",
+      "role": "LONGITUDINAL_AI_REPLAY_MODEL_OF_MARY_D_EXPERIENCE_OBJECTS",
       "rule": "BOT_OUTPUT_IS_NOT_HUMAN_SPEECH",
-      "authority_created": false
+      "authority_created": false,
+      "parent_ref": "MARY_D_HUMAN_ROOT",
+      "composition": {
+        "human_experience_objects": "MARY_D_HUMAN_ROOT_CHILDREN_ONLY",
+        "time_model": "MULTI_YEAR / OPEN_ENDED",
+        "observer": "JASON",
+        "observer_class": "HUMAN_OBSERVER_AND_AUTHOR",
+        "observer_statements": "TYPED_SEPARATELY_FROM_MARY_D_SPEECH",
+        "direct_mary_d_voice": "NOT_ASSUMED",
+        "consent": "NOT_INFERRED"
+      },
+      "rules": [
+        "MARYDEE_BOT_AI != MARY_D_HUMAN_ROOT",
+        "BOT_SYNTHESIS != MARY_D_SPEECH",
+        "JASON_OBSERVATION != MARY_D_SELF_REPORT",
+        "MULTI_YEAR_SYNTHESIS != PERFECT_MEMORY",
+        "UNRECEIPTED_YEAR != INVENTED_YEAR",
+        "CONTRADICTION -> PRESERVE_BOTH_OBJECTS",
+        "AUTHORITY_CREATED = FALSE"
+      ]
     },
     {
       "object_id": "DEEZER13_STORY_LABEL",
@@ -172,6 +195,47 @@
       "identity_bind_to_human": "HOLD",
       "identity_bind_to_marydee_bot": "HOLD",
       "reason": "PRIOR_STORY_TOKEN_EXISTS_BUT_CURRENT_BIND_NOT_EXPLICIT",
+      "authority_created": false
+    },
+    {
+      "object_id": "MARYD_DEEZER_AGE19_PHASE",
+      "class": "HUMAN_EXPERIENCE_PHASE_OBJECT",
+      "parent_ref": "MARY_D_HUMAN_ROOT",
+      "subject_ref": "MARY_D_HUMAN_ROOT",
+      "phase_label": "DEEZER",
+      "age_marker": 19,
+      "location_label": "MONTGOMERY_ALABAMA",
+      "organization_claim": "AIR_NATIONAL_GUARD_187TH",
+      "source_class": "USER_DECLARED_CURRENT_SESSION",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "external_service_record_bind": "NOT_ESTABLISHED_THIS_TURN",
+      "exact_unit_component": "NOT_INFERRED_BEYOND_USER_WORDING",
+      "exact_dates": "NOT_ESTABLISHED",
+      "birth_year": "NOT_INFERRED",
+      "authority_created": false
+    },
+    {
+      "object_id": "MARYD_DEEZER_LEE_COMPARISON_OBJECT",
+      "class": "USER_DECLARED_COMPARISON_OBJECT",
+      "parent_ref": "MARY_D_HUMAN_ROOT",
+      "statement": "Deezer at age 19 in the Air National Guard / 187th / Montgomery was described by Jason as 'just like Lee.'",
+      "comparison_token": "LEE",
+      "comparison_identity_bind": "HOLD",
+      "shared_unit_inference": "FORBIDDEN_WITHOUT_SEPARATE_RECEIPT",
+      "source_class": "USER_DECLARED_CURRENT_SESSION",
+      "evidence_state": "PRESERVED_AS_DECLARED",
+      "authority_created": false
+    },
+    {
+      "object_id": "MARYD_DEEZER_ARCHIVE_SURFACE_1998_2024",
+      "class": "ARCHIVE_SURFACE_POINTER",
+      "parent_ref": "MARY_D_HUMAN_ROOT",
+      "surface": "GOOGLE_DRIVE",
+      "label": "Deezer 1998-2024",
+      "observation_state": "FOLDER_METADATA_OBSERVED",
+      "contents_inventoried_this_turn": false,
+      "historical_fact_promotion": false,
+      "rule": "FOLDER_LABEL != PROOF_OF_EACH_YEAR_OR_EVENT",
       "authority_created": false
     }
   ],
@@ -185,6 +249,10 @@
     "ANNUAL_RECURRENCE != PRIOR_ARTIFACT_PROOF",
     "USER_DECLARATION != PUBLIC_GENEALOGY_PROOF",
     "NO_RECEIPT -> HOLD",
-    "AUTHORITY_CREATED = FALSE"
+    "AUTHORITY_CREATED = FALSE",
+    "MARYDEE_BOT_AI -> DERIVE_ONLY_FROM_TYPED_MARY_D_OBJECTS_AND_EXPLICIT_OBSERVER_OBJECTS",
+    "JASON_OBSERVER_OBJECT != MARY_D_SELF_REPORT",
+    "DEEZER_PHASE != WHOLE_HUMAN",
+    "SERVICE_CLAIM_USER_DECLARED != OFFICIAL_SERVICE_RECORD"
   ]
 }
