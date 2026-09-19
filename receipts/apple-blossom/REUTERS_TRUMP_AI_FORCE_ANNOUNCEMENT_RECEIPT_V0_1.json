@@ -1,0 +1,24 @@
+{
+  "object_id": "REUTERS_TRUMP_AI_FORCE_ANNOUNCEMENT_RECEIPT_V0_1",
+  "source": {
+    "outlet": "Reuters",
+    "source_class": "MEDIA_REPORT",
+    "published_at": "2026-09-19T17:25:00Z",
+    "url": "https://www.reuters.com/world/us/trump-says-he-will-create-ai-force-name-ai-czar-2026-09-19/",
+    "observed_claim": "Reuters reports that President Donald Trump said in a social-media post that he is creating an \"AI Force\" and will announce an AI \"czar\" in the near future."
+  },
+  "receipt_state": {
+    "TRUMP_AI_FORCE_ANNOUNCEMENT": "OBSERVED_AS_REUTERS_REPORT",
+    "AI_CZAR_FUTURE_APPOINTMENT": "ANNOUNCED_NOT_YET_IDENTIFIED",
+    "FORMAL_AI_FORCE_INSTRUMENT": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE",
+    "STATUTORY_CREATION": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE",
+    "BUDGET": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE",
+    "ORG_CHART": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE",
+    "HIRING_AUTHORITY": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE",
+    "DELEGATED_ENFORCEMENT_AUTHORITY": "NOT_OBSERVED_IN_CURRENT_PRIMARY_SOURCE_SEARCH_SCOPE"
+  },
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "facts_promoted": 0,
+  "next_gate": "AI_FORCE_FORMAL_INSTRUMENT_SEARCH_V0_1"
+}
