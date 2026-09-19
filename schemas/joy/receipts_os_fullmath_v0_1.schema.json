@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/receipts_os_fullmath_v0_1.schema.json",
+  "title": "Receipts OS FullMath v0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "schema_version",
+    "receipt_class",
+    "claim",
+    "source",
+    "capture",
+    "binding",
+    "verification",
+    "replay",
+    "state"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "receipt_class": {
+      "enum": [
+        "PRIMARY_SOURCE_RECEIPT",
+        "OBSERVATION_RECEIPT",
+        "MEDIA_RECEIPT",
+        "USER_ASSERTION_RECEIPT",
+        "COUNTER_RECEIPT",
+        "CORRECTION_RECEIPT",
+        "SOURCE_UNAVAILABLE_RECEIPT",
+        "MIRROR_RECEIPT",
+        "DERIVATION_RECEIPT"
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "exact_claim"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "claimant_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exact_claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "jurisdiction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "procedural_posture": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "burden": {
+      "type": "object",
+      "properties": {
+        "burden_bearer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "standard_of_proof": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "standard_authority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "burden_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_type",
+        "observed_at"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custodian": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publication_or_record_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "exact_bytes_captured",
+        "source_sha256"
+      ],
+      "properties": {
+        "exact_bytes_captured": {
+          "type": "boolean"
+        },
+        "source_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parsed_text_captured": {
+          "type": "boolean"
+        },
+        "parser_or_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extraction_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "supported_dimensions",
+        "unsupported_dimensions",
+        "binding_status"
+      ],
+      "properties": {
+        "supported_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "unsupported_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "binding_status": {
+          "enum": [
+            "UNBOUND",
+            "BOUND",
+            "PARTIAL",
+            "CONFLICT"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "verification_status"
+      ],
+      "properties": {
+        "verification_status": {
+          "enum": [
+            "UNVERIFIED",
+            "SOURCE_POINTER_MATCH",
+            "HASH_MATCH",
+            "HASH_MISMATCH",
+            "HASH_HOLD"
+          ]
+        },
+        "verification_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "population": {
+      "type": "object"
+    },
+    "procedure": {
+      "type": "object"
+    },
+    "replay": {
+      "type": "object",
+      "required": [
+        "sequence",
+        "prev_event_sha256",
+        "event_sha256",
+        "unresolved_edges"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prev_event_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "superseded_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "counter_receipts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unresolved_edges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mirrors": {
+      "type": "object"
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "artifact_status",
+        "claim_status",
+        "authority_created",
+        "political_verdict"
+      ],
+      "properties": {
+        "artifact_status": {
+          "enum": [
+            "CANDIDATE",
+            "ACQUIRED",
+            "PARSED",
+            "UNAVAILABLE_AFTER_OBSERVATION"
+          ]
+        },
+        "claim_status": {
+          "enum": [
+            "UNOBSERVED",
+            "OBSERVED",
+            "HOLD",
+            "CONFLICT",
+            "REJECTED",
+            "ESTABLISHED"
+          ]
+        },
+        "authority_created": {
+          "const": false
+        },
+        "political_verdict": {
+          "const": "NONE"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "capture": {
+            "properties": {
+              "exact_bytes_captured": {
+                "const": false
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "capture": {
+            "properties": {
+              "source_sha256": {
+                "enum": [
+                  null,
+                  "HOLD"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
