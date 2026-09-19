@@ -1,0 +1,177 @@
+{
+  "schema": "JOY_PORCH_MASTERROOM_BOT_ADAPTER_V0_1",
+  "status": "ACTIVE_CANDIDATE",
+  "authority_created": false,
+  "family_content": "NONE",
+  "court_bridge": "NONE",
+  "upstream": {
+    "repo": "jsonwisdom/COMPUTERWISDOM",
+    "schema_path": "schemas/JAY_BOT_ROOM_CONTROL_PLANE_V0_1.json",
+    "schema_blob": "077815e563d5ae0b7bd97a9990f4736dbd939b72",
+    "architecture_path": "docs/architecture/JAY_BOT_ROOM_CONTROL_PLANE_V0_1.md",
+    "architecture_blob": "fc1cea5f107ff1ea77979173b2ea1db8dc39c86e",
+    "upstream_status": "DESIGN_CANDIDATE"
+  },
+  "porch": {
+    "required_membrane": "YELLOW_PORCH",
+    "human_chair": "HUMAN_WORDS_ONLY",
+    "boss_bre_role": "room_safety_joy_reset_privacy_guard",
+    "return_to_porch_required": true
+  },
+  "invariants": [
+    "MASTER_ROOM_BOTS != FAMILY_MEMBERS",
+    "BOT_OUTPUT != HUMAN_WORDS",
+    "BOT_SUMMARY != FAMILY_FACT",
+    "TOOL_ACCESS != AUTHORITY",
+    "MIRROR != SECOND_AUTHORITY_SOURCE",
+    "MULTIPLE_BOTS_READING_ONE_HUMAN_ASSERTION != MULTIPLE_HUMAN_ROOTS",
+    "ONE_ROOT_PER_EPISODE_CLASS"
+  ],
+  "bots": {
+    "GROK_AGENT": {
+      "allow": [
+        "REVIEW",
+        "COUNTER_REVIEW",
+        "FLAG_GAP",
+        "ROUTE_HOLD"
+      ],
+      "deny": [
+        "HUMAN_WORDS",
+        "FAMILY_CONSENT",
+        "FINAL_TRUTH",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "CHATGPT_AGENT": {
+      "allow": [
+        "DRAFT_HELPER_TEXT",
+        "STRUCTURE",
+        "EXPLAIN",
+        "CLASSIFY_CANDIDATE",
+        "ROUTE_HOLD"
+      ],
+      "deny": [
+        "HUMAN_WORDS",
+        "FAMILY_CONSENT",
+        "SILENCE_FILL",
+        "FAMILY_FACT_PROMOTION",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "GITHUB_BOT": {
+      "allow": [
+        "REPO_READ",
+        "REPO_TRANSPORT",
+        "COMMIT_RECEIPT",
+        "BLOB_RECEIPT"
+      ],
+      "deny": [
+        "FAMILY_AUTHORSHIP",
+        "FAMILY_CONSENT",
+        "TRUTH_PROMOTION",
+        "SELF_MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "DRIVE_BOT": {
+      "allow": [
+        "FILE_READ",
+        "FILE_TRANSPORT",
+        "METADATA_RECEIPT",
+        "MIRROR_RECEIPT"
+      ],
+      "deny": [
+        "FAMILY_AUTHORSHIP",
+        "FAMILY_CONSENT",
+        "FACTUAL_VALIDATION",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "PROOFPOCKET": {
+      "allow": [
+        "COMPLETENESS_CHECK",
+        "MISSING_EDGE_FLAG",
+        "RECEIPT_INDEX",
+        "ROUTE_HOLD"
+      ],
+      "deny": [
+        "FAMILY_TRUTH_VERDICT",
+        "HUMAN_AUTHORSHIP",
+        "CONSENT",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "ZORA_BOTS": {
+      "default_state": "DARK",
+      "allow_after_explicit_human_gate": [
+        "RENDER_CANDIDATE",
+        "PUBLICATION_TRANSPORT"
+      ],
+      "deny": [
+        "FAMILY_CONSENT",
+        "HUMAN_AUTHORSHIP",
+        "AUTO_PUBLICATION",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    },
+    "TRADER": {
+      "default_state": "DARK",
+      "family_route": "NONE"
+    },
+    "TELEGRAM_BOT": {
+      "allow": [
+        "INBOUND_TRANSPORT",
+        "TIMESTAMP_RECEIPT",
+        "ROUTE_HOLD"
+      ],
+      "deny": [
+        "SPEAKER_IDENTITY_INFERENCE",
+        "HUMAN_AUTHORSHIP",
+        "CONSENT",
+        "FACT_PROMOTION",
+        "MERGE",
+        "SIGN",
+        "SPEND"
+      ]
+    }
+  },
+  "full_math_interface": {
+    "allowed_machine_classes": [
+      "REPO_STATE",
+      "FILE_STATE",
+      "TRANSPORT_STATE",
+      "REVIEW_STATE",
+      "PACKET_COMPLETENESS_STATE",
+      "PUBLICATION_STATE"
+    ],
+    "denied_human_classes": [
+      "HUMAN_EXPERIENCE",
+      "CHILD_WORDS",
+      "FAMILY_CONSENT",
+      "HUMAN_INTENT",
+      "FAMILY_MOTIVE"
+    ],
+    "bot_observer_standing_default_for_human_classes": false
+  },
+  "state": {
+    "yellow_porch": "REQUIRED_MEMBRANE",
+    "third_rail_family": "DARK_BY_DEFAULT",
+    "master_room_bots": "BOUNDED_HELPERS",
+    "family_content": "NONE",
+    "court_bridge": "NONE",
+    "packet": "NONE",
+    "promotion": "NONE",
+    "authority_created": false
+  }
+}
