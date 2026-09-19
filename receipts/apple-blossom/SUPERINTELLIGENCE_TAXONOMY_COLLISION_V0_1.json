@@ -1,0 +1,18 @@
+{
+  "object_id": "SUPERINTELLIGENCE_TAXONOMY_COLLISION_V0_1",
+  "parent": "APPLE_BLOSSOM_AI_NAMING_AUDIT_V0_1",
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "terms": [
+    {"term": "Artificial Intelligence", "abbreviation": "AI", "source_class": "TECHNICAL_GLOSSARY_AND_POLICY_USAGE"},
+    {"term": "Artificial General Intelligence", "abbreviation": "AGI", "source_class": "RESEARCH_DESCRIPTIVE"},
+    {"term": "Artificial Super Intelligence", "abbreviation": "ASI", "source_class": "RESEARCH_DESCRIPTIVE"},
+    {"term": "Superior Intelligence", "abbreviation": "SI", "source_class": "NAMING_PROPOSAL"},
+    {"term": "Extreme Intelligence", "abbreviation": "EI", "source_class": "NAMING_PROPOSAL"},
+    {"term": "Supreme Intelligence", "abbreviation": "SI", "source_class": "NAMING_PROPOSAL"}
+  ],
+  "asi_research_term": "OBSERVED",
+  "si_abbreviation_collision": "OBSERVED",
+  "federal_replacement_term": "NOT_OBSERVED",
+  "next_gate": "MODEL_CAPABILITY_MEASUREMENT_V0_1"
+}
