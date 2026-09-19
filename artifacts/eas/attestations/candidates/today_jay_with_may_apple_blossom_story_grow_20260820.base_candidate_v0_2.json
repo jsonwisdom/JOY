@@ -1,0 +1,85 @@
+{
+  "artifact": "TODAY_JAY_WITH_MAY_APPLE_BLOSSOM_STORY_GROW_BASE_CANDIDATE_V0_2",
+  "boundaries": {
+    "authority": false,
+    "base_is_semantic_authority": false,
+    "eas_is_semantic_authority": false,
+    "hash_is_truth": false,
+    "no_fake_green": true,
+    "semantic_truth": false
+  },
+  "chain_id": 8453,
+  "eas": {
+    "attestation_submitted": false,
+    "attestation_uid": null,
+    "attestation_values": {
+      "authority": false,
+      "chainId": 8453,
+      "githubCommit": "fb3aaba188d2c4dc6f0ee201313d84343182c863",
+      "githubRepo": "jsonwisdom/JOY",
+      "graphHash": "0x01a4f6277f3407b48f3fafd2da7996bc449a18525e03555443c6cc3360675f76",
+      "missionHash": "0x5dc6aeb451f3895bf416a6cfe9ce8724c356c8e1f7bfdb9934c55756947a1ef4",
+      "missionId": "TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_STORY_GROW_V0_2",
+      "missionVersion": 2,
+      "noFakeGreen": true,
+      "receiptHash": "0x10c399f9ab2fff10dade05017989a6d16a5ddb61a73a285d632ac2fb7ceb7223",
+      "semanticTruth": false,
+      "wisdomHash": "0x614080c0a2608294396153b4a7df7ac67a47589adad2a44ebabdd39861c12010"
+    },
+    "schema_proposal": "string missionId,uint16 missionVersion,bytes32 missionHash,bytes32 wisdomHash,bytes32 graphHash,bytes32 receiptHash,string githubRepo,string githubCommit,uint32 chainId,bool noFakeGreen,bool semanticTruth,bool authority",
+    "schema_registered": false,
+    "schema_uid": null
+  },
+  "network": "base_mainnet",
+  "prepared_at": "2026-08-20T21:27:00-05:00",
+  "replay": {
+    "match": null,
+    "observed_chain_id": null,
+    "recomputed_graph_sha256": null,
+    "recomputed_mission_sha256": null,
+    "recomputed_receipt_sha256": null,
+    "recomputed_wisdom_sha256": null,
+    "tx_fetched": false
+  },
+  "semantic_payload": {
+    "declared_edges": [
+      "May CAN_PLAY_WITH Jay",
+      "Joy CAN_PLAY_WITH May",
+      "Jay CAN_PLAY_WITH Joy"
+    ],
+    "directed_graph_class": "C3_DIRECTED_CYCLE",
+    "may_identity_binding": false,
+    "mutual_reciprocity": "HOLD_NOT_DECLARED",
+    "real_world_consent_created": false,
+    "underlying_undirected_graph": "K3"
+  },
+  "signature": {
+    "signature": null,
+    "signed_message": null,
+    "signed_message_hash": null,
+    "signer_address": null
+  },
+  "source": {
+    "branch": "agent/today-jay-with-may-joyspace-apple-blossom-base-replay-v0-1",
+    "github_commit": "fb3aaba188d2c4dc6f0ee201313d84343182c863",
+    "graph_path": "receipts/joyspace/semantic_graphs/TODAY_JAY_WITH_MAY_PLAY_GRAPH_V0_2.json",
+    "graph_sha256": "01a4f6277f3407b48f3fafd2da7996bc449a18525e03555443c6cc3360675f76",
+    "mission_path": "docs/joyspace/missions/TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_STORY_GROW_V0_2.md",
+    "mission_sha256": "5dc6aeb451f3895bf416a6cfe9ce8724c356c8e1f7bfdb9934c55756947a1ef4",
+    "receipt_path": "receipts/joyspace/TODAY_JAY_WITH_MAY_APPLE_BLOSSOM_STORY_GROW_V0_2.json",
+    "receipt_sha256": "10c399f9ab2fff10dade05017989a6d16a5ddb61a73a285d632ac2fb7ceb7223",
+    "repo": "jsonwisdom/JOY",
+    "wisdom_path": "docs/joyspace/wisdom/WISDOM_FAMILY_PLAY_GRAPH_V0_2.md",
+    "wisdom_sha256": "614080c0a2608294396153b4a7df7ac67a47589adad2a44ebabdd39861c12010"
+  },
+  "state": "PREPARED_NOT_SUBMITTED",
+  "submission": {
+    "authorized": false,
+    "block_number": null,
+    "rpc_observed_at": null,
+    "submitted": false,
+    "tx_hash": null
+  },
+  "supersedes_candidate": "today_jay_with_may_joyspace_apple_blossom_20260820.base_candidate.json",
+  "version": "0.2.0"
+}
