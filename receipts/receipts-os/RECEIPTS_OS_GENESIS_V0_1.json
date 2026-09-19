@@ -1,0 +1,94 @@
+{
+  "receipt_id": "RECEIPTS_OS_GENESIS_V0_1",
+  "schema_version": "0.1",
+  "receipt_class": "DERIVATION_RECEIPT",
+  "claim": {
+    "claim_id": "RECEIPTS_OS_KERNEL_EXISTS",
+    "claimant": "JOY draft branch",
+    "claimant_role": "repository artifact",
+    "exact_claim": "A FullMath-only Receipts OS audit kernel is persisted on the JOY draft branch with a redundant Google Drive mirror.",
+    "claim_type": "ARTIFACT_EXISTENCE",
+    "jurisdiction": null,
+    "procedural_posture": null
+  },
+  "burden": {
+    "burden_bearer": "artifact producer",
+    "standard_of_proof": "REPOSITORY_AND_DRIVE_READBACK",
+    "standard_authority": "AUDIT_DESIGN_ONLY",
+    "burden_scope": "existence and pointer integrity only"
+  },
+  "source": {
+    "source_id": "JOY_DRAFT_BRANCH_AND_DRIVE_MIRROR",
+    "source_domain": "github.com + docs.google.com",
+    "source_url": null,
+    "source_type": "PERSISTENCE_READBACK",
+    "custodian": "jsonwisdom/JOY + connected Google Drive",
+    "publication_or_record_date": null,
+    "observed_at": "CURRENT_BUILD_TURN"
+  },
+  "capture": {
+    "exact_bytes_captured": false,
+    "source_sha256": "HOLD",
+    "parsed_text_captured": true,
+    "parser_or_method": "connector readback",
+    "extraction_scope": "artifact existence and identifiers"
+  },
+  "binding": {
+    "supported_dimensions": [
+      "ARTIFACT_EXISTS",
+      "DRAFT_BRANCH",
+      "DRIVE_MIRROR_POINTER",
+      "FULLMATH_KERNEL"
+    ],
+    "unsupported_dimensions": [
+      "TRUTH_OF_EXTERNAL_CLAIMS",
+      "LEGAL_AUTHORITY",
+      "IMMUTABILITY"
+    ],
+    "binding_status": "BOUND"
+  },
+  "verification": {
+    "verification_status": "SOURCE_POINTER_MATCH",
+    "verification_method": "GitHub file readback + Google Drive document readback",
+    "verification_notes": "Blob IDs and Drive revision are recorded after creation; source-byte SHA-256 remains HOLD because provider-native bytes were not acquired."
+  },
+  "population": {
+    "affected_population": "EVERYBODY_BY_MODEL_DEFINITION",
+    "omitted_population_check": "REQUIRED_PER_RECEIPT",
+    "child_impact": "NOT_INFERRED",
+    "girl_impact": "NOT_INFERRED"
+  },
+  "procedure": {
+    "authority": null,
+    "decision_maker": null,
+    "notice": null,
+    "human_review": "YES / artifact review",
+    "appeal": "correction receipt",
+    "audit_log": "Git history + Drive revision history",
+    "remedy": "append correction; preserve prior receipt"
+  },
+  "replay": {
+    "sequence": 0,
+    "prev_event_sha256": null,
+    "event_sha256": null,
+    "supersedes": [],
+    "superseded_by": [],
+    "counter_receipts": [],
+    "conflicts": [],
+    "unresolved_edges": [
+      "PROVIDER_LEVEL_IMMUTABILITY_NOT_ESTABLISHED"
+    ]
+  },
+  "mirrors": {
+    "github_path": "docs/receipts/RECEIPTS_OS_FULLMATH_V0_1.md",
+    "github_blob_id": null,
+    "drive_document_id": "1Pij54AnuYPInAyfCU7u2t2SOs6BKPfzIlCj9RTjIboQ",
+    "predecessor_drive_document_id": "1lA6S49WvK2npcWfzESyEKwOJEoXW8ME-HK5YBOnZyB8"
+  },
+  "state": {
+    "artifact_status": "ACQUIRED",
+    "claim_status": "OBSERVED",
+    "authority_created": false,
+    "political_verdict": "NONE"
+  }
+}
