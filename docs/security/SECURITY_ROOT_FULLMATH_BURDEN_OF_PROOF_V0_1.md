@@ -225,6 +225,16 @@ SOURCE_DISAPPEARS
 ≠ DELETE_OLD_RECEIPT
 ```
 
+## Persistence mirrors
+
+Google Drive mirror: https://docs.google.com/document/d/1x31z1XyzYntIFKSKstluGG5bKnFiIfX6KiNJvZ9niIM/edit
+
+```text
+GITHUB_BRANCH_COPY ≠ GOOGLE_DRIVE_COPY
+MIRROR_REDUNDANCY ≠ SOURCE_AUTHORITY
+MIRROR_POINTERS = OBSERVED
+```
+
 ## State
 
 ```text
