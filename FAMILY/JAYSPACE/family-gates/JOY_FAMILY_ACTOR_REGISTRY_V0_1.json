@@ -1,0 +1,85 @@
+{
+  "artifact": "JAYSPACE_JOY_FAMILY_ACTOR_REGISTRY_v0.1",
+  "surface": "FAMILY/JAYSPACE/family-gates",
+  "status": "SOURCE_BOUND_ACTOR_IMPORT",
+  "purpose": "Expose JOY/JoySpace family replay characters to JaySpace without creating genealogy, identity, consent, biography, or authority.",
+  "sources": {
+    "google_drive_actor_doc": {
+      "title": "Heidee Family Actors — Replay Cast v0.1",
+      "document_id": "19ZkYPJg2MzK5UqTgbIO7TYe09YbE5e42MbXBRvxEO1s"
+    },
+    "github_family_root": "jsonwisdom/JOY:FAMILY@main",
+    "relationship_ledger": "FAMILY/JAYSPACE/family/relationship_claims_v0_1.json"
+  },
+  "family_node_actors": [
+    {"id":"DADDY_JAY","replay_function":"frame problems, preserve receipts, build replay paths"},
+    {"id":"HEIDEE","replay_function":"double-check, child-safe questions, verification before belief"},
+    {"id":"JAYCEE","replay_function":"continuity and inclusion check"},
+    {"id":"BRIANNA","replay_function":"byte discipline and exact-object check"},
+    {"id":"MARYDEE","replay_function":"continuity keeper; preserve HOLD_UNSPECIFIED boundaries"},
+    {"id":"GAGA","replay_function":"root memory, warmth, repair, generational context"},
+    {"id":"GRAMMY","replay_function":"generational memory and wisdom context","note":"actor presence creates no ancestry edge"},
+    {"id":"LEANNE","replay_function":"family continuity and spelling-drift guard"},
+    {"id":"BE","replay_function":"protected continuity, question, play"},
+    {"id":"BRE","replay_function":"protected continuity and name boundary"},
+    {"id":"LEEANN","replay_function":"maternal/family-environment context for BOSSBRE","public_person_binding":"NOT_ESTABLISHED"},
+    {"id":"BOSSBRE","replay_function":"room safety, privacy guard, joy reset, redaction, pressure reduction"},
+    {"id":"MRS_WISDOM","replay_function":"care, dignity, consent, and family-meaning review"}
+  ],
+  "synthetic_replay_actors": [
+    {"id":"ZIGGY","replay_function":"simple-question, edge, gap, and receipt checker"},
+    {"id":"GRAY_BABY","replay_function":"notice the weird thing, expose gaps, preserve UNKNOWN"},
+    {"id":"LEAHPRIME","replay_function":"explain, translate, humanize, route to review"}
+  ],
+  "joy_directory_lanes_observed": [
+    "BOSS_BRENDA",
+    "BREALEE",
+    "BRIANNA",
+    "GRAMMY",
+    "GRAY_BABY",
+    "HEIDEE",
+    "JAYCEE",
+    "JAYSPACE",
+    "JOY_PROTOCOLS",
+    "LEEANNE",
+    "MARYDEE",
+    "MRS_WISDOM",
+    "MR_WISDOM",
+    "WISDOM_GIRLS"
+  ],
+  "directory_lane_rule": "Directory presence is continuity evidence only and does not bind a lane to an actor card or relationship edge.",
+  "identity_membranes": [
+    "LEEANN != LEANNE unless explicitly bound",
+    "LEEANNE != LEEANN unless explicitly bound",
+    "LEEANNE != LEANNE unless explicitly bound",
+    "BOSS_BRENDA != BOSSBRE unless explicitly bound",
+    "BREALEE != BRE unless explicitly bound",
+    "BREALEE != BE unless explicitly bound",
+    "LEEANN family node != LEEANN H. CHAVERS public person unless separately bound"
+  ],
+  "relationship_policy": {
+    "new_relationships_created": 0,
+    "verified_relationships_created": 0,
+    "adjacent_edge_inference": false,
+    "edge_source_of_truth": "FAMILY/JAYSPACE/family/relationship_claims_v0_1.json"
+  },
+  "replay_laws": [
+    "ACTOR_CARD != PERSON_PROOF",
+    "ACTOR_ROLE != RELATIONSHIP_EDGE",
+    "ACTOR_RELATIONSHIP_REF != VERIFIED_GENEALOGY",
+    "DIRECTORY_LANE != FAMILY_EDGE",
+    "STORY_VOICE != REAL_PERSON_QUOTE",
+    "FAMILY_CONTEXT != PUBLIC_IDENTITY_BINDING",
+    "SYNTHETIC_ACTOR != FAMILY_MEMBER",
+    "NO_ADJACENT_EDGE_INFERENCE",
+    "PRIVACY_DEFAULT_MUST_BE_RESPECTED"
+  ],
+  "counts": {
+    "family_node_actor_cards": 13,
+    "synthetic_replay_actor_cards": 3,
+    "total_actor_cards": 16,
+    "joy_directory_lanes_observed": 14
+  },
+  "scoring_rule_created": false,
+  "authority_created": false
+}
