@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/schemas/joy/route_receipt_v0_1.schema.json",
+  "title": "JoySpace Route Receipt v0.1",
+  "description": "Records the outcome of routing one epistemic receipt into the evidence forest. A route receipt attests only that a leaf hash was placed into exactly one tree and that the manifest hash changed accordingly. It does not attest to the truth, authority, or provenance of the underlying evidence object, and it does not attest that leaf_hash was correctly derived from any particular source.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "classification",
+    "leaf_hash",
+    "root_mutated",
+    "forest_manifest_hash_before",
+    "forest_manifest_hash_after",
+    "authority_created"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["ROUTED", "HOLD", "NOOP_DUPLICATE"]
+    },
+    "classification": {
+      "$ref": "https://github.com/jsonwisdom/JOY/schemas/joy/evidence_classification_v0_1.schema.json"
+    },
+    "leaf_hash": { "$ref": "#/$defs/Sha256Hex" },
+    "root_mutated": {
+      "type": ["string", "null"],
+      "enum": ["family", "alabama", "apple_blossom", "leah_prime", "public_research", null]
+    },
+    "tree_root_after": { "$ref": "#/$defs/Sha256Hex" },
+    "leaf_count_after": { "type": "integer", "minimum": 1 },
+    "forest_manifest_hash_before": { "$ref": "#/$defs/Sha256Hex" },
+    "forest_manifest_hash_after": { "$ref": "#/$defs/Sha256Hex" },
+    "cross_tree_inference": { "type": "boolean", "const": false },
+    "authority_created": { "type": "boolean", "const": false }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "ROUTED" } }, "required": ["status"] },
+      "then": {
+        "required": ["tree_root_after", "leaf_count_after", "root_mutated", "cross_tree_inference"],
+        "properties": {
+          "root_mutated": { "type": "string" },
+          "classification": { "properties": { "decision": { "const": "ROUTE" } } }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "enum": ["HOLD", "NOOP_DUPLICATE"] } },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "root_mutated": { "type": "null" },
+          "tree_root_after": false,
+          "leaf_count_after": false
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "HOLD" } },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "classification": { "properties": { "decision": { "const": "HOLD" } } }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Sha256Hex": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}
