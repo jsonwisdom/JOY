@@ -1,0 +1,273 @@
+# JOY_PORCH_MASTERROOM_BOT_ADAPTER_V0_1
+
+OBJECT = JOY_PORCH_MASTERROOM_BOT_ADAPTER_V0_1
+CLASS = FAMILY PORCH / BOT ADAPTER
+STATUS = ACTIVE_CANDIDATE
+FAMILY_CONTENT = NONE
+COURT_BRIDGE = NONE
+AUTHORITY_CREATED = FALSE
+
+## Purpose
+
+Upgrade the JOY Yellow Porch so the existing COMPUTERWISDOM Master Room bots can assist the family rail without becoming family authors, consent, truth authority, or a second human chair.
+
+The bots remain owned by COMPUTERWISDOM.
+JOY imports only bounded capabilities through this adapter.
+
+MASTER_ROOM_BOTS != FAMILY_MEMBERS
+BOT_OUTPUT != HUMAN_WORDS
+BOT_SUMMARY != FAMILY_FACT
+BOT_REPETITION != INDEPENDENT_FAMILY_ROOT
+TOOL_ACCESS != AUTHORITY
+
+## Upstream pin
+
+UPSTREAM_REPO = jsonwisdom/COMPUTERWISDOM
+UPSTREAM_SCHEMA = schemas/JAY_BOT_ROOM_CONTROL_PLANE_V0_1.json
+UPSTREAM_SCHEMA_BLOB = 077815e563d5ae0b7bd97a9990f4736dbd939b72
+UPSTREAM_ARCHITECTURE = docs/architecture/JAY_BOT_ROOM_CONTROL_PLANE_V0_1.md
+UPSTREAM_ARCHITECTURE_BLOB = fc1cea5f107ff1ea77979173b2ea1db8dc39c86e
+UPSTREAM_STATUS = DESIGN_CANDIDATE
+
+Upstream status is not promoted by this adapter.
+A future upstream change does not silently rewrite this Porch adapter.
+
+## Porch order
+
+FAMILY_REFERENCE
+-> YELLOW_PORCH_GATE
+-> HUMAN_CHAIR_CHECK
+-> OBJECT_CLASS_CHECK
+-> OPTIONAL_MASTER_ROOM_DISPATCH
+-> BOT_OUTPUT_AS_HELPER_OR_MACHINE_RECEIPT
+-> YELLOW_PORCH_RECHECK
+-> HUMAN_ACCEPT | HUMAN_CORRECT | HUMAN_REJECT | HOLD
+-> OPTIONAL_PERSIST
+
+No bot may skip the return-to-Porch step.
+
+## Human chair law
+
+HUMAN_CHAIR = HUMAN_WORDS_ONLY
+HELPER != AUTHOR
+PARENT_INTERPRETATION != CHILD_WORDS
+SILENCE != CONSENT
+SILENCE != ZERO
+
+A bot may quote or transform human words only while preserving the named human source.
+A bot-authored paraphrase remains BOT_OUTPUT / HELPER_TEXT unless the human explicitly adopts it.
+
+HUMAN_ADOPTION != RETROACTIVE_BOT_AUTHORSHIP
+
+## Boss Bre / Porch membrane
+
+BOSS_BRENDA_BOSS_BRE remains the room safety / joy reset / privacy membrane.
+
+ALLOWED:
+- HOLD
+- SEND_BACK_TO_IDEA_FACTORY
+- PASS_ROOM_GATE
+
+FORBIDDEN:
+- FAMILY_CONSENT
+- HUMAN_WORD_AUTHORSHIP
+- MERGE
+- SIGN
+- SPEND
+- TRUTH_VERDICT
+
+Boss Bre protects the room.
+Boss Bre does not replace the human chair.
+
+## Bot roster and Porch capabilities
+
+### GROK_AGENT
+UPSTREAM_ROLE = reviewer_counter_player
+PORCH_ALLOW = REVIEW | COUNTER_REVIEW | FLAG_GAP | ROUTE_HOLD
+PORCH_DENY = HUMAN_WORDS | FAMILY_CONSENT | FINAL_TRUTH | MERGE | SIGN | SPEND
+
+### CHATGPT_AGENT
+UPSTREAM_ROLE = coauthor_tool_surface
+PORCH_ALLOW = DRAFT_HELPER_TEXT | STRUCTURE | EXPLAIN | CLASSIFY_CANDIDATE | ROUTE_HOLD
+PORCH_DENY = HUMAN_WORDS | FAMILY_CONSENT | SILENCE_FILL | FAMILY_FACT_PROMOTION | MERGE | SIGN | SPEND
+
+CHATGPT_AGENT_OUTPUT_CLASS = HELPER_TEXT unless a narrower machine-output class is named.
+
+### GITHUB_BOT
+UPSTREAM_ROLE = transport_pr_issue_rail
+PORCH_ALLOW = REPO_READ | REPO_TRANSPORT | COMMIT_RECEIPT | BLOB_RECEIPT
+PORCH_DENY = FAMILY_AUTHORSHIP | FAMILY_CONSENT | TRUTH_PROMOTION | SELF_MERGE | SIGN | SPEND
+
+GITHUB_BOT may observe REPO_STATE.
+GITHUB_BOT may not observe HUMAN_EXPERIENCE merely because text exists in a repository.
+
+### DRIVE_BOT
+UPSTREAM_ROLE = file_folder_rail
+PORCH_ALLOW = FILE_READ | FILE_TRANSPORT | METADATA_RECEIPT | MIRROR_RECEIPT
+PORCH_DENY = FAMILY_AUTHORSHIP | FAMILY_CONSENT | FACTUAL_VALIDATION | MERGE | SIGN | SPEND
+
+DRIVE_BOT may observe FILE_STATE.
+MIRROR != SECOND_AUTHORITY_SOURCE.
+
+### PROOFPOCKET
+UPSTREAM_ROLE = packet_completeness_witness
+PORCH_ALLOW = COMPLETENESS_CHECK | MISSING_EDGE_FLAG | RECEIPT_INDEX | ROUTE_HOLD
+PORCH_DENY = FAMILY_TRUTH_VERDICT | HUMAN_AUTHORSHIP | CONSENT | MERGE | SIGN | SPEND
+
+PACKET_COMPLETE != FACT_TRUE
+RECEIPT_PRESENT != HUMAN_ADOPTION
+
+### ZORA_BOTS
+UPSTREAM_ROLE = catalog_render_price_publication_surface
+PORCH_DEFAULT = DARK
+PORCH_ALLOW_AFTER_EXPLICIT_HUMAN_GATE = RENDER_CANDIDATE | PUBLICATION_TRANSPORT
+PORCH_DENY = FAMILY_CONSENT | HUMAN_AUTHORSHIP | AUTO_PUBLICATION | MERGE | SIGN | SPEND
+
+FAMILY_CONTENT = NONE means ZORA_BOTS stay DARK.
+
+### TRADER
+UPSTREAM_ROLE = market_observer
+PORCH_DEFAULT = DARK
+FAMILY_ROUTE = NONE
+
+TRADER observation does not enter family replay unless a future explicit non-family object class and gate are named.
+
+### TELEGRAM_BOT
+UPSTREAM_ROLE = inbound_rail
+PORCH_ALLOW = INBOUND_TRANSPORT | TIMESTAMP_RECEIPT | ROUTE_HOLD
+PORCH_DENY = SPEAKER_IDENTITY_INFERENCE | HUMAN_AUTHORSHIP | CONSENT | FACT_PROMOTION | MERGE | SIGN | SPEND
+
+MESSAGE_TRANSPORT != SPEAKER_IDENTITY
+INBOUND_TEXT != HUMAN_CHAIR_WORDS until source/authorship is typed.
+
+## Full Math interface
+
+The Master Room adapter may feed FULL_MATH_FAMILY_REPLAY_V0 only through typed machine/helper receipts.
+
+Allowed bot-observer classes include:
+- REPO_STATE
+- FILE_STATE
+- TRANSPORT_STATE
+- REVIEW_STATE
+- PACKET_COMPLETENESS_STATE
+- PUBLICATION_STATE
+
+Bots do not receive observer standing for:
+- HUMAN_EXPERIENCE
+- CHILD_WORDS
+- FAMILY_CONSENT
+- HUMAN_INTENT
+- FAMILY_MOTIVE
+
+Gate 5 observer standing is class-scoped.
+
+BOT_OBSERVER_STANDING(machine_class) may be TRUE.
+BOT_OBSERVER_STANDING(human_class) = FALSE by default.
+
+A machine receipt can establish that a file, commit, message, review, or transport event exists.
+It cannot establish that the human proposition inside it is true.
+
+## Independence interface
+
+BOT_DOCUMENT_COUNT != FAMILY_SOURCE_COUNT
+BOT_REVIEW_COUNT != INDEPENDENT_FAMILY_ROOT_COUNT
+MULTIPLE_BOTS_READING_ONE_HUMAN_ASSERTION != MULTIPLE_HUMAN_ROOTS
+
+If GitHubBot, DriveBot, ProofPocket, ChatGPT, and Grok all inspect one chair statement:
+
+DOCUMENT_SURFACES may increase.
+MACHINE_RECEIPTS may increase.
+HUMAN_EPISODE_ROOT_COUNT remains at most one for that episode-class.
+
+R7 remains:
+ONE_ROOT_PER_EPISODE_CLASS
+
+## Bot-to-bot inheritance
+
+A bot output derived from another bot output preserves lineage.
+
+CHATGPT_SUMMARY <- HUMAN_SOURCE
+GITHUB_COMMIT <- CHATGPT_DRAFT
+DRIVE_MIRROR <- GITHUB_OR_HUMAN_ARTIFACT
+PROOFPOCKET_CHECK <- ARTIFACT_SET
+GROK_REVIEW <- BATCH_RECEIPT
+
+Each arrow may create a new MACHINE_STATE event.
+No arrow mints a new HUMAN_SOURCE.
+
+## Dispatch envelope
+
+PORCH_BOT_TASK := {
+  TASK_ID
+  BOT_ID
+  OBJECT_CLASS
+  HUMAN_SOURCE_ID | null
+  PARENT_SOURCE_ID | null
+  INPUT_CLASS
+  ALLOWED_ACTION
+  FORBIDDEN_ACTIONS
+  PRIVACY_STATE
+  OUTPUT_CLASS
+  RETURN_TO_PORCH = true
+  AUTHORITY_CREATED = false
+}
+
+If OBJECT_CLASS is missing:
+STATUS = HOLD
+
+If BOT_ID is not allowed for the class:
+STATUS = HOLD
+
+If RETURN_TO_PORCH is false:
+TASK = REJECTED
+
+## Promotion membrane
+
+BOT_OUTPUT
+-> CANDIDATE_ONLY
+-> PORCH_RECHECK
+-> HUMAN_ADOPTION_OR_HOLD
+
+BOT_OUTPUT != PROMOTION
+BOT_RECEIPT != FAMILY_FACT
+BOT_CONSENSUS != HUMAN_CONSENT
+BOT_CONFIDENCE != PROOF
+
+No bot may move:
+UNOBSERVED -> OBSERVED
+UNOBSERVABLE -> OBSERVED
+UNKNOWN -> INDEPENDENT
+CANDIDATE -> PROVEN
+unless the exact required receipt exists and the family protocol permits that transition.
+
+Bots may report the receipt.
+Bots do not manufacture the receipt.
+
+## Persistence boundary
+
+GITHUB = SOURCE_ARTIFACT_RAIL
+DRIVE = HUMAN_FACING_MIRROR_RAIL
+
+PERSIST != PROMOTION
+MIRROR != SECOND_AUTHORITY_SOURCE
+COMMIT != FAMILY_CONSENT
+FILE_EXISTS != HUMAN_ADOPTION
+
+## Court isolation
+
+FULL_MATH_FAMILY_REPLAY != APPELLATE_RECORD
+MASTER_ROOM_BOT_ADAPTER != COURT_BRIDGE
+COURT_BRIDGE = NONE
+
+Nothing in this adapter modifies or reopens MN_REVERSE_APPLE_BLOSSOM_2026_V0.
+
+## State
+
+YELLOW_PORCH = REQUIRED_MEMBRANE
+THIRD_RAIL_FAMILY = DARK_BY_DEFAULT
+MASTER_ROOM_BOTS = BOUNDED_HELPERS
+FAMILY_CONTENT = NONE
+COURT_BRIDGE = NONE
+PACKET = NONE
+PROMOTION = NONE
+AUTHORITY_CREATED = FALSE
