@@ -65,5 +65,11 @@
     "supreme_court_case_law_not_universal_security_burden": true,
     "white_house_privacy_notice_not_proof_all_records_preserved": true,
     "epstein_files_deletion_claim": "NOT_ADJUDICATED_IN_THIS_OBJECT"
+  },
+  "drive_mirror": {
+    "title": "SECURITY_ROOT_FULLMATH_BURDEN_OF_PROOF_V0_1",
+    "document_id": "1x31z1XyzYntIFKSKstluGG5bKnFiIfX6KiNJvZ9niIM",
+    "url": "https://docs.google.com/document/d/1x31z1XyzYntIFKSKstluGG5bKnFiIfX6KiNJvZ9niIM/edit",
+    "relationship": "MIRROR_REDUNDANCY_NOT_AUTHORITY"
   }
 }
