@@ -3,14 +3,17 @@
   "card_id": "NEEDS_YOU.JASON.JOY_HEIDEE.001",
   "for_person": "JASON",
   "title": "Choose what happens next",
-  "ask": null,
+  "ask": "Do you want a read-only JOY/HEIDEE check, or should this stay unresolved while other work continues?",
   "visibility": "PRIVATE",
   "status": "NEEDS_ANSWER",
-  "actions": ["ANSWER", "STILL_THINKING", "NOT_FOR_ME"],
+  "actions": [
+    "ANSWER",
+    "STILL_THINKING",
+    "NOT_FOR_ME"
+  ],
   "person_words": null,
   "share_answer": false,
-  "source_object": "JOY_HEIDEE_BREAK",
-  "created_from": "MASTER_ROOM.FUNCTION_PRIMER.NEEDS_YOU",
-  "private_payload": "LOCAL_ONLY",
+  "source_object": "MASTER_ROOM.HOLD_NE_STOP.ONE_DOOR_FANIN.2026-09-16T1852CT.HOLD.json",
+  "created_from": "Jason confirm + HeiDeeBot UNKNOWN_WITH_REASON one-door",
   "authority_created": false
 }
