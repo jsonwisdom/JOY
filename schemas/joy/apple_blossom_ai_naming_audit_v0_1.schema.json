@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/apple_blossom_ai_naming_audit_v0_1.schema.json",
+  "title": "Apple Blossom AI Naming Audit V0.1",
+  "type": "object",
+  "required": ["object_id", "authority_created", "political_verdict", "questions", "next_gate"],
+  "properties": {
+    "object_id": {"const": "APPLE_BLOSSOM_AI_NAMING_AUDIT_V0_1"},
+    "authority_created": {"const": false},
+    "political_verdict": {"const": "NONE"},
+    "naming_event": {"enum": ["OBSERVED_AS_PROPOSAL", "HOLD"]},
+    "legal_term_changed": {"enum": ["OBSERVED", "NOT_OBSERVED", "CONFLICT", "HOLD"]},
+    "technical_standard_changed": {"enum": ["OBSERVED", "NOT_OBSERVED", "CONFLICT", "HOLD"]},
+    "taxonomy_collision": {"enum": ["OBSERVED", "NOT_OBSERVED", "CONFLICT", "HOLD"]},
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "answer_state", "receipt_refs"],
+        "properties": {
+          "id": {"type": "string"},
+          "answer_state": {"enum": ["OBSERVED", "NOT_OBSERVED", "CONFLICT", "HOLD"]},
+          "answer": {"type": ["string", "null"]},
+          "receipt_refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "next_gate": {"type": "string"}
+  },
+  "additionalProperties": true
+}
