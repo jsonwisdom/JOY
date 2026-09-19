@@ -1,0 +1,69 @@
+{
+  "object": "SECURITY_ROOT_FULLMATH_BURDEN_OF_PROOF_V0_1",
+  "version": "0.1",
+  "status": "DRAFT",
+  "branch": "agent/apple-blossom-ai-naming-superintelligence-v0-1",
+  "main_mutated": false,
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "root": {
+    "object": "SECURITY",
+    "subject_set": "EVERYBODY",
+    "entry_condition": "ALREADY_IN"
+  },
+  "invariants": [
+    "SHARED_ROOT != SHARED_IDENTITY",
+    "SECURITY_CLAIM != SECURITY_PROVEN",
+    "AUDIT_RECEIPT_DEMAND != LEGAL_BURDEN",
+    "ANNOUNCEMENT != INSTRUMENT",
+    "INSTRUMENT != AUTHORITY_EXERCISED",
+    "COVERAGE_BLOCK != NEGATIVE",
+    "NOT_FOUND != FALSE",
+    "UNOBSERVED != FALSE",
+    "HOLD != FALSE",
+    "CONFLICT != ERROR"
+  ],
+  "persistence_rule": {
+    "mode": "APPEND_ONLY",
+    "source_removal_action": "APPEND_SOURCE_UNAVAILABLE_AFTER_OBSERVATION",
+    "overwrite_prior_receipt": false,
+    "invent_hash_without_exact_bytes": false
+  },
+  "primary_source_receipts": [
+    {
+      "source_id": "SCOTUS_VICTOR_511_US_1",
+      "domain": "supremecourt.gov",
+      "url": "https://www.supremecourt.gov/opinions/boundvolumes/511bv.pdf",
+      "source_type": "OFFICIAL_US_REPORTS",
+      "supports_dimension": "CRIMINAL_BURDEN_EXAMPLE",
+      "note": "Government must prove every element of a charged offense beyond a reasonable doubt.",
+      "exact_bytes_captured": false,
+      "content_digest": "HOLD"
+    },
+    {
+      "source_id": "SCOTUS_COOPER_517_US_348",
+      "domain": "supremecourt.gov",
+      "url": "https://www.supremecourt.gov/opinions/boundvolumes/517bv.pdf",
+      "source_type": "OFFICIAL_US_REPORTS",
+      "supports_dimension": "HEIGHTENED_BURDEN_RISK_OF_ERROR_EXAMPLE",
+      "note": "Due process can require heightened proof where important individual interests and risk of erroneous deprivation are implicated; context controls.",
+      "exact_bytes_captured": false,
+      "content_digest": "HOLD"
+    },
+    {
+      "source_id": "WHITEHOUSE_PRA_RETENTION_NOTICE",
+      "domain": "whitehouse.gov",
+      "url": "https://www.whitehouse.gov/privacy/",
+      "source_type": "OFFICIAL_WHITE_HOUSE_NOTICE",
+      "supports_dimension": "PRA_RETENTION_NOTICE",
+      "note": "White House states covered information is generally retained through the administration and transferred to NARA, with disposal only through PRA procedures where applicable.",
+      "exact_bytes_captured": false,
+      "content_digest": "HOLD"
+    }
+  ],
+  "precision_locks": {
+    "supreme_court_case_law_not_universal_security_burden": true,
+    "white_house_privacy_notice_not_proof_all_records_preserved": true,
+    "epstein_files_deletion_claim": "NOT_ADJUDICATED_IN_THIS_OBJECT"
+  }
+}
