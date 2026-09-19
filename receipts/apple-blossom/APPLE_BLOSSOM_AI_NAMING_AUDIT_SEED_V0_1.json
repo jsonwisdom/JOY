@@ -1,0 +1,24 @@
+{
+  "object_id": "APPLE_BLOSSOM_AI_NAMING_AUDIT_V0_1",
+  "source_class": "PUBLIC_RESEARCH_PLUS_USER_SUPPLIED_SCREENSHOT",
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "naming_event": "OBSERVED_AS_PROPOSAL",
+  "operative_term_sample": {
+    "white_house_nspm_11": "ARTIFICIAL_INTELLIGENCE",
+    "nist_glossary": "ARTIFICIAL_INTELLIGENCE"
+  },
+  "legal_term_changed": "NOT_OBSERVED",
+  "technical_standard_changed": "NOT_OBSERVED",
+  "taxonomy": {
+    "Superior Intelligence": "SI",
+    "Extreme Intelligence": "EI",
+    "Supreme Intelligence": "SI",
+    "Artificial Super Intelligence": "ASI"
+  },
+  "taxonomy_collision": "OBSERVED",
+  "nist_published_asi_mentions": "OBSERVED",
+  "nist_normative_ai_replacement_with_asi": "NOT_OBSERVED",
+  "girl_specific_operational_edge": "NOT_OBSERVED",
+  "next_gate": "SUPERINTELLIGENCE_TAXONOMY_COLLISION_V0_1"
+}
