@@ -1,0 +1,61 @@
+{
+  "object": "BURDEN_OF_PROOF_FULLMATH_ONLY_V0_1",
+  "version": "0.1",
+  "status": "DRAFT",
+  "branch": "agent/apple-blossom-ai-naming-superintelligence-v0-1",
+  "drive_mirror": {
+    "document_id": "1A4Y9HMnbYCWiacJLdS50glBtc6PA-AynzA_fmQpIpig",
+    "url": "https://docs.google.com/document/d/1A4Y9HMnbYCWiacJLdS50glBtc6PA-AynzA_fmQpIpig/edit",
+    "relationship": "REDUNDANT_MIRROR_NOT_AUTHORITY"
+  },
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "main_mutated": false,
+  "fullmath": {
+    "required_fields": [
+      "claim",
+      "claimant",
+      "claim_type",
+      "jurisdiction",
+      "procedural_posture",
+      "standard_of_proof",
+      "standard_authority",
+      "burden_bearer",
+      "evidence",
+      "counter_evidence",
+      "affected_population",
+      "decision_maker",
+      "procedure",
+      "remedy",
+      "source_receipts",
+      "unresolved_edges",
+      "state"
+    ],
+    "invariants": [
+      "AUDIT_RECEIPT_DEMAND != LEGAL_BURDEN",
+      "ONE_EDGE_CLOSED != WHOLE_CLAIM_PROVEN",
+      "MISSING != ZERO",
+      "UNOBSERVED != FALSE",
+      "NOT_FOUND_IN_SCOPE != FALSE",
+      "COVERAGE_BLOCK != NEGATIVE",
+      "HOLD != FALSE",
+      "CONFLICT != ERROR",
+      "CLAIM != RECEIPT",
+      "RECEIPT != SOURCE",
+      "REDUNDANCY != IMMUTABILITY",
+      "TAMPER_EVIDENT != TAMPER_PROOF"
+    ]
+  },
+  "persistence": {
+    "mode": "APPEND_ONLY_DESIGN",
+    "silent_overwrite": "FORBIDDEN_BY_DESIGN",
+    "silent_delete": "FORBIDDEN_BY_DESIGN",
+    "physical_or_provider_immutability_guaranteed": false,
+    "stronger_preservation_requires": "INDEPENDENTLY_ADMINISTERED_COPIES_AND_RETENTION_CONTROLS"
+  },
+  "receipt_hash_rule": {
+    "exact_bytes_required_for_sha256": true,
+    "if_exact_bytes_missing": "SHA256_HOLD",
+    "invent_hash": false
+  }
+}
