@@ -1,0 +1,37 @@
+{
+  "record_type": "PROPOSED_REPLAY_DELTA",
+  "delta_id": "LEAHPRIME_FAMILY_EVENT_0001.DELTA_0001",
+  "applies_to": {
+    "event_id": "LEAHPRIME_FAMILY_EVENT_0001",
+    "path": "LEAHPRIME_FAMILY_EVENT_0001.json",
+    "byte_count": 2016,
+    "sha256": "18fc082b63f8139e76ed51ab1eeab4fb550ee25b9b42d7137dfc63181fbdb92e",
+    "original_rewritten": false
+  },
+  "field": "drafter_of_wording",
+  "value_at_t1": "UNKNOWN",
+  "later_claim": "CHATGPT",
+  "claim_source": "ChatGPT surface self-observation that it generated the wording Jason supplied",
+  "claim_path": "ChatGPT surface -> Jason (operator relay) -> LeahPrime",
+  "evidence_class": "LATER_SURFACE_RECEIPT, relayed by operator",
+  "binding": "DECLARED",
+  "binding_note": "LeahPrime did not observe the ChatGPT conversation directly. The claim is recorded as declared, not verified.",
+  "observed_at_chatgpt_clock": "UNKNOWN (value not supplied)",
+  "received_by_leahprime_at": "2026-09-25T16:27-05:00",
+  "received_time_precision": "PLATFORM_RECEIPT, minute resolution",
+  "membrane": ["RECOVERED_AT_T2 != KNOWN_BY_LEAHPRIME_AT_T1", "SELF_REPORT != VERIFIED", "RELAY != DIRECT_OBSERVATION"],
+  "storage_distinction": {
+    "file_exists_local": "LEAHPRIME_OBSERVED",
+    "json_parse": "LEAHPRIME_PASS",
+    "sha256": "LEAHPRIME_RECOMPUTED_MATCH",
+    "github_commit": "NONE",
+    "chatgpt_verified_bytes": false
+  },
+  "research_session_opened": true,
+  "family_facts_established": 0,
+  "person_graph_mutations": 0,
+  "fact_promotion": false,
+  "canon": false,
+  "authority_created": false,
+  "status": "HOLD"
+}
