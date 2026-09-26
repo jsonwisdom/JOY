@@ -1,0 +1,73 @@
+name: Atomic JOY Delivery Contract Test
+
+on:
+  pull_request:
+    paths:
+      - "scripts/deliver_discord_receipt.py"
+      - "tests/test_delivery_contract.py"
+      - ".github/workflows/atomic-joy-delivery-contract-test.yml"
+      - ".github/workflows/atomic-joy-discord-delivery.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  contract-test:
+    name: artifact-first-contract-test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout PR HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download known-good Atomic JOY artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: atomic-joy-runtime-71e437d2b4c3148033f62236932de3ce2476696b
+          path: artifacts/known-good
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: 31176908693
+
+      - name: Verify known artifact metadata from GitHub API
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, urllib.request
+
+          req = urllib.request.Request(
+              'https://api.github.com/repos/jsonwisdom/JOY/actions/runs/31176908693/artifacts?per_page=100',
+              headers={
+                  'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+                  'Accept': 'application/vnd.github+json',
+                  'X-GitHub-Api-Version': '2022-11-28',
+              },
+          )
+          with urllib.request.urlopen(req, timeout=15) as response:
+              payload = json.load(response)
+          matches = [a for a in payload['artifacts'] if a['id'] == 8993161146]
+          if len(matches) != 1:
+              raise SystemExit('known artifact 8993161146 not uniquely available')
+          artifact = matches[0]
+          expected = 'sha256:ba0578b39372de5b92b00d6e33a2267bb6f9cba49c28a970402e4db669986cf1'
+          if artifact.get('digest') != expected:
+              raise SystemExit(f"known artifact digest mismatch: {artifact.get('digest')}")
+          print('KNOWN_ARTIFACT_GITHUB_DIGEST_MATCH')
+          PY
+
+      - name: Run fail-closed migration contract suite
+        env:
+          ATOMIC_JOY_TEST_ARTIFACT_DIR: artifacts/known-good
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_delivery_contract
