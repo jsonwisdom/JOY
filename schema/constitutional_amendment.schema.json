@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schema/constitutional_amendment.schema.json",
+  "title": "JOY Constitutional Amendment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "amendment_id",
+    "protocol_version",
+    "governing_protocol_version",
+    "proposal_timestamp",
+    "title",
+    "status",
+    "rationale",
+    "affected_rules",
+    "change_summary",
+    "semantic_proof_refs",
+    "review",
+    "self_amendment"
+  ],
+  "properties": {
+    "amendment_id": {"type": "string", "pattern": "^AMENDMENT_[0-9]{4}$"},
+    "protocol_version": {"type": "string", "minLength": 1},
+    "governing_protocol_version": {"type": "string", "minLength": 1},
+    "proposal_timestamp": {"type": "string", "format": "date-time"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["DRAFT", "REVIEWED", "RATIFIED", "REJECTED", "WITHDRAWN", "ABANDONED", "SUPERSEDED"]},
+    "rationale": {"type": "string", "minLength": 1},
+    "affected_rules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "change_summary": {"type": "string", "minLength": 1},
+    "semantic_proof_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completeness", "clarity", "amendability", "failure_domain_isolation", "human_signoffs"],
+      "properties": {
+        "completeness": {"$ref": "#/$defs/reviewCriterion"},
+        "clarity": {"$ref": "#/$defs/reviewCriterion"},
+        "amendability": {"$ref": "#/$defs/reviewCriterion"},
+        "failure_domain_isolation": {"$ref": "#/$defs/reviewCriterion"},
+        "human_signoffs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/signoff"}
+        }
+      }
+    },
+    "self_amendment": {"type": "boolean"},
+    "supersedes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "disposition_reason": {"type": "string", "minLength": 1},
+    "ratification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["merge_commit", "tag", "ratified_at"],
+      "properties": {
+        "merge_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tag": {"type": "string", "minLength": 1},
+        "ratified_at": {"type": "string", "format": "date-time"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "RATIFIED"}}, "required": ["status"]},
+      "then": {
+        "required": ["ratification"],
+        "properties": {
+          "review": {
+            "properties": {
+              "human_signoffs": {"minItems": 1},
+              "completeness": {"properties": {"result": {"const": "PASS"}}},
+              "clarity": {"properties": {"result": {"const": "PASS"}}},
+              "amendability": {"properties": {"result": {"const": "PASS"}}},
+              "failure_domain_isolation": {"properties": {"result": {"const": "PASS"}}}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["REJECTED", "WITHDRAWN", "ABANDONED"]}}, "required": ["status"]},
+      "then": {"required": ["disposition_reason"]}
+    }
+  ],
+  "$defs": {
+    "reviewCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result", "rationale"],
+      "properties": {
+        "result": {"type": "string", "enum": ["PASS", "FAIL"]},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "signoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer_id", "decision", "timestamp"],
+      "properties": {
+        "reviewer_id": {"type": "string", "minLength": 1},
+        "decision": {"type": "string", "enum": ["APPROVE", "REJECT"]},
+        "timestamp": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}
