@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "name": "SYNTHETIC_MN_AL_BOUNDARY_MATCHES_V0_1",
+  "properties": {
+    "synthetic": true,
+    "official_boundary": false,
+    "legal_nexus_claimed": false,
+    "purpose": "Geometry-only replay fixture"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "mn-boundary",
+      "properties": {
+        "jurisdiction_code": "US-MN",
+        "feature_role": "SYNTHETIC_BOUNDARY",
+        "official_boundary": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mn-facility-point",
+      "properties": {
+        "facility_id": "MN-FC-SYN-001",
+        "expected_within": "mn-boundary"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [5, 5]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "al-boundary",
+      "properties": {
+        "jurisdiction_code": "US-AL",
+        "feature_role": "SYNTHETIC_BOUNDARY",
+        "official_boundary": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[20, 0], [30, 0], [30, 10], [20, 10], [20, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "al-facility-point",
+      "properties": {
+        "facility_id": "AL-FC-SYN-001",
+        "expected_within": "al-boundary"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25, 5]
+      }
+    }
+  ]
+}

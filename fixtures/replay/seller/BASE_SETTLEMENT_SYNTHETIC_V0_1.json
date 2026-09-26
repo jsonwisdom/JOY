@@ -1,0 +1,13 @@
+{
+  "artifact_type": "SYNTHETIC_BASE_SETTLEMENT_RECEIPT_V0_1",
+  "network": "BASE_MAINNET",
+  "tx_hash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+  "block_number": 99999999,
+  "sender": "0x2222222222222222222222222222222222222222",
+  "recipient": "0x3333333333333333333333333333333333333333",
+  "asset": "SYNTHETIC_USDC",
+  "amount": "100.00",
+  "wallet_control_proof_attached": false,
+  "tax_classification": null,
+  "synthetic": true
+}
