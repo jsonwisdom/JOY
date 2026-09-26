@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schema/claim_state.schema.json",
+  "title": "JOY Claim State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "state", "evidence_ref", "created_at"],
+  "properties": {
+    "claim_id": {"type": "string", "minLength": 1},
+    "state": {"type": "string", "enum": ["CLAIMED", "PROVEN", "CHALLENGED", "REVOKED", "REAFFIRMED"]},
+    "evidence_ref": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "prior_state_ref": {"type": "string", "minLength": 1}
+  }
+}
