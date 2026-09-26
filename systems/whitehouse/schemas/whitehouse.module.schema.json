@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/JOY/systems/whitehouse/schemas/whitehouse.module.schema.json",
+  "title": "WhiteHouse Module Boundary",
+  "description": "Boundary metadata for the hypothetical White House Edition module inside JOY.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "module",
+    "owner",
+    "repo",
+    "version",
+    "status",
+    "official_affiliation",
+    "federal_authority",
+    "execution_authority",
+    "simulation_only",
+    "receipts_create_authority"
+  ],
+  "properties": {
+    "module": { "const": "systems/whitehouse" },
+    "owner": { "const": "jsonwisdom" },
+    "repo": { "const": "JOY" },
+    "version": { "type": "string", "pattern": "^0\\.[0-9]+\\.[0-9]+$" },
+    "status": { "const": "hypothetical_module" },
+    "official_affiliation": { "const": false },
+    "federal_authority": { "const": "none" },
+    "execution_authority": { "const": false },
+    "simulation_only": { "const": true },
+    "receipts_create_authority": { "const": false },
+    "root_identity_modified": { "const": false },
+    "visibility": { "const": "public" },
+    "semantic_layer": { "const": true },
+    "cryptographic_verification_claimed": { "const": false }
+  }
+}
