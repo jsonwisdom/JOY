@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonwisdom:schema:replay:family-frozen-artifact-manifest:v0.1",
+  "title": "JOY Family Frozen Artifact Manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "version",
+    "state",
+    "authority_created",
+    "canonized",
+    "sealed",
+    "commitment",
+    "artifact_root_sha256",
+    "observation",
+    "manifest_file_sha256"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "artifact": { "const": "FAMILY_FROZEN_ARTIFACT_MANIFEST" },
+    "version": { "const": "0.1.0" },
+    "state": {
+      "enum": [
+        "HOLD_DRAFT",
+        "FROZEN_ARTIFACT_RAIL_CANDIDATE",
+        "FROZEN_PENDING_INDEPENDENT_REPLAY",
+        "REPLAYED_OPEN",
+        "CLOSED_REPRODUCIBLE"
+      ]
+    },
+    "authority_created": { "const": false },
+    "canonized": { "const": false },
+    "sealed": { "type": "boolean" },
+    "commitment": { "$ref": "#/$defs/commitment" },
+    "artifact_root_sha256": { "$ref": "#/$defs/sha256" },
+    "observation": { "$ref": "#/$defs/observation" },
+    "manifest_file_sha256": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_id",
+        "repository",
+        "source_ref",
+        "source_commit_sha",
+        "path_order",
+        "bytes_policy",
+        "digest_algorithm",
+        "canonicalization_profile",
+        "leaf_domain",
+        "root_domain",
+        "entries"
+      ],
+      "properties": {
+        "scope_id": { "type": "string", "minLength": 1 },
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "source_ref": { "type": "string", "minLength": 1 },
+        "source_commit_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "path_order": { "const": "UTF8_BYTEWISE_ASCENDING" },
+        "bytes_policy": { "const": "RAW_EXACT_BYTES" },
+        "digest_algorithm": { "const": "SHA-256" },
+        "canonicalization_profile": {
+          "const": "JCS_SAFE_JSON_STRINGS_INTEGERS_BOOLEANS_NULL_V0_1"
+        },
+        "leaf_domain": { "const": "JOY_FAMILY_FILE_V0_1" },
+        "root_domain": { "const": "JOY_FAMILY_MANIFEST_V0_1" },
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/entry" }
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "size_bytes",
+        "raw_sha256",
+        "leaf_commitment_sha256",
+        "privacy_class"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "not": { "pattern": "(^/|(^|/)\\.\\.(/|$)|\\\\)" }
+        },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "raw_sha256": { "$ref": "#/$defs/sha256" },
+        "leaf_commitment_sha256": { "$ref": "#/$defs/sha256" },
+        "privacy_class": {
+          "enum": ["PUBLIC_SAFE", "FAMILY_PROTECTED", "REDACTED_DERIVATIVE"]
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_at_utc",
+        "tool_id",
+        "tool_version",
+        "independent_replay",
+        "frozen_artifact_rail",
+        "verified_execution_rail",
+        "cross_rail_binding"
+      ],
+      "properties": {
+        "generated_at_utc": { "type": "string", "format": "date-time" },
+        "tool_id": { "const": "freeze_family_records_v0_1.py" },
+        "tool_version": { "const": "0.1.0" },
+        "independent_replay": { "type": "boolean" },
+        "frozen_artifact_rail": {
+          "enum": ["CANDIDATE", "PASSED", "FAILED"]
+        },
+        "verified_execution_rail": {
+          "enum": ["NOT_RUN", "PASSED", "FAILED"]
+        },
+        "cross_rail_binding": {
+          "enum": ["NOT_PROVEN", "PROVEN", "MISMATCH"]
+        }
+      }
+    }
+  }
+}

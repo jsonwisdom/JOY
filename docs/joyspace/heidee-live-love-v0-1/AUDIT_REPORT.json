@@ -1,0 +1,82 @@
+{
+  "artifact": "HEIDEE_LIVE_LOVE_JOYSPACE_HOMEPAGE_AUDIT",
+  "version": "0.1.0",
+  "audit_time_local": "2026-08-01T23:05:00-05:00",
+  "result": "PASS",
+  "audit_class": "LOCAL_EXACT_BYTE_STATIC_AND_BROWSER_RUNTIME_AUDIT",
+  "homepage": {
+    "path": "index.html",
+    "sha256": "cdf4380ac7729b897dd873c977a574dba7105f2259e666c96553801fc46f0d91",
+    "size_bytes": 3687576
+  },
+  "cover": {
+    "filename": "live-love-heidee-joy-cover.png",
+    "sha256": "fded587ca0919f9eaf527b1bc7235688adfcf618d7232d214fe2ee747ee85de2",
+    "size_bytes": 2756310,
+    "width": 1054,
+    "height": 1492,
+    "embedded_byte_match": true
+  },
+  "checks": {
+    "embedded_png_exact_byte_match": true,
+    "embedded_png_sha256_match": true,
+    "embedded_png_byte_length_match": true,
+    "embedded_png_dimensions_match": true,
+    "menu_door_count_is_8": true,
+    "all_menu_ids_present": true,
+    "no_external_http_urls": true,
+    "no_network_execution_apis": true,
+    "no_sensor_apis": true,
+    "runtime_fail_closed_stamp_present": true,
+    "authority_effect_none_present": true
+  },
+  "menu_ids": [
+    "JOY_CHECK_IN",
+    "IMAGINATION_STATION",
+    "STORY_RECEIPT_SHELF",
+    "FAMILY_PORCH",
+    "LEARN_AND_BUILD",
+    "REPLAY_WITH_ME",
+    "HELP_NOW",
+    "MY_PRIVACY"
+  ],
+  "boundaries": {
+    "authority_created": false,
+    "identity_proof": false,
+    "consent_inferred": false,
+    "family_relationship_proven": false,
+    "public_release_approved": false,
+    "precise_geolocation": "DENY",
+    "background_tracking": "DENY",
+    "external_side_effects": "DENY",
+    "promotion": "PROHIBITED"
+  },
+  "rails": {
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "pincer_status": "OPEN",
+    "canonized": false
+  },
+  "limitations": {
+    "independent_executor": false,
+    "repository_readback": false,
+    "public_http_check": false,
+    "identity_or_consent_verified": false
+  },
+  "browser_runtime_check": {
+    "result": "PASS",
+    "certificate_state": "pass",
+    "stamp_text": "STAMPED · PASS",
+    "hotspot_count": 8,
+    "natural_dimensions": [
+      1054,
+      1492
+    ],
+    "local_dialog_opened": true,
+    "dialog_title": "Joy Check-In",
+    "console_or_page_errors": [],
+    "render_screenshot_sha256": "744c1d2b1530455a1cc6b7573c6500c1b4758f9b391d04e8fd4136d7615762d1",
+    "render_screenshot_filename": "RENDER_CHECK.png"
+  }
+}

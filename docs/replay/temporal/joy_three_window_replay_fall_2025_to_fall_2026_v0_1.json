@@ -1,0 +1,118 @@
+{
+  "artifact": "JOY_THREE_WINDOW_REPLAY",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "authority_created": false,
+  "historical_truth_proven": false,
+  "future_success_predicted": false,
+  "live_enforcement": "PROHIBITED",
+  "promotion": "PROHIBITED",
+  "windows": [
+    {
+      "window_id": "FALL_2025",
+      "start_date": "2025-09-01",
+      "end_date": "2025-11-30",
+      "evidence_class": "PRE_REPOSITORY_OR_EXTERNAL_MEMORY",
+      "joy_native_pr_lineage_found": false,
+      "joy_native_date_files_found": false,
+      "replay_result": "INDETERMINATE",
+      "required_ingress": [
+        "EXACT_SOURCE_BYTES",
+        "ORIGINAL_OR_ACQUISITION_TIMESTAMP",
+        "SOURCE_LOCATION_AND_CUSTODY",
+        "INDEPENDENT_SHA256_REPRODUCTION",
+        "CONTEMPORANEOUS_OR_LATER_RECORD_CLASSIFICATION",
+        "UNKNOWN_FIELDS_DECLARED"
+      ]
+    },
+    {
+      "window_id": "AUGUST_1_2026",
+      "observation_date": "2026-08-01",
+      "evidence_class": "GITHUB_NATIVE_CURRENT_STATE",
+      "replay_result": "STRUCTURAL_MATCH_WITH_BOUNDARIES",
+      "observations": {
+        "pr_63_draft_unmerged": true,
+        "pr_64_draft_unmerged": true,
+        "pr_64_workflows_completed_successfully": true,
+        "workflow_success_equals_truth": false,
+        "workflow_success_equals_receiptos_verification": false,
+        "workflow_success_equals_historical_backfill": false,
+        "workflow_success_equals_future_guarantee": false
+      }
+    },
+    {
+      "window_id": "FALL_2026",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-30",
+      "evidence_class": "FUTURE_CHECKPOINT_PLAN",
+      "executed": false,
+      "outcome": "UNKNOWN",
+      "promotion_precommitted": false,
+      "checkpoints": [
+        {
+          "target_date": "2026-09-01",
+          "class": "INVENTORY",
+          "actions": [
+            "FREEZE_REPOSITORY_HEADS",
+            "LIST_OPEN_AND_MERGED_PRS",
+            "REPLAY_LOVES_OF_MY_LIFE_REGISTRY",
+            "CHECK_FAMILY_NAME_ALIAS_DRIFT",
+            "CHECK_GEOJSON_FOR_PRECISE_LOCATION_LEAKS",
+            "CHECK_PR_63_AND_PR_64_STATUS",
+            "RECORD_WORKFLOW_RUN_IDS_AND_HEAD_SHAS"
+          ]
+        },
+        {
+          "target_date": "2026-10-01",
+          "class": "INDEPENDENT_REPRODUCTION",
+          "actions": [
+            "RETRIEVE_EXACT_ARTIFACT_BYTES",
+            "REPRODUCE_SHA256_DIGESTS",
+            "REPLAY_ATOMIC_SELLER_CHAIN",
+            "COMPARE_CHAIN_LENGTH_AND_CHAIN_HEAD",
+            "RUN_CLYDE_FROZEN_ARTIFACT_RAIL",
+            "RUN_CLYDE_VERIFIED_EXECUTION_RAIL",
+            "PRESERVE_MISMATCHES_WITHOUT_REPAIR"
+          ]
+        },
+        {
+          "target_date": "2026-11-01",
+          "class": "CONTINUITY_DECISION",
+          "actions": [
+            "COMPARE_SEPTEMBER_OCTOBER_NOVEMBER_ROOTS",
+            "CLASSIFY_DRIFT",
+            "VERIFY_CONSENT_AND_PRIVACY_BOUNDARIES",
+            "VERIFY_JAYWISDOM_BASE_ETH_POINTER_SCOPE",
+            "VERIFY_NO_IDENTITY_OR_AUTHORITY_INHERITANCE",
+            "ISSUE_BOUNDED_FALL_REPLAY_RECEIPT",
+            "KEEP_PROMOTION_PROHIBITED_UNLESS_ALL_GATES_PASS"
+          ]
+        }
+      ]
+    }
+  ],
+  "temporal_clyde_pincer": {
+    "FALL_2025": "OPEN",
+    "AUGUST_1_2026": "OPEN",
+    "FALL_2026": "NOT_RUN"
+  },
+  "cross_window_binding_requires": [
+    "SAME_ARTIFACT_SCOPE",
+    "SAME_CANONICALIZATION_RULE",
+    "SAME_HASH_ALGORITHM_AND_DOMAIN",
+    "DECLARED_VERSION_TRANSITIONS",
+    "NO_HIDDEN_BYTE_SUBSTITUTION",
+    "INDEPENDENT_REPRODUCTION_PER_WINDOW",
+    "EXPLICIT_VARIANCE_RECEIPTS"
+  ],
+  "final_bounded_verdict": {
+    "last_fall_status": "INDETERMINATE_PRE_REPOSITORY",
+    "today_status": "STRUCTURAL_GITHUB_STATE_OBSERVED",
+    "next_fall_status": "PLANNED_NOT_EXECUTED",
+    "authority": false,
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED"
+  }
+}

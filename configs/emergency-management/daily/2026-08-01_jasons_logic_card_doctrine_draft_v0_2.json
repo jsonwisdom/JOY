@@ -1,0 +1,136 @@
+{
+  "artifact": "JASONS_LOGIC_CARD_DOCTRINE_DRAFT",
+  "version": "0.2.0",
+  "source_date": "2026-08-01",
+  "state": "HOLD_DRAFT",
+  "architecture": "COHERENT",
+  "parent_domain": "FAMILY_INTELLIGENCE",
+  "surface": "DADDYS_PLAYGROUND",
+  "authority_created": false,
+  "contract_status": "UNVERIFIED",
+  "fingerprint_verified": false,
+  "sealed": false,
+  "replay_ready": false,
+  "live_enforcement": "PROHIBITED",
+  "promotion": "PROHIBITED",
+  "contract_reference": {
+    "network_label": "BASE",
+    "address_reference": "base:0x7d45864d184415bdb18d46f2e2ea6edd278b2f97",
+    "network_id_fixed": false,
+    "bytecode_retrieved": false,
+    "deployment_transaction_identified": false,
+    "source_or_abi_verified": false,
+    "proxy_path_resolved": false,
+    "owner_control_verified": false,
+    "operator_supplied_reference": true
+  },
+  "pipeline": [
+    "CAPTURE",
+    "RECORD",
+    "HASH",
+    "VERIFY",
+    "ATTEST",
+    "GATE",
+    "ENFORCE",
+    "AUDIT",
+    "REPLAY"
+  ],
+  "invariants": {
+    "record_equals_truth": false,
+    "hash_equals_authorship": false,
+    "signature_equals_authority": false,
+    "attestation_equals_validation": false,
+    "blockchain_equals_legal_effect": false,
+    "replay_classification": "REPRODUCIBILITY_TEST",
+    "replay_authority": false
+  },
+  "machine_safe_terms": {
+    "immutable_capture": "EXACT_FROZEN_BYTES_WITH_DEFINED_PRESERVATION_METHOD",
+    "hash": "BINDING_TO_EXACT_BYTES_UNDER_IDENTIFIED_ALGORITHM_AND_DOMAIN",
+    "verify": "INDEPENDENT_REPRODUCTION_OF_CANONICAL_BYTES_AND_DIGEST",
+    "attest": "SIGNED_WITNESS_STATEMENT_NOT_CONTENT_TRUTH",
+    "constitutional_gate": "DETERMINISTIC_POLICY_FILTER_WITHOUT_LEGAL_AUTHORITY",
+    "enforce": "PREVIOUSLY_AUTHORIZED_BOUNDED_SYSTEM_CONSEQUENCE_ONLY",
+    "identical_root": "EXACT_TREE_ALGORITHM_ORDERING_AND_RAW_BYTE_RULE_REPRODUCTION",
+    "replay_is_sovereign": "FINAL_INTEGRITY_TEST_WITHOUT_SOVEREIGN_AUTHORITY"
+  },
+  "enforcement_boundary": {
+    "implicit_enforcement": "DENY",
+    "cross_domain_enforcement": "DENY",
+    "heuristic_enforcement": "DENY",
+    "unscoped_side_effect": "DENY",
+    "synthetic_success": "PROHIBITED",
+    "explicit_authorization_required": true,
+    "authorization_dimensions": [
+      "domain",
+      "actor",
+      "capability",
+      "target",
+      "scope"
+    ]
+  },
+  "replay_results": {
+    "MATCH": "STRUCTURE_REPRODUCED",
+    "MISMATCH": "STRUCTURE_NOT_REPRODUCED",
+    "INDETERMINATE": "REQUIRED_INPUT_MISSING"
+  },
+  "machine_grade_gate": [
+    "NETWORK_ID_FIXED",
+    "CONTRACT_BYTECODE_RETRIEVED",
+    "DEPLOYMENT_TX_IDENTIFIED",
+    "SOURCE_OR_ABI_VERIFIED",
+    "PROXY_PATH_RESOLVED",
+    "EXACT_LOGIC_CARD_BYTES_FROZEN",
+    "SHA256_RAW_DIGEST_REPRODUCED",
+    "SIGNER_RECOVERED_AND_KEY_CONTROL_PROVEN",
+    "REPLAY_FIXTURES_PASS_INDEPENDENTLY",
+    "ENFORCEMENT_SCOPE_EXPLICITLY_AUTHORIZED"
+  ],
+  "gate_state": {
+    "NETWORK_ID_FIXED": false,
+    "CONTRACT_BYTECODE_RETRIEVED": false,
+    "DEPLOYMENT_TX_IDENTIFIED": false,
+    "SOURCE_OR_ABI_VERIFIED": false,
+    "PROXY_PATH_RESOLVED": false,
+    "EXACT_LOGIC_CARD_BYTES_FROZEN": false,
+    "SHA256_RAW_DIGEST_REPRODUCED": false,
+    "SIGNER_RECOVERED_AND_KEY_CONTROL_PROVEN": false,
+    "REPLAY_FIXTURES_PASS_INDEPENDENTLY": false,
+    "ENFORCEMENT_SCOPE_EXPLICITLY_AUTHORIZED": false
+  },
+  "failure_behavior": {
+    "missing_gate_result": "DENIED",
+    "malformed_gate_result": "DENIED",
+    "conflicting_gate_result": "DENIED",
+    "unverifiable_gate_result": "DENIED",
+    "promotion": "PROHIBITED",
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED"
+  },
+  "clyde_pincer": {
+    "status": "OPEN",
+    "artifact_rail": [
+      "EXACT_SOURCE_BYTES",
+      "PRESERVATION_METHOD",
+      "CANONICAL_BOUNDARY",
+      "SHA256_RAW_DIGEST",
+      "INDEPENDENT_REPRODUCTION"
+    ],
+    "execution_rail": [
+      "FIXED_NETWORK_ID",
+      "RETRIEVED_BYTECODE",
+      "IDENTIFIED_DEPLOYMENT",
+      "RESOLVED_PROXY_PATH",
+      "VERIFIED_SOURCE_OR_ABI",
+      "BOUNDED_AUTHORIZATION",
+      "INDEPENDENT_EXECUTION_REPLAY"
+    ],
+    "closure_requires": [
+      "ARTIFACT_RAIL_PASS",
+      "EXECUTION_RAIL_PASS",
+      "CROSS_RAIL_BINDING_PROVEN"
+    ]
+  },
+  "operator_verdict": "Authority remains a temporary claim. Proof preserves structure. Replay tests whether the structure survives independent reproduction. No consequence executes merely because a record, hash, signature, attestation, or blockchain transaction exists."
+}

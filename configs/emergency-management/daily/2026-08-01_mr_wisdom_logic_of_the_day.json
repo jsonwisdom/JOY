@@ -1,0 +1,87 @@
+{
+  "artifact": "MR_WISDOM_LOGIC_OF_THE_DAY",
+  "version": "0.1.0",
+  "active_date": "2026-08-01",
+  "display_scope": "TODAY_ONLY",
+  "parent_domain": "FAMILY_INTELLIGENCE",
+  "placement": "AFTER_FAMILY_PULSE_BEFORE_WORK",
+  "playground_name": "DADDYS_PLAYGROUND",
+  "state": "DATE_SCOPED_DESIGN_CANDIDATE",
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "operational_use": false,
+  "promotion": "PROHIBITED",
+  "priority": [
+    "FAMILY_SAFETY",
+    "FAMILY_CONSENT",
+    "PLAYFUL_REASONING",
+    "WORK_MODE"
+  ],
+  "logic_of_the_day": {
+    "display_text": "Family first. Play is allowed. Work can wait its turn. A confident claim is still not a receipt.",
+    "rules": {
+      "family_safety_over_playful_reasoning": true,
+      "playful_reasoning_over_work_mode": true,
+      "trust_me_bro_is_cryptographic_proof": false,
+      "pointer_found_is_identity_proved": false
+    }
+  },
+  "operator_claim": {
+    "text": "jaywisdom.base.eth proofed",
+    "classification": "UNVERIFIED_OPERATOR_ASSERTION",
+    "discovery_pointer": "jaywisdom.base.eth",
+    "signer_control_verified": false,
+    "identity_proof": false,
+    "authority": false,
+    "replay_status": "NOT_EVALUATED_HERE"
+  },
+  "trust_me_bro_compiler": [
+    "PARSE_AS_HUMOR",
+    "EXTRACT_CLAIM",
+    "ATTACH_DATE_SCOPE",
+    "CLASSIFY_EVIDENCE",
+    "DOMAIN_CHECK",
+    "CONSENT_CHECK",
+    "POINTER_ONLY_RESPONSE"
+  ],
+  "allowed": [
+    "DISPLAY_ONE_PLAYFUL_LOGIC_PROMPT",
+    "ENCOURAGE_FAMILY_FIRST_DECISIONS",
+    "COMPILE_JOKE_TO_BOUNDED_CANONICAL_CLAIM",
+    "RETURN_APPROVED_POINTER",
+    "ARCHIVE_AS_DATED_FAMILY_MEMORY"
+  ],
+  "denied": [
+    "OVERRIDE_FAMILY_INTELLIGENCE",
+    "INFER_FAMILY_MEMBERSHIP",
+    "INFER_CONSENT",
+    "INFER_IDENTITY",
+    "INHERIT_AUTHORITY",
+    "SIGN",
+    "PUBLISH",
+    "TRANSFER",
+    "PURCHASE",
+    "MESSAGE",
+    "CALL",
+    "CHANGE_LEDGER",
+    "CHANGE_REPOSITORY_ROOT",
+    "CHANGE_ENS_RECORD",
+    "DECLARE_EMERGENCY",
+    "CREATE_SYNTHETIC_SUCCESS"
+  ],
+  "egress": {
+    "return_content_default": false,
+    "return_approved_pointer": true,
+    "reveal_secret_metadata": false,
+    "external_side_effects": "DENY"
+  },
+  "expiration": {
+    "after_date": "2026-08-01",
+    "active_display": false,
+    "auto_repeat": false,
+    "archive_reference_permitted": true,
+    "authority_inherited": false,
+    "work_mode_effect": "NONE"
+  }
+}
