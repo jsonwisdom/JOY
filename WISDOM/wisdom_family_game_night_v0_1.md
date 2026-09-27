@@ -386,6 +386,59 @@ Win condition:
 Family can reconstruct one short safe timeline from receipts without fabricating certainty or hierarchy.
 ```
 
+## Game 12: Boss Brenda Collision Dice
+
+Goal: make the birthday paradox playable without collecting anyone's birthday.
+
+Module:
+
+```text
+WISDOM/wisdom_family_game_night_dice_game_v0_1.md
+```
+
+Core rule:
+
+```text
+COUNT THE PAIRS, NOT JUST THE PEOPLE.
+COLLISION != IDENTITY.
+```
+
+Game steps:
+
+```text
+1. Choose 2 to 6 players or rolls.
+2. Count pair opportunities with n(n-1)/2.
+3. Predict whether any two die rolls will match.
+4. Roll one ordinary six-sided die once per player.
+5. Record MATCH or NO MATCH.
+6. Replay and compare prediction with observation.
+7. Bridge to the birthday paradox: 23 people create 253 pairs.
+```
+
+Birthday checkpoint:
+
+```text
+Under the standard 365-day classroom assumptions:
+23 people -> 253 pairs
+P(at least one shared birthday) ~= 50.73%
+```
+
+Safety rule:
+
+```text
+No personal birthdays are needed.
+Probability != observed result.
+Same number != same person.
+Shared birthday != shared identity.
+```
+
+Win condition:
+
+```text
+Everyone can explain why collisions become likely faster than intuition expects
+and why a collision still does not prove identity.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
@@ -402,6 +455,7 @@ Safe outputs may include:
 - Family Math Mechanics role card
 - Porch Triad Recall sketch card
 - Receipt Chain Link timeline card
+- Boss Brenda Collision Dice / Birthday Paradox card
 
 ## Public Safety Filter
 
