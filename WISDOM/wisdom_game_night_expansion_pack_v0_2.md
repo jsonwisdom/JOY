@@ -18,6 +18,7 @@ WISDOM/wisdom_family_game_night_v0_1.md
 WISDOM/game_night_replay_script_v0_1.md
 WISDOM/wisdom_mini_decks_v0_1.md
 WISDOM/chaos_tokens_v0_1.md
+WISDOM/wisdom_family_game_night_dice_game_v0_1.md
 ```
 
 ## Tonight's Table Setup
@@ -42,8 +43,9 @@ Recommended duration:
 1. Start Game Night.
 2. Draw one Mini-Deck card.
 3. Use Chaos Tokens when the room gets wild.
-4. End with the Replay Script.
-5. Save one sentence only.
+4. Optional math round: play Boss Brenda Collision Dice.
+5. End with the Replay Script.
+6. Save one sentence only.
 ```
 
 ## V0.2 Bundle Logic
@@ -55,7 +57,8 @@ Recommended duration:
     "FAMILY_GAME_NIGHT_V0_1",
     "GAME_NIGHT_REPLAY_SCRIPT_V0_1",
     "MINI_DECKS_V0_1",
-    "CHAOS_TOKENS_V0_1"
+    "CHAOS_TOKENS_V0_1",
+    "WISDOM_FAMILY_GAME_NIGHT_DICE_GAME_V0_1"
   ],
   "play_mode": "cozy_family_table",
   "memory_output": "one_sentence_max",
