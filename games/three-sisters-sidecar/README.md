@@ -59,6 +59,31 @@ No identity, ownership, authority, or publication permission is inferred.
 - `sidecar-rules.json`: deterministic blocked-state routing.
 - `victory-condition.json`: cooperative victory predicate.
 - `test-vectors/`: opening, blocked-route, and victory examples.
+- `engine.py`: MOVE 013 stdlib reference engine.
+- `test_engine.py`: vector-backed engine tests.
 
-Status: specification materialized; executable engine verification not run.
+## MOVE 013 engine
+
+Run:
+
+```bash
+python3 -m unittest test_engine.py
+```
+
+from this directory. The engine checks legal movement, deterministic sidecar
+selection, receipt-chain hashing, and `TERMINAL_HOLD=false`. It does **not**
+prove that every reachable blocked state has a safe route.
+
+Spiral opening moves in `test-vectors/opening-move.json` are a legal prefix of
+the full unobstructed diagonal rays. Shield at `[12, 20]` still has ordinary
+in-zone moves under three-piece occupancy; sidecar *selection* matches the
+blocked-route vector, while `ordinary_legal_moves: []` requires additional
+occupancy.
+
+Canonical receipts use the JOY restricted JCS approximation from
+`lock_replay_proof.py` (UTF-8, sorted keys, compact separators). That is not a
+full RFC 8785 number serializer.
+
+Status: specification materialized; reference engine tests run on published
+vectors. Exhaustive no-stall proof of every reachable state remains open.
 Authority created: false.
