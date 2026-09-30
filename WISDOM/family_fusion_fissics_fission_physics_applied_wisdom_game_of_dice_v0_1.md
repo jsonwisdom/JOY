@@ -373,3 +373,21 @@ The dice choose the lesson, never the truth.
 Replay keeps the story honest.
 Authority remains false.
 ~~~
+
+
+## Developer Replay Bridge
+
+Developer companion:
+
+~~~text
+docs/developer/REPLAY_GITHUB_PHYSICS_DEVELOPERS_HANDBOOK_V0_1.md
+~~~
+
+The family game teaches the pattern.
+The handbook types the symbols, equations, state transitions, entropy model, replay rules, and test vectors.
+
+~~~text
+GAME_TEACHES_PATTERN
+HANDBOOK_TYPES_PATTERN
+NEITHER_CREATES_AUTHORITY
+~~~
