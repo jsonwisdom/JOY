@@ -1,0 +1,80 @@
+{
+  "protocol": "TICK_MATH_TURBO_128_V0_1",
+  "bpm": 128,
+  "tick_ns": 468750000,
+  "scheduler": "NONE",
+  "events": [
+    {
+      "receipt_id": "aba:tick:000000",
+      "tick": 0,
+      "state": "OPEN",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": null,
+      "event_hash": "d76fbac4d18fd278a034e354079c1b969eb1439a6b1555b3a5e4da477dcd1c31"
+    },
+    {
+      "receipt_id": "aba:tick:000001",
+      "tick": 1,
+      "state": "OPERATE",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "d76fbac4d18fd278a034e354079c1b969eb1439a6b1555b3a5e4da477dcd1c31",
+      "event_hash": "80858d33dc8b2e586f532388b9d16816c3c792c12fb54a33678b5e94347e361f"
+    },
+    {
+      "receipt_id": "aba:tick:000002",
+      "tick": 2,
+      "state": "CAPTURE",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "80858d33dc8b2e586f532388b9d16816c3c792c12fb54a33678b5e94347e361f",
+      "event_hash": "6612dec105499cf17e283f1111b8beea8ab0d1f1d32ddd31451fcfb8143b1ede"
+    },
+    {
+      "receipt_id": "aba:tick:000003",
+      "tick": 3,
+      "state": "RECONCILE",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "6612dec105499cf17e283f1111b8beea8ab0d1f1d32ddd31451fcfb8143b1ede",
+      "event_hash": "391d32a56d81358a42631e04536d1c002f19f551a180c163cea3a7360eb73506"
+    },
+    {
+      "receipt_id": "aba:tick:000004",
+      "tick": 4,
+      "state": "CLOSE",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "391d32a56d81358a42631e04536d1c002f19f551a180c163cea3a7360eb73506",
+      "event_hash": "801336b039559308803f452c37cc1dc50e96aa4a5480ea84fceca9d1444f49bf"
+    },
+    {
+      "receipt_id": "aba:tick:000005",
+      "tick": 5,
+      "state": "LEARN",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "801336b039559308803f452c37cc1dc50e96aa4a5480ea84fceca9d1444f49bf",
+      "event_hash": "7aec31ffa3946690f2ef3dc2c1d4549ad091039b3ce2e6314dff8904c11ea005"
+    },
+    {
+      "receipt_id": "aba:tick:000006",
+      "tick": 6,
+      "state": "VERSION",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "7aec31ffa3946690f2ef3dc2c1d4549ad091039b3ce2e6314dff8904c11ea005",
+      "event_hash": "17267d73c1a39e30c5b8a6cf4eaaf7e64d78d311dbbf597e1caa3d16efab4663"
+    },
+    {
+      "receipt_id": "aba:tick:000007",
+      "tick": 7,
+      "state": "OPEN",
+      "authority_created": false,
+      "mutates_prior": false,
+      "prev_hash": "17267d73c1a39e30c5b8a6cf4eaaf7e64d78d311dbbf597e1caa3d16efab4663",
+      "event_hash": "75506b266c6c219429175c131ee22581fa27bad33e0f90fff0bb4f52de2d9f72"
+    }
+  ]
+}
