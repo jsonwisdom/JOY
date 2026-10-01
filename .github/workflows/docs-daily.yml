@@ -1,9 +1,10 @@
 name: docs-daily
 
 on:
-  schedule:
-    - cron: '5 12 * * *'
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Atomic JOY Verify"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: write
@@ -20,11 +21,18 @@ env:
 
 jobs:
   build-docs:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout verified HEAD
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -55,6 +63,16 @@ jobs:
           fi
           python scripts/render_joy_pages.py
 
+      - name: Reject changes outside /docs
+        run: |
+          set -euo pipefail
+          outside_docs="$(git status --porcelain --untracked-files=all | grep -vE '^.. docs(/|$)' || true)"
+          if [ -n "$outside_docs" ]; then
+            echo 'Refusing generated changes outside docs/**:'
+            printf '%s\n' "$outside_docs"
+            exit 1
+          fi
+
       - name: Detect /docs changes
         id: docs_changes
         run: |
@@ -65,15 +83,29 @@ jobs:
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit /docs updates
+      - name: Commit and fast-forward /docs updates
         if: steps.docs_changes.outputs.changed == 'true'
+        env:
+          VERIFIED_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           set -euo pipefail
+          git fetch --no-tags origin main
+          if [ "$(git rev-parse origin/main)" != "$VERIFIED_HEAD_SHA" ]; then
+            echo 'Refusing stale write: main moved after Atomic JOY Verify.'
+            exit 1
+          fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs
-          git commit -m "Regenerate JOY /docs via governed daily workflow; authority:false preserved; fake_green:forbidden preserved; verification lane untouched."
-          git push
+          git add -- docs
+
+          if git diff --cached --name-only | grep -vE '^docs(/|$)'; then
+            echo 'Refusing staged path outside docs/**.'
+            exit 1
+          fi
+
+          git commit -m "Regenerate JOY /docs after Atomic JOY Verify GREEN; authority:false preserved; fake_green:forbidden preserved."
+          git push origin HEAD:main
 
       - name: No-op when /docs unchanged
         if: steps.docs_changes.outputs.changed != 'true'

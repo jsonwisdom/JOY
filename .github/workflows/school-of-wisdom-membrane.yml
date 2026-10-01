@@ -11,6 +11,9 @@ on:
       - '.github/workflows/school-of-wisdom-membrane.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   membrane:
     name: no fake green / no fake authority

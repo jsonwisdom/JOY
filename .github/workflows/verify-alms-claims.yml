@@ -13,6 +13,9 @@ on:
       - 'alms/schema/claim.v1.json'
       - '.github/workflows/verify-alms-claims.yml'
 
+permissions:
+  contents: read
+
 jobs:
   verify-claims:
     runs-on: ubuntu-latest
