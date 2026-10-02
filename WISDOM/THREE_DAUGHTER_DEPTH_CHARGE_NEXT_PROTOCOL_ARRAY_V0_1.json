@@ -1,0 +1,68 @@
+{
+  "protocol_id": "THREE_DAUGHTER_DEPTH_CHARGE_NEXT_PROTOCOL_ARRAY_V0_1",
+  "status": "EXECUTED_WITH_HOLD",
+  "source_payload": {
+    "repo": "jsonwisdom/JOY",
+    "branch": "derived/three-daughter-depth-charge-v0-1",
+    "path": "WISDOM/THREE_DAUGHTER_DEPTH_CHARGE_PAYLOAD_V0_1.json",
+    "blob": "cf52491bf5a84db60851422fa941f4a383377762",
+    "commit": "651969bfa2ec90a7093424e3536f8b4c768561a1"
+  },
+  "protocol": [
+    {
+      "step": 1,
+      "name": "FREEZE_SOURCE",
+      "result": "PASS",
+      "reason": "Source payload is bound to the named GitHub branch/path/blob."
+    },
+    {
+      "step": 2,
+      "name": "REQUIRE_PROPOSED_ACTION",
+      "result": "HOLD",
+      "reason": "No proposed_action is present in the bound payload."
+    },
+    {
+      "step": 3,
+      "name": "EVALUATE_DAUGHTER_PROTECTION",
+      "result": "UNEVALUATED",
+      "reason": "Cannot evaluate without a proposed_action and scoped evidence."
+    },
+    {
+      "step": 4,
+      "name": "EVALUATE_CONTINUITY_PRESERVATION",
+      "result": "UNEVALUATED",
+      "reason": "Cannot evaluate without a proposed_action and scoped evidence."
+    },
+    {
+      "step": 5,
+      "name": "EVALUATE_SYSTEM_EXPANSION_SAFETY",
+      "result": "UNEVALUATED",
+      "reason": "Higher-priority checks are not evaluated."
+    },
+    {
+      "step": 6,
+      "name": "PRIVACY_GATE",
+      "result": "UNEVALUATED",
+      "reason": "No action-specific privacy surface has been supplied."
+    },
+    {
+      "step": 7,
+      "name": "REPLAY_GATE",
+      "result": "UNEVALUATED",
+      "reason": "No action-specific replay receipt has been supplied."
+    },
+    {
+      "step": 8,
+      "name": "EXPANSION_GATE",
+      "result": "BLOCKED",
+      "reason": "Bound payload rule requires PASS before expansion."
+    }
+  ],
+  "final_state": {
+    "verdict": "HOLD",
+    "system_expansion": "BLOCKED",
+    "next_required_input": "PROPOSED_ACTION_WITH_SCOPED_EVIDENCE",
+    "facts_promoted": 0,
+    "authority_created": false
+  }
+}
