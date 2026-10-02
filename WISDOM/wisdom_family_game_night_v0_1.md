@@ -439,6 +439,103 @@ Everyone can explain why collisions become likely faster than intuition expects
 and why a collision still does not prove identity.
 ```
 
+## Temporal Pulse Stack
+
+**Layer:** Wisdom Game Night — Pulse Stack Layer v0.1  
+**Status:** ACTIVE
+
+Parent law unchanged:
+
+```text
+Family first → Fun second → Receipts third → Sharing only when safe → Authority false always.
+```
+
+The six games stay the same. The pulse stack only changes the time horizon of the prompt.
+
+Before each round, the host picks or the player chooses one pulse:
+
+| Pulse | Time horizon | Valid evidence | Use |
+| --- | --- | --- | --- |
+| NOW | current turn / table state | visible, current, no recall | attention, spot change |
+| TODAY | this game night | score sheet, table state, replay session | memory |
+| YESTERDAY | previous day/session | opt-in replay receipt or shared memory | delayed recall |
+| LAST_7_DAYS | rolling week | shared/public game artifacts only | continuity, patterns |
+
+```text
+PASS / PRIVATE / REPLAY remain always allowed.
+```
+
+### Pulse-to-game mapping
+
+| Game | NOW | TODAY | YESTERDAY | LAST_7_DAYS |
+| --- | --- | --- | --- | --- |
+| SPOT THE CHANGE | What changed since you last looked? | What changed since game night started? | What changed since last night? | What keeps changing every time? |
+| DIRECTORY DASH | Find the item now. | What route did we use tonight? | Where was it put yesterday? | Which place keeps winning? |
+| MEMORY MOUSE | Repeat the shown sequence. | Recall sequence from earlier round. | Recall from last session. | Longest sequence kept this week. |
+| FACT / LORE / HOLD | Fact just read. | Lore from tonight. | Hold from yesterday. | Which card repeated this week? |
+| GENERATION TRANSLATOR | Translate current phrase. | Phrase from tonight. | Phrase from yesterday. | Shared phrase drift across the week. |
+| REPLAY | Replay boundary. | Replay boundary. | Replay boundary. | Replay boundary. |
+
+Scoring does not change:
+
+```text
+Exact answer = 2 Wisdom Stars
+Close answer = 1
+PASS = 0, no penalty
+PRIVATE = 0, no follow-up
+Membrane break = replay the boundary, never shame the player
+```
+
+Host quick-start addition:
+
+```text
+Pick a pulse.
+Pick a game.
+Read the prompt.
+Player answers, PASSes, or says PRIVATE.
+Score.
+If the boundary breaks, replay the boundary.
+Close with one correction, one kindness.
+```
+
+Host script:
+
+```text
+1. “Pulse?”
+2. “Game?”
+3. “Prompt.”
+4. “Answer, PASS, or PRIVATE?”
+5. Score.
+6. If needed: “Boundary. Replay.”
+7. Closeout: “One correction, one kindness.”
+```
+
+Score-sheet fields:
+
+```text
+Round | Pulse | Game | Player | Prompt | Answer class | Stars | PASS/PRIVATE | Replay? | Safety note
+```
+
+### Pulse safety membrane
+
+The pulse stack is not surveillance. It only references shared game artifacts.
+
+- No calendar, health, location, financial, or identity data.
+- No silent family-graph inference.
+- No paid clicking.
+- No government affiliation.
+- No identity proofing.
+- PRIVATE means private. The host does not ask again.
+- Receipts only if safe and volunteered.
+
+### Acceptance test
+
+The integration works if a host can run a 10–30 minute game night, use all four pulses, keep scoring unchanged, allow PASS / PRIVATE / REPLAY without friction, and close with one correction and one kindness.
+
+```text
+The pulse changes the time horizon, not the six-game grammar.
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
