@@ -192,6 +192,78 @@ OPERATIONAL_SERVICE = FALSE
 PERSONNEL_HARMED = ZERO
 ```
 
+## Phase 2.2a — FAFO Satire Labels
+
+Status: ACTIVE — satire skin only  
+Authority created: false
+
+Containment is explicit. These labels do not create people, units, roles, weapons, deployments, services, or ENS bindings.
+
+### JASON_UNITS
+
+```text
+type = fictional label
+mission = find artifacts, facts, outputs
+not a person
+not a command role
+personnel harmed = ZERO
+```
+
+### CRYSTAL_LAKE_PROTOCOL
+
+```text
+type = fictional evidence bunker
+specialty = missing receipts that keep coming back
+tagline = the timestamp cannot be outrun
+personnel harmed = ZERO
+```
+
+No real bunker or deployment is asserted.
+
+### VOORHEES_INSTRUMENTS
+
+```text
+type = fictional satire label
+actual instrument = replay, receipts, timestamps
+not a weapon
+not a deployment
+voltage = 0
+```
+
+No physical instrument, force capability, or operational deployment is asserted.
+
+### ENS_FIXTURES
+
+```text
+type = name only
+chain record = NOT_READ
+namehash = HOLD
+resolver = HOLD
+owner = HOLD
+ENS_RECORD_BOUND = FALSE
+```
+
+A name is not an ENS fixture merely because it appears in the satire layer. It remains `NAME_ONLY / HOLD` until a resolver read independently binds the relevant ENS record.
+
+### Locked holds
+
+```text
+ENS_FIXTURES != ENS_RECORD
+JASON_UNITS != PERSON
+JASON_UNITS != COMMAND_ROLE
+CRYSTAL_LAKE_PROTOCOL != REAL_LOCATION
+VOORHEES_INSTRUMENTS != REAL_WEAPON
+VOORHEES_INSTRUMENTS != DEPLOYMENT
+
+REAL_UNIT_CONFIRMED = FALSE
+OPERATIONAL_SERVICE = FALSE
+LAW_ENFORCEMENT_AUTHORITY = FALSE
+AUTHORITY_CREATED = FALSE
+PERSONNEL_HARMED = ZERO
+```
+
+The satire skin may be funny. The evidence state does not move.
+
 ## Tonight's Table Setup
 
 Choose:
