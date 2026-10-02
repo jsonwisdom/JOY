@@ -21,6 +21,77 @@ WISDOM/chaos_tokens_v0_1.md
 WISDOM/wisdom_family_game_night_dice_game_v0_1.md
 ```
 
+## Pulse Stack Mini-Deck
+
+Layer:
+
+```text
+WISDOM GAME NIGHT — PULSE STACK LAYER V0.1
+STATUS = ACTIVE
+```
+
+The mini-deck changes only the time horizon of the prompt. It does not change the six-game grammar or scoring.
+
+Cards:
+
+```text
+NOW
+  horizon = current turn / table state
+  evidence = visible, current, no recall
+  use = attention / spot change
+
+TODAY
+  horizon = this game night
+  evidence = score sheet / table state / replay session
+  use = memory
+
+YESTERDAY
+  horizon = previous day or session
+  evidence = opt-in replay receipt or shared memory
+  use = delayed recall
+
+LAST_7_DAYS
+  horizon = rolling week
+  evidence = shared/public game artifacts only
+  use = continuity / patterns
+```
+
+Table rule:
+
+```text
+Pick a pulse.
+Pick a game.
+Read the prompt.
+Answer, PASS, or PRIVATE.
+Score normally.
+REPLAY if the boundary breaks.
+Close with one correction, one kindness.
+```
+
+Safety:
+
+```text
+PASS / PRIVATE / REPLAY are always allowed.
+PRIVATE gets no follow-up.
+The pulse stack is not surveillance.
+No calendar, health, location, financial, or identity data.
+No silent family-graph inference.
+No paid clicking.
+No government affiliation.
+No identity proofing.
+Receipts only if safe and volunteered.
+```
+
+Acceptance:
+
+```text
+10–30 minute game night
++ all four pulse cards usable
++ scoring unchanged
++ PASS / PRIVATE / REPLAY frictionless
++ closeout = one correction, one kindness
+```
+
 ## Tonight's Table Setup
 
 Choose:
