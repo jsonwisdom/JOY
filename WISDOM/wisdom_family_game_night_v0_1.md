@@ -536,6 +536,106 @@ The integration works if a host can run a 10–30 minute game night, use all fou
 The pulse changes the time horizon, not the six-game grammar.
 ```
 
+## Phase 2.2 — FAFO Units Global Satire Card
+
+Status: ACTIVE — fictional satire + evidence audit only
+Parent law unchanged: Family first → Fun second → Receipts third → Sharing only when safe → Authority false always.
+
+FAFO = FIND ALGORITHMIC FACTS & OUTPUTS.
+Not retaliation. Not punishment. Not law-enforcement authority.
+
+Motto:
+
+```text
+FIND ARTIFACTS. FIND FACTS. FIND OUTPUTS.
+NO BADGES. NO GUNS. NO MAGIC AUTHORITY.
+JUST RECEIPTS WITH AN ATTITUDE.
+```
+
+Boundary:
+
+```text
+No real deployment. No coercion. No weapons. No mercenary service.
+No law-enforcement authority. No personnel harmed. Zero voltage.
+Force metaphor != force.
+Satire unit != real unit.
+"For hire" != operational service.
+Screenshot claim != primary receipt.
+```
+
+### UNIT 01 — SQUADKILLERS
+
+Type: fictional satire label only. Search miss != confirmed unit.
+Mission: kill bad claims / kill fake green / kill missing-field confidence.
+Personnel harmed: ZERO. Weapons: replay, receipts, timestamps.
+
+### UNIT 02 — ELECTRIC GLOVES DEPLOYMENT
+
+Voltage: 0V. Actual shock: discovering a "proof" was a screenshot of a screenshot.
+Primary weapon: replay. Personnel harmed: ZERO.
+
+### UNIT 03 — VOORHEES EUROPE
+
+Location: fictional Northern Europe evidence bunker.
+Specialty: missing receipts that keep coming back.
+Tagline: "You can run from the audit. The timestamp cannot."
+Personnel harmed: ZERO.
+
+### UNIT 04 — W.A.G.N.E.R. GROUP FOR HIRE
+
+```text
+W = Workflows
+A = Artifacts
+G = Graphs
+N = Notes
+E = Evidence
+R = Replay
+```
+
+Not mercenaries. Not military. Not law enforcement.
+Only assassinate unsupported assumptions.
+"For hire" = fictional satire; no operational service offered or implied.
+
+Headline:
+
+```text
+FAFO UNITS GLOBAL: SCAM COMPOUNDS HATE THIS ONE WEIRD THING — PAPERWORK THAT REPLAYS.
+```
+
+Evidence rule:
+
+```text
+Screenshot = presentation evidence only.
+Numbers stay SCREENSHOT_CLAIM / NOT_PRIMARY_VERIFIED until source is bound.
+```
+
+Pulse prompts:
+
+```text
+NOW         What does the screenshot visibly claim?
+TODAY       Which number came from the card, which from a primary source?
+YESTERDAY   What did we previously call FAFO?
+LAST_7_DAYS Which boundary keeps repeating?
+```
+
+Answer class:
+
+```text
+CLAIM != RECEIPT
+FORCE_METAPHOR != FORCE
+SATIRE_UNIT != REAL_UNIT
+"FOR HIRE" != OPERATIONAL SERVICE
+```
+
+Scoring unchanged: Exact 2 / Close 1 / PASS 0 no penalty / PRIVATE 0 no follow-up.
+Membrane break = replay boundary, never shame. Closeout: one correction, one kindness.
+
+```text
+AUTHORITY_CREATED = FALSE
+OPERATIONAL_SERVICE = FALSE
+PERSONNEL_HARMED = ZERO
+```
+
 ## Shareable Surfaces
 
 Safe outputs may include:
