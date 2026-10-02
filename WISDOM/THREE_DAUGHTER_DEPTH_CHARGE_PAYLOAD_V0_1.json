@@ -1,0 +1,31 @@
+{
+  "payload_id": "THREE_DAUGHTER_DEPTH_CHARGE_PAYLOAD_V0_1",
+  "status": "DERIVED_CANDIDATE",
+  "purpose": "Pre-expansion validation gate for family-safe system changes.",
+  "derived_from": {
+    "joy_commit_three_daughters": "c1e94d51f0068a794d2d01baa5e808b06692c77b",
+    "joy_commit_three_sisters": "27a531c8bfa8649caf283b5acb005794a56bf0a0"
+  },
+  "checks": {
+    "daughter_protection": "UNEVALUATED",
+    "continuity_preserved": "UNEVALUATED",
+    "system_expansion_safe": "UNEVALUATED"
+  },
+  "evidence_refs": [],
+  "privacy_check": "UNEVALUATED",
+  "replay_check": "UNEVALUATED",
+  "verdict": "HOLD",
+  "gate": {
+    "expansion_blocked_until": "PASS",
+    "rule": "IF verdict != PASS THEN system_expansion = BLOCKED"
+  },
+  "invariants": [
+    "Protect the daughters first.",
+    "Preserve continuity second.",
+    "Expand systems third.",
+    "UNEVALUATED != PASS",
+    "HOLD != FAILURE",
+    "RIGHT_ANSWER_WITH_BROKEN_BOUNDARY = NOT_PASS"
+  ],
+  "authority_created": false
+}
