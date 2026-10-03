@@ -1,0 +1,36 @@
+name: Living Ledger Join Receipt V0.1
+
+on:
+  pull_request:
+    paths:
+      - "docs/continuity/LIVING_LEDGER_NOW_V0_1.md"
+      - "schemas/living-ledger/**"
+      - "tools/validate_living_ledger_join_receipt_v0_1.py"
+      - "tests/living-ledger/**"
+      - ".github/workflows/living-ledger-join-receipt-v0-1.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/continuity/LIVING_LEDGER_NOW_V0_1.md"
+      - "schemas/living-ledger/**"
+      - "tools/validate_living_ledger_join_receipt_v0_1.py"
+      - "tests/living-ledger/**"
+      - ".github/workflows/living-ledger-join-receipt-v0-1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Living Ledger fixtures
+        run: |
+          python tools/validate_living_ledger_join_receipt_v0_1.py \
+            tests/living-ledger/fixtures/join_receipt_pass_v0_1.json \
+            tests/living-ledger/fixtures/join_receipt_hold_v0_1.json
