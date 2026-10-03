@@ -1,0 +1,70 @@
+{
+  "artifact": "MSE_C14N_CROSS_REPO_SIDECAR_V0_1",
+  "status": "DRAFT_SIDECAR",
+  "home_repo": "jsonwisdom/JOY",
+  "branch": "sidecar/mse-c14n-corpus-v0-1-20261003",
+  "base": "main",
+  "base_sha": "24f1bc9d6401283d1170f283b7aa3583ad166dae",
+  "directories_first": true,
+  "source_lane": "docs/school-of-wisdom/",
+  "sidecar_is_owner": false,
+  "sidecar_is_authority": false,
+  "cross_repo_writes": false,
+  "adoption_mode": "POINTER_AND_LOCAL_ADAPTER_AFTER_HUMAN_REVIEW",
+  "observed_repo_heads": {
+    "jsonwisdom/JOY": {
+      "branch": "main",
+      "sha": "24f1bc9d6401283d1170f283b7aa3583ad166dae"
+    },
+    "jsonwisdom/COMPUTERWISDOM": {
+      "branch": "master",
+      "sha": "c1280bae2b2be33ddedad4bce918f928c4f8d0eb"
+    },
+    "jsonwisdom/AL": {
+      "branch": "master",
+      "sha": "2e288a1193e0501c510e2406a131cbf3f26dbe40"
+    }
+  },
+  "observed_lanes": [
+    {
+      "repo": "jsonwisdom/COMPUTERWISDOM",
+      "branch": "master",
+      "paths": [
+        "receipts/",
+        "SUPREME_SEYMOUR/receipts/",
+        "projects/cwaas/receipts/"
+      ],
+      "role": "operator and receipt implementation lanes",
+      "write_state": "OBSERVED_ONLY"
+    },
+    {
+      "repo": "jsonwisdom/JOY",
+      "branch": "main",
+      "paths": [
+        "docs/school-of-wisdom/",
+        "_truth/receipts/",
+        "receipts/sidecar/",
+        "FAMILY/receipts/",
+        "AL/receipts/base/sidecars/"
+      ],
+      "role": "school, sidecar, family continuity, receipt grammar",
+      "write_state": "THIS_PR_ONLY"
+    },
+    {
+      "repo": "jsonwisdom/AL",
+      "branch": "master",
+      "paths": [
+        ".receipt/",
+        ".receipt/drift/",
+        ".receipt/l3/"
+      ],
+      "role": "engine/runtime receipt lane",
+      "write_state": "OBSERVED_ONLY"
+    }
+  ],
+  "scale_rule": "ONE_PINNED_CORPUS_MANY_LOCAL_ADAPTERS_NO_SILENT_COPIES",
+  "promotion_rule": "SIDECAR_POINTER_DOES_NOT_PROMOTE_LOCAL_DRAFT_TO_CANON",
+  "merge_authorized": false,
+  "authority_created": false,
+  "no_fake_green": true
+}
