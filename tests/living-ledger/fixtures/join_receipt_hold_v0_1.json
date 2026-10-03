@@ -1,0 +1,21 @@
+{
+  "join_receipt_id": "JOIN_RECEIPT_TEST_HOLD_V0_1",
+  "version": "0.1",
+  "valid_time": "2026-10-03T05:00:00Z",
+  "transaction_time": "2026-10-03T05:05:00Z",
+  "status": "HOLD",
+  "source_receipts": [
+    {
+      "receipt_id": "R_ONLY",
+      "source_uri": "fixture://single-source",
+      "content_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "provenance_root": "fixture-root-single"
+    }
+  ],
+  "matching_join_fields": [],
+  "independent_provenance": false,
+  "compatible_provenance": false,
+  "scope_conflict": false,
+  "reason": "Synthetic negative control: one receipt cannot establish an evidentiary join.",
+  "authority": false
+}
