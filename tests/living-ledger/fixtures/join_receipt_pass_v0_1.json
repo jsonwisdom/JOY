@@ -1,0 +1,34 @@
+{
+  "join_receipt_id": "JOIN_RECEIPT_TEST_PASS_V0_1",
+  "version": "0.1",
+  "valid_time": "2026-10-03T05:00:00Z",
+  "transaction_time": "2026-10-03T05:05:00Z",
+  "status": "JOINED",
+  "source_receipts": [
+    {
+      "receipt_id": "R_A",
+      "source_uri": "fixture://independent/a",
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "provenance_root": "fixture-root-a"
+    },
+    {
+      "receipt_id": "R_B",
+      "source_uri": "fixture://independent/b",
+      "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "provenance_root": "fixture-root-b"
+    }
+  ],
+  "matching_join_fields": [
+    {
+      "field": "object_id",
+      "left": "fixture-object-001",
+      "right": "fixture-object-001",
+      "comparison": "EQUAL"
+    }
+  ],
+  "independent_provenance": true,
+  "compatible_provenance": true,
+  "scope_conflict": false,
+  "reason": "Synthetic positive-control fixture: two provenance roots and one matching join field.",
+  "authority": false
+}
