@@ -143,7 +143,7 @@ Reputation follows.
 
 Reputation is earned by completing public, reproducible actions.
 
-Reputation is not authority.
+Reputation does not create operator, legal, or agent authority.
 Reputation is not truth.
 Reputation is not permission to bypass verification.
 
@@ -170,7 +170,7 @@ KEEPER         maintained a public record without overclaiming
 ```text
 No receipt, no reputation.
 No replay, no verifier status.
-No authority ever.
+No reputation or agent authority ever.
 ```
 
 ---
@@ -312,4 +312,24 @@ Celebrate receipts.
 
 Do not substitute celebration for verification.
 
-Do not substitute reputation for authority.
+Do not substitute reputation for operator control, legal authority, or verified evidence.
+
+
+---
+
+## Authority Scope Compatibility — NOW FORWARD
+
+Bare `authority=false` in legacy JOY artifacts is machine/artifact-scoped unless the artifact explicitly names a different subject.
+
+```text
+JASON_OPERATOR_CONTROL != AGENT_AUTHORITY
+AGENT_AUTHORITY = FALSE by default
+JOY_REPUTATION_AUTHORITY = FALSE
+MACHINE_AUTHORITY_CREATED = FALSE
+```
+
+This compatibility rule does not deny or reduce a person's authorship, consent, self-direction, or authenticated operator control.
+
+Helper != author.
+Silence != consent.
+Reputation != authority.
