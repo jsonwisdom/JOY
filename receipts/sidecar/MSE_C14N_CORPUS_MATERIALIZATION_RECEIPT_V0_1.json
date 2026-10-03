@@ -46,6 +46,30 @@
       "sha": "2e288a1193e0501c510e2406a131cbf3f26dbe40"
     }
   },
+  "corpus_manifest": {
+    "path": "docs/school-of-wisdom/mse-c14n/manifest.json",
+    "blob_sha": "7ae8d4cb38b236f4c7d71e48aec26738398dfacf"
+  },
+  "materialized_head_before_receipt_update": "6b5b87d64b26718583c3bfecee0f3d45e3e24f4e",
+  "files_added": [
+    "docs/school-of-wisdom/mse-c14n/MSE_C14N_CORPUS_V0_1.md",
+    "docs/school-of-wisdom/mse-c14n/manifest.json",
+    "sidecar/MSE_C14N_CROSS_REPO_SIDECAR_V0_1.json",
+    "receipts/sidecar/MSE_C14N_CORPUS_MATERIALIZATION_RECEIPT_V0_1.json",
+    "test-vectors/mse-c14n/P001r/input.bin",
+    "test-vectors/mse-c14n/P001r/expected.bin",
+    "test-vectors/mse-c14n/P002/input.bin",
+    "test-vectors/mse-c14n/P002/expected.bin",
+    "test-vectors/mse-c14n/P004/input.bin",
+    "test-vectors/mse-c14n/P004/expected.bin",
+    "test-vectors/mse-c14n/N001/input.bin",
+    "test-vectors/mse-c14n/N002/input.bin",
+    "test-vectors/mse-c14n/N003/input.bin",
+    "test-vectors/mse-c14n/N004a/input.bin",
+    "test-vectors/mse-c14n/N004b/input.bin",
+    "test-vectors/mse-c14n/N004c/input.bin",
+    "test-vectors/mse-c14n/N004e/input.bin"
+  ],
   "claim": "corpus and adoption sidecar materialized beside parent lineage; no cross-repo mutation; no validator pass asserted",
   "validator_harness_status": "NOT_WRITTEN",
   "fractional_precision": "HOLD",
