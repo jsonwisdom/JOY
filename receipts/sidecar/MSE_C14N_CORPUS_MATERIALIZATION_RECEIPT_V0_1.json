@@ -1,0 +1,55 @@
+{
+  "receipt": "MSE_C14N_CORPUS_MATERIALIZATION_RECEIPT_V0_1",
+  "target_repo": "jsonwisdom/JOY",
+  "branch": "sidecar/mse-c14n-corpus-v0-1-20261003",
+  "base": "main",
+  "base_sha": "24f1bc9d6401283d1170f283b7aa3583ad166dae",
+  "layer": "SIDECAR_DRAFT",
+  "directories_first": true,
+  "authority_created": false,
+  "merge_authorized": false,
+  "canon": false,
+  "local_pin_status": "LOCAL_PIN_DRAFT",
+  "parents_verified": [
+    {
+      "path": "docs/school-of-wisdom/school-of-wisdom.schema.json",
+      "blob_sha": "2db98661b83f658e44a2ed234f09338ea13e802a",
+      "observed": true
+    },
+    {
+      "path": "_truth/receipts/RECEIPT_SCHEMA_V0_1.md",
+      "blob_sha": "8d6bccaabc50b6567c0e95c3ead033137d5c21b6",
+      "observed": true
+    },
+    {
+      "path": "receipts/sidecar/MOVE_012_MATERIALIZATION_RECEIPT.json",
+      "blob_sha": "d207dc493d96155d353318402a7b9fc3de453847",
+      "observed": true
+    },
+    {
+      "path": "AL/receipts/base/sidecars/ALMS_BASE_BATCHES_FAMILY_SIDECARS_V0_1.md",
+      "blob_sha": "05486e70225f76c3f016ece6546f3b2f1282a612",
+      "observed": true
+    }
+  ],
+  "cross_repo_observations": {
+    "jsonwisdom/JOY": {
+      "branch": "main",
+      "sha": "24f1bc9d6401283d1170f283b7aa3583ad166dae"
+    },
+    "jsonwisdom/COMPUTERWISDOM": {
+      "branch": "master",
+      "sha": "c1280bae2b2be33ddedad4bce918f928c4f8d0eb"
+    },
+    "jsonwisdom/AL": {
+      "branch": "master",
+      "sha": "2e288a1193e0501c510e2406a131cbf3f26dbe40"
+    }
+  },
+  "claim": "corpus and adoption sidecar materialized beside parent lineage; no cross-repo mutation; no validator pass asserted",
+  "validator_harness_status": "NOT_WRITTEN",
+  "fractional_precision": "HOLD",
+  "version_format": "HOLD",
+  "identifier_length_bound": "HOLD",
+  "no_fake_green": true
+}
