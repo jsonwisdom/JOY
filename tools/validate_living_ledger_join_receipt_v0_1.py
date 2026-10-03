@@ -32,7 +32,7 @@ def parse_datetime(value: object, where: str) -> None:
     try:
         datetime.fromisoformat(normalized)
     except ValueError as exc:
-        fail(f"{where}: invalid date-time: {value}") from exc
+        raise ValueError(f"{where}: invalid date-time: {value}") from exc
 
 
 def validate_receipt(data: object) -> None:
