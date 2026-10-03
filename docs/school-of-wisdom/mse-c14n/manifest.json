@@ -1,0 +1,147 @@
+{
+  "corpus_version": "MSE_C14N_CORPUS_V0_1",
+  "status": "LOCAL_PIN_DRAFT",
+  "jcs": "RFC8785",
+  "hash_algorithm": "SHA-256",
+  "safe_integer_max": 9007199254740991,
+  "identifier_policy": {
+    "charset": "ASCII",
+    "case": "lowercase",
+    "grammar": "[a-z0-9._:-]+",
+    "nfc": "APPLIED_NOOP_ON_VALID_INPUT"
+  },
+  "free_text_policy": {
+    "nfc": "APPLIED",
+    "receipt_field": "normalization_applied",
+    "excluded_from": [
+      "identifier_hashes",
+      "routing_refs",
+      "set_membership",
+      "ordered_list_membership"
+    ]
+  },
+  "domain_separators": {
+    "received": "MSE:RECEIVED:V0_1\\u0000",
+    "input": "MSE:INPUT:V0_1\\u0000",
+    "receipt": "MSE:RECEIPT:V0_1\\u0000"
+  },
+  "fractional_precision": "HOLD",
+  "version_format": "HOLD",
+  "identifier_length_bound": "HOLD",
+  "dependent_fixture_execution": "BLOCKED_BY_UNPINNED_PARAMETER",
+  "corpus_bytes": "AUTHORITATIVE",
+  "manifest_role": "INDEX_EXPECTATION_MAP",
+  "reference_pin": "REQUIRED",
+  "implementation_agreement": "NECESSARY_NOT_SUFFICIENT",
+  "fixtures": [
+    {
+      "fixture_id": "P001r",
+      "input_path": "test-vectors/mse-c14n/P001r/input.bin",
+      "input_sha256": "sha256:4aaec948a3505785ccdcf79829cb35b972271ee9a631c7cb75dc534f54471867",
+      "expected_path": "test-vectors/mse-c14n/P001r/expected.bin",
+      "expected_sha256": "sha256:1905e2681499cfe830f8ab5ec5b980591b8f30d0ec81bda6f4c78860c44408d6",
+      "expected_verdict": "PASS",
+      "normalization_applied": [
+        "NFC"
+      ],
+      "received_hash": "sha256:909e776a5d105cfa978ca700afe03fc4bf4d106586bc1ad9d94e2de76a0ee394",
+      "input_hash": "sha256:49b7b4a3670a3c2b7d163ec0c3d7e85409a03e2d484b06307354d1ca7b739bde"
+    },
+    {
+      "fixture_id": "P002",
+      "input_path": "test-vectors/mse-c14n/P002/input.bin",
+      "input_sha256": "sha256:c972b587bc98d8d34f8cc63e9db1fc7025a393a88d2b2684a258406d17bb9b15",
+      "expected_path": "test-vectors/mse-c14n/P002/expected.bin",
+      "expected_sha256": "sha256:c972b587bc98d8d34f8cc63e9db1fc7025a393a88d2b2684a258406d17bb9b15",
+      "expected_verdict": "PASS",
+      "normalization_applied": [],
+      "received_hash": "sha256:b70aad13e0e3d881f1d0d7ba5b102b59994a8d4d6edab33efb78c97fe610f511",
+      "input_hash": "sha256:abd83a078a6bac4042b6edac8bc4328622e9016285c1ef2e37cfcc4a45ea8f83"
+    },
+    {
+      "fixture_id": "P004",
+      "input_path": "test-vectors/mse-c14n/P004/input.bin",
+      "input_sha256": "sha256:9481a2ca39ef6a74fdb85d3d6d34af5aa6badae4d3f6ab0e6606de0c7ed48344",
+      "expected_path": "test-vectors/mse-c14n/P004/expected.bin",
+      "expected_sha256": "sha256:fe1c788f83a7b21b9bb68ea3d588468319662e1ba670dceb5a83fc7d05a183a8",
+      "expected_verdict": "PASS",
+      "normalization_applied": [],
+      "received_hash": "sha256:41ccf05212de26704a42402ce2c15ccef875b948ae681f882aa6f5902596a204",
+      "input_hash": "sha256:24e8ebde9a61af25877e54b08cf1dd857936ba314f06ebd424b04b4b68eae0c5"
+    },
+    {
+      "fixture_id": "N001",
+      "input_path": "test-vectors/mse-c14n/N001/input.bin",
+      "input_sha256": "sha256:22cd13cf767776a73bf1cd67abe5d98d4bc644e35b820c481fb32de2b7c260ff",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "NON_FINITE_NUMBER",
+      "received_hash": "sha256:e17d8295168418341560505c429ae4be62ed663853d6981005ec54625d63f75e"
+    },
+    {
+      "fixture_id": "N002",
+      "input_path": "test-vectors/mse-c14n/N002/input.bin",
+      "input_sha256": "sha256:66c87d9cb3014e05a11baa97df62282d89d425f22ee15816577c84534e2ef1bb",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "UNSAFE_INTEGER",
+      "received_hash": "sha256:13666c97efe5d1b419afe67287800ac48e83b44f970dc6cc82b9c326c8e431dc"
+    },
+    {
+      "fixture_id": "N003",
+      "input_path": "test-vectors/mse-c14n/N003/input.bin",
+      "input_sha256": "sha256:80e650402ccdf08b7bc1a40200af8cf5a31282b1447ca38ef7d094b9e17e9b7d",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "NULL_NOT_ABSENT",
+      "received_hash": "sha256:c5dcdb29e3528ba748225c33db63b790aecdf6892de9d1ed7331f58823657bc1"
+    },
+    {
+      "fixture_id": "N004a",
+      "input_path": "test-vectors/mse-c14n/N004a/input.bin",
+      "input_sha256": "sha256:548e6c23920d3e450d2949502742e2b0bb9965b7559454d8e4f95107aa857edd",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "NON_ASCII_IDENTIFIER",
+      "received_hash": "sha256:d39fb97d97e1c19f41903840272bf4d37f443e79e049d23e5fa265e1ebd609da"
+    },
+    {
+      "fixture_id": "N004b",
+      "input_path": "test-vectors/mse-c14n/N004b/input.bin",
+      "input_sha256": "sha256:56212054a62ce19aaaae061253d271f5d9c871fe7fb28a217aecf899d9d3faa5",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "IDENTIFIER_CASE",
+      "received_hash": "sha256:abbe87b98d7a7fc18ae2dd75243e409c6f483da0baf1354c58bb11bde4e72d05"
+    },
+    {
+      "fixture_id": "N004c",
+      "input_path": "test-vectors/mse-c14n/N004c/input.bin",
+      "input_sha256": "sha256:33fe5db567f7f40c5fe061b7f454b24cd07bd5f92086fc58528a3cf018cd15cc",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "IDENTIFIER_CHARSET",
+      "received_hash": "sha256:6f4cd517f55bc93e0d0dc2b7721c6dd9e1c739d2c5212dfe75fe065130935b5d"
+    },
+    {
+      "fixture_id": "N004e",
+      "input_path": "test-vectors/mse-c14n/N004e/input.bin",
+      "input_sha256": "sha256:a38eb1be025d5154c3fb3737952419fba1e566b7e00b658590881bb5166c3f5a",
+      "expected_verdict": "HOLD",
+      "expected_reason_code": "NON_ASCII_IDENTIFIER",
+      "received_hash": "sha256:4f4d29c38469222c1ed74303f64e6ad74cdde9786c0dcac00a960da05f2886aa"
+    }
+  ],
+  "blocked_fixtures": [
+    {
+      "fixture_id": "B001",
+      "depends_on": "FRACTIONAL_PRECISION",
+      "execution": "BLOCKED_BY_UNPINNED_PARAMETER"
+    },
+    {
+      "fixture_id": "B002",
+      "depends_on": "VERSION_FORMAT",
+      "execution": "BLOCKED_BY_UNPINNED_PARAMETER"
+    },
+    {
+      "fixture_id": "B003",
+      "depends_on": "IDENTIFIER_LENGTH_BOUND",
+      "execution": "BLOCKED_BY_UNPINNED_PARAMETER"
+    }
+  ],
+  "authority_created": false
+}
