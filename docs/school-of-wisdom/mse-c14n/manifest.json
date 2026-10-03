@@ -21,9 +21,18 @@
     ]
   },
   "domain_separators": {
-    "received": "MSE:RECEIVED:V0_1\\u0000",
-    "input": "MSE:INPUT:V0_1\\u0000",
-    "receipt": "MSE:RECEIPT:V0_1\\u0000"
+    "received": {
+      "label_ascii": "MSE:RECEIVED:V0_1",
+      "separator_byte_hex": "00"
+    },
+    "input": {
+      "label_ascii": "MSE:INPUT:V0_1",
+      "separator_byte_hex": "00"
+    },
+    "receipt": {
+      "label_ascii": "MSE:RECEIPT:V0_1",
+      "separator_byte_hex": "00"
+    }
   },
   "fractional_precision": "HOLD",
   "version_format": "HOLD",
@@ -32,6 +41,14 @@
   "corpus_bytes": "AUTHORITATIVE",
   "manifest_role": "INDEX_EXPECTATION_MAP",
   "reference_pin": "REQUIRED",
+  "differential_architecture": {
+    "same_corpus_for_a_and_b": true,
+    "students_share_code": false,
+    "students_share_library": false,
+    "ref_impl_rail": "PRESENT_NOT_AUTHORITATIVE",
+    "pin_defines_expectation": true,
+    "requirement": "A==PIN AND B==PIN AND A==B"
+  },
   "implementation_agreement": "NECESSARY_NOT_SUFFICIENT",
   "fixtures": [
     {
