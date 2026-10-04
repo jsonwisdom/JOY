@@ -1,0 +1,37 @@
+{
+  "schema": "jsonwisdom.wisdom_family.full_girl_math.female_denominators_x3.v0_1",
+  "status": "CANDIDATE_BRANCH_ONLY",
+  "purpose": "Count three named female project seats separately and transparently without collapsing identity, consent, memory, or authority.",
+  "seats": [
+    "LEEANN",
+    "HEIDEE",
+    "MARYDEE"
+  ],
+  "full_math": {
+    "declared_project_female_seats": 3,
+    "expected_seats": 3,
+    "present_seats": 3,
+    "missing_seats": 0,
+    "equation": "1 + 1 + 1 = 3",
+    "coverage": "3/3",
+    "percentage_of_this_declared_x3_set": "100%",
+    "measured_real_person_female_population": null,
+    "measured_family_female_population": null,
+    "real_person_percentage": "HOLD"
+  },
+  "seat_rules": {
+    "independent_denominators": true,
+    "pooled_identity": false,
+    "pooled_consent": false,
+    "pooled_memory": false
+  },
+  "membranes": [
+    "LEEANN != HEIDEE",
+    "HEIDEE != MARYDEE",
+    "LEEANN != MARYDEE",
+    "SHARED_FEMALE_PROJECT_CATEGORY != SHARED_IDENTITY",
+    "SHARED_FAMILY_OR_SISTER_SYNTAX != SHARED_CONSENT",
+    "X3_PROJECT_COUNT != REAL_WORLD_DEMOGRAPHIC_DENOMINATOR"
+  ],
+  "authority_created": false
+}
