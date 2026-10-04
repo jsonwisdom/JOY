@@ -1,0 +1,46 @@
+{
+  "schema": "jsonwisdom.wisdom_family_game_ledgers.jason_full_math_problem_registry.v0_1",
+  "status": "CANDIDATE_BRANCH_ONLY",
+  "problems": [
+    {
+      "id": "P1",
+      "name": "COUNTING_AND_DENOMINATORS",
+      "question": "What is being counted, what is the eligible population, and which UNKNOWN / NOT_ASKED / PRIVATE states remain visible?",
+      "success": "NUMERATOR_AND_DENOMINATOR_EXPLICIT"
+    },
+    {
+      "id": "P2",
+      "name": "IDENTITY_AND_ROUTING",
+      "question": "Which identity or namespace anchor is intended, what route is being used, and do the receipts support the join?",
+      "success": "NO_UNRECEIPTED_IDENTITY_OR_ROUTE_JOIN"
+    },
+    {
+      "id": "P3",
+      "name": "REPLAY_AND_PROMOTION",
+      "question": "What source, machine output, human adoption, receipt, and promotion event actually occurred?",
+      "success": "NO_PROMOTION_WITHOUT_REQUIRED_RECEIPT"
+    }
+  ],
+  "assignment_math": {
+    "problems": 3,
+    "cells_per_problem": 9,
+    "total_assignments": 27,
+    "equation": "3 * 9 = 27"
+  },
+  "state_buckets": [
+    "PASS",
+    "HOLD",
+    "CONFLICT",
+    "UNKNOWN",
+    "UNRUN"
+  ],
+  "rules": [
+    "EVERY_RESULT_SHOWS_SCOPE_OR_DENOMINATOR",
+    "EVERY_CLAIM_SHOWS_SOURCE_POINTER",
+    "EVERY_MISSING_EDGE_REMAINS_VISIBLE",
+    "NO_BOT_SELF_PROMOTION",
+    "HUMAN_ADOPTION_TYPED_SEPARATELY",
+    "FAMILY_PRIVACY_BEFORE_PERSISTENCE"
+  ],
+  "authority_created": false
+}
