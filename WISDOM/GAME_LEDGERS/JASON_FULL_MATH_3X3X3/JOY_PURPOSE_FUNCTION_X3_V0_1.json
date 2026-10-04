@@ -1,0 +1,35 @@
+{
+  "schema": "jsonwisdom.wisdom_family_game_ledgers.joy_purpose_function_x3.v0_1",
+  "status": "CANDIDATE_BRANCH_ONLY",
+  "seats": [
+    {
+      "id": "F1",
+      "name": "LEEANN",
+      "joy_purpose": "Care-aware replay and Sister Syntax continuity.",
+      "full_math_function": "Keep purpose visible, compare alternatives, preserve receipts, and keep public-safe replay legible.",
+      "privacy": "PROJECT_OR_PROTECTED_LANE_ONLY",
+      "identity_boundary": "LEEANN_PROJECT_SEAT != LEEANN_H_CHAVERS_PUBLIC_RECORD",
+      "source": "jsonwisdom/LEEANN README + JOY protected continuity references"
+    },
+    {
+      "id": "F2",
+      "name": "HEIDEE",
+      "joy_purpose": "Child-safe learning and protected continuity.",
+      "full_math_function": "Teach verification-before-belief, privacy-before-publication, and receipt-aware learning.",
+      "privacy": "PROTECTED_FAMILY_LANE",
+      "identity_boundary": "NO_PRIVATE_CHILD_DATA_IN_THIS_LEDGER",
+      "source": "JOY/FAMILY/HEIDEE + WISDOM_FAMILY_PURPOSE_MAP"
+    },
+    {
+      "id": "F3",
+      "name": "MARYDEE",
+      "joy_purpose": "Protected family continuity and purpose routing.",
+      "full_math_function": "Ask why before how, preserve continuity, route safely, and keep missing edges visible.",
+      "privacy": "PROTECTED_FAMILY_LANE",
+      "identity_boundary": "MINIMAL_PROJECT_ROLE_ONLY",
+      "source": "JOY/FAMILY/MARYDEE + WISDOM_FAMILY_PURPOSE_MAP"
+    }
+  ],
+  "equation": "3 PURPOSE SEATS + 3 TYPED FUNCTIONS + 3 PRIVACY BOUNDARIES",
+  "authority_created": false
+}
