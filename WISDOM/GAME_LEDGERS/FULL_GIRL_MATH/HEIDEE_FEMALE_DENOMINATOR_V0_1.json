@@ -1,0 +1,31 @@
+{
+  "schema": "jsonwisdom.wisdom_family.full_girl_math.female_denominator_seat.v0_1",
+  "status": "CANDIDATE_BRANCH_ONLY",
+  "seat": "HEIDEE",
+  "denominator_class": "PROJECT_DECLARED_FEMALE_SEAT",
+  "denominator_value": 1,
+  "declaration_basis": "USER_DECLARED_FOR_PROJECT_MATH_2026-10-03",
+  "source_lane": "JOY/FAMILY/HEIDEE + WISDOM_GIRLS protected lane",
+  "project_role": "CHILD_SAFE_LEARNING / PROTECTED_CONTINUITY_SEAT",
+  "female_category_scope": "PROJECT_MATH_ONLY",
+  "real_person_demographic_proof": false,
+  "family_consent_created": false,
+  "memory_consent_created": false,
+  "public_biography_created": false,
+  "identity_boundary": "HEIDEE_PROJECT_OR_PROTECTED_LANE != PUBLIC_PERSON_IDENTITY",
+  "arithmetic": {
+    "seat_numerator": 1,
+    "seat_denominator": 1,
+    "seat_coverage": "1/1",
+    "aggregate_membership": "INCLUDED_IN_X3"
+  },
+  "invariants": [
+    "PROJECT_SEAT != REAL_PERSON_IDENTITY",
+    "PROJECT_DECLARATION != SELF_IDENTIFICATION_RECEIPT",
+    "FEMALE_DENOMINATOR_SEAT != FAMILY_CONSENT",
+    "NAME != DEMOGRAPHIC_PROOF",
+    "NO_PRIVATE_DETAILS_REQUIRED",
+    "UNKNOWN != ZERO"
+  ],
+  "authority_created": false
+}
