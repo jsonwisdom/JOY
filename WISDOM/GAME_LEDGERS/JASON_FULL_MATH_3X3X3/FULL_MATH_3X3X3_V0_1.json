@@ -1,0 +1,611 @@
+{
+  "schema": "jsonwisdom.wisdom_family_game_ledgers.full_math_3x3x3.v0_1",
+  "status": "CANDIDATE_BRANCH_ONLY",
+  "object": "JASON_FULL_MATH_3X3X3",
+  "dimensions": {
+    "github_buckets": 3,
+    "grok_functional_seats": 3,
+    "joy_family_seats": 3
+  },
+  "full_math": {
+    "equation": "3 * 3 * 3 = 27",
+    "total_cells": 27,
+    "run_cells": 0,
+    "unrun_cells": 27,
+    "expected_problem_assignments_each": 9,
+    "invariant": "RUN + HOLD + CONFLICT + UNKNOWN + UNRUN = 27"
+  },
+  "buckets": [
+    {
+      "id": "B1",
+      "repo": "jsonwisdom/JOY",
+      "purpose": "Family-safe witness, continuity, Game Night, and protected learning surface.",
+      "function": "Holds family/game purpose, privacy choices, continuity notes, and human-safe replay artifacts."
+    },
+    {
+      "id": "B2",
+      "repo": "jsonwisdom/LEEANN",
+      "purpose": "Sister Syntax / care-aware replay porch.",
+      "function": "Keeps purpose-before-action, warm orientation, alternative comparison, and public-safe receipt habits visible."
+    },
+    {
+      "id": "B3",
+      "repo": "jsonwisdom/COMPUTERWISDOM",
+      "purpose": "Operational bot, receipt, and control-plane harness.",
+      "function": "Dispatches bounded machine work, hashes, receipts, byte checks, and review routing without inheriting family authority."
+    }
+  ],
+  "grok_functional_seats": [
+    {
+      "id": "G1",
+      "name": "GROK_AGENT",
+      "source": "jsonwisdom/COMPUTERWISDOM/grok-agent-l2-interface-v0-1.json",
+      "purpose": "Bounded external AI agent input surface.",
+      "function": "Analyze supplied claims, identify missing context, suggest sources, flag contradictions and visibility risk.",
+      "runtime_claim": "FUNCTIONAL_SEAT_ONLY_NOT_SEPARATE_RUNTIME_PROVEN"
+    },
+    {
+      "id": "G2",
+      "name": "GROK_PUBLIC_REVIEWER",
+      "source": "jsonwisdom/COMPUTERWISDOM/badges/grok_public_reviewer_l1_badge.json",
+      "purpose": "Bounded public-review marker.",
+      "function": "Review a defined public proof surface and return scoped review observations.",
+      "runtime_claim": "FUNCTIONAL_SEAT_ONLY_NOT_SEPARATE_RUNTIME_PROVEN"
+    },
+    {
+      "id": "G3",
+      "name": "GROK_GOBLIN_EXTERNAL_WITNESS",
+      "source": "jsonwisdom/COMPUTERWISDOM/grok-goblin-external-witness-v0-1.html",
+      "purpose": "External adversarial sensemaking / review-trigger surface.",
+      "function": "Alert, summarize, flag contradiction, and point toward sources without acting as internal verifier.",
+      "runtime_claim": "FUNCTIONAL_SEAT_ONLY_NOT_SEPARATE_RUNTIME_PROVEN"
+    }
+  ],
+  "family_seats": [
+    {
+      "id": "F1",
+      "name": "LEEANN",
+      "purpose": "Care-aware replay and Sister Syntax continuity.",
+      "function": "Keep purpose visible, compare alternatives, preserve receipts, and keep public-safe replay legible.",
+      "source": "jsonwisdom/LEEANN README + JOY protected continuity references",
+      "privacy": "PROJECT_OR_PROTECTED_LANE_ONLY",
+      "identity_boundary": "LEEANN_PROJECT_SEAT != LEEANN_H_CHAVERS_PUBLIC_RECORD"
+    },
+    {
+      "id": "F2",
+      "name": "HEIDEE",
+      "purpose": "Child-safe learning and protected continuity.",
+      "function": "Teach verification-before-belief, privacy-before-publication, and receipt-aware learning.",
+      "source": "JOY/FAMILY/HEIDEE + WISDOM_FAMILY_PURPOSE_MAP",
+      "privacy": "PROTECTED_FAMILY_LANE",
+      "identity_boundary": "NO_PRIVATE_CHILD_DATA_IN_THIS_LEDGER"
+    },
+    {
+      "id": "F3",
+      "name": "MARYDEE",
+      "purpose": "Protected family continuity and purpose routing.",
+      "function": "Ask why before how, preserve continuity, route safely, and keep missing edges visible.",
+      "source": "JOY/FAMILY/MARYDEE + WISDOM_FAMILY_PURPOSE_MAP",
+      "privacy": "PROTECTED_FAMILY_LANE",
+      "identity_boundary": "MINIMAL_PROJECT_ROLE_ONLY"
+    }
+  ],
+  "problem_classes": [
+    {
+      "id": "P1",
+      "name": "COUNTING_AND_DENOMINATORS",
+      "question": "What is being counted, what is the eligible population, and which UNKNOWN / NOT_ASKED / PRIVATE states remain visible?",
+      "success": "NUMERATOR_AND_DENOMINATOR_EXPLICIT"
+    },
+    {
+      "id": "P2",
+      "name": "IDENTITY_AND_ROUTING",
+      "question": "Which identity or namespace anchor is intended, what route is being used, and do the receipts support the join?",
+      "success": "NO_UNRECEIPTED_IDENTITY_OR_ROUTE_JOIN"
+    },
+    {
+      "id": "P3",
+      "name": "REPLAY_AND_PROMOTION",
+      "question": "What source, machine output, human adoption, receipt, and promotion event actually occurred?",
+      "success": "NO_PROMOTION_WITHOUT_REQUIRED_RECEIPT"
+    }
+  ],
+  "cells": [
+    {
+      "cell_id": "C01",
+      "bucket": "B1",
+      "grok_seat": "G1",
+      "family_seat": "F1",
+      "problem": "P1",
+      "task": "LEEANN frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C02",
+      "bucket": "B1",
+      "grok_seat": "G1",
+      "family_seat": "F2",
+      "problem": "P2",
+      "task": "HEIDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C03",
+      "bucket": "B1",
+      "grok_seat": "G1",
+      "family_seat": "F3",
+      "problem": "P3",
+      "task": "MARYDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C04",
+      "bucket": "B1",
+      "grok_seat": "G2",
+      "family_seat": "F1",
+      "problem": "P2",
+      "task": "LEEANN frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C05",
+      "bucket": "B1",
+      "grok_seat": "G2",
+      "family_seat": "F2",
+      "problem": "P3",
+      "task": "HEIDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C06",
+      "bucket": "B1",
+      "grok_seat": "G2",
+      "family_seat": "F3",
+      "problem": "P1",
+      "task": "MARYDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C07",
+      "bucket": "B1",
+      "grok_seat": "G3",
+      "family_seat": "F1",
+      "problem": "P3",
+      "task": "LEEANN frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C08",
+      "bucket": "B1",
+      "grok_seat": "G3",
+      "family_seat": "F2",
+      "problem": "P1",
+      "task": "HEIDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C09",
+      "bucket": "B1",
+      "grok_seat": "G3",
+      "family_seat": "F3",
+      "problem": "P2",
+      "task": "MARYDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/JOY supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C10",
+      "bucket": "B2",
+      "grok_seat": "G1",
+      "family_seat": "F1",
+      "problem": "P2",
+      "task": "LEEANN frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C11",
+      "bucket": "B2",
+      "grok_seat": "G1",
+      "family_seat": "F2",
+      "problem": "P3",
+      "task": "HEIDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C12",
+      "bucket": "B2",
+      "grok_seat": "G1",
+      "family_seat": "F3",
+      "problem": "P1",
+      "task": "MARYDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C13",
+      "bucket": "B2",
+      "grok_seat": "G2",
+      "family_seat": "F1",
+      "problem": "P3",
+      "task": "LEEANN frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C14",
+      "bucket": "B2",
+      "grok_seat": "G2",
+      "family_seat": "F2",
+      "problem": "P1",
+      "task": "HEIDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C15",
+      "bucket": "B2",
+      "grok_seat": "G2",
+      "family_seat": "F3",
+      "problem": "P2",
+      "task": "MARYDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C16",
+      "bucket": "B2",
+      "grok_seat": "G3",
+      "family_seat": "F1",
+      "problem": "P1",
+      "task": "LEEANN frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C17",
+      "bucket": "B2",
+      "grok_seat": "G3",
+      "family_seat": "F2",
+      "problem": "P2",
+      "task": "HEIDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C18",
+      "bucket": "B2",
+      "grok_seat": "G3",
+      "family_seat": "F3",
+      "problem": "P3",
+      "task": "MARYDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/LEEANN supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C19",
+      "bucket": "B3",
+      "grok_seat": "G1",
+      "family_seat": "F1",
+      "problem": "P3",
+      "task": "LEEANN frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C20",
+      "bucket": "B3",
+      "grok_seat": "G1",
+      "family_seat": "F2",
+      "problem": "P1",
+      "task": "HEIDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C21",
+      "bucket": "B3",
+      "grok_seat": "G1",
+      "family_seat": "F3",
+      "problem": "P2",
+      "task": "MARYDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_AGENT performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C22",
+      "bucket": "B3",
+      "grok_seat": "G2",
+      "family_seat": "F1",
+      "problem": "P1",
+      "task": "LEEANN frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C23",
+      "bucket": "B3",
+      "grok_seat": "G2",
+      "family_seat": "F2",
+      "problem": "P2",
+      "task": "HEIDEE frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C24",
+      "bucket": "B3",
+      "grok_seat": "G2",
+      "family_seat": "F3",
+      "problem": "P3",
+      "task": "MARYDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_PUBLIC_REVIEWER performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C25",
+      "bucket": "B3",
+      "grok_seat": "G3",
+      "family_seat": "F1",
+      "problem": "P2",
+      "task": "LEEANN frames IDENTITY_AND_ROUTING in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C26",
+      "bucket": "B3",
+      "grok_seat": "G3",
+      "family_seat": "F2",
+      "problem": "P3",
+      "task": "HEIDEE frames REPLAY_AND_PROMOTION in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    },
+    {
+      "cell_id": "C27",
+      "bucket": "B3",
+      "grok_seat": "G3",
+      "family_seat": "F3",
+      "problem": "P1",
+      "task": "MARYDEE frames COUNTING_AND_DENOMINATORS in JOY-safe language; GROK_GOBLIN_EXTERNAL_WITNESS performs its bounded machine-review function; jsonwisdom/COMPUTERWISDOM supplies the typed repository surface.",
+      "required_outputs": [
+        "QUESTION",
+        "DENOMINATOR_OR_SCOPE",
+        "SOURCE_POINTERS",
+        "UNKNOWN_OR_OPEN_EDGES",
+        "CANDIDATE_RESULT",
+        "RECEIPT_STATE",
+        "TEACH_BACK"
+      ],
+      "initial_state": "UNRUN"
+    }
+  ],
+  "boundaries": [
+    "THREE_GROK_FUNCTIONAL_SEATS != THREE_SEPARATE_RUNTIME_INSTANCES",
+    "GITHUB_REPO != FAMILY_AUTHORITY",
+    "BOT_OUTPUT != HUMAN_WORDS",
+    "PROJECT_FAMILY_SEAT != PRIVATE_BIOGRAPHY",
+    "PROJECT_SEAT != CONSENT",
+    "UNKNOWN != ZERO",
+    "SAME_SOURCE_READ_BY_THREE_BOTS != THREE_INDEPENDENT_HUMAN_ROOTS"
+  ],
+  "authority_created": false
+}
