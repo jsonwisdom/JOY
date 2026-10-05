@@ -63,9 +63,22 @@ before rendering.
 
 If the grammar cannot be loaded, HOLD. Do not substitute a generic aesthetic.
 
+Hard pre-render gates:
+
+1. NAMED PERSON?
+   - If likeness matters, actual reference pixels must be loaded.
+   - Name, URL, article text, or model memory are not enough.
+   - Missing reference pixels -> HOLD.
+
+2. FAMILY / CHILDREN / WOMEN EDUCATIONAL LANE?
+   - Apply JAY_FAMILY_SAFE_CHARACTER_STANDARD before generation.
+   - Missing family-safe membrane -> HOLD.
+
+3. THEN continue to object parsing and sticker grammar.
+
 Execution order:
 
-`JAY_REQUEST -> LOAD_GRAMMAR -> PARSE_SUBJECT -> SET_OBJECT_CLASS -> REDUCE_TO_ONE_GAG -> RENDER -> POSTFLIGHT_OBJECT_AUDIT -> HUMAN_REVIEW`
+`JAY_REQUEST -> LOAD_GRAMMAR -> NAMED_PERSON_GATE -> FAMILY_SAFE_GATE -> PARSE_SUBJECT -> SET_OBJECT_CLASS -> REDUCE_TO_ONE_GAG -> RENDER -> POSTFLIGHT_OBJECT_AUDIT -> JAY_HUMAN_REVIEW`
 
 Required attribution:
 
@@ -73,11 +86,13 @@ Required attribution:
 - CHATGPT = RENDER_ASSIST_AUDIT
 - IMAGE MODEL = EXECUTION_SURFACE
 
-The postflight audit must test the requested unit before visual praise.
+The postflight audit must test likeness and family-safe gates when applicable before visual praise.
 
 `GOOD_IMAGE != CORRECT_OBJECT`
+`NAME_MATCH != LIKENESS_MATCH`
+`FAMILY_SAFE_LABEL != FAMILY_SAFE_RENDER`
 
-A failed object-class gate is `REJECT_AS_FACTORY_OUTPUT`, even if the image is otherwise attractive.
+A failed required gate is `REJECT_AS_FACTORY_OUTPUT`, even if the image is otherwise attractive.
 
 ## Boss Brenda 23B
 
