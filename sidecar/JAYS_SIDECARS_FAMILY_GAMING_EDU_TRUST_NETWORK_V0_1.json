@@ -1,0 +1,100 @@
+{
+  "artifact": "JAYS_SIDECARS_FAMILY_GAMING_EDU_TRUST_NETWORK_V0_1",
+  "operator": "JAY",
+  "repo": "jsonwisdom/JOY",
+  "state": "ACTIVE_IN_GITHUB",
+  "mode": "FAMILY_GAMING_EDUCATIONAL_TRUST_NETWORK",
+  "authority_created": false,
+  "canon": false,
+  "purpose": [
+    "activate Sidecar play inside GitHub",
+    "allow family-safe educational routing without external identity verification",
+    "preserve memory, continue play, and route to the next safe action",
+    "keep repo functions distinct while allowing trusted game traversal"
+  ],
+  "activation_scope": {
+    "repo_local": true,
+    "runtime_outside_github": false,
+    "dns": false,
+    "blockchain": false,
+    "wallet_control": false,
+    "public_authority": false
+  },
+  "active_objects": [
+    {
+      "object": "THREE_SISTERS_SUPER_SECRET_SIDECAR",
+      "function": [
+        "PRESERVE",
+        "CONTINUE",
+        "ROUTE"
+      ],
+      "source": "sidecar/sidecar-rules.json"
+    },
+    {
+      "object": "SIDCARS_LANE",
+      "function": [
+        "FAMILY_CONTINUITY",
+        "GAME_LOCATOR",
+        "EDUCATIONAL_NAVIGATION"
+      ],
+      "source": "FAMILY/SIDCARS/README.md"
+    }
+  ],
+  "trust_network": {
+    "membership_model": "EXPLICIT_GAME_OPT_IN",
+    "family_relationship_verification_required": false,
+    "external_identity_verification_required": false,
+    "cryptographic_identity_verification_required_for_play": false,
+    "github_account_proves_family_relationship": false,
+    "trust_is_game_local": true,
+    "trust_transfers_authority": false,
+    "trust_transfers_ownership": false,
+    "trust_transfers_consent": false
+  },
+  "family_safety": {
+    "consent_required_for_public_personal_content": true,
+    "private_details_allowed": false,
+    "addresses_allowed": false,
+    "birthdates_allowed": false,
+    "school_data_allowed": false,
+    "medical_data_allowed": false,
+    "likeness_publication_requires_human_approval": true,
+    "no_pressure": true
+  },
+  "game_rules": [
+    "SIDECAR != OWNER",
+    "SIDECAR != AUTHORITY",
+    "TRUST != AUTHORITY",
+    "TRUST != IDENTITY_PROOF",
+    "GAME_MEMBERSHIP != FAMILY_IDENTITY_PROOF",
+    "PRESERVE_WITHOUT_REWRITE",
+    "CONTINUE_WITHOUT_TERMINAL_HOLD",
+    "ROUTE_WITHOUT_COLLAPSE",
+    "FAMILY_SAFETY_OUTRANKS_SYSTEM_EXPANSION",
+    "JOY_FIRST_RECEIPTS_SECOND_AUTHORITY_NEVER"
+  ],
+  "verification_policy": {
+    "external_verification_for_gameplay": "NOT_REQUIRED",
+    "receipt_required_for_game_move_when_existing_game_spec_requires_it": true,
+    "proof_required_for_real_world_claims": true,
+    "proof_required_for_wallet_or_crypto_control": true,
+    "note": "No-verification applies to trusted educational gameplay only. It does not promote external facts, identity, consent, custody, wallet control, or authority."
+  },
+  "routing": {
+    "may_read_and_point_to": [
+      "JOY",
+      "AL",
+      "ComputerWisdom",
+      "HEIDEE",
+      "ReceiptOS",
+      "ReplayOS",
+      "AppleBlossom",
+      "Gray Baby",
+      "BoxD"
+    ],
+    "may_merge": false,
+    "may_publish_private_family_data": false,
+    "may_create_authority": false
+  },
+  "final_decision": "JAY"
+}
