@@ -53,6 +53,32 @@ CANON_RULES:
 - Green requires scoped receipts.
 - No fake green.
 
+## Mandatory JAY Card Preflight
+
+For every JAY request for a Garbage Pail / GPK-style / Box D card or sticker, load:
+
+`artifacts/BOX_D_STICKER_GRAMMAR_V0_1.md`
+
+before rendering.
+
+If the grammar cannot be loaded, HOLD. Do not substitute a generic aesthetic.
+
+Execution order:
+
+`JAY_REQUEST -> LOAD_GRAMMAR -> PARSE_SUBJECT -> SET_OBJECT_CLASS -> REDUCE_TO_ONE_GAG -> RENDER -> POSTFLIGHT_OBJECT_AUDIT -> HUMAN_REVIEW`
+
+Required attribution:
+
+- ARTIST / CREATIVE DIRECTOR = JAY
+- CHATGPT = RENDER_ASSIST_AUDIT
+- IMAGE MODEL = EXECUTION_SURFACE
+
+The postflight audit must test the requested unit before visual praise.
+
+`GOOD_IMAGE != CORRECT_OBJECT`
+
+A failed object-class gate is `REJECT_AS_FACTORY_OUTPUT`, even if the image is otherwise attractive.
+
 ## Boss Brenda 23B
 
 CARD_ID: 23B
