@@ -70,5 +70,28 @@
     "tree_patch_pending": true,
     "replay_complete": false
   },
-  "authority": false
+  "authority": false,
+  "family_game_covenant": {
+    "artifact": "docs/games/WISDOM_FAMILY_CREATIVE_COVENANT_V0_1.md",
+    "family_first": true,
+    "full_math_first": true,
+    "ens_before_dns": true,
+    "parent_honor_language": {
+      "mothers_sacred": "FAMILY_HONOR_LANGUAGE",
+      "fathers_godly": "FAMILY_HONOR_LANGUAGE",
+      "literal_divinity": false,
+      "human_worth_scoring": false
+    },
+    "always_on_audit": "EVENT_LOG_AUDIT_ONLY",
+    "hidden_family_surveillance": false,
+    "family_vote_publication_gate": true,
+    "vote_overrides_personal_consent": false,
+    "unattended_render_loop": false,
+    "wisdom_seed": {
+      "transferable": false,
+      "cash_value": false,
+      "wagering": false
+    },
+    "authority": false
+  }
 }
