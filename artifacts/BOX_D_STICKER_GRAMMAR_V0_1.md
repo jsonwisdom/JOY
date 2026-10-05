@@ -101,6 +101,93 @@ SATIRE != FINDING
 
 If the subject is a real public figure, keep the joke visibly satirical and do not add official seals or branding that imply government authorship.
 
+## Named Real-Person Likeness Gate
+
+For a named real person, the factory may not treat the person's name, an article URL, a biography URL, or model memory as sufficient likeness input.
+
+NAME != LIKENESS
+URL != REFERENCE_PIXELS
+ARTICLE_TEXT != FACE_CONDITIONING
+
+If recognizable likeness matters, actual reference pixels for the intended person must be loaded into the render/edit context before generation.
+
+REFERENCE_USE:
+- identity_and_likeness_only: TRUE
+- copy_reference_pose: FALSE
+- copy_reference_background: FALSE
+- copy_reference_composition: FALSE
+
+If actual reference pixels are not loaded:
+
+LIKENESS_GATE = HOLD
+
+A generic face, wrong namesake, or visually ambiguous substitute does not pass.
+
+GENERIC_LIKENESS_SUBSTITUTION = FAIL
+
+## Family-Safe Character Gate
+
+Audience:
+- CHILDREN
+- FAMILIES
+- SCHOOLS
+- PUBLIC_CIVIC_EDUCATION
+
+For children or minors:
+- sexualization: FORBIDDEN
+- cleavage: FORBIDDEN
+- adult_body_proportions: FORBIDDEN
+- flirtatious_pose: FORBIDDEN
+- glamour_makeup: FORBIDDEN
+- fetish_or_pinup_styling: FORBIDDEN
+
+For adult women in family-safe lanes:
+- default_sexualization: FALSE
+- exaggerated_bust: FALSE
+- cleavage_emphasis: FALSE
+- pinup_pose: FALSE
+- beauty_pageant_styling: FALSE
+- role_first: TRUE
+- clothing: FUNCTIONAL_AND_FAMILY_SAFE
+
+For all family-safe characters:
+- dignity: REQUIRED
+- role_readability: REQUIRED
+- family_safe: REQUIRED
+- body_not_the_gag: TRUE
+- gender_not_the_gag: TRUE
+
+Required character-construction order:
+
+ROLE -> FUNCTION -> ACTION -> PROP -> PERSONALITY -> APPEARANCE
+
+Forbidden shortcut:
+
+WOMAN -> GLAMOUR -> BODY -> POSE -> ROLE
+
+Apple Blossom in this lane is:
+
+APPLE_BLOSSOM = CIVIC_AUDITOR_OR_GAME_GUIDE
+
+APPLE_BLOSSOM != PIN_UP
+APPLE_BLOSSOM != INFLUENCER
+APPLE_BLOSSOM != SEXY_MASCOT
+APPLE_BLOSSOM != BEAUTY_AD
+
+If a family-safe lane is requested and this membrane is not applied before rendering:
+
+FAMILY_SAFE_GATE = HOLD
+
+## Current Kennedy Likeness Interval
+
+master: mb49D
+candidate_edit: 2eR4O
+failed_field: LIKENESS
+portrait_pixels_loaded: FALSE
+likeness_gate: HOLD
+disposition: NOT_READY_FOR_JAY_REVIEW
+authority_created: FALSE
+
 ## Attribution
 
 JAY is the artist and creative director.
@@ -111,15 +198,33 @@ TOOL_ASSISTANCE != ARTIST_AUTHORSHIP
 
 ## Mandatory Preflight
 
-Before rendering:
+Before any pixel is generated:
+
 1. Load this grammar.
-2. Parse JAY's requested subject.
-3. Set the requested object class.
-4. Reduce the front to one focal character, one predicament, one primary prop, and one name.
-5. Confirm house branding and prohibit GPK/Topps marks.
-6. Render only after the object boundary passes.
+2. Determine whether the subject is a named real person.
+3. If named real person and likeness matters: load actual reference pixels; otherwise HOLD.
+4. Determine whether the request is in a family / children / women educational lane.
+5. If yes: load the Family-Safe Character Gate; otherwise HOLD.
+6. Parse JAY's requested subject.
+7. Set the requested object class.
+8. Reduce the front to one focal character, one predicament, one primary prop, and one name.
+9. Confirm house branding and prohibit GPK/Topps marks.
+10. Render only after all required gates pass.
 
 If this grammar cannot be loaded, HOLD. Do not substitute a generic "GPK aesthetic."
+
+Execution order:
+
+JAY_REQUEST
+-> LOAD_GRAMMAR
+-> NAMED_PERSON_GATE
+-> FAMILY_SAFE_GATE
+-> PARSE_SUBJECT
+-> SET_OBJECT_CLASS
+-> REDUCE_TO_ONE_GAG
+-> RENDER
+-> POSTFLIGHT_OBJECT_AUDIT
+-> JAY_HUMAN_REVIEW
 
 ## Mandatory Postflight
 
@@ -129,6 +234,8 @@ DID_THE_OUTPUT_PRESERVE_THE_REQUESTED_UNIT?
 
 Then test:
 - subject_match
+- likeness_gate_when_applicable
+- family_safe_gate_when_applicable
 - sticker_card_object_match
 - one_character
 - one_predicament
@@ -149,7 +256,7 @@ The image may still be preserved as a useful art artifact, but it is not counted
 
 If all required gates pass:
 
-DISPOSITION = READY_FOR_HUMAN_REVIEW
+DISPOSITION = READY_FOR_JAY_HUMAN_REVIEW
 
 No automatic publication, mint, promotion, or canonization follows.
 
@@ -159,6 +266,10 @@ GOOD_IMAGE != CORRECT_OBJECT
 SATIRE_MATCH != FORMAT_MATCH
 SUBJECT_MATCH != FACTORY_MATCH
 VISUAL_SUCCESS != REQUEST_SUCCESS
+NAME_MATCH != LIKENESS_MATCH
+URL_PRESENT != REFERENCE_PIXELS_LOADED
+GENERIC_FACE != NAMED_PERSON_PASS
+FAMILY_SAFE_LABEL != FAMILY_SAFE_RENDER
 SIMILAR_PAINTING != TWIN_IDENTITY
 CANDIDATE_EDIT != PIXEL_IDENTITY_PROOF
-READY_FOR_HUMAN_REVIEW != PUBLICATION_APPROVED
+READY_FOR_JAY_HUMAN_REVIEW != PUBLICATION_APPROVED
