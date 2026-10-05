@@ -21,3 +21,23 @@ IDENTITY / ROLE / JURISDICTION -> RECEIPT -> TIME -> COMPARE -> OVERSIGHT_ROUTE 
 The family is the human root for family artifacts. Citizen Root is a public reasoning boundary, not a claim that the family governs citizens.
 
 AUTHORITY_CREATED = FALSE
+
+## Public Civic Arts Bridge
+
+A public civic helper may use official-source retrieval, receipts, temporal comparison, satire, parody, cards, movies, music, comics, and games to explain government information.
+
+`AMERICA_GOV = OFFICIAL_SOURCE_GATEWAY`
+`AMERICA_GOV != AGENCY_OF_RECORD`
+`OFFICIAL_SOURCE != UNIVERSAL_TRUTH_ORACLE`
+`CIA_PUBLIC_SOURCE != SECRET_FILTER`
+
+An American citizen abroad may be a helpful civic explainer or informal civic-ambassador metaphor, but citizenship alone does not create diplomatic status.
+
+`AMERICAN_CITIZEN_ABROAD != U.S._DIPLOMAT`
+`HELPER != OFFICIAL_REPRESENTATIVE`
+
+Art may carry the lesson without carrying governmental authority.
+
+`SATIRE != OFFICIAL_POSITION`
+`PARODY != DIPLOMATIC_COMMUNICATION`
+`ART != FINDING`
