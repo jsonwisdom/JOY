@@ -53,6 +53,47 @@ CANON_RULES:
 - Green requires scoped receipts.
 - No fake green.
 
+## Mandatory JAY Card Preflight
+
+For every JAY request for a Garbage Pail / GPK-style / Box D card or sticker, load:
+
+`artifacts/BOX_D_STICKER_GRAMMAR_V0_1.md`
+
+before rendering.
+
+If the grammar cannot be loaded, HOLD. Do not substitute a generic aesthetic.
+
+Hard pre-render gates:
+
+1. NAMED PERSON?
+   - If likeness matters, actual reference pixels must be loaded.
+   - Name, URL, article text, or model memory are not enough.
+   - Missing reference pixels -> HOLD.
+
+2. FAMILY / CHILDREN / WOMEN EDUCATIONAL LANE?
+   - Apply JAY_FAMILY_SAFE_CHARACTER_STANDARD before generation.
+   - Missing family-safe membrane -> HOLD.
+
+3. THEN continue to object parsing and sticker grammar.
+
+Execution order:
+
+`JAY_REQUEST -> LOAD_GRAMMAR -> NAMED_PERSON_GATE -> FAMILY_SAFE_GATE -> PARSE_SUBJECT -> SET_OBJECT_CLASS -> REDUCE_TO_ONE_GAG -> RENDER -> POSTFLIGHT_OBJECT_AUDIT -> JAY_HUMAN_REVIEW`
+
+Required attribution:
+
+- ARTIST / CREATIVE DIRECTOR = JAY
+- CHATGPT = RENDER_ASSIST_AUDIT
+- IMAGE MODEL = EXECUTION_SURFACE
+
+The postflight audit must test likeness and family-safe gates when applicable before visual praise.
+
+`GOOD_IMAGE != CORRECT_OBJECT`
+`NAME_MATCH != LIKENESS_MATCH`
+`FAMILY_SAFE_LABEL != FAMILY_SAFE_RENDER`
+
+A failed required gate is `REJECT_AS_FACTORY_OUTPUT`, even if the image is otherwise attractive.
+
 ## Boss Brenda 23B
 
 CARD_ID: 23B
