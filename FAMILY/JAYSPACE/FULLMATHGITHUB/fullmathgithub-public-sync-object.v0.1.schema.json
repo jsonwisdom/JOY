@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "FULLMATHGITHUB_PUBLIC_SYNC_OBJECT_V0_1",
+  "title": "FULLMATHGITHUB Public Sync Object V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "object_id",
+    "source",
+    "state",
+    "authority_created",
+    "identity_join",
+    "promotion"
+  ],
+  "properties": {
+    "schema": {
+      "const": "FULLMATHGITHUB_PUBLIC_SYNC_OBJECT_V0_1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose_hint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "system"
+      ],
+      "properties": {
+        "system": {
+          "type": "string"
+        },
+        "repo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "author_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "committer_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "state": {
+      "enum": [
+        "DISCOVERED",
+        "SOURCE_BOUND",
+        "HASHED",
+        "NORMALIZED",
+        "RECEIPT_BOUND",
+        "BUILT",
+        "HTTP_200",
+        "PUBLIC_HASH_BOUND",
+        "HUMAN_CONFIRMED",
+        "HOLD"
+      ]
+    },
+    "holds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "public": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "http_status": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "required_marker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "privacy_check": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "human_visual_confirm": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "authority_created": {
+      "const": false
+    },
+    "identity_join": {
+      "const": false
+    },
+    "promotion": {
+      "enum": [
+        "none",
+        "candidate",
+        "human_approved"
+      ]
+    }
+  }
+}
