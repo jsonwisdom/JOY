@@ -1,0 +1,31 @@
+{
+  "schema": "SCHOOL_OF_WISDOM_CENTER_OBJECT_V0_2",
+  "object_id": "SOW_CENTER",
+  "purpose": "Teaching Machine center object compressed by query-driven audits",
+  "status": "WORK_IN_PROGRESS",
+  "school_standard": "NOT_PASSED_GLOBAL",
+  "authority_created": false,
+  "no_fake_green": true,
+  "fields": {
+    "claim_precision": "REQUIRED",
+    "source_binding": "REQUIRED",
+    "evidence_class_separation": "REQUIRED",
+    "execution_proof": "REQUIRED_WHEN_CLAIMED",
+    "timestamp_typing": "REQUIRED",
+    "public_route_replay": "REQUIRED_WHEN_PUBLIC",
+    "human_review": "REQUIRED_FOR_PROMOTION"
+  },
+  "invariants": [
+    "PAGE_EXISTS != SCHOOL_PASSED",
+    "WORKFLOW_EXISTS != WORKFLOW_EXECUTED",
+    "PASS_SCOPED != GLOBAL_PASS",
+    "HASH_MATCH != TRUTH",
+    "AUTOFIX != AUTHORITY"
+  ],
+  "compression": {
+    "model": "QUERY_PRESSURE",
+    "snap_semantics": "SNAP means one or more center-object invariants cannot survive the current query set. The object is not deleted; the failed dimensions become explicit repair work.",
+    "snap_threshold": "ANY_FAILED_CRITICAL_QUERY",
+    "destructive_behavior": false
+  }
+}
