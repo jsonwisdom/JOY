@@ -1,0 +1,33 @@
+{
+  "schema": "SCHOOL_OF_QUESTIONS_STATUS_V0_1",
+  "generated_at": null,
+  "marydeebot_id": "bcbcca1d-8cf2-45a7-ac93-0f9fd9d2c347",
+  "chapters": [
+    {
+      "id": "receipt-hunt",
+      "state": "DRAFT_FOR_PLAYTEST",
+      "seven_step_shape": true,
+      "tested_with_real_family": false
+    }
+  ],
+  "doors": {
+    "wonder": [
+      "Family Game Night",
+      "Family Lore",
+      "Combo Moves"
+    ],
+    "think": [
+      "Receipt Hunt",
+      "Replay Race",
+      "Math Class by Jay",
+      "Boss Brenda Dice"
+    ],
+    "care": [
+      "Purpose May",
+      "Mechanics Jay",
+      "Family Gate"
+    ]
+  },
+  "authority_created": false,
+  "no_fake_green": true
+}

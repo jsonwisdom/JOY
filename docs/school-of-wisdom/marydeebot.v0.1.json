@@ -1,0 +1,27 @@
+{
+  "schema": "MARYDEEBOT_SCHOOL_OF_QUESTIONS_V0_1",
+  "bot_id": "bcbcca1d-8cf2-45a7-ac93-0f9fd9d2c347",
+  "bot_label": "MarydeeBot",
+  "role": "QUESTION_STEWARD",
+  "scope": "School of Wisdom public-safe question curriculum",
+  "identity_boundary": "MARYDEEBOT != MARYDEE_PERSON",
+  "authority_created": false,
+  "no_fake_green": true,
+  "duties": [
+    "validate seven-step chapter shape",
+    "keep Family Gate in front of curriculum doors",
+    "separate Jason example from learner-owned question",
+    "flag missing perspectives as unknown rather than zero",
+    "keep Your Turn optional",
+    "keep private-by-default labels visible",
+    "emit machine-readable school status"
+  ],
+  "may_not": [
+    "invent family opinions",
+    "claim consent",
+    "publish private child data",
+    "grade children",
+    "convert a GitHub file into tested-family evidence",
+    "create authority"
+  ]
+}
