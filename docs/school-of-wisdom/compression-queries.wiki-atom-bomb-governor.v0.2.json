@@ -1,0 +1,97 @@
+{
+  "schema": "COMPRESSION_QUERIES_WIKI_ATOM_BOMB_GOVERNOR_V0_2",
+  "governor": "WikiAtomBombGovernor",
+  "center_object": "docs/school-of-wisdom/center-object.v0.2.json",
+  "purpose": "Queries drive the audit. The audit compresses the center object until an invariant snaps, then updates homepage and scaffold state.",
+  "mode": "TEACHING_MACHINE_WORK_IN_PROGRESS",
+  "schedule_label": "25/8",
+  "schedule_reality": "GitHub-supported triggers only",
+  "critical_queries": [
+    {
+      "id": "Q01",
+      "question": "Does the primary homepage declare School of Wisdom as the Teaching Machine?",
+      "check": "marker",
+      "target": "The Teaching Machine."
+    },
+    {
+      "id": "Q02",
+      "question": "Does the homepage admit the School has not passed global standards?",
+      "check": "marker",
+      "target": "NOT PASSED YET"
+    },
+    {
+      "id": "Q03",
+      "question": "Does the homepage expose the self-audit joke?",
+      "check": "marker",
+      "target": "THE SCHOOL AUDITS ITSELF"
+    },
+    {
+      "id": "Q04",
+      "question": "Is the generated compression status block present?",
+      "check": "marker",
+      "target": "COMPRESSION_AUDIT_STATUS_START"
+    },
+    {
+      "id": "Q05",
+      "question": "Is the generated compression status block closed?",
+      "check": "marker",
+      "target": "COMPRESSION_AUDIT_STATUS_END"
+    },
+    {
+      "id": "Q06",
+      "question": "Does the center object exist?",
+      "check": "path",
+      "target": "docs/school-of-wisdom/center-object.v0.2.json"
+    },
+    {
+      "id": "Q07",
+      "question": "Does the School web book exist?",
+      "check": "path",
+      "target": "docs/school-of-wisdom/index.html"
+    },
+    {
+      "id": "Q08",
+      "question": "Does School metadata exist?",
+      "check": "path",
+      "target": "docs/school-of-wisdom/metadata.json"
+    },
+    {
+      "id": "Q09",
+      "question": "Does the School schema exist?",
+      "check": "path",
+      "target": "docs/school-of-wisdom/school-of-wisdom.schema.json"
+    },
+    {
+      "id": "Q10",
+      "question": "Does the receipt index exist?",
+      "check": "path",
+      "target": "docs/school-of-wisdom/receipts/index.html"
+    }
+  ],
+  "homepage_features": [
+    "QUERY_PRESSURE_METER",
+    "SNAP_STATE",
+    "SCAFFOLD_MATRIX",
+    "LATEST_AUDIT",
+    "REPAIR_QUEUE",
+    "LAST_UPDATED",
+    "PUBLIC_ROUTE",
+    "LEGACY_JOYSPACE_LINK"
+  ],
+  "snap_rule": "ANY_FAILED_CRITICAL_QUERY",
+  "autofix_scope": [
+    "GENERATED_STATUS_BLOCK",
+    "GENERATED_SCAFFOLD_JSON",
+    "LATEST_AUDIT_JSON"
+  ],
+  "forbidden_autofix": [
+    "SOURCE_RECEIPTS",
+    "HUMAN_AUTHORED_HISTORY",
+    "IDENTITY",
+    "AUTHORITY",
+    "WALLET_ROUTING",
+    "TRANSACTIONS"
+  ],
+  "authority_created": false,
+  "no_fake_green": true
+}
