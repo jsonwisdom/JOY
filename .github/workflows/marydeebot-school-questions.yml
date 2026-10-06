@@ -1,0 +1,66 @@
+name: MarydeeBot — School of Questions
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "docs/school-of-wisdom/questions/**"
+      - "docs/school-of-wisdom/marydeebot.v0.1.json"
+      - "scripts/marydeebot_school_questions.py"
+      - ".github/workflows/marydeebot-school-questions.yml"
+  pull_request:
+    paths:
+      - "docs/school-of-wisdom/questions/**"
+      - "docs/school-of-wisdom/marydeebot.v0.1.json"
+      - "scripts/marydeebot_school_questions.py"
+      - ".github/workflows/marydeebot-school-questions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marydeebot-school-of-questions
+  cancel-in-progress: false
+
+jobs:
+  question-steward:
+    runs-on: ubuntu-latest
+    env:
+      MARYDEEBOT_ID: bcbcca1d-8cf2-45a7-ac93-0f9fd9d2c347
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate seven-step question chapters
+        id: validate
+        continue-on-error: true
+        run: python scripts/marydeebot_school_questions.py
+
+      - name: Show MarydeeBot status
+        run: cat docs/school-of-wisdom/questions/status.latest.json
+
+      - name: Commit bounded generated status
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "$(git status --porcelain -- docs/school-of-wisdom/questions/status.latest.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/school-of-wisdom/questions/status.latest.json
+            git commit -m "MarydeeBot: refresh School of Questions status"
+            git push
+          else
+            echo "No MarydeeBot status change."
+          fi
+
+      - name: Hold on failed question guardrails
+        if: steps.validate.outcome != 'success'
+        run: |
+          echo "MarydeeBot found a School of Questions guardrail failure."
+          echo "No fake green."
+          exit 1
