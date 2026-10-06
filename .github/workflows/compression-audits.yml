@@ -65,3 +65,29 @@ jobs:
           echo "Compression audit did not pass all scoped checks."
           echo "School remains NOT_PASSED_GLOBAL."
           exit 1
+
+      - name: Verify live E2E HTTP 200
+        run: |
+          set -euo pipefail
+          ROOT_URL="https://jsonwisdom.github.io/JOY/"
+          SCHOOL_URL="https://jsonwisdom.github.io/JOY/school-of-wisdom/"
+
+          check_200() {
+            url="$1"
+            body="$2"
+            for attempt in $(seq 1 40); do
+              code="$(curl -L -sS -o "$body" -w '%{http_code}' "$url" || true)"
+              echo "$url -> HTTP $code (attempt $attempt)"
+              if [ "$code" = "200" ]; then
+                return 0
+              fi
+              sleep 5
+            done
+            echo "HTTP 200 not observed for $url"
+            return 1
+          }
+
+          check_200 "$ROOT_URL" /tmp/joy-root.html
+          check_200 "$SCHOOL_URL" /tmp/school-of-wisdom.html
+          grep -Fq "Jaywisdom.eth School of Wisdom" /tmp/school-of-wisdom.html
+          echo "E2E_OK=HTTP_200_ROOT+HTTP_200_SCHOOL+SCHOOL_MARKER"
