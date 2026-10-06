@@ -2,11 +2,62 @@
   "schema": "COMPRESSION_AUDIT_V0_1",
   "governor": "WikiAtomBombGovernor",
   "query_source": "docs/school-of-wisdom/compression-queries.wiki-atom-bomb-governor.v0.1.json",
-  "run_at": "2026-10-06T00:00:00Z",
-  "result": "SEE_WORKFLOW_RUN",
+  "run_at": "2026-10-06T03:00:58.022032+00:00",
+  "homepage_sha256": "bee5802099432b32506c96429bdfd82cf10f5d5c007bd50734c6ff53778321e8",
+  "checks": [
+    {
+      "type": "marker",
+      "target": "The Teaching Machine.",
+      "pass": true
+    },
+    {
+      "type": "marker",
+      "target": "NOT PASSED YET",
+      "pass": true
+    },
+    {
+      "type": "marker",
+      "target": "THE SCHOOL AUDITS ITSELF",
+      "pass": true
+    },
+    {
+      "type": "marker",
+      "target": "COMPRESSION_AUDIT_STATUS_START",
+      "pass": true
+    },
+    {
+      "type": "marker",
+      "target": "COMPRESSION_AUDIT_STATUS_END",
+      "pass": true
+    },
+    {
+      "type": "path",
+      "target": "docs/school-of-wisdom/index.html",
+      "pass": true,
+      "sha256": "e390537d75fcdbdd728ae7831ff5cb1b7dff437173790495e109c701cd32bca9"
+    },
+    {
+      "type": "path",
+      "target": "docs/school-of-wisdom/metadata.json",
+      "pass": true,
+      "sha256": "815391b8a0e22082af01f20d64ae4cdc8ee3c65c7552b31373b2656ff4b92a55"
+    },
+    {
+      "type": "path",
+      "target": "docs/school-of-wisdom/school-of-wisdom.schema.json",
+      "pass": true,
+      "sha256": "0e511cb07e48932663774f9c2c99bf1cb97c47c36b1b3ce989b33399b7c2abbb"
+    },
+    {
+      "type": "path",
+      "target": "docs/school-of-wisdom/receipts/index.html",
+      "pass": true,
+      "sha256": "2cbd3f2220ba72eed4762fa1d2742b40e84e36db8cf2e15c3ef1de5ef33a1ebb"
+    }
+  ],
+  "result": "PASS_SCOPED",
   "school_standard": "NOT_PASSED_GLOBAL",
   "authority_created": false,
   "no_fake_green": true,
-  "autofix_scope": "GENERATED_STATUS_BLOCK_ONLY",
-  "note": "Seed receipt. Workflow-generated receipt replaces this after first main-branch CompressionAudits run."
+  "autofix_scope": "GENERATED_STATUS_BLOCK_ONLY"
 }
