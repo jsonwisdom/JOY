@@ -1,0 +1,66 @@
+name: CompressionAudits — School of Wisdom
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "index.html"
+      - "docs/school-of-wisdom/**"
+      - "scripts/compression_audits.py"
+      - ".github/workflows/compression-audits.yml"
+  pull_request:
+    paths:
+      - "index.html"
+      - "docs/school-of-wisdom/**"
+      - "scripts/compression_audits.py"
+      - ".github/workflows/compression-audits.yml"
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compression-audits-school-of-wisdom
+  cancel-in-progress: false
+
+jobs:
+  compression-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run CompressionQueries through WikiAtomBombGovernor
+        id: audit
+        continue-on-error: true
+        run: python scripts/compression_audits.py
+
+      - name: Show audit receipt
+        run: cat docs/school-of-wisdom/compression-audit.latest.json
+
+      - name: AutoFix bounded generated status block
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "$(git status --porcelain -- index.html docs/school-of-wisdom/compression-audit.latest.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html docs/school-of-wisdom/compression-audit.latest.json
+            git commit -m "CompressionAudits: refresh School of Wisdom homepage status"
+            git push
+          else
+            echo "No bounded autofix changes."
+          fi
+
+      - name: Enforce no fake green
+        if: steps.audit.outcome != 'success'
+        run: |
+          echo "Compression audit did not pass all scoped checks."
+          echo "School remains NOT_PASSED_GLOBAL."
+          exit 1

@@ -1,0 +1,29 @@
+{
+  "schema": "COMPRESSION_QUERIES_WIKI_ATOM_BOMB_GOVERNOR_V0_1",
+  "governor": "WikiAtomBombGovernor",
+  "purpose": "Bounded homepage compression audit for School of Wisdom",
+  "mode": "TEACHING_MACHINE_WORK_IN_PROGRESS",
+  "schedule_label": "25/8",
+  "schedule_reality": "GitHub-supported triggers only; no fictional 25th hour or 8th day",
+  "required_homepage_markers": [
+    "The Teaching Machine.",
+    "NOT PASSED YET",
+    "THE SCHOOL AUDITS ITSELF",
+    "COMPRESSION_AUDIT_STATUS_START",
+    "COMPRESSION_AUDIT_STATUS_END"
+  ],
+  "required_paths": [
+    "docs/school-of-wisdom/index.html",
+    "docs/school-of-wisdom/metadata.json",
+    "docs/school-of-wisdom/school-of-wisdom.schema.json",
+    "docs/school-of-wisdom/receipts/index.html"
+  ],
+  "invariants": [
+    "PAGE_EXISTS != SCHOOL_PASSED",
+    "WORKFLOW_EXISTS != WORKFLOW_EXECUTED",
+    "AUDIT_RAN != ALL_CLAIMS_TRUE",
+    "AUTOFIX != AUTHORITY"
+  ],
+  "authority_created": false,
+  "no_fake_green": true
+}

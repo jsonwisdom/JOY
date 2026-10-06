@@ -1,0 +1,12 @@
+{
+  "schema": "COMPRESSION_AUDIT_V0_1",
+  "governor": "WikiAtomBombGovernor",
+  "query_source": "docs/school-of-wisdom/compression-queries.wiki-atom-bomb-governor.v0.1.json",
+  "run_at": "2026-10-06T00:00:00Z",
+  "result": "SEE_WORKFLOW_RUN",
+  "school_standard": "NOT_PASSED_GLOBAL",
+  "authority_created": false,
+  "no_fake_green": true,
+  "autofix_scope": "GENERATED_STATUS_BLOCK_ONLY",
+  "note": "Seed receipt. Workflow-generated receipt replaces this after first main-branch CompressionAudits run."
+}
