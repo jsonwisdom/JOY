@@ -1,12 +1,24 @@
 {
   "schema": "SCHOOL_OF_WISDOM_HOMEPAGE_SCAFFOLD_V0_2",
-  "generated_at": null,
+  "generated_at": "2026-10-06T03:04:56.864314+00:00",
   "center_object": "SOW_CENTER",
-  "compression_state": "PENDING",
-  "snap_state": "PENDING",
-  "passed_queries": 0,
+  "center_object_sha256": "fa91439e45fa1e5043be6b547bf77b5942e21ece489b727e7ae6e4475e92c406",
+  "compression_state": "COMPRESSED_STABLE",
+  "snap_state": "NOT_SNAPPED",
+  "query_pressure_percent": 100.0,
+  "passed_queries": 10,
   "total_queries": 10,
   "repair_queue": [],
+  "homepage_features": [
+    "QUERY_PRESSURE_METER",
+    "SNAP_STATE",
+    "SCAFFOLD_MATRIX",
+    "LATEST_AUDIT",
+    "REPAIR_QUEUE",
+    "LAST_UPDATED",
+    "PUBLIC_ROUTE",
+    "LEGACY_JOYSPACE_LINK"
+  ],
   "sections": [
     "hero",
     "freshness",
@@ -17,5 +29,6 @@
     "scaffold-matrix",
     "repair-queue"
   ],
-  "authority_created": false
+  "authority_created": false,
+  "no_fake_green": true
 }
