@@ -1,33 +1,26 @@
 {
   "schema": "SCHOOL_OF_QUESTIONS_STATUS_V0_1",
-  "generated_at": null,
+  "generated_at": "2026-10-06T03:14:19.805120+00:00",
   "marydeebot_id": "bcbcca1d-8cf2-45a7-ac93-0f9fd9d2c347",
+  "bot_label": "MarydeeBot",
+  "role": "QUESTION_STEWARD",
+  "chapters_checked": 1,
   "chapters": [
     {
-      "id": "receipt-hunt",
-      "state": "DRAFT_FOR_PLAYTEST",
+      "chapter": "docs/school-of-wisdom/questions/receipt-hunt.v0.1.md",
       "seven_step_shape": true,
-      "tested_with_real_family": false
+      "missing_sections": [],
+      "guardrails": {
+        "authority_false": true,
+        "no_fake_green": true,
+        "optional_your_turn": true,
+        "tested_boundary": true
+      },
+      "pass": true
     }
   ],
-  "doors": {
-    "wonder": [
-      "Family Game Night",
-      "Family Lore",
-      "Combo Moves"
-    ],
-    "think": [
-      "Receipt Hunt",
-      "Replay Race",
-      "Math Class by Jay",
-      "Boss Brenda Dice"
-    ],
-    "care": [
-      "Purpose May",
-      "Mechanics Jay",
-      "Family Gate"
-    ]
-  },
+  "result": "PASS_SCOPED",
+  "tested_with_real_family": false,
   "authority_created": false,
   "no_fake_green": true
 }
