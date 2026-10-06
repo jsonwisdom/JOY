@@ -16,7 +16,7 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0}.card{min-height:170px}.card p{color:var(--muted);line-height:1.55}
     .button{display:inline-block;border:1px solid var(--green);border-radius:999px;padding:10px 14px;font-weight:900;margin:6px 8px 0 0}.button.primary{background:var(--green);color:#07100d}
     .joke{background:#231f0d;border-color:#66591a}.machine{background:#0a1411}.rule{font-family:ui-monospace,monospace;background:#030706;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto}
-    .audit{margin-top:18px}.audit-state{color:var(--yellow)}footer{margin-top:28px;color:var(--muted);font-size:.84rem}
+    .audit{margin-top:18px}.audit-state{color:var(--yellow)}.feature-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}.feature-strip>div{background:#0b1512;border:1px solid var(--line);padding:14px;border-radius:12px}.feature-strip span{display:block;color:var(--muted);font-size:.76rem;margin-bottom:5px}.pressure-track{height:12px;background:#020504;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:12px 0}.pressure-track span{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--yellow));min-width:2px}.repair-list{padding-left:1.2rem;color:var(--muted)}.matrix-table{width:100%;border-collapse:collapse;margin-top:12px}.matrix-table th,.matrix-table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.matrix-table th{color:var(--yellow)}.live-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(85,241,140,.7);margin-right:6px}.small{font-size:.84rem;color:var(--muted)}footer{margin-top:28px;color:var(--muted);font-size:.84rem}
   </style>
 </head>
 <body>
@@ -31,11 +31,26 @@
       <div><span>Why?</span><strong>WORK IN PROGRESS</strong></div>
       <div><span>The Joke</span><strong>THE SCHOOL AUDITS ITSELF</strong></div>
       <div><span>Authority</span><strong>FALSE</strong></div>
+      <div><span>Last Updated</span><strong>2026-10-06</strong></div>
+      <div><span>Primary Engine</span><strong><span class="live-dot"></span>CompressionAudits</strong></div>
     </div>
 
     <a class="button primary" href="docs/school-of-wisdom/">Enter School</a>
     <a class="button" href="docs/school-of-wisdom/receipts/">Receipts</a>
     <a class="button" href="joyspace/joyspace-depth-index.html">Legacy JoySpace Depth</a>
+  </section>
+
+  <section class="card machine">
+    <p class="eyebrow">QUERY-DRIVEN CENTER</p>
+    <h2>The Queries drive the Audit.</h2>
+    <p>The Audit compresses the School center object against critical questions. If any critical invariant fails, the center object <strong>SNAPS</strong>: nothing is deleted, the failed dimension becomes explicit repair work, and the homepage plus scaffold update to show it.</p>
+    <div class="rule">CompressionQueries → WikiAtomBombGovernor → CompressionAudit → CENTER OBJECT → SNAP? → SCAFFOLD UPDATE → HOMEPAGE UPDATE</div>
+    <div class="feature-strip">
+      <div><span>Center Object</span><strong>SOW_CENTER</strong></div>
+      <div><span>Snap Rule</span><strong>ANY FAILED CRITICAL QUERY</strong></div>
+      <div><span>Destructive?</span><strong>NO</strong></div>
+      <div><span>Repair Queue</span><strong>GENERATED</strong></div>
+    </div>
   </section>
 
   <section class="grid">
@@ -69,7 +84,33 @@ AUTOFIX != AUTHORITY</div>
       <p><strong>AutoFix scope:</strong> GENERATED STATUS BLOCK ONLY</p>
     </div>
     <!-- COMPRESSION_AUDIT_STATUS_END -->
-    <p><a class="button" href="docs/school-of-wisdom/compression-audit.latest.json">Open latest audit JSON</a></p>
+    <p><a class="button" href="docs/school-of-wisdom/compression-audit.latest.json">Open latest audit JSON</a><a class="button" href="docs/school-of-wisdom/homepage-scaffold.latest.json">Open live scaffold</a><a class="button" href="docs/school-of-wisdom/center-object.v0.2.json">Open center object</a></p>
+  </section>
+
+  <section class="card">
+    <p class="eyebrow">SCAFFOLD MATRIX</p>
+    <h2>What the homepage is supposed to teach.</h2>
+    <table class="matrix-table">
+      <thead><tr><th>Feature</th><th>Function</th><th>Audit behavior</th></tr></thead>
+      <tbody>
+        <tr><td>Query Pressure</td><td>Shows how many critical queries survive.</td><td>Generated from CompressionQueries.</td></tr>
+        <tr><td>Snap State</td><td>Shows when a critical invariant fails.</td><td>Opens repair queue; does not erase history.</td></tr>
+        <tr><td>Repair Queue</td><td>Names exactly what failed.</td><td>Generated, bounded, replayable.</td></tr>
+        <tr><td>Latest Audit</td><td>Machine-readable receipt of the run.</td><td>Timestamped JSON.</td></tr>
+        <tr><td>Center Object</td><td>The object being compressed.</td><td>Read-only input to the audit.</td></tr>
+        <tr><td>School Standard</td><td>Remains broader than one scoped audit.</td><td>PASS_SCOPED != SCHOOL_PASSED.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <p class="eyebrow">PUBLIC GAME LOOP</p>
+    <h2>Use it → challenge it → break it → teach it.</h2>
+    <p>Every useful mistake becomes a lesson candidate. The public can enter the School, inspect receipts, follow the scaffold, and see whether the Teaching Machine survived its latest query set.</p>
+    <a class="button primary" href="docs/school-of-wisdom/">Enter School</a>
+    <a class="button" href="docs/school-of-wisdom/receipts/">Inspect Receipts</a>
+    <a class="button" href="docs/school-of-wisdom/homepage-scaffold.latest.json">Inspect Scaffold</a>
+    <p class="small">The homepage is a teaching surface. The source files and receipts remain the evidence rails.</p>
   </section>
 
   <footer>School of Wisdom · Teaching Machine · No Fake Green · HUMAN PURPOSE → MACHINE AUDIT → HUMAN REVIEW</footer>
