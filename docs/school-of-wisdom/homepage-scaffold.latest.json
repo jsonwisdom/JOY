@@ -1,0 +1,21 @@
+{
+  "schema": "SCHOOL_OF_WISDOM_HOMEPAGE_SCAFFOLD_V0_2",
+  "generated_at": null,
+  "center_object": "SOW_CENTER",
+  "compression_state": "PENDING",
+  "snap_state": "PENDING",
+  "passed_queries": 0,
+  "total_queries": 10,
+  "repair_queue": [],
+  "sections": [
+    "hero",
+    "freshness",
+    "query-pressure",
+    "claim-proof-play-repair",
+    "school-standard-joke",
+    "compression-audit",
+    "scaffold-matrix",
+    "repair-queue"
+  ],
+  "authority_created": false
+}
