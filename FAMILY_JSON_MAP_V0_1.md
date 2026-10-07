@@ -75,3 +75,28 @@ It is a family-facing map for memory, care, approval, creativity, and replay.
   ],
   "promotion_rule": "This artifact cannot be promoted beyond FAMILY_RECON_READY until Mrs. Wisdom approval is recorded as a separate receipt."
 }
+
+---
+
+## Wisdom Family Creative Covenant V0.1
+
+Canonical family-game doctrine: `docs/games/WISDOM_FAMILY_CREATIVE_COVENANT_V0_1.md`
+
+Core invariants:
+
+- FAMILY_FIRST
+- FULL_MATH_FIRST
+- ENS_BEFORE_DNS
+- HUMAN_FEEDBACK_BETWEEN_RENDERS = REQUIRED
+- NO_VOTE_CAN_OVERRIDE_PERSONAL_CONSENT
+- ALWAYS_ON_AUDIT = EVENT_LOG_AUDIT
+- ALWAYS_ON_AUDIT != FAMILY_SURVEILLANCE
+- WISDOM_SEED = NON_TRANSFERABLE_REPUTATION_POINT
+- POINTS != MONEY
+- FANS != INVESTORS
+- HUMAN_FINAL_DECISION
+- AUTHORITY_CREATED = FALSE
+
+Family vote may gate publication, but cannot override an individual's refusal.
+Parent / guardian approval remains required where applicable.
+Sacred / godly parent language is family honor language; conduct claims remain receipt-bound.

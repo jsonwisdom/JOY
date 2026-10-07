@@ -46,6 +46,19 @@
       "IPFS": "PENDING_REAL_CID",
       "Zora": "PENDING_PUBLIC_RECEIPT",
       "Base": "PENDING_PUBLIC_TRANSACTION"
+    },
+    "wisdom_family_game": {
+      "artifact": "docs/games/WISDOM_FAMILY_CREATIVE_COVENANT_V0_1.md",
+      "state": "CANDIDATE_FAMILY_GAME_DOCTRINE",
+      "publication": "HUMAN_GATED",
+      "parent_child_feedback_required": true,
+      "always_on_audit": "EVENT_LOG_AUDIT_ONLY",
+      "hidden_surveillance": false,
+      "family_vote_required_when_configured": true,
+      "vote_overrides_personal_consent": false,
+      "token": "WISDOM_SEED_NON_TRANSFERABLE_REPUTATION",
+      "real_money_prediction_market": false,
+      "authority": false
     }
   },
   "verification": {
