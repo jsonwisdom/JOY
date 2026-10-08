@@ -3,7 +3,7 @@
   "governor": "WikiAtomBombGovernor",
   "center_object": "docs/school-of-wisdom/center-object.v0.2.json",
   "query_source": "docs/school-of-wisdom/compression-queries.wiki-atom-bomb-governor.v0.2.json",
-  "run_at": "2026-10-08T16:26:28.070436+00:00",
+  "run_at": "2026-10-08T22:03:05.179640+00:00",
   "homepage_sha256_before": "636218081b77482349fd7461352ae2e3f2714511fb771314f94225eef2f0c4c1",
   "center_object_sha256": "fa91439e45fa1e5043be6b547bf77b5942e21ece489b727e7ae6e4475e92c406",
   "queries_total": 10,
