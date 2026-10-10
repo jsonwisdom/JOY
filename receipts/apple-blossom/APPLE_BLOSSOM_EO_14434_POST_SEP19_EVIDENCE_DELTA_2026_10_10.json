@@ -1,0 +1,142 @@
+{
+  "object_id": "APPLE_BLOSSOM_EO_14434_POST_SEP19_EVIDENCE_DELTA_2026_10_10",
+  "schema_version": "0.1",
+  "as_of": "2026-10-10",
+  "parent_objects": [
+    "APPLE_BLOSSOM_AI_NAMING_AUDIT_V0_1",
+    "SUPERINTELLIGENCE_TAXONOMY_COLLISION_V0_1"
+  ],
+  "scope": "APPEND_ONLY_DRAFT_BRANCH",
+  "original_snapshot_modified": false,
+  "source_roots": [
+    {
+      "id": "WHITE_HOUSE_EO_14434",
+      "type": "PRIMARY_EXECUTIVE_ORDER",
+      "date": "2026-09-29",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+      "claim_scope": [
+        "eo_number",
+        "agency_naming_instruction",
+        "preserved_old_documents",
+        "statutory_definition_reference",
+        "legislative_proposal_60_days"
+      ]
+    },
+    {
+      "id": "FEDERAL_REGISTER_EO_14434",
+      "type": "PRIMARY_PUBLICATION_COPY_SAME_INSTRUMENT_ROOT",
+      "publication_date": "2026-10-02",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/eo-14434.pdf",
+      "document_number": "2026-20321",
+      "independent_event_root": false
+    },
+    {
+      "id": "CONGRESS_GOODEN_2026_10_09",
+      "type": "PRIMARY_CONGRESSIONAL_STATEMENT_ONLY",
+      "date": "2026-10-09",
+      "url": "https://gooden.house.gov/press-releases?ID=75086BA0-0C2E-46AC-915E-E710077AE939",
+      "claim_scope": [
+        "gooden_office_describes_clayton_as_force_leader"
+      ],
+      "proves_formal_force_charter": false
+    },
+    {
+      "id": "REUTERS_2026_10_08_FORCE",
+      "type": "SECONDARY_NEWS_REPORT",
+      "date": "2026-10-08",
+      "url": "https://www.reuters.com/world/trump-ai-task-force-leaders-meet-thursday-vice-chair-says-2026-10-08/",
+      "proves_formal_force_charter": false
+    }
+  ],
+  "claims": [
+    {
+      "field": "eo_14434_exists",
+      "status": "PRIMARY_SOURCE_VERIFIED",
+      "value": true
+    },
+    {
+      "field": "eo_order_date",
+      "status": "PRIMARY_SOURCE_VERIFIED",
+      "value": "2026-09-29"
+    },
+    {
+      "field": "federal_communication_term",
+      "status": "PRIMARY_SOURCE_VERIFIED",
+      "value": "Super Intelligence / SI",
+      "scope": "executive_communications_nonstatutory_to_extent_permitted_by_law"
+    },
+    {
+      "field": "existing_historical_records_alteration_required",
+      "status": "PRIMARY_SOURCE_VERIFIED",
+      "value": false
+    },
+    {
+      "field": "eo_current_definition",
+      "status": "PRIMARY_SOURCE_VERIFIED",
+      "value": "existing 15 USC 9401(3) AI definition, unless otherwise provided by law"
+    },
+    {
+      "field": "new_statutory_federal_SI_definition_enacted",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "field": "model_capability_upgrade",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "field": "force_existence_reported",
+      "status": "REPORTED_WITH_CONGRESSIONAL_PRIMARY_STATEMENT"
+    },
+    {
+      "field": "force_formal_creating_instrument",
+      "status": "HOLD_NOT_LOCATED_IN_CHECKED_SOURCES"
+    },
+    {
+      "field": "force_delegated_powers_budget_charter",
+      "status": "HOLD"
+    }
+  ],
+  "taxonomy": [
+    {
+      "term": "Superior Intelligence",
+      "abbrev": "SI",
+      "role": "SEPT_19_NAMING_POLL_USER_SCREENSHOT"
+    },
+    {
+      "term": "Extreme Intelligence",
+      "abbrev": "EI",
+      "role": "SEPT_19_NAMING_POLL_USER_SCREENSHOT"
+    },
+    {
+      "term": "Supreme Intelligence",
+      "abbrev": "SI",
+      "role": "SEPT_19_NAMING_POLL_USER_SCREENSHOT"
+    },
+    {
+      "term": "Super Intelligence",
+      "abbrev": "SI",
+      "role": "SEP_29_EXECUTIVE_ORDER"
+    },
+    {
+      "term": "Artificial Super Intelligence",
+      "abbrev": "ASI",
+      "role": "DISTINCT_RESEARCH_TERM"
+    }
+  ],
+  "wolfram": {
+    "september19_to_order_days": 10,
+    "order_to_october10_days": 11,
+    "si_expansion_count": 3,
+    "metric_confers_capability": false
+  },
+  "next_gates": [
+    "MODEL_CAPABILITY_MEASUREMENT_V0_1",
+    "SUPER_INTELLIGENCE_FORCE_PRIMARY_BIND_2026_10_10"
+  ],
+  "authority_created": false,
+  "political_verdict": "NONE",
+  "canon_promotion": false,
+  "human_final_decision": "JASON_UNISSUED",
+  "repo_main_mutation": false,
+  "drive_mirror_writing_status": "PENDING_SEPARATE_VERIFICATION"
+}
