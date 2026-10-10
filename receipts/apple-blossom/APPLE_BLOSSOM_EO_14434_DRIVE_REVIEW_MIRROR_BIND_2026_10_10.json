@@ -1,0 +1,24 @@
+{
+  "object_id": "APPLE_BLOSSOM_EO_14434_DRIVE_REVIEW_MIRROR_BIND_2026_10_10",
+  "date": "2026-10-10",
+  "parent": "APPLE_BLOSSOM_EO_14434_POST_SEP19_EVIDENCE_DELTA_2026_10_10",
+  "storage": "CONNECTED_GOOGLE_DRIVE_REVIEW_MIRROR",
+  "mirror_title": "APPLE_BLOSSOM_EO_14434_POST_SEP19_EVIDENCE_DELTA_2026_10_10 — Drive Review Mirror",
+  "mirror_url": "https://docs.google.com/document/d/1HYKGFC-ZSRSc9CvdlZHRNcsBBdRgs7tKYnjxkA_uIh0/edit",
+  "mirror_file_id": "1HYKGFC-ZSRSc9CvdlZHRNcsBBdRgs7tKYnjxkA_uIh0",
+  "parent_folder_label": "ChatGPT",
+  "google_drive_write": true,
+  "postwrite_readback": true,
+  "readback_assertions": {
+    "has_EO_14434": true,
+    "has_whitehouse_primary_url": true,
+    "has_github_receipt_link": true,
+    "has_human_final_decision_reserved": true
+  },
+  "git_original_snapshot_unmodified": true,
+  "git_original_snapshot_blob_sha": "1488de2518118ae2ed48f19b7fd2664e3e5bfe89",
+  "canonicity": false,
+  "authority_created": false,
+  "human_approval": "UNISSUED",
+  "note": "Review mirror only; Google Drive file metadata and content readback do not prove formal SI Force authority or measured model upgrade. Drive visibility is subject to account permissions."
+}
