@@ -1,0 +1,38 @@
+{
+  "object_id": "APPLE_BLOSSOM_OCT10_HUMAN_CHECKPOINT_PASS_V0_1",
+  "as_of": "2026-10-10",
+  "parent_object": "APPLE_BLOSSOM_FORCE_CHARTER_CAPABILITY_GATES_2026_10_10_V0_1",
+  "decision": "PASS",
+  "decision_scope": "ACCEPT_THE_2026_10_10_REPLAY_CHECKPOINT_AND_ITS_EVIDENCE_CLASSIFICATIONS_FOR_FURTHER_REVIEW",
+  "decision_input": {
+    "channel": "CHAT",
+    "user_message_literal": "PASS",
+    "cryptographic_signer_verification": false
+  },
+  "human_operator": "JASON_REVIEW_CHAIR_AS_DECLARED_IN_WORKFLOW",
+  "identity_validation": "NOT_CRYPTOGRAPHICALLY_VERIFIED_BY_CHAT",
+  "passed_gates": [
+    "OCT10_REPLAY_PACKET_REVIEW",
+    "EVIDENCE_CLASSIFICATION_ACCEPTED_AS_DRAFT",
+    "GITHUB_AND_DRIVE_REPLAY_CHECKPOINT_READBACK"
+  ],
+  "unchanged_holds": {
+    "super_intelligence_force_issuer_authenticated_charter": "HOLD",
+    "super_intelligence_force_powers_appropriation_and_appointment": "HOLD",
+    "measured_model_capability_upgrade": "NOT_ESTABLISHED",
+    "canon_promotion": false,
+    "main_branch_merge": false
+  },
+  "original_source_snapshot": {
+    "path": "docs/apple-blossom/APPLE_BLOSSOM_AI_NAMING_AUDIT_V0_1.md",
+    "blob_sha": "1488de2518118ae2ed48f19b7fd2664e3e5bfe89",
+    "preserved": true
+  },
+  "next_gates": [
+    "FORCE_CHARTER_FULLTEXT_PRIMARY_BIND",
+    "MODEL_VERSIONED_BENCHMARK_INPUT"
+  ],
+  "authority_created": false,
+  "no_automatic_public_release": true,
+  "notes": "PASS applies to the historical replay review checkpoint only. It does not certify the underlying substantive legal claims beyond their typed evidence statuses, authenticate any person's identity, grant AI authority, issue a model benchmark PASS, or authorize canon promotion."
+}
