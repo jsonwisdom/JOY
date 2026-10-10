@@ -1,0 +1,14 @@
+{
+  "name": "joyspace-staging",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "typegen": "wrangler types",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "wrangler": "4.125.0"
+  }
+}
