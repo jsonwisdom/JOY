@@ -1,0 +1,93 @@
+{
+  "object_id": "APPLE_BLOSSOM_FORCE_CHARTER_CAPABILITY_GATES_2026_10_10_V0_1",
+  "as_of": "2026-10-10",
+  "state": "OPEN_HOLD",
+  "source_doc": "docs/apple-blossom/APPLE_BLOSSOM_FORCE_CHARTER_CAPABILITY_GATES_2026_10_10_V0_1.md",
+  "parent": "APPLE_BLOSSOM_EO_14434_POST_SEP19_EVIDENCE_DELTA_2026_10_10",
+  "source_observations": [
+    {
+      "id": "P1",
+      "date": "2026-10-06",
+      "class": "REPORTED_PURPORTED_CHARTER",
+      "proposition": "POLITICO states it obtained a task force charter; three anonymous sources confirmed authenticity to reporter",
+      "url": "https://www.politico.com/news/2026/10/06/white-house-super-intelligence-ai-charter-01109011",
+      "status": "REPORTED",
+      "issuer_direct_primary_readback": false
+    },
+    {
+      "id": "R1",
+      "date": "2026-10-08",
+      "class": "ATTRIBUTED_PARTICIPANT_REPORT",
+      "proposition": "Reuters reports Vice Chair Scott Kupor discussing leadership meeting and development of a task force charter",
+      "url": "https://www.reuters.com/world/trump-ai-task-force-leaders-meet-thursday-vice-chair-says-2026-10-08/",
+      "status": "REPORTED",
+      "issuer_direct_primary_readback": false
+    },
+    {
+      "id": "C1",
+      "date": "2026-10-09",
+      "class": "PRIMARY_CONGRESSIONAL_STATEMENT",
+      "proposition": "Rep Gooden's office says President Trump chose Jay Clayton to lead Super Intelligence Force",
+      "url": "https://gooden.house.gov/press-releases?ID=75086BA0-0C2E-46AC-915E-E710077AE939",
+      "status": "PRIMARY_VERIFIED_SPEECH_ONLY",
+      "white_house_appointment_order_bound": false
+    },
+    {
+      "id": "EO1",
+      "date": "2026-09-29",
+      "class": "PRIMARY_EXECUTIVE_ORDER",
+      "proposition": "Executive Order 14434 directs terminology for federal executive agencies; separate from Force creation",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+      "status": "PRIMARY_VERIFIED",
+      "creates_force": false
+    }
+  ],
+  "collisions": [
+    {
+      "left": "P1",
+      "right": "R1",
+      "description": "Charter reportedly obtained Oct 6, while Oct 8 vice-chair report discusses developing charter",
+      "resolved": false,
+      "acceptable_hypotheses": [
+        "earlier draft",
+        "revision pending",
+        "other document version"
+      ],
+      "inferred_identity": false
+    }
+  ],
+  "outstanding_force_gates": [
+    "issuer_source_bytes",
+    "document_version",
+    "government_authentication",
+    "effective_date",
+    "appointment_order",
+    "delegated_powers",
+    "appropriation"
+  ],
+  "capability_gate": {
+    "model_id": null,
+    "version": null,
+    "tool_access": null,
+    "baseline": null,
+    "metric": null,
+    "repeat_trials": null,
+    "adversarial_tests": null,
+    "error_rate": null,
+    "independent_replication": null,
+    "status": "HOLD"
+  },
+  "wolfram": {
+    "observed_days_between_reports": 2,
+    "exact_poll_to_order_days": 10,
+    "policy_label_to_measured_model_capability_implication": false
+  },
+  "human_decision": "UNISSUED",
+  "authority_created": false,
+  "canon": false,
+  "original_snapshot_modified": false,
+  "next_gates": [
+    "FORCE_CHARTER_FULLTEXT_PRIMARY_BIND",
+    "MODEL_VERSIONED_BENCHMARK_INPUT"
+  ]
+}
