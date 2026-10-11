@@ -1,0 +1,82 @@
+{
+  "schema": "APPLE_BLOSSOM_RECEIPT_PACKET_V0_1",
+  "packet_version": "0.1.0",
+  "packet_id": "4fd8e846-df3d-47c3-b07b-abd1329a0b20",
+  "created_at": "2026-09-01T13:00:00-05:00",
+  "predecessor_packet_id": null,
+  "producer": {
+    "label": "jaywisdom.base.eth",
+    "role": "family_replay_builder",
+    "identity_proven": false
+  },
+  "source_object": {
+    "locator": "JOY/FAMILY/JAYSPACE/README.md",
+    "media_type": "text/markdown",
+    "sha256": null,
+    "hash_state": "NOT_COMPUTED",
+    "source_date": null
+  },
+  "exact_words": {
+    "required_for_replay": true,
+    "original": "Dad protects the garden. He does not control the garden.",
+    "derived_variants": []
+  },
+  "subject_scope": {
+    "key_type": "PUBLIC_DOCUMENT_ID",
+    "key": "JOY:FAMILY:JAYSPACE:README",
+    "name_only_linkage": false
+  },
+  "claim": {
+    "text": "JaySpace is a Dad continuity/replay surface beside JoySpace rather than a command layer over the family.",
+    "classification": "CLAIM"
+  },
+  "evidence_refs": [
+    {
+      "locator": "JOY/FAMILY/JAYSPACE/README.md",
+      "relationship": "SUPPORTS",
+      "sha256": null
+    },
+    {
+      "locator": "JOY/docs/building-language/JOY_SUPER_SECRET_SISTER_SYNTAX_BUILDING_LANGUAGE_V0_1.md",
+      "relationship": "SUPPORTS",
+      "sha256": null
+    }
+  ],
+  "authority_refs": [
+    {
+      "locator": "NOT_APPLICABLE",
+      "authority_state": "NOT_APPLICABLE"
+    }
+  ],
+  "delta": {
+    "state": "HOLD",
+    "prior_state_hash": null,
+    "new_state_hash": null,
+    "reason": "Example packet demonstrates structure; canonical source-byte hashes have not been computed for this fixture."
+  },
+  "privacy": {
+    "classification": "PUBLIC_SAFE",
+    "public_pii_allowed": false,
+    "redactions": []
+  },
+  "consent": {
+    "state": "NOT_REQUIRED",
+    "receipt_locator": null
+  },
+  "replay": {
+    "state": "HOLD",
+    "requirements_missing": [
+      "SOURCE_BYTE_SHA256"
+    ],
+    "notes": "Semantic support is present; byte replay remains intentionally unpromoted."
+  },
+  "surface_receipts": [
+    {
+      "surface": "GITHUB",
+      "locator": "jsonwisdom/JOY:agent/apple-blossom-receipt-packet-v0-1",
+      "content_sha256": null,
+      "state": "PRESENT"
+    }
+  ],
+  "authority_created": false
+}
