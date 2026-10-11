@@ -439,6 +439,275 @@ Everyone can explain why collisions become likely faster than intuition expects
 and why a collision still does not prove identity.
 ```
 
+## Temporal Pulse Stack
+
+**Layer:** Wisdom Game Night — Pulse Stack Layer v0.1  
+**Status:** ACTIVE
+
+Parent law unchanged:
+
+```text
+Family first → Fun second → Receipts third → Sharing only when safe → Authority false always.
+```
+
+The six games stay the same. The pulse stack only changes the time horizon of the prompt.
+
+Before each round, the host picks or the player chooses one pulse:
+
+| Pulse | Time horizon | Valid evidence | Use |
+| --- | --- | --- | --- |
+| NOW | current turn / table state | visible, current, no recall | attention, spot change |
+| TODAY | this game night | score sheet, table state, replay session | memory |
+| YESTERDAY | previous day/session | opt-in replay receipt or shared memory | delayed recall |
+| LAST_7_DAYS | rolling week | shared/public game artifacts only | continuity, patterns |
+
+```text
+PASS / PRIVATE / REPLAY remain always allowed.
+```
+
+### Pulse-to-game mapping
+
+| Game | NOW | TODAY | YESTERDAY | LAST_7_DAYS |
+| --- | --- | --- | --- | --- |
+| SPOT THE CHANGE | What changed since you last looked? | What changed since game night started? | What changed since last night? | What keeps changing every time? |
+| DIRECTORY DASH | Find the item now. | What route did we use tonight? | Where was it put yesterday? | Which place keeps winning? |
+| MEMORY MOUSE | Repeat the shown sequence. | Recall sequence from earlier round. | Recall from last session. | Longest sequence kept this week. |
+| FACT / LORE / HOLD | Fact just read. | Lore from tonight. | Hold from yesterday. | Which card repeated this week? |
+| GENERATION TRANSLATOR | Translate current phrase. | Phrase from tonight. | Phrase from yesterday. | Shared phrase drift across the week. |
+| REPLAY | Replay boundary. | Replay boundary. | Replay boundary. | Replay boundary. |
+
+Scoring does not change:
+
+```text
+Exact answer = 2 Wisdom Stars
+Close answer = 1
+PASS = 0, no penalty
+PRIVATE = 0, no follow-up
+Membrane break = replay the boundary, never shame the player
+```
+
+Host quick-start addition:
+
+```text
+Pick a pulse.
+Pick a game.
+Read the prompt.
+Player answers, PASSes, or says PRIVATE.
+Score.
+If the boundary breaks, replay the boundary.
+Close with one correction, one kindness.
+```
+
+Host script:
+
+```text
+1. “Pulse?”
+2. “Game?”
+3. “Prompt.”
+4. “Answer, PASS, or PRIVATE?”
+5. Score.
+6. If needed: “Boundary. Replay.”
+7. Closeout: “One correction, one kindness.”
+```
+
+Score-sheet fields:
+
+```text
+Round | Pulse | Game | Player | Prompt | Answer class | Stars | PASS/PRIVATE | Replay? | Safety note
+```
+
+### Pulse safety membrane
+
+The pulse stack is not surveillance. It only references shared game artifacts.
+
+- No calendar, health, location, financial, or identity data.
+- No silent family-graph inference.
+- No paid clicking.
+- No government affiliation.
+- No identity proofing.
+- PRIVATE means private. The host does not ask again.
+- Receipts only if safe and volunteered.
+
+### Acceptance test
+
+The integration works if a host can run a 10–30 minute game night, use all four pulses, keep scoring unchanged, allow PASS / PRIVATE / REPLAY without friction, and close with one correction and one kindness.
+
+```text
+The pulse changes the time horizon, not the six-game grammar.
+```
+
+## Phase 2.2 — FAFO Units Global Satire Card
+
+Status: ACTIVE — fictional satire + evidence audit only
+Parent law unchanged: Family first → Fun second → Receipts third → Sharing only when safe → Authority false always.
+
+FAFO = FIND ALGORITHMIC FACTS & OUTPUTS.
+Not retaliation. Not punishment. Not law-enforcement authority.
+
+Motto:
+
+```text
+FIND ARTIFACTS. FIND FACTS. FIND OUTPUTS.
+NO BADGES. NO GUNS. NO MAGIC AUTHORITY.
+JUST RECEIPTS WITH AN ATTITUDE.
+```
+
+Boundary:
+
+```text
+No real deployment. No coercion. No weapons. No mercenary service.
+No law-enforcement authority. No personnel harmed. Zero voltage.
+Force metaphor != force.
+Satire unit != real unit.
+"For hire" != operational service.
+Screenshot claim != primary receipt.
+```
+
+### UNIT 01 — SQUADKILLERS
+
+Type: fictional satire label only. Search miss != confirmed unit.
+Mission: kill bad claims / kill fake green / kill missing-field confidence.
+Personnel harmed: ZERO. Weapons: replay, receipts, timestamps.
+
+### UNIT 02 — ELECTRIC GLOVES DEPLOYMENT
+
+Voltage: 0V. Actual shock: discovering a "proof" was a screenshot of a screenshot.
+Primary weapon: replay. Personnel harmed: ZERO.
+
+### UNIT 03 — VOORHEES EUROPE
+
+Location: fictional Northern Europe evidence bunker.
+Specialty: missing receipts that keep coming back.
+Tagline: "You can run from the audit. The timestamp cannot."
+Personnel harmed: ZERO.
+
+### UNIT 04 — W.A.G.N.E.R. GROUP FOR HIRE
+
+```text
+W = Workflows
+A = Artifacts
+G = Graphs
+N = Notes
+E = Evidence
+R = Replay
+```
+
+Not mercenaries. Not military. Not law enforcement.
+Only assassinate unsupported assumptions.
+"For hire" = fictional satire; no operational service offered or implied.
+
+Headline:
+
+```text
+FAFO UNITS GLOBAL: SCAM COMPOUNDS HATE THIS ONE WEIRD THING — PAPERWORK THAT REPLAYS.
+```
+
+Evidence rule:
+
+```text
+Screenshot = presentation evidence only.
+Numbers stay SCREENSHOT_CLAIM / NOT_PRIMARY_VERIFIED until source is bound.
+```
+
+Pulse prompts:
+
+```text
+NOW         What does the screenshot visibly claim?
+TODAY       Which number came from the card, which from a primary source?
+YESTERDAY   What did we previously call FAFO?
+LAST_7_DAYS Which boundary keeps repeating?
+```
+
+Answer class:
+
+```text
+CLAIM != RECEIPT
+FORCE_METAPHOR != FORCE
+SATIRE_UNIT != REAL_UNIT
+"FOR HIRE" != OPERATIONAL SERVICE
+```
+
+Scoring unchanged: Exact 2 / Close 1 / PASS 0 no penalty / PRIVATE 0 no follow-up.
+Membrane break = replay boundary, never shame. Closeout: one correction, one kindness.
+
+```text
+AUTHORITY_CREATED = FALSE
+OPERATIONAL_SERVICE = FALSE
+PERSONNEL_HARMED = ZERO
+```
+
+## Phase 2.2a — FAFO Satire Labels
+
+Status: ACTIVE — satire skin only  
+Authority created: false
+
+Containment is explicit. These labels do not create people, units, roles, weapons, deployments, services, or ENS bindings.
+
+### JASON_UNITS
+
+```text
+type = fictional label
+mission = find artifacts, facts, outputs
+not a person
+not a command role
+personnel harmed = ZERO
+```
+
+### CRYSTAL_LAKE_PROTOCOL
+
+```text
+type = fictional evidence bunker
+specialty = missing receipts that keep coming back
+tagline = the timestamp cannot be outrun
+personnel harmed = ZERO
+```
+
+No real bunker or deployment is asserted.
+
+### VOORHEES_INSTRUMENTS
+
+```text
+type = fictional satire label
+actual instrument = replay, receipts, timestamps
+not a weapon
+not a deployment
+voltage = 0
+```
+
+No physical instrument, force capability, or operational deployment is asserted.
+
+### ENS_FIXTURES
+
+```text
+type = name only
+chain record = NOT_READ
+namehash = HOLD
+resolver = HOLD
+owner = HOLD
+ENS_RECORD_BOUND = FALSE
+```
+
+A name is not an ENS fixture merely because it appears in the satire layer. It remains `NAME_ONLY / HOLD` until a resolver read independently binds the relevant ENS record.
+
+### Locked holds
+
+```text
+ENS_FIXTURES != ENS_RECORD
+JASON_UNITS != PERSON
+JASON_UNITS != COMMAND_ROLE
+CRYSTAL_LAKE_PROTOCOL != REAL_LOCATION
+VOORHEES_INSTRUMENTS != REAL_WEAPON
+VOORHEES_INSTRUMENTS != DEPLOYMENT
+
+REAL_UNIT_CONFIRMED = FALSE
+OPERATIONAL_SERVICE = FALSE
+LAW_ENFORCEMENT_AUTHORITY = FALSE
+AUTHORITY_CREATED = FALSE
+PERSONNEL_HARMED = ZERO
+```
+
+The satire skin may be funny. The evidence state does not move.
+
 ## Shareable Surfaces
 
 Safe outputs may include:
