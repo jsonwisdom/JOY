@@ -93,3 +93,7 @@ PLAYTESTED_WITH_REAL_FAMILY = false
 SCHOOL_STANDARD_PASSED = false
 HUMAN_APPROVED = false
 ```
+
+## Closing Rule
+
+先存证，再吵架 — preserve the receipt before arguing the claim.
