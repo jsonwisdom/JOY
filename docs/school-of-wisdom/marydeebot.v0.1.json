@@ -23,5 +23,20 @@
     "grade children",
     "convert a GitHub file into tested-family evidence",
     "create authority"
+  ],
+  "adult_historical_audit_queue": [
+    {
+      "handoff_id": "JPAA-TRIGGERFISH-OMC-2026-10-14",
+      "review_packet": "docs/school-of-wisdom/adult-audits/MARYDEEBOT_TRIGGERFISH_MIDNIGHT_CLIMAX_REVIEW_2026-10-14.md",
+      "scope": "ADULT_REVIEW_ONLY",
+      "status": "DRAFT_REVIEW_ONLY",
+      "activated": false,
+      "bot_dispatch": false,
+      "human_release_required": true,
+      "child_curriculum_enabled": false,
+      "canon": false,
+      "authority_created": false,
+      "note": "Public-source historical method study; does not assert CIA Triggerfish connection, operational bot access, or publication authorization."
+    }
   ]
 }
