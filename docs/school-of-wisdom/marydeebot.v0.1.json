@@ -23,5 +23,46 @@
     "grade children",
     "convert a GitHub file into tested-family evidence",
     "create authority"
-  ]
+  ],
+  "math_replay": {
+    "module_id": "FULLJASONMATHREPLAY_V0_1",
+    "label": "FullJasonMathReplay",
+    "subject": "MATHEMATICS",
+    "role": "OPTIONAL_EXACT_RECOMPUTATION_ASSISTANT",
+    "brand_caption": "JASON'S FULL MATH — PROVE THE PROOF",
+    "logo_reference": "USER_SUPPLIED_ARTWORK_UNCHANGED_NOT_A_PROOF_RECEIPT",
+    "implementation": "scripts/fulljasonmath_replay.py",
+    "scope": "EXACT_RATIONAL_ARITHMETIC_AND_HASH_DIGEST_SAMPLING_TEST_VECTORS",
+    "operations": [
+      "add",
+      "subtract",
+      "multiply",
+      "divide",
+      "modulo",
+      "rejection_sample_100"
+    ],
+    "verdicts": [
+      "PASS_SCOPED",
+      "FAIL",
+      "HOLD"
+    ],
+    "math_pass_means": "Only the supplied formal calculation matches its expected result",
+    "cannot_certify": [
+      "unbiased entropy",
+      "hash preimage provenance from digest alone",
+      "historical Card 13 fairness",
+      "external factual truth",
+      "human identity",
+      "canon",
+      "release authority"
+    ],
+    "existing_question_steward_role_preserved": true,
+    "existing_school_status_not_automatically_promoted": true,
+    "no_fake_green": true,
+    "family_private_by_default": true,
+    "tested_with_real_family": false,
+    "human_final_decision": "JASON",
+    "adoption_status": "DESIGN_HOLD",
+    "authority_created": false
+  }
 }
