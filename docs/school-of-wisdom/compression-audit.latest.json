@@ -3,7 +3,7 @@
   "governor": "WikiAtomBombGovernor",
   "center_object": "docs/school-of-wisdom/center-object.v0.2.json",
   "query_source": "docs/school-of-wisdom/compression-queries.wiki-atom-bomb-governor.v0.2.json",
-  "run_at": "2026-10-21T20:36:18.853330+00:00",
+  "run_at": "2026-10-21T22:17:10.427854+00:00",
   "homepage_sha256_before": "a0015b504b099f862892dfd3eba25934c1cd9b34672739b6abd85b9df58268e6",
   "center_object_sha256": "fa91439e45fa1e5043be6b547bf77b5942e21ece489b727e7ae6e4475e92c406",
   "queries_total": 10,
@@ -69,7 +69,7 @@
       "target": "docs/school-of-wisdom/index.html",
       "pass": true,
       "path": "docs/school-of-wisdom/index.html",
-      "sha256": "e390537d75fcdbdd728ae7831ff5cb1b7dff437173790495e109c701cd32bca9"
+      "sha256": "4c2ef7a20a9d411dadba22400616167094d7fa558e5dc1968b11fd5b7a654a91"
     },
     {
       "id": "Q08",
