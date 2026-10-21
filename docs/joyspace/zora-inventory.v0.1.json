@@ -1,0 +1,1255 @@
+{
+  "schema": "JOY_ZORA_INVENTORY_V0_1",
+  "generated_on": "2026-10-21",
+  "network": 8453,
+  "status": "SEARCH_CANDIDATES_NOT_ASSET_COUNT",
+  "sources": {
+    "computerwisdom_search_hits": 100,
+    "joy_search_hits": 99,
+    "drive_search_hits": 9
+  },
+  "policy": "Source pointers retained. Drive sources are PRIVATE_REVIEW and not public. No wallet ownership, artwork count, mint verification or role implied.",
+  "github_candidates": [
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/surfaces/l2-console-surface-1-zora-base.md",
+      "category": "zora-related",
+      "label": "l2 console surface 1 zora base"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/ZORA_FACTORY_PRODUCTION_MANUAL_V0_1.md",
+      "category": "zora-related",
+      "label": "ZORA FACTORY PRODUCTION MANUAL V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/ZORA_FACTORY_PRODUCTION_RUN_10_V0_1.md",
+      "category": "zora-related",
+      "label": "ZORA FACTORY PRODUCTION RUN 10 V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/OPERATOR_JAY_ZORA_FACTORY_PROMPT_V0_1.md",
+      "category": "zora-related",
+      "label": "OPERATOR JAY ZORA FACTORY PROMPT V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/zora/CWAAS-FLYWHEEL-001_ZORA_DROP_RECEIPT.md",
+      "category": "zora-related",
+      "label": "CWAAS FLYWHEEL 001 ZORA DROP RECEIPT"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "audits/meme_court_zora_base_repo_audit_2026_05_19.md",
+      "category": "zora-related",
+      "label": "meme court zora base repo audit 2026 05 19"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/meme-court/open_court_zora_base_candidate.md",
+      "category": "zora-related",
+      "label": "open court zora base candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "console/l2-surface-1-zora-base.html",
+      "category": "zora-related",
+      "label": "l2 surface 1 zora base"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/zora-flywheel/secret_scan_zora_image_adapter_candidate.md",
+      "category": "zora-related",
+      "label": "secret scan zora image adapter candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/chess-court/provost_host_toast_boast_zora_hora_candidate.md",
+      "category": "zora-related",
+      "label": "provost host toast boast zora hora candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_provost_host_toast_boast_zora_hora_prompt.txt",
+      "category": "zora-related",
+      "label": "grok provost host toast boast zora hora prompt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/zora_publication_reference_rules_v2.md",
+      "category": "zora-related",
+      "label": "zora publication reference rules v2"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/ZFD-GOBLIN-ACQ-LAYER-V0_1.md",
+      "category": "zora-related",
+      "label": "ZFD GOBLIN ACQ LAYER V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/README.md",
+      "category": "zora-related",
+      "label": "README"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/zora-flywheel/factory_crawler_spec_candidate.md",
+      "category": "zora-related",
+      "label": "factory crawler spec candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/render_prompts/README.md",
+      "category": "zora-related",
+      "label": "README"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/zora-flywheel/repo_chain_public_index_candidate.md",
+      "category": "zora-related",
+      "label": "repo chain public index candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/meme_court_open_zora_base_receipt.json",
+      "category": "zora-related",
+      "label": "meme court open zora base receipt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "schemas/zora_goblin_acquisition.v0_1.schema.json",
+      "category": "zora-related",
+      "label": "zora goblin acquisition.v0 1.schema"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/merkle_forest_scaling_v1.md",
+      "category": "zora-related",
+      "label": "merkle forest scaling v1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "alms/watchers/surface-1-zora-base-replay-spine.json",
+      "category": "zora-related",
+      "label": "surface 1 zora base replay spine"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "layers/ZORA_FACTORY_DISTRIBUTION_SERVICES_V0_1.json",
+      "category": "zora-related",
+      "label": "ZORA FACTORY DISTRIBUTION SERVICES V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/drafts/zora_factory_intake_template_v0_1.json",
+      "category": "zora-related",
+      "label": "zora factory intake template v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "anchors/sales/SALE_VERIFY_0001_ZORA_FALLBACK_RECEIPT.json",
+      "category": "zora-related",
+      "label": "SALE VERIFY 0001 ZORA FALLBACK RECEIPT"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "wallet-control/zora-signer/index.html",
+      "category": "zora-related",
+      "label": "index"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/proof_of_playable_verification_v2.md",
+      "category": "zora-related",
+      "label": "proof of playable verification v2"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/zora/maxwells_joystick_agenda_zora_receipt_v0_1.json",
+      "category": "zora-related",
+      "label": "maxwells joystick agenda zora receipt v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/zora-flywheel/CWAAS_FLYWHEEL_ENTRY_001_SUPPORT_JW_MASTER_GREEN.md",
+      "category": "zora-related",
+      "label": "CWAAS FLYWHEEL ENTRY 001 SUPPORT JW MASTER GREEN"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/zora/render_prompts/GC_SERIES_1_META_RENDER_BATCH_V0_1.md",
+      "category": "zora-related",
+      "label": "GC SERIES 1 META RENDER BATCH V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/programmable_change_mechanics_repo_automation_v1.md",
+      "category": "zora-related",
+      "label": "programmable change mechanics repo automation v1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/chess_court_provost_host_toast_boast_zora_hora_activation_receipt.json",
+      "category": "zora-related",
+      "label": "chess court provost host toast boast zora hora activation receipt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/counters/grok_chess_court_counter_receipt_by_jay_wisdom_on_base_zora_2026_05_19.json",
+      "category": "zora-related",
+      "label": "grok chess court counter receipt by jay wisdom on base zora 2026 05 19"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "MANIFEST.md",
+      "category": "context-match",
+      "label": "MANIFEST"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/zora_factory/example_mint_receipt_candidate.json",
+      "category": "zora-related",
+      "label": "example mint receipt candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/worked_vault_trace_contradiction_resolution_v2.md",
+      "category": "zora-related",
+      "label": "worked vault trace contradiction resolution v2"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/zora-flywheel/factory_receipt_schema_candidate.json",
+      "category": "zora-related",
+      "label": "factory receipt schema candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/gray-baby/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "audits/repo-size-audit.md",
+      "category": "context-match",
+      "label": "repo size audit"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/merkle_forest_schema_v1.json",
+      "category": "zora-related",
+      "label": "merkle forest schema v1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/zora_factory/factory_candidate_implementation_receipt.json",
+      "category": "zora-related",
+      "label": "factory candidate implementation receipt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/base_has_purpose_v0_1.md",
+      "category": "context-match",
+      "label": "base has purpose v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/court_replay_audit_v0_1.md",
+      "category": "context-match",
+      "label": "court replay audit v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "portal.html",
+      "category": "context-match",
+      "label": "portal"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/MEME_COURT_PUBLIC_INDEX.md",
+      "category": "context-match",
+      "label": "MEME COURT PUBLIC INDEX"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/deep_seek_epoch_004_output.md",
+      "category": "context-match",
+      "label": "deep seek epoch 004 output"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "metadata/goblin_court_series_1/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "ROOT_BINDING.md",
+      "category": "context-match",
+      "label": "ROOT BINDING"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "knowledge-management/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/public_proof_surface_correction_v0_1.md",
+      "category": "context-match",
+      "label": "public proof surface correction v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/gray-baby/PLATFORM_PREPAREDNESS_V0_1.md",
+      "category": "context-match",
+      "label": "PLATFORM PREPAREDNESS V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "tools/fullmath/audit-public-200.sh",
+      "category": "context-match",
+      "label": "audit public 200"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "workflows/deepseek-zora-ingestion-v1/json_live_epoch_sandbox_contract_anchor_v1.json",
+      "category": "zora-related",
+      "label": "json live epoch sandbox contract anchor v1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/deep_seek_epoch_004_prompt_exact.txt",
+      "category": "context-match",
+      "label": "deep seek epoch 004 prompt exact"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "tools/fullmath/audit-public-200.ps1",
+      "category": "context-match",
+      "label": "audit public 200"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "tools/verify_wallet_control_page.mjs",
+      "category": "context-match",
+      "label": "verify wallet control page"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/fullmath/index.html",
+      "category": "context-match",
+      "label": "index"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/fullmath/matrix.html",
+      "category": "context-match",
+      "label": "matrix"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/replay_meme_court_witness_expansion_v0_1.md",
+      "category": "context-match",
+      "label": "replay meme court witness expansion v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/architecture/l2-console-architecture-v0-1.md",
+      "category": "context-match",
+      "label": "l2 console architecture v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "JAYWISDOM_IDENTITY_FLYWHEEL_GOBLIN_COURTS_V0_1.md",
+      "category": "zora-related",
+      "label": "JAYWISDOM IDENTITY FLYWHEEL GOBLIN COURTS V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/layer-index/COMPUTE_WISDOM_L0_L5_INDEX.md",
+      "category": "context-match",
+      "label": "COMPUTE WISDOM L0 L5 INDEX"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "storefront/agentic-economies/AL_COMMERCE_INDEX_V0.md",
+      "category": "context-match",
+      "label": "AL COMMERCE INDEX V0"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/compute-wisdom-direct/manifest_candidate.md",
+      "category": "context-match",
+      "label": "manifest candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/architecture/JAY_BOT_ROOM_CONTROL_PLANE_V0_1.md",
+      "category": "context-match",
+      "label": "JAY BOT ROOM CONTROL PLANE V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "scripts/cwaas/cwaas_option_d_bind.sh",
+      "category": "context-match",
+      "label": "cwaas option d bind"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "jaywisdom/projects/gray-baby.html",
+      "category": "context-match",
+      "label": "gray baby"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/public_replay_verifier_spec_v0_1.md",
+      "category": "context-match",
+      "label": "public replay verifier spec v0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/gray-baby/MINNESOTA_SUPREME_SUBSTRATES_ORDER_V0_1.md",
+      "category": "context-match",
+      "label": "MINNESOTA SUPREME SUBSTRATES ORDER V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "scripts/prepare_sale_verify_0001_eas_payload.sh",
+      "category": "context-match",
+      "label": "prepare sale verify 0001 eas payload"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/reputation-layer/REPUTATION_LAYER_L1_CANDIDATE.md",
+      "category": "context-match",
+      "label": "REPUTATION LAYER L1 CANDIDATE"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/chess-court/art_of_war_2026_jay_wisdom_candidate.md",
+      "category": "context-match",
+      "label": "art of war 2026 jay wisdom candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/jason-on-base/nightjr-walkback/index.html",
+      "category": "context-match",
+      "label": "index"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/chess-court/chess_court_by_jay_wisdom_on_base_candidate.md",
+      "category": "context-match",
+      "label": "chess court by jay wisdom on base candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_final_daily_entry_review_prompt_2026_05_19.txt",
+      "category": "context-match",
+      "label": "grok final daily entry review prompt 2026 05 19"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "knowledge-management/agents/EXECUTION_ORDER_V0_1.md",
+      "category": "context-match",
+      "label": "EXECUTION ORDER V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_daily_ledger_counter_review_prompt_2026_05_19.txt",
+      "category": "context-match",
+      "label": "grok daily ledger counter review prompt 2026 05 19"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/operator/MN_STATE_SNAPSHOT_V0_1.md",
+      "category": "context-match",
+      "label": "MN STATE SNAPSHOT V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_daily_ledger_counter_review_prompt_2026_05_20.txt",
+      "category": "context-match",
+      "label": "grok daily ledger counter review prompt 2026 05 20"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_05_20_court_lock_and_batch_workflow_review_prompt.txt",
+      "category": "context-match",
+      "label": "grok 05 20 court lock and batch workflow review prompt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_l0_l5_live_public_site_operator_prompt_2026_05_20.txt",
+      "category": "context-match",
+      "label": "grok l0 l5 live public site operator prompt 2026 05 20"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/candidate/grok_05_20_specific_evidence_fill_prompt.txt",
+      "category": "context-match",
+      "label": "grok 05 20 specific evidence fill prompt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "reports/computer_wisdom_public_verifier_report_2026_05_20.md",
+      "category": "context-match",
+      "label": "computer wisdom public verifier report 2026 05 20"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "candidates/chess_court_badge_candidate.html",
+      "category": "context-match",
+      "label": "chess court badge candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "PUBLIC_REPLAY_INDEX.json",
+      "category": "context-match",
+      "label": "PUBLIC REPLAY INDEX"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/fullmath/matrix.json",
+      "category": "context-match",
+      "label": "matrix"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "Trigger_Deck/Δ045/trigger.json",
+      "category": "context-match",
+      "label": "trigger"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "services/chess-court/hypothetical_oxford_maths_compute_wisdom_rd_chess_department_candidate.md",
+      "category": "context-match",
+      "label": "hypothetical oxford maths compute wisdom rd chess department candidate"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "MEME_COURT_PRECEDENT_LEDGER.json",
+      "category": "context-match",
+      "label": "MEME COURT PRECEDENT LEDGER"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/jason-on-base/index.html",
+      "category": "context-match",
+      "label": "index"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "layers/BASE_PURPOSE_LAYER_V0_1.json",
+      "category": "context-match",
+      "label": "BASE PURPOSE LAYER V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "public/MEME_COURT_PUBLIC_INDEX.json",
+      "category": "context-match",
+      "label": "MEME COURT PUBLIC INDEX"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "docs/console/COMPUTER_WISDOM_CONSOLE_LANES_VOICE_CONTROL_REPLAY_20260614.md",
+      "category": "context-match",
+      "label": "COMPUTER WISDOM CONSOLE LANES VOICE CONTROL REPLAY 20260614"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "knowledge-management/config/trinity.json",
+      "category": "context-match",
+      "label": "trinity"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "layers/FAMILY_REPUTATION_LAYER_V0_1.json",
+      "category": "context-match",
+      "label": "FAMILY REPUTATION LAYER V0 1"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "badges/grok_public_reviewer_l1_badge.json",
+      "category": "context-match",
+      "label": "grok public reviewer l1 badge"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "wallet-control/multi-wallet/index.html",
+      "category": "context-match",
+      "label": "index"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/chess_court_referee_log_entry.json",
+      "category": "context-match",
+      "label": "chess court referee log entry"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/secret_scan_epoch_004_receipt.json",
+      "category": "context-match",
+      "label": "secret scan epoch 004 receipt"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/arena/POST_MERGE_REPLAY_PR_315.json",
+      "category": "context-match",
+      "label": "POST MERGE REPLAY PR 315"
+    },
+    {
+      "repository": "COMPUTERWISDOM",
+      "path": "receipts/arena/POST_MERGE_REPLAY_PR_314.json",
+      "category": "context-match",
+      "label": "POST MERGE REPLAY PR 314"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/BOSS_BRENDA_ZORA_PRESENTED_V0_1.md",
+      "category": "zora-related",
+      "label": "BOSS BRENDA ZORA PRESENTED V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/THE_RECEIPTS_SAW_YOU_ZORA_WITNESS_V0_1.md",
+      "category": "zora-related",
+      "label": "THE RECEIPTS SAW YOU ZORA WITNESS V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_V0_1.md",
+      "category": "zora-related",
+      "label": "ZORA PUBLIC BIO ALMS RECEIPT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/GOBLIN_COVER_ART_ZORA_COIN_WITNESS_V0_1.md",
+      "category": "zora-related",
+      "label": "GOBLIN COVER ART ZORA COIN WITNESS V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ZORA_SITE_STATUS_MATRIX_ACK_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY ZORA SITE STATUS MATRIX ACK V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_STORY_CARD_ZORA_INDEX_ENTRY_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY STORY CARD ZORA INDEX ENTRY V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/BOSS_BRENDA/BIRTHDAY_BRENDA_ZORA_FLYWHEEL_V0_1.md",
+      "category": "zora-related",
+      "label": "BIRTHDAY BRENDA ZORA FLYWHEEL V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "HEIDEE/scaffolds/HEIDEE_SCAFFOLD_REFINEMENT_ZORA_V0_1.md",
+      "category": "zora-related",
+      "label": "HEIDEE SCAFFOLD REFINEMENT ZORA V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ZORA_PROFILE_SOURCE_VERIFIED_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY ZORA PROFILE SOURCE VERIFIED V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/zora-index-class.html",
+      "category": "zora-related",
+      "label": "zora index class"
+    },
+    {
+      "repository": "JOY",
+      "path": "receipts/base/ZORA_BASE_TX_755249CD_SUCCESS_RECEIPT_V0_1.md",
+      "category": "zora-related",
+      "label": "ZORA BASE TX 755249CD SUCCESS RECEIPT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ZORA_BIRTHDAY_GOBLIN_RENDER_GATE_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY ZORA BIRTHDAY GOBLIN RENDER GATE V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/DEEPER_DEEZER_ZORA_TITLE_DESCRIPTION_V0_1.md",
+      "category": "zora-related",
+      "label": "DEEPER DEEZER ZORA TITLE DESCRIPTION V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ZORA_CURRENT_PLACEMENT_CONFIRMATION_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY ZORA CURRENT PLACEMENT CONFIRMATION V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/alms/IDEA_FACTORY_TO_ZORA_FACTORY_BLACK_WHITE_COLOR_V0_1.md",
+      "category": "zora-related",
+      "label": "IDEA FACTORY TO ZORA FACTORY BLACK WHITE COLOR V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "joyspace/birthday-brenda-zora-flywheel.html",
+      "category": "zora-related",
+      "label": "birthday brenda zora flywheel"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ZORA_RETURNED_SOURCE_PENDING_VERIFICATION_V0_1.md",
+      "category": "zora-related",
+      "label": "JOY ZORA RETURNED SOURCE PENDING VERIFICATION V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/birthday-brenda-zora-flywheel.html",
+      "category": "zora-related",
+      "label": "birthday brenda zora flywheel"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/series_alpha.md",
+      "category": "zora-related",
+      "label": "series alpha"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/receipts/BRENDA_ZORA_BASE_READONLY_LOOKUP_ATTEMPT_20260615.md",
+      "category": "zora-related",
+      "label": "BRENDA ZORA BASE READONLY LOOKUP ATTEMPT 20260615"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/KILL_SHOT_MANIFEST_V0_1.md",
+      "category": "zora-related",
+      "label": "KILL SHOT MANIFEST V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/REPLAY_DOES_NOT_FORK_V0_1.md",
+      "category": "zora-related",
+      "label": "REPLAY DOES NOT FORK V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/receipts/BRENDA_ZORA_BASE_READONLY_LOOKUP_ATTEMPT_20260615_READBACK_NOTE.md",
+      "category": "zora-related",
+      "label": "BRENDA ZORA BASE READONLY LOOKUP ATTEMPT 20260615 READBACK NOTE"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/lessons/ART_POLITICS_EDUCATION_DEMOCRACY_MATH_BRENDA_ZORA_LESSON_20260614.md",
+      "category": "zora-related",
+      "label": "ART POLITICS EDUCATION DEMOCRACY MATH BRENDA ZORA LESSON 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/WITNESS_ME_GOBLIN_SECOND_MINT_PLAN_V0_1.md",
+      "category": "zora-related",
+      "label": "WITNESS ME GOBLIN SECOND MINT PLAN V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "alms/claims/ZORA_SERIES_ALPHA.claim.v1.json",
+      "category": "zora-related",
+      "label": "ZORA SERIES ALPHA.claim.v1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/zora/zora_metadata_visual_pack_v0_1.json",
+      "category": "zora-related",
+      "label": "zora metadata visual pack v0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/L4_ZORA_JAYWISDOM_TRAINING_METADATA_V0_1.json",
+      "category": "zora-related",
+      "label": "L4 ZORA JAYWISDOM TRAINING METADATA V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/BOSS_BRENDA/BIRTHDAY_BRENDA_ZORA_FLYWHEEL_V0_1.json",
+      "category": "zora-related",
+      "label": "BIRTHDAY BRENDA ZORA FLYWHEEL V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/zora/BASE_TX_8A642_TOPIC_DECODE_BOUNDARY_RECEIPT_V0_1.md",
+      "category": "zora-related",
+      "label": "BASE TX 8A642 TOPIC DECODE BOUNDARY RECEIPT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/ZORA_PUBLIC_BIO_ALMS_RECEIPT_INDEX_V0_1.json",
+      "category": "zora-related",
+      "label": "ZORA PUBLIC BIO ALMS RECEIPT INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_STORY_CARD_ZORA_INDEX_ENTRY_INDEX_V0_1.json",
+      "category": "zora-related",
+      "label": "JOY STORY CARD ZORA INDEX ENTRY INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "HEIDEE/scaffolds/HEIDEE_SCAFFOLD_REFINEMENT_ZORA_INDEX_V0_1.json",
+      "category": "zora-related",
+      "label": "HEIDEE SCAFFOLD REFINEMENT ZORA INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "OBSERVER.md",
+      "category": "context-match",
+      "label": "OBSERVER"
+    },
+    {
+      "repository": "JOY",
+      "path": "AUDIT_LOG.md",
+      "category": "context-match",
+      "label": "AUDIT LOG"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/PROCESS.md",
+      "category": "context-match",
+      "label": "PROCESS"
+    },
+    {
+      "repository": "JOY",
+      "path": "BADGER_RECEIPTS.md",
+      "category": "context-match",
+      "label": "BADGER RECEIPTS"
+    },
+    {
+      "repository": "JOY",
+      "path": "canon/governance.md",
+      "category": "context-match",
+      "label": "governance"
+    },
+    {
+      "repository": "JOY",
+      "path": "ALMS_MCP_V0_SPEC.md",
+      "category": "context-match",
+      "label": "ALMS MCP V0 SPEC"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/MR_WISDOM/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/MRS_WISDOM/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "JOY",
+      "path": "SIGN_UP_AND_FEEDBACK_V0_1.md",
+      "category": "context-match",
+      "label": "SIGN UP AND FEEDBACK V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "joyspace/JOYSPACE_INDEX_V0_1.md",
+      "category": "context-match",
+      "label": "JOYSPACE INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "PUBLIC_AUDIT_LOCATOR_INDEX_V0_1.md",
+      "category": "context-match",
+      "label": "PUBLIC AUDIT LOCATOR INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/DEEZER_MINT_V0_1.md",
+      "category": "coin-related",
+      "label": "DEEZER MINT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/index.html",
+      "category": "context-match",
+      "label": "index"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/MOVE_THE_CHAINS_ONCHAIN_CARD.md",
+      "category": "context-match",
+      "label": "MOVE THE CHAINS ONCHAIN CARD"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/github/TRIGGER_HUNTER_QA_V0_1.md",
+      "category": "context-match",
+      "label": "TRIGGER HUNTER QA V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/JOYSPACE_CHANGELOG_V0_1.md",
+      "category": "context-match",
+      "label": "JOYSPACE CHANGELOG V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/github/trigger_hunter_snapshot.txt",
+      "category": "context-match",
+      "label": "trigger hunter snapshot"
+    },
+    {
+      "repository": "JOY",
+      "path": "scripts/verify_base_tx_boundary.sh",
+      "category": "context-match",
+      "label": "verify base tx boundary"
+    },
+    {
+      "repository": "JOY",
+      "path": "JAYWISDOM_BASE_ETH_ROOT_REPLAY_PLAN_V0_1.md",
+      "category": "context-match",
+      "label": "JAYWISDOM BASE ETH ROOT REPLAY PLAN V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/BRENDA_PERSONALITY_LEAF_V0_1.md",
+      "category": "context-match",
+      "label": "BRENDA PERSONALITY LEAF V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/MR_WISDOM/PROJECT_JAY_CHROMEBOOK_V0_1.md",
+      "category": "context-match",
+      "label": "PROJECT JAY CHROMEBOOK V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "reports/ms-wisdom/MS_WISDOM_PUBLIC_REPORT_V0_1.md",
+      "category": "context-match",
+      "label": "MS WISDOM PUBLIC REPORT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "intel/jaywisdom_identity_intel_update_2026-06-10.md",
+      "category": "context-match",
+      "label": "jaywisdom identity intel update 2026 06 10"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/WISDOM_GIRLS/COMPUTER_CLASS_PROJECT/README.md",
+      "category": "context-match",
+      "label": "README"
+    },
+    {
+      "repository": "JOY",
+      "path": "prompts/ZERO_TRUST_META_BUILD_STARTER_PROMPT_V0_1.md",
+      "category": "context-match",
+      "label": "ZERO TRUST META BUILD STARTER PROMPT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/agentic/GOBLIN_RECEIPT_CLERK_WORKFLOW_V0_1.md",
+      "category": "context-match",
+      "label": "GOBLIN RECEIPT CLERK WORKFLOW V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/goblin/GOBLIN_COVER_ART_FULL_REPLAY_CHAIN_V0_1.md",
+      "category": "context-match",
+      "label": "GOBLIN COVER ART FULL REPLAY CHAIN V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "command-center/JAYWISDOM_GITHUB_COMMAND_CENTER_V0_1.md",
+      "category": "context-match",
+      "label": "JAYWISDOM GITHUB COMMAND CENTER V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "joyspace/joyspace-depth-index.html",
+      "category": "context-match",
+      "label": "joyspace depth index"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/mr-wisdom-index.html",
+      "category": "context-match",
+      "label": "mr wisdom index"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/BRENDA_HTTP_BYTE_CHECK_CHECKLIST_V0_1.md",
+      "category": "context-match",
+      "label": "BRENDA HTTP BYTE CHECK CHECKLIST V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/base/BUILDING_BACK_BETTER_WITH_BASE_BATCHES_V0_1.md",
+      "category": "context-match",
+      "label": "BUILDING BACK BETTER WITH BASE BATCHES V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/JOY_ROOT_MANIFEST_POINTER_BINDING_V0_1.md",
+      "category": "context-match",
+      "label": "JOY ROOT MANIFEST POINTER BINDING V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "receipts/base/BASE_TX_8A642_SUCCESS_TRACE_RECEIPT_V0_1.md",
+      "category": "context-match",
+      "label": "BASE TX 8A642 SUCCESS TRACE RECEIPT V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/goblin/THE_RECEIPTS_SAW_YOU_X_SIGNAL_WITNESS_V0_1.md",
+      "category": "context-match",
+      "label": "THE RECEIPTS SAW YOU X SIGNAL WITNESS V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/base/base_tx_8a642.machine_replay.out",
+      "category": "context-match",
+      "label": "base tx 8a642.machine replay"
+    },
+    {
+      "repository": "JOY",
+      "path": "intel/intel_graph_correction_2026-06-10.md",
+      "category": "context-match",
+      "label": "intel graph correction 2026 06 10"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/base/QUANTUM_VELOCITY_VECTORIZATION_V0_1.md",
+      "category": "context-match",
+      "label": "QUANTUM VELOCITY VECTORIZATION V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/joyspace-depth-index.html",
+      "category": "context-match",
+      "label": "joyspace depth index"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/goblin/GOBLIN_COVER_ART_FARCASTER_SIGNAL_WITNESS_V0_1.md",
+      "category": "context-match",
+      "label": "GOBLIN COVER ART FARCASTER SIGNAL WITNESS V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/base/audits/base_tx_8a642.audit.20260614T055509Z.txt",
+      "category": "context-match",
+      "label": "base tx 8a642.audit.20260614T055509Z"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/DEEZER_MINT_ONCHAIN_VERIFICATION_ASSERTION_V0_1.md",
+      "category": "coin-related",
+      "label": "DEEZER MINT ONCHAIN VERIFICATION ASSERTION V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/DEEPER_DEEZER_BIRTHDAY_GOBLIN_RENDER_REPLAY_V0_1.md",
+      "category": "context-match",
+      "label": "DEEPER DEEZER BIRTHDAY GOBLIN RENDER REPLAY V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "styles.css",
+      "category": "context-match",
+      "label": "styles"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/base/base_tx_8a642.machine_replay.boot_again.out",
+      "category": "context-match",
+      "label": "base tx 8a642.machine replay.boot again"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/joyspace/BOSS_BRENDA_BIRTHDAY_BASE_BOOST_BATCH_V0_1.md",
+      "category": "context-match",
+      "label": "BOSS BRENDA BIRTHDAY BASE BOOST BATCH V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "artifacts/github/runs/27489868304/trigger_hunter_snapshot.txt",
+      "category": "context-match",
+      "label": "trigger hunter snapshot"
+    },
+    {
+      "repository": "JOY",
+      "path": "ARCHIVE/20260614/joyspace_full_chain_20260614T071000Z/recent_git_log.txt",
+      "category": "context-match",
+      "label": "recent git log"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/styles.css",
+      "category": "context-match",
+      "label": "styles"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/mrs-wisdom-birthday-fragment-v0-1.html",
+      "category": "context-match",
+      "label": "mrs wisdom birthday fragment v0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/receipts/GPK_FACTORY_JOY_AIRSTRIP_HEIDEE_SELF_JOY_20260614.md",
+      "category": "context-match",
+      "label": "GPK FACTORY JOY AIRSTRIP HEIDEE SELF JOY 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/goblin-courts/PROOF_POSITIVE_PINCER_POST_HOTDISH_DIPLOMACY_DARVO_V0_1.md",
+      "category": "context-match",
+      "label": "PROOF POSITIVE PINCER POST HOTDISH DIPLOMACY DARVO V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/alms/JAYS_FLYWHEEL_ALMS_WORK_STACK_WORKFLOW_WORK_WISDOM_V0_1.md",
+      "category": "zora-related",
+      "label": "JAYS FLYWHEEL ALMS WORK STACK WORKFLOW WORK WISDOM V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/receipts/BRENDA_EAS_BASE_ATTESTATION_READBACK_20260614.md",
+      "category": "context-match",
+      "label": "BRENDA EAS BASE ATTESTATION READBACK 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/backups/MATH_CLASS_BRENDA_SPLIT_PRE_SLOT_LOCK_20260614.md",
+      "category": "context-match",
+      "label": "MATH CLASS BRENDA SPLIT PRE SLOT LOCK 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "WISDOM/onchain_research_prompt_jaywisdom_base_eth_v0_1.md",
+      "category": "context-match",
+      "label": "onchain research prompt jaywisdom base eth v0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/JOY_PROTOCOLS/SUPER_SECRET_SISTER_SYNTAX_V0_1.md",
+      "category": "context-match",
+      "label": "SUPER SECRET SISTER SYNTAX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/WISDOM_GIRLS/BYTE_FOR_BYTE_SELF_WISDOM_TRAINING_ACADEMY_FOR_GIRLS_V0_1.md",
+      "category": "context-match",
+      "label": "BYTE FOR BYTE SELF WISDOM TRAINING ACADEMY FOR GIRLS V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "tools/verify-this-repo.py",
+      "category": "context-match",
+      "label": "verify this repo"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/protocols/JOY_PORCH_MASTERROOM_BOT_ADAPTER_V0_1.md",
+      "category": "context-match",
+      "label": "JOY PORCH MASTERROOM BOT ADAPTER V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/joyspace/receipts/HEIDEE_SITE_BRENDA_23B_MRS_WISDOM_APPROVAL_GATE_20260614.md",
+      "category": "context-match",
+      "label": "HEIDEE SITE BRENDA 23B MRS WISDOM APPROVAL GATE 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/joyspace/MRS_WISDOM_BIRTHDAY_GIRL_ENTERTAINMENT_BASE_REPLAY_V0_1.md",
+      "category": "context-match",
+      "label": "MRS WISDOM BIRTHDAY GIRL ENTERTAINMENT BASE REPLAY V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/lessons/MATH_CLASS_BRENDA_SPLIT_PHYSICS_GIRL_MATH_20260614.md",
+      "category": "context-match",
+      "label": "MATH CLASS BRENDA SPLIT PHYSICS GIRL MATH 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "FAMILY/receipts/joyspace/MRS_WISDOM_MERKLE_MINTING_MINNESOTA_MATH_FOREST_INDEX_V0_1.md",
+      "category": "coin-related",
+      "label": "MRS WISDOM MERKLE MINTING MINNESOTA MATH FOREST INDEX V0 1"
+    },
+    {
+      "repository": "JOY",
+      "path": "docs/school-of-wisdom/receipts/BRENDA_TEACHER_KIDS_KILLECTIBLE_CID_RECEIPT_20260614.md",
+      "category": "context-match",
+      "label": "BRENDA TEACHER KIDS KILLECTIBLE CID RECEIPT 20260614"
+    },
+    {
+      "repository": "JOY",
+      "path": "ARCHIVE/20260614/joyspace_promoted_20260614T060000Z/trigger_hunter_snapshot.txt",
+      "category": "context-match",
+      "label": "trigger hunter snapshot"
+    }
+  ],
+  "drive_private_review": [
+    {
+      "title": "Zora Head Rule",
+      "id": "1Ktf78pWSWnGiLjYA9xnl3aEIwxGILOZrfc1eEepgKn8",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "KAREN11 Anchor #8 — Zora Content Coin Receipt — 0x3de98ce6",
+      "id": "1VxvhKvIrPKI2NenqwOn78uuxmG2FBLL6iD9eoofcEAI",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "APPLIED_WISDOM_ZORA_RENDER_PACKET_V0.1",
+      "id": "1rJJAJmuBfybKiO8ge9kZiFRt-FBjTirYvFBuTwfz7U0",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "EVIDENCE_RAILS",
+      "id": "1AFWPewlhcrdjJHemIfTBcc6Le9KMXWwyJES24y0Y10U",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "TOOL_3328_METADATA_V0.1",
+      "id": "130BrRZc9qayh_QRdAWTJkevvlR5evRONifNc3I6_c4Y",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "GrokFamilyBots — Purpose Reason Function Map",
+      "id": "15lVZiTSw509bqSbE2ZDHoWDpuT6WxO6W0JndDnPeU8g",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "COMPUTERWISDOM Operator Signing Map and Morning Actions — 2026-10-09",
+      "id": "1YvHPZ3YesjgcG-P4P5kvIw7qi2PTrqfJ9UkdL8_uVmw",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "Jasons_START_HERE.md",
+      "id": "1Ga_MIZfzgqWKOFFIEwtDnh4C8GAgNi78",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    },
+    {
+      "title": "CWaaS_Morning_2026-10-09.md",
+      "id": "1onXEDK7Drd5_LtYdQ8B30K6sVXjsuq6A",
+      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
+    }
+  ]
+}
