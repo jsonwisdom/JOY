@@ -1205,51 +1205,8 @@
       "label": "trigger hunter snapshot"
     }
   ],
-  "drive_private_review": [
-    {
-      "title": "Zora Head Rule",
-      "id": "1Ktf78pWSWnGiLjYA9xnl3aEIwxGILOZrfc1eEepgKn8",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "KAREN11 Anchor #8 — Zora Content Coin Receipt — 0x3de98ce6",
-      "id": "1VxvhKvIrPKI2NenqwOn78uuxmG2FBLL6iD9eoofcEAI",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "APPLIED_WISDOM_ZORA_RENDER_PACKET_V0.1",
-      "id": "1rJJAJmuBfybKiO8ge9kZiFRt-FBjTirYvFBuTwfz7U0",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "EVIDENCE_RAILS",
-      "id": "1AFWPewlhcrdjJHemIfTBcc6Le9KMXWwyJES24y0Y10U",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "TOOL_3328_METADATA_V0.1",
-      "id": "130BrRZc9qayh_QRdAWTJkevvlR5evRONifNc3I6_c4Y",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "GrokFamilyBots — Purpose Reason Function Map",
-      "id": "15lVZiTSw509bqSbE2ZDHoWDpuT6WxO6W0JndDnPeU8g",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "COMPUTERWISDOM Operator Signing Map and Morning Actions — 2026-10-09",
-      "id": "1YvHPZ3YesjgcG-P4P5kvIw7qi2PTrqfJ9UkdL8_uVmw",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "Jasons_START_HERE.md",
-      "id": "1Ga_MIZfzgqWKOFFIEwtDnh4C8GAgNi78",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    },
-    {
-      "title": "CWaaS_Morning_2026-10-09.md",
-      "id": "1onXEDK7Drd5_LtYdQ8B30K6sVXjsuq6A",
-      "access": "PRIVATE_REVIEW_NO_PUBLIC_LINK"
-    }
-  ]
+  "drive_private_review": {
+    "count": 9,
+    "status": "HOLD_PRIVATE_NOT_INCLUDED_IN_PUBLIC_MANIFEST"
+  }
 }
