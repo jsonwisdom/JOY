@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Minnesota Maxwell — Three Sisters Feedback Arcade</title>
+<title>Minnesota Maxwell — Civic Satire App</title><meta name="theme-color" content="#171e41"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml">
 <meta name="description" content="Independent civic feedback audit arcade: investigate barriers, export receipts and create civic satire prompts. Not a government website.">
 <style>
 :root{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#f4f5ff;background:#0c1022;font-size:18px}
@@ -10,7 +10,7 @@
 <h1>MINNESOTA MAXWELL ⚙️🌸</h1><p style="font-size:1.2rem">The Three Sisters Feedback Arcade</p><p><b>Mean to broken processes. Nice to humans.</b> Click to audit. Click to learn. Click to laugh.</p>
 <div class="notice"><b>Not a government website.</b> No affiliation with Keith Ellison, Minnesota, or any institution. All sample cases and failure animations are simulations or clearly marked user reports. This app does not submit complaints to agencies, verify violations, or establish fraud.</div>
 <nav class="flex"><a href="#arcade">Play the loop</a><a href="#matrix">Audit matrix</a><a href="#satire">Satire machine</a><a href="#receipts">Receipts</a><a href="#learn">Teach · Build · Learn</a></nav></header>
-<main><section class="grid" aria-label="Three corridors">
+<main><section class="panel" id="apphome"><div class="eyebrow">CITIZEN ARCADE · APP VERSION 0.2</div><h2>Audit · Laugh · Learn · Replay</h2><p>One door to hundreds of lessons. Each selection changes the next screen. No account, no public submission, and no personal details required.</p><div class="grid"><div><button id="auditdoor" style="width:100%">🔎 AUDIT A SYSTEM</button><p class="label">Five steps, one local evidence row, export your own receipt.</p></div><div><button id="laughdoor" class="alt" style="width:100%">😂 OPEN GARBAGE PRESS</button><p class="label">Generate a fictional satire prompt from a chosen barrier.</p></div><div><button id="learndoor" class="ghost" style="width:100%">🌸 LEARN SOMETHING</button><p class="label">Three sisters. Six mentors. Nine aunties. Infinite curiosity.</p></div></div><h3>Explore the layers</h3><label for="layercount">Select a depth of exploration</label><select id="layercount"><option value="3">3 layers · Process</option><option value="9">9 layers · Family and community</option><option value="60">60 layers · Civic learning</option><option value="600">600 layers · Exploration mode</option></select><div class="flex"><button id="layernext">✨ Open next layer</button><button id="layerreset" class="ghost">↺ Start again</button><button id="installapp" class="alt" hidden>⬇ Install app</button></div><p class="result" id="layerstatus" role="status">Choose a depth, then open your first lesson.</p><p class="label">The 600-layer mode is a generated educational sequence, not 600 verified findings or 600 separate government systems.</p></section><section class="grid" aria-label="Three corridors">
 <div class="panel"><h2>① BOUNDARIES</h2><p>State corridor: Who controls the process? Which law, agency, or rule?</p></div>
 <div class="panel"><h2>② BARRIERS</h2><p>Retail and public-facing corridor: What precisely blocked the human?</p></div>
 <div class="panel"><h2>③ BLOOM</h2><p>Expansion corridor: Check the evidence; make a fix, a story, a lesson, or a satire prompt. A breach is never presumed.</p></div></section>
@@ -32,6 +32,28 @@
 "use strict";
 const states="Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming".split(",");
 const $=id=>document.getElementById(id), clean=s=>String(s||"").trim();
+let currentLayer=0, installEvent=null;
+const layerLessons=[
+["BOUNDARIES","Which institution owns the rule? Write down the office, jurisdiction, and source."],
+["BARRIERS","What action failed? Record exactly what appeared, without guessing why."],
+["BREACHES?","A failed button is not automatically a legal breach. Find the applicable obligation."],
+["FAMILY","Ask an elder how a similar process worked before smartphones."],
+["COMMUNITY","Invite an auntie, uncle, or neighbor to challenge your proposed solution."],
+["HISTORY","Compare a scary movie warning with the law that actually applied."],
+["MATH","Count retries, minutes lost, and receipts produced. Never invent numbers."],
+["SATIRE","Make a joke about a fictional broken system, not someone's ethnicity or identity."],
+["JOY","Teach what worked and propose a small improvement."]
+];
+function moveTo(id){$(id).scrollIntoView({behavior:"smooth",block:"start"})}
+$("auditdoor").onclick=()=>moveTo("matrix");
+$("laughdoor").onclick=()=>moveTo("satire");
+$("learndoor").onclick=()=>moveTo("learn");
+$("layernext").onclick=()=>{const limit=Number($("layercount").value);currentLayer=(currentLayer%limit)+1;const [name,lesson]=layerLessons[(currentLayer-1)%layerLessons.length];$("layerstatus").textContent="LAYER "+currentLayer+" / "+limit+" — "+name+"\n"+lesson+"\nNext step: test the idea, then replay what you learned."};
+$("layerreset").onclick=()=>{currentLayer=0;$("layerstatus").textContent="Reset complete. Choose a depth and start your next lesson."};
+$("layercount").onchange=()=>{currentLayer=0;$("layerstatus").textContent="Exploration depth changed. Open your first lesson."};
+window.addEventListener("beforeinstallprompt",event=>{event.preventDefault();installEvent=event;$("installapp").hidden=false});
+$("installapp").onclick=async()=>{if(installEvent){installEvent.prompt();await installEvent.userChoice;installEvent=null;$("installapp").hidden=true}};
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}))}
 const addText=(node,tag,value)=>{const el=document.createElement(tag);el.textContent=value;node.appendChild(el);return el};
 states.forEach(x=>{let o=document.createElement("option");o.value=x;o.textContent=x;if(x==="Minnesota")o.selected=true;$("state").appendChild(o)});
 const messages=["A resident requests help. The system welcomes them!","Please join a second line. Your previous line cannot process this item.","The complaint panel opens. Which button actually sends the message?","PARODY: Upload file is disabled. Please upload proof that uploading is disabled.","PARODY: Error 404: Your receipt is inside the button you could not click."];
