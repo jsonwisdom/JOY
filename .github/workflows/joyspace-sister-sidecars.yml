@@ -1,0 +1,26 @@
+name: JoySpace sister sidecar seals
+
+on:
+  pull_request:
+    paths:
+      - "artifacts/sister_syntax_sidecars.py"
+      - "artifacts/SUPER_SECRET_SISTER_SYNTAX_SIDECARS.json"
+      - "receipts/continuity/HEIDEE_APPLEBLOSSOM_QUAD_ONION_V1.json"
+      - "docs/school-of-wisdom/lessons/MATH_CLASS_BRENDA_SPLIT_PHYSICS_GIRL_MATH_20260614.md"
+      - "docs/THREE_SISTERS_SUPER_SECRET_SIDECAR.md"
+      - ".github/workflows/joyspace-sister-sidecars.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-seals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify exact parent bytes and deterministic 3/6/9 math
+        run: python artifacts/sister_syntax_sidecars.py
