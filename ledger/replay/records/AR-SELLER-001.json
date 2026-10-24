@@ -1,0 +1,72 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "urn:jsonwisdom:replay:",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "created_at": {
+      "@type": "xsd:dateTime"
+    },
+    "record_refs": {
+      "@container": "@set"
+    },
+    "evidence_refs": {
+      "@container": "@set"
+    },
+    "sealed_boundaries": {
+      "@container": "@set"
+    }
+  },
+  "@id": "urn:jsonwisdom:atomic-record:AR-SELLER-001",
+  "@type": "AtomicRecord",
+  "record": {
+    "record_id": "AR-SELLER-001",
+    "subject_class": "THING",
+    "subject_id": "synthetic:fba-inventory-report:2026-07",
+    "authority_surface": "AMAZON",
+    "authority_id": "AMAZON_SELLER",
+    "claim_scope": "PLATFORM_CUSTODY",
+    "claim": "Amazon FBA reported seller inventory at one Minnesota fulfillment location and one Alabama fulfillment location.",
+    "observed_fact": "The synthetic FBA report contains two inventory location rows labeled US-MN and US-AL.",
+    "replay_outcome": "MATCH",
+    "verification_state": "SOURCE_MATCHED",
+    "legal_effect_claimed": false,
+    "tax_effect_claimed": false,
+    "authority_entrance": {
+      "present": true,
+      "authority_id": "AMAZON_SELLER",
+      "source_type": "PLATFORM_REPORT",
+      "evidence_ref": "synthetic:fba-inventory-report:2026-07"
+    },
+    "sealed_boundaries": [
+      "NO_NEXUS_INFERENCE",
+      "NO_LEGAL_EFFECT_INFERENCE",
+      "NO_TAX_EFFECT_INFERENCE"
+    ],
+    "evidence_refs": [
+      {
+        "artifact_id": "FBA-REPORT-001",
+        "artifact_type": "AMAZON_FBA_REPORT",
+        "source_uri": "fixtures/replay/seller/FBA_INVENTORY_REPORT_SYNTHETIC_V0_1.json",
+        "sha256": "8c80bdd7f92b417e25e27ad8fd954281d1d8053aeb1f70787bc7643d24a45630"
+      }
+    ],
+    "record_refs": [],
+    "synthetic": true,
+    "created_at": "2026-08-02T02:48:00Z"
+  },
+  "ledger": {
+    "chain_id": "urn:jsonwisdom:ledger:atomic-record:v0.1:seller-scenario",
+    "sequence": 0,
+    "previous_entry_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_digest": "2bc6d0d16f4db8166e340cf7bad5aecd71ef53d619f213be0de16304eb4e459b",
+    "entry_digest": "e198593f959a52b7396916694153c8de4cd2310b81ac81ccb21dee65d6197814",
+    "canonicalization": "RFC8785-JCS",
+    "canonicalization_profile": "JSONWISDOM_JCS_SAFE_V0_1",
+    "digest_algorithm": "SHA-256",
+    "hash_input_rule": "ENTRY=SHA256(raw_previous_digest||raw_payload_digest)",
+    "payload_scope": "record",
+    "authority": false,
+    "verification_claimed": false,
+    "receiptos_status": "PENDING"
+  }
+}

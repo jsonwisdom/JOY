@@ -1,0 +1,23 @@
+{
+  "artifact_type": "SYNTHETIC_AMAZON_FBA_INVENTORY_REPORT_V0_1",
+  "seller_id": "synthetic:seller:001",
+  "report_period": "2026-07",
+  "source_scope": "AMAZON_PLATFORM_ONLY",
+  "inventory_locations": [
+    {
+      "facility_id": "MN-FC-SYN-001",
+      "jurisdiction_label": "US-MN",
+      "point_feature_id": "mn-facility-point",
+      "quantity": 12
+    },
+    {
+      "facility_id": "AL-FC-SYN-001",
+      "jurisdiction_label": "US-AL",
+      "point_feature_id": "al-facility-point",
+      "quantity": 8
+    }
+  ],
+  "legal_nexus_claimed": false,
+  "tax_effect_claimed": false,
+  "synthetic": true
+}

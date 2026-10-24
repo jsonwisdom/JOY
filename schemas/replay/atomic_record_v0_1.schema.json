@@ -1,0 +1,698 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonwisdom:schema:atomic-record:v0.1",
+  "title": "JSONWisdom Layer 3 Atomic Record v0.1",
+  "description": "JSON-LD envelope for jurisdictionally sealed People, Places, and Things replay records. The schema prevents platform, geometry, network, state, and federal lanes from silently inheriting authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "@context": {
+      "const": {
+        "@version": 1.1,
+        "@vocab": "urn:jsonwisdom:replay:",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "created_at": {
+          "@type": "xsd:dateTime"
+        },
+        "record_refs": {
+          "@container": "@set"
+        },
+        "evidence_refs": {
+          "@container": "@set"
+        },
+        "sealed_boundaries": {
+          "@container": "@set"
+        }
+      }
+    },
+    "@id": {
+      "type": "string",
+      "pattern": "^urn:jsonwisdom:atomic-record:AR-[A-Z0-9-]+$"
+    },
+    "@type": {
+      "const": "AtomicRecord"
+    },
+    "record": {
+      "$ref": "#/$defs/record"
+    },
+    "ledger": {
+      "$ref": "#/$defs/ledger"
+    }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "record",
+    "ledger"
+  ],
+  "$defs": {
+    "hex64": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_type": {
+          "enum": [
+            "AMAZON_FBA_REPORT",
+            "GEOJSON",
+            "BLOCKCHAIN_RECEIPT",
+            "OFFICIAL_STATE_SOURCE",
+            "OFFICIAL_FEDERAL_SOURCE",
+            "PERSON_CONTROL_PROOF",
+            "FILED_RETURN",
+            "OFFICIAL_NOTICE",
+            "AGENCY_ACCOUNT_RECORD",
+            "OTHER"
+          ]
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hex64"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "source_uri",
+        "sha256"
+      ]
+    },
+    "authorityEntrance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "authority_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_type": {
+          "enum": [
+            "NONE",
+            "PLATFORM_REPORT",
+            "GEO_DATASET",
+            "BLOCKCHAIN_RECEIPT",
+            "OFFICIAL_STATE_SOURCE",
+            "OFFICIAL_FEDERAL_SOURCE",
+            "FILED_RETURN",
+            "OFFICIAL_NOTICE",
+            "AGENCY_ACCOUNT_RECORD",
+            "PERSON_CONTROL_PROOF"
+          ]
+        },
+        "evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "present",
+        "authority_id",
+        "source_type",
+        "evidence_ref"
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^AR-[A-Z0-9-]+$"
+        },
+        "subject_class": {
+          "enum": [
+            "PERSON",
+            "PLACE",
+            "THING"
+          ]
+        },
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_surface": {
+          "enum": [
+            "NONE",
+            "AMAZON",
+            "STATE",
+            "FEDERAL",
+            "NETWORK"
+          ]
+        },
+        "authority_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "claim_scope": {
+          "enum": [
+            "PHYSICAL_LOCATION",
+            "PLATFORM_CUSTODY",
+            "STATE_NEXUS",
+            "STATE_TAX_EFFECT",
+            "TRANSACTION_EXISTENCE",
+            "WALLET_IDENTITY",
+            "FEDERAL_TAX_EFFECT",
+            "COMPOSITE_SUMMARY"
+          ]
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_fact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replay_outcome": {
+          "enum": [
+            "MATCH",
+            "MISMATCH",
+            "INDETERMINATE",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "verification_state": {
+          "enum": [
+            "UNVERIFIED",
+            "SOURCE_OBSERVED",
+            "SOURCE_MATCHED",
+            "CONTRADICTED",
+            "EVIDENCE_INCOMPLETE"
+          ]
+        },
+        "legal_effect_claimed": {
+          "type": "boolean"
+        },
+        "tax_effect_claimed": {
+          "type": "boolean"
+        },
+        "authority_entrance": {
+          "$ref": "#/$defs/authorityEntrance"
+        },
+        "sealed_boundaries": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "NO_IDENTITY_INFERENCE",
+              "NO_NEXUS_INFERENCE",
+              "NO_FEDERAL_INHERITANCE",
+              "NO_CROSS_LANE_PROMOTION",
+              "NO_LEGAL_EFFECT_INFERENCE",
+              "NO_TAX_EFFECT_INFERENCE"
+            ]
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidenceRef"
+          }
+        },
+        "record_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AR-[A-Z0-9-]+$"
+          }
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "record_id",
+        "subject_class",
+        "subject_id",
+        "authority_surface",
+        "authority_id",
+        "claim_scope",
+        "claim",
+        "observed_fact",
+        "replay_outcome",
+        "verification_state",
+        "legal_effect_claimed",
+        "tax_effect_claimed",
+        "authority_entrance",
+        "sealed_boundaries",
+        "evidence_refs",
+        "record_refs",
+        "synthetic",
+        "created_at"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "PHYSICAL_LOCATION"
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subject_class": {
+                "const": "PLACE"
+              },
+              "legal_effect_claimed": {
+                "const": false
+              },
+              "tax_effect_claimed": {
+                "const": false
+              },
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_NEXUS_INFERENCE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "PLATFORM_CUSTODY"
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "authority_surface": {
+                "const": "AMAZON"
+              },
+              "legal_effect_claimed": {
+                "const": false
+              },
+              "tax_effect_claimed": {
+                "const": false
+              },
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_NEXUS_INFERENCE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "enum": [
+                  "STATE_NEXUS",
+                  "STATE_TAX_EFFECT"
+                ]
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "authority_surface": {
+                "const": "STATE"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "TRANSACTION_EXISTENCE"
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subject_class": {
+                "const": "THING"
+              },
+              "authority_surface": {
+                "const": "NETWORK"
+              },
+              "legal_effect_claimed": {
+                "const": false
+              },
+              "tax_effect_claimed": {
+                "const": false
+              },
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_IDENTITY_INFERENCE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "WALLET_IDENTITY"
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subject_class": {
+                "const": "PERSON"
+              },
+              "authority_surface": {
+                "const": "NETWORK"
+              },
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_IDENTITY_INFERENCE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "WALLET_IDENTITY"
+              },
+              "replay_outcome": {
+                "const": "MATCH"
+              }
+            },
+            "required": [
+              "claim_scope",
+              "replay_outcome"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_refs": {
+                "contains": {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "PERSON_CONTROL_PROOF"
+                    }
+                  },
+                  "required": [
+                    "artifact_type"
+                  ]
+                }
+              },
+              "authority_entrance": {
+                "properties": {
+                  "present": {
+                    "const": true
+                  },
+                  "source_type": {
+                    "const": "PERSON_CONTROL_PROOF"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "FEDERAL_TAX_EFFECT"
+              }
+            },
+            "required": [
+              "claim_scope"
+            ]
+          },
+          "then": {
+            "properties": {
+              "authority_surface": {
+                "const": "FEDERAL"
+              },
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_FEDERAL_INHERITANCE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "enum": [
+                  "STATE_NEXUS",
+                  "STATE_TAX_EFFECT"
+                ]
+              },
+              "replay_outcome": {
+                "const": "MATCH"
+              }
+            },
+            "required": [
+              "claim_scope",
+              "replay_outcome"
+            ]
+          },
+          "then": {
+            "properties": {
+              "authority_entrance": {
+                "properties": {
+                  "present": {
+                    "const": true
+                  },
+                  "source_type": {
+                    "enum": [
+                      "OFFICIAL_STATE_SOURCE",
+                      "FILED_RETURN",
+                      "OFFICIAL_NOTICE",
+                      "AGENCY_ACCOUNT_RECORD"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_scope": {
+                "const": "FEDERAL_TAX_EFFECT"
+              },
+              "replay_outcome": {
+                "const": "MATCH"
+              }
+            },
+            "required": [
+              "claim_scope",
+              "replay_outcome"
+            ]
+          },
+          "then": {
+            "properties": {
+              "authority_entrance": {
+                "properties": {
+                  "present": {
+                    "const": true
+                  },
+                  "authority_id": {
+                    "pattern": "^US-FED"
+                  },
+                  "source_type": {
+                    "enum": [
+                      "OFFICIAL_FEDERAL_SOURCE",
+                      "FILED_RETURN",
+                      "OFFICIAL_NOTICE",
+                      "AGENCY_ACCOUNT_RECORD"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "legal_effect_claimed": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "legal_effect_claimed"
+                ]
+              },
+              {
+                "properties": {
+                  "tax_effect_claimed": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "tax_effect_claimed"
+                ]
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "replay_outcome": {
+                "const": "MATCH"
+              },
+              "authority_surface": {
+                "enum": [
+                  "STATE",
+                  "FEDERAL"
+                ]
+              },
+              "authority_entrance": {
+                "properties": {
+                  "present": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "authority_surface": {
+                "const": "FEDERAL"
+              }
+            },
+            "required": [
+              "authority_surface"
+            ]
+          },
+          "then": {
+            "properties": {
+              "sealed_boundaries": {
+                "contains": {
+                  "const": "NO_FEDERAL_INHERITANCE"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "previous_entry_digest": {
+          "$ref": "#/$defs/hex64"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/hex64"
+        },
+        "entry_digest": {
+          "$ref": "#/$defs/hex64"
+        },
+        "canonicalization": {
+          "const": "RFC8785-JCS"
+        },
+        "canonicalization_profile": {
+          "const": "JSONWISDOM_JCS_SAFE_V0_1"
+        },
+        "digest_algorithm": {
+          "const": "SHA-256"
+        },
+        "hash_input_rule": {
+          "const": "ENTRY=SHA256(raw_previous_digest||raw_payload_digest)"
+        },
+        "payload_scope": {
+          "const": "record"
+        },
+        "authority": {
+          "const": false
+        },
+        "verification_claimed": {
+          "const": false
+        },
+        "receiptos_status": {
+          "enum": [
+            "PENDING",
+            "VERIFIED",
+            "REJECTED"
+          ]
+        }
+      },
+      "required": [
+        "chain_id",
+        "sequence",
+        "previous_entry_digest",
+        "payload_digest",
+        "entry_digest",
+        "canonicalization",
+        "canonicalization_profile",
+        "digest_algorithm",
+        "hash_input_rule",
+        "payload_scope",
+        "authority",
+        "verification_claimed",
+        "receiptos_status"
+      ]
+    }
+  }
+}
