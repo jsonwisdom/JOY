@@ -1,6 +1,6 @@
 {
   "$schema": "urn:jsonwisdom:family-surface-metadata:v0.1",
-  "metadata_version": "0.1.1",
+  "metadata_version": "0.1.2",
   "repository": "jsonwisdom/JOY",
   "repository_visibility": "PUBLIC",
   "surface": "JOY",
@@ -50,7 +50,124 @@
     "machine_green_creates_authority": false,
     "placeholder_digest_signing_allowed": false
   },
+  "wisdom_girls_reverse_369_audit": {
+    "format": "WISDOM_GIRLS_REVERSE_369_V0.1",
+    "subject": {
+      "address": "0xF18E616d5F315435F9A0C48EeD52048d4051FB27",
+      "human_label": "Daddy's trades",
+      "convenience_label": "JAY_UNISWAP",
+      "label_state": "USER_SUPPLIED_NOT_IDENTITY_PROOF",
+      "control_verified_here": false,
+      "identity_binding_verified_here": false,
+      "authority_created": false
+    },
+    "method": {
+      "direction": "9_TO_6_TO_3",
+      "nine_raw_checks": [
+        "transaction_hash",
+        "block_number",
+        "timestamp_utc",
+        "from_address",
+        "to_address",
+        "method",
+        "value_delta",
+        "fee_native",
+        "source_sha256"
+      ],
+      "six_normalized_checks": [
+        "daily_transaction_count",
+        "action_class",
+        "counterparty",
+        "asset",
+        "cost",
+        "delta_from_prior_active_day"
+      ],
+      "three_outputs": [
+        "WHAT_HAPPENED",
+        "WHAT_CHANGED",
+        "WHAT_REMAINS_UNKNOWN"
+      ]
+    },
+    "SnapCheckSnapChatDoubleRun": {
+      "run_a": "SnapCheck",
+      "run_a_role": "deterministic transaction-set and field comparison",
+      "run_b": "SnapChat",
+      "run_b_role": "independent human-readable replay from the same bounded evidence",
+      "promotion_rule": "Promote only facts that survive both runs; narrative-only intent stays INFERRED or UNKNOWN.",
+      "status": "SNAPCHECK_PASS_SNAPCHAT_PENDING"
+    },
+    "source_boundary": {
+      "ledger": "jay_unified_ledger.csv",
+      "primary_exports": [
+        {
+          "name": "export-0xF18E616d5F315435F9A0C48EeD52048d4051FB27 (1)(2).csv",
+          "sha256": "3e8c6631523e7027b34b809b1da08a05e1363367b392097c0bc69e717c4c1884"
+        },
+        {
+          "name": "export-0xF18E616d5F315435F9A0C48EeD52048d4051FB27 (2)(1).csv",
+          "sha256": "166fca3e2bd989e3d0ce03a44f5da64fcb57a5aecae63af40dccfe2ebe0c86a6"
+        }
+      ],
+      "bytes_equal": false,
+      "transaction_hash_sets_equal": true,
+      "rows_each": 1016,
+      "unique_outgoing_transactions_each": 970,
+      "stable_fields_match": true,
+      "variant_field": {
+        "field": "tx_fee_usd",
+        "rows_different": 1016,
+        "ratio_run_a_to_run_b": 1.0009667211852171,
+        "interpretation": "USD fee conversion differs while native fee and transaction identity remain unchanged."
+      }
+    },
+    "observed_timeline": {
+      "address_creation_date": "NOT_INTRINSICALLY_PROVEN_BY_EXPORT",
+      "first_observed_activity_utc": "2024-11-30T00:40:31Z",
+      "first_observed_activity_type": "INBOUND_TRANSFER",
+      "first_observed_outgoing_utc": "2024-11-30T00:43:49Z",
+      "first_observed_outgoing_method": "Execute",
+      "first_observed_outgoing_target": "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD",
+      "first_approve_utc": "2024-12-08T09:56:07Z",
+      "first_deposit_v3_utc": "2024-12-13T22:56:21Z",
+      "last_observed_outgoing_utc": "2026-06-11T19:59:51Z"
+    },
+    "outgoing_unique_transaction_counts": {
+      "total": 970,
+      "active_days": 111,
+      "transfer": 412,
+      "execute": 387,
+      "approve": 129,
+      "deposit": 30,
+      "withdraw": 4,
+      "multicall": 3,
+      "claim": 3,
+      "raw_call": 1,
+      "swap_explicitly_labeled": 1
+    },
+    "uniswap_evidence": {
+      "direct_execute_calls_to_universal_router": 201,
+      "router_address": "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD",
+      "router_role_verified_from": "Uniswap official deployment source",
+      "first_router_execute_utc": "2024-11-30T00:43:49Z",
+      "last_router_execute_utc": "2025-01-29T14:01:39Z",
+      "rule": "Execute-to-router is protocol interaction evidence; do not silently equate every Execute with a decoded swap."
+    },
+    "intent": {
+      "state": "INFERRED_NOT_PROVEN",
+      "bounded_inference": "Observed pattern is consistent with active DEX/protocol experimentation, routing, approvals, transfers, and liquidity/deposit behavior rather than passive custody.",
+      "rule": "On-chain behavior does not prove the human reason for a trade."
+    },
+    "hard_rules": [
+      "ACTIVITY != CONTROL",
+      "CONTROL != IDENTITY",
+      "IDENTITY != AUTHORITY",
+      "TRANSACTION != INTENT",
+      "ROUTER_EXECUTE != DECODED_SWAP_UNLESS_LOGS_OR_CALLDATA_VERIFY",
+      "USD_FEE_DELTA != TRANSACTION_DELTA"
+    ],
+    "authority_created": false
+  },
   "authority_created": false,
   "publication_authority_created": false,
-  "next_transition": "HUMAN_REVIEWS_SCOPED_ACCESS_FIELDS"
+  "next_transition": "HUMAN_REVIEWS_REVERSE_369_SNAPCHAT_DOUBLE_RUN"
 }
