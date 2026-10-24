@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.example/schemas/replayos/audit_node_core_v0_1.schema.json",
+  "title": "ReplayOS Audit Node Core v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "node_id",
+    "event_id",
+    "observed_at",
+    "recorded_at",
+    "source_type",
+    "content",
+    "consent_snapshot",
+    "artifact_fingerprint",
+    "authority_created"
+  ],
+  "properties": {
+    "version": {"type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"},
+    "node_id": {"type": "string", "format": "uuid"},
+    "event_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "source_type": {"enum": ["OBSERVATION", "INFERENCE", "SYSTEM_LOG", "CORRIDOR_REPLAY"]},
+    "source_ref": {"type": ["string", "null"], "maxLength": 2048},
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["data_type", "payload", "encoding"],
+      "properties": {
+        "data_type": {"enum": ["POSITION", "INTENT", "RELATIONSHIP", "IDENTIFIER", "TIMING", "OTHER"]},
+        "payload": {"type": "object"},
+        "encoding": {"type": "string", "minLength": 1}
+      }
+    },
+    "consent_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frozen_at", "scope", "authority", "signature"],
+      "properties": {
+        "frozen_at": {"type": "string", "format": "date-time"},
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["data_types", "permitted_uses", "prohibited_uses", "duration", "revocable"],
+          "properties": {
+            "data_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["POSITION", "INTENT", "RELATIONSHIP", "IDENTIFIER", "TIMING", "OTHER"]}},
+            "permitted_uses": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "prohibited_uses": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "duration": {"type": "string", "minLength": 1},
+            "revocable": {"type": "boolean"}
+          }
+        },
+        "authority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["granter_type", "granter_id", "scope_limited", "decision_capability"],
+          "properties": {
+            "granter_type": {"enum": ["SUBJECT", "SYSTEM_WITNESS", "DELEGATED"]},
+            "granter_id": {"type": ["string", "null"], "maxLength": 200},
+            "scope_limited": {"const": true},
+            "decision_capability": {"const": false}
+          }
+        },
+        "signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "scheme", "value"],
+          "properties": {
+            "status": {"enum": ["PRESENT", "NOT_PRESENT", "NOT_VERIFIED"]},
+            "scheme": {"type": ["string", "null"]},
+            "value": {"type": ["string", "null"]}
+          }
+        }
+      }
+    },
+    "artifact_fingerprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hash_algorithm", "hash_value", "content_type", "storage_location"],
+      "properties": {
+        "hash_algorithm": {"const": "SHA-256"},
+        "hash_value": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_type": {"type": "string", "minLength": 1},
+        "storage_location": {"type": "string", "minLength": 1}
+      }
+    },
+    "authority_created": {"const": false}
+  }
+}

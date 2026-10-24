@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "node_id": "0198a340-6a00-7a10-8b20-123456789abc",
+  "event_id": "SOY_SAUCE_BASELINE_001",
+  "observed_at": "2026-08-04T23:45:00Z",
+  "recorded_at": "2026-08-04T23:45:01Z",
+  "source_type": "OBSERVATION",
+  "source_ref": "reference://artifacts/soy_sauce_position_payload_v0_1.json",
+  "content": {
+    "data_type": "POSITION",
+    "payload": {
+      "object": "soy_sauce_bottle",
+      "from": "shelf_A",
+      "to": "shelf_B",
+      "coordinates": {
+        "x": 12.3,
+        "y": 45.6,
+        "z": 78.9
+      }
+    },
+    "encoding": "application/json"
+  },
+  "consent_snapshot": {
+    "frozen_at": "2026-08-04T23:45:01Z",
+    "scope": {
+      "data_types": ["POSITION"],
+      "permitted_uses": ["RESEARCH", "REPLAY"],
+      "prohibited_uses": ["SURVEILLANCE", "IDENTIFICATION", "PUNISHMENT"],
+      "duration": "INDEFINITE",
+      "revocable": true
+    },
+    "authority": {
+      "granter_type": "SYSTEM_WITNESS",
+      "granter_id": null,
+      "scope_limited": true,
+      "decision_capability": false
+    },
+    "signature": {
+      "status": "NOT_PRESENT",
+      "scheme": null,
+      "value": null
+    }
+  },
+  "artifact_fingerprint": {
+    "hash_algorithm": "SHA-256",
+    "hash_value": "5aa17bff3b0ebf12f0771299b425bf300913c7603918067c88dd39d9a034b021",
+    "content_type": "application/json",
+    "storage_location": "reference/artifacts/soy_sauce_position_payload_v0_1.json"
+  },
+  "authority_created": false
+}
