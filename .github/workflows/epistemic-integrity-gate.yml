@@ -1,0 +1,89 @@
+name: Epistemic Integrity Gate
+
+on:
+  pull_request:
+    paths:
+      - 'claims/**'
+      - 'evidence/**'
+      - 'revocations/**'
+      - 'schema/claim_state.schema.json'
+      - 'schema/claim_revocation.schema.json'
+      - '.github/workflows/epistemic-integrity-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  epistemic-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned schema tooling
+        run: python -m pip install jsonschema==4.23.0
+
+      - name: Epistemic Integrity Gate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo '🔍 Validating claim state machines...'
+          if [ -d claims ]; then
+            find claims -name '*.json' -print0 | while IFS= read -r -d '' file; do
+              python -m jsonschema -i "$file" schema/claim_state.schema.json
+            done
+          fi
+
+          if [ -d revocations ]; then
+            find revocations -name '*.json' -print0 | while IFS= read -r -d '' file; do
+              python -m jsonschema -i "$file" schema/claim_revocation.schema.json
+            done
+          fi
+
+          BASE_SHA="${{ github.event.pull_request.base.sha || github.event.before }}"
+          HEAD_SHA="${{ github.sha }}"
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = '0000000000000000000000000000000000000000' ]; then
+            BASE_SHA="HEAD~1"
+          fi
+
+          echo '🛡️ Checking evidence deletion safety...'
+          DELETED_EVIDENCE=$(git diff --name-only --diff-filter=D "$BASE_SHA" "$HEAD_SHA" | grep '^evidence/' || true)
+          if [ -n "$DELETED_EVIDENCE" ]; then
+            while IFS= read -r file; do
+              [ -z "$file" ] && continue
+              REF=$(basename "$file")
+              ACTIVE_REFS=''
+              if compgen -G 'claims/*.json' > /dev/null; then
+                ACTIVE_REFS=$(jq -r --arg ref "$REF" 'select(.state != "REVOKED" and .evidence_ref == $ref) | .state' claims/*.json 2>/dev/null || true)
+              fi
+              if [ -n "$ACTIVE_REFS" ]; then
+                echo "::error::BLOCKED: Cannot delete '$file'. Referenced by active claim states: $ACTIVE_REFS"
+                echo '::notice::Transition dependent claims to REVOKED with a schema-valid revocation artifact before archival or removal.'
+                exit 1
+              fi
+            done <<< "$DELETED_EVIDENCE"
+          fi
+
+          echo '📜 Verifying append-only claim transitions...'
+          MODIFIED_CLAIMS=$(git diff --name-only --diff-filter=M "$BASE_SHA" "$HEAD_SHA" | grep '^claims/' || true)
+          if [ -n "$MODIFIED_CLAIMS" ]; then
+            echo "::error::BLOCKED: In-place modification of claims detected: $MODIFIED_CLAIMS"
+            echo '::notice::Claims are immutable. Append a new transition artifact with prior_state_ref instead.'
+            exit 1
+          fi
+
+          MODIFIED_REVOCATIONS=$(git diff --name-only --diff-filter=M "$BASE_SHA" "$HEAD_SHA" | grep '^revocations/' || true)
+          if [ -n "$MODIFIED_REVOCATIONS" ]; then
+            echo "::error::BLOCKED: In-place modification of revocations detected: $MODIFIED_REVOCATIONS"
+            exit 1
+          fi
+
+          echo '✅ Epistemic integrity verified. Constitution upheld.'
