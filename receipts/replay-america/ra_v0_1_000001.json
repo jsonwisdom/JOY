@@ -1,0 +1,18 @@
+{
+  "receipt_id": "ra:v0.1:000001",
+  "claim": "REPLAY_AMERICA_V0_1 manifest exists at GitHub commit cd920533c21334eca94c37eda7f3539ba4628299 as a PRE_GOV public civic boundary declaration with no government authority created.",
+  "authority_scope": "NONE",
+  "subject": "REPLAY_AMERICA_V0_1",
+  "source_uri": "https://github.com/jsonwisdom/JOY/blob/cd920533c21334eca94c37eda7f3539ba4628299/docs/replay-america/REPLAY_AMERICA_V0_1_MANIFEST.md",
+  "source_hash": "sha256:b244e952f0fca0bb99a50104aa50079b1a818237e67d38ac25b51d0173ebe352",
+  "author": "jaywisdom.eth",
+  "signature": null,
+  "timestamp": "2026-09-29T23:48:11Z",
+  "prev_receipt_hash": null,
+  "verification_state": "SELF_ATTESTED",
+  "notes": [
+    "Timestamp is the PR #105 creation-time observation point for the bounded source state, not a wallet-signature time.",
+    "Git blob SHA for the manifest at readback: ba8c6e3cf7eb1d1972e08fd5fdf59f9baef1cba4.",
+    "SELF_ATTESTED does not establish ENS control, legal identity, government authority, .gov eligibility, or external review."
+  ]
+}

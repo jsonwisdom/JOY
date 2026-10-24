@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.org/schemas/replay_america_receipt_v0_1.schema.json",
+  "title": "Replay America Receipt V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "claim",
+    "authority_scope",
+    "subject",
+    "source_uri",
+    "source_hash",
+    "author",
+    "timestamp",
+    "prev_receipt_hash",
+    "verification_state"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^ra:v0\\.1:[0-9]{6,}$"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority_scope": {
+      "type": "string",
+      "enum": ["NONE"]
+    },
+    "subject": {
+      "type": "string",
+      "const": "REPLAY_AMERICA_V0_1"
+    },
+    "source_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "source_hash": {
+      "type": "string",
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signature": {
+      "type": ["string", "null"],
+      "description": "Optional detached or wallet signature. Presence does not by itself establish legal identity or authority."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "prev_receipt_hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "verification_state": {
+      "type": "string",
+      "enum": [
+        "UNVERIFIED",
+        "SELF_ATTESTED",
+        "CONTROL_PROVEN",
+        "REPLAY_CONFIRMED",
+        "EXTERNALLY_REVIEWED"
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
