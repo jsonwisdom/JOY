@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonwisdom.dev/schema/claim_revocation.schema.json",
+  "title": "JOY Claim Revocation v0.1.1-DRAFT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["original_claim_ref", "revocation_authority_model", "revocation_timestamp"],
+  "properties": {
+    "original_claim_ref": {"type": "string", "pattern": "^claims/[A-Za-z0-9._-]+\\.json$"},
+    "revocation_authority_model": {"type": "string", "enum": ["ISSUER_CENTRIC", "CONSTITUTIONAL_OVERRIDE"]},
+    "revocation_timestamp": {"type": "string", "format": "date-time"},
+    "issuer_signature": {"type": "string", "pattern": "^base64:[A-Za-z0-9+/=]+$"},
+    "issuer_key_ref": {"type": "string", "pattern": "^keys/[a-z0-9-]+\\.pub$"},
+    "override_authority_id": {"type": "string", "pattern": "^authorities/[a-z0-9-]+$"},
+    "constitutional_ground_ref": {"type": "string", "pattern": "^ARTICLE_[A-Z]+_SECTION_[0-9]+$"},
+    "override_rationale": {"type": "string", "minLength": 20},
+    "co_ratifier_id": {"type": "string", "pattern": "^authorities/[a-z0-9-]+$"},
+    "co_ratifier_timestamp": {"type": "string", "format": "date-time"}
+  },
+  "oneOf": [
+    {
+      "properties": {"revocation_authority_model": {"const": "ISSUER_CENTRIC"}},
+      "required": ["issuer_signature", "issuer_key_ref"],
+      "not": {"anyOf": [
+        {"required": ["override_authority_id"]},
+        {"required": ["constitutional_ground_ref"]},
+        {"required": ["override_rationale"]},
+        {"required": ["co_ratifier_id"]},
+        {"required": ["co_ratifier_timestamp"]}
+      ]}
+    },
+    {
+      "properties": {"revocation_authority_model": {"const": "CONSTITUTIONAL_OVERRIDE"}},
+      "required": ["override_authority_id", "constitutional_ground_ref", "override_rationale", "co_ratifier_id", "co_ratifier_timestamp"],
+      "not": {"anyOf": [
+        {"required": ["issuer_signature"]},
+        {"required": ["issuer_key_ref"]}
+      ]}
+    }
+  ]
+}

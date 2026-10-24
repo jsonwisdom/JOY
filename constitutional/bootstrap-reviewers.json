@@ -1,0 +1,20 @@
+{
+  "protocol_version": "0.1.1-DRAFT",
+  "minimum_active_reviewers": 2,
+  "reviewers": [
+    {
+      "reviewer_id": "github:jsonwisdom",
+      "human_identity": "jsonwisdom",
+      "authority_basis": "repository_owner_admin",
+      "status": "ACTIVE",
+      "effective_at": "2026-08-07T13:39:06Z"
+    },
+    {
+      "reviewer_id": "bootstrap-reviewer-slot-2",
+      "human_identity": "UNASSIGNED",
+      "authority_basis": "pending_assignment",
+      "status": "PENDING_ASSIGNMENT",
+      "effective_at": "2026-08-07T13:39:06Z"
+    }
+  ]
+}
