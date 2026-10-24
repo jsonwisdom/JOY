@@ -1,0 +1,54 @@
+{
+  "artifact": "TODAY_JAY_WITH_MAY_BASE_ANCHOR_CANDIDATE_V0_1",
+  "boundaries": {
+    "authority": false,
+    "eas_is_authority": false,
+    "hash_is_truth": false,
+    "no_fake_green": true,
+    "semantic_truth": false,
+    "tx_is_truth": false
+  },
+  "chain_id": 8453,
+  "mission_id": "TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_AWESOME_V0_1",
+  "network": "base_mainnet",
+  "prepared_at": "2026-08-20T21:14:00-05:00",
+  "replay": {
+    "match": null,
+    "observed_chain_id": null,
+    "onchain_bound_hash": null,
+    "recomputed_artifact_sha256": null,
+    "rpc_endpoint_receipt": null,
+    "tx_fetched": false
+  },
+  "signature": {
+    "signature": null,
+    "signed_message": null,
+    "signed_message_hash": null,
+    "signer_address": null
+  },
+  "source": {
+    "branch": "agent/today-jay-with-may-joyspace-apple-blossom-base-replay-v0-1",
+    "canonical_artifact_path": "docs/joyspace/missions/TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_AWESOME_V0_1.md",
+    "canonical_artifact_sha256": "1a706962c5339f9027af4bbc76657b49647c64257f54cdecbf735a961bb42bd3",
+    "latest_commit_at_preparation": "c7811f56bd567f12422389b24860f9190aab639a",
+    "manifest_path": "receipts/joyspace/TODAY_JAY_WITH_MAY_JOYSPACE_APPLE_BLOSSOM_BASE_REPLAY_V0_1.json",
+    "manifest_sha256": "fc8804fa903a4eb8fd896033e64fb89eb31a154670bd32db6a3dc661ee19f548",
+    "repo": "jsonwisdom/JOY"
+  },
+  "state": "PREPARED_NOT_SUBMITTED",
+  "submission": {
+    "authorized": false,
+    "block_number": null,
+    "eas_attestation_uid": null,
+    "submitted": false,
+    "tx_hash": null
+  },
+  "version": "0.1.0",
+  "witness_plan": {
+    "content_uri_or_cid": null,
+    "precedent_schema_reuse_authorized": false,
+    "precedent_schema_uid": "0xc68dab1d0c9ecb67c6c0cff8da6b5e641dac2f22c21106a0d627ba1ef3636558",
+    "preferred_type": "EAS_OR_EQUIVALENT_BASE_TRANSACTION_BINDING",
+    "schema_uid_selected": null
+  }
+}
