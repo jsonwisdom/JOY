@@ -7,12 +7,16 @@ on:
       - "docs/school-of-wisdom/questions/**"
       - "docs/school-of-wisdom/marydeebot.v0.1.json"
       - "scripts/marydeebot_school_questions.py"
+      - "scripts/fulljasonmath_replay.py"
+      - "tests/test_fulljasonmath_replay.py"
       - ".github/workflows/marydeebot-school-questions.yml"
   pull_request:
     paths:
       - "docs/school-of-wisdom/questions/**"
       - "docs/school-of-wisdom/marydeebot.v0.1.json"
       - "scripts/marydeebot_school_questions.py"
+      - "scripts/fulljasonmath_replay.py"
+      - "tests/test_fulljasonmath_replay.py"
       - ".github/workflows/marydeebot-school-questions.yml"
   workflow_dispatch:
 
@@ -41,6 +45,9 @@ jobs:
         id: validate
         continue-on-error: true
         run: python scripts/marydeebot_school_questions.py
+
+      - name: Independently test FullJasonMathReplay exact mathematics
+        run: python -m unittest discover -s tests -p "test_fulljasonmath_replay.py" -v
 
       - name: Show MarydeeBot status
         run: cat docs/school-of-wisdom/questions/status.latest.json
