@@ -19,6 +19,7 @@ WISDOM/game_night_replay_script_v0_1.md
 WISDOM/wisdom_mini_decks_v0_1.md
 WISDOM/chaos_tokens_v0_1.md
 WISDOM/wisdom_family_game_night_dice_game_v0_1.md
+WISDOM/family_fusion_fissics_fission_physics_applied_wisdom_game_of_dice_v0_1.md
 ```
 
 ## Tonight's Table Setup
@@ -44,8 +45,9 @@ Recommended duration:
 2. Draw one Mini-Deck card.
 3. Use Chaos Tokens when the room gets wild.
 4. Optional math round: play Boss Brenda Collision Dice.
-5. End with the Replay Script.
-6. Save one sentence only.
+5. Optional physics round: play Family Fusion Fissics / Fission Physics Applied Wisdom Dice.
+6. End with the Replay Script.
+7. Save one sentence only.
 ```
 
 ## V0.2 Bundle Logic
@@ -58,7 +60,8 @@ Recommended duration:
     "GAME_NIGHT_REPLAY_SCRIPT_V0_1",
     "MINI_DECKS_V0_1",
     "CHAOS_TOKENS_V0_1",
-    "WISDOM_FAMILY_GAME_NIGHT_DICE_GAME_V0_1"
+    "WISDOM_FAMILY_GAME_NIGHT_DICE_GAME_V0_1",
+    "FAMILY_FUSION_FISSICS_FISSION_PHYSICS_APPLIED_WISDOM_GAME_OF_DICE_V0_1"
   ],
   "play_mode": "cozy_family_table",
   "memory_output": "one_sentence_max",
