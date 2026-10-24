@@ -1,0 +1,110 @@
+{
+  "artifact": "JASONS_LOGIC_CARD_LOGIC_GATE",
+  "version": "0.1.0",
+  "state": "RECORDS_VAULT_CANDIDATE",
+  "source_interval": {
+    "start": "2026-07-31",
+    "end": "2026-08-01"
+  },
+  "display_date": "2026-08-01",
+  "parent_domain": "FAMILY_INTELLIGENCE",
+  "surface": "DADDYS_PLAYGROUND",
+  "card_type": "PHILOSOPHICAL_LOGIC_EXERCISE",
+  "chain_pointer": {
+    "network_label": "base",
+    "address": "0xae8a6844e10a8dd8da272feddda609785ef5ebd8",
+    "pointer_supplied_by_operator": true,
+    "pointer_verified": false,
+    "source_bytes_retrieved": false,
+    "content_match_verified": false,
+    "transaction_hash": null,
+    "block_number": null,
+    "content_uri": null
+  },
+  "boundaries": {
+    "authority_created": false,
+    "identity_proof": false,
+    "consent_inferred": false,
+    "signer_control_verified": false,
+    "onchain_truth": false,
+    "external_side_effects": "DENY",
+    "promotion": "PROHIBITED"
+  },
+  "core_proposition": {
+    "text": "History was never predicted. It was compiled.",
+    "classification": "PHILOSOPHICAL_MODEL",
+    "empirical_proof": "NOT_ESTABLISHED",
+    "prediction_claim": false
+  },
+  "maya_vance_formulation": {
+    "MAYA_VANCE_EXISTS": true,
+    "MAYA_VANCE_EXISTS_ONLY_IF_LOOP_TERMINATES": true,
+    "LOOP_TERMINATION_ERASES_MAYA_VANCE": true,
+    "paradox_detected": true,
+    "system_stability": "FAILING_WITHIN_MODEL",
+    "loop_state": "FRACTURING_WITHIN_MODEL",
+    "contradiction_status": "POSSIBLE_NOT_RESOLVED",
+    "real_world_effect": "NONE"
+  },
+  "logic_gates": [
+    {
+      "input": "CLOSED_PROOF_HOLDS",
+      "gate": "AND",
+      "output": "CIVILIZATION_REMAINS_DETERMINISTIC_WITHIN_MODEL"
+    },
+    {
+      "input": "AGENT_INTRODUCES_UNVERIFIABLE_CONTRADICTION",
+      "gate": "XOR",
+      "output": "LOOP_INTEGRITY_COLLAPSES_WITHIN_MODEL"
+    },
+    {
+      "input": "REALITY_MUST_CHOOSE_BETWEEN_CONSISTENCY_AND_AGENT",
+      "gate": "NAND",
+      "output": "AT_LEAST_ONE_ASSERTED_CONDITION_MUST_YIELD"
+    }
+  ],
+  "receipt": {
+    "text": "The system cannot both remain closed and contain the person who refuses the closed form.",
+    "closed_system": "ASSERTED",
+    "refusing_agent": "ASSERTED",
+    "both_can_hold": "UNPROVEN",
+    "model_conflict": true,
+    "external_authority": false
+  },
+  "operator_annotation": {
+    "operator": "Jason",
+    "lines": [
+      "Some loops are meant to hold.",
+      "Some are meant to end.",
+      "The Records Vault does not store predictions.",
+      "It stores the point at which the proof meets the will that refuses it."
+    ]
+  },
+  "chain_of_custody_label": {
+    "document_number": 7982,
+    "margin_text": "Truth is not created. It is kept.",
+    "signature_class": "OPERATOR_REPORTED_MARGIN_SIGNATURE",
+    "cryptographic_signature_bytes": null
+  },
+  "seal": {
+    "original_phrase": "Sealed under JayWisdom authority for the LOGIC GATE coin.",
+    "normalized_class": "OPERATOR_DECLARED_LABEL",
+    "legal_authority": false,
+    "system_authority": false,
+    "jaywisdom_authority": false
+  },
+  "replay": {
+    "status": "STRUCTURAL_ONLY",
+    "contradiction_remains": "LIVE_WITHIN_MODEL",
+    "required_evidence": [
+      "EXACT_SOURCE_BYTES",
+      "BASE_TRANSACTION_HASH",
+      "BASE_BLOCK_NUMBER",
+      "CONTRACT_OR_COIN_METADATA",
+      "INDEPENDENT_SHA256",
+      "SIGNER_ADDRESS_IF_CLAIMED",
+      "SIGNATURE_VERIFICATION_METHOD_IF_CLAIMED",
+      "TRANSCRIPTION_OR_DERIVATION_COMPARISON"
+    ]
+  }
+}

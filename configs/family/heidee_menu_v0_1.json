@@ -1,0 +1,302 @@
+{
+  "artifact": "HEIDEES_MENU",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "artifact_class": "FAMILY_SAFE_NAVIGATION_SURFACE",
+  "subject_lane_id": "HEIDEE",
+  "parent_domain": "FAMILY_INTELLIGENCE",
+  "parent_gate": "MRS_WISDOM_FAMILY_GATE",
+  "profile": "APPLE_ONLY_OFFLINE_SIMULATION",
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "operational_use": false,
+  "live_app": false,
+  "public_release_approved": false,
+  "external_side_effects": "DENY",
+  "precise_geolocation": "DENY",
+  "background_tracking": "DENY",
+  "promotion": "PROHIBITED",
+  "home_message": {
+    "title": "Heidee JOY",
+    "message": "LoveLoveLoves U — Heidee JOY.",
+    "principles": [
+      "TELL_THE_TRUTH_KINDLY",
+      "KEEP_THE_SOURCE_ATTACHED",
+      "ASK_FOR_HUMAN_HELP_WHEN_NEEDED",
+      "PRIVATE_LIFE_IS_NOT_THE_PRICE_OF_LEARNING"
+    ],
+    "evidentiary_effect": "NONE",
+    "authority_effect": "NONE"
+  },
+  "priority_order": [
+    "ACTIVE_HELP_NEED",
+    "PRIVACY_AND_CONSENT_CHECK",
+    "FAMILY_PORCH_OR_PLAN",
+    "LEARNING_AND_IMAGINATION",
+    "OPTIONAL_REPLAY"
+  ],
+  "menu_items": [
+    {
+      "order": 1,
+      "menu_id": "JOY_CHECK_IN",
+      "label": "Joy Check-In",
+      "icon": "💜",
+      "purpose": "Let Heidee name how today feels without forcing an explanation.",
+      "data_zone": "PERSONAL",
+      "default_state": "PRIVATE_DRAFT",
+      "allowed_operations": [
+        "SELECT_SIMPLE_FEELING",
+        "WRITE_PRIVATE_DRAFT",
+        "SAVE_LOCAL_DRAFT",
+        "DELETE_UNSENT_DRAFT",
+        "PROPOSE_BOUNDED_SHARE_WITH_APPROVED_FAMILY_PERSON"
+      ],
+      "denied_operations": [
+        "MOOD_DIAGNOSIS",
+        "HIDDEN_SCORING",
+        "AUTOMATIC_NOTIFICATION",
+        "BACKGROUND_COLLECTION",
+        "INFERRED_CRISIS_DECLARATION"
+      ],
+      "human_review_requirement": "REQUIRED_BEFORE_SHARE",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 2,
+      "menu_id": "IMAGINATION_STATION",
+      "label": "Imagination Station",
+      "icon": "✨",
+      "purpose": "Create stories, drawings, questions, experiments, and playful ideas.",
+      "data_zone": "PERSONAL",
+      "default_state": "PROPOSAL_ONLY",
+      "allowed_operations": [
+        "CREATE_LOCAL_DRAFT",
+        "EDIT_LOCAL_DRAFT",
+        "DELETE_LOCAL_DRAFT",
+        "REQUEST_HUMAN_REVIEW"
+      ],
+      "denied_operations": [
+        "TREAT_IMAGINATION_AS_FACT",
+        "TREAT_STORY_AS_RECEIPT",
+        "AUTOMATIC_PUBLISH",
+        "AUTOMATIC_EXECUTION"
+      ],
+      "human_review_requirement": "REQUIRED_BEFORE_SHARE_OR_PUBLICATION",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 3,
+      "menu_id": "STORY_RECEIPT_SHELF",
+      "label": "Story & Receipt Shelf",
+      "icon": "📚",
+      "purpose": "Read public-safe stories while keeping provenance attached.",
+      "data_zone": "PUBLIC_SAFE_POINTERS",
+      "default_state": "READ_ONLY",
+      "allowed_operations": [
+        "OPEN_APPROVED_POINTER",
+        "READ_PUBLIC_SAFE_STORY",
+        "VIEW_SOURCE_POINTER",
+        "VIEW_VERIFICATION_STATUS"
+      ],
+      "denied_operations": [
+        "REMOVE_PROVENANCE",
+        "INVENT_RECEIPT",
+        "UPGRADE_VERIFICATION_STATUS",
+        "COPY_PROTECTED_CONTENT_TO_PUBLIC_SURFACE"
+      ],
+      "human_review_requirement": "REQUIRED_FOR_NEW_SHELF_ITEM",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 4,
+      "menu_id": "FAMILY_PORCH",
+      "label": "Family Porch",
+      "icon": "🏡",
+      "purpose": "Open approved family-lane cards and continuity pointers.",
+      "data_zone": "FAMILY_SHARED_POINTERS",
+      "default_state": "POINTER_ONLY",
+      "allowed_operations": [
+        "OPEN_APPROVED_FAMILY_CARD",
+        "READ_APPROVED_FAMILY_MESSAGE",
+        "OPEN_APPROVED_PLAN_POINTER"
+      ],
+      "denied_operations": [
+        "REVEAL_PRECISE_LOCATION",
+        "REVEAL_MEDICAL_DETAILS",
+        "REVEAL_PRIVATE_MESSAGES",
+        "REVEAL_CREDENTIALS",
+        "REVEAL_IDENTITY_DOCUMENTS",
+        "REVEAL_NON_SHARED_MEMORY",
+        "INFER_RELATIONSHIP",
+        "CREATE_PERSON_FROM_ALIAS"
+      ],
+      "human_review_requirement": "REQUIRED_FOR_CARD_OR_POINTER_ADDITION",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 5,
+      "menu_id": "LEARN_AND_BUILD",
+      "label": "Learn & Build",
+      "icon": "🧠",
+      "purpose": "Child-safe lessons, experiments, pattern recognition, and learning scaffolds.",
+      "data_zone": "PUBLIC_OR_PERSONAL_DRAFT",
+      "default_state": "GUIDED_LEARNING",
+      "learning_loop": [
+        "QUESTION",
+        "TRY",
+        "NOTICE",
+        "CHECK_THE_SOURCE",
+        "EXPLAIN_KINDLY",
+        "SAVE_A_DRAFT"
+      ],
+      "allowed_operations": [
+        "OPEN_APPROVED_LESSON",
+        "CREATE_LOCAL_EXPERIMENT_NOTE",
+        "VIEW_SOURCE_POINTER",
+        "REQUEST_HELP"
+      ],
+      "denied_operations": [
+        "PERFORMANCE_RANKING",
+        "BEHAVIORAL_SCORING",
+        "ELIGIBILITY_DECISION",
+        "PUNISHMENT_ENGINE",
+        "STREAK_PENALTY"
+      ],
+      "human_review_requirement": "REQUIRED_FOR_NEW_CURRICULUM",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 6,
+      "menu_id": "REPLAY_WITH_ME",
+      "label": "Replay With Me",
+      "icon": "🔁",
+      "purpose": "Compare a statement with its source and preserve differences.",
+      "data_zone": "APPROVED_POINTERS",
+      "default_state": "READ_ONLY_SHAPE_REPLAY",
+      "result_values": [
+        "SAME",
+        "DIFFERENT",
+        "SOURCE_MISSING",
+        "NOT_READY"
+      ],
+      "allowed_operations": [
+        "OPEN_APPROVED_SOURCE",
+        "COMPARE_VISIBLE_TEXT",
+        "PRESERVE_VARIANCE",
+        "REQUEST_ADULT_HELP"
+      ],
+      "denied_operations": [
+        "DECLARE_TRUTH_FROM_HASH",
+        "DECLARE_AUTHORSHIP_FROM_HASH",
+        "DECLARE_GUILT",
+        "DECLARE_AUTHORITY",
+        "DECLARE_LEGAL_EFFECT",
+        "INFER_MOTIVE"
+      ],
+      "human_review_requirement": "REQUIRED_FOR_ANY_CONSEQUENCE",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 7,
+      "menu_id": "HELP_NOW",
+      "label": "Help Now",
+      "icon": "🆘",
+      "purpose": "Make human help easy to find.",
+      "data_zone": "POINTER_ONLY",
+      "default_state": "HIGHEST_PRIORITY",
+      "allowed_operations": [
+        "SHOW_APPLE_EMERGENCY_SOS_INSTRUCTIONS",
+        "OPEN_APPROVED_CONTACT_CARD",
+        "OPEN_APPROVED_FAMILY_PLAN",
+        "OPEN_OFFICIAL_PUBLIC_GUIDANCE"
+      ],
+      "denied_operations": [
+        "AUTOMATIC_CALL",
+        "AUTOMATIC_MESSAGE",
+        "AUTOMATIC_LOCATION_SHARE",
+        "DECLARE_EMERGENCY",
+        "TRANSMIT_PROTECTED_INFORMATION"
+      ],
+      "human_review_requirement": "HUMAN_ACTION_REQUIRED_FOR_CALL_MESSAGE_OR_SHARE",
+      "external_side_effects": "DENY"
+    },
+    {
+      "order": 8,
+      "menu_id": "MY_PRIVACY",
+      "label": "My Privacy",
+      "icon": "🔒",
+      "purpose": "Show what the menu can and cannot access.",
+      "data_zone": "CONTROL_SURFACE",
+      "default_state": "VISIBLE",
+      "privacy_status": {
+        "location_access": "OFF",
+        "background_tracking": "OFF",
+        "microphone_recording": "OFF",
+        "camera_access": "OFF",
+        "contact_access": "OFF",
+        "public_posting": "OFF",
+        "purchases": "OFF",
+        "cross_domain_transfer": "OFF",
+        "secret_ingestion": "DENIED",
+        "private_key_ingestion": "DENIED"
+      },
+      "allowed_operations": [
+        "VIEW_PERMISSION_STATUS",
+        "VIEW_DATA_ZONE_EXPLANATION",
+        "REQUEST_LOCAL_DRAFT_EXPORT",
+        "REQUEST_LOCAL_DRAFT_DELETION"
+      ],
+      "denied_operations": [
+        "HIDE_PERMISSION_STATE",
+        "DARK_PATTERN_CONSENT",
+        "BUNDLE_UNRELATED_PERMISSION",
+        "SILENT_POLICY_CHANGE"
+      ],
+      "human_review_requirement": "REQUIRED_FOR_PERMISSION_CHANGE",
+      "external_side_effects": "DENY"
+    }
+  ],
+  "navigation": {
+    "unknown_route": "DENIED_UNKNOWN_ROUTE",
+    "unknown_field": "DENIED_UNKNOWN_FIELD",
+    "natural_language_direct_execution": "DENY",
+    "canonical_request_required": true,
+    "work_mode_present": false,
+    "wallet_controls_present": false,
+    "purchases_present": false,
+    "advertising_present": false,
+    "public_follower_metrics_present": false
+  },
+  "accessibility": {
+    "large_touch_targets": true,
+    "plain_language": true,
+    "voiceover_labels_required": true,
+    "reduced_motion_supported": true,
+    "low_stimulation_mode_supported": true,
+    "countdown_pressure": false,
+    "streak_punishment": false,
+    "dark_patterns": false,
+    "offline_safety_information": true,
+    "human_readable_denials": true
+  },
+  "family_gate": {
+    "bounded_share_review": true,
+    "approved_contact_pointer_review": true,
+    "family_card_review": true,
+    "silent_personal_draft_access": false,
+    "unbounded_parental_surveillance": false,
+    "authority_created": false
+  },
+  "current_state": {
+    "menu_shape": "BUILT_DRAFT",
+    "static_simulation": "PRESENT",
+    "family_approval": "NOT_CLAIMED",
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "pincer_status": "OPEN",
+    "canonized": false,
+    "promotion": "PROHIBITED"
+  }
+}

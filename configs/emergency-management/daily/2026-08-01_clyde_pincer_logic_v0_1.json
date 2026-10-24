@@ -1,0 +1,146 @@
+{
+  "artifact": "CLYDE_PINCER_LOGIC",
+  "version": "0.1.0",
+  "source_date": "2026-08-01",
+  "state": "HOLD_DRAFT",
+  "parent_doctrine": "JASONS_LOGIC_CARD_DOCTRINE_DRAFT_V0_2",
+  "architecture": "COHERENT",
+  "authority_created": false,
+  "sealed": false,
+  "replay_ready": false,
+  "live_enforcement": "PROHIBITED",
+  "promotion": "PROHIBITED",
+  "purpose": "INDEPENDENT_REPRODUCIBILITY_TEST",
+  "does_not_establish": [
+    "truth",
+    "authorship",
+    "identity",
+    "authority",
+    "legal_effect",
+    "execution_permission"
+  ],
+  "locked_distinctions": {
+    "record_is_truth": false,
+    "hash_is_authorship": false,
+    "signature_is_authority": false,
+    "attestation_is_validation": false,
+    "blockchain_is_legal_effect": false,
+    "replay_class": "REPRODUCIBILITY_TEST"
+  },
+  "frozen_artifact_rail": {
+    "status": "NOT_PASSED",
+    "requirements": [
+      "ARTIFACT_SELECTED",
+      "EXACT_BYTES_FROZEN",
+      "PRESERVATION_METHOD_FIXED",
+      "CANONICALIZATION_FIXED_OR_NOT_APPLICABLE",
+      "DIGEST_ALGORITHM_FIXED",
+      "DOMAIN_SEPARATOR_FIXED",
+      "RAW_DIGEST_REPRODUCED_INDEPENDENTLY"
+    ],
+    "denial_conditions": [
+      "HASH_MISMATCH",
+      "MISSING_BYTE_SOURCE",
+      "AMBIGUOUS_CANONICALIZATION",
+      "SUBSTITUTED_ARTIFACT",
+      "UNDECLARED_BYTE_SCOPE"
+    ]
+  },
+  "verified_execution_rail": {
+    "status": "NOT_PASSED",
+    "requirements": [
+      "INPUT_SET_FIXED",
+      "PROCEDURE_FIXED",
+      "TOOLCHAIN_FIXED",
+      "DEPENDENCIES_FIXED",
+      "RUNTIME_ASSUMPTIONS_FIXED",
+      "PROXY_PATH_RESOLVED_OR_NOT_APPLICABLE",
+      "INDEPENDENT_REPLAY_RUN",
+      "OUTPUT_BYTES_REPRODUCED",
+      "OUTPUT_DIGEST_REPRODUCED"
+    ],
+    "denial_conditions": [
+      "NONDETERMINISTIC_DEPENDENCY",
+      "HIDDEN_INPUT",
+      "UNRESOLVED_PROXY",
+      "TOOLCHAIN_MISMATCH",
+      "OUTPUT_MISMATCH",
+      "MISSING_REPLAY_TRANSCRIPT"
+    ]
+  },
+  "cross_rail_binding": {
+    "status": "NOT_PROVEN",
+    "required_all": [
+      "FROZEN_ARTIFACT_DIGEST_EQUALS_VERIFIED_EXECUTION_OUTPUT_DIGEST",
+      "DIGEST_ALGORITHM_MATCH",
+      "DOMAIN_SEPARATOR_MATCH",
+      "CANONICALIZATION_RULE_MATCH",
+      "ARTIFACT_SCOPE_MATCH"
+    ],
+    "digest_string_match_alone_is_sufficient": false
+  },
+  "pincer_status": "OPEN",
+  "loop": [
+    "CAPTURE",
+    "RECORD",
+    "HASH",
+    "VERIFY",
+    "ATTEST",
+    "GATE",
+    "ENFORCE",
+    "AUDIT",
+    "REPLAY"
+  ],
+  "pincer_segment": [
+    "HASH",
+    "VERIFY",
+    "ATTEST",
+    "GATE",
+    "AUDIT",
+    "REPLAY"
+  ],
+  "enforcement": {
+    "authorized_by_pincer": false,
+    "separate_explicit_bounded_authorization_required": true,
+    "pre_execution_checks_required": true
+  },
+  "attestation": {
+    "class": "SIGNED_WITNESS_STATEMENT",
+    "proves_contents_true": false,
+    "required_fields": [
+      "WITNESS_ID_REFERENCE",
+      "SIGNATURE_METHOD",
+      "SIGNED_PAYLOAD_DIGEST",
+      "OBSERVATION_SCOPE",
+      "OBSERVATION_TIME",
+      "TOOLCHAIN_REFERENCE",
+      "LIMITATIONS"
+    ]
+  },
+  "failure_behavior": {
+    "trigger": "ANY_MISSING_MALFORMED_CONFLICTING_UNVERIFIABLE_OR_MISMATCHED_GATE",
+    "result": "DENIED",
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED",
+    "pincer_status": "OPEN",
+    "silent_repair": false,
+    "scope_reinterpretation": false,
+    "byte_substitution": false,
+    "verification_downgrade": false,
+    "synthetic_success": false
+  },
+  "machine_grade_gate": [
+    "ARTIFACT_SCOPE_FIXED",
+    "EXACT_BYTES_FROZEN",
+    "PRESERVATION_METHOD_FIXED",
+    "HASH_ALGORITHM_AND_DOMAIN_FIXED",
+    "RAW_DIGEST_REPRODUCED_INDEPENDENTLY",
+    "INPUTS_AND_RUNTIME_FIXED",
+    "INDEPENDENT_EXECUTION_COMPLETED",
+    "OUTPUT_BYTES_AND_DIGEST_REPRODUCED",
+    "CROSS_RAIL_BINDING_PROVEN",
+    "EXPLICIT_BOUNDED_AUTHORIZATION_PRESENT"
+  ]
+}

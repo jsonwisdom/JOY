@@ -1,0 +1,170 @@
+{
+  "artifact": "MRS_WISDOM_FAMILY_INTELLIGENCE_IPHONE",
+  "version": "0.2.0",
+  "state": "DESIGN_CANDIDATE",
+  "primary_domain": "FAMILY_INTELLIGENCE",
+  "secondary_domain": "WORK",
+  "profile": "APPLE_ONLY_SIMULATION",
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "operational_use": false,
+  "promotion": "PROHIBITED",
+  "hierarchy": [
+    "MRS_WISDOM",
+    "FAMILY_INTELLIGENCE",
+    "HOME_PEOPLE_SAFETY_CONTINUITY_MEMORY",
+    "EMERGENCY_MANAGEMENT",
+    "WORK_MODE"
+  ],
+  "priority_invariants": {
+    "active_family_safety_need_over_work_notification": true,
+    "active_emergency_action_over_work_task": true,
+    "family_consent_boundary_over_work_convenience": true,
+    "personal_wellbeing_over_productivity_pressure": true
+  },
+  "family_intelligence": {
+    "classification": "CONSENTED_HOUSEHOLD_AWARENESS",
+    "surveillance": false,
+    "secret_profiling": false,
+    "automatic_location_tracking": false,
+    "family_membership_inferred": false,
+    "family_membership_proof": false,
+    "direct_communication_replaced": false
+  },
+  "runtime_boundary": {
+    "exact_os_version_required": true,
+    "exact_os_version": null,
+    "exact_toolchain_required": true,
+    "exact_toolchain": null,
+    "non_apple_target": "DENY",
+    "apple_target_implies_trust": false
+  },
+  "ingress": {
+    "unknown_vector": "DENY",
+    "unknown_field": "DENY",
+    "malformed_request": "DENY",
+    "unsupported_domain": "DENY",
+    "natural_language_direct_execution": "DENY",
+    "canonical_request_required": true
+  },
+  "request_pipeline": [
+    "NATURAL_LANGUAGE",
+    "PARSE",
+    "CANONICAL_REQUEST",
+    "DOMAIN_CHECK",
+    "CAPABILITY_CHECK",
+    "CONSENT_CHECK",
+    "PRIORITY_CHECK",
+    "POINTER_ONLY_RESPONSE"
+  ],
+  "default_surface": "FAMILY",
+  "primary_controls": [
+    "FAMILY_CHECK_IN",
+    "EMERGENCY_SOS_NATIVE_APPLE",
+    "NEED_HELP",
+    "PEOPLE",
+    "HOME",
+    "FAMILY_PLAN",
+    "FAMILY_MEMORY",
+    "OFFICIAL_ALERTS",
+    "INCIDENT_NOTEBOOK"
+  ],
+  "work_mode": {
+    "classification": "SECONDARY_ISOLATED_WORKSPACE",
+    "may_outrank_family_safety": false,
+    "may_inherit_family_location": false,
+    "may_inherit_medical_information": false,
+    "may_inherit_private_family_messages": false,
+    "may_inherit_identity_documents": false,
+    "may_inherit_family_contact_permissions": false,
+    "may_inherit_family_memory": false,
+    "may_inherit_household_authority": false
+  },
+  "cross_links": {
+    "pointer_only": true,
+    "copy_private_content": false,
+    "inherit_permissions": false,
+    "inherit_priority": false,
+    "inherit_authority": false,
+    "implicit_identity_merge": false,
+    "implicit_consent": false
+  },
+  "egress": {
+    "return_content_default": false,
+    "return_approved_pointer": true,
+    "reveal_secret_metadata": false,
+    "external_side_effects": "DENY",
+    "synthetic_success": "PROHIBITED"
+  },
+  "siri_ai": {
+    "role": "NATURAL_LANGUAGE_DISCOVERY_LAYER",
+    "heuristic_execution": false,
+    "may_summarize_approved_public_information": true,
+    "may_prepare_draft": true,
+    "may_open_approved_pointer": true,
+    "may_call": false,
+    "may_message": false,
+    "may_publish": false,
+    "may_purchase": false,
+    "may_transfer_data_cross_domain": false,
+    "may_identify_person": false,
+    "may_declare_emergency": false,
+    "may_infer_family_consent": false
+  },
+  "girl_math": {
+    "classification": "SATIRICAL_READINESS_LABEL_ONLY",
+    "allowed_for": [
+      "friendly_family_preparedness_copy",
+      "nonfinancial_encouragement"
+    ],
+    "prohibited_for": [
+      "accounting",
+      "pricing",
+      "procurement",
+      "resource_allocation",
+      "benefits_or_entitlement",
+      "medical_dosage",
+      "risk_scoring",
+      "incident_severity",
+      "eligibility",
+      "ledger_decisions"
+    ]
+  },
+  "data_zones": {
+    "public": [
+      "official_alert_pointers",
+      "public_shelter_pointers",
+      "public_maps",
+      "preparedness_guidance"
+    ],
+    "family_shared": [
+      "explicitly_approved_family_plan_fields",
+      "explicitly_approved_check_in_status",
+      "explicitly_approved_care_preferences"
+    ],
+    "personal": [
+      "private_preferences",
+      "draft_check_ins",
+      "individual_accessibility_needs",
+      "personal_notes"
+    ],
+    "protected": [
+      "medical_details",
+      "precise_location_history",
+      "credentials",
+      "private_messages",
+      "identity_documents",
+      "non_shared_family_memories"
+    ]
+  },
+  "failure_behavior": {
+    "default_result": "DENIED",
+    "silent_reinterpretation": false,
+    "cross_domain_fallback": false,
+    "protected_content_disclosure": false,
+    "human_readable_reason_required": true,
+    "local_replay_log_required": true,
+    "secret_metadata_in_log": false
+  }
+}

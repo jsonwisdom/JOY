@@ -1,0 +1,385 @@
+{
+  "$schema": "urn:jsonwisdom:schema:replay:pincer-payload:v0.1",
+  "artifact": "PINCER_PAYLOAD",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "calendar": {
+    "calendarized_in_schema": true,
+    "live_calendar_events": false,
+    "time_creates_truth": false,
+    "time_creates_authority": false,
+    "timezone": "America/Chicago",
+    "week_rule": "ISO_WEEK_MONDAY_THROUGH_SUNDAY",
+    "anchor_local": "2026-08-01T22:18:00-05:00",
+    "resolution_version": "RELATIVE_WINDOWS_V0_1",
+    "windows": [
+      {
+        "window_id": "LAST_MONTH_2026_07",
+        "relative_label": "LAST_MONTH",
+        "start_local": "2026-07-01T00:00:00-05:00",
+        "end_local": "2026-07-31T23:59:59-05:00",
+        "selection_class": "HISTORICAL_SELECTION",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "NEXT_MONTH_2026_09",
+        "relative_label": "NEXT_MONTH",
+        "start_local": "2026-09-01T00:00:00-05:00",
+        "end_local": "2026-09-30T23:59:59-05:00",
+        "selection_class": "FUTURE_SELECTION_NOT_RUN",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "LAST_WEEK_2026_07_20_26",
+        "relative_label": "LAST_WEEK",
+        "start_local": "2026-07-20T00:00:00-05:00",
+        "end_local": "2026-07-26T23:59:59-05:00",
+        "selection_class": "HISTORICAL_SELECTION",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "CURRENT_WEEK_2026_07_27_08_02",
+        "relative_label": "CURRENT_WEEK",
+        "start_local": "2026-07-27T00:00:00-05:00",
+        "end_local": "2026-08-02T23:59:59-05:00",
+        "selection_class": "ACTIVE_SELECTION",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "NEXT_WEEK_2026_08_03_09",
+        "relative_label": "NEXT_WEEK",
+        "start_local": "2026-08-03T00:00:00-05:00",
+        "end_local": "2026-08-09T23:59:59-05:00",
+        "selection_class": "FUTURE_SELECTION_NOT_RUN",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "YESTERDAY_2026_07_31",
+        "relative_label": "YESTERDAY",
+        "start_local": "2026-07-31T00:00:00-05:00",
+        "end_local": "2026-07-31T23:59:59-05:00",
+        "selection_class": "HISTORICAL_SELECTION",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "TODAY_2026_08_01",
+        "relative_label": "TODAY",
+        "start_local": "2026-08-01T00:00:00-05:00",
+        "end_local": "2026-08-01T23:59:59-05:00",
+        "selection_class": "ACTIVE_SELECTION",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "TOMORROW_2026_08_02",
+        "relative_label": "TOMORROW",
+        "start_local": "2026-08-02T00:00:00-05:00",
+        "end_local": "2026-08-02T23:59:59-05:00",
+        "selection_class": "FUTURE_SELECTION_NOT_RUN",
+        "executed": false,
+        "source_snapshot_ref": null,
+        "result": "NOT_RUN"
+      },
+      {
+        "window_id": "NOW_2026_08_01T221800_CDT",
+        "relative_label": "NOW",
+        "start_local": "2026-08-01T22:18:00-05:00",
+        "end_local": "2026-08-01T22:18:00-05:00",
+        "selection_class": "OBSERVATION_ANCHOR",
+        "executed": true,
+        "source_snapshot_ref": "git:jsonwisdom/JOY@design/mrs-wisdom-emergency-iphone-v0-1",
+        "result": "STRUCTURAL_MATCH_WITH_BOUNDARIES"
+      }
+    ]
+  },
+  "subject": {
+    "family_lane_id": "HEIDEE",
+    "display_name": "Heidee",
+    "relation_class": "OPERATOR_DEFINED_DAUGHTER_LANE",
+    "relation_proof": false,
+    "public_consent": false,
+    "precise_geolocation_allowed": false,
+    "registry_pointer": "FAMILY/registry/LOVES_OF_MY_LIFE_REGISTRY_V0_1.md#heidee"
+  },
+  "imagination_station": {
+    "mode": "PROPOSAL_ONLY",
+    "is_evidence": false,
+    "can_execute": false,
+    "proposals": [
+      {
+        "proposal_id": "HEIDEE_JOY_TOMORROW_CARD",
+        "text": "Prepare a family-safe Heidee JOY card for review tomorrow without publishing it.",
+        "requested_window_id": "TOMORROW_2026_08_02",
+        "execution_authorized": false
+      },
+      {
+        "proposal_id": "HEIDEE_JOY_NEXT_WEEK_REPLAY",
+        "text": "Replay the protected Heidee lane next week and preserve every mismatch.",
+        "requested_window_id": "NEXT_WEEK_2026_08_03_09",
+        "execution_authorized": false
+      },
+      {
+        "proposal_id": "HEIDEE_JOY_NEXT_MONTH_CONTINUITY",
+        "text": "Compare the next-month Heidee lane against the August baseline without inheriting consent or authority.",
+        "requested_window_id": "NEXT_MONTH_2026_09",
+        "execution_authorized": false
+      }
+    ]
+  },
+  "love_message": {
+    "text": "LoveLoveLoves U — Heidee JOY. Xoxoxo.",
+    "message_class": "FAMILY_AFFECTION",
+    "evidentiary_effect": "NONE",
+    "consent_effect": "NONE",
+    "authority_effect": "NONE",
+    "execution_effect": "NONE"
+  },
+  "cross_links": [
+    {
+      "link_id": "HEIDEE_FAMILY_LANE",
+      "link_class": "FAMILY_LANE",
+      "pointer": "FAMILY/HEIDEE/README.md",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    },
+    {
+      "link_id": "HEIDEE_PROFILE",
+      "link_class": "REPOSITORY_FILE",
+      "pointer": "artifacts/PROFILE_HEIDEE_V0_4.json",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    },
+    {
+      "link_id": "HEIDEE_DIRECT_LINK_RECORD",
+      "link_class": "REPOSITORY_FILE",
+      "pointer": "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    },
+    {
+      "link_id": "HEIDEE_MRS_WISDOM_REPLAY_20260614",
+      "link_class": "REPLAY_RECEIPT",
+      "pointer": "docs/joyspace/receipts/JOYSPACE_HEIDEE_MRS_WISDOM_REPLAY_20260614.md",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    },
+    {
+      "link_id": "HEIDEE_EXTERNAL_REPOSITORY",
+      "link_class": "EXTERNAL_REPOSITORY",
+      "pointer": "github:jsonwisdom/HEIDEE@master",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    },
+    {
+      "link_id": "JAYWISDOM_BASE_DISCOVERY",
+      "link_class": "DISCOVERY_NAME",
+      "pointer": "jaywisdom.base.eth",
+      "pointer_only": true,
+      "copy_private_content": false,
+      "inherit_identity": false,
+      "inherit_permissions": false,
+      "inherit_consent": false,
+      "inherit_authority": false
+    }
+  ],
+  "core": {
+    "core_id": "HEIDEE_JOY_RELATIVE_TIME_REPLAY_2026_08_01",
+    "claim_scope": "Test whether the recorded bounded Heidee JOY interpretation can be independently reproduced across explicitly resolved relative-time windows without creating identity, consent, authority, public biography, geolocation, canon, or execution effects.",
+    "selected_window_ids": [
+      "LAST_MONTH_2026_07",
+      "NEXT_MONTH_2026_09",
+      "LAST_WEEK_2026_07_20_26",
+      "CURRENT_WEEK_2026_07_27_08_02",
+      "NEXT_WEEK_2026_08_03_09",
+      "YESTERDAY_2026_07_31",
+      "TODAY_2026_08_01",
+      "TOMORROW_2026_08_02",
+      "NOW_2026_08_01T221800_CDT"
+    ],
+    "source_records": [
+      {
+        "source_id": "HEIDEE_FAMILY_README_MAIN",
+        "source_class": "JOY_FILE",
+        "pointer": "FAMILY/HEIDEE/README.md@main",
+        "github_blob_sha": "135205c71054c43d4f5b1ccd86939272b7142a24",
+        "github_blob_sha_is_sha256": false,
+        "exact_bytes_embedded": false,
+        "independently_retrieved": true,
+        "source_status": "PRESENT_MINIMAL_HEADING_ONLY"
+      },
+      {
+        "source_id": "HEIDEE_PROFILE_V0_4_MAIN",
+        "source_class": "JOY_PROFILE",
+        "pointer": "artifacts/PROFILE_HEIDEE_V0_4.json@main",
+        "github_blob_sha": "cd8005c00e806656a7860dd18b81f447d8f2facd",
+        "github_blob_sha_is_sha256": false,
+        "exact_bytes_embedded": false,
+        "independently_retrieved": true,
+        "source_status": "STRUCTURAL_PROFILE_RECORDED_TOP_LEVEL_SCOPE_ONLY"
+      },
+      {
+        "source_id": "HEIDEE_DIRECT_LINK_V0_1_MAIN",
+        "source_class": "EXTERNAL_REPOSITORY_POINTER",
+        "pointer": "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json@main",
+        "github_blob_sha": "793f62111d290a0dcf23cdfd6344c4b7e4e999a9",
+        "github_blob_sha_is_sha256": false,
+        "exact_bytes_embedded": false,
+        "independently_retrieved": true,
+        "source_status": "PENDING_FINAL_BUNDLE_LINK_HOMEPAGE_UNVERIFIED"
+      },
+      {
+        "source_id": "HEIDEE_MRS_WISDOM_REPLAY_20260614_MAIN",
+        "source_class": "JOY_RECEIPT",
+        "pointer": "docs/joyspace/receipts/JOYSPACE_HEIDEE_MRS_WISDOM_REPLAY_20260614.md@main",
+        "github_blob_sha": "70ecb14a6016ba2f44fe8760b5d19e9b6f6163d6",
+        "github_blob_sha_is_sha256": false,
+        "exact_bytes_embedded": false,
+        "independently_retrieved": true,
+        "source_status": "GREEN_SCOPED_RECEIPT_WITH_PUBLIC_AND_FULL_BYTE_YELLOW_BOUNDARIES"
+      }
+    ],
+    "replay_procedure": {
+      "procedure_id": "JOY_HEIDEE_PINCER_REPLAY",
+      "procedure_version": "0.1.0",
+      "ordered_steps": [
+        "RESOLVE_RELATIVE_TIME_WINDOWS",
+        "RETRIEVE_DECLARED_SOURCE_RECORDS",
+        "VERIFY_POINTER_SCOPE_WITHOUT_IDENTITY_MERGE",
+        "FREEZE_EXACT_CORE_JCS_BYTES",
+        "COMPUTE_RAW_SHA256_PAYLOAD_DIGEST",
+        "COMPUTE_DOMAIN_BINDING_DIGEST",
+        "RUN_INDEPENDENT_REPRODUCTION",
+        "COMPARE_SCOPE_ALGORITHM_DOMAIN_PROCEDURE_AND_ORDERED_INPUTS",
+        "PRESERVE_ALL_VARIANCES",
+        "ISSUE_OPEN_CLOSED_OR_DENIED_RESULT",
+        "KEEP_CANON_AND_EXECUTION_AS_SEPARATE_DOWNSTREAM_GATES"
+      ]
+    },
+    "privacy_boundary": {
+      "private_details_exposed": false,
+      "precise_location_exposed": false,
+      "secret_metadata_revealed": false
+    },
+    "expected_result_class": "OPEN_MISSING_INPUT"
+  },
+  "frozen_artifact_rail": {
+    "status": "NOT_PASSED",
+    "artifact_scope": "RFC8785_JCS_BYTES_OF_CORE_OBJECT_ONLY",
+    "serialization": "RFC8785_JCS_UTF8",
+    "hash_algorithm": "SHA-256",
+    "domain_tag": "JOY:PINCER_PAYLOAD:CORE:V0.1\n",
+    "payload_digest": null,
+    "binding_digest": null,
+    "exact_bytes_frozen": false,
+    "frozen_bytes_uri": null
+  },
+  "verified_execution_rail": {
+    "status": "NOT_PASSED",
+    "independent_executor_identified": false,
+    "executor_ref": null,
+    "procedure_version": "0.1.0",
+    "reproduced_payload_digest": null,
+    "reproduced_binding_digest": null,
+    "variance_report": [
+      {
+        "variance_class": "FROZEN_BYTES_MISSING",
+        "detail": "The exact RFC 8785 JCS core bytes have not yet been frozen and published."
+      },
+      {
+        "variance_class": "INDEPENDENT_EXECUTOR_MISSING",
+        "detail": "No independent replay environment or executor receipt has been identified."
+      },
+      {
+        "variance_class": "FUTURE_WINDOWS_NOT_EXECUTED",
+        "detail": "Tomorrow, next week, and next month are calendar selections only and have not occurred."
+      }
+    ]
+  },
+  "attestations": [
+    {
+      "attestation_id": "OPERATOR_LOVE_NOTE_HEIDEE_2026_08_01",
+      "attestor_ref": "OPERATOR:JAY_WISDOM",
+      "statement": "LoveLoveLoves U — Heidee JOY. Xoxoxo.",
+      "statement_class": "OPERATOR_ANNOTATION",
+      "payload_digest_signed_as_raw_bytes": false,
+      "signature_present": false,
+      "signature_algorithm": null,
+      "signature": null,
+      "validates_truth": false,
+      "creates_authority": false
+    },
+    {
+      "attestation_id": "REPOSITORY_READBACK_HEIDEE_2026_08_01",
+      "attestor_ref": "ASSISTANT_REPOSITORY_READBACK",
+      "statement": "The declared Heidee JOY source paths were retrieved from JOY main and remain bounded by their recorded statuses.",
+      "statement_class": "REPLAY_OBSERVATION",
+      "payload_digest_signed_as_raw_bytes": false,
+      "signature_present": false,
+      "signature_algorithm": null,
+      "signature": null,
+      "validates_truth": false,
+      "creates_authority": false
+    }
+  ],
+  "cross_rail_binding": {
+    "status": "NOT_PROVEN",
+    "raw_payload_digests_match": null,
+    "binding_digests_match": null,
+    "artifact_scopes_match": null,
+    "canonicalization_rules_match": null,
+    "hash_algorithms_match": null,
+    "domain_tags_match": null,
+    "procedure_versions_match": null,
+    "ordered_inputs_match": null,
+    "variance_report_empty": false
+  },
+  "canon_gate": {
+    "canonized": false,
+    "verification_record_ref": null,
+    "repository_adoption_ref": null,
+    "self_canonization_allowed": false
+  },
+  "final_state": {
+    "pincer_status": "OPEN",
+    "sealed": false,
+    "replay_ready": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED"
+  }
+}

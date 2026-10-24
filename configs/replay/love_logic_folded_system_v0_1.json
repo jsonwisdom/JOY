@@ -1,0 +1,130 @@
+{
+  "artifact": "LOVE_LOGIC_FOLDED_SYSTEM",
+  "version": "0.1.0",
+  "state": "HOLD_DRAFT",
+  "model": "PURPOSE_BOUND_REPRODUCIBILITY",
+  "parental_purpose": "LIVE_AS_MOTIVE",
+  "love_role": "CONSTRAINT_AUTHOR",
+  "logic_role": "DETERMINISTIC_ENFORCER",
+  "authority_created": false,
+  "identity_proof": false,
+  "consent_inferred": false,
+  "core_fold": {
+    "sequence": [
+      "LOVING_INTENT",
+      "BOUNDED_POLICY_OBJECT",
+      "DETERMINISTIC_VALIDATION_RULES",
+      "FAIL_CLOSED_EXECUTION",
+      "REPLAY_RECEIPT"
+    ],
+    "love_without_logic": "SENTIMENT_WITHOUT_ENFORCEABLE_INVARIANTS",
+    "logic_without_love": "COLLECTION_WITHOUT_HUMAN_PURPOSE_BOUNDARY",
+    "love_plus_logic": "PURPOSE_BOUND_REPRODUCIBILITY"
+  },
+  "policy_object_required_fields": [
+    "purpose_id",
+    "subject_lane_ids",
+    "artifact_scope_id",
+    "privacy_class",
+    "consent_state",
+    "allowed_operations",
+    "denied_operations",
+    "retention_policy",
+    "release_policy",
+    "human_review_requirement",
+    "authority"
+  ],
+  "locked_distinctions": {
+    "record_equals_truth": false,
+    "hash_equals_authorship": false,
+    "signature_equals_authority": false,
+    "attestation_equals_validation": false,
+    "blockchain_equals_legal_effect": false,
+    "replay_role": "REPRODUCIBILITY_TEST",
+    "raw_source_hash_equals_derivative_hash": false
+  },
+  "privacy_invariants": {
+    "minimum_necessary_scope": true,
+    "precise_geolocation_default": "DENY",
+    "background_tracking": "DENY",
+    "secret_ingestion": "DENY",
+    "private_key_ingestion": "DENY",
+    "public_release_without_approval": "DENY",
+    "metadata_leakage_review_required": true
+  },
+  "heidee_example": {
+    "scope_state": "PROPOSED_NOT_FROZEN",
+    "scope_file": "configs/replay/heidee_family_record_scope_v0_1.json",
+    "selected_paths": [
+      "FAMILY/HEIDEE/README.md",
+      "artifacts/PROFILE_HEIDEE_V0_4.json",
+      "artifacts/links/HEIDEE_JOYSPACE_DIRECT_LINK_V0_1.json",
+      "docs/joyspace/receipts/JOYSPACE_HEIDEE_MRS_WISDOM_REPLAY_20260614.md"
+    ],
+    "completeness_proven": false,
+    "truth_proven": false,
+    "authorship_proven": false,
+    "consent_proven": false,
+    "public_release_approved": false
+  },
+  "pincer_perfect": {
+    "status": "TARGET_ONLY",
+    "current": false,
+    "required": {
+      "frozen_artifact_rail": "PASSED",
+      "verified_execution_rail": "PASSED",
+      "cross_rail_binding": "PROVEN",
+      "sealed": true,
+      "replay_ready": true,
+      "qualifying_verification": "PRESENT",
+      "repository_adoption": "ADOPTED",
+      "canonized": true
+    }
+  },
+  "freeze_authorization_gate": {
+    "readiness_language_is_execution_instruction": false,
+    "required": [
+      "ACTION_FREEZE",
+      "EXACT_SCOPE_FILE",
+      "EXACT_REPOSITORY",
+      "FULL_SOURCE_COMMIT_SHA",
+      "EXACT_OUTPUT_MANIFEST_PATH",
+      "PRIVATE_CONTENT_REVIEW",
+      "HUMAN_AUTHORIZATION_FOR_FREEZE"
+    ],
+    "freeze_closes_verified_execution_rail": false,
+    "independent_replay_required": true
+  },
+  "failure_rule": {
+    "conditions": [
+      "MISSING_GATE",
+      "MALFORMED_GATE",
+      "CONFLICTING_GATE",
+      "PRIVACY_VIOLATION",
+      "CONSENT_DEFICIENCY",
+      "SCOPE_MISMATCH",
+      "INDEPENDENT_REPRODUCTION_FAILURE"
+    ],
+    "result": "DENIED",
+    "pincer_status": "OPEN",
+    "pincer_perfect": false,
+    "sealed": false,
+    "replay_ready": false,
+    "canonized": false,
+    "live_enforcement": "PROHIBITED"
+  },
+  "current_state": {
+    "love_logic_fold": "COHERENT_DRAFT",
+    "freeze_executed": false,
+    "frozen_artifact_rail": "NOT_PASSED",
+    "verified_execution_rail": "NOT_PASSED",
+    "cross_rail_binding": "NOT_PROVEN",
+    "pincer_status": "OPEN",
+    "pincer_perfect": false,
+    "sealed": false,
+    "replay_ready": false,
+    "canonized": false,
+    "live_enforcement": "PROHIBITED",
+    "promotion": "PROHIBITED"
+  }
+}
