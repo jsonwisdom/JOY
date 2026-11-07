@@ -1,0 +1,4 @@
+{
+  "name": "jsonwisdom/JOY",
+  "install": "python3 -m pip install --user -r bot/requirements.txt -r mcp/requirements.txt"
+}
