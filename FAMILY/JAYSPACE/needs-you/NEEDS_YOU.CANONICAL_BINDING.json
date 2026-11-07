@@ -1,0 +1,25 @@
+{
+  "OBJECT": "NEEDS_YOU_CANONICAL_BINDING_V0",
+  "AS_OF": "2026-09-16T19:09:00-05:00",
+  "NEEDS_YOU_CANONICAL_SPACE": "JaySpace",
+  "GITHUB_BINDING": "jsonwisdom/JOY",
+  "CANONICAL_PATH": "FAMILY/JAYSPACE/needs-you/",
+  "PUBLIC_PORTAL_SURFACE": "joyspace/jayspace.html",
+  "PUBLIC_PORTAL_URL": "https://jsonwisdom.github.io/JOY/joyspace/jayspace.html",
+  "DRIVE_ROLE": "COMPANION_JAYSPACE_SUBSTRATE",
+  "CANONICAL_HOME_CHOICE": "RESOLVED",
+  "EXTERNAL_HOME": "JAYSPACE",
+  "PATH_BINDING": "ESTABLISHED",
+  "PERSISTENCE_WRITE": "NOT_YET_AUTHORIZED",
+  "GITHUB_WRITES": "NONE",
+  "DRIVE_WRITES": "NONE",
+  "AUTHORITY_CREATED": false,
+  "MISSION_STATE": "ACTIVE",
+  "ROUTING_RULE": "beautiful page first, then content/syntax/receipts \u2014 not GitHub plumbing first",
+  "NEXT_WHEN_AUTHORIZED": [
+    "persist NEEDS_YOU_CARD_V0 under FAMILY/JAYSPACE/needs-you/",
+    "add Needs you door to existing JaySpace front page",
+    "verify readback",
+    "link JoySpace home to it"
+  ]
+}
