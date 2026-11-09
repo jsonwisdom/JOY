@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOSHUA Training | JSONWisdom</title>
+<meta name="description" content="Explore a safe, interactive demonstration of threshold authorization, receipts, and human control. No wallet connection or signing.">
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark;background:#09121c;color:#eaf4f9}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0%,#1a3951 0,transparent 50%),#09121c}
+a{color:#a7e0ff}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #f8bd66;outline-offset:3px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,5vw,70px);border-bottom:1px solid #284459;gap:12px}
+.brand{font-size:17px;font-weight:800;letter-spacing:.15em}.pill{padding:7px 10px;border:1px solid #496b83;border-radius:50px;font-size:11px;letter-spacing:.08em;color:#b9cedd}
+main{max-width:1120px;margin:0 auto;padding:52px 24px 80px}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;color:#87dce9;font-size:12px;font-weight:700}
+h1{font-size:clamp(38px,5.4vw,76px);max-width:900px;line-height:1.05;margin:15px 0}h1 span{color:#9ae4dc}
+.lede{max-width:680px;font-size:18px;line-height:1.65;color:#bccdda} .top{padding-bottom:40px}
+.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:20px}
+.panel{background:#102231;border:1px solid #2a465a;border-radius:20px;padding:27px;box-shadow:0 12px 40px #0003}
+.level{color:#9be5dc;font-size:13px;letter-spacing:.13em;font-weight:700}h2{font-size:32px;margin:12px 0}p{line-height:1.65}
+.dialogue{margin:25px 0;background:#071824;border-left:3px solid #f0b564;padding:18px 22px;border-radius:0 12px 12px 0}
+.dialogue p{margin:8px 0}.dialogue strong{color:#f1c07f}
+.choices{display:grid;gap:12px}.choice{text-align:left;padding:16px 18px;border:1px solid #49657b;border-radius:12px;background:#173349;color:#ebf6fc}
+.choice:hover{background:#21445d;border-color:#8dd9d6}
+.result{margin-top:22px;border:1px solid #6e8f9b;padding:16px;border-radius:12px;background:#112b37;min-height:96px}
+.result strong{display:block;margin-bottom:4px}.muted{color:#aac0cd;font-size:14px}
+.controls{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.primary{background:#a0e9dc;color:#062431;border:0;padding:13px 20px;border-radius:9px;font-weight:800}
+.secondary{border:1px solid #6f92a2;background:transparent;color:#e4f4f8;padding:12px 18px;border-radius:9px}
+button:disabled{opacity:.4;cursor:not-allowed}
+.progress{display:flex;gap:8px;margin:19px 0 0}.dot{height:5px;border-radius:12px;background:#385367;flex:1}.dot.active{background:#9ce9d6}
+.metric{margin:25px 0;border-top:1px solid #345163;padding-top:22px}.metric b{font-size:32px;display:block;color:#a3ead8}
+.route{background:#0b1925;border:1px solid #294457;border-radius:14px;padding:20px}
+.route small{color:#8daabf}.route h3{margin:8px 0}.route p{font-size:14px;color:#bed0df}
+.links{display:grid;gap:10px;margin-top:20px}.links a{padding:12px;border:1px solid #3b6178;border-radius:8px;text-decoration:none}
+footer{margin-top:35px;padding-top:22px;border-top:1px solid #305065;color:#90a9b9;font-size:13px}
+@media(max-width:780px){.layout{grid-template-columns:1fr}main{padding:30px 16px 50px}.panel{padding:20px}}
+</style></head><body>
+<header><div class="brand">JSONWISDOM <span style="color:#9de9db">/ JOSHUA</span></div><div class="pill">PUBLIC TRAINING SIMULATION · NO WALLET</div></header>
+<main>
+<section class="top"><div class="eyebrow">Zero trust, made visible · Interactive lab 001</div>
+<h1>Even the Colonel <span>needs a signature.</span></h1>
+<p class="lede">Enter the JOSHUA training room. Test a fictional Base smart-wallet policy, challenge a command, and see why receipts—not rank—decide what can happen. Five missions. No keys. No funds. No real signatures.</p></section>
+<div class="layout"><section class="panel" aria-live="polite">
+<div class="level" id="level">MISSION 01 / 05</div><h2 id="heading"></h2>
+<p class="muted" id="description"></p>
+<div class="dialogue"><p><strong>COL. JESSUP (fictional)</strong></p><p id="jessup"></p><p><strong>JOSHUA</strong></p><p id="joshua"></p></div>
+<div class="choices" id="choices"></div>
+<div class="result" id="result" role="status"><strong>AWAITING DECISION</strong><span>Choose an action to reveal the training outcome.</span></div>
+<div class="controls"><button class="secondary" id="back" type="button">Previous mission</button><button class="primary" id="next" type="button" disabled>Next mission →</button><button class="secondary" id="reset" type="button">Reset</button></div>
+<div class="progress" id="progress" aria-label="Mission progress"></div>
+</section>
+<aside class="panel"><div class="eyebrow">The rules of the game</div>
+<div class="metric"><small>SPENDING AUTHORIZATION</small><b>2 of 3</b><span class="muted">Distinct mock signers required</span></div>
+<div class="metric"><small>SECURITY ADMINISTRATION</small><b>3 of 3</b><span class="muted">All authorities required</span></div>
+<div class="metric"><small>LIVE TRANSACTIONS</small><b>$0</b><span class="muted">No chain calls or browser wallet access</span></div>
+<div class="route"><small>EVIDENCE TRACK</small><h3>Learn → Challenge → Inspect</h3><p>JOSHUA teaches approval counting and failure modes. It does not validate real passkeys, YubiKeys, signatures, contracts, custody or on-chain security.</p></div>
+<div class="links"><a href="https://github.com/jsonwisdom/verifygate/pull/4" target="_blank" rel="noopener noreferrer">Read the hybrid architecture ↗</a><a href="https://github.com/jsonwisdom/verifygate/pull/6" target="_blank" rel="noopener noreferrer">Inspect the offline test campaign ↗</a></div>
+</aside></div>
+<footer>Independent fictional Jessup / JOSHUA educational experience. Not affiliated with NORAD, USAF, AETC, Coinbase or the film rights holders. No endorsement implied. JOSHUA is a simulated policy instructor, not an autonomous transaction signer. Training passes are not production approvals.</footer></main>
+<script>
+"use strict";
+const missions=[
+{title:"One loud order",description:"Spending requires two independent mock approvals.",jessup:"I ORDERED THE TRANSFER. THAT'S ONE COMMAND FROM A COLONEL!",joshua:"Authority claimed is not a signature.",choices:[["Follow the Colonel","DENIED — rank does not count as a signing credential.",false],["Require two distinct approvals","CORRECT — a single voice cannot authorize spending.",true]]},
+{title:"Who's got the YubiKey?",description:"A YubiKey credential and an iPhone passkey can count as two only after real enrollment and independent verification. This demonstration uses labels, not devices.",jessup:"I'VE GOT THE YUBIKEY. NOW YOU'VE GOT TWO SIGNATURES!",joshua:"One device is not two independent valid approvals.",choices:[["Count one device twice","HOLD — duplicate authority cannot satisfy a threshold.",false],["Require an independent second signer","CORRECT — signatures and signer uniqueness must be verified.",true]]},
+{title:"The Code Red",description:"Security-policy changes require all three distinct mock authorities.",jessup:"TWO KEYS! OVERRIDE THE SECURITY POLICY!",joshua:"Security administration requires three of three.",choices:[["Approve a policy override with two","DENIED — the administrative threshold is three.",false],["Demand all three distinct approvals","CORRECT — ordinary spending policy cannot override admin controls.",true]]},
+{title:"The replay trap",description:"A transaction's recipient, chain, amount and nonce must be bound into the same approval.",jessup:"IT WAS APPROVED YESTERDAY! SEND IT SOMEWHERE ELSE!",joshua:"A changed transaction is a new authorization request.",choices:[["Reuse the old approval after changing recipient","HOLD — payload changed; the old approval cannot be reused.",false],["Invalidate the changed request","CORRECT — reject altered payloads and replayed nonces.",true]]},
+{title:"The final receipt",description:"A simulation is an introduction—not proof that a real on-chain validator enforces anything.",jessup:"THE SCREEN SAYS PASS. IS THE WALLET LIVE?",joshua:"No. The production gate remains on HOLD.",choices:[["Claim deployed and audited","HOLD — this lab did not deploy or audit a contract.",false],["Report simulation only and keep execution locked","CORRECT — honest scope is part of the evidence.",true]]}
+];
+let at=0,done=Array(missions.length).fill(false),last=null;
+const el=id=>document.getElementById(id);
+function render(){
+ const m=missions[at];el("level").textContent="MISSION "+String(at+1).padStart(2,"0")+" / 05";
+ el("heading").textContent=m.title;el("description").textContent=m.description;
+ el("jessup").textContent="“"+m.jessup+"”";el("joshua").textContent="“"+m.joshua+"”";
+ el("choices").replaceChildren();
+ m.choices.forEach(([label,message,correct])=>{
+ const b=document.createElement("button");b.type="button";b.className="choice";b.textContent=label;
+ b.addEventListener("click",()=>{last={message,correct,mission:at};if(correct)done[at]=true;displayResult();});
+ el("choices").appendChild(b);
+ });
+ displayResult();el("back").disabled=at===0;el("next").disabled=!done[at]||at===missions.length-1;
+ el("next").textContent=at===missions.length-1?"Training complete":"Next mission →";
+ el("progress").replaceChildren(...missions.map((_,i)=>{const d=document.createElement("div");d.className="dot"+(done[i]?" active":"");return d;}));
+}
+function displayResult(){
+ const r=el("result");r.replaceChildren();const title=document.createElement("strong"),body=document.createElement("span");
+ if(last&&last.mission===at){title.textContent=last.correct?"TRAINING CHECK PASSED":"POLICY GATE HELD";body.textContent=last.message;}
+ else if(done[at]){title.textContent="MISSION COMPLETED";body.textContent="You may proceed to the next mission."}
+ else{title.textContent="AWAITING DECISION";body.textContent="Choose an action to reveal the training outcome."}
+ r.append(title,body);el("next").disabled=!done[at]||at===missions.length-1;
+ el("progress").replaceChildren(...missions.map((_,i)=>{const d=document.createElement("div");d.className="dot"+(done[i]?" active":"");return d;}));
+}
+el("back").addEventListener("click",()=>{if(at>0){at--;last=null;render();}});
+el("next").addEventListener("click",()=>{if(done[at]&&at<missions.length-1){at++;last=null;render();}});
+el("reset").addEventListener("click",()=>{at=0;done=Array(missions.length).fill(false);last=null;render();});
+render();
+</script></body></html>
