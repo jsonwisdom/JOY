@@ -18,7 +18,7 @@
       "school": "Michigan State",
       "conference": "Big Ten",
       "calculation": "(wins + ties/2) / (wins + losses + ties)",
-      "note": "Official 34-24-1; rounded win percentage 0.585"
+      "note": "Michigan State public record 34-24-1; conventional NCAA historical reported rate .585 (34.5/59)"
     },
     {
       "id": "process_2007",
@@ -33,12 +33,6 @@
       "date": "2013-09-30",
       "url": "https://rolltide.com/news/2013/9/30/Alabama_Head_Coach_Nick_Saban_Press_Conference",
       "note": "Public remarks about consistency, technique, attention to detail"
-    },
-    {
-      "id": "lockerroom_description",
-      "kind": "public_interview_about_pre_game_messaging",
-      "url": "https://asaptext.com/asap_media/media/1072/1139/browse_file.php?browse_file_name=transcripts%2F103732.html",
-      "note": "Saban describes summarizing priorities in pregame locker room. Not a verbatim private team speech."
     }
   ],
   "plays": [
@@ -120,5 +114,73 @@
     "FAIL": "Defined calculation or claim contradicted",
     "UNKNOWN": "No admissible evidence for answer"
   },
-  "method": "Fixed author-summarized public facts and URLs; no page bytes fetched into GitHub, no hashes of third-party source, no private speech or personal files copied."
+  "method": "Fixed author-summarized public facts and URLs; no page bytes fetched into GitHub, no hashes of third-party source, no private speech or personal files copied.",
+  "role_contracts": {
+    "coach": {
+      "verbs": [
+        "FRAME_QUESTION",
+        "GUIDE_PRACTICE",
+        "ASK_FOR_CORRECTION"
+      ],
+      "may_grant_authority": false,
+      "may_reconstruct_private_coach_thoughts": false
+    },
+    "librarian": {
+      "verbs": [
+        "SUGGEST_SOURCE_SHELF",
+        "PRESERVE_DATE_AND_SCOPE",
+        "FLAG_MISSING_RECEIPT"
+      ],
+      "source": "docs/school-of-wisdom/LIBRARIAN_SUGGESTIONS_GAMEPLAY_ALMS_V0_1.md",
+      "answers_are_suggestions_not_verdicts": true,
+      "automatic_publication": false
+    },
+    "mathematician": {
+      "verbs": [
+        "CALCULATE_DELTA",
+        "CHECK_INVARIANT",
+        "VERIFY_REVERSE"
+      ],
+      "scope": "OBSERVED_SCORE_ARITHMETIC_ONLY",
+      "calculations_are_not_causal_proof": true
+    },
+    "student": {
+      "verbs": [
+        "QUESTION",
+        "CHOOSE",
+        "REPLAY",
+        "STOP"
+      ],
+      "controls_participation": true,
+      "private_responses_not_saved": true
+    },
+    "human_reviewer": {
+      "verbs": [
+        "REVIEW_SOURCE",
+        "APPROVE_PUBLICATION_OR_NOT"
+      ],
+      "parental_or_school_approval_not_assumed": true
+    }
+  },
+  "ooda_reverse": [
+    "OBSERVE",
+    "ORIENT",
+    "DECIDE",
+    "ACT",
+    "REVERSE"
+  ],
+  "school_ai": {
+    "model_training_data_ingested": false,
+    "live_ai_coach_created": false,
+    "automatic_grading": false,
+    "public_private_blending": false,
+    "human_oversight_required": true
+  },
+  "role_conflation_prohibited": [
+    "LIBRARIAN_SUGGESTION != SOURCE_VERIFICATION",
+    "COACH_QUESTION != HISTORICAL_COACH_COMMAND",
+    "MATH_PASS != HISTORICAL_CAUSAL_PROOF",
+    "COACHES_CORNER_MENU_PACKET != COACHING_METHODS",
+    "MICHIGAN_STATE_BIG_TEN_LINK != CENTRAL_MICHIGAN_BIG_TEN_MEMBERSHIP"
+  ]
 }
