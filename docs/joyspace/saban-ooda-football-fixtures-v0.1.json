@@ -1,0 +1,124 @@
+{
+  "schema": "JASON_SABAN_FOOTBALL_OODA_REPLAY_V0_1",
+  "status": "DRAFT_ONLY",
+  "authority_created": false,
+  "real_lockeroom_transcript_access": false,
+  "private_playbooks_access": false,
+  "private_notebooks_access": false,
+  "study": "OODA + Reverse Replay: Nick Saban's public coaching philosophy and verifiable SEC/Big Ten game records",
+  "contexts": [
+    {
+      "id": "michigan_state",
+      "kind": "official_biographical_record",
+      "url": "https://msuspartans.com/news/2025/1/10/former-spartan-head-coach-nick-saban-elected-to-college-football-hall-of-fame-class-of-2025",
+      "years": "1995-1999",
+      "wins": 34,
+      "losses": 24,
+      "ties": 1,
+      "school": "Michigan State",
+      "conference": "Big Ten",
+      "calculation": "(wins + ties/2) / (wins + losses + ties)",
+      "note": "Official 34-24-1; rounded win percentage 0.585"
+    },
+    {
+      "id": "process_2007",
+      "kind": "official_public_coaching_transcript",
+      "date": "2007-07-26",
+      "url": "https://rolltide.com/news/2007/7/26/Coach_Saban_Transcript",
+      "note": "Public remarks on improvement, team, and the process; not private locker-room words"
+    },
+    {
+      "id": "press_2013",
+      "kind": "official_public_press_transcript",
+      "date": "2013-09-30",
+      "url": "https://rolltide.com/news/2013/9/30/Alabama_Head_Coach_Nick_Saban_Press_Conference",
+      "note": "Public remarks about consistency, technique, attention to detail"
+    },
+    {
+      "id": "lockerroom_description",
+      "kind": "public_interview_about_pre_game_messaging",
+      "url": "https://asaptext.com/asap_media/media/1072/1139/browse_file.php?browse_file_name=transcripts%2F103732.html",
+      "note": "Saban describes summarizing priorities in pregame locker room. Not a verbatim private team speech."
+    }
+  ],
+  "plays": [
+    {
+      "id": "kick_six_2013",
+      "label": "2013 Kick Six",
+      "date": "2013-11-30",
+      "source": "https://rolltide.com/news/2013/11/30/no_1_alabama_falls_to_no_4_auburn_34_28_in_iron_bowl",
+      "alabama_before": 28,
+      "auburn_before": 28,
+      "alabama_after": 28,
+      "auburn_after": 34,
+      "key_event": "Missed 57-yard field goal returned for an Auburn touchdown, officially recorded 100 return yards",
+      "observed_math": {
+        "auburn_score_change": 6,
+        "alabama_score_change": 0,
+        "final_margin_auburn": 6
+      },
+      "hypothetical_not_fact": "A successful 3-point Alabama field goal would have produced 31-28 Alabama, but that did not occur."
+    },
+    {
+      "id": "comeback_2014",
+      "label": "2014 Iron Bowl comeback",
+      "date": "2014-11-29",
+      "source": "https://rolltide.com/news/2014/11/29/No_1_Alabama_Football_Beats_No_15_Auburn_55_44",
+      "alabama_before": 21,
+      "auburn_before": 33,
+      "alabama_after": 55,
+      "auburn_after": 44,
+      "key_event": "Alabama recovered from a 33-21 third-quarter deficit to win 55-44",
+      "observed_math": {
+        "alabama_score_change": 34,
+        "auburn_score_change": 11,
+        "margin_swing_toward_alabama": 23
+      }
+    },
+    {
+      "id": "fourth_31_2023",
+      "label": "2023 Fourth-and-31",
+      "date": "2023-11-25",
+      "source": "https://rolltide.com/news/2023/11/25/football-late-game-heroics-lead-no-8-8-8-alabama-to-27-24-victory-at-auburn",
+      "alabama_before": 20,
+      "auburn_before": 24,
+      "alabama_after": 27,
+      "auburn_after": 24,
+      "key_event": "Jalen Milroe to Isaiah Bond on 4th-and-31; Alabama scored with 32 seconds remaining",
+      "observed_math": {
+        "alabama_score_change": 7,
+        "auburn_score_change": 0,
+        "margin_swing_toward_alabama": 7
+      }
+    }
+  ],
+  "ooda": [
+    "OBSERVE the dated play-by-play and score",
+    "ORIENT to down, distance, clock and limitations",
+    "DECIDE a classroom test, not an undocumented coach thought",
+    "ACT by calculating observed point and margin changes",
+    "REVERSE REPLAY from final score back to the documented state"
+  ],
+  "privacy": {
+    "collect_child_data": false,
+    "track_students": false,
+    "publish_private_notes": false,
+    "real_team_playbooks": false,
+    "imply_endorsement": false,
+    "betting": false
+  },
+  "boundaries": [
+    "RECREATED_PLAY != PRIVATE_PLAYBOOK",
+    "PUBLIC_COACH_QUOTE != VERBATIM_LOCKER_ROOM_SPEECH",
+    "OFFICIAL_SCORE != RECONSTRUCTED_CAUSATION",
+    "WIN_PERCENTAGE != PREDICTIVE_MODEL",
+    "STUDENTS_CAN_DISAGREE_WITH_SOURCE_INTERPRETATION",
+    "RIGHTS_OR_AFFILIATION_NOT_GRANTED"
+  ],
+  "trinary": {
+    "PASS": "Defined arithmetic/source check reproduced",
+    "FAIL": "Defined calculation or claim contradicted",
+    "UNKNOWN": "No admissible evidence for answer"
+  },
+  "method": "Fixed author-summarized public facts and URLs; no page bytes fetched into GitHub, no hashes of third-party source, no private speech or personal files copied."
+}
