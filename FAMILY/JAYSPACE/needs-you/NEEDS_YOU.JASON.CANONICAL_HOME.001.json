@@ -2,15 +2,52 @@
   "schema_id": "NEEDS_YOU_CARD_V0",
   "card_id": "NEEDS_YOU.JASON.CANONICAL_HOME.001",
   "for_person": "JASON",
-  "title": "Canonical home resolved",
-  "ask": "Where does NEEDS_YOU_CARD_V0 canonically live?",
+  "title": "This needs your answer",
+  "ask": "Where should Needs you cards live for real: JOY, J Space, another repo, or Drive?",
   "visibility": "PRIVATE",
   "status": "ANSWERED",
-  "actions": ["ANSWER", "STILL_THINKING", "NOT_FOR_ME"],
-  "person_words": "JaySpace",
+  "actions": [
+    "ANSWER",
+    "STILL_THINKING",
+    "NOT_FOR_ME"
+  ],
+  "person_words": "NEEDS_YOU_CANONICAL_SPACE=JaySpace; GITHUB_BINDING=jsonwisdom/JOY; CANONICAL_PATH=FAMILY/JAYSPACE/needs-you/; PUBLIC_PORTAL_SURFACE=joyspace/jayspace.html; DRIVE_ROLE=COMPANION_JAYSPACE_SUBSTRATE; PERSISTENCE_WRITE=NOT_YET_AUTHORIZED",
   "share_answer": false,
-  "source_object": "NEEDS_YOU_CANONICAL_HOME",
-  "created_from": "MASTER_ROOM.FUNCTION_PRIMER.NEEDS_YOU",
-  "private_payload": "LOCAL_ONLY",
-  "authority_created": false
+  "options_hint": [
+    "JOY",
+    "J_SPACE",
+    "OTHER_REPO",
+    "DRIVE"
+  ],
+  "source_object": "local workspace /workspace/artifacts/wisdom/needs-you/",
+  "created_from": "Jason boundary: LOCAL live; GitHub/Drive search miss \u2260 nonexistence; no silent persist",
+  "authority_created": false,
+  "external_persistence": "UNESTABLISHED",
+  "github_writes": "NONE",
+  "drive_writes": "NONE",
+  "resolved_binding": {
+    "OBJECT": "NEEDS_YOU_CANONICAL_BINDING_V0",
+    "AS_OF": "2026-09-16T19:09:00-05:00",
+    "NEEDS_YOU_CANONICAL_SPACE": "JaySpace",
+    "GITHUB_BINDING": "jsonwisdom/JOY",
+    "CANONICAL_PATH": "FAMILY/JAYSPACE/needs-you/",
+    "PUBLIC_PORTAL_SURFACE": "joyspace/jayspace.html",
+    "PUBLIC_PORTAL_URL": "https://jsonwisdom.github.io/JOY/joyspace/jayspace.html",
+    "DRIVE_ROLE": "COMPANION_JAYSPACE_SUBSTRATE",
+    "CANONICAL_HOME_CHOICE": "RESOLVED",
+    "EXTERNAL_HOME": "JAYSPACE",
+    "PATH_BINDING": "ESTABLISHED",
+    "PERSISTENCE_WRITE": "NOT_YET_AUTHORIZED",
+    "GITHUB_WRITES": "NONE",
+    "DRIVE_WRITES": "NONE",
+    "AUTHORITY_CREATED": false,
+    "MISSION_STATE": "ACTIVE",
+    "ROUTING_RULE": "beautiful page first, then content/syntax/receipts \u2014 not GitHub plumbing first",
+    "NEXT_WHEN_AUTHORIZED": [
+      "persist NEEDS_YOU_CARD_V0 under FAMILY/JAYSPACE/needs-you/",
+      "add Needs you door to existing JaySpace front page",
+      "verify readback",
+      "link JoySpace home to it"
+    ]
+  }
 }
