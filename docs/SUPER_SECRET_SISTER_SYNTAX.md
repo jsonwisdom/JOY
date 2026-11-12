@@ -65,3 +65,15 @@ It is language for play, explanation, participation, and memory.
 Joy first.
 Receipts second.
 Authority never.
+
+## JayCee HerStory — Alabama Boundaries (proposed learner-first lesson)
+
+[Public-safe HerStory classroom draft](../FAMILY/JAYCEE/JAYCEE_HERSTORY_JOYSPACE_ALABAMA_BOUNDARIES_V0_1.md) puts the student's own questions before machinery: ASK → FIND → PRESERVE → COMPARE → REPLAY → TEACH-BACK, with the choice to pause or keep work private.
+
+**Alabama football language is educational metaphor:** WAR EAGLE challenges a claim; ROLL TIDE defends a continuity plan; MAGNOLIANS preserve; DAISYS check patterns/accessibility; APPLE BLOSSOMS explain evidence. The 168 OODA scenarios are a design space, not completed tests.
+
+**Hard membrane:** STUDENT ≠ PERSONAL_FILE; FAMILY ≠ CAMPUS; UNIVERSITY ≠ STATE; SRC_HASH ≠ HUMAN_IDENTITY; BOT_STORY ≠ CONSENT; JOKES ≠ REAL_EMERGENCY_RESPONSE. No private biography, real school affiliation, family approval, wallet access, or deployment is inferred. Any personal participation is optional and requires separate appropriate permission.
+
+ALMS may suggest a next public source; it cannot assign JayCee a role, speak for her, approve a story, change a verdict, or move money.
+
+Authority: FALSE · No Fake Green · JOY only.
