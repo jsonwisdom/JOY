@@ -44,6 +44,15 @@ PUBLIC_READER_REPORT
 JOY_REPO_ONLY
 CANONICAL_DRAFT
 
+
+### JayCee HerStory — classroom reader entry (proposed)
+
+- [JayCee HerStory — Alabama Boundaries](../FAMILY/JAYCEE/JAYCEE_HERSTORY_JOYSPACE_ALABAMA_BOUNDARIES_V0_1.md)
+
+Status: PUBLIC-SAFE_CLASSROOM_DRAFT · READER_ONLY · USER_PARTICIPATION_UNKNOWN · CONSENT_NOT_ESTABLISHED.
+
+The learning surface offers a voluntary student-led question, OODA replay, and evidence-bound football/flower lessons. It does not publish personal memories or speak on JayCee's behalf. AL and COMPUTERWISDOM remain external *references*, not JoySpace execution surfaces. Public schools, the State of Alabama, Auburn, Alabama athletics, AEMA, and family members receive no automatic affiliation, approval, or authority. Human permission is separately required before personal sharing.
+
 ## Constraints
 
 JoySpace may inspect, index, classify, and map JOY lineage.
