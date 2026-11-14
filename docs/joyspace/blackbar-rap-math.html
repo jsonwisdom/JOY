@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>BlackBar Rap · South-to-North Math Replay | Jason's Corridors</title>
+<style>
+:root{color-scheme:dark;font:16px/1.55 system-ui,-apple-system,sans-serif;background:#100f1d;color:#faf7ff;--edge:#6f6381;--accent:#85f2d0}
+*{box-sizing:border-box}body{margin:0}main{max-width:1010px;margin:auto;padding:1rem 1rem 4rem}a{color:#89eed1}
+header{border-radius:1rem;padding:1.6rem;background:linear-gradient(110deg,#32204c,#612d48)}h1{font-size:clamp(1.8rem,6vw,3.3rem);line-height:1.1;margin:.6rem 0}
+h2{margin-top:0;font-size:1.3rem}.eyebrow{letter-spacing:.1em;font-size:.77rem;text-transform:uppercase;color:#ffcf85;font-weight:800}
+.card{background:#211c33;border:1px solid var(--edge);border-radius:1rem;padding:1.25rem;margin:1rem 0}
+.notice{padding:.8rem 1rem;border-left:5px solid #f9cc7f;background:#332740;border-radius:.3rem}
+.row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+button{border:1px solid #8ce6cc;border-radius:.55rem;background:#b4eedb;color:#14262b;font:inherit;font-weight:800;padding:.7rem 1rem;cursor:pointer}
+button:hover{background:#e2fff2}button:disabled{opacity:.6;cursor:default}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #ffc96b;outline-offset:3px}
+input[type=range]{accent-color:var(--accent);width:min(100%,320px)}
+.bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin:1.1rem 0}
+.bar{border:2px solid #6c617d;background:#332943;padding:.85rem;min-height:130px;border-radius:.75rem;display:flex;flex-direction:column;justify-content:space-between}
+.bar strong{font-size:.85rem;color:#e8d9fa}.bar p{font-size:.86rem;margin:.4rem 0}
+.bar.redacted{background:#060608;border-color:#8a8a8a}.bar.redacted p{letter-spacing:.12em;font-size:1.1rem}
+.bar[data-active="true"]{outline:4px solid #f4d47c;outline-offset:2px}
+output{display:block;padding:.85rem;border-radius:.7rem;background:#132f35;color:#d4ffe9;margin:.9rem 0;font-weight:750}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.stats div{background:#2d2943;padding:.85rem;border-radius:.7rem;text-align:center}.stats strong{display:block;font-size:1.3rem}
+small,footer{color:#d2c9df;font-size:.86rem}.sources a{display:block;margin:.4rem 0;overflow-wrap:anywhere}
+@media(max-width:660px){.bars{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style></head>
+<body><main>
+<header><nav><a href="corridor-alabama.html">← Alabama Corridor</a> · <a href="jasons-corridors.html">Jason's Corridors</a></nav>
+<p class="eyebrow">Classes with Glasses · BlackBar Math · DRAFT</p>
+<h1>BlackBar Rap: Six Bars, Two Silences</h1>
+<p>A South-to-North classroom replay: ALISON → Oxford, Georgia → Central Michigan Chippewas → Wisconsin Badgers / Minnesota Gophers. Learn rhythm, citations, mathematics and creative permission.</p>
+<p><strong>Original text only.</strong> Detroit battle-rap history is a reference, not an Eminem performance or licensed lyric. No artist or school affiliation is claimed.</p></header>
+
+<section class="card">
+<h2>🎤 Visual-only stage · 90 beats per minute</h2>
+<div class="notice"><strong>Artistic silence ≠ censorship evidence.</strong> Two black bars are intentionally silent. A 3-second countdown precedes the six bars; it is not part of the 90-BPM musical grid.</div>
+<p><label for="bpm">Tempo: <strong id="bpm-value">90</strong> BPM</label></p>
+<div class="row"><input id="bpm" type="range" min="60" max="150" step="5" value="90"><button type="button" id="play">▶ Play silent visual</button><button type="button" id="reset">↺ Reset</button></div>
+<div class="stats"><div><strong id="seconds-beat">0.667</strong>sec / beat</div><div><strong id="seconds-bar">2.667</strong>sec / 4-beat bar</div><div><strong id="seconds-silence">5.333</strong>sec / 2 black bars</div></div>
+<output id="cue" role="status" aria-live="polite">READY. Press Play for a 3, 2, 1 countdown.</output>
+<div class="bars" id="bars">
+<div class="bar" data-active="false"><strong>01 · ALISON (AL)</strong><p>Law says what? Show the dated paper.</p></div>
+<div class="bar" data-active="false"><strong>02 · OXFORD (GA)</strong><p>Georgia Oxford, open every history chapter.</p></div>
+<div class="bar" data-active="false"><strong>03 · CHIPPEWAS (MI)</strong><p>Chippewas play MAC; check the conference.</p></div>
+<div class="bar" data-active="false"><strong>04 · BADGER → GOPHER</strong><p>Badger asks Gopher: can you show the math?</p></div>
+<div class="bar redacted" data-active="false"><strong>05 · BLACK BAR</strong><p>████████</p><small>Deliberate silence · licensing UNKNOWN</small></div>
+<div class="bar redacted" data-active="false"><strong>06 · BLACK BAR</strong><p>████████</p><small>Deliberate silence · missing evidence UNKNOWN</small></div>
+</div>
+<small>No audio, microphone, uploads, network calls, accounts, analytics or persistent storage. Timing is local and may vary with device scheduling.</small>
+</section>
+
+<section class="card">
+<h2>👓 Three-value evidence board</h2>
+<p><strong>PASS:</strong> independently reproducible math or identified primary-source locator. <strong>UNKNOWN:</strong> permissions, partnerships, uninspected source bytes. <strong>FAIL:</strong> a defined check contradicts a proposed assertion.</p>
+<p>The exact computed duration for six bars at 90 BPM is 16 seconds, with the last 5⅓ seconds silent. The visual's 3-second countdown adds time before the bars, not to them.</p>
+<p>One correction that matters: Central Michigan's Chippewas belong to the <strong>Mid-American Conference</strong>, not the Big Ten. Wisconsin and Minnesota are Big Ten examples. Oxford College is in <strong>Oxford, Georgia</strong>, not Oxford, England.</p>
+</section>
+
+<section class="card sources">
+<h2>📚 Replayable source corridor</h2>
+<a href="https://alison.legislature.state.al.us/legislative-process" rel="noopener noreferrer">Alabama Legislature · ALISON legislative process</a>
+<a href="https://www.emory.edu/about/atlanta-georgia/campuses" rel="noopener noreferrer">Emory University · Oxford, Georgia campus</a>
+<a href="https://web3.ncaa.org/directory/orgDetail?id=129" rel="noopener noreferrer">NCAA · Central Michigan / MAC</a>
+<a href="https://uwbadgers.com/" rel="noopener noreferrer">Wisconsin Badgers · athletics</a>
+<a href="https://gophersports.com/" rel="noopener noreferrer">Minnesota Golden Gophers · athletics</a>
+<a href="https://www.detroithistorical.org/learn/online-research/encyclopedia-of-detroit/mathers-marshall-eminem" rel="noopener noreferrer">Detroit Historical Society · Eminem historical profile</a>
+<a href="https://www.copyright.gov/engage/musicians/" rel="noopener noreferrer">U.S. Copyright Office · songs vs recordings</a>
+<p><a href="blackbar-rap-corridor-v0.1.json">Open public-safe JSON source-and-math fixture</a></p>
+<small>Source URLs are discovery locators; an external page link does not prove its current bytes, endorsement, licensing, or partnership. The local fixture supplies no copyrighted lyrics.</small>
+</section>
+<footer>Jason's Corridors · JOY / School of Wisdom · LOCAL DRAFT · HUMAN REVIEW REQUIRED · NO DEPLOYMENT · no child-specific records · 2026-11-10</footer>
+</main>
+<script>
+'use strict';
+const byId=id=>document.getElementById(id);
+const nodes=[...document.querySelectorAll('.bar')];
+let frame=0,playing=false,start=0,tempo=90;
+function sec(n){return Number(n).toFixed(3);}
+function renderStats(){
+tempo=Number(byId('bpm').value);
+byId('bpm-value').textContent=String(tempo);
+byId('seconds-beat').textContent=sec(60/tempo);
+byId('seconds-bar').textContent=sec(240/tempo);
+byId('seconds-silence').textContent=sec(480/tempo);
+}
+function active(i){nodes.forEach((node,j)=>node.dataset.active=String(j===i));}
+function reset(){
+playing=false;cancelAnimationFrame(frame);active(-1);
+byId('bpm').disabled=false;byId('play').disabled=false;
+byId('cue').textContent='READY. Press Play for a 3, 2, 1 countdown.';
+}
+function tick(t){
+if(!playing)return;
+const elapsed=(t-start)/1000,barLength=240/tempo;
+if(elapsed<3){active(-1);byId('cue').textContent='COUNTDOWN '+String(3-Math.floor(elapsed));}
+else {
+ const progress=elapsed-3;
+ const index=Math.floor(progress/barLength);
+ if(index>=6){active(-1);playing=false;byId('cue').textContent='REPLAY COMPLETE · six bars, two intentional silences · licensing remains UNKNOWN';byId('bpm').disabled=false;byId('play').disabled=false;return;}
+ active(index);
+ byId('cue').textContent=index<4?'BAR '+String(index+1)+' / 6 · ORIGINAL TEXT · VISUAL ONLY':'BAR '+String(index+1)+' / 6 · BLACK BAR · SILENCE';
+}
+frame=requestAnimationFrame(tick);
+}
+byId('bpm').addEventListener('input',renderStats);
+byId('play').addEventListener('click',()=>{
+if(playing)return;renderStats();playing=true;start=performance.now();byId('bpm').disabled=true;byId('play').disabled=true;frame=requestAnimationFrame(tick);
+});
+byId('reset').addEventListener('click',reset);
+renderStats();
+</script></body></html>

@@ -1,0 +1,123 @@
+{
+  "schema": "JSONWISDOM_BLACKBAR_SOUTH_NORTH_REPLAY_V0_1",
+  "status": "DRAFT_ONLY",
+  "authority_created": false,
+  "external_integrations_created": false,
+  "human_and_parental_approval_required": true,
+  "purpose": "Original 6-bar 90-BPM visualization and evidence replay across named educational corridors; no lyrics or institution access granted",
+  "performance": {
+    "title": "BlackBar Rap: Southern-to-Northern Math Return",
+    "inspiration": "Detroit battle-rap artistry; no artist participation, endorsement, or rights claimed",
+    "tempo_bpm": 90,
+    "meter_beats_per_bar": 4,
+    "total_bars": 6,
+    "audible_demo_bars": 4,
+    "silent_visual_bars": 2,
+    "countdown_seconds": 3,
+    "beat_duration_seconds": "60/90",
+    "bar_duration_seconds": "4*60/90",
+    "silent_duration_seconds": "2*4*60/90",
+    "performance_duration_seconds": "6*4*60/90",
+    "bar_labels": [
+      "ALISON — ask the law",
+      "Oxford — ask the campus",
+      "Chippewa — check the conference",
+      "Badger / Gopher — replay the math",
+      "BLACK BAR — evidence gap",
+      "BLACK BAR — permission gap"
+    ],
+    "original_examples_only": true,
+    "third_party_lyrics_included": false,
+    "third_party_recordings_included": false,
+    "licensing_status": "UNKNOWN",
+    "redaction_meaning": "DELIBERATE_STAGE_SILENCE_NOT_EVIDENCE_OF_CENSORSHIP"
+  },
+  "routes": [
+    {
+      "id": "alison_al",
+      "display": "ALISON · Alabama Legislative Information System",
+      "state": "AL",
+      "kind": "official_legal_source",
+      "verified": "PRIMARY_SOURCE_LOCATOR",
+      "url": "https://alison.legislature.state.al.us/legislative-process",
+      "note": "Public lawmaking process; not authority to license music or state compute"
+    },
+    {
+      "id": "oxford_ga",
+      "display": "Oxford College of Emory University",
+      "state": "GA",
+      "kind": "independent_education_reference",
+      "verified": "PRIMARY_SOURCE_LOCATOR",
+      "url": "https://www.emory.edu/about/atlanta-georgia/campuses",
+      "note": "Oxford in Georgia, not Oxford in England; no partnership or enrollment claimed"
+    },
+    {
+      "id": "chippewas_mi",
+      "display": "Central Michigan Chippewas",
+      "state": "MI",
+      "kind": "athletics_reference",
+      "conference": "Mid-American Conference",
+      "verified": "PRIMARY_SOURCE_LOCATOR",
+      "url": "https://web3.ncaa.org/directory/orgDetail?id=129",
+      "note": "MAC member, NOT Big Ten; educational routing hop only"
+    },
+    {
+      "id": "badgers_wi",
+      "display": "Wisconsin Badgers",
+      "state": "WI",
+      "kind": "big_ten_reference",
+      "conference": "Big Ten Conference",
+      "verified": "CONFERENCE_CONTEXT",
+      "url": "https://uwbadgers.com/",
+      "note": "Badger Press is a fictional classroom critique label, not an official news outlet"
+    },
+    {
+      "id": "gophers_mn",
+      "display": "Minnesota Golden Gophers",
+      "state": "MN",
+      "kind": "big_ten_reference",
+      "conference": "Big Ten Conference",
+      "verified": "PRIMARY_SOURCE_LOCATOR",
+      "url": "https://gophersports.com/",
+      "note": "Gopher Math is a learning exercise; not an affiliated university program"
+    }
+  ],
+  "evidence_checks": [
+    {
+      "id": "90_bpm_six_bars",
+      "label": "Timed bars at the declared tempo",
+      "expected": "PASS"
+    },
+    {
+      "id": "banned_lyrics",
+      "label": "Any rights to reproduce Eminem lyrics or recordings",
+      "expected": "UNKNOWN"
+    },
+    {
+      "id": "institutional_partnership",
+      "label": "Formal institutional partnerships or academic access",
+      "expected": "UNKNOWN"
+    },
+    {
+      "id": "censorship_implication",
+      "label": "Does theatrical black bar establish government censorship?",
+      "expected": "FAIL"
+    }
+  ],
+  "trinary": {
+    "pass": "A specified check supported by identified evidence or reproducible calculation",
+    "unknown": "No verified basis for pass or fail",
+    "fail": "A specified check is contradicted or fails a declared test"
+  },
+  "safeguards": {
+    "collection_of_child_data": false,
+    "identity_inference": false,
+    "school_affiliation_claim": false,
+    "political_allegations_as_fact": false,
+    "network_calls": false,
+    "persistent_storage": false,
+    "real_secrets": false,
+    "live_deployment": false
+  },
+  "math_note": "A SHA-256 hash of fixture bytes only establishes byte identity; it cannot establish licensing, government authority, school membership, or historical truth"
+}

@@ -1,0 +1,33 @@
+name: Jason's Corridors - BlackBar South-North CI
+on:
+  pull_request:
+    paths:
+      - "docs/joyspace/blackbar-rap-*"
+      - "docs/joyspace/corridor-alabama.html"
+      - "docs/joyspace/jasons-corridors.html"
+      - ".github/workflows/blackbar-south-north-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: Six-bar math, provenance and copyright-boundary tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout proposed changes
+        uses: actions/checkout@v4
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Execute BlackBar source and math tests
+        shell: bash
+        run: node docs/joyspace/blackbar-rap-corridor.test.mjs
+      - name: Report publication boundary
+        if: always()
+        run: |
+          echo "PASS on fixtures does not prove rights, authorizations or integrations."
+          echo "All lyrical permissions, university participation, and deployment: UNKNOWN / HOLD."

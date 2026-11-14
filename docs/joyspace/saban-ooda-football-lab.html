@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; form-action 'none'; base-uri 'none'"><meta name="referrer" content="no-referrer">
+<title>OODA Coaches, Librarians and Mathematicians · School of Wisdom</title>
+<style>:root{font-family:system-ui,-apple-system,sans-serif;background:#101827;color:#f5f9ff}*{box-sizing:border-box}body{margin:0}main{max-width:980px;margin:auto;padding:1rem 1rem 3rem}a{color:#93f6d8}header{background:#26354a;border-radius:1rem;padding:1.35rem}header h1{font-size:clamp(1.8rem,5vw,2.6rem);margin:.3rem 0}.card{border:1px solid #597189;background:#1e3043;border-radius:1rem;padding:1.2rem;margin:1rem 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.role{background:#274056;border-radius:.8rem;padding:1rem}.role h2{margin:.1rem 0;font-size:1.2rem}.role p{font-size:.9rem}button,select{font:inherit;padding:.65rem;border-radius:.65rem;border:1px solid #85c8c0;background:#d5fff2;color:#173049;cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f3cb66;outline-offset:3px}.buttons{display:flex;gap:.55rem;flex-wrap:wrap}.buttons button[aria-pressed=true]{background:#ffe0a0}.output{background:#112937;border-radius:.65rem;padding:1rem;min-height:4rem}small,footer{color:#ced8e5;font-size:.84rem}.notice{border-left:5px solid #e6bf75;padding:.5rem 1rem;background:#3a3544;border-radius:.5rem}label{font-weight:750;display:block;margin:.6rem 0}select{max-width:100%;width:100%}strong.num{font-size:1.3rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}.stat{border:1px solid #506b80;border-radius:.7rem;padding:.75rem;text-align:center}.stat strong{display:block;font-size:1.6rem}.sources a{display:block;margin:.4rem 0;overflow-wrap:anywhere}@media(max-width:650px){.grid,.stats{grid-template-columns:1fr}} </style></head>
+<body><main><header><nav><a href="corridor-alabama.html">← Alabama Corridor</a> · <a href="jasons-corridors.html">Jason's Corridors</a></nav>
+<p>SEC × BIG TEN · PUBLIC-RECORDS REPLAY · LOCAL DRAFT</p>
+<h1>🏈 Coaches + Librarians + Mathematicians</h1><p>Nick Saban's publicly documented Michigan State and Alabama coaching history connects the Big Ten and SEC. This is a family-safe math and evidence lab—not a licensed coaching clinic.</p>
+</header>
+<section class="card"><h2>Three kinds of teaching authority</h2><div class="grid">
+<div class="role"><h2>🏈 Coach</h2><p>Frames the question, teaches decision-making, asks what practice could improve. Does not invent a historical play call or give a student's grade.</p></div>
+<div class="role"><h2>📚 Librarian</h2><p>Finds dated public game books and transcripts, flags missing evidence, and protects rights and privacy. Suggests sources; never pronounces verdicts.</p></div>
+<div class="role"><h2>∑ Mathematician</h2><p>Recomputes scores, margins, deltas and reversibility. A correct number does not prove why a coach made a decision.</p></div></div></section>
+<section class="card"><h2>Choose a historical public-record fixture</h2>
+<label for="play-select">Recorded game state</label>
+<select id="play-select">
+<option value="kick_six_2013">2013 Iron Bowl · Kick Six (Auburn 34–28)</option>
+<option value="comeback_2014">2014 Iron Bowl · Alabama comeback (55–44)</option>
+<option value="fourth_31_2023">2023 Iron Bowl · Fourth-and-31 (Alabama 27–24)</option></select>
+<div class="stats"><div class="stat"><small>Alabama: before → after</small><strong id="alabama-score">28 → 28</strong></div><div class="stat"><small>Auburn: before → after</small><strong id="auburn-score">28 → 34</strong></div><div class="stat"><small>Change in Alabama margin</small><strong id="swing">−6</strong></div></div>
+<p id="event" class="output" aria-live="polite">2013: Auburn returned a missed kick for a touchdown. An official public game recap records the result.</p>
+<div class="buttons" aria-label="OODA stages"><button type="button" data-step="OBSERVE" aria-pressed="true">1 · Observe</button><button type="button" data-step="ORIENT" aria-pressed="false">2 · Orient</button><button type="button" data-step="DECIDE" aria-pressed="false">3 · Decide</button><button type="button" data-step="ACT" aria-pressed="false">4 · Act</button><button type="button" data-step="REVERSE" aria-pressed="false">↶ Reverse replay</button></div>
+<div id="learning" class="output" role="status" aria-live="polite">OBSERVE: Identify the documented before and after scores. Note what the source does not tell us.</div>
+<small>The classroom decision is about which question or calculation to test. It is NOT a reconstruction of Saban's private thoughts or locker-room instructions.</small>
+</section>
+<section class="card"><h2>Trinary evidence, not a three-way ranking of people</h2><p><strong>PASS</strong> = reproducible calculation or identified official source. <strong>UNKNOWN</strong> = inaccessible private notebooks, unpublished locker-room speeches, unverified causes. <strong>FAIL</strong> = a defined arithmetic test disagrees with the documented values.</p>
+<p class="notice">Public speech ≠ private locker-room transcript. Mathematical reversibility ≠ the ability to change history. No school, team, athletic association, author, or coach has endorsed this classroom.</p></section>
+<section class="card sources"><h2>Source shelf · Librarian's starting points</h2>
+<a href="https://msuspartans.com/news/2025/1/10/former-spartan-head-coach-nick-saban-elected-to-college-football-hall-of-fame-class-of-2025" rel="noopener noreferrer">Michigan State · Saban's record and career</a>
+<a href="https://rolltide.com/news/2007/7/26/Coach_Saban_Transcript" rel="noopener noreferrer">Alabama · Saban's public 2007 SEC Media Days transcript</a>
+<a href="https://rolltide.com/news/2013/9/30/Alabama_Head_Coach_Nick_Saban_Press_Conference" rel="noopener noreferrer">Alabama · 2013 public coaching press conference</a>
+<a href="https://rolltide.com/news/2013/11/30/no_1_alabama_falls_to_no_4_auburn_34_28_in_iron_bowl" rel="noopener noreferrer">Alabama · 2013 Iron Bowl game recap</a>
+<a href="https://rolltide.com/news/2014/11/29/No_1_Alabama_Football_Beats_No_15_Auburn_55_44" rel="noopener noreferrer">Alabama · 2014 Iron Bowl game recap</a>
+<a href="https://rolltide.com/news/2023/11/25/football-late-game-heroics-lead-no-8-8-8-alabama-to-27-24-victory-at-auburn" rel="noopener noreferrer">Alabama · 2023 Iron Bowl game recap</a>
+<a href="saban-ooda-football-fixtures-v0.1.json">Open bounded machine-readable JSON fixtures</a>
+<small>Links are provenance locators. This page does not fetch or reproduce third-party full transcripts or playbooks.</small></section>
+<footer>School of Wisdom / JOY · public sources only · no student accounts, tracking, betting, payments, data collection, AI command authority or deployment. Human approval required.</footer></main>
+<script>
+'use strict';
+const data={
+kick_six_2013:{label:"2013 Kick Six",b:[28,28],a:[28,34],event:"2013: Auburn's Chris Davis returned a missed Alabama field-goal attempt for the winning touchdown, 34–28."},
+comeback_2014:{label:"2014 comeback",b:[21,33],a:[55,44],event:"2014: Alabama recovered from a 21–33 third-quarter score to beat Auburn 55–44."},
+fourth_31_2023:{label:"2023 Fourth-and-31",b:[20,24],a:[27,24],event:"2023: On fourth-and-31, Alabama completed a late touchdown pass and won 27–24."}};
+const $=id=>document.getElementById(id);let selected='kick_six_2013';
+function showStep(step){
+const d=data[selected],deltaAL=d.a[0]-d.b[0],deltaAU=d.a[1]-d.b[1],before=d.b[0]-d.b[1],after=d.a[0]-d.a[1];
+const lines={
+OBSERVE:"OBSERVE: Name the public score and date. Confirm a source; a recap cannot reveal private thoughts.",
+ORIENT:"ORIENT: Compare before and after. Point differential = Alabama minus Auburn. The margin can change independently of which team is ahead.",
+DECIDE:"DECIDE: Choose a testable classroom question: Can we calculate each team’s point change and reverse the arithmetic without inventing a playbook?",
+ACT:"ACT: Alabama gained "+deltaAL+"; Auburn gained "+deltaAU+". Margin changed from "+before+" to "+after+", a signed shift of "+(after-before)+".",
+REVERSE:"REVERSE REPLAY: Alabama "+d.a[0]+" − "+deltaAL+" = "+d.b[0]+"; Auburn "+d.a[1]+" − "+deltaAU+" = "+d.b[1]+". Restored the recorded starting scores—not history itself."};
+$('learning').textContent=lines[step];
+document.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.step===step)));
+}
+function render(){const d=data[selected];$('alabama-score').textContent=d.b[0]+' → '+d.a[0];$('auburn-score').textContent=d.b[1]+' → '+d.a[1];const swing=(d.a[0]-d.a[1])-(d.b[0]-d.b[1]);$('swing').textContent=(swing>0?'+':'')+swing;$('event').textContent=d.event;showStep('OBSERVE');}
+$('play-select').addEventListener('change',e=>{selected=e.target.value;render();});
+document.querySelectorAll('[data-step]').forEach(button=>button.addEventListener('click',()=>showStep(button.dataset.step)));render();
+</script></body></html>

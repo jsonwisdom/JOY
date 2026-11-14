@@ -1,0 +1,32 @@
+name: School of Wisdom - Saban OODA Math Replay
+on:
+  pull_request:
+    paths:
+      - "docs/joyspace/saban-ooda-*"
+      - "docs/joyspace/corridor-alabama.html"
+      - "docs/joyspace/jasons-corridors.html"
+      - ".github/workflows/saban-ooda-school-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-sources-and-arithmetic:
+    name: Coach, Librarian, Mathematician - OODA / Reverse Math
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout PR content
+        uses: actions/checkout@v4
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Reproduce score math and verify boundaries
+        run: node docs/joyspace/saban-ooda-football.test.mjs
+      - name: Preserve review gate
+        if: always()
+        run: |
+          echo "PUBLIC SOURCES AND MATH ONLY. School affiliation, private speech, AI training, deployment: NOT VERIFIED."
+          echo "No publication, human or parental authorization is provided by this workflow."
