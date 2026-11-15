@@ -44,6 +44,16 @@ PUBLIC_READER_REPORT
 JOY_REPO_ONLY
 CANONICAL_DRAFT
 
+
+### Wallet-independent creative path (2026-11-15)
+
+- JOY reader contract: [Create Without Wallet](./CREATE_WITHOUT_WALLET_2026-11-15.md).
+- HEIDEE-owned child JoySpace page: [Draw, Save, Print — source](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/index.html).
+- Daddy continuity lane: [DADDY_WISDOM](../FAMILY/DADDY_WISDOM/README.md).
+
+Scope: local drawing, undo, PNG save, and print; online sharing is **HOLD**, with no demonstrated guardian approval mechanism. Hardware security keys and wallets are **not required to create**. No federal access or interference is inferred. Repository sources were added; deployed HTTP reachability, visual approval and source-byte parity remain **UNKNOWN**.
+
+
 ## Constraints
 
 JoySpace may inspect, index, classify, and map JOY lineage.
