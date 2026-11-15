@@ -19,6 +19,12 @@ Keep lawful creative play available independently of financial identity and wall
 - `NO_ACCOUNT_RECOVERY_FROM_SOURCE`: this documentation cannot restore the original A380 Coinbase signer.
 - `NO_PRIVATE_CHILD_DATA`: no names beyond project labels, family incidents, home/school details, keys, or biometric records in the page.
 
+
+## Gen Z PDF change learning (2026-11-15 addendum)
+
+A second HEIDEE-owned source page [PDF Change Detective](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/pdf-change-detective.html) teaches how to read two PDFs locally, compute exact SHA-256 file hashes, compare them, and create a two-leaf Merkle root. An optional local text briefing is **not** sent to anyone. `BYTE_DIFFERENCE` is not `POLICY_CHANGE`; human reading, authoritative source provenance, and publication approval are separate gates. A live daily scheduler is not implemented or claimed.
+
+
 ## Verification gates
 1. Inspect exact committed source.
 2. Validate no third-party scripts, API calls, wallet RPC, tracker, or form submission.
