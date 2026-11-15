@@ -40,3 +40,10 @@ Preserve the work of building creative tools, educational games, accessible prin
 - [Family purpose map](../receipts/WISDOM_FAMILY_PURPOSE_MAP_V0_1.md)
 
 **Family first. JOY first. No fake green. No stolen authority.**
+
+## Δ17 daily continuity
+
+- [Read the protected-lane Δ17 review protocol](./DELTA17_DAILY_EVIDENCE_V0_1.md).
+- [Read public-safe Δ17 documentation](../../joyspace/DELTA17_DAILY_REPLAY_V0_1.md).
+
+Carry forward missing receipts as UNKNOWN, not zero. No crypto signing or private support records stored here.
