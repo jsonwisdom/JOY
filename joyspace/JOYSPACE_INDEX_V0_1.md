@@ -91,3 +91,9 @@ No crown.
 No fake green.
 No authority jump.
 No repo spillover.
+
+### Δ17 daily replay — carried UNKNOWN
+
+- [Read the public-safe Δ17 daily PDF / Base / private-support boundary](./DELTA17_DAILY_REPLAY_V0_1.md).
+- Δ17 is **not** seventeen completed gates or automatic agency monitoring.
+- A local PDF root is **not** an Ethereum or Base transaction. Unknown evidence stays UNKNOWN.
