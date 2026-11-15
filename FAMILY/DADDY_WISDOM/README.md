@@ -16,6 +16,16 @@ Preserve the work of building creative tools, educational games, accessible prin
 5. **Recovery:** Original A380 Coinbase Smart Wallet signing remains operationally unavailable in the user's reported paths. Historic evidence does not demonstrate current signer possession. Cause UNKNOWN.
 6. **Government:** No evidence here establishes a federal agency has access to the wallet; therefore no government account removal, revocation, or attribution is asserted or performed.
 
+
+## Gen Z civic PDF change desk (2026-11-15)
+
+- HEIDEE source: [PDF Change Detective](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/pdf-change-detective.html).
+- Reading and comparing public PDFs belongs to education; creating an unsent **witness-copy briefing** is a safe exercise.
+- SHA-256 differences prove byte differences; substantive policy meaning and official source authentication require further work.
+- No automatic scraping, federal submission, wallet access, YubiKey enrollment, or publication approval has been created.
+- Caregivers may review and choose whether to share a redacted result. Never place private child activity, usernames, family financial details, or credentials in public repositories.
+
+
 ## Restore continuity without creating new harm
 - No key import, seed handling, wallet reset, signing, transaction, account lock, passkey changes, DNS/ENS changes, or child-profile publication from this folder.
 - Do not ask the family to re-run completed PowerShell tests.
