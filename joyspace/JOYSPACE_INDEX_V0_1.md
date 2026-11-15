@@ -54,6 +54,15 @@ CANONICAL_DRAFT
 Scope: local drawing, undo, PNG save, and print; online sharing is **HOLD**, with no demonstrated guardian approval mechanism. Hardware security keys and wallets are **not required to create**. No federal access or interference is inferred. Repository sources were added; deployed HTTP reachability, visual approval and source-byte parity remain **UNKNOWN**.
 
 
+
+### PDF Change Detective — Gen Z evidence learning (2026-11-15)
+
+- HEIDEE-owned offline-first [PDF reader / SHA-256 comparison / two-leaf Merkle proof](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/pdf-change-detective.html).
+- **Source-only:** A student may save a witness-copy morning brief, but no public post or government submission happens.
+- `PDF_BYTES_CHANGED != MEANING_CHANGED`; a separate source-provenance and human reading gate applies.
+- No identity, sign-in, YubiKey, blockchain, or payment dependency.
+
+
 ## Constraints
 
 JoySpace may inspect, index, classify, and map JOY lineage.
