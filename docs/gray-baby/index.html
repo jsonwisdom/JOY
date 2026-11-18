@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gray Baby Generator — Your Universe. Your Story.</title>
+  <meta name="description" content="Build a family-friendly Gray Baby art prompt for your own universe. Preserve creative branches, copy the prompt, and render it with your preferred AI image tool.">
+  <meta name="theme-color" content="#090c18">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- GRAY_BABY_GENERATOR_V0_1 -->
+  <!-- PUBLIC_STATIC_PROMPT_GENERATOR / NO_API_KEY_IN_BROWSER -->
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="../">JOYSPACE</a>
+    <nav aria-label="Gray Baby navigation">
+      <a href="#generator">Generator</a>
+      <a href="#labyrinth">Labyrinth</a>
+      <a href="skill.md">Skill</a>
+      <a href="OPENAI_ADAPTER.md">Developers</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">GRAY BABY / PUBLIC CREATIVE LAB</p>
+        <h1 id="page-title">Your universe.<br>Your story.<br><span>Your Gray Baby.</span></h1>
+        <p class="lede">Describe a world. Gray Baby becomes the curious little observer inside it. The generator preserves multiple creative branches instead of forcing one “correct” picture.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#generator">Build my prompt</a>
+          <button class="button ghost" id="surpriseBtn" type="button">Surprise me ✦</button>
+        </div>
+        <div class="trust-row" aria-label="Generator principles">
+          <span>👽 Cute by default</span>
+          <span>🌀 Branches preserved</span>
+          <span>🧒 Family-friendly rail</span>
+          <span>🔐 No browser API key</span>
+        </div>
+      </div>
+
+      <div class="alien-stage" aria-label="Illustration of Gray Baby holding a tiny universe">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <svg class="gray-baby" viewBox="0 0 420 480" role="img" aria-labelledby="alienTitle alienDesc">
+          <title id="alienTitle">Cute Gray Baby alien</title>
+          <desc id="alienDesc">A small smiling gray alien holding a glowing miniature universe.</desc>
+          <defs>
+            <radialGradient id="headGlow" cx="50%" cy="35%" r="70%"><stop offset="0%" stop-color="#eef1f5"/><stop offset="75%" stop-color="#aab2bd"/><stop offset="100%" stop-color="#7a828d"/></radialGradient>
+            <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff8bc"/><stop offset="40%" stop-color="#8de6ff"/><stop offset="75%" stop-color="#9881ff"/><stop offset="100%" stop-color="#232947"/></radialGradient>
+          </defs>
+          <ellipse cx="210" cy="436" rx="120" ry="18" fill="#000" opacity=".28"/>
+          <path d="M159 260 C141 316 147 389 180 424 L240 424 C273 389 279 316 261 260Z" fill="#858e99"/>
+          <path d="M176 405 L154 447 M244 405 L266 447" stroke="#858e99" stroke-width="24" stroke-linecap="round"/>
+          <path d="M161 302 C112 325 93 356 89 389 M259 302 C308 325 327 356 331 389" stroke="#8f98a3" stroke-width="20" stroke-linecap="round"/>
+          <ellipse cx="210" cy="173" rx="132" ry="154" fill="url(#headGlow)"/>
+          <ellipse cx="157" cy="165" rx="47" ry="67" fill="#111522" transform="rotate(11 157 165)"/>
+          <ellipse cx="263" cy="165" rx="47" ry="67" fill="#111522" transform="rotate(-11 263 165)"/>
+          <ellipse cx="143" cy="143" rx="11" ry="18" fill="#fff" opacity=".9"/><ellipse cx="249" cy="143" rx="11" ry="18" fill="#fff" opacity=".9"/>
+          <path d="M185 239 Q210 255 235 239" fill="none" stroke="#626a75" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="210" cy="349" r="58" fill="url(#orbGlow)" filter="drop-shadow(0 0 25px #8de6ff)"/>
+          <path d="M173 349 C198 329 222 329 247 349 C222 370 198 370 173 349Z" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+          <circle cx="229" cy="333" r="5" fill="#fff"/><circle cx="188" cy="364" r="3" fill="#fff"/>
+        </svg>
+        <p class="stage-caption">OBSERVER • EXPLORER • LEARNER • CREATOR • WITNESS</p>
+      </div>
+    </section>
+
+    <section class="generator-wrap" id="generator" aria-labelledby="generator-title">
+      <div class="section-heading"><p class="eyebrow">BUILD YOUR UNIVERSE</p><h2 id="generator-title">What should Gray Baby discover?</h2><p>No account required for the prompt builder. Your text stays in this page unless you copy it into another service.</p></div>
+      <div class="builder">
+        <div class="controls">
+          <label for="scenario">Your scenario</label>
+          <textarea id="scenario" rows="5" maxlength="900" placeholder="Example: Gray Baby discovers a hidden library under the ocean with friendly robot librarians and glowing jellyfish..."></textarea>
+          <fieldset><legend>Universe seeds</legend><div class="chips" id="universeChips">
+            <button type="button" data-seed="space station">🚀 Space</button><button type="button" data-seed="dinosaur valley">🦕 Dinosaurs</button><button type="button" data-seed="underwater city">🌊 Ocean</button><button type="button" data-seed="science classroom">🔬 Science</button><button type="button" data-seed="enchanted forest">🍄 Fantasy</button><button type="button" data-seed="robot workshop">🤖 Robots</button><button type="button" data-seed="aviation hangar">✈️ Aviation</button><button type="button" data-seed="music festival on another planet">🎵 Music</button>
+          </div></fieldset>
+          <div class="control-grid">
+            <label>Format<select id="format"><option value="widescreen cinematic cover, 16:9">Widescreen 16:9</option><option value="square cover art, 1:1">Square 1:1</option><option value="vertical storybook poster, 4:5">Poster 4:5</option><option value="comic-book panel">Comic panel</option><option value="selfie-style scene">Selfie</option></select></label>
+            <label>Mood<select id="mood"><option>curious and joyful</option><option>cinematic and adventurous</option><option>cozy and peaceful</option><option>funny and chaotic</option><option>mysterious but friendly</option><option>bright educational wonder</option></select></label>
+          </div>
+          <label class="reference"><span>Reference image <small>(optional)</small></span><input id="reference" type="file" accept="image/*"><small>Nothing uploads here. Attach the same image when you paste the prompt into your image AI.</small></label>
+          <div class="switch-row"><label><input id="familySafe" type="checkbox" checked> Family-friendly rail</label><label><input id="textFree" type="checkbox" checked> Avoid accidental text/logos</label></div>
+          <button class="button primary full" id="generateBtn" type="button">Generate 3 Labyrinth prompts ✦</button>
+        </div>
+        <aside class="preview-panel" aria-live="polite"><p class="eyebrow">LIVE PROMPT PREVIEW</p><div class="mini-card"><span class="mini-label">Character lock</span><strong>Small gray alien · huge expressive dark eyes · friendly curiosity</strong></div><div class="mini-card"><span class="mini-label">User universe</span><strong id="universePreview">Waiting for your idea…</strong></div><div class="mini-card"><span class="mini-label">Labyrinth</span><strong>A / Cinematic · B / Storybook · C / Wildcard</strong></div><p class="privacy-note">🔐 This static version does not send your prompt, image, or identity anywhere.</p></aside>
+      </div>
+    </section>
+
+    <section class="results hidden" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><p class="eyebrow">LABYRINTH OUTPUT</p><h2 id="results-title">Three doors. Keep any or all of them.</h2></div>
+      <div class="prompt-grid">
+        <article class="prompt-card"><div class="prompt-head"><span>A</span><h3>Cinematic</h3></div><textarea id="promptA" readonly></textarea><button class="copy-button" data-copy="promptA" type="button">Copy A</button></article>
+        <article class="prompt-card"><div class="prompt-head"><span>B</span><h3>Storybook</h3></div><textarea id="promptB" readonly></textarea><button class="copy-button" data-copy="promptB" type="button">Copy B</button></article>
+        <article class="prompt-card"><div class="prompt-head"><span>C</span><h3>Wildcard Universe</h3></div><textarea id="promptC" readonly></textarea><button class="copy-button" data-copy="promptC" type="button">Copy C</button></article>
+      </div>
+      <div class="result-actions"><button class="button primary" id="copyAllBtn" type="button">Copy all 3 prompts</button><button class="button ghost" id="remixBtn" type="button">Remix branches ↻</button></div>
+    </section>
+
+    <section class="labyrinth" id="labyrinth"><div><p class="eyebrow">THE LABYRINTH RULE</p><h2>Creative ambiguity is a feature.</h2></div><blockquote>When several strong visual directions exist, preserve the branches. Do not collapse possibility just because one answer is easier.</blockquote><div class="rule-grid"><article><strong>01</strong><h3>User owns the universe</h3><p>Your scenario sets the world. Gray Baby adapts to it.</p></article><article><strong>02</strong><h3>Agent maintains branches</h3><p>Different compositions and moods can remain alive simultaneously.</p></article><article><strong>03</strong><h3>Human chooses</h3><p>Pick one, combine several, or keep exploring. No hidden “best” universe.</p></article></div></section>
+
+    <section class="developer"><div><p class="eyebrow">DEVELOPER RAIL</p><h2>Static first. Server-side rendering next.</h2><p>The public GitHub Pages version deliberately keeps API credentials out of the browser. A server-side adapter can later send the generated prompt to OpenAI image generation without exposing a secret key.</p></div><a class="button ghost" href="OPENAI_ADAPTER.md">Read adapter contract</a></section>
+  </main>
+
+  <footer><p><strong>GRAY BABY GENERATOR v0.1</strong></p><p>GRAY BABY = FICTIONAL CREATIVE CHARACTER · ARTWORK ≠ EVIDENCE · AUTHORITY_CREATED = FALSE</p><p>👽 YOUR UNIVERSE. YOUR STORY. YOUR GRAY BABY.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
