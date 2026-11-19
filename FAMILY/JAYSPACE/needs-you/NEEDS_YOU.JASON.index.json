@@ -1,0 +1,42 @@
+{
+  "door": "Needs you",
+  "for_person": "JASON",
+  "cards": [
+    {
+      "card_id": "NEEDS_YOU.JASON.PURPOSE_PINS.001",
+      "path": "/workspace/artifacts/wisdom/needs-you/NEEDS_YOU.JASON.PURPOSE_PINS.001.json",
+      "sha256": "941dee3df17c0fbf47206f5f3ae77a03bc36025d97a3dfb22fd3ee42e9a57d74",
+      "status": "NEEDS_ANSWER",
+      "visibility": "FAMILY"
+    },
+    {
+      "card_id": "NEEDS_YOU.JASON.JOY_HEIDEE.001",
+      "path": "/workspace/artifacts/wisdom/needs-you/NEEDS_YOU.JASON.JOY_HEIDEE.001.json",
+      "sha256": "1d7823e8c2a8581d8d6bf645a56039545d3b6ed754ba5210cb7b1d1cb9689a3e",
+      "status": "NEEDS_ANSWER",
+      "visibility": "PRIVATE"
+    },
+    {
+      "card_id": "NEEDS_YOU.JASON.CANONICAL_HOME.001",
+      "path": "/workspace/artifacts/wisdom/needs-you/NEEDS_YOU.JASON.CANONICAL_HOME.001.json",
+      "sha256": "960b216d78a019dbb66a474d7f9868c6068f7f98bf7da97981e57529e071ec17",
+      "status": "ANSWERED",
+      "visibility": "PRIVATE"
+    }
+  ],
+  "mission_state": "ACTIVE",
+  "authority_created": false,
+  "external_persistence": "BOUND_NOT_WRITTEN",
+  "github_presence": "NOT_FOUND_BY_SEARCH",
+  "drive_presence": "NOT_FOUND_BY_SEARCH",
+  "search_miss_ne_nonexistence": true,
+  "local_workspace_report_ne_external_persistence": true,
+  "canonical_home_choice": "RESOLVED",
+  "external_home": "JAYSPACE",
+  "github_binding": "jsonwisdom/JOY",
+  "canonical_path": "FAMILY/JAYSPACE/needs-you/",
+  "public_portal_surface": "joyspace/jayspace.html",
+  "drive_role": "COMPANION_JAYSPACE_SUBSTRATE",
+  "path_binding": "ESTABLISHED",
+  "persistence_write": "NOT_YET_AUTHORIZED"
+}
