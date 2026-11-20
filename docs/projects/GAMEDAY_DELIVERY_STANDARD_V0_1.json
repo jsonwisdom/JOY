@@ -1,0 +1,189 @@
+{
+  "schema": "COMPUTER_WISDOM_GAMEDAY_FOOD_DELIVERY_V0_1",
+  "status": "DRAFT_CONCEPT_NOT_A_SERVICE",
+  "version": "0.1.0",
+  "as_of": "2026-11-10",
+  "premise": "A nationally reusable verification standard for local independent sports-bar food delivery. Local restaurants fulfill local deliveries, not coast-to-coast cooked-meal shipping.",
+  "merchant_reference": {
+    "business": "Coaches Corner Sports Bar & Grill",
+    "city": "Wetumpka",
+    "state": "AL",
+    "street": "203 Orline St",
+    "status": "REFERENCE_ONLY_NOT_PARTNER",
+    "prior_repo_receipt": "FAMILY/receipts/COACHES_CORNER_MENU_HASH_PACKET_V0_1.md",
+    "prior_receipt_status": "WITNESS_GREEN_PACKET_STRUCTURE_ONLY_CONTENT_HASH_PENDING",
+    "source_menu_url": "https://coachescornersportsbarandgrill.com/lunch-menu/",
+    "source_specials_url": "https://coachescornersportsbarandgrill.com/specials/",
+    "official_contact_url": "https://coachescornersportsbarandgrill.com/contact-us/",
+    "public_business_listing_delivery_status": "NOT_LISTED_AS_OFFERING_DELIVERY",
+    "public_business_listing_takeout_status": "OFFERS_TAKEOUT",
+    "current_menu_verified_with_operator": false,
+    "brand_permission": false,
+    "delivery_agreement": false,
+    "ordering_api_access": false,
+    "photos_republication_permission": false
+  },
+  "requirements": [
+    {
+      "id": "MERCHANT_CONSENT",
+      "owner": "operator",
+      "rule": "Written merchant opt-in and scope: brand, approved menu, fulfillment territory, prices, fees, refunds, hours. Without verified consent, no real listings/orders.",
+      "required_for_launch": true
+    },
+    {
+      "id": "FOOD_LAW",
+      "owner": "operator",
+      "rule": "Confirm permit/inspection standing and applicable state/local retail food and transport law; generic FDA Food Code is a model, not automatically controlling in every state.",
+      "required_for_launch": true
+    },
+    {
+      "id": "SAFE_HOLD",
+      "owner": "kitchen",
+      "rule": "Use state-appropriate time/temperature controls. FDA Food Code 2022 reference hot TCS ≥135°F and cold TCS ≤41°F when temperature holding, with recognized time-control procedures as applicable; capture actual handling events.",
+      "required_for_launch": true
+    },
+    {
+      "id": "ALLERGEN_INFO",
+      "owner": "kitchen",
+      "rule": "Expose documented allergens, modifications, contact info and rejection if unsafe or cannot be met; never infer 'allergen free'.",
+      "required_for_launch": true
+    },
+    {
+      "id": "ORDER_ACCURACY",
+      "owner": "kitchen",
+      "rule": "Confirm item+modifier count and delivery eligibility; exclude dine-in-only specials unless merchant has approved a different fulfillment policy.",
+      "required_for_launch": true
+    },
+    {
+      "id": "PACKAGE_PROTECTION",
+      "owner": "kitchen",
+      "rule": "Use appropriate sealed/tamper-evident bags and leakproof containers; separate hot and cold items, sauces and crisp components as warranted.",
+      "required_for_launch": true
+    },
+    {
+      "id": "CHAIN_OF_CUSTODY",
+      "owner": "driver",
+      "rule": "Pickup and handoff timestamps, sealed-package exception events, optional temperature observations where appropriate; no customer photos required.",
+      "required_for_launch": true
+    },
+    {
+      "id": "DELIVERY_SCOPE",
+      "owner": "operator",
+      "rule": "Each approved partner sets a feasible local radius, service hours, delivery fees and capacities. Nationwide platform coverage is a separate claim from one restaurant's local radius.",
+      "required_for_launch": true
+    },
+    {
+      "id": "PAYMENT_AND_REFUNDS",
+      "owner": "operator",
+      "rule": "Only processor-authorized checkout with itemized prices, taxes, tips, delivery fees and refund policy. No live collection in draft.",
+      "required_for_launch": true
+    },
+    {
+      "id": "CUSTOMER_MEDIA_OPTIN",
+      "owner": "customer",
+      "rule": "Separate opt-in for each public post; no default publication, no public addresses, geolocation, faces of minors, employee details or delivery records; image rights and moderation checks.",
+      "required_for_launch": true
+    },
+    {
+      "id": "AGE_RESTRICTED_EXCLUSION",
+      "owner": "operator",
+      "rule": "Alcohol and other age-restricted items are DISABLED; only a separate jurisdiction-specific licensed, trained, age-verified flow could enable them.",
+      "required_for_launch": true
+    },
+    {
+      "id": "RECEIPT_INTEGRITY",
+      "owner": "auditor",
+      "rule": "Preserve exact document version and timestamps, source provenance, reproducible SHA-256 digest on authorized data, PASS/FAIL/UNKNOWN per control; a digest does not certify food quality.",
+      "required_for_launch": true
+    }
+  ],
+  "reference_laws": [
+    {
+      "authority": "Alabama Department of Public Health",
+      "url": "https://www.alabamapublichealth.gov/foodsafety/food-and-lodging.html",
+      "purpose": "Jurisdiction regulations"
+    },
+    {
+      "authority": "US Food and Drug Administration",
+      "url": "https://www.fda.gov/food/fda-food-code/food-code-2022",
+      "purpose": "Model Food Code; may differ from Alabama adoption"
+    },
+    {
+      "authority": "US Food and Drug Administration",
+      "url": "https://www.fda.gov/food/hfp-constituent-updates/fda-highlights-best-practices-food-safety-online-delivery-services",
+      "purpose": "Third-party delivery best practices"
+    },
+    {
+      "authority": "Alabama ABC Board",
+      "url": "https://alabcboard.gov/licensing-compliance/how-to-apply",
+      "purpose": "Separate alcohol licensing and identity verification"
+    }
+  ],
+  "receipt_schema_example": {
+    "receipt_type": "SIMULATION_ONLY",
+    "merchant_id": "fictional-merchant-001",
+    "menu_source_digest": "NOT_AVAILABLE",
+    "merchant_contract_verified": false,
+    "item_ids": [
+      "demo-wings-01",
+      "demo-drink-01"
+    ],
+    "product_category": "NON_ALCOHOLIC_FOOD_AND_BEVERAGE_ONLY",
+    "source_evidence": "SYNTHETIC_EXAMPLE",
+    "ordered_at": "SIMULATED_TIME",
+    "kitchen_finished_at": "SIMULATED_TIME",
+    "driver_pickup_at": "SIMULATED_TIME",
+    "doorstep_handoff_at": "SIMULATED_TIME",
+    "pickup_container_seal": "SIMULATED_UNVERIFIED",
+    "customer_media_consent": false,
+    "payment_taken": false,
+    "published": false,
+    "checks": {
+      "merchant_consent": "UNKNOWN",
+      "menu_permission": "UNKNOWN",
+      "math_item_count": "PASS",
+      "food_safety": "UNKNOWN",
+      "delivery_authorization": "UNKNOWN",
+      "public_photo_permission": "FAIL"
+    }
+  },
+  "sample_metrics": {
+    "window": "ONE_GAMEDAY",
+    "example_only": true,
+    "quality_metrics": [
+      "on_time_delivery_pct",
+      "order_accuracy_pct",
+      "tamper_exception_rate",
+      "temperature_control_exception_rate",
+      "refund_resolution_time",
+      "allergen_issue_rate"
+    ],
+    "reliable_observation_required": true
+  },
+  "pilot_design": {
+    "scope": "One merchant, one city, one food-only game-day session IF operator opts in",
+    "network_expansion": "Local licensed partners by ZIP and service radius; no automatic rights to replicate any real menu",
+    "student_use": "An offline synthetic math exercise; not labor, ordering, or public exposure of student media"
+  },
+  "hard_bans": [
+    "No real merchant orders in draft",
+    "No user payment instruments or addresses",
+    "No autonomous dispatch",
+    "No real customer content uploads",
+    "No alcohol delivery in draft",
+    "No brand use without permission",
+    "No publication of minors' images",
+    "No AI review presented as a health inspection"
+  ],
+  "ci_first": {
+    "receipt_structure": "PASS_IF_FIXTURE_TESTS_PASS",
+    "real_merchant_consent": "UNKNOWN",
+    "actual_food_handling": "UNKNOWN",
+    "actual_delivery_service": "NOT_LAUNCHED",
+    "publishing_authority": "FALSE"
+  },
+  "authority_created": false,
+  "live_deployment": false,
+  "network_calls": false,
+  "storage": false
+}

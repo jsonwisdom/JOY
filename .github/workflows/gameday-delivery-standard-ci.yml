@@ -1,0 +1,31 @@
+name: Game Day Delivery - Standards CI
+on:
+  pull_request:
+    paths:
+      - "docs/projects/GAMEDAY_DELIVERY_STANDARD_V0_1.*"
+      - "docs/projects/gameday-delivery-standard.test.mjs"
+      - ".github/workflows/gameday-delivery-standard-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guardrails:
+    name: Check 12 delivery controls and merchant authority boundaries
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout draft only
+        uses: actions/checkout@v4
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify JSON specification and no-live-order boundaries
+        run: node docs/projects/gameday-delivery-standard.test.mjs
+      - name: Report scope
+        if: always()
+        run: |
+          echo "CI proves fixture logic, not restaurant permission, food inspection or delivery authorization."
+          echo "Real orders, payments, alcohol, customer uploads, merchant logos and deployment: DISABLED."
