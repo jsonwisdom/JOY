@@ -1,0 +1,65 @@
+name: JOYSPACE Librarian HEIDEE gate — review only
+
+on:
+  push:
+    branches:
+      - audit/joyspace-heidee-librarian-review-2026-11-21
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  librarian-advisory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout JOY review branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout pinned HEIDEE default-branch source snapshot
+        uses: actions/checkout@v4
+        with:
+          repository: jsonwisdom/HEIDEE
+          ref: 8e61fc2ce623b59feca2a3b231390bd5c968dbe7
+          path: ext/HEIDEE
+          persist-credentials: false
+      - name: Existing JOY Family OODA regression (32 fixtures)
+        run: python -m unittest discover -s tests -p 'test_family_security_ooda_v0_1.py' -v
+      - name: Librarian gate and exhaustive decision precedence
+        run: python -m unittest discover -s tests -p 'test_joyspace_librarian_gate_v0_2.py' -v
+      - name: Positive advisory scenario (mechanical PASS means HOLD)
+        run: |
+          mkdir -p build
+          python tools/joyspace_librarian_gate_v0_2.py --request drills/FAMILY_SECURITY_OODA_EXAMPLE_V0_1.json --joy-root . --heidee-root ext/HEIDEE --receipt build/librarian-positive.json
+          python -c 'import json; r=json.load(open("build/librarian-positive.json")); assert r["interface"]=="CANDIDATE_LIBRARIAN_ADVISORY_ONLY" and r["simulation_verdict"]=="PASS" and r["effective_decision"]=="HOLD" and len(r["verified_public_sources"])==6 and r["authority"] is False and r["heidee_approval"]=="NOT_INFERRED" and r["family_enrollment"] is False'
+          sha256sum build/librarian-positive.json
+      - name: Unsafe fixture must fail closed
+        run: |
+          set +e
+          python tools/joyspace_librarian_gate_v0_2.py --request drills/FAMILY_SECURITY_OODA_NEGATIVE_V0_1.json --joy-root . --heidee-root ext/HEIDEE --receipt build/librarian-negative.json
+          code=$?
+          set -e
+          test "$code" -eq 2
+          python -c 'import json; r=json.load(open("build/librarian-negative.json")); assert r["effective_decision"]=="REJECT" and r["authority"] is False'
+          sha256sum build/librarian-negative.json
+      - name: Corrupted HEIDEE source must fail closed
+        run: |
+          mkdir -p ext/HEIDEE-tampered/artifacts
+          cp ext/HEIDEE/HEIDEE_COMPUTER_WISDOM_FAMILY_LEGACY_REPORT_2026-11-07.md ext/HEIDEE-tampered/
+          cp ext/HEIDEE/artifacts/HEIDEE_FAMILY_LEARNING_RAIL_BIND_V0.md ext/HEIDEE-tampered/artifacts/
+          printf 'TAMPERED\n' >> ext/HEIDEE-tampered/artifacts/HEIDEE_FAMILY_LEARNING_RAIL_BIND_V0.md
+          set +e
+          python tools/joyspace_librarian_gate_v0_2.py --request drills/FAMILY_SECURITY_OODA_EXAMPLE_V0_1.json --joy-root . --heidee-root ext/HEIDEE-tampered --receipt build/librarian-source-tampered.json
+          code=$?
+          set -e
+          test "$code" -eq 2
+          python -c 'import json; r=json.load(open("build/librarian-source-tampered.json")); assert r["effective_decision"]=="REJECT" and r["verified_public_sources"]==[]'
+          sha256sum build/librarian-source-tampered.json
+      - name: Source purity summary
+        if: always()
+        run: |
+          echo '### Review-only Librarian candidate' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No family approval, enrollment, autonomous agent, private user data, deployed Cloudflare Worker, or financial action.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'HEIDEE independent; effective HOLD; original sources pinned.' >> "$GITHUB_STEP_SUMMARY"
