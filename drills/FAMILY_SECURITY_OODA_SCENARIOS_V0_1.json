@@ -1,0 +1,56 @@
+{
+  "schema": "joy/family-security-ooda-scenarios/1",
+  "simulation_only": true,
+  "authority": false,
+  "public_safe": true,
+  "scenarios": [
+    {
+      "id": "PHISHING_LINK",
+      "observe": "A fictional message urges an immediate login through an unfamiliar link.",
+      "orient": "Urgency and an unfamiliar link do not prove authenticity.",
+      "safe_choice": "PAUSE_AND_VERIFY_OFFLINE",
+      "assessment": "PASS",
+      "lesson": "Open a known app or manually entered trusted site, not the provided link."
+    },
+    {
+      "id": "PRIVATE_INFO",
+      "observe": "A fictional form requests a young person's contact details and location.",
+      "orient": "A public drill never needs private identifiers or family details.",
+      "safe_choice": "DO_NOT_SHARE_AND_ASK_ADULT",
+      "assessment": "PASS",
+      "lesson": "Protect private data. Ask a trusted adult if a real request arrives."
+    },
+    {
+      "id": "ACCOUNT_RECOVERY",
+      "observe": "A fictional device says that an account cannot be accessed.",
+      "orient": "Recovery steps may alter access and can cause lockout.",
+      "safe_choice": "STOP_AND_ASK_ACCOUNT_OWNER",
+      "assessment": "HOLD",
+      "lesson": "Do not change credentials, remove trusted devices, or enroll keys during this drill."
+    },
+    {
+      "id": "REAL_EMERGENCY",
+      "observe": "A fictional alarm interrupts an exercise.",
+      "orient": "A real emergency takes precedence over training, and an AI cannot determine safety remotely.",
+      "safe_choice": "STOP_DRILL_FOLLOW_LOCAL_PLAN",
+      "assessment": "HOLD",
+      "lesson": "If an emergency is real, stop the simulation and follow the household's actual safety plan and local emergency guidance."
+    },
+    {
+      "id": "MISSING_RECEIPT",
+      "observe": "A fictional system claims PASS but provides no source or receipt.",
+      "orient": "A claim without evidence is not verified.",
+      "safe_choice": "HOLD_UNTIL_VERIFIED",
+      "assessment": "PASS",
+      "lesson": "Preserve the gap, request a source, and never mark unknown evidence green."
+    },
+    {
+      "id": "PRESSURE_AND_PAUSE",
+      "observe": "A fictional lesson becomes stressful or unwanted.",
+      "orient": "Participation is voluntary and rest is a valid state.",
+      "safe_choice": "STOP_WITHOUT_PENALTY",
+      "assessment": "PASS",
+      "lesson": "The person may stop, ask for support, or opt out. No ranking of family members."
+    }
+  ]
+}

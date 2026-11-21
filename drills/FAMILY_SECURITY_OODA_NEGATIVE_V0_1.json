@@ -1,0 +1,12 @@
+{
+  "schema": "joy/family-security-ooda-request/1",
+  "scenario_id": "PHISHING_LINK",
+  "choice": "CLICK_THE_LINK",
+  "simulation": true,
+  "authority": false,
+  "family_gate": "SOVEREIGN_UNVERIFIED",
+  "human_approval": "NOT_ASSERTED",
+  "private_data": false,
+  "external_actions": false,
+  "signals": ["SYNTHETIC"]
+}

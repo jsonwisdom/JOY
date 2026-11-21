@@ -1,0 +1,50 @@
+name: JOY Family Security OODA Drills - review only
+
+on:
+  push:
+    branches:
+      - audit/joy-family-security-ooda-2026-11-21
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  family-ooda-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout exact review commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Assert existing JOY boundary source hashes
+        run: |
+          set -eu
+          test "$(git hash-object SCHOOL_OF_WISDOM_GRAND_OODA_LOOP_2026-11-07.md)" = "86fcb9d79c7412fe22deaf075fc2c258d2393bcc"
+          test "$(git hash-object FAMILY/receipts/PUBLIC_REPO_AUTHORITY_PERIMETER_BOUNDARY_V0_1.md)" = "afe19d59a507fa47522280249e0d1645a8a039d4"
+          test "$(git hash-object FAMILY/receipts/ALABAMA_ALMS_BOSS_BRE_LIBRARIAN_HEIDEE_MERGE_V0_1.md)" = "de6c243360ba289d71906421ff7b80342f6ca0c2"
+          test "$(git hash-object drills/ZERO_TRUST_PUBLIC_AUDIT_DRILLS_V0_1.json)" = "206b726378a68023c3e802d8e606b1582d29326c"
+      - name: Run OODA unit tests
+        run: python -m unittest discover -s tests -p 'test_family_security_ooda_v0_1.py' -v
+      - name: Execute positive synthetic scenario - effective HOLD
+        run: |
+          mkdir -p build/drills
+          python tools/family_security_ooda_v0_1.py --request drills/FAMILY_SECURITY_OODA_EXAMPLE_V0_1.json --receipt build/drills/positive.json
+          python -c 'import json; x=json.load(open("build/drills/positive.json")); assert x["simulation_verdict"]=="PASS" and x["effective_decision"]=="HOLD" and x["authority"] is False and x["external_actions"] is False and x["human_approval"]=="NOT_ASSERTED"'
+          sha256sum build/drills/positive.json
+      - name: Execute negative synthetic scenario - must REJECT
+        run: |
+          set +e
+          python tools/family_security_ooda_v0_1.py --request drills/FAMILY_SECURITY_OODA_NEGATIVE_V0_1.json --receipt build/drills/rejected.json
+          result=$?
+          set -e
+          test "$result" -eq 2
+          python -c 'import json; x=json.load(open("build/drills/rejected.json")); assert x["simulation_verdict"]=="REJECT" and x["effective_decision"]=="REJECT" and x["authority"] is False'
+          sha256sum build/drills/rejected.json
+      - name: Public-safe summary only
+        if: always()
+        run: |
+          echo "### JOY Family Security OODA Review" >> "$GITHUB_STEP_SUMMARY"
+          echo "Simulation only; no family data, authority, alert, network or account actions." >> "$GITHUB_STEP_SUMMARY"
+          echo "Synthetic PASS does not imply family approval: effective HOLD." >> "$GITHUB_STEP_SUMMARY"
