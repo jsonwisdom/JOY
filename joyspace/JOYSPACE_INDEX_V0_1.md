@@ -72,6 +72,10 @@ Scope: local drawing, undo, PNG save, and print; online sharing is **HOLD**, wit
 
 **Boundary:** `SOURCE_TEST=PASS` does **not** establish `BROWSER_TEST=PASS`, live HTTP source parity, guardian publication approval, private child activity capture, or authority. `PUBLIC_GREEN=false`; no deployment or cross-repository control granted.
 
+### JoySpace public verification subdomain (source-only information)
+
+Cloudflare configured [joyspace.jsonwisdom.com](https://joyspace.jsonwisdom.com/) as a static **public evidence desk**, not as HEIDEE's child-facing app. At configuration time, DNS readback succeeded but independent public HTTP 200 was **not confirmed**. [Cloudflare subdomain receipt](./worker/JOYSPACE_CLOUDFLARE_SUBDOMAIN_RECEIPT_2026-11-23.md). Guardian consent and child-facing publication remain HOLD. R2 is not used.
+
 ## Constraints
 
 JoySpace may inspect, index, classify, and map JOY lineage.
