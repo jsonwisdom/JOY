@@ -14,6 +14,7 @@ Only a public-safe, static **verification index** is attached to the new subdoma
 - DNS readback: `joyspace.jsonwisdom.com`, proxied `AAAA`, created by Cloudflare.
 - Cloudflare Worker Domain readback: hostname and service match; certificate ID present (not proof of active TLS reachability).
 - Worker `workers.dev` subdomain: disabled.
+- **Deployed Worker source versus GitHub branch source:** exact content equality verified by fetching both independently; both are 5,019 characters. This does NOT establish public HTTP response parity.
 - Script source: `joyspace/worker/joyspace-evidence-index-v1.js`.
 - Source commit: `030db7efdcfe0a043a4f9e262e8b36d709217167`.
 - HTTP external verification: **HOLD / DNS NOT YET RESOLVABLE** in the independent check at time of receipt. No HTTP-200 claim.
