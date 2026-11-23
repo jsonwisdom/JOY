@@ -20,7 +20,7 @@ const STATUS = Object.freeze({
   production_write:false,
   external_anchor:false
 });
-const HTML = \`<!doctype html>
+const HTML = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JoySpace · Public Evidence Desk</title>
 <style>
@@ -57,7 +57,7 @@ No child activity, family records, accounts, personal profiles, credentials or p
 Live-device testing and public source-byte parity of the child-facing experience remain unverified.</p>
 <p><strong>NO RECEIPT = HOLD. No fake green.</strong></p></section>
 <footer>Public information page. No login, scripts, tracking, uploads, wallets, R2 or D1 bindings. Evidence is about code and tests, not authority or consent.</footer>
-</main></body></html>\`;
+</main></body></html>`;
 function reply(body,status,type,method){return new Response(method==="HEAD"?null:body,{status,headers:{"content-type":type,"cache-control":"no-store","content-security-policy":"default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'","x-content-type-options":"nosniff","referrer-policy":"no-referrer","x-frame-options":"DENY","permissions-policy":"camera=(), microphone=(), geolocation=()"}})}
 addEventListener("fetch", event => {const r=event.request;const u=new URL(r.url);if(r.method!=="GET"&&r.method!=="HEAD"){event.respondWith(reply("Method not allowed",405,"text/plain; charset=utf-8",r.method));return;}
 if(u.pathname==="/"||u.pathname==="/index.html"){event.respondWith(reply(HTML,200,"text/html; charset=utf-8",r.method));return;}
