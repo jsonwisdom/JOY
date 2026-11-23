@@ -14,7 +14,12 @@ const STATUS = Object.freeze({
   guardian_approval:"NOT_ESTABLISHED",
   child_facing_publication:false,
   real_device_validation:"NOT_RUN",
-  cloudflare_r2:"BLOCKED_10042",
+  cloudflare_r2:"SYNTHETIC_WRITE_READ_PASS_PRODUCTION_HOLD",
+  cloudflare_r2_historical_error:"BLOCKED_10042",
+  r2_conditional_duplicate_412:"OPERATOR_VERIFIED_RAW_RESPONSE_NOT_ARCHIVED",
+  r2_independent_get_sha256:"PASS",
+  r2_test_payload_sha256:"42cb8b42e175767250055f4647aabeae1d0e3985e00dc4132420574eb49d14cb",
+  r2_evidence_receipt_url:"https://github.com/jsonwisdom/JOY/blob/8a67674ca5cf78bfc4be9ff90ffdc6ecf1ae6f17/joyspace/evidence/LIVE_R2_CONDITIONAL_PASS_RECEIPT_2026-11-23.md",
   production_evidence_ledger:"HOLD",
   authority_created:false,
   production_write:false,
@@ -45,11 +50,13 @@ footer{margin-top:36px;font-size:.9rem;color:#455968}
 <dt>JOY repository checks</dt><dd>6/6 workflows successful</dd>
 <dt>HEIDEE PR</dt><dd>Draft, unmerged (#9)</dd>
 <dt>JOY PR</dt><dd>Draft, unmerged (#129)</dd>
-<dt>R2 evidence storage</dt><dd>BLOCKED (error 10042)</dd></dl></section>
+<dt>R2 synthetic test</dt><dd>PASS: conditional write (operator), independent GET and SHA-256; production HOLD</dd>
+<dt>R2 historical failure</dt><dd>Error 10042 (resolved for tested synthetic operations)</dd></dl></section>
 <section><h2>Original evidence</h2><p>
 <a href="https://github.com/jsonwisdom/HEIDEE/pull/9">HEIDEE review PR #9</a> ·
 <a href="https://github.com/jsonwisdom/HEIDEE/actions/runs/45112226117">HEIDEE CI run</a> ·
-<a href="https://github.com/jsonwisdom/JOY/pull/129">JOY index review PR #129</a>
+<a href="https://github.com/jsonwisdom/JOY/pull/129">JOY index review PR #129</a> ·
+<a href="https://github.com/jsonwisdom/JOY/blob/8a67674ca5cf78bfc4be9ff90ffdc6ecf1ae6f17/joyspace/evidence/LIVE_R2_CONDITIONAL_PASS_RECEIPT_2026-11-23.md">R2 synthetic verification receipt (GitHub)</a>
 </p><p><a href="/status.json">Machine-readable verification status</a></p></section>
 <section class="note"><h2>What has NOT been approved?</h2>
 <p>No guardian publication approval was established. The interactive child-facing site was not deployed by this page.
