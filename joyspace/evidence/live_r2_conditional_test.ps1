@@ -6,6 +6,7 @@ $bucket = 'joyspace-evidence-v1'
 $account = $env:CF_ACCOUNT_ID
 if (-not $account) { throw 'Set CF_ACCOUNT_ID locally (Cloudflare account ID). No secrets are needed here.' }
 if (-not (Get-Command aws -ErrorAction SilentlyContinue)) { throw 'AWS CLI is required.' }
+if ($env:AWS_PROFILE -ne 'joyspace-r2') { throw 'Set AWS_PROFILE=joyspace-r2; refusing to use an unverified profile.' }
 $endpoint = "https://$account.r2.cloudflarestorage.com"
 $tmp = Join-Path $env:TEMP ("joyspace-r2-ci-" + [guid]::NewGuid().ToString('N'))
 New-Item -Type Directory -Path $tmp | Out-Null
@@ -21,8 +22,18 @@ try {
      '--body',$payload,'--if-none-match','*','--endpoint-url',$endpoint,'--no-cli-pager')
   $first = & aws @baseArgs 2>&1
   if ($LASTEXITCODE -ne 0) { throw "First conditional PUT failed; no PASS. $first" }
-  $duplicate = & aws @baseArgs 2>&1
-  if ($LASTEXITCODE -eq 0) { throw 'FAIL: duplicate conditional PUT was accepted' }
+  # AWS returns a nonzero exit and writes an expected error to stderr. Under
+  # Windows PowerShell 5.1, ErrorActionPreference=Stop can throw before
+  # LASTEXITCODE and the response are inspected. Capture with Continue locally.
+  $previousErrorAction = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = 'Continue'
+    $duplicate = & aws @baseArgs 2>&1
+    $duplicateExit = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousErrorAction
+  }
+  if ($duplicateExit -eq 0) { throw 'FAIL: duplicate conditional PUT was accepted' }
   $dupText = ($duplicate | Out-String)
   if ($dupText -notmatch '(?i)(PreconditionFailed|\b412\b)') {
     throw 'HOLD: duplicate failed but no HTTP 412/PreconditionFailed proof'
