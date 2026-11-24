@@ -90,4 +90,8 @@ jobs:
           check_200 "$ROOT_URL" /tmp/joy-root.html
           check_200 "$SCHOOL_URL" /tmp/school-of-wisdom.html
           grep -Fq "Jaywisdom.eth School of Wisdom" /tmp/school-of-wisdom.html
-          echo "E2E_OK=HTTP_200_ROOT+HTTP_200_SCHOOL+SCHOOL_MARKER"
+          # No fake green: pages the repo links to must also be live (added for CW-R057)
+          check_200 "https://jsonwisdom.github.io/JOY/status.html" /tmp/joy-status.html
+          check_200 "https://jsonwisdom.github.io/JOY/feeds/status.json" /tmp/joy-status.json
+          check_200 "https://jsonwisdom.github.io/JOY/feeds/status.xml" /tmp/joy-status.xml
+          echo "E2E_OK=HTTP_200_ROOT+HTTP_200_SCHOOL+SCHOOL_MARKER+STATUS_PAGE+FEEDS"
