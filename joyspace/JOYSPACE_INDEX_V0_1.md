@@ -63,6 +63,19 @@ Scope: local drawing, undo, PNG save, and print; online sharing is **HOLD**, wit
 - No identity, sign-in, YubiKey, blockchain, or payment dependency.
 
 
+### HEIDEE + Librarian — source-only OODA replay (2026-11-22 local)
+
+- HEIDEE-owned [JoySpace drawing source](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/index.html) and [PDF Change Detective source](https://github.com/jsonwisdom/HEIDEE/blob/master/docs/joyspace/pdf-change-detective.html) remain unchanged.
+- [HEIDEE read-only Librarian gate, draft PR #9](https://github.com/jsonwisdom/HEIDEE/pull/9) and [GitHub Actions receipt](https://github.com/jsonwisdom/HEIDEE/actions/runs/45112226117): **19/19 static source checks PASS**, existing School of Wisdom Worker **9 scope-limited test groups PASS**.
+- [JOY Librarian suggestions policy](../docs/school-of-wisdom/LIBRARIAN_SUGGESTIONS_GAMEPLAY_ALMS_ON_V0_1.md): ALMS ON / flywheel OFF, **Acknowledge → Locate → Membrane-check → Suggest**. Suggestions are not permission, truth verdicts, or consent.
+- [Machine-readable run details and evidence boundary](./HEIDEE_LIBRARIAN_GITHUB_REPLAY_2026-11-22.md) in JOY; the HEIDEE PR remains **DRAFT and unmerged**.
+
+**Boundary:** `SOURCE_TEST=PASS` does **not** establish `BROWSER_TEST=PASS`, live HTTP source parity, guardian publication approval, private child activity capture, or authority. `PUBLIC_GREEN=false`; no deployment or cross-repository control granted.
+
+### JoySpace public verification subdomain (source-only information)
+
+Cloudflare configured [joyspace.jsonwisdom.com](https://joyspace.jsonwisdom.com/) as a static **public evidence desk**, not as HEIDEE's child-facing app. At configuration time, DNS readback succeeded but independent public HTTP 200 was **not confirmed**. [Cloudflare subdomain receipt](./worker/JOYSPACE_CLOUDFLARE_SUBDOMAIN_RECEIPT_2026-11-23.md). Guardian consent and child-facing publication remain HOLD. R2 is not used.
+
 ## Constraints
 
 JoySpace may inspect, index, classify, and map JOY lineage.
